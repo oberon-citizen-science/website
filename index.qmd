@@ -2,6 +2,5 @@
 title: "Welcome to the Oberon Citizen Science website"
 ---
 
-This is a website afor the nascent Oberon Citizen Science group.
+This is a website for the nascent Oberon Citizen Science group.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

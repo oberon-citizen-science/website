@@ -4,6 +4,8 @@ project:
 website:
   title: "Oberon Citizen Science"
   navbar:
+    background: primary
+    search: true
     left:
       - href: index.qmd
         text: Home
