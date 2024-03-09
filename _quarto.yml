@@ -3,17 +3,42 @@ project:
   output-dir: docs
 website:
   title: "Oberon Citizen Science"
+  favicon: assets/favicon.ico
+  page-navigation: true
+  reader-mode: true
   navbar:
-    background: primary
+    tools:
+      - icon: twitter
+        href: https://twitter.com
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://code.com
+          - text: Report a Bug
+            url:  https://bugs.com
+  sidebar:
+    style: "floating"
     search: true
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
+    logo: assets/ocsen.png
+    contents:
+      - section: "Introductions"
+        contents:
+          - text: "Welcome to OCS"
+            file: index.qmd
+          - text: "What is Citizen Science?"
+            file: what_is_citizen_science.qmd
+          - text: "OCS Mission Statement"
+            file: ocs_mission_statement.qmd
+      - section: "Activities"
+      - section: "Sensor Network Projects"
+        contents:
+          - text: "Seismic and infrasound monitoring"
+            file: shake_and_boom.qmd
+          - text: "Bird call detection and counting"
+            file: bird-net.qmd
 format:
   html:
-    theme: cosmo
+    theme: morph
     css: styles.css
     toc: true
 
