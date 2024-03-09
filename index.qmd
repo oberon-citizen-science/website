@@ -1,6 +1,17 @@
 ---
-title: "Welcome to the Oberon Citizen Science website"
+title: "Welcome to the Oberon Citizen Science Network website"
 ---
 
-This is a website for the nascent Oberon Citizen Science group.
+This is the website for the recently formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**).
+
+::: {.aside}
+[Oberon](https://en.wikipedia.org/wiki/Oberon_Council) is located in the Central Tablends of NSW, about 140km west of Sydney Harbour, and about 80km west of the Blue Mountains, but at a slightly higher elevation than the Blue Mountains (most of Oberon LGA ranges between 1100 and 1300m elevation).
+
+![Oberon LGA^[No machine-readable author provided. Roke~commonswiki assumed (based on copyright claims)., CC BY-SA 3.0, via Wikimedia Commons]](assets/Oberon_LGA_NSW.png){.lightbox}
+:::
+
+OCSN is a collective of people living in and around the Oberon local government area (LGA) in the Central Tablelands of NSW who are interested in science and in participating in scientific investigation of interesting and/or important aspects of our environment. These include biology and ecology, and the impacts of human activity on those, as well as earth science, astronomy and any other safe and non-harmful scientific investigations members may wish to pursue. A list of current and potential activities and projects can be found in the list on the left. This list may expand or contract depending on the interests of OCSN participants.
+
+Participants in OCSN do not need to be trained scientists -- just having an interest in science and an allegiance to the scientific method (which is embodied in the mission statemnet and rules for the organisation) is enough. All projects and activities undertaken or promoted by OCSN will include trained scientists, acting in a voluntary capacity or, in some cases, in academic roles affiliated with universities and research institutes. The idea is to promote and transmit an appreciation of science and the scientific method to both OCSN participants and the wider community. 
+
 

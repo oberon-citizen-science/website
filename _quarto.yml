@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "Oberon Citizen Science"
+  title: "Oberon Citizen Science Network"
   favicon: assets/favicon.ico
   page-navigation: true
   reader-mode: true
@@ -23,11 +23,11 @@ website:
     contents:
       - section: "Introductions"
         contents:
-          - text: "Welcome to OCS"
+          - text: "Welcome to OCSN"
             file: index.qmd
           - text: "What is Citizen Science?"
             file: what_is_citizen_science.qmd
-          - text: "OCS Mission Statement"
+          - text: "OCSN Mission Statement"
             file: ocs_mission_statement.qmd
       - section: "Activities"
       - section: "Sensor Network Projects"
@@ -36,9 +36,10 @@ website:
             file: shake_and_boom.qmd
           - text: "Bird call detection and counting"
             file: bird-net.qmd
+fig-cap-location: bottom
 format:
   html:
-    theme: morph
+    theme: united
     css: styles.css
     toc: true
 

@@ -1,0 +1,15 @@
+---
+title: "What is Citizen Science?"
+author: "Tim Churches"
+---
+
+_Wikipedia_ defines [**citizen science**](https://en.wikipedia.org/wiki/Citizen_science) as:
+
+::: {.callout-note appearance="simple" icon=false}
+
+##
+
+Citizen science (similar to community science, crowd science, crowd-sourced science, civic science, participatory monitoring, or volunteer monitoring) is research conducted with participation from the general public, or amateur/nonprofessional researchers or participants for science, social science and many other disciplines. There are variations in the exact definition of citizen science, with different individuals and organizations having their own specific interpretations of what citizen science encompasses. Citizen science is used in a wide range of areas of study including ecology, biology and conservation, health and medical research, astronomy, media and communications and information science.
+:::
+
+Citizen science has been around since the 1980s, and today there are thousands of citizen science groups around the worl, working on and participating in science projects and investigations ranging from...
