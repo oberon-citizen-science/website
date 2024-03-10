@@ -1,17 +1,27 @@
 ---
-title: "Welcome to the Oberon Citizen Science Network website"
+title: "Welcome to the Oberon Citizen Science Network (OCSN) website"
 ---
 
 This is the website for the recently formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**).
 
 ::: {.aside}
-[Oberon](https://en.wikipedia.org/wiki/Oberon_Council) is located in the Central Tablends of NSW, about 140km west of Sydney Harbour, and about 80km west of the Blue Mountains, but at a slightly higher elevation than the Blue Mountains (most of Oberon LGA ranges between 1100 and 1300m elevation).
+[Oberon](https://en.wikipedia.org/wiki/Oberon_Council) is located in the Central Tablends of NSW, Australia, about 140km west of Sydney Harbour, and about 80km west of the Blue Mountains, but at a slightly higher elevation than the top of the Blue Mountains (most of Oberon LGA sits at between 1100 and 1300m elevation).
 
 ![Oberon LGA^[No machine-readable author provided. Roke~commonswiki assumed (based on copyright claims)., CC BY-SA 3.0, via Wikimedia Commons]](assets/Oberon_LGA_NSW.png){.lightbox}
 :::
 
 OCSN is a collective of people living in and around the Oberon local government area (LGA) in the Central Tablelands of NSW who are interested in science and in participating in scientific investigation of interesting and/or important aspects of our environment. These include biology and ecology, and the impacts of human activity on those, as well as earth science, astronomy and any other safe and non-harmful scientific investigations members may wish to pursue. A list of current and potential activities and projects can be found in the list on the left. This list may expand or contract depending on the interests of OCSN participants.
 
-Participants in OCSN do not need to be trained scientists -- just having an interest in science and an allegiance to the scientific method (which is embodied in the mission statemnet and rules for the organisation) is enough. All projects and activities undertaken or promoted by OCSN will include trained scientists, acting in a voluntary capacity or, in some cases, in academic roles affiliated with universities and research institutes. The idea is to promote and transmit an appreciation of science and the scientific method to both OCSN participants and the wider community. 
+::: {.aside}
+![A visualisation of one variant of the scientific method.^[Efbrazil, CC BY-SA 4.0, via Wikimedia Commons]](assets/The_Scientific_Method.png)
+:::
 
+Participants in OCSN do not need to be trained scientists -- just having an interest in science and an allegiance to the [scientific method](https://en.wikipedia.org/wiki/Scientific_method) (which is embodied in the [mission statement](ocsn_mission_statement.html) and [rules of association](ocsn_rules_of_association.html) for the organisation) is enough. All projects and activities undertaken or promoted by OCSN will include trained scientists, acting in a voluntary capacity or, in some cases, in academic roles affiliated with universities and research institutes. The idea is to promote and transmit an appreciation of science and the scientific method to both OCSN participants and the wider community. 
 
+::: {.callout-note title="Strictly Non-political" appearance="simple"}
+Oberon Citizen Science Network (OCSN) is a **strictly non-political** organisation that does not and will not have any allegiances with or accept any support from political parties or organisations associated with political parties, nor any lobby group seeking to influence the political process or political decisions, at any level of government. 
+
+Individual members and participants of OCSN may hold such political allegiances or be members of lobby groups, as is their right as individuals, but they must not represent such views or allegiances as those of OCSN. Please see the [OCSN Mission Statement](mission_statement.html) and the [OCSN Rules of Association](rules_of_association.html) for more details.
+:::
+
+With that out of the way, please do read on using the link below or the links at the left to learn more about OCSN and its aims and potential activities.

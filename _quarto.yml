@@ -7,18 +7,27 @@ website:
   page-navigation: true
   reader-mode: true
   navbar:
+    background: primary
+    search: true
     tools:
       - icon: twitter
         href: https://twitter.com
       - icon: github
         menu:
           - text: Source Code
-            url:  https://code.com
-          - text: Report a Bug
-            url:  https://bugs.com
+            url:  https://github.com/oberon-citizen-science/website
+          - text: Report a Error
+            url:  https://github.com/oberon-citizen-science/website/issues
+    left:
+      - text: "News"
+        file: news.qmd
+      - text: "Blog posts"
+        file: blog_posts.qmd
+      - text: "Register your interest"
+        file: register_interest.qmd
   sidebar:
     style: "floating"
-    search: true
+    search: false
     logo: assets/ocsen.png
     contents:
       - section: "Introductions"
@@ -27,8 +36,12 @@ website:
             file: index.qmd
           - text: "What is Citizen Science?"
             file: what_is_citizen_science.qmd
-          - text: "OCSN Mission Statement"
-            file: ocs_mission_statement.qmd
+          - text: "Mission Statement"
+            file: ocsn_mission_statement.qmd
+          - text: "Rules of Association"
+            file: ocsn_rules_of_association.qmd
+          - text: "Code of Conduct"
+            file: ocsn_code_of_conduct.qmd
       - section: "Activities"
       - section: "Sensor Network Projects"
         contents:
@@ -37,6 +50,8 @@ website:
           - text: "Bird call detection and counting"
             file: bird-net.qmd
 fig-cap-location: bottom
+reference-location: section
+footnotes-hover: true
 format:
   html:
     theme: united
