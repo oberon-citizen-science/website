@@ -1,5 +1,6 @@
 ---
 title: "Welcome to the Oberon Citizen Science Network (OCSN) website"
+lightbox: true
 ---
 
 This is the website for the recently formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**).
@@ -16,12 +17,12 @@ OCSN is a collective of people living in and around the Oberon local government 
 ![A visualisation of one variant of the scientific method.^[Efbrazil, CC BY-SA 4.0, via Wikimedia Commons]](assets/The_Scientific_Method.png)
 :::
 
-Participants in OCSN do not need to be trained scientists -- just having an interest in science and an allegiance to the [scientific method](https://en.wikipedia.org/wiki/Scientific_method) (which is embodied in the [mission statement](ocsn_mission_statement.html) and [rules of association](ocsn_rules_of_association.html) for the organisation) is enough. All projects and activities undertaken or promoted by OCSN will include trained scientists, acting in a voluntary capacity or, in some cases, in academic roles affiliated with universities and research institutes. The idea is to promote and transmit an appreciation of science and the scientific method to both OCSN participants and the wider community. 
+Participants in OCSN do not need to be trained scientists -- just having an interest in science and an allegiance to the [scientific method](https://en.wikipedia.org/wiki/Scientific_method) (which is embodied in the [OCSN Mission Statement](ocsn_mission_statement.html) and [OCSN Articles of Association](ocsn_articles_of_association.html) for the organisation) is enough. All projects and activities undertaken or promoted by OCSN will include trained scientists, acting in a voluntary capacity or, in some cases, in academic roles affiliated with universities and research institutes. The idea is to promote and transmit an appreciation of science and the scientific method to both OCSN participants and the wider community. 
 
 ::: {.callout-note title="Strictly Non-political" appearance="simple"}
 Oberon Citizen Science Network (OCSN) is a **strictly non-political** organisation that does not and will not have any allegiances with or accept any support from political parties or organisations associated with political parties, nor any lobby group seeking to influence the political process or political decisions, at any level of government. 
 
-Individual members and participants of OCSN may hold such political allegiances or be members of lobby groups, as is their right as individuals, but they must not represent such views or allegiances as those of OCSN. Please see the [OCSN Mission Statement](mission_statement.html) and the [OCSN Rules of Association](rules_of_association.html) for more details.
+Individual members and participants of OCSN may hold such political allegiances or be members of lobby groups, as is their right as individuals, but they must not represent such views or allegiances as those of OCSN. Please see the [OCSN Mission Statement](ocsn_mission_statement.html) and the [OCSN Articles of Association](ocsn_articles_of_association.html) for more details.
 :::
 
 With that out of the way, please do read on using the link below or the links at the left to learn more about OCSN and its aims and potential activities.

@@ -20,35 +20,35 @@ website:
             url:  https://github.com/oberon-citizen-science/website/issues
     left:
       - text: "News"
-        file: news.qmd
+        file: news.html
       - text: "Blog posts"
-        file: blog_posts.qmd
+        file: blog_posts.html
       - text: "Register your interest"
-        file: register_interest.qmd
+        file: register_interest.html
   sidebar:
     style: "floating"
     search: false
-    logo: assets/ocsen.png
+    logo: assets/ocsn_mascots.png
     contents:
       - section: "Introductions"
         contents:
           - text: "Welcome to OCSN"
-            file: index.qmd
+            file: index.html
           - text: "What is Citizen Science?"
-            file: what_is_citizen_science.qmd
+            file: what_is_citizen_science.html
           - text: "Mission Statement"
-            file: ocsn_mission_statement.qmd
-          - text: "Rules of Association"
-            file: ocsn_rules_of_association.qmd
+            file: ocsn_mission_statement.html
+          - text: "Articles of Association"
+            file: ocsn_articles_of_association.html
           - text: "Code of Conduct"
-            file: ocsn_code_of_conduct.qmd
+            file: ocsn_code_of_conduct.html
       - section: "Activities"
       - section: "Sensor Network Projects"
         contents:
           - text: "Seismic and infrasound monitoring"
-            file: shake_and_boom.qmd
+            file: shake_and_boom.html
           - text: "Bird call detection and counting"
-            file: bird-net.qmd
+            file: bird-net.html
 fig-cap-location: bottom
 reference-location: section
 footnotes-hover: true
