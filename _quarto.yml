@@ -30,7 +30,7 @@ website:
       - text: "Blog posts"
         file: blog_posts.html
       - text: "Register your interest"
-        file: register_interest.html
+        url: https://forms.gle/6HDzYWCqcRTkBsJ69
   sidebar:
     style: "floating"
     search: false
