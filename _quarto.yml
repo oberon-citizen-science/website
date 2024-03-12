@@ -19,6 +19,12 @@ website:
           - text: Report a Error
             url:  https://github.com/oberon-citizen-science/website/issues
     left:
+      - text: "About"
+        menu:
+          - text: "Mission Statement"
+            file: ocsn_mission_statement.html
+          - text: "Founders and Office Bearers"
+            file: founders_and_office_bearers.html
       - text: "News"
         file: news.html
       - text: "Blog posts"
@@ -42,6 +48,8 @@ website:
             file: ocsn_articles_of_association.html
           - text: "Code of Conduct"
             file: ocsn_code_of_conduct.html
+          - text: "Privacy Policy"
+            file: ocsn_privacy_policy.html
       - section: "Activities"
       - section: "Sensor Network Projects"
         contents:

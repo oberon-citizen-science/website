@@ -1,6 +1,5 @@
 ---
 title: "What is Citizen Science?"
-author: "Tim Churches"
 lightbox: true
 ---
 
@@ -21,10 +20,24 @@ Citizen science (also known as community science, crowd science, crowd-sourced s
 ![OSCN star gazing activities](assets/ocsn_astronomy.png)
 :::
 
-Citizen science has been around since the 1980s, and today there are thousands of citizen science groups around the world, working on and participating in science projects and investigations ranging from...
+Citizen science has been around since the 1980s, and today there are thousands of citizen science groups around the world, working on and participating in science projects and investigations ranging from collecting data on the local environment and wildlife to very ambitious projects such as [CubeSats](https://csps.aerospace.org/sites/default/files/2021-08/Singh_CitizenSpace_03082019.pdf)[^1].
+
+::: {.aside}
+Closely related to **citizen science** is the concept of [**open science**](https://en.wikipedia.org/wiki/Open_science). Open science is the movement to make scientific research (including publications, data, physical samples, and software) and its dissemination accessible to all levels of society, amateur or professional. Open science is transparent and accessible knowledge that is shared and developed through collaborative networks.
+
+![Pillars of the Open Science according to UNESCO's 2021 Open Science recommendation.[^2]](assets/UNESCO-Open_science-pillars-en.png)
+:::
+
+### Citizen Science projects and activities
+
+Traditionally citizen science projects have focussed on monitoring and collecting data on the environment and local ecologies, with an emphasis on flora and fauna (plants and animals). We see such activities as key components 
 
 ::: {.aside}
 ![FrogID activities](assets/ocsn_frogid.png)
 :::
 
 {{< video https://youtu.be/8cv30CcsFjQ?si=IxtULDs1imSmojn2 >}}
+
+[^1]: Sending an OCSN CubeSat into space is probably a bit ambitious at this stage, but atmospheric science projects using drones and ballons are not out-of-the-question, such as this [model CubeSat](https://learn.auststem.com.au/model-cubesat/) designed by [AustSTEM](https://learn.auststem.com.au).
+
+[^2]: UNESCO.org, CC BY-SA 4.0, via Wikimedia Commons

@@ -21,6 +21,12 @@ OCSN will pursue its mission by:
 * encouraging OCSN members to participate individually or as a group in citizen science projects and initiatives run by other organisations -- for example, the excellent [FrogID project](https://www.frogid.net.au) run by the Australian Museum. 
 * engaging with the local community through outreach to schools and by organising occasional community events 
 * using appropriate web, social media and mainstream media channels to publicise OCSN activities and disseminate the results of the projects it organises
-* affiliating and co-operating with other appropriate citizen science organisations, both nationally and internationally, such as the [Australian Citizen Scince Association](https://citizenscience.org.au)
-* seeking funding from government and approporiate philanthropic sources for its activities
+* affiliating and co-operating with other appropriate citizen science organisations, both nationally and internationally, such as the [Australian Citizen Science Association](https://citizenscience.org.au)
+* seeking funding from government and approporiate philanthropic sources as well as sponsorship from local businesses for its activities
 
+::: {.aside}
+We hope to be able to organise (and obtain funding for) some "**Arts & Science**" events at Oberon's wonderful _art deco_ [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in cooporation with its owners, Lucy and Johnny East.
+![The Malachi Gilmore Hall, Oberon](assets/malachi.jpg)[^2]
+:::
+
+[^2]: Mattinbgn (talk · contribs), CC BY 3.0 via Wikimedia Commons
