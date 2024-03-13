@@ -2,6 +2,16 @@
 title: "Astronomy"
 ---
 
+The Oberon LGA is a fantastic venue for all types of amateur astronomy for three reasons:
+
+* there are many "dark sites", free of light pollution from cities, townships and even street lamps. Absence of light pollution makes astronomy much easier, for obvious reasons. Light pollution is measured on the [Bortle dark-sky scale](https://en.wikipedia.org/wiki/Bortle_scale), from 1 (absolutely dark) to 9 (inner city lights in a large brightly-lit city such as Tokyo). Outside of the towns, much or Oberon LGA is Bortle class 3 or lower, and many properties outside the towns are Bortle class 2 or even 1, which is highly-prized by amateur astronomers.
+* the elevation of much of the Oberon LGA mostly ranges between 1000m and 1300m above sea level. This means there is at least a kilometre less atmosphere to peer through to see distant stars and galaxies.
+* Atmospheric distortion due to warm air rising is the enemy of astronomers. Oberon LGA has a cold climate, and during autumn and winter, the air can be remarkably cold and still (at least sometimes).
+
+Together these three factors contribute to what astronomers call **"good seeing** conditions, and the Oberon area possesses all three.
+
+To be completed...
+
 ::: {.aside}
 ![OCSN star gazing activities](assets/ocsn_astronomy.png)
 :::
