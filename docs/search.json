@@ -4,12 +4,7 @@
     "href": "meteors.html",
     "title": "Meteor detection and tracking",
     "section": "",
-    "text": "Detecting meteors",
-    "crumbs": [
-      "News",
-      "Potential Sensor Networks & Projects",
-      "Meteor detection and tracking"
-    ]
+    "text": "Detecting meteors"
   },
   {
     "objectID": "birdnet.html",
@@ -19,7 +14,7 @@
     "text": "Another potential project for OCSN is the establishment of a BirdNET bird call monitoring network to collect data on the prevalence of various bird species in the Oberon LGA.\nBirdNET is a citizen science initiative developed at US Cornell University Laboratory of Ornithology and at Chemnitz University of Technology in Germany. It uses advanced machine learning models to automatically identify bird species from sound recordings collected by citizen scientists around the world. Although it cannot identify every bird species from their calls (and some birds have no calls), it nonetheless has quite good coverage of Australian bird species.\nRecordings can be collected via an app running on a smartphone, using the built-in microphone or a better external microphone, or they can be collected by a small, low-power Raspberry Pi computer (not much bigger than two decks of playing cards) set up in a fixed location. Old (but not too old), no longer needed smartphones installed in fixed locations can also be used.\nReady-made and packaged Birdweather PUC devices are available for about AU$400, as shown below. This is probably the easiest but also the most expensive way to establish a BirdNET listening station that automatically records bird calls, identifies the species of bird and uploads the data to an international citizen science database.\n\n\n\nBirdWeather PUC\n\n\nIt is also possible to construct your own BirdNET listening station using a Raspberry Pi computer, and external microphone and the free, open-source BirdNET software package. The steps involved are described in detail in this blog post from Core Electronics, a very good hobby electronics supplier located in Gosford, just north of Sydney. Below is a great video from Core Electronics explaining how to set up a BirdNET-Pi listening station:\n\nAs mentioned, the third option is to use a smartphone which is no longer required.\nThe first steps for an OCSN project would be to quickly evaluate these three options at a few listening sites provided by OCSN members.\nFollowing this evaluation, a larger scale roll-out of a BirdNET sensor network in the Oberon LGA on private members’ properties. At the moment, there are no BirdNET stations in or around Oberon – there are a few in the Blue Mountains, as shown in this screencast of the global BirdNET map:",
     "crumbs": [
       "News",
-      "Potential Sensor Networks & Projects",
+      "Potential Sensor Networks",
       "Bird call detection and counting"
     ]
   },
@@ -31,7 +26,7 @@
     "text": "Another potential project for OCSN is the establishment of a BirdNET bird call monitoring network to collect data on the prevalence of various bird species in the Oberon LGA.\nBirdNET is a citizen science initiative developed at US Cornell University Laboratory of Ornithology and at Chemnitz University of Technology in Germany. It uses advanced machine learning models to automatically identify bird species from sound recordings collected by citizen scientists around the world. Although it cannot identify every bird species from their calls (and some birds have no calls), it nonetheless has quite good coverage of Australian bird species.\nRecordings can be collected via an app running on a smartphone, using the built-in microphone or a better external microphone, or they can be collected by a small, low-power Raspberry Pi computer (not much bigger than two decks of playing cards) set up in a fixed location. Old (but not too old), no longer needed smartphones installed in fixed locations can also be used.\nReady-made and packaged Birdweather PUC devices are available for about AU$400, as shown below. This is probably the easiest but also the most expensive way to establish a BirdNET listening station that automatically records bird calls, identifies the species of bird and uploads the data to an international citizen science database.\n\n\n\nBirdWeather PUC\n\n\nIt is also possible to construct your own BirdNET listening station using a Raspberry Pi computer, and external microphone and the free, open-source BirdNET software package. The steps involved are described in detail in this blog post from Core Electronics, a very good hobby electronics supplier located in Gosford, just north of Sydney. Below is a great video from Core Electronics explaining how to set up a BirdNET-Pi listening station:\n\nAs mentioned, the third option is to use a smartphone which is no longer required.\nThe first steps for an OCSN project would be to quickly evaluate these three options at a few listening sites provided by OCSN members.\nFollowing this evaluation, a larger scale roll-out of a BirdNET sensor network in the Oberon LGA on private members’ properties. At the moment, there are no BirdNET stations in or around Oberon – there are a few in the Blue Mountains, as shown in this screencast of the global BirdNET map:",
     "crumbs": [
       "News",
-      "Potential Sensor Networks & Projects",
+      "Potential Sensor Networks",
       "Bird call detection and counting"
     ]
   },
@@ -43,7 +38,7 @@
     "text": "QUT Ecoacoustics and Ecosounds.org\nThere is also an Australian project undertaken by the Ecoacoustics research group at QUT (Queensland University of Technology). Collaboration with that group and use of their software bird call system may also be possible, using the same hardware listening stations used for BirdNET. Please see the ecosounds.org web site for more details. The software system developed is now maintained by Open Ecoacoustics, which is also a possible partner for projects with OCSN. There is a registry of already trained automated AI recognisers for Australian bird species, and it is possible to train more.",
     "crumbs": [
       "News",
-      "Potential Sensor Networks & Projects",
+      "Potential Sensor Networks",
       "Bird call detection and counting"
     ]
   },
@@ -55,7 +50,7 @@
     "text": "Bird populations and Wind Farms\nAs mentioned on the FrogID page, some large wind farm developments are proposed for Oberon LGA. One concern or consideration when evaluating such proposals is the effect which the wind farm construction and then the wind turbines themselves may have only the local environment and ecology. In order to assess such impacts, it is vital to record reliable, scientifically valid data on the prevalence of various bird species in areas around proposed wind farm sites. Ideally baseline data should be collected, before any construction starts, then comparable data during the construction phase and then during operation of these facilities, on an ongoing basis.\nIt appears that detailed bird species prevalence data has not been collected for the proposed wind farm site at Paling Yards, with the EIS relying on existing and very sparse ecology databases. This is a deficiency and data gap which ACSN members, in conjunction with university-based academic partners such as the QUT Ecoacoustics group, can potentially address.\n\n\n\nBirdWeather PUC",
     "crumbs": [
       "News",
-      "Potential Sensor Networks & Projects",
+      "Potential Sensor Networks",
       "Bird call detection and counting"
     ]
   },
@@ -168,6 +163,42 @@
     ]
   },
   {
+    "objectID": "shake_and_boom.html",
+    "href": "shake_and_boom.html",
+    "title": "Shake & Boom",
+    "section": "",
+    "text": "Recording of the earthquake south of Leuro on 8 March 2024, as captured near Oberon by Alan Sheehan using a raspberry Shake & Boom device",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks",
+      "Seismic and infrasound monitoring"
+    ]
+  },
+  {
+    "objectID": "shake_and_boom.html#meteor-detection",
+    "href": "shake_and_boom.html#meteor-detection",
+    "title": "Shake & Boom",
+    "section": "Meteor Detection",
+    "text": "Meteor Detection\n\n\n\n\n\nDetecting meteors",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks",
+      "Seismic and infrasound monitoring"
+    ]
+  },
+  {
+    "objectID": "shake_and_boom.html#monitoring-infrasound-sources-including-wind-farms",
+    "href": "shake_and_boom.html#monitoring-infrasound-sources-including-wind-farms",
+    "title": "Shake & Boom",
+    "section": "Monitoring infrasound sources including wind farms",
+    "text": "Monitoring infrasound sources including wind farms\n\n\n\nRecording of the earthquake south of Leuro on 8 March 2024, as captured near Oberon by Alan Sheehan using a raspberry Shake & Boom device\nDetecting meteors",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks",
+      "Seismic and infrasound monitoring"
+    ]
+  },
+  {
     "objectID": "what_is_citizen_science.html",
     "href": "what_is_citizen_science.html",
     "title": "What is Citizen Science?",
@@ -191,7 +222,7 @@
     "href": "astronomy.html",
     "title": "Astronomy",
     "section": "",
-    "text": "The Oberon LGA is a fantastic venue for all types of amateur astronomy for three reasons:\n\nthere are many “dark sites”, free of light pollution from cities, townships and even street lamps. Absence of light pollution makes astronomy much easier, for obvious reasons. Light pollution is measured on the Bortle dark-sky scale, from 1 (absolutely dark) to 9 (inner city lights in a large brightly-lit city such as Tokyo). Outside of the towns, much or Oberon LGA is Bortle class 3 or lower, and many properties outside the towns are Bortle class 2 or even 1, which is highly-prized by amateur astronomers.\nthe elevation of much of the Oberon LGA mostly ranges between 1000m and 1300m above sea level. This means there is at least a kilometre less atmosphere to peer through to see distant stars and galaxies.\nAtmospheric distortion due to warm air rising is the enemy of astronomers. Oberon LGA has a cold climate, and during autumn and winter, the air can be remarkably cold and still (at least sometimes).\n\nTogether these three factors contribute to what astronomers call “good seeing conditions, and the Oberon area possesses all three.\nTo be completed…\n\n\n\n\n\n\n\n\nOCSN star gazing activities",
+    "text": "The Oberon LGA is a fantastic venue for all types of amateur astronomy for three reasons:\n\n\n\n\n\nOCSN star gazing activities\n\n\n\nthere are many “dark sites”, free of light pollution from cities, townships and even street lamps. Absence of light pollution makes astronomy much easier, for obvious reasons. Light pollution is measured on the Bortle dark-sky scale, from 1 (absolutely dark) to 9 (inner city lights in a large brightly-lit city such as Tokyo). Outside of the towns, much or Oberon LGA is Bortle class 3 or lower, and many properties outside the towns are Bortle class 2 or even 1, which is highly-prized by amateur astronomers.\nthe elevation of much of the Oberon LGA mostly ranges between 1000m and 1300m above sea level. This means there is at least a kilometre less atmosphere to peer through to see distant stars and galaxies.\nAtmospheric distortion due to warm air rising is the enemy of astronomers. Oberon LGA has a cold climate, and during autumn and winter, the air can be remarkably cold and still (at least sometimes).\n\nTogether these three factors contribute to what astronomers call “good seeing conditions, and the Oberon area possesses all three.\nTo be completed…",
     "crumbs": [
       "News",
       "Potential Activities",

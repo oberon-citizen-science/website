@@ -102,12 +102,66 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-about">    
         <li>
+    <a class="dropdown-item" href="/index.html">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/what_is_citizen_science.html">
+ <span class="dropdown-text">What is Citizen Science?</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="/ocsn_mission_statement.html">
  <span class="dropdown-text">Mission Statement</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/founders_and_office_bearers.html">
- <span class="dropdown-text">Founders and Office Bearers</span></a>
+    <a class="dropdown-item" href="/ocsn_articles_of_association.html">
+ <span class="dropdown-text">Articles of Association</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/ocsn_code_of_conduct.html">
+ <span class="dropdown-text">Code of Conduct</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/ocsn_privacy_policy.html">
+ <span class="dropdown-text">Privacy Policy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Activities</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-activities">    
+        <li>
+    <a class="dropdown-item" href="/frogid.html">
+ <span class="dropdown-text">FrogID</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/astronomy.html">
+ <span class="dropdown-text">Astronomy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sensor-networks" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sensor Networks</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sensor-networks">    
+        <li>
+    <a class="dropdown-item" href="/shake_and_boom.html">
+ <span class="dropdown-text">Seismic and infrasound monitoring</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/birdnet.html">
+ <span class="dropdown-text">Bird call detection and counting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/local_weather.html">
+ <span class="dropdown-text">Local weather monitoring</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/lorawan.html">
+ <span class="dropdown-text">Oberon LGA LoRaWAN</span></a>
   </li>  
     </ul>
   </li>
@@ -245,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Potential Sensor Networks &amp; Projects</span></a>
+ <span class="menu-text">Potential Sensor Networks</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -265,14 +319,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/meteors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Meteor detection and tracking</span></a>
+  <a href="/local_weather.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Local weather monitoring</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/wind_turbine_infrasound.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Wind turbine infrasound monitoring</span></a>
+  <a href="/lorawan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oberon LGA LoRaWAN</span></a>
   </div>
 </li>
       </ul>
@@ -311,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
 <p>You may want to try searching to find the page’s new location by using the search icon (magnifying glass) at the upper right.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="/assets/ocsn_404.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="404 error"><img src="/assets/ocsn_404.png" class="img-fluid figure-img" style="width:60.0%" alt="404 error"></a></p>
+<p><a href="/assets/ocsn_404.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="404 error"><img src="/assets/ocsn_404.png" class="img-fluid figure-img" style="width:60.0%" alt="404 error"></a></p>
 <figcaption>404 error</figcaption>
 </figure>
 </div>
@@ -739,7 +793,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

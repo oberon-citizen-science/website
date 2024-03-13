@@ -1,0 +1,16 @@
+---
+title: "Shake & Boom"
+lightbox: true
+---
+
+![Recording of the earthquake south of Leuro on 8 March 2024, as captured near Oberon by Alan Sheehan using a raspberry Shake & Boom device](assets/GIK_JWva4AAf-q7.jpeg)
+
+## Meteor Detection
+
+::: {.aside}
+![Detecting meteors](assets/ocsn_meteors.png)
+:::
+
+## Monitoring infrasound sources including wind farms
+
+

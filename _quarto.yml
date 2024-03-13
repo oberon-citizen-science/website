@@ -21,10 +21,34 @@ website:
     left:
       - text: "About"
         menu:
+          - text: "Introduction"
+            file: index.html
+          - text: "What is Citizen Science?"
+            file: what_is_citizen_science.html
           - text: "Mission Statement"
             file: ocsn_mission_statement.html
-          - text: "Founders and Office Bearers"
-            file: founders_and_office_bearers.html
+          - text: "Articles of Association"
+            file: ocsn_articles_of_association.html
+          - text: "Code of Conduct"
+            file: ocsn_code_of_conduct.html
+          - text: "Privacy Policy"
+            file: ocsn_privacy_policy.html
+      - text: "Activities"
+        menu:
+          - text: "FrogID"
+            file: frogid.html
+          - text: "Astronomy"
+            file: astronomy.html
+      - text: "Sensor Networks"
+        menu:
+          - text: "Seismic and infrasound monitoring"
+            file: shake_and_boom.html
+          - text: "Bird call detection and counting"
+            file: birdnet.html
+          - text: "Local weather monitoring"
+            file: local_weather.html
+          - text: "Oberon LGA LoRaWAN"
+            file: lorawan.html
       - text: "News"
         file: news.html
       - text: "Blog posts"
@@ -58,16 +82,16 @@ website:
             file: frogid.html
           - text: "Astronomy"
             file: astronomy.html
-      - section: "Potential Sensor Networks & Projects"
+      - section: "Potential Sensor Networks"
         contents:
           - text: "Seismic and infrasound monitoring"
             file: shake_and_boom.html
           - text: "Bird call detection and counting"
             file: birdnet.html
-          - text: "Meteor detection and tracking"
-            file: meteors.html
-          - text: "Wind turbine infrasound monitoring"
-            file: wind_turbine_infrasound.html
+          - text: "Local weather monitoring"
+            file: local_weather.html
+          - text: "Oberon LGA LoRaWAN"
+            file: lorawan.html
 fig-cap-location: bottom
 reference-location: section
 footnotes-hover: true
