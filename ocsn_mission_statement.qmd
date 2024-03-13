@@ -1,5 +1,5 @@
 ---
-title: "OCSN Mission Statement"
+title: "OCSN Mission Statement and principles"
 lightbox: true
 ---
 
@@ -7,13 +7,19 @@ lightbox: true
 ![](assets/mission_possible.png)
 :::
 
+## Mission Statement
+
 The **Oberon Citizen Science Network** (OCSN) exists to promote both interest in science and technology amongst residents of Oberon Local Government Area, and active participation in local science projects and scientific endeavour. It is open to everyone who is committed to the scientific method, regardless of their training and educational background. OCSN will also adhere to the principles of [**open science**](https://en.wikipedia.org/wiki/Open_science), in which all data, data analysis methods and findings are made publicly available, regardless of what the data show. OCSN members and participants are interested in discovering the truth through science, not in confirming already-held beliefs and prejudices -- even when the truth may be uncomfortable.
 
 ::: {.callout-note title="Strictly Non-political" appearance="simple"}
-Oberon Citizen Science Network (OCSN) is a **strictly non-political** organisation that does not and will not have any allegiances with or accept any support from political parties or organisations associated with political parties, nor any lobby group seeking to influence the political process or political decisions, at any level of government.[^1] 
+Oberon Citizen Science Network (OCSN) is a **strictly non-political** organisation that does not and will not have any allegiances with or accept any support from political parties or organisations associated with political parties, nor any lobby group seeking to influence the political process or political decisions, at any level of government. 
 :::
 
-[^1]: Of course, individual members and participants of OCSN may hold political allegiances or be members of political parties or lobby groups, as is their right as individuals, but they must not represent such views or allegiances as those of OCSN. Please see the [OCSN Articles of Association](ocsn_articles_of_association.html) and [OCSN Code of Conduct](ocsn_code_of_conduct.html) for more details.
+::: {.aside}
+Of course, individual members and participants of OCSN may hold political allegiances or be members of political parties or lobby groups, as is their right as individuals, but they must not represent such views or allegiances as those of OCSN. Please see the [OCSN Articles of Association](ocsn_articles_of_association.html) and [OCSN Code of Conduct](ocsn_code_of_conduct.html) for more details.
+:::
+
+## Methods
 
 OCSN will pursue its mission by:
 
@@ -28,5 +34,27 @@ OCSN will pursue its mission by:
 We hope to be able to organise (and obtain funding for) some "**Arts & Science**" events at Oberon's wonderful _art deco_ [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in cooporation with its owners, Lucy and Johnny East.
 ![The Malachi Gilmore Hall, Oberon](assets/malachi.jpg)[^2]
 :::
+
+## Ten Principles of Citizen Science
+
+OCSN seeks to adhere to and implement the ten principles of citizen science developed by researchers at a number of European and British universities, and adopted by the Australian Citizen Science Association. The formal paper describing the principles is available [here](https://discovery.ucl.ac.uk/id/eprint/10058422/1/Citizen-Science.pdf), but in a nutshell they are:
+
+1. Citizen science projects actively involve citizens in scientific endeavour that generates new knowledge or understanding. Citizens may act as contributors, collaborators, or as project leader and have a meaningful role in the project.
+1. Citizen science projects have a genuine science outcome. For example, answering a research question, informing conservation action, or facilitating policy decisions.
+1. Citizen science provides benefits to both science and society. Benefits may include learning opportunities, personal enjoyment, social benefits, the publication of research outputs, contributing to scientific evidence that can influence policy on many scales (locally, nationally, and internationally), and connecting the wider community with science.
+1. Citizen scientists may participate in various stages of the scientific process. This may include developing research questions, designing methods, gathering and analysing data, and communicating results.
+1. Citizen scientists receive feedback from the project. For example, how their data are being used and the research, policy or societal outcomes.
+1. Citizen science, as with all forms of scientific inquiry, has limitations and biases that should be considered and controlled for. However, unlike traditional research approaches, citizen science provides greater opportunity for public engagement and participation, increasing accessibility of science in society.
+1. Where possible and suitable, project data and meta-data from citizen science projects are made publicly available and results are published in an open access format. Data sharing may occur during or after the project, unless there are security or privacy concerns that prevent this from occurring.
+1. Citizen scientists are suitably acknowledged by projects. This may include acknowledgement in project communications, result reporting and publications.
+1. Citizen science programs offer a range of benefits and outcomes which should be acknowledged and considered in project evaluation.  Communication and evaluation of projects could include scientific outputs, data quality, participant experience and learning, knowledge sharing, social benefits, capacity building, new ways of science engagement, enhanced stakeholder dialogue, and wider societal or policy impact.
+1. The leaders of citizen science projects take into consideration legal and ethical considerations of the project. These considerations include copyright, intellectual property, data sharing agreements, confidentiality, attribution, participant safety and wellbeing, traditional owner consultation, and the environmental impact of any activities.
+
+### Presentation on the Ten Principles
+
+This is a presentation in 2020 by Dr Sam Illingworth, who teaches science communication at the University of Western Australia:
+
+{{< video https://www.youtube.com/watch?v=jRTT8rqfffQ >}}
+
 
 [^2]: Mattinbgn (talk · contribs), CC BY 3.0 via Wikimedia Commons

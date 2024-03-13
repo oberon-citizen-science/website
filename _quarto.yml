@@ -30,10 +30,12 @@ website:
       - text: "Blog posts"
         file: blog_posts.html
       - text: "Register your interest"
+        target: _blank
         url: https://forms.gle/6HDzYWCqcRTkBsJ69
   sidebar:
     style: "floating"
     search: false
+    pinned: true
     logo: assets/ocsn_mascots.png
     contents:
       - section: "Introductions"
@@ -50,13 +52,22 @@ website:
             file: ocsn_code_of_conduct.html
           - text: "Privacy Policy"
             file: ocsn_privacy_policy.html
-      - section: "Activities"
-      - section: "Sensor Network Projects"
+      - section: "Potential Activities"
+        contents:
+          - text: "FrogID"
+            file: frogid.html
+          - text: "Astronomy"
+            file: astronomy.html
+      - section: "Potential Sensor Networks & Projects"
         contents:
           - text: "Seismic and infrasound monitoring"
             file: shake_and_boom.html
           - text: "Bird call detection and counting"
-            file: bird-net.html
+            file: birdnet.html
+          - text: "Meteor detection and tracking"
+            file: meteors.html
+          - text: "Wind turbine infrasound monitoring"
+            file: wind_turbine_infrasound.html
 fig-cap-location: bottom
 reference-location: section
 footnotes-hover: true

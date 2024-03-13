@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -118,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://forms.gle/6HDzYWCqcRTkBsJ69"> 
+    <a class="nav-link" href="https://forms.gle/6HDzYWCqcRTkBsJ69" target="_blank"> 
 <span class="menu-text">Register your interest</span></a>
   </li>  
 </ul>
@@ -218,13 +217,32 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Activities</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Potential Activities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./frogid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FrogID</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./astronomy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Astronomy</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Sensor Network Projects</span></a>
+ <span class="menu-text">Potential Sensor Networks &amp; Projects</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -238,8 +256,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bird-net.html" class="sidebar-item-text sidebar-link">
+  <a href="./birdnet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bird call detection and counting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./meteors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meteor detection and tracking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wind_turbine_infrasound.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wind turbine infrasound monitoring</span></a>
   </div>
 </li>
       </ul>
@@ -255,6 +285,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#citizen-science-projects-and-activities" id="toc-citizen-science-projects-and-activities" class="nav-link active" data-scroll-target="#citizen-science-projects-and-activities">Citizen Science projects and activities</a></li>
+  <li><a href="#all-ages" id="toc-all-ages" class="nav-link" data-scroll-target="#all-ages">All ages</a></li>
   </ul>
 </nav>
     </div>
@@ -280,15 +311,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/ocsn_meteors.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Detecting meteors"><img src="assets/ocsn_meteors.png" class="img-fluid figure-img" alt="Detecting meteors"></a></p>
-<figcaption>Detecting meteors</figcaption>
-</figure>
-</div>
-</div></div><p><em>Wikipedia</em> defines <a href="https://en.wikipedia.org/wiki/Citizen_science"><strong>citizen science</strong></a> as:</p>
+<p><em>Wikipedia</em> defines <a href="https://en.wikipedia.org/wiki/Citizen_science"><strong>citizen science</strong></a> as:</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -299,50 +322,42 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/ocsn_astronomy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="OSCN star gazing activities"><img src="assets/ocsn_astronomy.png" class="img-fluid figure-img" alt="OSCN star gazing activities"></a></p>
-<figcaption>OSCN star gazing activities</figcaption>
-</figure>
-</div>
-</div></div><p>Citizen science has been around since the 1980s, and today there are thousands of citizen science groups around the world, working on and participating in science projects and investigations ranging from collecting data on the local environment and wildlife to very ambitious projects such as <a href="https://csps.aerospace.org/sites/default/files/2021-08/Singh_CitizenSpace_03082019.pdf">CubeSats</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Citizen science has been around since the 1980s, and today there are thousands of citizen science groups around the world, working on and participating in science projects and investigations ranging from collecting data on the local environment and wildlife to very ambitious projects such as <a href="https://csps.aerospace.org/sites/default/files/2021-08/Singh_CitizenSpace_03082019.pdf">CubeSats</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Closely related to <strong>citizen science</strong> is the concept of <a href="https://en.wikipedia.org/wiki/Open_science"><strong>open science</strong></a>. Open science is the movement to make scientific research (including publications, data, physical samples, and software) and its dissemination accessible to all levels of society, amateur or professional. Open science is transparent and accessible knowledge that is shared and developed through collaborative networks.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/UNESCO-Open_science-pillars-en.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Pillars of the Open Science according to UNESCO’s 2021 Open Science recommendation."><img src="assets/UNESCO-Open_science-pillars-en.png" class="img-fluid figure-img" alt="Pillars of the Open Science according to UNESCO’s 2021 Open Science recommendation."></a></p>
+<p><a href="assets/UNESCO-Open_science-pillars-en.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Pillars of the Open Science according to UNESCO’s 2021 Open Science recommendation."><img src="assets/UNESCO-Open_science-pillars-en.png" class="img-fluid figure-img" alt="Pillars of the Open Science according to UNESCO’s 2021 Open Science recommendation."></a></p>
 <figcaption>Pillars of the Open Science according to UNESCO’s 2021 Open Science recommendation.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></figcaption>
 </figure>
 </div>
-</div></div><section id="citizen-science-projects-and-activities" class="level3 page-columns page-full">
+</div></div><section id="citizen-science-projects-and-activities" class="level3">
 <h3 class="anchored" data-anchor-id="citizen-science-projects-and-activities">Citizen Science projects and activities</h3>
-<p>Traditionally citizen science projects have focussed on monitoring and collecting data on the environment and local ecologies, with an emphasis on flora and fauna (plants and animals). We see such activities as key components</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/ocsn_frogid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4" title="FrogID activities"><img src="assets/ocsn_frogid.png" class="img-fluid figure-img" alt="FrogID activities"></a></p>
-<figcaption>FrogID activities</figcaption>
-</figure>
-</div>
-</div></div><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/8cv30CcsFjQ?si=IxtULDs1imSmojn2" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-
-
-<div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Detecting meteors</span>
-<span class="glightbox-desc lightbox-desc-2">OSCN star gazing activities</span>
-<span class="glightbox-desc lightbox-desc-3">Pillars of the Open Science according to UNESCO’s 2021 Open Science recommendation.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></span>
-<span class="glightbox-desc lightbox-desc-4">FrogID activities</span>
-</div>
+<p>Traditionally citizen science projects have focussed on monitoring and collecting data on the environment and local ecologies, with an emphasis on flora and fauna (plants and animals). We see such activities as key components of the OCSN program. Some examples of such activities can be found on this web site.</p>
+<p>However, we are also keen for OCSN to undertake some less usual projects, in particular projects which involve establishing a network of automated sensors for various things, which collect data continuously and make those data available through various platforms. On top of such data collection infrastructure, numerous secondary projects involving data analysis can be built. Such projects may be particularly attractive to schools. Some proposed sensor network projects are also described on this web site.</p>
 <aside id="footnotes" class="footnotes footnotes-end-of-section" role="doc-footnote">
 <hr>
 <ol>
 <li id="fn1"><p>Sending an OCSN CubeSat into space is probably a bit ambitious at this stage, but atmospheric science projects using drones and ballons are not out-of-the-question, such as this <a href="https://learn.auststem.com.au/model-cubesat/">model CubeSat</a> designed by <a href="https://learn.auststem.com.au">AustSTEM</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>UNESCO.org, CC BY-SA 4.0, via Wikimedia Commons<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>UNESCO.org, CC BY-SA 4.0, via Wikimedia Commons<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+</section>
+<section id="all-ages" class="level3">
+<h3 class="anchored" data-anchor-id="all-ages">All ages</h3>
+<p>The intention is for OCSN to promote, facilitate and host projects and activities which appeal to all ages, including children.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Here is a cute video by the Australian Broadcasting Corporation <em>Behind The News</em> team on young participants in citizen science initiatives.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/8cv30CcsFjQ?si=IxtULDs1imSmojn2" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+
+
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Pillars of the Open Science according to UNESCO’s 2021 Open Science recommendation.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></span>
+</div>
+<aside id="footnotes" class="footnotes footnotes-end-of-section" role="doc-footnote">
+<hr>
+<ol start="3">
+<li id="fn3"><p>OCSN will adopt and enforce a suitable <a href="ocsn_working_with_children.html">Working With Children Policy</a> covering all its activities.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>UNESCO.org, CC BY-SA 4.0, via Wikimedia Commons<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 </section>
@@ -777,7 +792,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

@@ -1,0 +1,7 @@
+---
+title: "Meteor detection and tracking"
+---
+
+::: {.aside}
+![Detecting meteors](assets/ocsn_meteors.png)
+:::

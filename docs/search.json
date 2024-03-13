@@ -1,5 +1,307 @@
 [
   {
+    "objectID": "meteors.html",
+    "href": "meteors.html",
+    "title": "Meteor detection and tracking",
+    "section": "",
+    "text": "Detecting meteors",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks & Projects",
+      "Meteor detection and tracking"
+    ]
+  },
+  {
+    "objectID": "birdnet.html",
+    "href": "birdnet.html",
+    "title": "Bird call sensor network",
+    "section": "",
+    "text": "Another potential project for OCSN is the establishment of a BirdNET bird call monitoring network to collect data on the prevalence of various bird species in the Oberon LGA.\nBirdNET is a citizen science initiative developed at US Cornell University Laboratory of Ornithology and at Chemnitz University of Technology in Germany. It uses advanced machine learning models to automatically identify bird species from sound recordings collected by citizen scientists around the world. Although it cannot identify every bird species from their calls (and some birds have no calls), it nonetheless has quite good coverage of Australian bird species.\nRecordings can be collected via an app running on a smartphone, using the built-in microphone or a better external microphone, or they can be collected by a small, low-power Raspberry Pi computer (not much bigger than two decks of playing cards) set up in a fixed location. Old (but not too old), no longer needed smartphones installed in fixed locations can also be used.\nReady-made and packaged Birdweather PUC devices are available for about AU$400, as shown below. This is probably the easiest but also the most expensive way to establish a BirdNET listening station that automatically records bird calls, identifies the species of bird and uploads the data to an international citizen science database.\n\n\n\nBirdWeather PUC\n\n\nIt is also possible to construct your own BirdNET listening station using a Raspberry Pi computer, and external microphone and the free, open-source BirdNET software package. The steps involved are described in detail in this blog post from Core Electronics, a very good hobby electronics supplier located in Gosford, just north of Sydney. Below is a great video from Core Electronics explaining how to set up a BirdNET-Pi listening station:\n\nAs mentioned, the third option is to use a smartphone which is no longer required.\nThe first steps for an OCSN project would be to quickly evaluate these three options at a few listening sites provided by OCSN members.\nFollowing this evaluation, a larger scale roll-out of a BirdNET sensor network in the Oberon LGA on private members’ properties. At the moment, there are no BirdNET stations in or around Oberon – there are a few in the Blue Mountains, as shown in this screencast of the global BirdNET map:",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks & Projects",
+      "Bird call detection and counting"
+    ]
+  },
+  {
+    "objectID": "birdnet.html#birdnet",
+    "href": "birdnet.html#birdnet",
+    "title": "Bird call sensor network",
+    "section": "",
+    "text": "Another potential project for OCSN is the establishment of a BirdNET bird call monitoring network to collect data on the prevalence of various bird species in the Oberon LGA.\nBirdNET is a citizen science initiative developed at US Cornell University Laboratory of Ornithology and at Chemnitz University of Technology in Germany. It uses advanced machine learning models to automatically identify bird species from sound recordings collected by citizen scientists around the world. Although it cannot identify every bird species from their calls (and some birds have no calls), it nonetheless has quite good coverage of Australian bird species.\nRecordings can be collected via an app running on a smartphone, using the built-in microphone or a better external microphone, or they can be collected by a small, low-power Raspberry Pi computer (not much bigger than two decks of playing cards) set up in a fixed location. Old (but not too old), no longer needed smartphones installed in fixed locations can also be used.\nReady-made and packaged Birdweather PUC devices are available for about AU$400, as shown below. This is probably the easiest but also the most expensive way to establish a BirdNET listening station that automatically records bird calls, identifies the species of bird and uploads the data to an international citizen science database.\n\n\n\nBirdWeather PUC\n\n\nIt is also possible to construct your own BirdNET listening station using a Raspberry Pi computer, and external microphone and the free, open-source BirdNET software package. The steps involved are described in detail in this blog post from Core Electronics, a very good hobby electronics supplier located in Gosford, just north of Sydney. Below is a great video from Core Electronics explaining how to set up a BirdNET-Pi listening station:\n\nAs mentioned, the third option is to use a smartphone which is no longer required.\nThe first steps for an OCSN project would be to quickly evaluate these three options at a few listening sites provided by OCSN members.\nFollowing this evaluation, a larger scale roll-out of a BirdNET sensor network in the Oberon LGA on private members’ properties. At the moment, there are no BirdNET stations in or around Oberon – there are a few in the Blue Mountains, as shown in this screencast of the global BirdNET map:",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks & Projects",
+      "Bird call detection and counting"
+    ]
+  },
+  {
+    "objectID": "birdnet.html#qut-ecoacoustics-and-ecosounds.org",
+    "href": "birdnet.html#qut-ecoacoustics-and-ecosounds.org",
+    "title": "Bird call sensor network",
+    "section": "QUT Ecoacoustics and Ecosounds.org",
+    "text": "QUT Ecoacoustics and Ecosounds.org\nThere is also an Australian project undertaken by the Ecoacoustics research group at QUT (Queensland University of Technology). Collaboration with that group and use of their software bird call system may also be possible, using the same hardware listening stations used for BirdNET. Please see the ecosounds.org web site for more details. The software system developed is now maintained by Open Ecoacoustics, which is also a possible partner for projects with OCSN. There is a registry of already trained automated AI recognisers for Australian bird species, and it is possible to train more.",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks & Projects",
+      "Bird call detection and counting"
+    ]
+  },
+  {
+    "objectID": "birdnet.html#bird-populations-and-wind-farms",
+    "href": "birdnet.html#bird-populations-and-wind-farms",
+    "title": "Bird call sensor network",
+    "section": "Bird populations and Wind Farms",
+    "text": "Bird populations and Wind Farms\nAs mentioned on the FrogID page, some large wind farm developments are proposed for Oberon LGA. One concern or consideration when evaluating such proposals is the effect which the wind farm construction and then the wind turbines themselves may have only the local environment and ecology. In order to assess such impacts, it is vital to record reliable, scientifically valid data on the prevalence of various bird species in areas around proposed wind farm sites. Ideally baseline data should be collected, before any construction starts, then comparable data during the construction phase and then during operation of these facilities, on an ongoing basis.\nIt appears that detailed bird species prevalence data has not been collected for the proposed wind farm site at Paling Yards, with the EIS relying on existing and very sparse ecology databases. This is a deficiency and data gap which ACSN members, in conjunction with university-based academic partners such as the QUT Ecoacoustics group, can potentially address.\n\n\n\nBirdWeather PUC",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks & Projects",
+      "Bird call detection and counting"
+    ]
+  },
+  {
+    "objectID": "ocsn_mission_statement.html#mission-statement",
+    "href": "ocsn_mission_statement.html#mission-statement",
+    "title": "OCSN Mission Statement and principles",
+    "section": "Mission Statement",
+    "text": "Mission Statement\nThe Oberon Citizen Science Network (OCSN) exists to promote both interest in science and technology amongst residents of Oberon Local Government Area, and active participation in local science projects and scientific endeavour. It is open to everyone who is committed to the scientific method, regardless of their training and educational background. OCSN will also adhere to the principles of open science, in which all data, data analysis methods and findings are made publicly available, regardless of what the data show. OCSN members and participants are interested in discovering the truth through science, not in confirming already-held beliefs and prejudices – even when the truth may be uncomfortable.\n\n\n\n\n\n\nStrictly Non-political\n\n\n\nOberon Citizen Science Network (OCSN) is a strictly non-political organisation that does not and will not have any allegiances with or accept any support from political parties or organisations associated with political parties, nor any lobby group seeking to influence the political process or political decisions, at any level of government.\n\n\n\n\nOf course, individual members and participants of OCSN may hold political allegiances or be members of political parties or lobby groups, as is their right as individuals, but they must not represent such views or allegiances as those of OCSN. Please see the OCSN Articles of Association and OCSN Code of Conduct for more details.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Mission Statement"
+    ]
+  },
+  {
+    "objectID": "ocsn_mission_statement.html#methods",
+    "href": "ocsn_mission_statement.html#methods",
+    "title": "OCSN Mission Statement and principles",
+    "section": "Methods",
+    "text": "Methods\nOCSN will pursue its mission by:\n\norganising science-based projects in the local area in which OCSN members can participate in a wide variety of roles\nencouraging OCSN members to participate individually or as a group in citizen science projects and initiatives run by other organisations – for example, the excellent FrogID project run by the Australian Museum.\nengaging with the local community through outreach to schools and by organising occasional community events\nusing appropriate web, social media and mainstream media channels to publicise OCSN activities and disseminate the results of the projects it organises\naffiliating and co-operating with other appropriate citizen science organisations, both nationally and internationally, such as the Australian Citizen Science Association\nseeking funding from government and approporiate philanthropic sources as well as sponsorship from local businesses for its activities\n\n\n\nWe hope to be able to organise (and obtain funding for) some “Arts & Science” events at Oberon’s wonderful art deco Malachi Gilmore Hall in cooporation with its owners, Lucy and Johnny East. 1\n\n\n\nMattinbgn (talk · contribs), CC BY 3.0 via Wikimedia Commons↩︎",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Mission Statement"
+    ]
+  },
+  {
+    "objectID": "ocsn_mission_statement.html#ten-principles-of-citizen-science",
+    "href": "ocsn_mission_statement.html#ten-principles-of-citizen-science",
+    "title": "OCSN Mission Statement and principles",
+    "section": "Ten Principles of Citizen Science",
+    "text": "Ten Principles of Citizen Science\nOCSN seeks to adhere to and implement the ten principles of citizen science developed by researchers at a number of European and British universities, and adopted by the Australian Citizen Science Association. The formal paper describing the principles is available here, but in a nutshell they are:\n\nCitizen science projects actively involve citizens in scientific endeavour that generates new knowledge or understanding. Citizens may act as contributors, collaborators, or as project leader and have a meaningful role in the project.\nCitizen science projects have a genuine science outcome. For example, answering a research question, informing conservation action, or facilitating policy decisions.\nCitizen science provides benefits to both science and society. Benefits may include learning opportunities, personal enjoyment, social benefits, the publication of research outputs, contributing to scientific evidence that can influence policy on many scales (locally, nationally, and internationally), and connecting the wider community with science.\nCitizen scientists may participate in various stages of the scientific process. This may include developing research questions, designing methods, gathering and analysing data, and communicating results.\nCitizen scientists receive feedback from the project. For example, how their data are being used and the research, policy or societal outcomes.\nCitizen science, as with all forms of scientific inquiry, has limitations and biases that should be considered and controlled for. However, unlike traditional research approaches, citizen science provides greater opportunity for public engagement and participation, increasing accessibility of science in society.\nWhere possible and suitable, project data and meta-data from citizen science projects are made publicly available and results are published in an open access format. Data sharing may occur during or after the project, unless there are security or privacy concerns that prevent this from occurring.\nCitizen scientists are suitably acknowledged by projects. This may include acknowledgement in project communications, result reporting and publications.\nCitizen science programs offer a range of benefits and outcomes which should be acknowledged and considered in project evaluation. Communication and evaluation of projects could include scientific outputs, data quality, participant experience and learning, knowledge sharing, social benefits, capacity building, new ways of science engagement, enhanced stakeholder dialogue, and wider societal or policy impact.\nThe leaders of citizen science projects take into consideration legal and ethical considerations of the project. These considerations include copyright, intellectual property, data sharing agreements, confidentiality, attribution, participant safety and wellbeing, traditional owner consultation, and the environmental impact of any activities.\n\n\nPresentation on the Ten Principles\nThis is a presentation in 2020 by Dr Sam Illingworth, who teaches science communication at the University of Western Australia:",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Mission Statement"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to the Oberon Citizen Science Network (OCSN) website",
+    "section": "",
+    "text": "This is the website for the recently formed Oberon Citizen Science Network (OCSN, pronounced “oxen”).\nOCSN is a collective of people living in and around the Oberon local government area (LGA) in the Central Tablelands of NSW who are interested in science and in participating in scientific investigation of interesting and/or important aspects of our environment. These include biology and ecology, and the impacts of human activity on those, as well as earth science, astronomy and any other safe and non-harmful scientific investigations members may wish to pursue. A list of current and potential activities and projects can be found in the list on the left. This list may expand or contract depending on the interests of OCSN participants.\nParticipants in OCSN do not need to be trained scientists – just having an interest in science and an allegiance to the scientific method (which is embodied in the OCSN Mission Statement and OCSN Articles of Association for the organisation) is enough. All projects and activities undertaken or promoted by OCSN will include trained scientists, acting in a voluntary capacity or, in some cases, in academic roles affiliated with universities and research institutes. The idea is to promote and transmit an appreciation of science and the scientific method to both OCSN participants and the wider community.\nWith that out of the way, please do read on using the link below or the links at the left to learn more about OCSN and its aims and potential activities.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Welcome to OCSN"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Welcome to the Oberon Citizen Science Network (OCSN) website",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNo machine-readable author provided. Roke~commonswiki assumed (based on copyright claims)., CC BY-SA 3.0, via Wikimedia Commons↩︎\nEfbrazil, CC BY-SA 4.0, via Wikimedia Commons↩︎\nNo machine-readable author provided. Roke~commonswiki assumed (based on copyright claims)., CC BY-SA 3.0, via Wikimedia Commons↩︎\nEfbrazil, CC BY-SA 4.0, via Wikimedia Commons↩︎",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Welcome to OCSN"
+    ]
+  },
+  {
+    "objectID": "frogid.html",
+    "href": "frogid.html",
+    "title": "FrogID",
+    "section": "",
+    "text": "FrogID activities\nFrogID is a fantastic citizen science initiative run by the Australian Museum in Sydney but supported by dozens of universities and government agencies from across Australia. In 2019 it won the Eureka Prize in the Citizen Science category.\nParticipation in the FrogID project is easy, all you need is a smartphone. You download the free FrogID app, and use it to record frog calls using the microphone built in to your phone. Better external directional microphones can also be used – access to these is something OCSN may be able to help members with in the future. The recording and some information on where it was made, as well as your best guess about the species (the app provides help with this, so you learn a lot about frogs in the process) are then uploaded automatically to a central database run by the Australian Museum. A trained herpetologist (a frog and ammphibian scientist) will then review your recording and provide feedback to you. A video showing all this is available below.",
+    "crumbs": [
+      "News",
+      "Potential Activities",
+      "FrogID"
+    ]
+  },
+  {
+    "objectID": "frogid.html#monitoring-central-tablelands-high-country-frog-populations",
+    "href": "frogid.html#monitoring-central-tablelands-high-country-frog-populations",
+    "title": "FrogID",
+    "section": "Monitoring Central Tablelands “High Country” frog populations",
+    "text": "Monitoring Central Tablelands “High Country” frog populations\nThe Oberon region contains many frog habitats, including rare “high country” habitats. relatively little is known about the health of frog populations in these unusual habitats which, like rivers and wetlands in so many places, are under threat from development, introduced fish and diseases (especially trout and the chytrid fungus) and, of course, climate change.",
+    "crumbs": [
+      "News",
+      "Potential Activities",
+      "FrogID"
+    ]
+  },
+  {
+    "objectID": "frogid.html#the-critically-endangered-booroolong-frog",
+    "href": "frogid.html#the-critically-endangered-booroolong-frog",
+    "title": "FrogID",
+    "section": "The critically endangered Booroolong frog",
+    "text": "The critically endangered Booroolong frog\nIn fact, Oberon LGA hosts some of the few known habitats of the critically endangered Booroolong frog (Litoria booroolongensis). It is thought that as few as 5,000 examples remain in the wild, many of which are found in the Abercrombie River catchment (including the Retreat River), and in the area around Essington.\n\n\n\n\n\nThe critically endangered Booroolong frog (Litoria booroolongensis)1\n\n\nThere may be opportunities for OCSN members to colloborate with frog scientists at the Australian Museum and universities to collect better data on the Booroolong frog in the Oberon region, as well as other species. More information on Booroolong frog conservation efforts can be found here on the Australian Museum web site.\nHere is a video showing current data from the FrogID database on identifications in Oberon LGA. More are needed!\n\n\n\n\nen:user:Tnarg 12345, CC BY-SA 3.0 via Wikimedia Commons↩︎",
+    "crumbs": [
+      "News",
+      "Potential Activities",
+      "FrogID"
+    ]
+  },
+  {
+    "objectID": "frogid.html#frogs-and-wind-farms",
+    "href": "frogid.html#frogs-and-wind-farms",
+    "title": "FrogID",
+    "section": "Frogs and Wind farms",
+    "text": "Frogs and Wind farms\nOne of the reasons why it is so important to monitor frog populations is that they can be very vulnerable to human development and land use changes. For example, there is a proposed development of a large wind turbine farm at Paling Yards, which is in the catchment area of the Abercrombie River. There has been little or no consideration of the effect of wind farm development on the Booroolong frog in the Paling Yards development EIS (environmental impact statement). In fact, the Biodiversity Development Assessment Report for the Paling Yards Wind Farm notes on page 44 that no Booroolong frogs were recorded within 10km of the proposed development area, which appears to be at odds with idata collected by the FrogID project. There is clearly a role for local OCSN citizen scientists, working in collaboration with FrogID scientists, to check these facts.\nThere are also many other vulnerable or threatened species listed in the Bioversity Assessment Report for Paling Yards, including many bird species. There is a role for OCSN members to collect more data to better inform such environmental impact assessments – see also the proposed BirdNET sensor project.\n\n\n\nFrogID activities\nThe critically endangered Booroolong frog (Litoria booroolongensis)2\n\n\n\n\nen:user:Tnarg 12345, CC BY-SA 3.0 via Wikimedia Commons↩︎",
+    "crumbs": [
+      "News",
+      "Potential Activities",
+      "FrogID"
+    ]
+  },
+  {
+    "objectID": "what_is_citizen_science.html",
+    "href": "what_is_citizen_science.html",
+    "title": "What is Citizen Science?",
+    "section": "",
+    "text": "Wikipedia defines citizen science as:\n\n\n\n\n\n\nCitizen science (also known as community science, crowd science, crowd-sourced science, civic science, participatory monitoring, or volunteer monitoring) is research conducted with participation from the general public, or amateur/non-professional researchers or participants for science, social science and many other disciplines. There are variations in the exact definition of citizen science, with different individuals and organizations having their own specific interpretations of what citizen science encompasses. Citizen science is used in a wide range of areas of study including ecology, biology and conservation, health and medical research, astronomy, media and communications and information science.\n\n\n\nCitizen science has been around since the 1980s, and today there are thousands of citizen science groups around the world, working on and participating in science projects and investigations ranging from collecting data on the local environment and wildlife to very ambitious projects such as CubeSats1.\n\n\nClosely related to citizen science is the concept of open science. Open science is the movement to make scientific research (including publications, data, physical samples, and software) and its dissemination accessible to all levels of society, amateur or professional. Open science is transparent and accessible knowledge that is shared and developed through collaborative networks.\n\n\n\nPillars of the Open Science according to UNESCO’s 2021 Open Science recommendation.2\n\n\n\nCitizen Science projects and activities\nTraditionally citizen science projects have focussed on monitoring and collecting data on the environment and local ecologies, with an emphasis on flora and fauna (plants and animals). We see such activities as key components of the OCSN program. Some examples of such activities can be found on this web site.\nHowever, we are also keen for OCSN to undertake some less usual projects, in particular projects which involve establishing a network of automated sensors for various things, which collect data continuously and make those data available through various platforms. On top of such data collection infrastructure, numerous secondary projects involving data analysis can be built. Such projects may be particularly attractive to schools. Some proposed sensor network projects are also described on this web site.\n\n\n\nSending an OCSN CubeSat into space is probably a bit ambitious at this stage, but atmospheric science projects using drones and ballons are not out-of-the-question, such as this model CubeSat designed by AustSTEM.↩︎\nUNESCO.org, CC BY-SA 4.0, via Wikimedia Commons↩︎\n\n\n\n\nAll ages\nThe intention is for OCSN to promote, facilitate and host projects and activities which appeal to all ages, including children.3 Here is a cute video by the Australian Broadcasting Corporation Behind The News team on young participants in citizen science initiatives.\n\n\n\n\nPillars of the Open Science according to UNESCO’s 2021 Open Science recommendation.4\n\n\n\n\nOCSN will adopt and enforce a suitable Working With Children Policy covering all its activities.↩︎\nUNESCO.org, CC BY-SA 4.0, via Wikimedia Commons↩︎",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "What is Citizen Science?"
+    ]
+  },
+  {
+    "objectID": "ocsn_working_with_children.html",
+    "href": "ocsn_working_with_children.html",
+    "title": "OCSN Working With Children Policy",
+    "section": "",
+    "text": "Not yet written."
+  },
+  {
+    "objectID": "astronomy.html",
+    "href": "astronomy.html",
+    "title": "Astronomy",
+    "section": "",
+    "text": "OCSN star gazing activities",
+    "crumbs": [
+      "News",
+      "Potential Activities",
+      "Astronomy"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About OCS",
+    "section": "",
+    "text": "About Oberon Citizen Science (OCS)."
+  },
+  {
+    "objectID": "ocsn_privacy_policy.html",
+    "href": "ocsn_privacy_policy.html",
+    "title": "OCSN Privacy Policy",
+    "section": "",
+    "text": "This Privacy Policy applies to all personal information collected by Oberon Citizen Science Network (OCSN) via the website located at https://oberon-citizen.science, via email accounts associated with OCSN and via other web and social media data collection mechanisms.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Privacy Policy"
+    ]
+  },
+  {
+    "objectID": "ocsn_privacy_policy.html#what-is-personal-information",
+    "href": "ocsn_privacy_policy.html#what-is-personal-information",
+    "title": "OCSN Privacy Policy",
+    "section": "1. What is “personal information”?",
+    "text": "1. What is “personal information”?\n\nThe Privacy Act 1988 (Cth) currently defines “personal information” as meaning information or an opinion about an identified individual or an individual who is reasonably identifiable: a) whether the information or opinion is true or not; and a) whether the information or opinion is recorded in a material form or not.\nIf the information does not disclose your identity or enable your identity to be ascertained, it will in most cases not be classified as “personal information” and will not be subject to this privacy policy.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Privacy Policy"
+    ]
+  },
+  {
+    "objectID": "ocsn_privacy_policy.html#what-information-do-we-collect",
+    "href": "ocsn_privacy_policy.html#what-information-do-we-collect",
+    "title": "OCSN Privacy Policy",
+    "section": "2. What information do we collect?",
+    "text": "2. What information do we collect?\nThe kind of personal information that we collect from you will depend on how you use the website. The personal information which we collect and hold about you may include:\n\nname\nemail address\nphone number\ntown, suburb or area of residence (not full address)",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Privacy Policy"
+    ]
+  },
+  {
+    "objectID": "ocsn_privacy_policy.html#how-we-collect-your-personal-information",
+    "href": "ocsn_privacy_policy.html#how-we-collect-your-personal-information",
+    "title": "OCSN Privacy Policy",
+    "section": "3. How we collect your personal information",
+    "text": "3. How we collect your personal information\n\nWe may collect personal information from you whenever you input such information into the website.\nWe also collect cookies from your computer which enable us to tell when you use the website and also to help customise your website experience. As a general rule, however, it is not possible to identify you personally from our use of cookies.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Privacy Policy"
+    ]
+  },
+  {
+    "objectID": "ocsn_privacy_policy.html#purpose-of-collection",
+    "href": "ocsn_privacy_policy.html#purpose-of-collection",
+    "title": "OCSN Privacy Policy",
+    "section": "4. Purpose of collection",
+    "text": "4. Purpose of collection\n\nThe purpose for which we collect personal information is to provide you with the best service experience possible on the website.\nWe customarily disclose personal information only to our service providers who assist us in operating the website. Your personal information may also be exposed from time to time to maintenance and support personnel acting in the normal course of their duties.\nBy using our website, you consent to the receipt of direct marketing material. We will only use your personal information for this purpose if we have collected such information direct from you, and if it is material of a type which you would reasonably expect to receive from us. We do not use sensitive personal information in direct marketing activity. Our direct marketing material will include a simple means by which you can request not to receive further communications of this nature.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Privacy Policy"
+    ]
+  },
+  {
+    "objectID": "ocsn_privacy_policy.html#access-and-correction",
+    "href": "ocsn_privacy_policy.html#access-and-correction",
+    "title": "OCSN Privacy Policy",
+    "section": "5. Access and correction",
+    "text": "5. Access and correction\nAustralian Privacy Principle 12 permits you to obtain access to the personal information we hold about you in certain circumstances, and Australian Privacy Principle 13 allows you to correct inaccurate personal information subject to certain exceptions. If you would like to obtain such access, please contact us as set out below.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Privacy Policy"
+    ]
+  },
+  {
+    "objectID": "ocsn_privacy_policy.html#complaint-procedure",
+    "href": "ocsn_privacy_policy.html#complaint-procedure",
+    "title": "OCSN Privacy Policy",
+    "section": "6. Complaint procedure",
+    "text": "6. Complaint procedure\nIf you have a complaint concerning the manner in which we maintain the privacy of your personal information, please contact us as set out below. All complaints will be considered by the OCSN nominated Privacy Officer and we may seek further information from you to clarify your concerns. If we agree that your complaint is well founded, we will, in consultation with you, take appropriate steps to rectify the problem. If you remain dissatisfied with the outcome, you may refer the matter to the Office of the Australian Information Commissioner.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Privacy Policy"
+    ]
+  },
+  {
+    "objectID": "ocsn_privacy_policy.html#how-to-contact-us-about-privacy",
+    "href": "ocsn_privacy_policy.html#how-to-contact-us-about-privacy",
+    "title": "OCSN Privacy Policy",
+    "section": "7. How to contact us about privacy",
+    "text": "7. How to contact us about privacy\nIf you have any queries, or if you seek access to your personal information, or if you have a complaint about our privacy practices, you can contact us via email at oberon.citizen.science@gmail.com.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Privacy Policy"
+    ]
+  },
+  {
     "objectID": "ocsn_code_of_conduct.html",
     "href": "ocsn_code_of_conduct.html",
     "title": "Code of Conduct",
@@ -93,133 +395,6 @@
       "News",
       "Introductions",
       "Code of Conduct"
-    ]
-  },
-  {
-    "objectID": "ocsn_mission_statement.html",
-    "href": "ocsn_mission_statement.html",
-    "title": "OCSN Mission Statement",
-    "section": "",
-    "text": "The Oberon Citizen Science Network (OCSN) exists to promote both interest in science and technology amongst residents of Oberon Local Government Area, and active participation in local science projects and scientific endeavour. It is open to everyone who is committed to the scientific method, regardless of their training and educational background. OCSN will also adhere to the principles of open science, in which all data, data analysis methods and findings are made publicly available, regardless of what the data show. OCSN members and participants are interested in discovering the truth through science, not in confirming already-held beliefs and prejudices – even when the truth may be uncomfortable.\nOCSN will pursue its mission by:",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Mission Statement"
-    ]
-  },
-  {
-    "objectID": "ocsn_mission_statement.html#footnotes",
-    "href": "ocsn_mission_statement.html#footnotes",
-    "title": "OCSN Mission Statement",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nOf course, individual members and participants of OCSN may hold political allegiances or be members of political parties or lobby groups, as is their right as individuals, but they must not represent such views or allegiances as those of OCSN. Please see the OCSN Articles of Association and OCSN Code of Conduct for more details.↩︎\nMattinbgn (talk · contribs), CC BY 3.0 via Wikimedia Commons↩︎",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Mission Statement"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to the Oberon Citizen Science Network (OCSN) website",
-    "section": "",
-    "text": "This is the website for the recently formed Oberon Citizen Science Network (OCSN, pronounced “oxen”).\nOCSN is a collective of people living in and around the Oberon local government area (LGA) in the Central Tablelands of NSW who are interested in science and in participating in scientific investigation of interesting and/or important aspects of our environment. These include biology and ecology, and the impacts of human activity on those, as well as earth science, astronomy and any other safe and non-harmful scientific investigations members may wish to pursue. A list of current and potential activities and projects can be found in the list on the left. This list may expand or contract depending on the interests of OCSN participants.\nParticipants in OCSN do not need to be trained scientists – just having an interest in science and an allegiance to the scientific method (which is embodied in the OCSN Mission Statement and OCSN Articles of Association for the organisation) is enough. All projects and activities undertaken or promoted by OCSN will include trained scientists, acting in a voluntary capacity or, in some cases, in academic roles affiliated with universities and research institutes. The idea is to promote and transmit an appreciation of science and the scientific method to both OCSN participants and the wider community.\nWith that out of the way, please do read on using the link below or the links at the left to learn more about OCSN and its aims and potential activities.",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Welcome to OCSN"
-    ]
-  },
-  {
-    "objectID": "index.html#footnotes",
-    "href": "index.html#footnotes",
-    "title": "Welcome to the Oberon Citizen Science Network (OCSN) website",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nNo machine-readable author provided. Roke~commonswiki assumed (based on copyright claims)., CC BY-SA 3.0, via Wikimedia Commons↩︎\nEfbrazil, CC BY-SA 4.0, via Wikimedia Commons↩︎\nNo machine-readable author provided. Roke~commonswiki assumed (based on copyright claims)., CC BY-SA 3.0, via Wikimedia Commons↩︎\nEfbrazil, CC BY-SA 4.0, via Wikimedia Commons↩︎",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Welcome to OCSN"
-    ]
-  },
-  {
-    "objectID": "what_is_citizen_science.html",
-    "href": "what_is_citizen_science.html",
-    "title": "What is Citizen Science?",
-    "section": "",
-    "text": "Detecting meteors\n\n\nWikipedia defines citizen science as:\n\n\n\n\n\n\nCitizen science (also known as community science, crowd science, crowd-sourced science, civic science, participatory monitoring, or volunteer monitoring) is research conducted with participation from the general public, or amateur/non-professional researchers or participants for science, social science and many other disciplines. There are variations in the exact definition of citizen science, with different individuals and organizations having their own specific interpretations of what citizen science encompasses. Citizen science is used in a wide range of areas of study including ecology, biology and conservation, health and medical research, astronomy, media and communications and information science.\n\n\n\n\n\n\n\n\nOSCN star gazing activities\n\n\nCitizen science has been around since the 1980s, and today there are thousands of citizen science groups around the world, working on and participating in science projects and investigations ranging from collecting data on the local environment and wildlife to very ambitious projects such as CubeSats1.\n\n\nClosely related to citizen science is the concept of open science. Open science is the movement to make scientific research (including publications, data, physical samples, and software) and its dissemination accessible to all levels of society, amateur or professional. Open science is transparent and accessible knowledge that is shared and developed through collaborative networks.\n\n\n\nPillars of the Open Science according to UNESCO’s 2021 Open Science recommendation.2\n\n\n\nCitizen Science projects and activities\nTraditionally citizen science projects have focussed on monitoring and collecting data on the environment and local ecologies, with an emphasis on flora and fauna (plants and animals). We see such activities as key components\n\n\n\n\n\nFrogID activities\n\n\n\n\n\n\nDetecting meteors\nOSCN star gazing activities\nPillars of the Open Science according to UNESCO’s 2021 Open Science recommendation.3\nFrogID activities\n\n\n\n\nSending an OCSN CubeSat into space is probably a bit ambitious at this stage, but atmospheric science projects using drones and ballons are not out-of-the-question, such as this model CubeSat designed by AustSTEM.↩︎\nUNESCO.org, CC BY-SA 4.0, via Wikimedia Commons↩︎\nUNESCO.org, CC BY-SA 4.0, via Wikimedia Commons↩︎",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "What is Citizen Science?"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About OCS",
-    "section": "",
-    "text": "About Oberon Citizen Science (OCS)."
-  },
-  {
-    "objectID": "ocsn_privacy_policy.html",
-    "href": "ocsn_privacy_policy.html",
-    "title": "OCSN Privacy Policy",
-    "section": "",
-    "text": "This Privacy Policy applies to all personal information collected by Oberon Citizen Science Network (OCSN) via the website located at https://oberon-citizen.science, via email accounts associated with OCSN and via other web and social media data collection mechanisms.",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Privacy Policy"
-    ]
-  },
-  {
-    "objectID": "ocsn_privacy_policy.html#what-is-personal-information",
-    "href": "ocsn_privacy_policy.html#what-is-personal-information",
-    "title": "OCSN Privacy Policy",
-    "section": "What is “personal information”?",
-    "text": "What is “personal information”?\n\nThe Privacy Act 1988 (Cth) currently defines “personal information” as meaning information or an opinion about an identified individual or an individual who is reasonably identifiable:\nwhether the information or opinion is true or not; and\n\n\nwhether the information or opinion is recorded in a material form or not.\n\n\nIf the information does not disclose your identity or enable your identity to be ascertained, it will in most cases not be classified as “personal information” and will not be subject to this privacy policy.",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Privacy Policy"
-    ]
-  },
-  {
-    "objectID": "ocsn_privacy_policy.html#what-information-do-we-collect",
-    "href": "ocsn_privacy_policy.html#what-information-do-we-collect",
-    "title": "OCSN Privacy Policy",
-    "section": "What information do we collect?",
-    "text": "What information do we collect?\nThe kind of personal information that we collect from you will depend on how you use the website. The personal information which we collect and hold about you may include: .\n\nHow we collect your personal information\n\nWe may collect personal information from you whenever you input such information into the website.\nWe also collect cookies from your computer which enable us to tell when you use the website and also to help customise your website experience. As a general rule, however, it is not possible to identify you personally from our use of cookies.\n\n\n\nPurpose of collection\n\nThe purpose for which we collect personal information is to provide you with the best service experience possible on the website.\nWe customarily disclose personal information only to our service providers who assist us in operating the website. Your personal information may also be exposed from time to time to maintenance and support personnel acting in the normal course of their duties.\nBy using our website, you consent to the receipt of direct marketing material. We will only use your personal information for this purpose if we have collected such information direct from you, and if it is material of a type which you would reasonably expect to receive from us. We do not use sensitive personal information in direct marketing activity. Our direct marketing material will include a simple means by which you can request not to receive further communications of this nature.\n\n\n\nAccess and correction\nAustralian Privacy Principle 12 permits you to obtain access to the personal information we hold about you in certain circumstances, and Australian Privacy Principle 13 allows you to correct inaccurate personal information subject to certain exceptions. If you would like to obtain such access, please contact us as set out below.",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Privacy Policy"
-    ]
-  },
-  {
-    "objectID": "ocsn_privacy_policy.html#complaint-procedure",
-    "href": "ocsn_privacy_policy.html#complaint-procedure",
-    "title": "OCSN Privacy Policy",
-    "section": "Complaint procedure",
-    "text": "Complaint procedure\nIf you have a complaint concerning the manner in which we maintain the privacy of your personal information, please contact us as set out below. All complaints will be considered by the OCSN nominated Privacy Officer and we may seek further information from you to clarify your concerns. If we agree that your complaint is well founded, we will, in consultation with you, take appropriate steps to rectify the problem. If you remain dissatisfied with the outcome, you may refer the matter to the Office of the Australian Information Commissioner.",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Privacy Policy"
-    ]
-  },
-  {
-    "objectID": "ocsn_privacy_policy.html#how-to-contact-us-about-privacy",
-    "href": "ocsn_privacy_policy.html#how-to-contact-us-about-privacy",
-    "title": "OCSN Privacy Policy",
-    "section": "How to contact us about privacy",
-    "text": "How to contact us about privacy\nIf you have any queries, or if you seek access to your personal information, or if you have a complaint about our privacy practices, you can contact us through: oberon.citizen.science@gmail.com.",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Privacy Policy"
     ]
   }
 ]

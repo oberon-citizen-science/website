@@ -24,13 +24,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./shake_and_boom.html" rel="next">
+<link href="./frogid.html" rel="next">
 <link href="./ocsn_code_of_conduct.html" rel="prev">
 <link href="./assets/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -115,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://forms.gle/6HDzYWCqcRTkBsJ69"> 
+    <a class="nav-link" href="https://forms.gle/6HDzYWCqcRTkBsJ69" target="_blank"> 
 <span class="menu-text">Register your interest</span></a>
   </li>  
 </ul>
@@ -215,13 +214,32 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Activities</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Potential Activities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./frogid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FrogID</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./astronomy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Astronomy</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Sensor Network Projects</span></a>
+ <span class="menu-text">Potential Sensor Networks &amp; Projects</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -235,8 +253,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bird-net.html" class="sidebar-item-text sidebar-link">
+  <a href="./birdnet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bird call detection and counting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./meteors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meteor detection and tracking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wind_turbine_infrasound.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wind turbine infrasound monitoring</span></a>
   </div>
 </li>
       </ul>
@@ -251,15 +281,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-personal-information" id="toc-what-is-personal-information" class="nav-link active" data-scroll-target="#what-is-personal-information">What is “personal information”?</a></li>
-  <li><a href="#what-information-do-we-collect" id="toc-what-information-do-we-collect" class="nav-link" data-scroll-target="#what-information-do-we-collect">What information do we collect?</a>
-  <ul class="collapse">
-  <li><a href="#how-we-collect-your-personal-information" id="toc-how-we-collect-your-personal-information" class="nav-link" data-scroll-target="#how-we-collect-your-personal-information">How we collect your personal information</a></li>
-  <li><a href="#purpose-of-collection" id="toc-purpose-of-collection" class="nav-link" data-scroll-target="#purpose-of-collection">Purpose of collection</a></li>
-  <li><a href="#access-and-correction" id="toc-access-and-correction" class="nav-link" data-scroll-target="#access-and-correction">Access and correction</a></li>
-  </ul></li>
-  <li><a href="#complaint-procedure" id="toc-complaint-procedure" class="nav-link" data-scroll-target="#complaint-procedure">Complaint procedure</a></li>
-  <li><a href="#how-to-contact-us-about-privacy" id="toc-how-to-contact-us-about-privacy" class="nav-link" data-scroll-target="#how-to-contact-us-about-privacy">How to contact us about privacy</a></li>
+  <li><a href="#what-is-personal-information" id="toc-what-is-personal-information" class="nav-link active" data-scroll-target="#what-is-personal-information">1. What is “personal information”?</a></li>
+  <li><a href="#what-information-do-we-collect" id="toc-what-information-do-we-collect" class="nav-link" data-scroll-target="#what-information-do-we-collect">2. What information do we collect?</a></li>
+  <li><a href="#how-we-collect-your-personal-information" id="toc-how-we-collect-your-personal-information" class="nav-link" data-scroll-target="#how-we-collect-your-personal-information">3. How we collect your personal information</a></li>
+  <li><a href="#purpose-of-collection" id="toc-purpose-of-collection" class="nav-link" data-scroll-target="#purpose-of-collection">4. Purpose of collection</a></li>
+  <li><a href="#access-and-correction" id="toc-access-and-correction" class="nav-link" data-scroll-target="#access-and-correction">5. Access and correction</a></li>
+  <li><a href="#complaint-procedure" id="toc-complaint-procedure" class="nav-link" data-scroll-target="#complaint-procedure">6. Complaint procedure</a></li>
+  <li><a href="#how-to-contact-us-about-privacy" id="toc-how-to-contact-us-about-privacy" class="nav-link" data-scroll-target="#how-to-contact-us-about-privacy">7. How to contact us about privacy</a></li>
   </ul>
 </nav>
     </div>
@@ -287,48 +315,48 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This Privacy Policy applies to all personal information collected by Oberon Citizen Science Network (OCSN) via the website located at https://oberon-citizen.science, via email accounts associated with OCSN and via other web and social media data collection mechanisms.</p>
 <section id="what-is-personal-information" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-personal-information">What is “personal information”?</h2>
-<ol type="a">
-<li>The Privacy Act 1988 (Cth) currently defines “personal information” as meaning information or an opinion about an identified individual or an individual who is reasonably identifiable:</li>
-<li>whether the information or opinion is true or not; and</li>
-</ol>
-<ol start="2" type="i">
-<li>whether the information or opinion is recorded in a material form or not.</li>
-</ol>
-<ol start="2" type="a">
+<h2 class="anchored" data-anchor-id="what-is-personal-information">1. What is “personal information”?</h2>
+<ol type="i">
+<li>The Privacy Act 1988 (Cth) currently defines “personal information” as meaning information or an opinion about an identified individual or an individual who is reasonably identifiable: a) whether the information or opinion is true or not; and a) whether the information or opinion is recorded in a material form or not.</li>
 <li>If the information does not disclose your identity or enable your identity to be ascertained, it will in most cases not be classified as “personal information” and will not be subject to this privacy policy.</li>
 </ol>
 </section>
 <section id="what-information-do-we-collect" class="level2">
-<h2 class="anchored" data-anchor-id="what-information-do-we-collect">What information do we collect?</h2>
-<p>The kind of personal information that we collect from you will depend on how you use the website. The personal information which we collect and hold about you may include: .</p>
-<section id="how-we-collect-your-personal-information" class="level3">
-<h3 class="anchored" data-anchor-id="how-we-collect-your-personal-information">How we collect your personal information</h3>
-<ol type="a">
-<li><p>We may collect personal information from you whenever you input such information into the website.</p></li>
-<li><p>We also collect cookies from your computer which enable us to tell when you use the website and also to help customise your website experience. As a general rule, however, it is not possible to identify you personally from our use of cookies.</p></li>
+<h2 class="anchored" data-anchor-id="what-information-do-we-collect">2. What information do we collect?</h2>
+<p>The kind of personal information that we collect from you will depend on how you use the website. The personal information which we collect and hold about you may include:</p>
+<ul>
+<li>name</li>
+<li>email address</li>
+<li>phone number</li>
+<li>town, suburb or area of residence (not full address)</li>
+</ul>
+</section>
+<section id="how-we-collect-your-personal-information" class="level2">
+<h2 class="anchored" data-anchor-id="how-we-collect-your-personal-information">3. How we collect your personal information</h2>
+<ol type="i">
+<li>We may collect personal information from you whenever you input such information into the website.</li>
+<li>We also collect cookies from your computer which enable us to tell when you use the website and also to help customise your website experience. As a general rule, however, it is not possible to identify you personally from our use of cookies.</li>
 </ol>
 </section>
-<section id="purpose-of-collection" class="level3">
-<h3 class="anchored" data-anchor-id="purpose-of-collection">Purpose of collection</h3>
-<ol type="a">
+<section id="purpose-of-collection" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-of-collection">4. Purpose of collection</h2>
+<ol type="i">
 <li>The purpose for which we collect personal information is to provide you with the best service experience possible on the website.</li>
 <li>We customarily disclose personal information only to our service providers who assist us in operating the website. Your personal information may also be exposed from time to time to maintenance and support personnel acting in the normal course of their duties.</li>
 <li>By using our website, you consent to the receipt of direct marketing material. We will only use your personal information for this purpose if we have collected such information direct from you, and if it is material of a type which you would reasonably expect to receive from us. We do not use sensitive personal information in direct marketing activity. Our direct marketing material will include a simple means by which you can request not to receive further communications of this nature.</li>
 </ol>
 </section>
-<section id="access-and-correction" class="level3">
-<h3 class="anchored" data-anchor-id="access-and-correction">Access and correction</h3>
+<section id="access-and-correction" class="level2">
+<h2 class="anchored" data-anchor-id="access-and-correction">5. Access and correction</h2>
 <p>Australian Privacy Principle 12 permits you to obtain access to the personal information we hold about you in certain circumstances, and Australian Privacy Principle 13 allows you to correct inaccurate personal information subject to certain exceptions. If you would like to obtain such access, please contact us as set out below.</p>
 </section>
-</section>
 <section id="complaint-procedure" class="level2">
-<h2 class="anchored" data-anchor-id="complaint-procedure">Complaint procedure</h2>
+<h2 class="anchored" data-anchor-id="complaint-procedure">6. Complaint procedure</h2>
 <p>If you have a complaint concerning the manner in which we maintain the privacy of your personal information, please contact us as set out below. All complaints will be considered by the OCSN nominated Privacy Officer and we may seek further information from you to clarify your concerns. If we agree that your complaint is well founded, we will, in consultation with you, take appropriate steps to rectify the problem. If you remain dissatisfied with the outcome, you may refer the matter to the Office of the Australian Information Commissioner.</p>
 </section>
 <section id="how-to-contact-us-about-privacy" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-contact-us-about-privacy">How to contact us about privacy</h2>
-<p>If you have any queries, or if you seek access to your personal information, or if you have a complaint about our privacy practices, you can contact us through: oberon.citizen.science@gmail.com.</p>
+<h2 class="anchored" data-anchor-id="how-to-contact-us-about-privacy">7. How to contact us about privacy</h2>
+<p>If you have any queries, or if you seek access to your personal information, or if you have a complaint about our privacy practices, you can contact us via email at <a href="mailto:oberon.citizen.science@gmail.com">oberon.citizen.science@gmail.com</a>.</p>
 
 
 </section>
@@ -757,8 +785,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./shake_and_boom.html" class="pagination-link" aria-label="Seismic and infrasound monitoring">
-        <span class="nav-page-text">Seismic and infrasound monitoring</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./frogid.html" class="pagination-link" aria-label="FrogID">
+        <span class="nav-page-text">FrogID</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

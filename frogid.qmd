@@ -1,0 +1,41 @@
+---
+title: "FrogID"
+lightbox: true
+---
+
+::: {.aside}
+![FrogID activities](assets/ocsn_frogid.png)
+:::
+
+[FrogID](https://www.frogid.net.au) is a fantastic citizen science initiative run by the [Australian Museum](https://australian.museum) in Sydney but supported by dozens of universities and government agencies from across Australia. In 2019 it won the Eureka Prize in the Citizen Science category.
+
+Participation in the FrogID project is easy, all you need is a smartphone. You download the free FrogID app, and use it to record frog calls using the microphone built in to your phone. Better external directional microphones can also be used -- access to these is something OCSN may be able to help members with in the future. The recording and some information on where it was made, as well as your best guess about the species (the app provides help with this, so you learn a lot about frogs in the process) are then uploaded automatically to a central database run by the Australian Museum. A trained herpetologist (a frog and ammphibian scientist) will then review your recording and provide feedback to you. A video showing all this is available below.  
+
+{{< video https://youtu.be/m5nUUB0hjDg?si=coNY7DLC1UOdGd2P >}}
+
+## Monitoring Central Tablelands "High Country" frog populations
+
+The Oberon region contains many frog habitats, including rare "high country" habitats. relatively little is known about the health of frog populations in these unusual habitats which, like rivers and wetlands in so many places, are under threat from development, introduced fish and diseases (especially trout and the [chytrid fungus](https://en.wikipedia.org/wiki/Chytridiomycota)) and, of course, climate change.
+
+## The critically endangered Booroolong frog
+
+In fact, Oberon LGA hosts some of the few known habitats of the critically endangered [Booroolong frog](https://en.wikipedia.org/wiki/Booroolong_frog) (*Litoria booroolongensis*). It is thought that as few as 5,000 examples remain in the wild, many of which are found in the [Abercrombie River](https://en.wikipedia.org/wiki/Abercrombie_River) catchment (including the Retreat River), and in the area around Essington.
+
+::: {.aside}
+![The critically endangered Booroolong frog (*Litoria booroolongensis*)[^1]](assets/Litoria_booroolongensis.jpg)
+:::
+
+There may be opportunities for OCSN members to colloborate with frog scientists at the Australian Museum and universities to collect better data on the Booroolong frog in the Oberon region, as well as other species. More information on Booroolong frog conservation efforts can be found [here](https://australian.museum/learn/collections/natural-science/herpetology/herpetology-projects/booroolong-frog-conservation/) on the Australian Museum web site.
+
+Here is a video showing current data from the FrogID database on identifications in Oberon LGA. More are needed!
+
+{{< video assets/Oberon_FrogID_map_demo.mp4 >}}
+
+## Frogs and Wind farms
+
+One of the reasons why it is so important to monitor frog populations is that they can be very vulnerable to human development and land use changes. For example, there is a [proposed development of a large wind turbine farm at Paling Yards](https://palingyardswindfarm.globalpower-generation.com.au), which is in the catchment area of the Abercrombie River. There has been little or no consideration of the effect of wind farm development on the Booroolong frog in the [Paling Yards development EIS (environmental impact statement)](https://www.planningportal.nsw.gov.au/major-projects/projects/paling-yards-wind-farm-0?fbclid=IwAR0aDB66Br7tRrvetMilpt3Zvfwezxa-k3S4qgR3vYXmsHmIyfHeiechs0Q). In fact, the [Biodiversity Development Assessment Report for the Paling Yards Wind Farm](https://majorprojects.planningportal.nsw.gov.au/prweb/PRRestService/mp/01/getContent?AttachRef=SSD-29064077%2120230904T041517.390%20GMT) notes on page 44 that no Booroolong frogs were recorded within 10km of the proposed development area, which appears to be at odds with idata collected by the FrogID project. There is clearly a role for local OCSN citizen scientists, working in collaboration with FrogID scientists, to check these facts.
+
+There are also many other vulnerable or threatened species listed in the Bioversity Assessment Report for Paling Yards, including many bird species. There is a role for OCSN members to collect more data to better inform such environmental impact assessments -- see also the proposed [BirdNET sensor project](birdnet.html).
+
+
+[^1]: en:user:Tnarg 12345, CC BY-SA 3.0 via Wikimedia Commons

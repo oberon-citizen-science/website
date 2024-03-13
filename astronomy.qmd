@@ -1,0 +1,7 @@
+---
+title: "Astronomy"
+---
+
+::: {.aside}
+![OCSN star gazing activities](assets/ocsn_astronomy.png)
+:::
