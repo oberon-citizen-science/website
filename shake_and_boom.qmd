@@ -3,12 +3,16 @@ title: "Shake & Boom"
 lightbox: true
 ---
 
-![Recording of the earthquake south of Leuro on 8 March 2024, as captured near Oberon by Alan Sheehan using a raspberry Shake & Boom device](assets/GIK_JWva4AAf-q7.jpeg)
+::: {.callout-note title="Current status of this initiative"}
+Two founding members of OCSN, Alan Sheehan and Tim Churches, both have Raspberry Shake & Boom seismic and infrasound monitoring devices deployed at their properties, about 10-15km south-east of Oberon township and each about 6km apart. Details of how to access the data collected by these two monitoring stations will appear here. That is a good start to a network of such devices located at various points in Oberon LGA.
+:::
 
-## Meteor Detection
+Although Australia is a geographically stable continent, that does not mean that we do not experience frequent earthquakes...to be continued.
+
+![Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake & Boom device](assets/GIK_JWva4AAf-q7.jpeg)
 
 ::: {.aside}
-![Detecting meteors](assets/ocsn_meteors.png)
+![A Raspberry Shake and Boom device](assets/RSNB_1.png)
 :::
 
 ## Monitoring infrasound sources including wind farms

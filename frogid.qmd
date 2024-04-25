@@ -3,6 +3,10 @@ title: "FrogID"
 lightbox: true
 ---
 
+::: {.callout-note title="Current status of this initiative"}
+Interested individuals are encouraged to download the FrogID app and start recording and identifying frogs around their homes and properties. Depending on the level of interest amongst members, OCSN may contact the FrogID team at the Australian Museum to discuss the possibility of organising some systematic frog surveys by OCSN members, guided by FrogID scientists, of frogs in various places in Oberon LGA, as discussed below.
+:::
+
 ::: {.aside}
 ![FrogID activities](assets/ocsn_frogid.png)
 :::

@@ -2,6 +2,12 @@
 title: "Astronomy"
 ---
 
+::: {.callout-note title="Current status of this initiative"}
+For discussion only at this stage, no specific activities are currently planned or scheduled.
+:::
+
+## Good Seeing
+
 The Oberon LGA is a fantastic venue for all types of amateur astronomy for three reasons:
 
 ::: {.aside}
@@ -12,7 +18,22 @@ The Oberon LGA is a fantastic venue for all types of amateur astronomy for three
 * the elevation of much of the Oberon LGA mostly ranges between 1000m and 1300m above sea level. This means there is at least a kilometre less atmosphere to peer through to see distant stars and galaxies.
 * Atmospheric distortion due to warm air rising is the enemy of astronomers. Oberon LGA has a cold climate, and during autumn and winter, the air can be remarkably cold and still (at least sometimes).
 
-Together these three factors contribute to what astronomers call **"good seeing** conditions, and the Oberon area possesses all three.
+Together these three factors contribute to what astronomers call **"good seeing"** conditions, and the Oberon area possesses all three.
 
-To be completed...
+## Types of Amateur Astronomy
+
+There are broadly four types of amateur astronomy:
+
+* [Naked eye observing](https://en.wikipedia.org/wiki/Naked_eye#In_astronomy), involves observing the night sky with just your eyes. The only equipment needed is a reclining chair or lounge or air mattress to allow you to lie comfortably while looking up. Such observing is best done on dark nights -- that is, when there is a new moon or before the moon has risen, because the brightness of the moon tends to swamp the much fainter light from the stars. It usually takes 20 or 30 minutes in total darkness before your eyes become fully dark-adapted. When they do, on a dark night at a dark sky site (of which Oberon LGA is blessed with many), the Milky Way looks absolutely breathtaking. 
+* Visual observing, in which participants peer through the eyepiece of a telescope to view the moon, planets, star clusters and other deep space objects (whole galaxies, nebulae etc). Large telescopes which are able to collect a lot of light are usually used for visual observing, enabling observers to see night sky objects which are much too faint to see with the naked eye, and in the case of the moon and the planets, to see details and planetary moons which are not otherwise visible. Part of the thrill of visual observing is that you are seeing the actual light from the stars and planets, in many cases light photons which have been travelling for millions of years before they hit your retina. Part of the downside is that visual observing may involve standing around outside, at night, in pitch black so your eyes remain dark-adapted, sometimes in very cold weather (and the Oberon area does get **very** cold at night).
+* Electronically assisted astronomy (EAA), which is similar to purely visual observing, but instead of physically looking through the eyepeice of a telescope, an electronic camera is used instead, and an image is built up over several minutes. This image is typically viewed on one or more laptop or tablet computers, linked via wi-fi. The advantages are that much fainter celestial objects can be seen, because the camera and the computer it is connected to can integrate light received over several minutes (which the human eye cannot do), and also observers can sit in comfort inside out of the cold, or around a firepit, rather than shivering in the dark. Nonetheless, the observing process is still quite spontaneous, with immediate results visible for participants.
+* Astrophotography, which is like EEA but typically uses smaller telescopes on very high-precision automated mounts which very precisely adjust for the rotation of the Earth. Electronic cameras are then used to capture images over many minutes or hours, sometimes over the course of many nights, and often through different filters which emphasise different wavelengths (colours) of light emitted by different elements. These images are then combined and processed using sophisticated software to create a final image, often very spectacular. The cost of the equipment needed can be quite high, and the process takes time and patience.
+
+As you can imagine, naked-eye astronomy, visual observing through a telescope (or astronomical binoculars) and EEA can be undertaken as social activities with lots of opportunity for learning and imparting a sense of wonder, as well as knowledge, about space and the universe. Astrophotography tends to be a more solitary activity, although many astronomy clubs organise events at dark-sky sites in which a mixture of visual, EEA and astrophotography activity is undertaken by members as a social activity.
+
+## Not an amateur astronomy club
+
+OCSN has no ambitions to become an amateur astronomy club. However, organising out-reach observing nights for OCSN members and other members of the local community would seem to be a useful activity for a citizen science organisation, and is potentially a lot of fun for all involved, but organisers and participants alike. 
+
+OCSN will contact existing amateur astronomy clubs and associations to explore the possibilities of  
 

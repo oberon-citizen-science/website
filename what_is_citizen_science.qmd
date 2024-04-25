@@ -24,16 +24,15 @@ Closely related to **citizen science** is the concept of [**open science**](http
 
 Traditionally citizen science projects have focussed on monitoring and collecting data on the environment and local ecologies, with an emphasis on flora and fauna (plants and animals). We see such activities as key components of the OCSN program. Some examples of such activities can be found on this web site.
 
-However, we are also keen for OCSN to undertake some less usual projects, in particular projects which involve establishing a network of automated sensors for various things, which collect data continuously and make those data available through various platforms. On top of such data collection infrastructure, numerous secondary projects involving data analysis can be built. Such projects may be particularly attractive to schools. Some proposed sensor network projects are also described on this web site.
+However, we are also keen for OCSN to undertake some less usual projects, in particular projects which involve establishing a network of automated sensors for various things, which collect data continuously and make those data available through various platforms. On top of such data collection infrastructure, numerous secondary projects involving data analysis can be built. Such projects may be particularly attractive to schools. Some of proposed sensor network projects are described elsewhere on the OCSN web site.
 
 ### All ages
 
 The intention is for OCSN to promote, facilitate and host projects and activities which appeal to all ages, including children.[^3] Here is a cute video by the Australian Broadcasting Corporation _Behind The News_ team on young participants in citizen science initiatives.
 
-
 {{< video https://youtu.be/8cv30CcsFjQ?si=IxtULDs1imSmojn2 >}}
 
-[^1]: Sending an OCSN CubeSat into space is probably a bit ambitious at this stage, but atmospheric science projects using drones and ballons are not out-of-the-question, such as this [model CubeSat](https://learn.auststem.com.au/model-cubesat/) designed by [AustSTEM](https://learn.auststem.com.au).
+[^1]: Sending an OCSN CubeSat into space is probably a bit ambitious at this stage, but atmospheric science projects using drones and balloons are not out-of-the-question, such as this [model CubeSat](https://learn.auststem.com.au/model-cubesat/) designed by [AustSTEM](https://learn.auststem.com.au).
 
 [^2]: UNESCO.org, CC BY-SA 4.0, via Wikimedia Commons
 

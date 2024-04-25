@@ -9,7 +9,7 @@ lightbox: true
 
 ## Mission Statement
 
-The **Oberon Citizen Science Network** (OCSN) exists to promote both interest in science and technology amongst residents of Oberon Local Government Area, and active participation in local science projects and scientific endeavour. It is open to everyone who is committed to the scientific method, regardless of their training and educational background. OCSN will also adhere to the principles of [**open science**](https://en.wikipedia.org/wiki/Open_science), in which all data, data analysis methods and findings are made publicly available, regardless of what the data show. OCSN members and participants are interested in discovering the truth through science, not in confirming already-held beliefs and prejudices -- even when the truth may be uncomfortable.
+The **Oberon Citizen Science Network** (OCSN) exists to promote both interest in science, technology, enngineering and maths (STEM) amongst residents of Oberon Local Government Area, and active participation in local science projects and scientific endeavour. It is open to everyone who is committed to the scientific method, regardless of their training and educational background. OCSN will also adhere to the principles of [**open science**](https://en.wikipedia.org/wiki/Open_science), in which all data, data analysis methods and findings are made publicly available, regardless of what the data show. OCSN members and participants are interested in discovering the truth through science, not in confirming already-held beliefs and prejudices -- even when the truth may be uncomfortable.
 
 ::: {.callout-note title="Strictly Non-political" appearance="simple"}
 Oberon Citizen Science Network (OCSN) is a **strictly non-political** organisation that does not and will not have any allegiances with or accept any support from political parties or organisations associated with political parties, nor any lobby group seeking to influence the political process or political decisions, at any level of government. 
@@ -23,7 +23,7 @@ Of course, individual members and participants of OCSN may hold political allegi
 
 OCSN will pursue its mission by:
 
-* organising science-based projects in the local area in which OCSN members can participate in a wide variety of roles
+* organising science-based or other STEM projects in the local area in which OCSN members can participate in a wide variety of roles
 * encouraging OCSN members to participate individually or as a group in citizen science projects and initiatives run by other organisations -- for example, the excellent [FrogID project](https://www.frogid.net.au) run by the Australian Museum. 
 * engaging with the local community through outreach to schools and by organising occasional community events 
 * using appropriate web, social media and mainstream media channels to publicise OCSN activities and disseminate the results of the projects it organises
@@ -31,7 +31,9 @@ OCSN will pursue its mission by:
 * seeking funding from government and approporiate philanthropic sources as well as sponsorship from local businesses for its activities
 
 ::: {.aside}
-We hope to be able to organise (and obtain funding for) a joint "**Arts & Science**" event at Oberon's wonderful _art deco_ [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in cooporation with its owners, Lucy and Johnny East, possibly during National Science Week 2024 (10-18 August) or early in 2025. Such an event would combine some live music with presentations (and demonstrations) of OCSN projects, as well as guset speakers on science topics of interest.
+**Raising STEAM**
+
+**STEAM** stands for **S**cience, **T**echnology, **E**ngineering, **A**rts and **M**aths. We hope to be able to organise (and obtain funding for) a joint **STEAM** event at Oberon's wonderful _art deco_ [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in cooporation with its owners, Lucy and Johnny East, possibly during National Science Week in August 2025 (10-18 August), or earlier. Such an event would combine some live music, art exhibitions with presentations (and demonstrations) of OCSN projects, as well as guest speakers on science and arts topics of interest.
 ![The Malachi Gilmore Hall, Oberon](assets/malachi.jpg)[^2]
 :::
 

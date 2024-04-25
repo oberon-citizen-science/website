@@ -16,7 +16,7 @@ website:
         menu:
           - text: Source Code
             url:  https://github.com/oberon-citizen-science/website
-          - text: Report a Error
+          - text: Report an Error
             url:  https://github.com/oberon-citizen-science/website/issues
     left:
       - text: "About"
@@ -33,7 +33,7 @@ website:
             file: ocsn_code_of_conduct.html
           - text: "Privacy Policy"
             file: ocsn_privacy_policy.html
-      - text: "Activities"
+      - text: "Potential Activities"
         menu:
           - text: "FrogID"
             file: frogid.html
@@ -43,6 +43,8 @@ website:
         menu:
           - text: "Seismic and infrasound monitoring"
             file: shake_and_boom.html
+          - text: "Meteor detection and tracking"
+            file: meteor
           - text: "Bird call detection and counting"
             file: birdnet.html
           - text: "Local weather monitoring"
