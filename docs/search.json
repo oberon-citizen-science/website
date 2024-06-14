@@ -175,23 +175,11 @@
     ]
   },
   {
-    "objectID": "shake_and_boom.html#meteor-detection",
-    "href": "shake_and_boom.html#meteor-detection",
-    "title": "Shake & Boom",
-    "section": "Meteor Detection",
-    "text": "Meteor Detection\n\n\n\n\n\nDetecting meteors",
-    "crumbs": [
-      "News",
-      "Potential Sensor Networks",
-      "Seismic and infrasound monitoring"
-    ]
-  },
-  {
     "objectID": "shake_and_boom.html#monitoring-infrasound-sources-including-wind-farms",
     "href": "shake_and_boom.html#monitoring-infrasound-sources-including-wind-farms",
     "title": "Shake & Boom",
     "section": "Monitoring infrasound sources including wind farms",
-    "text": "Monitoring infrasound sources including wind farms\n\n\n\nRecording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake & Boom device\nA Raspberry Shake and Boom device",
+    "text": "Monitoring infrasound sources including wind farms\n\nlibrary(leaflet)\n\ngeojson &lt;- readLines(\"assets/pines_exploration_area.geojson\", warn = FALSE) %&gt;%\n  paste(collapse = \"\\n\") # %&gt;%\n#  fromJSON(simplifyVector = FALSE)\n\nleaflet() %&gt;%  setView(lng = 149.846533, lat = -33.852098, zoom = 10) %&gt;%\n  addTiles() %&gt;%\n  addGeoJSON(geojson, weight = 2, color = \"red\", fill = FALSE)\n\n\n\n\n\n\n\n\nRecording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake & Boom device\nA Raspberry Shake and Boom device",
     "crumbs": [
       "News",
       "Potential Sensor Networks",

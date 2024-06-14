@@ -128,10 +128,10 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Activities</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-potential-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Potential Activities</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-activities">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-potential-activities">    
         <li>
     <a class="dropdown-item" href="/frogid.html">
  <span class="dropdown-text">FrogID</span></a>
@@ -150,6 +150,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="/shake_and_boom.html">
  <span class="dropdown-text">Seismic and infrasound monitoring</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/meteor">
+ <span class="dropdown-text">Meteor detection and tracking</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="/birdnet.html">
@@ -191,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
           </li>
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/oberon-citizen-science/website/issues">
-            Report a Error
+            Report an Error
             </a>
           </li>
       </ul>
@@ -365,7 +369,7 @@ ul.task-list li input[type="checkbox"] {
 <p>You may want to try searching to find the page’s new location by using the search icon (magnifying glass) at the upper right.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="/assets/ocsn_404.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="404 error"><img src="/assets/ocsn_404.png" class="img-fluid figure-img" style="width:60.0%" alt="404 error"></a></p>
+<p><a href="/assets/ocsn_404.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="404 error"><img src="/assets/ocsn_404.png" class="img-fluid figure-img" style="width:60.0%" alt="404 error"></a></p>
 <figcaption>404 error</figcaption>
 </figure>
 </div>
@@ -793,7 +797,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

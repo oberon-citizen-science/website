@@ -127,10 +127,10 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Activities</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-potential-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Potential Activities</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-activities">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-potential-activities">    
         <li>
     <a class="dropdown-item" href="./frogid.html">
  <span class="dropdown-text">FrogID</span></a>
@@ -149,6 +149,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./shake_and_boom.html">
  <span class="dropdown-text">Seismic and infrasound monitoring</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./meteor">
+ <span class="dropdown-text">Meteor detection and tracking</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./birdnet.html">
@@ -190,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
           </li>
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/oberon-citizen-science/website/issues">
-            Report a Error
+            Report an Error
             </a>
           </li>
       </ul>
@@ -866,7 +870,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav>
 </div> <!-- /content -->
 <script>videojs(video_shortcode_videojs_video1);</script>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
