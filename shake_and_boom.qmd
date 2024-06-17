@@ -17,16 +17,23 @@ Although Australia is a geographically stable continent, that does not mean that
 
 ## Monitoring infrasound sources including wind farms
 
+:::{.column-page}
+
 ```{r}
+#| echo: false
+
 library(leaflet)
 
-geojson <- readLines("assets/pines_exploration_area.geojson", warn = FALSE) %>%
-  paste(collapse = "\n") # %>%
-#  fromJSON(simplifyVector = FALSE)
+taralga_line <- readLines("assets/taralga_500kVA_line.geojson", warn = FALSE) 
 
-leaflet() %>%  setView(lng = 149.846533, lat = -33.852098, zoom = 10) %>%
+pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v13.geojson")
+
+leaflet(pines_expl_area, height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
   addTiles() %>%
-  addGeoJSON(geojson, weight = 2, color = "red", fill = FALSE)
+  addPolygons(stroke=TRUE, weight=1, fillOpacity=0.2, color="red") %>%
+  addGeoJSON(taralga_line)
 
 ```
 
+:::
