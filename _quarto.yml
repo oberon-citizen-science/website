@@ -39,6 +39,8 @@ website:
             file: frogid.html
           - text: "Astronomy"
             file: astronomy.html
+          - text: "Wind farms"
+            file: wind_farms.html
       - text: "Sensor Networks"
         menu:
           - text: "Seismic and infrasound monitoring"

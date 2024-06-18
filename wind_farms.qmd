@@ -1,0 +1,61 @@
+---
+title: "Wind farms and Citizen Science"
+lightbox: true
+---
+
+## The Pines Wind Farm proposed by TAG and Stromlo Energy
+
+The interactive map below shows the exploration area as permitted by Forestry Corporation NSW for possible siting of the proposed wind farm in state forest areas. The exploration area is shaded in red, and the existing 500 kVA transmission line to Taralga to which the wind farm must connect is shown as a blue line.
+
+Better maps and more details will appear here in the future.
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+
+library(leaflet)
+
+taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
+                  paste(collapse = "\n")
+
+pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
+
+leaflet(pines_expl_area, height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(stroke=TRUE, 
+              weight=1, 
+              fillOpacity=0.2, 
+              color="red",
+              group = "The Pines exploration area") %>%
+  addGeoJSON(taralga_line, 
+             weight=3, 
+             color="blue", 
+             fillOpacity=0,
+             group = "Existing 500 kVA transmission line") %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c("The Pines exploration area",
+                                     "Existing 500 kVA transmission line"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE)
+)
+
+```
+
+:::

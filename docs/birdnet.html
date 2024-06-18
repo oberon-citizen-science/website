@@ -139,6 +139,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./astronomy.html">
  <span class="dropdown-text">Astronomy</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./wind_farms.html">
+ <span class="dropdown-text">Wind farms</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -380,7 +384,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Ready-made and packaged <a href="https://www.birdweather.com">Birdweather PUC</a> devices are available for about AU$400, as shown below. This is probably the easiest but also the most expensive way to establish a BirdNET listening station that automatically records bird calls, identifies the species of bird and uploads the data to an international citizen science database.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/birdweather_puc.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="BirdWeather PUC"><img src="assets/birdweather_puc.png" class="img-fluid figure-img" alt="BirdWeather PUC"></a></p>
+<p><a href="assets/birdweather_puc.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="BirdWeather PUC"><img src="assets/birdweather_puc.png" class="img-fluid figure-img" alt="BirdWeather PUC"></a></p>
 <figcaption>BirdWeather PUC</figcaption>
 </figure>
 </div>
@@ -837,7 +841,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav>
 </div> <!-- /content -->
 <script>videojs(video_shortcode_videojs_video1);</script>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

@@ -17,57 +17,5 @@ Although Australia is a geographically stable continent, that does not mean that
 
 ## Monitoring infrasound sources including wind farms
 
-:::{.column-page}
+To be completed...
 
-```{r}
-#| echo: false
-
-library(leaflet)
-
-taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
-                  paste(collapse = "\n")
-
-pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
-
-leaflet(pines_expl_area, height="800px", width="1200px") %>% 
-  setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
-  addTiles(group = "OpenStreetMap") %>%
-  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
-  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
-  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
-  addPolygons(stroke=TRUE, 
-              weight=1, 
-              fillOpacity=0.2, 
-              color="red",
-              group = "The Pines exploration area") %>%
-  addGeoJSON(taralga_line, 
-             weight=3, 
-             color="blue", 
-             fillOpacity=0,
-             group = "Existing 500 kVA transmission line") %>%
-  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
-                   overlayGroups = c("The Pines exploration area",
-                                     "Existing 500 kVA transmission line"),
-                   options = layersControlOptions(collapsed = FALSE)
-  ) %>%
-  addMeasure(
-            position = "bottomleft",
-            primaryLengthUnit = "kilometers",
-            primaryAreaUnit = "hectares",
-            activeColor = "#3D535D",
-            completedColor = "#7D4479",
-            localization = "en") %>%
-  addScaleBar(position = "bottomright",
-  options = scaleBarOptions(metric=TRUE, 
-                            imperial=FALSE,
-                            maxWidth=300,
-                            updateWhenIdle=TRUE)
-)
-
-
-
-
-
-```
-
-:::
