@@ -13,7 +13,9 @@ Better maps and more details will appear here in the future.
 
 ```{r}
 #| echo: false
+#| message: false
 
+library(tidyverse)
 library(leaflet)
 
 taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
@@ -21,17 +23,27 @@ taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
 
 pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
 
-leaflet(pines_expl_area, height="800px", width="1200px") %>% 
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+leaflet(height="800px", width="1200px") %>% 
   setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
   addTiles(group = "OpenStreetMap") %>%
   addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
   addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
   addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
-  addPolygons(stroke=TRUE, 
+  addPolygons(data=pines_expl_area, 
+              stroke=TRUE, 
               weight=1, 
               fillOpacity=0.2, 
               color="red",
               group = "The Pines exploration area") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
   addGeoJSON(taralga_line, 
              weight=3, 
              color="blue", 
@@ -39,7 +51,9 @@ leaflet(pines_expl_area, height="800px", width="1200px") %>%
              group = "Existing 500 kVA transmission line") %>%
   addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
                    overlayGroups = c("The Pines exploration area",
-                                     "Existing 500 kVA transmission line"),
+                                     "Existing 500 kVA transmission line",
+                                      "Towns & Villages",
+                                      "Oberon LGA"),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   addMeasure(
@@ -57,18 +71,54 @@ leaflet(pines_expl_area, height="800px", width="1200px") %>%
   addMarkers(lng=149.74160413611594,
              lat=-33.845989194998666,
              label = "Black Springs",
+              group = "Towns & Villages",
               labelOptions = labelOptions(noHide = TRUE,
              textsize = "10px")) %>%
   addMarkers(lng=149.91754276836787,
              lat=-33.78815383191878,
              label = "Edith",
+              group = "Towns & Villages",
               labelOptions = labelOptions(noHide = TRUE,
              textsize = "10px")) %>%
   addMarkers(lng=149.85713985509926,
              lat=-33.70394907824247,
              label = "Oberon township",
-              labelOptions = labelOptions(noHide = FALSE,
-             textsize = "10px"))
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5288146180066,
+             lat=-33.94774521659694,
+             label = "Burraga",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5935282648902,
+             lat=-33.82130920624268,
+             label = "Mt David",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85336006836064,
+             lat=-33.91140078300324,
+             label = "Shooters Hill",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.89359188575838,
+             lat=-33.66433983475142,
+             label = "Hazelgrove",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.73074435257803,
+             lat=-33.54222049863011,
+             label = "O'Connell",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) 
+
+
+                    
 ```
 
 :::
