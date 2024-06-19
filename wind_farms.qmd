@@ -53,9 +53,22 @@ leaflet(pines_expl_area, height="800px", width="1200px") %>%
   options = scaleBarOptions(metric=TRUE, 
                             imperial=FALSE,
                             maxWidth=300,
-                            updateWhenIdle=TRUE)
-)
-
+                            updateWhenIdle=TRUE)) %>%
+  addMarkers(lng=149.74160413611594,
+             lat=-33.845989194998666,
+             label = "Black Springs",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.91754276836787,
+             lat=-33.78815383191878,
+             label = "Edith",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85713985509926,
+             lat=-33.70394907824247,
+             label = "Oberon township",
+              labelOptions = labelOptions(noHide = FALSE,
+             textsize = "10px"))
 ```
 
 :::
