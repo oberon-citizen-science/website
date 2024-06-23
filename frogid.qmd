@@ -41,5 +41,7 @@ One of the reasons why it is so important to monitor frog populations is that th
 
 There are also many other vulnerable or threatened species listed in the Bioversity Assessment Report for Paling Yards, including many bird species. There is a role for OCSN members to collect more data to better inform such environmental impact assessments -- see also the proposed [BirdNET sensor project](birdnet.html).
 
+::: {.callout-caution}
+The [proposed Pines Wind Farm](wind_farms.html#the-proposed-pines-wind-farm) in state forests south of Oberon also has the potential to impact vulnerable frog populations, and developing OCSN projects to collect essential baseline data while that proposal is still in the investigation phase should be a priority project for OCSN. 
 
 [^1]: en:user:Tnarg 12345, CC BY-SA 3.0 via Wikimedia Commons

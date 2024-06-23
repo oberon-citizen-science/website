@@ -9,10 +9,12 @@ lightbox: true
 
 ## Mission Statement
 
-The **Oberon Citizen Science Network** (OCSN) exists to promote both interest in science, technology, enngineering and maths (STEM) amongst residents of Oberon Local Government Area, and active participation in local science projects and scientific endeavour. It is open to everyone who is committed to the scientific method, regardless of their training and educational background. OCSN will also adhere to the principles of [**open science**](https://en.wikipedia.org/wiki/Open_science), in which all data, data analysis methods and findings are made publicly available, regardless of what the data show. OCSN members and participants are interested in discovering the truth through science, not in confirming already-held beliefs and prejudices -- even when the truth may be uncomfortable.
+The **Oberon Citizen Science Network** (OCSN) exists to promote both interest in science, technology, engineering and maths (STEM) amongst residents of Oberon Local Government Area, and active participation in local STEM projects and other scientific endeavours. It is open to everyone who is committed to the scientific method, regardless of their training and educational background. OCSN will also adhere to the principles of [**open science**](https://en.wikipedia.org/wiki/Open_science), in which all data, data analysis methods and findings are made publicly available, regardless of what the data show. OCSN members and participants are interested in discovering the truth through science, not in confirming already-held beliefs and prejudices -- even when the truth may be uncomfortable.
 
 ::: {.callout-note title="Strictly Non-political" appearance="simple"}
 Oberon Citizen Science Network (OCSN) is a **strictly non-political** organisation that does not and will not have any allegiances with or accept any support from political parties or organisations associated with political parties, nor any lobby group seeking to influence the political process or political decisions, at any level of government. 
+
+OCSN may accept funding for its activities from government, corporations or individuals, but all such funding will be openly declared on this web site and only be accepted if it does not come with conditions which limit what OCSN may say or publish about the science and other STEM activities it undertakes -- that is, we will not accept any funding that comes with conditions of censorship or other restrictions which are in conflict with the principles of [**open science**](https://en.wikipedia.org/wiki/Open_science).
 :::
 
 ::: {.aside}
@@ -28,7 +30,7 @@ OCSN will pursue its mission by:
 * engaging with the local community through outreach to schools and by organising occasional community events 
 * using appropriate web, social media and mainstream media channels to publicise OCSN activities and disseminate the results of the projects it organises
 * affiliating and co-operating with other appropriate citizen science organisations, both nationally and internationally, such as the [Australian Citizen Science Association](https://citizenscience.org.au)
-* seeking funding from government and approporiate philanthropic sources as well as sponsorship from local businesses for its activities
+* seeking funding from government and approporiate philanthropic sources as well as sponsorship from local businesses for its activities, provided any conditions associated with such funding are compatible with the principles of _open science_. 
 
 ::: {.aside}
 **Raising STEAM**

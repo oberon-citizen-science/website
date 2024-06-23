@@ -1,0 +1,39 @@
+---
+title: "Minor earthquake in Hazelbrook"
+description: "An M1.6 earthquake near Hazelbrook in the Blue Mountains was detected by seismic sensors operated by OCSN members"
+author:
+  - name: Alan Sheehan
+date: 2024-06-23
+categories: [Local earthquakes] # self-defined categories
+citation: 
+  url: https://oberon-citizen.science/posts/2024-06-24-hazelbrook-quake/
+image: hazelbrook-preview.png
+draft: false 
+lightbox: true
+---
+
+An M1.3 earthquake under Hazelbrook was detected at 12:38am on Sunday 23rd June 2024 by Raspberry Shake & Boom seismic and infrasound monitoring stations operated by OCSN members, as well as two other Raspberry Shake stations operated by citizen scientists at Lithgow and Mudgee. The signals from these stations and the process of triangulation used to locate the source of the seismic signals are shown below.
+
+No one else is reporting this earthquake, due to its very low magnitude, too weak for humans to readily notice, but it definitely happened!
+
+:::{.callout-tip}
+Click on each image to see an enlarged version of it.
+:::
+
+![](hazelbrook-1.png)
+
+![](hazelbrook-2.png)
+
+![](hazelbrook-3.png)
+
+![](hazelbrook-4.png)
+
+![](hazelbrook-5.png)
+
+![](hazelbrook-6png)
+
+![](hazelbrook-7.png)
+
+![](hazelbrook-8.png)
+
+![](hazelbrook-9.png)

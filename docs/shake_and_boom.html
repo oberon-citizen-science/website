@@ -99,23 +99,23 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-about">    
         <li>
-    <a class="dropdown-item" href="./index.html">
+    <a class="dropdown-item" href="./index.ymd">
  <span class="dropdown-text">Introduction</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./what_is_citizen_science.html">
+    <a class="dropdown-item" href="./what_is_citizen_science.ymd">
  <span class="dropdown-text">What is Citizen Science?</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_mission_statement.html">
+    <a class="dropdown-item" href="./ocsn_mission_statement.ymd">
  <span class="dropdown-text">Mission Statement</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_articles_of_association.html">
+    <a class="dropdown-item" href="./ocsn_articles_of_association.ymd">
  <span class="dropdown-text">Articles of Association</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_code_of_conduct.html">
+    <a class="dropdown-item" href="./ocsn_code_of_conduct.ymd">
  <span class="dropdown-text">Code of Conduct</span></a>
   </li>  
         <li>
@@ -161,12 +161,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Bird call detection and counting</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./local_weather.html">
+    <a class="dropdown-item" href="./local_weather.qmd">
  <span class="dropdown-text">Local weather monitoring</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./lorawan.html">
- <span class="dropdown-text">Oberon LGA LoRaWAN</span></a>
+    <a class="dropdown-item" href="./nb_networks.qmd">
+ <span class="dropdown-text">LoRaWAN and NB-IoT</span></a>
   </li>  
     </ul>
   </li>
@@ -175,11 +175,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog_posts.html"> 
+    <a class="nav-link" href="./blog.html"> 
 <span class="menu-text">Blog posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://forms.gle/6HDzYWCqcRTkBsJ69" target="_blank"> 
+    <a class="nav-link active" href="./register_interest.html" aria-current="page"> 
 <span class="menu-text">Register your interest</span></a>
   </li>  
 </ul>
@@ -276,6 +276,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Privacy Policy</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./register_interest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Register your interest</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -324,14 +330,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./local_weather.html" class="sidebar-item-text sidebar-link">
+  <a href="./local_weather.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Local weather monitoring</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lorawan.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oberon LGA LoRaWAN</span></a>
+  <a href="./nb_networks.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LoRaWAN and NB-IoT</span></a>
   </div>
 </li>
       </ul>
@@ -346,7 +352,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#monitoring-infrasound-sources-including-wind-farms" id="toc-monitoring-infrasound-sources-including-wind-farms" class="nav-link active" data-scroll-target="#monitoring-infrasound-sources-including-wind-farms">Monitoring infrasound sources including wind farms</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#raspberry-shake-and-boom-capabilities" id="toc-raspberry-shake-and-boom-capabilities" class="nav-link" data-scroll-target="#raspberry-shake-and-boom-capabilities">Raspberry Shake and Boom capabilities</a>
+  <ul class="collapse">
+  <li><a href="#detecting-distant-earthquakes" id="toc-detecting-distant-earthquakes" class="nav-link" data-scroll-target="#detecting-distant-earthquakes">Detecting distant earthquakes</a></li>
+  <li><a href="#detecting-local-earthquakes" id="toc-detecting-local-earthquakes" class="nav-link" data-scroll-target="#detecting-local-earthquakes">Detecting local earthquakes</a></li>
+  <li><a href="#meteorite-and-space-debris-sonic-booms" id="toc-meteorite-and-space-debris-sonic-booms" class="nav-link" data-scroll-target="#meteorite-and-space-debris-sonic-booms">Meteorite and space debris sonic booms</a></li>
+  <li><a href="#diy-data-analysis" id="toc-diy-data-analysis" class="nav-link" data-scroll-target="#diy-data-analysis">DIY data analysis</a></li>
+  <li><a href="#infrasound" id="toc-infrasound" class="nav-link" data-scroll-target="#infrasound">Infrasound</a></li>
+  <li><a href="#wind-turbine-infrasound" id="toc-wind-turbine-infrasound" class="nav-link" data-scroll-target="#wind-turbine-infrasound">Wind turbine infrasound</a></li>
+  </ul></li>
+  <li><a href="#hosting-a-raspberry-shake-boom" id="toc-hosting-a-raspberry-shake-boom" class="nav-link" data-scroll-target="#hosting-a-raspberry-shake-boom">Hosting a Raspberry Shake &amp; Boom</a></li>
   </ul>
 </nav>
     </div>
@@ -382,32 +398,106 @@ Current status of this initiative
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Two founding members of OCSN, Alan Sheehan and Tim Churches, both have Raspberry Shake &amp; Boom seismic and infrasound monitoring devices deployed at their properties, about 10-15km south-east of Oberon township and each about 6km apart. Details of how to access the data collected by these two monitoring stations will appear here. That is a good start to a network of such devices located at various points in Oberon LGA.</p>
+<p>Two founding members of OCSN, Alan Sheehan and Tim Churches, both have <a href="https://shop.raspberryshake.org/product/turnkey-iot-atmospheric-infrasound-monitor-rsboom/?attribute_pa_variation=indoor&amp;attribute_pa_license=private-use-125-discount">Raspberry Shake &amp; Boom</a> seismic and infrasound monitoring devices (with identifiers R21C0 and R5968 respectively) deployed at their properties, about 10-15km south-east of Oberon township and each about 6km apart. The seismic and infrasound data continuously recorded and uploaded by these devices is freely and openly available at the URLs below, but can also be accessed via an API (application programming interface) to allow detailed anayles of the data collected at several, or many stations. Some examples of such analyses undertaken by Alan Sheehan are shown below. OCSN hopes to establish a network of such devices located at various points in Oberon LGA, and to further develop analysis program code to undertake various types of analysis and validation of the data collected, including infrasound monitoring and analysis.</p>
+<ul>
+<li>Raspberry Shake &amp; Boom station R21C0
+<ul>
+<li><a href="https://dataview.raspberryshake.org/#/AM/R21C0/00/EHZ">helicorder (seismic) data</a></li>
+<li><a href="https://dataview.raspberryshake.org/#/AM/R21C0/00/HDF">infrasound data</a></li>
+</ul></li>
+<li>Raspberry Shake &amp; Boom station R5968
+<ul>
+<li><a href="https://dataview.raspberryshake.org/#/AM/R5968/00/EHZ">helicorder (seismic) data</a></li>
+<li><a href="https://dataview.raspberryshake.org/#/AM/R5968/00/HDF">infrasound data</a></li>
+</ul></li>
+</ul>
 </div>
-</div>
-<p>Although Australia is a geographically stable continent, that does not mean that we do not experience frequent earthquakes…to be continued.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/GIK_JWva4AAf-q7.jpeg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake &amp; Boom device"><img src="assets/GIK_JWva4AAf-q7.jpeg" class="img-fluid figure-img" alt="Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake &amp; Boom device"></a></p>
-<figcaption>Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake &amp; Boom device</figcaption>
-</figure>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/RSNB_1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="A Raspberry Shake and Boom device"><img src="assets/RSNB_1.png" class="img-fluid figure-img" alt="A Raspberry Shake and Boom device"></a></p>
+<p><a href="assets/RSNB_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="A Raspberry Shake and Boom device"><img src="assets/RSNB_1.png" class="img-fluid figure-img" alt="A Raspberry Shake and Boom device"></a></p>
 <figcaption>A Raspberry Shake and Boom device</figcaption>
 </figure>
 </div>
-</div></div><section id="monitoring-infrasound-sources-including-wind-farms" class="level2">
-<h2 class="anchored" data-anchor-id="monitoring-infrasound-sources-including-wind-farms">Monitoring infrasound sources including wind farms</h2>
-<p>To be completed…</p>
+</div></div><section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Although Australia is a geographically stable continent, that does not mean that we do not experience frequent earthquakes. Using devices developed over several years by the international Raspberry Shake (see the <a href="https://raspberryshake.org">Raspberry Shake web site</a> for details), based on the tiny but very powerful Raspberry Pi single baord computer which is about the size of a deck of playing cards, it is now feasible for citizens scientists to host their own seismic monitoring stations and contribute the data they collect to a worldwide community of people interested in such data. More recently, the ability to also monitor and record infrasound (very low frequency sound waves, mostly below the frequencies which humans can hear) has been added to these devices, allowing the deep rumbles caused by earthquakes to be detected, as well as other sources of infrasound, incuding aircraft, wind blowing through forests, wind turbines and sonic booms from meteorites entering the earth’s atmosphere. Please see the [page on meteorite tracking](meteors.html for more information on this.</p>
+</section>
+<section id="raspberry-shake-and-boom-capabilities" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="raspberry-shake-and-boom-capabilities">Raspberry Shake and Boom capabilities</h2>
+<section id="detecting-distant-earthquakes" class="level3">
+<h3 class="anchored" data-anchor-id="detecting-distant-earthquakes">Detecting distant earthquakes</h3>
+<p>You don’t need special skills to use a Raspberry Shake and Boom (RS&amp;B for short) – the example below is from the very nice ShakeNet phone app provided by the Raspberry Shake community. It lists earthquakes happening world-wide so you can see if your RS&amp;B station detected them or not. As you can see, an RS&amp;B station in Oberon LGA can readily detect earthquakes thousands of kilometres away.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/tonga_quake.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Recording of a recent earthquake near Tonga in the Pacific Ocean, as recorded by the Raspberry Shake &amp; Boom monitoring station operated by Alan Sheehan just south of Oberon township"><img src="assets/tonga_quake.png" class="img-fluid figure-img" alt="Recording of a recent earthquake near Tonga in the Pacific Ocean, as recorded by the Raspberry Shake &amp; Boom monitoring station operated by Alan Sheehan just south of Oberon township"></a></p>
+<figcaption>Recording of a recent earthquake near Tonga in the Pacific Ocean, as recorded by the Raspberry Shake &amp; Boom monitoring station operated by Alan Sheehan just south of Oberon township</figcaption>
+</figure>
+</div>
+</section>
+<section id="detecting-local-earthquakes" class="level3">
+<h3 class="anchored" data-anchor-id="detecting-local-earthquakes">Detecting local earthquakes</h3>
+<p>Of course, the devices can also detect , less intense local earthquakes, as shown below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/GIK_JWva4AAf-q7.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake &amp; Boom device"><img src="assets/GIK_JWva4AAf-q7.jpeg" class="img-fluid figure-img" alt="Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake &amp; Boom device"></a></p>
+<figcaption>Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake &amp; Boom device</figcaption>
+</figure>
+</div>
+</section>
+<section id="meteorite-and-space-debris-sonic-booms" class="level3">
+<h3 class="anchored" data-anchor-id="meteorite-and-space-debris-sonic-booms">Meteorite and space debris sonic booms</h3>
+<p>Meteorites and space debris enter the Earth’s atmospshere at supersonic speeds, creating sonic booms from the resulting shock wave. On the morning of August 9, 2022 at 7:05am the SpaceX Crew 1 Dragon Trunk re-entered the atmosphere over Western NSW, the Snowy Mountains and eastern Victoria. This is the infrasound signal of that event captured on a Raspberry Shake and Boom operated by Alan Sheehan just outside Oberon, some 370kms away from the point of closest approach.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/spacex_trunk_reentry.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4" title="SpaceX trunk re-entry infrasound signal 2022"><img src="assets/spacex_trunk_reentry.png" class="img-fluid figure-img" alt="SpaceX trunk re-entry infrasound signal 2022"></a></p>
+<figcaption>SpaceX trunk re-entry infrasound signal 2022</figcaption>
+</figure>
+</div>
+</section>
+<section id="diy-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="diy-data-analysis">DIY data analysis</h3>
+<p>With a little program code, using the Python programming language, you can fully explore the capabilities of your Raspberry Shake and Boom. Don’t worry - we are happy to share code and help you to learn how to do it. Shown below is a custom analysis of an earthquake in Honshu, Japan, programmed by Alan Sheehan.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/honshu_earthquake.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5" title="Custom analysis of Honshu earthquake programmed by Alan Sheehan"><img src="assets/honshu_earthquake.png" class="img-fluid figure-img" alt="Custom analysis of Honshu earthquake programmed by Alan Sheehan"></a></p>
+<figcaption>Custom analysis of Honshu earthquake programmed by Alan Sheehan</figcaption>
+</figure>
+</div>
+</section>
+<section id="infrasound" class="level3">
+<h3 class="anchored" data-anchor-id="infrasound">Infrasound</h3>
+<p>Below is the infrasound signal of a passing helicopter, showing the <a href="https://en.wikipedia.org/wiki/Doppler_effect">Doppler shift</a> in frequencies as it first approaches then receeds from the monitoring Raspeberry Shake and Boom device. You don’t need any coding skill for this type of report either - its available from the Raspberry Shake Data View web app and you can join and use any or all the Raspberry Shakes in the world for free (you don’t even have to own one!), via the <a href="https://shakenet.raspberryshake.org/">ShakeNet web site</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/helicopter_infrasound.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" data-glightbox="description: .lightbox-desc-6" title="Helicopter infrasound"><img src="assets/helicopter_infrasound.png" class="img-fluid figure-img" alt="Helicopter infrasound"></a></p>
+<figcaption>Helicopter infrasound</figcaption>
+</figure>
+</div>
+</section>
+<section id="wind-turbine-infrasound" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="wind-turbine-infrasound">Wind turbine infrasound</h3>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>It should be born in mind that merely detecting infrasound generated by wind turbines does not necessarily imply that that infrasound has impacts on human (and/or non-human) health, or even that humans and other animals can detect it. Nonetheless, we beleive that it is important to develop capabilities to monitor such artifical sources of infrasound, as well as natural sources such as wind blowing through trees and sound generated by fast flowing water in river rapids, and to collect baseline data before any proposed wind turbines are constructed, as well as after they become operational. OCSN also intends to undertake a meta-review of articles and reports which review and summarise the scientific evidence around the effect of infrasound on human health and the broader ecology.</p>
+</div></div><p>The infrasound microphone in the Raspberry Shake and Boom device should be able to detect infrasound generated by wind turbines. Not much work has been done yet to fully investigate and validate these capabilities, and further investigation of this will be one of the initial projects to be undertaken by OCSN. However, if the infrasound data from a Raspberry Shake and Boom deployed at Koroit, which is near Warrnambool in Victoria and close to several large wind farms, is processed using a <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform (FFT)</a>, some interesting features become evident in the resulting spectrograms. We suspect the spikes in the FFT spectrums shown below are tonal frequencies from laminar boundary layer, blunt trailing edges and/or flow over holes, slits and intrusions in nearby wind towers. It shows the potential capability of the RSnB to continuously monitor infrasound generated by wind turbines at a range of distances, although this very preliminary work still needs to be carefully validated.</p>
+<p><a href="assets/fft_infrasound_near_windfarm.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="assets/fft_infrasound_near_windfarm.png" class="img-fluid"></a></p>
+</section>
+</section>
+<section id="hosting-a-raspberry-shake-boom" class="level2">
+<h2 class="anchored" data-anchor-id="hosting-a-raspberry-shake-boom">Hosting a Raspberry Shake &amp; Boom</h2>
+<p>If you are interested in hosting your own Raspberry Shake &amp; Boom, please register you interest in joining OCSN via the</p>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake &amp; Boom device</span>
-<span class="glightbox-desc lightbox-desc-2">A Raspberry Shake and Boom device</span>
+<span class="glightbox-desc lightbox-desc-1">A Raspberry Shake and Boom device</span>
+<span class="glightbox-desc lightbox-desc-2">Recording of a recent earthquake near Tonga in the Pacific Ocean, as recorded by the Raspberry Shake &amp; Boom monitoring station operated by Alan Sheehan just south of Oberon township</span>
+<span class="glightbox-desc lightbox-desc-3">Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake &amp; Boom device</span>
+<span class="glightbox-desc lightbox-desc-4">SpaceX trunk re-entry infrasound signal 2022</span>
+<span class="glightbox-desc lightbox-desc-5">Custom analysis of Honshu earthquake programmed by Alan Sheehan</span>
+<span class="glightbox-desc lightbox-desc-6">Helicopter infrasound</span>
 </div>
 </section>
 
@@ -841,7 +931,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

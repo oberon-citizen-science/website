@@ -99,23 +99,23 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-about">    
         <li>
-    <a class="dropdown-item" href="./index.html">
+    <a class="dropdown-item" href="./index.ymd">
  <span class="dropdown-text">Introduction</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./what_is_citizen_science.html">
+    <a class="dropdown-item" href="./what_is_citizen_science.ymd">
  <span class="dropdown-text">What is Citizen Science?</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_mission_statement.html">
+    <a class="dropdown-item" href="./ocsn_mission_statement.ymd">
  <span class="dropdown-text">Mission Statement</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_articles_of_association.html">
+    <a class="dropdown-item" href="./ocsn_articles_of_association.ymd">
  <span class="dropdown-text">Articles of Association</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_code_of_conduct.html">
+    <a class="dropdown-item" href="./ocsn_code_of_conduct.ymd">
  <span class="dropdown-text">Code of Conduct</span></a>
   </li>  
         <li>
@@ -161,12 +161,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Bird call detection and counting</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./local_weather.html">
+    <a class="dropdown-item" href="./local_weather.qmd">
  <span class="dropdown-text">Local weather monitoring</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./lorawan.html">
- <span class="dropdown-text">Oberon LGA LoRaWAN</span></a>
+    <a class="dropdown-item" href="./nb_networks.qmd">
+ <span class="dropdown-text">LoRaWAN and NB-IoT</span></a>
   </li>  
     </ul>
   </li>
@@ -175,11 +175,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog_posts.html"> 
+    <a class="nav-link" href="./blog.html"> 
 <span class="menu-text">Blog posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://forms.gle/6HDzYWCqcRTkBsJ69" target="_blank"> 
+    <a class="nav-link active" href="./register_interest.html" aria-current="page"> 
 <span class="menu-text">Register your interest</span></a>
   </li>  
 </ul>
@@ -276,6 +276,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Privacy Policy</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./register_interest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Register your interest</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -324,14 +330,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./local_weather.html" class="sidebar-item-text sidebar-link">
+  <a href="./local_weather.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Local weather monitoring</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lorawan.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Oberon LGA LoRaWAN</span></a>
+  <a href="./nb_networks.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LoRaWAN and NB-IoT</span></a>
   </div>
 </li>
       </ul>
@@ -888,7 +894,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

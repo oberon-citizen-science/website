@@ -1,11 +1,29 @@
 ---
-title: "Wind farms and Citizen Science"
+title: "Wind Farms and Renewable Energy"
 lightbox: true
 ---
 
-## The Pines Wind Farm proposed by TAG and Stromlo Energy
+:::{.aside}
+![](assets/wind_turbines_oxen.png)
+:::
 
-The interactive map below shows the exploration area as permitted by Forestry Corporation NSW for possible siting of the proposed wind farm in state forest areas. The exploration area is shaded in red, and the existing 500 kVA transmission line to Taralga to which the wind farm must connect is shown as a blue line.
+One of the aims of OCSN is to engage with STEM issues of relevance to the Oberon LGA community. One of the most contentious and potentially divisive issues to be faced in the immediate future are the proposals to build substantial wind farms in or adjacent to the large pine forests in the southern part of Oberon LGA. Details of these proposed projects are provided below. It is the intention of OCSN to contribute to the debate around these projects and to help inform decision-making processes (such as by responding to calls for comments on project Environmental Impact Statements (EIS)) through projects designed to collect and analyse scientific data of relevance. Some of these projects are discussed below.
+
+:::{.callout-info}
+OCSN does not take a position on whether any of the wind farms proposed for the southern part of Oberon LGA should proceed. As a science-based organisation, OCSN accepts the fact of anthropogenic climate change and the urgent need to de-carbonise economies worldwide. However, this does not mean it has a position on the proposed Paling Yards and Pines winds farms. It does have a strong position, however, on the need for sound scientific evidence to inform decisions about these proposed developments, which represent major construction projects of huge structures in high country rural settings. As [noted on the FrogID page](frogid.html#frogs-and-wind-farms), there were significant deficiencies in data used and considered the Biodiversity Development Assessment Report for the proposed Paling Yards Wind Farm, which was part of the EIS submission. OCSN intends to ensure that such deficiencies are remedied for the proposed Pines Wind Farm (and are surfaced in any further consideration of the Paling Yards proposal). 
+:::
+
+## The proposed Paling Yards Wind Farm
+
+Details of this proposed development as provided by the developer can be found [here](https://palingyardswindfarm.globalpower-generation.com.au) and the EIS submission for the development [here](https://www.planningportal.nsw.gov.au/major-projects/projects/paling-yards-wind-farm-0?fbclid=IwAR0aDB66Br7tRrvetMilpt3Zvfwezxa-k3S4qgR3vYXmsHmIyfHeiechs0Q). 
+
+More detailed consideration of the scientific data gaps relating to this proposal will appear here on the OCSN web site in due course, Although the very brief call for public comment in the Paling Yards EIS has closed, it is expected that the development will be subject to a further enquiry and OCSN hopes to make submissions to that process, at least with regard to the adequacy of the science and engineering considerations reflected in the EIS.
+
+## The proposed Pines Wind Farm
+
+Al large wind farm development is proposed in the Gurnag and/or Vulcan state forests, which are largely (but not exclusively) pine plantations managed by the Forestry Corporation of NSW. This development has been enabled by recent chages to the relevant NSW legislation pertaining to Forestry Corporation management of state forests, permitting up to 7% of state forest land areas to be used for renewable energy projects. The developers of the proposed Pines Wind Farm are [TAG Energy](https://tag-en.com)  and [Stromlo Energy](https://www.stromlo.com).
+
+The interactive map below shows the exploration area granted to the developersby Forestry Corporation NSW for possible siting of the proposed wind farm in (largely) state forest areas. The exploration area is shaded in red, and the existing 500 kVA transmission line to Taralga to which the wind farm must connect shown as a blue line.
 
 Better maps and more details will appear here in the future.
 
@@ -122,3 +140,21 @@ leaflet(height="800px", width="1200px") %>%
 ```
 
 :::
+
+## OCSN plans regarding data to inform wind farm decision making
+
+Following is a list of potential activities in which OCSN may engage to help inform debate and decision making around wind farm developments. Not all these activities may proceed, it depends on the support for their undertaking by potential OCSN members, and in some cases, on the success of OCSN in obtaining government, philanthropic or other funding to support these initiatives. Collaboration with scientists with particular expertise in universities and research instituteswill also be required, and OCSN will approach suitable research groups regarding such collaboration in due course.
+
+::: {.callout-info}
+Apart from funding from government grant schemes and philanthropic donors, OCSN intends to seek financial contributions from the wind farm developers to support projects, such as deployment of a network of [Raspberry Shake & Boom](shake_and_boom.html) seismic and infrasound monitoring stations in and around the proposed wind farm develpment areas. We believe that such funding would represent a show of good will and openness on the part of the proposed wind farm developers. However, funding will not be accepted if there are conditions on publication of the results of OCSN investigations, and if all data collected cannot be made openly and publicly available. All OCSN funding sources will be clearly listed on this web site -- OCSN is committed to openness and transparency.
+:::
+
+* Review of the adequacy of scientic data and engineering considerations in the Paling Yards EIS submission, in anticipation of an opportunity for further public input into the decision making around this proposed development.
+* Further investigation of the capabilities of [Raspberry Shake & Boom](shake_and_boom.html) devices to detect infrasound generated by wind turbines and other sources. This may involve establishing some positive control monitoring sites near existing wind turbines of the same scale as those proposed for Oberon LGA.
+* Roll out of an expanded [Raspberry Shake & Boom](shake_and_boom.html) device network acrosss Oberon LGA, but with particular emphasis on the areas in and adjacent to the proposed wind farm developments.
+* Detailed mapping of the remnant native forest areas in the Pines Wind farm exploration area (see map above). Although
+* Frog surveys
+* BirdNET monitoring
+* Stream and waterway water quality monotoring
+
+

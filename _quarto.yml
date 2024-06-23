@@ -22,44 +22,43 @@ website:
       - text: "About"
         menu:
           - text: "Introduction"
-            file: index.html
+            href: index.ymd
           - text: "What is Citizen Science?"
-            file: what_is_citizen_science.html
+            href: what_is_citizen_science.ymd
           - text: "Mission Statement"
-            file: ocsn_mission_statement.html
+            href: ocsn_mission_statement.ymd
           - text: "Articles of Association"
-            file: ocsn_articles_of_association.html
+            href: ocsn_articles_of_association.ymd
           - text: "Code of Conduct"
-            file: ocsn_code_of_conduct.html
+            href: ocsn_code_of_conduct.ymd
           - text: "Privacy Policy"
-            file: ocsn_privacy_policy.html
+            href: ocsn_privacy_policy.qmd
       - text: "Potential Activities"
         menu:
           - text: "FrogID"
-            file: frogid.html
+            href: frogid.qmd
           - text: "Astronomy"
-            file: astronomy.html
+            href: astronomy.qmd
           - text: "Wind farms"
-            file: wind_farms.html
+            href: wind_farms.qmd
       - text: "Sensor Networks"
         menu:
           - text: "Seismic and infrasound monitoring"
-            file: shake_and_boom.html
+            href: shake_and_boom.qmd
           - text: "Meteor detection and tracking"
-            file: meteor
+            href: meteor
           - text: "Bird call detection and counting"
-            file: birdnet.html
+            href: birdnet.qmd
           - text: "Local weather monitoring"
-            file: local_weather.html
-          - text: "Oberon LGA LoRaWAN"
-            file: lorawan.html
+            href: local_weather.qmd
+          - text: "LoRaWAN and NB-IoT"
+            href: nb_networks.qmd
       - text: "News"
-        file: news.html
+        href: news.qmd
       - text: "Blog posts"
-        file: blog_posts.html
+        href: blog.qmd
       - text: "Register your interest"
-        target: _blank
-        url: https://forms.gle/6HDzYWCqcRTkBsJ69
+        href: register_interest.qmd
   sidebar:
     style: "floating"
     search: false
@@ -69,33 +68,35 @@ website:
       - section: "Introductions"
         contents:
           - text: "Welcome to OCSN"
-            file: index.html
+            href: index.qmd
           - text: "What is Citizen Science?"
-            file: what_is_citizen_science.html
+            href: what_is_citizen_science.qmd
           - text: "Mission Statement"
-            file: ocsn_mission_statement.html
+            href: ocsn_mission_statement.qmd
           - text: "Articles of Association"
-            file: ocsn_articles_of_association.html
+            href: ocsn_articles_of_association.qmd
           - text: "Code of Conduct"
-            file: ocsn_code_of_conduct.html
+            href: ocsn_code_of_conduct.qmd
           - text: "Privacy Policy"
-            file: ocsn_privacy_policy.html
+            href: ocsn_privacy_policy.qmd
+          - text: "Register your interest"
+            href: register_interest.qmd
       - section: "Potential Activities"
         contents:
           - text: "FrogID"
-            file: frogid.html
+            href: frogid.qmd
           - text: "Astronomy"
-            file: astronomy.html
+            href: astronomy.qmd
       - section: "Potential Sensor Networks"
         contents:
           - text: "Seismic and infrasound monitoring"
-            file: shake_and_boom.html
+            href: shake_and_boom.qmd
           - text: "Bird call detection and counting"
-            file: birdnet.html
+            href: birdnet.qmd
           - text: "Local weather monitoring"
-            file: local_weather.html
-          - text: "Oberon LGA LoRaWAN"
-            file: lorawan.html
+            href: local_weather.qmd
+          - text: "LoRaWAN and NB-IoT"
+            href: nb_networks.qmd
 fig-cap-location: bottom
 reference-location: section
 footnotes-hover: true
