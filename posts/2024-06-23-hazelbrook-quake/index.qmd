@@ -6,7 +6,7 @@ author:
 date: 2024-06-23
 categories: [Local earthquakes] # self-defined categories
 citation: 
-  url: https://oberon-citizen.science/posts/2024-06-24-hazelbrook-quake/
+  url: https://oberon-citizen.science/posts/2024-06-23-hazelbrook-quake/
 image: hazelbrook-preview.png
 draft: false 
 lightbox: true

@@ -1,0 +1,37 @@
+---
+title: "G-weighting infrasound data"
+description: "Infrasound data captured by devices such as the Raspberry Shake & Boom needs to be G-weighted to properly reflect the sensitivity of the human ear (and body) to the low frequencies present (by definition) in infrasound. This is a technical article documenting some progress in doing this weighting."
+author:
+  - name: Alan Sheehan
+date: 2024-06-24
+categories: [Infrasound, Technical Reports] # self-defined categories
+citation: 
+  url: https://oberon-citizen.science/posts/2024-06-24-g-weighting/
+image: hazelbrook-preview.png
+draft: false 
+lightbox: true
+---
+
+::: {.aside}
+![Commonly-used Sound Pressure level weightings](common-spl-weightings.png)
+:::
+
+:::{.callout-tip}
+Click on each image to see an enlarged version of it.
+:::
+
+One of the challenges of infrasound assessment is that the pressure waveforms recorded by deveices like the [Rasberry Shake & Boom](../../shake_and_boom.html) need to be converted int Sound Pressure levels (SPL) measured on the logarithmic dB scale. There are various types of weighting used for such conversions, the most common being the db(A) weighting scale -- see the chart of commonly-used SPL weightings in the margin.
+
+However, infrasound requires a quite different weighting to mimic the sensitivity of the human ear (and body, as infrasound at high levels can be felt as well as heard). This is called the G weighting scale, and looks like this:
+
+![G weighting scale for infrasound](g-weighting.png)
+
+
+Software to carry our this weighting is not very common. However, after a bit of thought, a simple mechanism to achieve G weighting measurements has been found which does not require any high-level maths to understand. The idea is to create a fast Fourier transform (FFT) in dB(L) of the raw data, then apply the G weighting function to produce an FFT in dB(G). From there the FFT should be able to be summed for overall dB(G) or 1/3 or 1 octave histograms. 
+
+![Transform raw signal into a dB(L) FFT](transform-to-fft-dbl.png)
+
+![Derive and apply the G weighting function to obtain SPL in dB(G)(derive-and-apply-g-weighting-function.png)
+
+This is a work in progress. Further useful discussion of the need for G weighting of infrasound SPL data can be found starting at page 59 of [this slightly dated but still very useful review report](../../assets/systematic-review-wind-farms-eh54.pdf).  
+
