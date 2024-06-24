@@ -20,7 +20,7 @@ lightbox: true
 Click on each image to see an enlarged version of it.
 :::
 
-One of the challenges of infrasound assessment is that the pressure waveforms recorded by deveices like the [Rasberry Shake & Boom](../../shake_and_boom.html) need to be converted int Sound Pressure levels (SPL) measured on the logarithmic dB scale. There are various types of weighting used for such conversions, the most common being the db(A) weighting scale -- see the chart of commonly-used SPL weightings in the margin.
+One of the challenges of infrasound assessment is that the pressure waveforms recorded by devices like the [Raspberry Shake & Boom](../../shake_and_boom.html) need to be converted in to Sound Pressure levels (SPL) measured on the logarithmic dB scale. There are various types of weighting used for such conversions, the most common being the db(A) weighting scale -- see the chart of commonly-used SPL weightings in the margin.
 
 However, infrasound requires a quite different weighting to mimic the sensitivity of the human ear (and body, as infrasound at high levels can be felt as well as heard). This is called the G weighting scale, and looks like this:
 
