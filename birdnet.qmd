@@ -18,6 +18,7 @@ Recordings can be collected via an app running on a smartphone, using the built-
 Ready-made and packaged [Birdweather PUC](https://www.birdweather.com) devices are alos available for about AU$400, as shown below. This is probably the easiest but also the most expensive way to establish a BirdNET listening station that automatically records bird calls, identifies the species of bird and uploads the data to an international citizen science database.
 
 ![BirdWeather PUC](assets/birdweather_puc.png)
+
 :::{.aside}
 ![DIY BirdNet-pi installation at the home of a OCSN member](assets/diy-birdnet-pi.png)
 :::

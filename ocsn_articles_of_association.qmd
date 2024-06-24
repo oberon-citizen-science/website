@@ -3,5 +3,5 @@ title: "OCSN Articles of Association"
 ---
 
 :::{.callout-info}
-Oberon Citizen Science Network is currently in start-up phase and is still seeking expressions of interest from potential members. However it is our intention, once we establish the level of interest, to seek to incorporate as a formal not-for-profit organisation. The exact form f that organisation is yet to be determined.
+Oberon Citizen Science Network is currently in start-up phase and is still seeking expressions of interest from potential members. However it is our intention, once we establish the level of interest, to seek to incorporate as a formal not-for-profit organisation. The exact form of that organisation and incorporation is yet to be determined.
 :::

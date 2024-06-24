@@ -31,7 +31,7 @@ In fact, Oberon LGA hosts some of the few known habitats of the critically endan
 
 There may be opportunities for OCSN members to colloborate with frog scientists at the Australian Museum and universities to collect better data on the Booroolong frog in the Oberon region, as well as other species. More information on Booroolong frog conservation efforts can be found [here](https://australian.museum/learn/collections/natural-science/herpetology/herpetology-projects/booroolong-frog-conservation/) on the Australian Museum web site.
 
-Here is a video showing current data from the FrogID database on identifications in Oberon LGA. More are needed!
+Here is a video showing current data from the FrogID database on identifications in Oberon LGA. More identifications are needed!
 
 {{< video assets/Oberon_FrogID_map_demo.mp4 >}}
 
@@ -41,7 +41,7 @@ One of the reasons why it is so important to monitor frog populations is that th
 
 There are also many other vulnerable or threatened species listed in the Biodiversity Assessment Report for Paling Yards, including many bird species. There is a role for OCSN members to collect more data to better inform such environmental impact assessments -- see also the proposed [BirdNET sensor project](birdnet.html).
 
-:::{.callout-caution}
+:::{.callout-caution title="Construction ahead"}
 The [proposed Pines Wind Farm](wind_farms.html#the-proposed-pines-wind-farm) in state forests south of Oberon also has the potential to impact vulnerable frog populations, and developing OCSN projects to collect essential baseline data while that proposal is still in the investigation phase should be a priority project for OCSN. 
 :::
 

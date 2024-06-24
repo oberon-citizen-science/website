@@ -5,7 +5,7 @@ lightbox: true
 
 ## Our Pledge
 
-As members, contributors, and officer bearers of the Oberon Citizen Science Network (OCSN),  we pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+As members, contributors, and officer bearers of the Oberon Citizen Science Network (OCSN),  we pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, colour, religion, or sexual identity and orientation.
 
 ::: {.aside}
 ![](assets/ocsn_code_of_conduct.png)

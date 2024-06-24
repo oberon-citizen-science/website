@@ -2,7 +2,7 @@
 title: "OCSN Privacy Policy"
 ---
 
-This Privacy Policy applies to all personal information collected by Oberon Citizen Science Network (OCSN) via the website located at https://oberon-citizen.science, via email accounts associated with OCSN and via other web and social media data collection mechanisms.
+This Privacy Policy applies to all personal information collected by Oberon Citizen Science Network (OCSN) via the website located at [https://oberon-citizen.science](https://oberon-citizen.science), via email accounts associated with OCSN and via other web and social media data collection mechanisms.
 
 ## 1. What is "personal information"?
 

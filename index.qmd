@@ -3,7 +3,11 @@ title: "Welcome to the Oberon Citizen Science Network (OCSN) website"
 lightbox: true
 ---
 
-This is the website for the recently formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**).
+This is the website for the newly formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**). At this stage, we are seeking expressions of interest from potential members and contributors. Please read on for more information!
+
+:::{.callout-tip}
+This web site should be readable and navigable on a smart phone, but it is best viewed on a tablet computer in landscape mode or a laptop or desktop computer. Some features such as interactive maps may be difficult to use on a phone.
+:::
 
 ::: {.aside}
 [Oberon](https://en.wikipedia.org/wiki/Oberon_Council) is located in the Central Tablelands of NSW, Australia, about 140km west of Sydney Harbour, and about 80km west of the Blue Mountains, but at a slightly higher elevation than the top of the Blue Mountains (most of Oberon LGA sits at between 1100 and 1300m elevation).

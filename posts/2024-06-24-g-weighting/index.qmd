@@ -7,7 +7,7 @@ date: 2024-06-24
 categories: [Infrasound, Technical Reports] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/posts/2024-06-24-g-weighting/
-image: hazelbrook-preview.png
+image: g-weighting.png
 draft: false 
 lightbox: true
 ---
@@ -27,11 +27,20 @@ However, infrasound requires a quite different weighting to mimic the sensitivit
 ![G weighting scale for infrasound](g-weighting.png)
 
 
-Software to carry our this weighting is not very common. However, after a bit of thought, a simple mechanism to achieve G weighting measurements has been found which does not require any high-level maths to understand. The idea is to create a fast Fourier transform (FFT) in dB(L) of the raw data, then apply the G weighting function to produce an FFT in dB(G). From there the FFT should be able to be summed for overall dB(G) or 1/3 or 1 octave histograms. 
+Software to carry our this weighting is not very common. However, after a bit of thought, a simple mechanism to achieve G weighting measurements has been found which does not require any high-level maths to understand. The idea is to create a fast Fourier transform (FFT) in dB(L) of the raw data, then apply the G weighting function to produce an FFT in dB(G). 
 
 ![Transform raw signal into a dB(L) FFT](transform-to-fft-dbl.png)
 
-![Derive and apply the G weighting function to obtain SPL in dB(G)(derive-and-apply-g-weighting-function.png)
+![Derive and apply the G weighting function to obtain SPL in dB(G)](derive-and-apply-g-weighting-function.png)
 
-This is a work in progress. Further useful discussion of the need for G weighting of infrasound SPL data can be found starting at page 59 of [this slightly dated but still very useful review report](../../assets/systematic-review-wind-farms-eh54.pdf).  
+
+First I made sure the FFT in Pa was correctly normalised so it represents Pa. That is converted to dB(L), the G weighting is applied to the dB(L) to get dB(G). I've then converted the dB(G) back to Pa as an FFT (red plot in second axes). Now when I sum the FFTs I get a pressure in Pa which does not relate to levels in the signal unfortunately, but I am thinking the difference between these two summed pressures when convert back to dB is the difference overall between dB(L) and dB(G). It's basically assuming the same frequency distribution across the whole sample period, which I think is the best we can hope to do without a real-time weighting circuit behind the microphone as the real SPL meters do. The estimated peak dB(G) is in the bottom right corner just above the peak dB(L). My tests show it works well in narrow band around 10Hz where dB(L) and dB(G) are the same. At this stage I can't see any reason why there'd need to be another scaling factor in there.
+
+![Test of g-weighting on an infrasound signal from a quarry blast at Oberon Quarries](g-weighting-3.png)
+
+![Narrow time band around the strongest signal.](g-weighting-4.png)
+
+![Behaving as expected with narrow(er) bandwidth around 10Hz where dBL and DB(G) are close to the same.](g-weighting-5.png)
+
+This is very much a work in progress. Further useful discussion of the need for G weighting of infrasound SPL data can be found starting at page 59 of [this slightly dated but still very useful review report](../../assets/systematic-review-wind-farms-eh54.pdf).  
 
