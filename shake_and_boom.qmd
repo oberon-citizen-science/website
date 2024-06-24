@@ -40,7 +40,7 @@ Of course, the devices can also detect , less intense local earthquakes, as show
 
 Meteorites and space debris enter the Earth's atmospshere at supersonic speeds, creating sonic booms from the resulting shock wave. On the morning of August 9, 2022 at 7:05am the SpaceX Crew 1 Dragon Trunk re-entered the atmosphere over Western NSW, the Snowy Mountains and eastern Victoria. This is the infrasound signal of that event captured on a Raspberry Shake and Boom operated by Alan Sheehan just outside Oberon, some 370kms away from the point of closest approach.
 
-![SpaceX trunk re-entry infrasound signal 2022](assets/spacex_trunk_reentry.png)
+![SpaceX trunk re-entry infrasound signal 2022](assets/spacex_trunk_reentry_2022.png)
 
 ### DIY data analysis
 
@@ -66,4 +66,4 @@ The infrasound microphone in the Raspberry Shake and Boom device should be able 
 
 ## Hosting a Raspberry Shake & Boom
 
-If you are interested in hosting your own Raspberry Shake & Boom, please register you interest in joining OCSN via the  
+If you are interested in hosting your own Raspberry Shake & Boom, please register you interest in joining OCSN via the web form available via the expressions of interst page, and note that you are interested in hosting a Shake & Boom. At this stage all Shake and Boom devices need to be self-funded, although we will be seeking funding to subsidise or fully cover the costs involved.
