@@ -301,51 +301,15 @@
     "text": "Commonly-used Sound Pressure level weightings\n\n\n\n\n\n\n\n\nTip\n\n\n\nClick on each image to see an enlarged version of it.\n\n\nOne of the challenges of infrasound assessment is that the pressure waveforms recorded by deveices like the Rasberry Shake & Boom need to be converted int Sound Pressure levels (SPL) measured on the logarithmic dB scale. There are various types of weighting used for such conversions, the most common being the db(A) weighting scale – see the chart of commonly-used SPL weightings in the margin.\nHowever, infrasound requires a quite different weighting to mimic the sensitivity of the human ear (and body, as infrasound at high levels can be felt as well as heard). This is called the G weighting scale, and looks like this:\n\n\n\nG weighting scale for infrasound\n\n\nSoftware to carry our this weighting is not very common. However, after a bit of thought, a simple mechanism to achieve G weighting measurements has been found which does not require any high-level maths to understand. The idea is to create a fast Fourier transform (FFT) in dB(L) of the raw data, then apply the G weighting function to produce an FFT in dB(G). From there the FFT should be able to be summed for overall dB(G) or 1/3 or 1 octave histograms.\n\n\n\nTransform raw signal into a dB(L) FFT\n\n\n![Derive and apply the G weighting function to obtain SPL in dB(G)(derive-and-apply-g-weighting-function.png)\nThis is a work in progress. Further useful discussion of the need for G weighting of infrasound SPL data can be found starting at page 59 of this slightly dated but still very useful review report.\n\n\n\nCommonly-used Sound Pressure level weightings\nG weighting scale for infrasound\nTransform raw signal into a dB(L) FFT\n\n\nCitationBibTeX citation:@online{sheehan2024,\n  author = {Sheehan, Alan},\n  title = {G-Weighting Infrasound Data},\n  date = {2024-06-24},\n  url = {https://oberon-citizen.science/posts/2024-06-24-g-weighting/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nSheehan, Alan. 2024. “G-Weighting Infrasound Data.” June\n24, 2024. https://oberon-citizen.science/posts/2024-06-24-g-weighting/."
   },
   {
-    "objectID": "frogid.html",
-    "href": "frogid.html",
-    "title": "FrogID",
+    "objectID": "local_weather.html",
+    "href": "local_weather.html",
+    "title": "Local weather monitoring",
     "section": "",
-    "text": "Current status of this initiative\n\n\n\nInterested individuals are encouraged to download the FrogID app and start recording and identifying frogs around their homes and properties. Depending on the level of interest amongst members, OCSN may contact the FrogID team at the Australian Museum to discuss the possibility of organising some systematic frog surveys by OCSN members, guided by FrogID scientists, of frogs in various places in Oberon LGA, as discussed below.\nFrogID is a fantastic citizen science initiative run by the Australian Museum in Sydney but supported by dozens of universities and government agencies from across Australia. In 2019 it won the Eureka Prize in the Citizen Science category.\nParticipation in the FrogID project is easy, all you need is a smartphone. You download the free FrogID app, and use it to record frog calls using the microphone built in to your phone. Better external directional microphones can also be used – access to these is something OCSN may be able to help members with in the future. The recording and some information on where it was made, as well as your best guess about the species (the app provides help with this, so you learn a lot about frogs in the process) are then uploaded automatically to a central database run by the Australian Museum. A trained herpetologist (a frog and amphibian scientist) will then review your recording and provide feedback to you. A video showing all this is available below.",
+    "text": "Current status of this initiative\n\n\n\nPlanning stage only.\n\n\n\n\n\nMore details soon!",
     "crumbs": [
       "News",
-      "Potential Activities",
-      "FrogID"
-    ]
-  },
-  {
-    "objectID": "frogid.html#monitoring-central-tablelands-high-country-frog-populations",
-    "href": "frogid.html#monitoring-central-tablelands-high-country-frog-populations",
-    "title": "FrogID",
-    "section": "Monitoring Central Tablelands “High Country” frog populations",
-    "text": "Monitoring Central Tablelands “High Country” frog populations\nThe Oberon region contains many frog habitats, including rare “high country” habitats. relatively little is known about the health of frog populations in these unusual habitats which, like rivers and wetlands in so many places, are under threat from development, introduced fish and diseases (especially trout and the chytrid fungus) and, of course, climate change.",
-    "crumbs": [
-      "News",
-      "Potential Activities",
-      "FrogID"
-    ]
-  },
-  {
-    "objectID": "frogid.html#the-critically-endangered-booroolong-frog",
-    "href": "frogid.html#the-critically-endangered-booroolong-frog",
-    "title": "FrogID",
-    "section": "The critically endangered Booroolong frog",
-    "text": "The critically endangered Booroolong frog\nIn fact, Oberon LGA hosts some of the few known habitats of the critically endangered Booroolong frog (Litoria booroolongensis). It is thought that as few as 5,000 examples remain in the wild, many of which are found in the Abercrombie River catchment (including the Retreat River), and in the area around Essington.\n\n\n\n\n\nThe critically endangered Booroolong frog (Litoria booroolongensis)1\n\n\nThere may be opportunities for OCSN members to colloborate with frog scientists at the Australian Museum and universities to collect better data on the Booroolong frog in the Oberon region, as well as other species. More information on Booroolong frog conservation efforts can be found here on the Australian Museum web site.\nHere is a video showing current data from the FrogID database on identifications in Oberon LGA. More are needed!\n\n\n\n\nen:user:Tnarg 12345, CC BY-SA 3.0 via Wikimedia Commons↩︎",
-    "crumbs": [
-      "News",
-      "Potential Activities",
-      "FrogID"
-    ]
-  },
-  {
-    "objectID": "frogid.html#frogs-and-wind-farms",
-    "href": "frogid.html#frogs-and-wind-farms",
-    "title": "FrogID",
-    "section": "Frogs and Wind farms",
-    "text": "Frogs and Wind farms\nOne of the reasons why it is so important to monitor frog populations is that they can be very vulnerable to human development and land use changes. For example, there is a proposed development of a large wind turbine farm at Paling Yards, which is in the catchment area of the Abercrombie River. There has been little or no consideration of the effect of wind farm development on the Booroolong frog in the Paling Yards development EIS (environmental impact statement). In fact, the Biodiversity Development Assessment Report for the Paling Yards Wind Farm notes on page 44 that no Booroolong frogs were recorded within 10km of the proposed development area, which appears to be at odds with idata collected by the FrogID project. There is clearly a role for local OCSN citizen scientists, working in collaboration with FrogID scientists, to check these facts.\nThere are also many other vulnerable or threatened species listed in the Biodiversity Assessment Report for Paling Yards, including many bird species. There is a role for OCSN members to collect more data to better inform such environmental impact assessments – see also the proposed BirdNET sensor project.\n\n\n\n\n\n\nCaution\n\n\n\nThe proposed Pines Wind Farm in state forests south of Oberon also has the potential to impact vulnerable frog populations, and developing OCSN projects to collect essential baseline data while that proposal is still in the investigation phase should be a priority project for OCSN.\n\n\n\n\n\nFrogID activities\nThe critically endangered Booroolong frog (Litoria booroolongensis)2\n\n\n\n\nen:user:Tnarg 12345, CC BY-SA 3.0 via Wikimedia Commons↩︎",
-    "crumbs": [
-      "News",
-      "Potential Activities",
-      "FrogID"
+      "Potential Sensor Networks",
+      "Local weather monitoring"
     ]
   },
   {
@@ -394,6 +358,54 @@
       "News",
       "Potential Sensor Networks",
       "Seismic and infrasound monitoring"
+    ]
+  },
+  {
+    "objectID": "frogid.html",
+    "href": "frogid.html",
+    "title": "FrogID",
+    "section": "",
+    "text": "Current status of this initiative\n\n\n\nInterested individuals are encouraged to download the FrogID app and start recording and identifying frogs around their homes and properties. Depending on the level of interest amongst members, OCSN may contact the FrogID team at the Australian Museum to discuss the possibility of organising some systematic frog surveys by OCSN members, guided by FrogID scientists, of frogs in various places in Oberon LGA, as discussed below.\nFrogID is a fantastic citizen science initiative run by the Australian Museum in Sydney but supported by dozens of universities and government agencies from across Australia. In 2019 it won the Eureka Prize in the Citizen Science category.\nParticipation in the FrogID project is easy, all you need is a smartphone. You download the free FrogID app, and use it to record frog calls using the microphone built in to your phone. Better external directional microphones can also be used – access to these is something OCSN may be able to help members with in the future. The recording and some information on where it was made, as well as your best guess about the species (the app provides help with this, so you learn a lot about frogs in the process) are then uploaded automatically to a central database run by the Australian Museum. A trained herpetologist (a frog and amphibian scientist) will then review your recording and provide feedback to you. A video showing all this is available below.",
+    "crumbs": [
+      "News",
+      "Potential Activities",
+      "FrogID"
+    ]
+  },
+  {
+    "objectID": "frogid.html#monitoring-central-tablelands-high-country-frog-populations",
+    "href": "frogid.html#monitoring-central-tablelands-high-country-frog-populations",
+    "title": "FrogID",
+    "section": "Monitoring Central Tablelands “High Country” frog populations",
+    "text": "Monitoring Central Tablelands “High Country” frog populations\nThe Oberon region contains many frog habitats, including rare “high country” habitats. relatively little is known about the health of frog populations in these unusual habitats which, like rivers and wetlands in so many places, are under threat from development, introduced fish and diseases (especially trout and the chytrid fungus) and, of course, climate change.",
+    "crumbs": [
+      "News",
+      "Potential Activities",
+      "FrogID"
+    ]
+  },
+  {
+    "objectID": "frogid.html#the-critically-endangered-booroolong-frog",
+    "href": "frogid.html#the-critically-endangered-booroolong-frog",
+    "title": "FrogID",
+    "section": "The critically endangered Booroolong frog",
+    "text": "The critically endangered Booroolong frog\nIn fact, Oberon LGA hosts some of the few known habitats of the critically endangered Booroolong frog (Litoria booroolongensis). It is thought that as few as 5,000 examples remain in the wild, many of which are found in the Abercrombie River catchment (including the Retreat River), and in the area around Essington.\n\n\n\n\n\nThe critically endangered Booroolong frog (Litoria booroolongensis)1\n\n\nThere may be opportunities for OCSN members to colloborate with frog scientists at the Australian Museum and universities to collect better data on the Booroolong frog in the Oberon region, as well as other species. More information on Booroolong frog conservation efforts can be found here on the Australian Museum web site.\nHere is a video showing current data from the FrogID database on identifications in Oberon LGA. More are needed!\n\n\n\n\nen:user:Tnarg 12345, CC BY-SA 3.0 via Wikimedia Commons↩︎",
+    "crumbs": [
+      "News",
+      "Potential Activities",
+      "FrogID"
+    ]
+  },
+  {
+    "objectID": "frogid.html#frogs-and-wind-farms",
+    "href": "frogid.html#frogs-and-wind-farms",
+    "title": "FrogID",
+    "section": "Frogs and Wind farms",
+    "text": "Frogs and Wind farms\nOne of the reasons why it is so important to monitor frog populations is that they can be very vulnerable to human development and land use changes. For example, there is a proposed development of a large wind turbine farm at Paling Yards, which is in the catchment area of the Abercrombie River. There has been little or no consideration of the effect of wind farm development on the Booroolong frog in the Paling Yards development EIS (environmental impact statement). In fact, the Biodiversity Development Assessment Report for the Paling Yards Wind Farm notes on page 44 that no Booroolong frogs were recorded within 10km of the proposed development area, which appears to be at odds with idata collected by the FrogID project. There is clearly a role for local OCSN citizen scientists, working in collaboration with FrogID scientists, to check these facts.\nThere are also many other vulnerable or threatened species listed in the Biodiversity Assessment Report for Paling Yards, including many bird species. There is a role for OCSN members to collect more data to better inform such environmental impact assessments – see also the proposed BirdNET sensor project.\n\n\n\n\n\n\nCaution\n\n\n\nThe proposed Pines Wind Farm in state forests south of Oberon also has the potential to impact vulnerable frog populations, and developing OCSN projects to collect essential baseline data while that proposal is still in the investigation phase should be a priority project for OCSN.\n\n\n\n\n\nFrogID activities\nThe critically endangered Booroolong frog (Litoria booroolongensis)2\n\n\n\n\nen:user:Tnarg 12345, CC BY-SA 3.0 via Wikimedia Commons↩︎",
+    "crumbs": [
+      "News",
+      "Potential Activities",
+      "FrogID"
     ]
   },
   {

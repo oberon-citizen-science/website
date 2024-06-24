@@ -21,8 +21,8 @@ website:
     left:
       - text: "About"
         menu:
-          - text: "Introduction"
-            href: index.ymd
+          - text: "Welcome to OCSN"
+            href: .
           - text: "What is Citizen Science?"
             href: what_is_citizen_science.ymd
           - text: "Mission Statement"

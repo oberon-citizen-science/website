@@ -1,0 +1,14 @@
+---
+title: "Local weather monitoring"
+lightbox: true
+---
+
+::: {.callout-note title="Current status of this initiative"}
+Planning stage only.
+:::
+
+::: {.aside}
+![](assets/oxen_local_weather.png)
+:::
+
+More details soon!
