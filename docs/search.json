@@ -32,7 +32,12 @@
     "href": "meteors.html",
     "title": "Meteor detection and tracking",
     "section": "",
-    "text": "Detecting meteors\n\n\n\n\n\n\n\n\nCurrent status of this initiative\n\n\n\nTwo Raspberry Shake and Boom devices capable of detecting the sonic booms made by meteors and space debris have already been deployed just south-east of Oberon township by OCSN founding members. We hope to add several more such monitoring stations to the OCSN network in due course. A prototype all-sky camera is also being built, which will monitor the night sky continuously to record possible meteor trails. Once tested, we hope to deplot several more of these at various locations around Oberon LGA. The data and images they capture will all be publicly available.\n\n\n:::{.aside} \nMore information about this initiative will appear here in due course."
+    "text": "Detecting meteors\n\n\n\n\n\n\n\n\nCurrent status of this initiative\n\n\n\nTwo Raspberry Shake and Boom devices capable of detecting the sonic booms made by meteors and space debris have already been deployed just south-east of Oberon township by OCSN founding members. We hope to add several more such monitoring stations to the OCSN network in due course. A prototype all-sky camera is also being built, which will monitor the night sky continuously to record possible meteor trails. Once tested, we hope to deplot several more of these at various locations around Oberon LGA. The data and images they capture will all be publicly available.\n\n\n\n\n\nA commercial all-sky camera by All-Sky Optics in the UK. We are testing our own DIY versions of this type of device.\n\n\nMore information about this initiative will appear here in due course.",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks",
+      "Meteor detection and tracking"
+    ]
   },
   {
     "objectID": "ocsn_code_of_conduct.html",

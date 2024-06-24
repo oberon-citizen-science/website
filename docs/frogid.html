@@ -155,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Seismic and infrasound monitoring</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./meteor">
+    <a class="dropdown-item" href="./meteors.html">
  <span class="dropdown-text">Meteor detection and tracking</span></a>
   </li>  
         <li>
@@ -326,6 +326,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./meteors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meteor detection and tracking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./birdnet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bird call detection and counting</span></a>
   </div>
@@ -399,7 +405,7 @@ Current status of this initiative
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/ocsn_frogid.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="FrogID activities"><img src="assets/ocsn_frogid.png" class="img-fluid figure-img" alt="FrogID activities"></a></p>
+<p><a href="assets/ocsn_frogid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="FrogID activities"><img src="assets/ocsn_frogid.png" class="img-fluid figure-img" alt="FrogID activities"></a></p>
 <figcaption>FrogID activities</figcaption>
 </figure>
 </div>
@@ -417,7 +423,7 @@ Current status of this initiative
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/Litoria_booroolongensis.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="The critically endangered Booroolong frog (Litoria booroolongensis)"><img src="assets/Litoria_booroolongensis.jpg" class="img-fluid figure-img" alt="The critically endangered Booroolong frog (Litoria booroolongensis)"></a></p>
+<p><a href="assets/Litoria_booroolongensis.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="The critically endangered Booroolong frog (Litoria booroolongensis)"><img src="assets/Litoria_booroolongensis.jpg" class="img-fluid figure-img" alt="The critically endangered Booroolong frog (Litoria booroolongensis)"></a></p>
 <figcaption>The critically endangered Booroolong frog (<em>Litoria booroolongensis</em>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption>
 </figure>
 </div>
@@ -893,7 +899,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav>
 </div> <!-- /content -->
 <script>videojs(video_shortcode_videojs_video1);</script>
-<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

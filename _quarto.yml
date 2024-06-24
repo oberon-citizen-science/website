@@ -46,7 +46,7 @@ website:
           - text: "Seismic and infrasound monitoring"
             href: shake_and_boom.qmd
           - text: "Meteor detection and tracking"
-            href: meteor
+            href: meteors.qmd
           - text: "Bird call detection and counting"
             href: birdnet.qmd
           - text: "Local weather monitoring"
@@ -91,6 +91,8 @@ website:
         contents:
           - text: "Seismic and infrasound monitoring"
             href: shake_and_boom.qmd
+          - text: "Meteor detection and tracking"
+            href: meteors.qmd
           - text: "Bird call detection and counting"
             href: birdnet.qmd
           - text: "Local weather monitoring"
