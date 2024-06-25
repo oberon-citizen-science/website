@@ -408,7 +408,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#postscript" id="toc-postscript" class="nav-link active" data-scroll-target="#postscript">Postscript</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
@@ -462,8 +468,8 @@ Tip
 <p>First I made sure the FFT in Pa was correctly normalised so it represents Pa. That is converted to dB(L), the G weighting is applied to the dB(L) to get dB(G). I’ve then converted the dB(G) back to Pa as an FFT (red plot in second axes). Now when I sum the FFTs I get a pressure in Pa which does not relate to levels in the signal unfortunately, but I am thinking the difference between these two summed pressures when convert back to dB is the difference overall between dB(L) and dB(G). It’s basically assuming the same frequency distribution across the whole sample period, which I think is the best we can hope to do without a real-time weighting circuit behind the microphone as the real SPL meters do. The estimated peak dB(G) is in the bottom right corner just above the peak dB(L). My tests show it works well in narrow band around 10Hz where dB(L) and dB(G) are the same. At this stage I can’t see any reason why there’d need to be another scaling factor in there.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="g-weighting-3.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="Test of g-weighting on an infrasound signal from a quarry blast at Oberon Quarries"><img src="g-weighting-3.png" class="img-fluid figure-img" alt="Test of g-weighting on an infrasound signal from a quarry blast at Oberon Quarries"></a></p>
-<figcaption>Test of g-weighting on an infrasound signal from a quarry blast at Oberon Quarries</figcaption>
+<p><a href="g-weighting-3.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="Test of G-weighting on an infrasound signal from a quarry blast at Oberon Quarries"><img src="g-weighting-3.png" class="img-fluid figure-img" alt="Test of G-weighting on an infrasound signal from a quarry blast at Oberon Quarries"></a></p>
+<figcaption>Test of G-weighting on an infrasound signal from a quarry blast at Oberon Quarries</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -478,6 +484,16 @@ Tip
 <figcaption>Behaving as expected with narrow(er) bandwidth around 10Hz where dBL and DB(G) are close to the same.</figcaption>
 </figure>
 </div>
+<section id="postscript" class="level2">
+<h2 class="anchored" data-anchor-id="postscript">Postscript</h2>
+<p>I’ve cracked the dB(G) estimating! I have just averaged the difference between the dB(L) and dB(G) curves for the bandpass filter range only. Over thought the first solution!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="g-weighting-6.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8" title="With averaging of the difference between the dB(L) and dB(G) curves for the bandpass filter range only."><img src="g-weighting-6.png" class="img-fluid figure-img" alt="With averaging of the difference between the dB(L) and dB(G) curves for the bandpass filter range only."></a></p>
+<figcaption>With averaging of the difference between the dB(L) and dB(G) curves for the bandpass filter range only.</figcaption>
+</figure>
+</div>
+<hr>
 <p>This is very much a work in progress. Further useful discussion of the need for G weighting of infrasound SPL data can be found starting at page 59 of <a href="../../assets/systematic-review-wind-farms-eh54.pdf">this slightly dated but still very useful review report</a>.</p>
 
 
@@ -486,10 +502,12 @@ Tip
 <span class="glightbox-desc lightbox-desc-2">G weighting scale for infrasound</span>
 <span class="glightbox-desc lightbox-desc-3">Transform raw signal into a dB(L) FFT</span>
 <span class="glightbox-desc lightbox-desc-4">Derive and apply the G weighting function to obtain SPL in dB(G)</span>
-<span class="glightbox-desc lightbox-desc-5">Test of g-weighting on an infrasound signal from a quarry blast at Oberon Quarries</span>
+<span class="glightbox-desc lightbox-desc-5">Test of G-weighting on an infrasound signal from a quarry blast at Oberon Quarries</span>
 <span class="glightbox-desc lightbox-desc-6">Narrow time band around the strongest signal.</span>
 <span class="glightbox-desc lightbox-desc-7">Behaving as expected with narrow(er) bandwidth around 10Hz where dBL and DB(G) are close to the same.</span>
+<span class="glightbox-desc lightbox-desc-8">With averaging of the difference between the dB(L) and dB(G) curves for the bandpass filter range only.</span>
 </div>
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sheehan2024,
   author = {Sheehan, Alan},
@@ -1063,7 +1081,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
