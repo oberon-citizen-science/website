@@ -3,12 +3,13 @@ title: "Local weather monitoring"
 lightbox: true
 ---
 
-::: {.callout-note title="Current status of this initiative"}
-Planning stage only.
-:::
-
 ::: {.aside}
 ![](assets/oxen_local_weather.png)
 :::
 
-More details soon!
+::: {.callout-note title="Current status of this initiative"}
+One OCSN founding member has an online weather station installed, another is planning to install one. Discussion and planning is required to ensure that these stations are adequately accurate, or can be cross-calibrated against each other, and that the online data they produce can readily be collected to provide a real-time view of the local weather in various parts of Oberon LGA.
+:::
+
+Everyone who lives in Oberon LGA knows that the weather can be very variable, and that the measurements (and predictions) provided by the Bureau of Meteorology (BoM) for the NSW Central Tablelands as a region may not be entirely accurate for localities around Oberon. Furthermore, there is no longer an official BoM weather data station in Oberon. These are issues which OCSN may be able to address in one or more projects. More details in due course.
+
