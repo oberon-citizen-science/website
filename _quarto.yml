@@ -25,35 +25,35 @@ website:
           - text: "Welcome to OCSN"
             href: .
           - text: "What is Citizen Science?"
-            href: what_is_citizen_science.ymd
+            file: what_is_citizen_science.html
           - text: "Mission Statement"
-            href: ocsn_mission_statement.ymd
+            file: ocsn_mission_statement.html
           - text: "Articles of Association"
-            href: ocsn_articles_of_association.ymd
+            file: ocsn_articles_of_association.html
           - text: "Code of Conduct"
-            href: ocsn_code_of_conduct.ymd
+            file: ocsn_code_of_conduct.html
           - text: "Privacy Policy"
-            href: ocsn_privacy_policy.qmd
+            file: ocsn_privacy_policy.html
       - text: "Potential Activities"
         menu:
           - text: "FrogID"
-            href: frogid.qmd
+            file: frogid.html
           - text: "Astronomy"
-            href: astronomy.qmd
+            file: astronomy.html
           - text: "Wind farms"
-            href: wind_farms.qmd
+            file: wind_farms.html
       - text: "Sensor Networks"
         menu:
           - text: "Seismic and infrasound monitoring"
-            href: shake_and_boom.qmd
+            file: shake_and_boom.html
           - text: "Meteor detection and tracking"
-            href: meteors.qmd
+            file: meteors.html
           - text: "Bird call detection and counting"
-            href: birdnet.qmd
+            file: birdnet.html
           - text: "Local weather monitoring"
-            href: local_weather.qmd
+            file: local_weather.html
           - text: "LoRaWAN and NB-IoT"
-            href: nb_networks.qmd
+            file: nb_networks.html
       - text: "News"
         href: news.qmd
       - text: "Blog posts"
