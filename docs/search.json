@@ -28,7 +28,7 @@
     "href": "wind_farms.html#the-proposed-pines-wind-farm",
     "title": "Wind Farms and Renewable Energy",
     "section": "The proposed Pines Wind Farm",
-    "text": "The proposed Pines Wind Farm\nA large wind farm development is proposed in the Gurnang and/or Vulcan state forests, which are largely (but not exclusively) pine plantations managed by the Forestry Corporation of NSW. This development has been enabled by recent changes to the relevant NSW legislation pertaining to Forestry Corporation management of state forests, permitting up to 7% of state forest land areas to be used for renewable energy projects. The developers of the proposed Pines Wind Farm are TAG Energy and Stromlo Energy.\nThe interactive map below shows the exploration area granted to the developers by Forestry Corporation NSW for possible location of the proposed wind farm in (largely) state forest areas. The exploration area is shaded in red, and the existing 500 kVA transmission line to Taralga to which the wind farm must connect shown as a blue line.\nBetter maps and more details will appear here in the future.",
+    "text": "The proposed Pines Wind Farm\nA large wind farm development is proposed in the Gurnang and/or Vulcan state forests, which are largely (but not exclusively) pine plantations managed by the Forestry Corporation of NSW. This development has been enabled by recent changes to the relevant NSW legislation pertaining to Forestry Corporation management of state forests, permitting up to 7% of state forest land areas to be used for renewable energy projects. The developers of the proposed Pines Wind Farm are TAG Energy and Stromlo Energy.\nThe interactive map below shows the exploration area granted to the developers by Forestry Corporation NSW for possible location of the proposed wind farm in (largely) state forest areas. The exploration area is shaded in red, and the existing 500 kVA transmission line to Taralga to which the wind farm must connect shown as a blue line.\nBetter maps and more details will appear here in the future.\n\n\n\nWarning in RColorBrewer::brewer.pal(max(3, n), palette): n too large, allowed maximum for palette RdYlBu is 11\nReturning the palette you asked for with that many colors\n\n\nWarning: sf layer has inconsistent datum (+proj=longlat +ellps=GRS80 +no_defs).\nNeed '+proj=longlat +datum=WGS84'",
     "crumbs": [
       "News",
       "Potential Activities",
@@ -307,16 +307,25 @@
     ]
   },
   {
-    "objectID": "ocsn_articles_of_association.html",
-    "href": "ocsn_articles_of_association.html",
-    "title": "OCSN Articles of Association",
+    "objectID": "news.html",
+    "href": "news.html",
+    "title": "News Desk",
     "section": "",
-    "text": "Oberon Citizen Science Network is currently in start-up phase and is still seeking expressions of interest from potential members. However it is our intention, once we establish the level of interest, to seek to incorporate as a formal not-for-profit organisation. The exact form of that organisation and incorporation is yet to be determined.",
-    "crumbs": [
-      "News",
-      "Introductions",
-      "Articles of Association"
-    ]
+    "text": "There is no news yet."
+  },
+  {
+    "objectID": "ocsn_working_with_children.html",
+    "href": "ocsn_working_with_children.html",
+    "title": "OCSN Working With Children Policy",
+    "section": "",
+    "text": "Not yet written."
+  },
+  {
+    "objectID": "ocsn_gallery.html",
+    "href": "ocsn_gallery.html",
+    "title": "OSCN Photo Gallery",
+    "section": "",
+    "text": "A Lovely Image\n\n\n\n\n\nAnother Lovely Image\n\n\n\n\n\nThe Last Lovely Image\n\n\n\n\n\nA Lovely Image\nAnother Lovely Image\nThe Last Lovely Image"
   },
   {
     "objectID": "posts/2024-06-24-g-weighting/index.html",
@@ -460,18 +469,28 @@
     ]
   },
   {
-    "objectID": "ocsn_working_with_children.html",
-    "href": "ocsn_working_with_children.html",
-    "title": "OCSN Working With Children Policy",
+    "objectID": "ocsn_articles_of_association.html",
+    "href": "ocsn_articles_of_association.html",
+    "title": "OCSN Articles of Association",
     "section": "",
-    "text": "Not yet written."
+    "text": "Oberon Citizen Science Network is currently in start-up phase and is still seeking expressions of interest from potential members. However it is our intention, once we establish the level of interest, to seek to incorporate as a formal not-for-profit organisation. The exact form of that organisation and incorporation is yet to be determined.",
+    "crumbs": [
+      "News",
+      "Introductions",
+      "Articles of Association"
+    ]
   },
   {
-    "objectID": "news.html",
-    "href": "news.html",
-    "title": "News Desk",
+    "objectID": "nb_networks.html",
+    "href": "nb_networks.html",
+    "title": "Low-bandwidth data networks",
     "section": "",
-    "text": "There is no news yet."
+    "text": "Current status of this initiative\n\n\n\nPlanning only.\n\n\nDetails in due course.",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks",
+      "LoRaWAN and NB-IoT"
+    ]
   },
   {
     "objectID": "index.html",
