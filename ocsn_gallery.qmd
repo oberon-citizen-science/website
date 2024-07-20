@@ -1,0 +1,11 @@
+---
+title: "OSCN Photo Gallery"
+lightbox: true
+match: auto
+---
+
+![A Lovely Image](mv-1.jpg){group="ocsn-gallery-2024"}
+
+![Another Lovely Image](mv-2.jpg){group="ocsn-gallery-2024"}
+
+![The Last Lovely Image](mv-3.jpg){group="oscn-gallery-2024"}
