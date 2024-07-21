@@ -27,6 +27,50 @@ The interactive map below shows the exploration area granted to the developers b
 
 Better maps and more details will appear here in the future.
 
+```{r, echo=FALSE, include=FALSE}
+library(jsonlite)
+library(tidyverse)
+library(sf)
+
+# biodiversity_areas <- sf::st_read("_wip/TSR_Conservation.gdb", layer = "LLS_TSR_Conservation2019")
+
+# conservation_calculations <- sf::st_read("_wip/TSR_Conservation.gdb", layer = "TSR_ConservationCalculationsWithRegions")
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+frogid_captures <- fromJSON("assets/captures.json.gz.json") |>
+  unnest_longer(validated_frog_ids,
+                values_to="frog_id",
+                indices_to="capture_index")
+
+frogs <- fromJSON("assets/frogs.json.gz.json") |>
+  rename(frog_id = id)
+
+frogid_captures <- frogid_captures |>
+  left_join(frogs) %>%
+  mutate(lng = lng + runif(length(lng), min=-0.025, max=0.025),
+         lat = lat + runif(length(lat), min=-0.025, max=0.025))
+
+frogid_captures_sf <- st_as_sf(frogid_captures,
+                               coords = c("lng", "lat"),
+                               crs=st_crs(oberon_boundary))
+
+oberon_boundary_buffered <- oberon_boundary |>
+  st_buffer(dist=1000)
+
+oberon_frogs <- st_filter(frogid_captures_sf, oberon_boundary_buffered)
+
+# oberon_bd_areas <- st_filter(biodiversity_areas, oberon_boundary_buffered)
+
+protected_riparian <- sf::st_read("_wip/VulnerableLandsProtectedRiparian")
+
+oberon_boundary_buffered_gda94 <- st_transform(oberon_boundary_buffered, crs=st_crs(protected_riparian))
+
+oberon_protected_riparian <- st_filter(protected_riparian, oberon_boundary_buffered_gda94)
+
+```
+
 :::{.column-page}
 
 ```{r}
@@ -36,6 +80,7 @@ Better maps and more details will appear here in the future.
 library(tidyverse)
 library(leaflet)
 
+
 taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
                   paste(collapse = "\n")
 
@@ -43,6 +88,9 @@ pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
 
 oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
                       filter(abb_name == "Oberon")
+
+frog_pal <- colorFactor("RdYlBu", domain=unique(oberon_frogs$common_name))
+
 
 leaflet(height="800px", width="1200px") %>% 
   setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
@@ -62,16 +110,29 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="orange",
               group = "Oberon LGA") %>%
-  addGeoJSON(taralga_line, 
+  addPolygons(data=oberon_protected_riparian,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="brown",
+              group = "Protected riparian areas") %>%
+    addGeoJSON(taralga_line, 
              weight=3, 
              color="blue", 
              fillOpacity=0,
              group = "Existing 500 kVA transmission line") %>%
+  addCircleMarkers(data=oberon_frogs,
+                    group=oberon_frogs$common_name,
+                    color=frog_pal(oberon_frogs$common_name),
+                    weight=1,
+                    popup=oberon_frogs$common_name) %>%
   addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
                    overlayGroups = c("The Pines exploration area",
                                      "Existing 500 kVA transmission line",
                                       "Towns & Villages",
-                                      "Oberon LGA"),
+                                      "Oberon LGA",
+                                      "Protected riparian areas",
+                                     unique(oberon_frogs$common_name)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   addMeasure(
