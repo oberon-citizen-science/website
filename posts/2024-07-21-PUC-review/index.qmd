@@ -33,11 +33,9 @@ The BirdNET-Pi is, as the name suggests, a Raspberry Pi computer, with a microph
 
 The Birdweather PUC is a little different, in that it is a turnkey solution so it costs a bit more than building a BirdNET-Pi. At the time of writing (July, 2024) the Birdweather PUC was selling for US\$249 in the USA. With exchange rates and freight, that ends up just under AU\$500 here.
 
-Apart from bird monitoring and identification, the Birdweather PUC also records the local weather conditions (temperature, humidity and pressure), air quality index (AQI), CO~2~ levels, and VOCs, as well as light levels and it has GPS and accelerometers fitted to monitor motion and location.
-
-::: {.aside}
 ![A Birdweather PUC](../../assets/birdweather_puc.png)
-:::
+
+Apart from bird monitoring and identification, the Birdweather PUC also records the local weather conditions (temperature, humidity and pressure), air quality index (AQI), CO~2~ levels, and VOCs, as well as light levels and it has GPS and accelerometers fitted to monitor motion and location.
 
 At this stage, it is not clear to me how the PUC measures the AQI, CO~2~ and VOCs, as these are all prefaced with the letter e (i.e. eAQI, eCO~2~, and eVOC) denoting that they are estimated. It is not clear if the detectors in the PUC are crude and/or may lose calibration and therefore only estimate the levels, or if the mechanism for these estimates is to use the GPS location of the PUC to estimate the values based on terrestrial measurement stations. The way the sales blurb is written, it suggests the measurements are made in the PUC, but that is not clear. If you are tempted by the PUC for AQI monitoring for health purposes, I recommend doing some thorough research first. If it uses GPS position to estimate from terrestrial measurement stations, then it is probably no better than what you could achieve without it.
 

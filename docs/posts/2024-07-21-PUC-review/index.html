@@ -447,22 +447,20 @@ Note
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="tim_churches_birdnet-pi_station.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley"><img src="tim_churches_birdnet-pi_station.png" class="img-fluid figure-img" alt="Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley"></a></p>
+<p><a href="tim_churches_birdnet-pi_station.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley"><img src="tim_churches_birdnet-pi_station.png" class="img-fluid figure-img" alt="Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley"></a></p>
 <figcaption>Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley</figcaption>
 </figure>
 </div>
 </div></div><p>The BirdNET-Pi is, as the name suggests, a Raspberry Pi computer, with a microphone, running the BirdNET software. It continuously records and analyses birdcalls and can upload the data to BirdNET and Birdweather online, so adding to a global database of bird distribution and density. A BirdNET-Pi is a DIY project that can be built relatively cheaply.</p>
 <p>The Birdweather PUC is a little different, in that it is a turnkey solution so it costs a bit more than building a BirdNET-Pi. At the time of writing (July, 2024) the Birdweather PUC was selling for US$249 in the USA. With exchange rates and freight, that ends up just under AU$500 here.</p>
-<p>Apart from bird monitoring and identification, the Birdweather PUC also records the local weather conditions (temperature, humidity and pressure), air quality index (AQI), CO<sub>2</sub> levels, and VOCs, as well as light levels and it has GPS and accelerometers fitted to monitor motion and location.</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../assets/birdweather_puc.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="A Birdweather PUC"><img src="../../assets/birdweather_puc.png" class="img-fluid figure-img" alt="A Birdweather PUC"></a></p>
+<p><a href="../../assets/birdweather_puc.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="A Birdweather PUC"><img src="../../assets/birdweather_puc.png" class="img-fluid figure-img" alt="A Birdweather PUC"></a></p>
 <figcaption>A Birdweather PUC</figcaption>
 </figure>
 </div>
-</div></div><p>At this stage, it is not clear to me how the PUC measures the AQI, CO<sub>2</sub> and VOCs, as these are all prefaced with the letter e (i.e.&nbsp;eAQI, eCO<sub>2</sub>, and eVOC) denoting that they are estimated. It is not clear if the detectors in the PUC are crude and/or may lose calibration and therefore only estimate the levels, or if the mechanism for these estimates is to use the GPS location of the PUC to estimate the values based on terrestrial measurement stations. The way the sales blurb is written, it suggests the measurements are made in the PUC, but that is not clear. If you are tempted by the PUC for AQI monitoring for health purposes, I recommend doing some thorough research first. If it uses GPS position to estimate from terrestrial measurement stations, then it is probably no better than what you could achieve without it.</p>
+<p>Apart from bird monitoring and identification, the Birdweather PUC also records the local weather conditions (temperature, humidity and pressure), air quality index (AQI), CO<sub>2</sub> levels, and VOCs, as well as light levels and it has GPS and accelerometers fitted to monitor motion and location.</p>
+<p>At this stage, it is not clear to me how the PUC measures the AQI, CO<sub>2</sub> and VOCs, as these are all prefaced with the letter e (i.e.&nbsp;eAQI, eCO<sub>2</sub>, and eVOC) denoting that they are estimated. It is not clear if the detectors in the PUC are crude and/or may lose calibration and therefore only estimate the levels, or if the mechanism for these estimates is to use the GPS location of the PUC to estimate the values based on terrestrial measurement stations. The way the sales blurb is written, it suggests the measurements are made in the PUC, but that is not clear. If you are tempted by the PUC for AQI monitoring for health purposes, I recommend doing some thorough research first. If it uses GPS position to estimate from terrestrial measurement stations, then it is probably no better than what you could achieve without it.</p>
 <p>Operation of the PUC is very simple (as they claim). It only has one button. Press and hold till the button turns green to turn it on. Press and hold till the button turns red to turn it off. When it’s on, double press the button (it will flash blue) to access setup mode.</p>
 <p>Setup mode allows the Birdweather app on your phone to detect and communicate with the PUC and set it up on your WIFI. While the PUC is in range of your WIFI, it automatically uploads detections to the web as they are made. When out of range, it stores the detections on the internal microSD card for uploading when it is back within range of the WIFI. Data is viewed on the Birdweather online app: <a href="https://app.birdweather.com/">https://app.birdweather.com/</a></p>
 <p>The feature that attracted me to the PUC initially was the portability. It is promoted for battery operation on your backpack while hiking, so birds can be identified wherever you go. Not that I do so much bushwalking anymore these days, but we do spend a lot of time travelling, so thought it would be good to take with us.</p>
@@ -1052,7 +1050,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
