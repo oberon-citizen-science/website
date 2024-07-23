@@ -17,7 +17,7 @@ By Alan Sheehan
 
 There are a few options when it comes to electronic detection and identification of birds.
 
-::: {.callout-info}
+::: {.callout-note}
 See also the [bird call sensor network page](https://oberon-citizen.science/birdnet.html) on this web site for more information.
 :::
 

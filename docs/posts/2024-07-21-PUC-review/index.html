@@ -428,8 +428,18 @@ ul.task-list li input[type="checkbox"] {
 <h1>Birdweather PUC Review</h1>
 <p>By Alan Sheehan</p>
 <p>There are a few options when it comes to electronic detection and identification of birds.</p>
-<div class="callout-info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>See also the <a href="https://oberon-citizen.science/birdnet.html">bird call sensor network page</a> on this web site for more information.</p>
+</div>
 </div>
 <p>The simplest and cheapest is to download the BirdNET app to your phone. Using the app, you can record bird calls, analyse them and the app will identify the bird species (or take a wild guess if it can’t and you would like it to). That’s what the BirdNET app is good at. It’s not so good for longer term monitoring and surveys without human supervision and intervention.</p>
 <p>That’s where two other solutions come into their own: the <a href="https://www.birdweather.com/birdnetpi">BirdNET-Pi</a> and the <a href="https://www.birdweather.com/">Birdweather PUC</a>.</p>
@@ -437,7 +447,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="tim_churches_birdnet-pi_station.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley"><img src="tim_churches_birdnet-pi_station.png" class="img-fluid figure-img" alt="Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley"></a></p>
+<p><a href="tim_churches_birdnet-pi_station.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley"><img src="tim_churches_birdnet-pi_station.png" class="img-fluid figure-img" alt="Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley"></a></p>
 <figcaption>Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley</figcaption>
 </figure>
 </div>
@@ -448,7 +458,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../assets/birdweather_puc.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="A Birdweather PUC"><img src="../../assets/birdweather_puc.png" class="img-fluid figure-img" alt="A Birdweather PUC"></a></p>
+<p><a href="../../assets/birdweather_puc.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="A Birdweather PUC"><img src="../../assets/birdweather_puc.png" class="img-fluid figure-img" alt="A Birdweather PUC"></a></p>
 <figcaption>A Birdweather PUC</figcaption>
 </figure>
 </div>
@@ -1042,7 +1052,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
