@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alan Sheehan">
-<meta name="dcterms.date" content="2024-06-24">
-<meta name="description" content="Infrasound data captured by devices such as the Raspberry Shake &amp; Boom needs to be G-weighted to properly reflect the sensitivity of the human ear (and body) to the low frequencies present (by definition) in infrasound. This is a technical article documenting some progress in doing this weighting.">
+<meta name="dcterms.date" content="2024-07-21">
+<meta name="description" content="If you are considering electronic monitoring and identification of birdcalls, this review may help you decide if a Birdweather PUC is the right choice for you or not.">
 
-<title>G-weighting infrasound data – Oberon Citizen Science Network</title>
+<title>Birdweather PUC Review – Oberon Citizen Science Network</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,9 +44,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed slimcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -218,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">G-weighting infrasound data</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Birdweather PUC Review</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -228,15 +225,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">G-weighting infrasound data</h1>
+      <h1 class="title">Birdweather PUC Review</h1>
                   <div>
         <div class="description">
-          Infrasound data captured by devices such as the Raspberry Shake &amp; Boom needs to be G-weighted to properly reflect the sensitivity of the human ear (and body) to the low frequencies present (by definition) in infrasound. This is a technical article documenting some progress in doing this weighting.
+          If you are considering electronic monitoring and identification of birdcalls, this review may help you decide if a Birdweather PUC is the right choice for you or not.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Infrasound</div>
-                <div class="quarto-category">Technical Reports</div>
+                <div class="quarto-category">Birds</div>
+                <div class="quarto-category">Technology</div>
+                <div class="quarto-category">Review</div>
               </div>
                   </div>
   </div>
@@ -254,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 24, 2024</p>
+        <p class="date">July 21, 2024</p>
       </div>
     </div>
     
@@ -412,130 +410,50 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#postscript" id="toc-postscript" class="nav-link active" data-scroll-target="#postscript">Postscript</a></li>
-  <li><a href="#post-postscript" id="toc-post-postscript" class="nav-link" data-scroll-target="#post-postscript">Post-Postscript</a></li>
+  <li><a href="#birdweather-puc-review" id="toc-birdweather-puc-review" class="nav-link active" data-scroll-target="#birdweather-puc-review">Birdweather PUC Review</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="common-spl-weightings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Commonly-used Sound Pressure level weightings"><img src="common-spl-weightings.png" class="img-fluid figure-img" alt="Commonly-used Sound Pressure level weightings"></a></p>
-<figcaption>Commonly-used Sound Pressure level weightings</figcaption>
-</figure>
-</div>
-</div></div><div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Click on each image to see an enlarged version of it.</p>
-</div>
-</div>
-<p>One of the challenges of infrasound assessment is that the pressure waveforms recorded by devices like the <a href="../../shake_and_boom.html">Raspberry Shake &amp; Boom</a> need to be converted in to Sound Pressure levels (SPL) measured on the logarithmic dB scale. There are various types of weighting used for such conversions, the most common being the db(A) weighting scale – see the chart of commonly-used SPL weightings in the margin.</p>
-<p>However, infrasound requires a quite different weighting to mimic the sensitivity of the human ear (and body, as infrasound at high levels can be felt as well as heard). This is called the G weighting scale, and looks like this:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="g-weighting.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="G weighting scale for infrasound"><img src="g-weighting.png" class="img-fluid figure-img" alt="G weighting scale for infrasound"></a></p>
-<figcaption>G weighting scale for infrasound</figcaption>
-</figure>
-</div>
-<p>Software to carry out this weighting is not very common. However, after a bit of thought, a simple mechanism to achieve G weighting measurements has been found which does not require any high-level maths to understand. The idea is to create a fast Fourier transform (FFT) in dB(L) of the raw data, then apply the G weighting function to produce an FFT in dB(G).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="transform-to-fft-dbl.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Transform raw signal into a dB(L) FFT"><img src="transform-to-fft-dbl.png" class="img-fluid figure-img" alt="Transform raw signal into a dB(L) FFT"></a></p>
-<figcaption>Transform raw signal into a dB(L) FFT</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="derive-and-apply-g-weighting-function.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Derive and apply the G weighting function to obtain SPL in dB(G)"><img src="derive-and-apply-g-weighting-function.png" class="img-fluid figure-img" alt="Derive and apply the G weighting function to obtain SPL in dB(G)"></a></p>
-<figcaption>Derive and apply the G weighting function to obtain SPL in dB(G)</figcaption>
-</figure>
-</div>
-<p>First I made sure the FFT in Pa was correctly normalised so it represents Pa. That is converted to dB(L), the G weighting is applied to the dB(L) to get dB(G). I’ve then converted the dB(G) back to Pa as an FFT (red plot in second axes). Now when I sum the FFTs I get a pressure in Pa which does not relate to levels in the signal unfortunately, but I am thinking the difference between these two summed pressures when convert back to dB is the difference overall between dB(L) and dB(G). It’s basically assuming the same frequency distribution across the whole sample period, which I think is the best we can hope to do without a real-time weighting circuit behind the microphone as the real SPL meters do. The estimated peak dB(G) is in the bottom right corner just above the peak dB(L). My tests show it works well in narrow band around 10Hz where dB(L) and dB(G) are the same. At this stage I can’t see any reason why there’d need to be another scaling factor in there.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="g-weighting-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Test of G-weighting on an infrasound signal from a quarry blast at Oberon Quarries"><img src="g-weighting-3.png" class="img-fluid figure-img" alt="Test of G-weighting on an infrasound signal from a quarry blast at Oberon Quarries"></a></p>
-<figcaption>Test of G-weighting on an infrasound signal from a quarry blast at Oberon Quarries</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="g-weighting-4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Narrow time band around the strongest signal."><img src="g-weighting-4.png" class="img-fluid figure-img" alt="Narrow time band around the strongest signal."></a></p>
-<figcaption>Narrow time band around the strongest signal.</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="g-weighting-5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Behaving as expected with narrow(er) bandwidth around 10Hz where dBL and DB(G) are close to the same."><img src="g-weighting-5.png" class="img-fluid figure-img" alt="Behaving as expected with narrow(er) bandwidth around 10Hz where dBL and DB(G) are close to the same."></a></p>
-<figcaption>Behaving as expected with narrow(er) bandwidth around 10Hz where dBL and DB(G) are close to the same.</figcaption>
-</figure>
-</div>
-<section id="postscript" class="level2">
-<h2 class="anchored" data-anchor-id="postscript">Postscript</h2>
-<p>I’ve cracked the dB(G) estimating! I have just averaged the difference between the dB(L) and dB(G) curves for the bandpass filter range only. Over thought the first solution!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="g-weighting-6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="With averaging of the difference between the dB(L) and dB(G) curves for the bandpass filter range only."><img src="g-weighting-6.png" class="img-fluid figure-img" alt="With averaging of the difference between the dB(L) and dB(G) curves for the bandpass filter range only."></a></p>
-<figcaption>With averaging of the difference between the dB(L) and dB(G) curves for the bandpass filter range only.</figcaption>
-</figure>
-</div>
-</section>
-<section id="post-postscript" class="level2">
-<h2 class="anchored" data-anchor-id="post-postscript">Post-Postscript</h2>
-<p>After much deliberation, coding and testing, this project is maturing and looking promising. In the process the code has been developed into a Python module, so it can be used by multiple programs and scripts without retyping or copying the important parts of the code.</p>
-<p>In the end, the final method chosen to apply the G weighting back to the time domain signal was to apply either an octave or 1/3 octave series of filters to the signal and use the maximum linear FFT value and the corresponding value in the G weighted FFT to scale the linear waveforms to G weighting. This solution was selected after it was realised the previous average of the difference would not work with a tonal signal. A signal at a single frequency has a lot of zero frequencies in the FFT and these need to be ignored when scaling the waveforms.</p>
-<p>The current state of play with output from this package is shown in the reports below. There is a lot of information included in these reports which could of course be expanded into reports of their own, such as Octave Analysis, 1/3 Octave Analysis, etc. There is probably a need to add additional functionality into the module in future for things like Leq (averaged infrasound pressure level over a time period) but for now the module only handles instantaneous infrasound pressure levels. It is not anticipated that Leq functionality will be as challenging as the G weighting and octave and 1/3 octave band analysis functionality.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="g-weighting-7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Example Infrasound Report with G Weighting with 1/3 Octave Analysis"><img src="g-weighting-7.png" class="img-fluid figure-img" alt="Example Infrasound Report with G Weighting with 1/3 Octave Analysis"></a></p>
-<figcaption>Example Infrasound Report with G Weighting with 1/3 Octave Analysis</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="g-weighting-8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="1/3 Octave Analysis Output (linear i.e.&nbsp;unweighted)"><img src="g-weighting-8.png" class="img-fluid figure-img" alt="1/3 Octave Analysis Output (linear i.e.&nbsp;unweighted)"></a></p>
-<figcaption>1/3 Octave Analysis Output (linear i.e.&nbsp;unweighted)</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="g-weighting-9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="1/3 Octave G Analysis G Weighted output"><img src="g-weighting-9.png" class="img-fluid figure-img" alt="1/3 Octave G Analysis G Weighted output"></a></p>
-<figcaption>1/3 Octave G Analysis G Weighted output</figcaption>
-</figure>
-</div>
-<p>The waveforms from the 1/3 octave G weighted output are added together to reconstruct a single waveform with the G weighting applied in the time domain.</p>
-<p>Similarly, the “test” plot in the Infrasound Report is the result of adding the linear 1/3 octave waveforms together. As can be seen it matches the original linear waveform well. This provides confidence that the reconstructed G weighted waveform is a reasonable approximation. This is further reinforced by close agreement between the Octave (not shown) and 1/3 Octave G weighting results, so the bandwidths of 1 and 1/3 of and octave are sufficient for repeatable results.</p>
-<hr>
-<p>This is very much a work in progress. Further useful discussion of the need for G weighting of infrasound SPL data can be found starting at page 59 of <a href="../../assets/systematic-review-wind-farms-eh54.pdf">this slightly dated but still very useful review report</a>.</p>
+<section id="birdweather-puc-review" class="level1">
+<h1>Birdweather PUC Review</h1>
+<p>By Alan Sheehan</p>
+<p>There are a few options when it comes to electronic detection and identification of birds.</p>
+<p>The simplest and cheapest is to download the BirdNET app to your phone. Using the app, you can record bird calls, analyse them and the app will identify the bird species (or take a wild guess if it can’t and you would like it to). That’s what the BirdNET app is good at. It’s not so good for longer term monitoring and surveys without human supervision and intervention.</p>
+<p>That’s where two other solutions come into their own: the <a href="https://www.birdweather.com/birdnetpi">BirdNET-Pi</a> and the <a href="https://www.birdweather.com/">Birdweather PUC</a>.</p>
+<p>The BirdNET-Pi is, as the name suggests, a Raspberry Pi computer, with a microphone, running the BirdNET software. It continuously records and analyses birdcalls and can upload the data to BirdNET and Birdweather online, so adding to a global database of bird distribution and density. A BirdNET-Pi is a DIY project that can be built relatively cheaply.</p>
+<p>The Birdweather PUC is a little different, in that it is a turnkey solution so it costs a bit more than building a BirdNET-Pi. At the time of writing (July, 2024) the Birdweather PUC was selling for US$249 in the USA. With exchange rates and freight, that ends up just under AU$500 here.</p>
+<p>Apart from bird monitoring and identification, the Birdweather PUC also records the local weather conditions (temperature, humidity and pressure), air quality index (AQI), CO<sub>2</sub> levels, and VOCs, as well as light levels and it has GPS and accelerometers fitted to monitor motion and location.</p>
+<p>At this stage, it is not clear to me how the PUC measures the AQI, CO<sub>2</sub> and VOCs, as these are all prefaced with the letter e (i.e.&nbsp;eAQI, eCO<sub>2</sub>, and eVOC) denoting that they are estimated. It is not clear if the detectors in the PUC are crude and/or may lose calibration and therefore only estimate the levels, or if the mechanism for these estimates is to use the GPS location of the PUC to estimate the values based on terrestrial measurement stations. The way the sales blurb is written, it suggests the measurements are made in the PUC, but that is not clear. If you are tempted by the PUC for AQI monitoring for health purposes, I recommend doing some thorough research first. If it uses GPS position to estimate from terrestrial measurement stations, then it is probably no better than what you could achieve without it.</p>
+<p>Operation of the PUC is very simple (as they claim). It only has one button. Press and hold till the button turns green to turn it on. Press and hold till the button turns red to turn it off. When it’s on, double press the button (it will flash blue) to access setup mode.</p>
+<p>Setup mode allows the Birdweather app on your phone to detect and communicate with the PUC and set it up on your WIFI. While the PUC is in range of your WIFI, it automatically uploads detections to the web as they are made. When out of range, it stores the detections on the internal microSD card for uploading when it is back within range of the WIFI. Data is viewed on the Birdweather online app: https://app.birdweather.com/</p>
+<p>The feature that attracted me to the PUC initially was the portability. It is promoted for battery operation on your backpack while hiking, so birds can be identified wherever you go. Not that I do so much bushwalking anymore these days, but we do spend a lot of time travelling, so thought it would be good to take with us.</p>
+<p>The first time I set the PUC up I had it running on 3 AAA batteries. Watching the voltage from the batteries drop suggests the PUC is relatively heavy on power, and normal alkaline batteries would likely last about 8 hours / 1 day – which is OK for a day of bushwalking. Lithium batteries may last a bit longer.</p>
+<p>The PUC can also be powered by USB cable, but the batteries can’t be charged this way – which is a good thing if you don’t have rechargeable batteries in it!</p>
+<p>I also have a 50,000 mAh powerbank with a built-in solar charging panel. Using this to power PUC via USB cable gives about 3 days (24 hours per day) operation in overcast conditions before it needed to be recharged.</p>
+<p>The microSD card inside the PUC is 32GB capacity. At the time of writing we had been travelling for 2.5 weeks in our caravan, so had used the PUC for probably 10-12 days or so in that time and the card was about 25% full, so the microSD card should easily have capacity for a 1 month trip away from the home WIFI. That is of course dependent on the number of bird calls detected, but in two locations we stayed for over a week, the birdcalls were pretty continuous.</p>
+<p>So why would you choose a Birdweather PUC over a BirdNET-Pi given it’s more expensive? Well, if you are not comfortable building a Raspberry Pi computer, that could be a factor. If you want to take it with you travelling, bushwalking, etc then that may be another factor. The PUC is also weatherproof when operating on batteries (and they recommend special USB cables for weatherproof operation while powered by USB cable) so that could also be a factor when walking or doing field surveys.</p>
+<p>Both the BirdNET-Pi and the Birdweather PUC are excellent solutions for continuous monitoring and identification of birdcalls, and they share much of the same online technology. (<a href="https://app.birdweather.com/" class="uri">https://app.birdweather.com/</a>)</p>
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sheehan2024,
   author = {Sheehan, Alan},
-  title = {G-Weighting Infrasound Data},
-  date = {2024-06-24},
-  url = {https://oberon-citizen.science/posts/2024-06-24-g-weighting/},
+  title = {Birdweather {PUC} {Review}},
+  date = {2024-07-21},
+  url = {https://oberon-citizen.science/posts/2024-07-21-PUC-review/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sheehan2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Sheehan, Alan. 2024. <span>“G-Weighting Infrasound Data.”</span> June
-24, 2024. <a href="https://oberon-citizen.science/posts/2024-06-24-g-weighting/">https://oberon-citizen.science/posts/2024-06-24-g-weighting/</a>.
+Sheehan, Alan. 2024. <span>“Birdweather PUC Review.”</span> July 21,
+2024. <a href="https://oberon-citizen.science/posts/2024-07-21-PUC-review/">https://oberon-citizen.science/posts/2024-07-21-PUC-review/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1109,38 +1027,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
