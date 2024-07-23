@@ -18,7 +18,7 @@ By Alan Sheehan
 There are a few options when it comes to electronic detection and identification of birds.
 
 ::: {.callout-info}
-See also the [Bird call sensor network page](birdnet.html) on this web site for more information.
+See also the [bird call sensor network page](https://oberon-citizen.science/birdnet.html) on this web site for more information.
 :::
 
 The simplest and cheapest is to download the BirdNET app to your phone. Using the app, you can record bird calls, analyse them and the app will identify the bird species (or take a wild guess if it can’t and you would like it to). That’s what the BirdNET app is good at. It’s not so good for longer term monitoring and surveys without human supervision and intervention.
