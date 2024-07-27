@@ -21,6 +21,7 @@ Participation in the FrogID project is easy, all you need is a smartphone. You d
 
 The Oberon region contains many frog habitats, including rare "high country" habitats. relatively little is known about the health of frog populations in these unusual habitats which, like rivers and wetlands in so many places, are under threat from development, introduced fish and diseases (especially trout and the [chytrid fungus](https://en.wikipedia.org/wiki/Chytridiomycota)) and, of course, climate change.
 
+
 ## The critically endangered Booroolong frog
 
 In fact, Oberon LGA hosts some of the few known habitats of the critically endangered [Booroolong frog](https://en.wikipedia.org/wiki/Booroolong_frog) (*Litoria booroolongensis*). It is thought that as few as 5,000 examples remain in the wild, many of which are found in the [Abercrombie River](https://en.wikipedia.org/wiki/Abercrombie_River) catchment (including the Retreat River), and in the area around Essington.
@@ -29,7 +30,7 @@ In fact, Oberon LGA hosts some of the few known habitats of the critically endan
 ![The critically endangered Booroolong frog (*Litoria booroolongensis*)[^1]](assets/Litoria_booroolongensis.jpg)
 :::
 
-There may be opportunities for OCSN members to colloborate with frog scientists at the Australian Museum and universities to collect better data on the Booroolong frog in the Oberon region, as well as other species. More information on Booroolong frog conservation efforts can be found [here](https://australian.museum/learn/collections/natural-science/herpetology/herpetology-projects/booroolong-frog-conservation/) on the Australian Museum web site.
+There may be opportunities for OCSN members to collaborate with frog scientists at the Australian Museum and universities to collect better data on the Booroolong frog in the Oberon region, as well as other species. More information on Booroolong frog conservation efforts can be found [here](https://australian.museum/learn/collections/natural-science/herpetology/herpetology-projects/booroolong-frog-conservation/) on the Australian Museum web site.
 
 Here is a video showing current data from the FrogID database on identifications in Oberon LGA. More identifications are needed!
 
@@ -37,12 +38,189 @@ Here is a video showing current data from the FrogID database on identifications
 
 ## Frogs and Wind farms
 
-One of the reasons why it is so important to monitor frog populations is that they can be very vulnerable to human development and land use changes. For example, there is a [proposed development of a large wind turbine farm at Paling Yards](https://palingyardswindfarm.globalpower-generation.com.au), which is in the catchment area of the Abercrombie River. There has been little or no consideration of the effect of wind farm development on the Booroolong frog in the [Paling Yards development EIS (environmental impact statement)](https://www.planningportal.nsw.gov.au/major-projects/projects/paling-yards-wind-farm-0?fbclid=IwAR0aDB66Br7tRrvetMilpt3Zvfwezxa-k3S4qgR3vYXmsHmIyfHeiechs0Q). In fact, the [Biodiversity Development Assessment Report for the Paling Yards Wind Farm](https://majorprojects.planningportal.nsw.gov.au/prweb/PRRestService/mp/01/getContent?AttachRef=SSD-29064077%2120230904T041517.390%20GMT) notes on page 44 that no Booroolong frogs were recorded within 10km of the proposed development area, which appears to be at odds with idata collected by the FrogID project. There is clearly a role for local OCSN citizen scientists, working in collaboration with FrogID scientists, to check these facts.
+One of the reasons why it is so important to monitor frog populations is that they can be very vulnerable to human development and land use changes. For example, there is a [proposed development of a large wind turbine farm at Paling Yards](https://palingyardswindfarm.globalpower-generation.com.au), which is in the catchment area of the Abercrombie River. There has been little or no consideration of the effect of wind farm development on the Booroolong frog in the [Paling Yards development EIS (environmental impact statement)](https://www.planningportal.nsw.gov.au/major-projects/projects/paling-yards-wind-farm-0?fbclid=IwAR0aDB66Br7tRrvetMilpt3Zvfwezxa-k3S4qgR3vYXmsHmIyfHeiechs0Q). In fact, the [Biodiversity Development Assessment Report for the Paling Yards Wind Farm](https://majorprojects.planningportal.nsw.gov.au/prweb/PRRestService/mp/01/getContent?AttachRef=SSD-29064077%2120230904T041517.390%20GMT) notes on page 44 that no Booroolong frogs were recorded within 10km of the proposed development area, which appears to be at odds with data collected by the FrogID project. There is clearly a role for local OCSN citizen scientists, working in collaboration with FrogID scientists, to check these facts.
 
 There are also many other vulnerable or threatened species listed in the Biodiversity Assessment Report for Paling Yards, including many bird species. There is a role for OCSN members to collect more data to better inform such environmental impact assessments -- see also the proposed [BirdNET sensor project](birdnet.html).
 
 :::{.callout-caution title="Construction ahead"}
 The [proposed Pines Wind Farm](wind_farms.html#the-proposed-pines-wind-farm) in state forests south of Oberon also has the potential to impact vulnerable frog populations, and developing OCSN projects to collect essential baseline data while that proposal is still in the investigation phase should be a priority project for OCSN. 
+:::
+
+### Current FrogID records in Oberon SLA
+
+```{r, echo=FALSE, include=FALSE}
+library(jsonlite)
+library(tidyverse)
+library(sf)
+
+# biodiversity_areas <- sf::st_read("_wip/TSR_Conservation.gdb", layer = "LLS_TSR_Conservation2019")
+
+# conservation_calculations <- sf::st_read("_wip/TSR_Conservation.gdb", layer = "TSR_ConservationCalculationsWithRegions")
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+frogid_captures <- fromJSON("assets/captures.json.gz.json") |>
+  unnest_longer(validated_frog_ids,
+                values_to="frog_id",
+                indices_to="capture_index")
+
+frogs <- fromJSON("assets/frogs.json.gz.json") |>
+  rename(frog_id = id)
+
+frogid_captures <- frogid_captures |>
+  left_join(frogs) %>%
+  mutate(lng = lng + runif(length(lng), min=-0.025, max=0.025),
+         lat = lat + runif(length(lat), min=-0.025, max=0.025))
+
+frogid_captures_sf <- st_as_sf(frogid_captures,
+                               coords = c("lng", "lat"),
+                            crs=st_crs(oberon_boundary))
+
+oberon_boundary_buffered <- oberon_boundary |>
+  st_buffer(dist=1000)
+
+oberon_frogs <- st_filter(frogid_captures_sf, oberon_boundary_buffered)
+
+# oberon_bd_areas <- st_filter(biodiversity_areas, oberon_boundary_buffered)
+
+protected_riparian <- sf::st_read("_wip/VulnerableLandsProtectedRiparian")
+
+oberon_boundary_buffered_gda94 <- st_transform(oberon_boundary_buffered,                                             crs=st_crs(protected_riparian))
+
+oberon_protected_riparian <- st_filter(protected_riparian, oberon_boundary_buffered_gda94)
+
+```
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(leaflet)
+
+
+taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
+                  paste(collapse = "\n")
+
+pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+frog_pal <- colorFactor("RdYlBu", domain=unique(oberon_frogs$common_name))
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=pines_expl_area, 
+              stroke=TRUE, 
+              weight=1, 
+              fillOpacity=0.2, 
+              color="red",
+              group = "The Pines exploration area") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addPolygons(data=oberon_protected_riparian,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="brown",
+              group = "Protected riparian areas") %>%
+    addGeoJSON(taralga_line, 
+             weight=3, 
+             color="blue", 
+             fillOpacity=0,
+             group = "Existing 500 kVA transmission line") %>%
+  addCircleMarkers(data=oberon_frogs,
+                    group=oberon_frogs$common_name,
+                    color=frog_pal(oberon_frogs$common_name),
+                    weight=1,
+                    popup=oberon_frogs$common_name) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c("The Pines exploration area",
+                                     "Existing 500 kVA transmission line",
+                                      "Towns & Villages",
+                                      "Oberon LGA",
+                                      "Protected riparian areas",
+                                     unique(oberon_frogs$common_name)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE)) %>%
+  addMarkers(lng=149.74160413611594,
+             lat=-33.845989194998666,
+             label = "Black Springs",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.91754276836787,
+             lat=-33.78815383191878,
+             label = "Edith",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85713985509926,
+             lat=-33.70394907824247,
+             label = "Oberon township",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5288146180066,
+             lat=-33.94774521659694,
+             label = "Burraga",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5935282648902,
+             lat=-33.82130920624268,
+             label = "Mt David",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85336006836064,
+             lat=-33.91140078300324,
+             label = "Shooters Hill",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.89359188575838,
+             lat=-33.66433983475142,
+             label = "Hazelgrove",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.73074435257803,
+             lat=-33.54222049863011,
+             label = "O'Connell",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) 
+
+
+                    
+```
+
 :::
 
 [^1]: en:user:Tnarg 12345, CC BY-SA 3.0 via Wikimedia Commons

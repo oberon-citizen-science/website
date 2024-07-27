@@ -50,6 +50,8 @@ website:
             file: meteors.html
           - text: "Bird call detection and counting"
             file: birdnet.html
+          - text: "Eco-acoustics"
+            file: ecoacoustics.html
           - text: "Local weather monitoring"
             file: local_weather.html
           - text: "LoRaWAN and NB-IoT"
@@ -102,6 +104,8 @@ website:
             href: meteors.qmd
           - text: "Bird call detection and counting"
             href: birdnet.qmd
+          - text: "Eco-acoustics"
+            file: ecoacoustics.html
           - text: "Local weather monitoring"
             href: local_weather.qmd
           - text: "LoRaWAN and NB-IoT"
