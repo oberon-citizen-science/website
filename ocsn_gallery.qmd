@@ -1,11 +1,39 @@
 ---
-title: "OSCN Photo Gallery"
-lightbox: true
-match: auto
+title: "OCSN Photo Gallery"
+lightbox:
+  match: auto
+  effect: fade
+  desc-position: top
+  loop: false
 ---
 
-![A Lovely Image](mv-1.jpg){group="ocsn-gallery-2024"}
+This page features photos and videos by OCSN members. Contributions are welcome! Please send your contribution as an email attachment to [oberon.citizen.science@gmail.com](mailto:oberon.citizen.science@gmail.com)
 
-![Another Lovely Image](mv-2.jpg){group="ocsn-gallery-2024"}
+::: {.callout-note}
+If you click on an image it will be displayed in a larger lightbox format. Groups of related images are displayed as a lightbox gallery so that you can flip between them without closing the lightbox.
+:::
 
-![The Last Lovely Image](mv-3.jpg){group="oscn-gallery-2024"}
+## Lava blocks on a beach in Devonport -- Darren Miner
+
+Darren Miner writes about this photo: 
+
+> _I was in Devonport last week, took some lovely beach photos, one of my favourites are these small blocks of lava, from when Australia separated from Africa and Asia about 140 myo (million years ago)._
+
+![Lava blocks on beach at Devonport](gallery/darren_miner_tasmania_rocks.jpg)
+
+## Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth
+
+Kyla Elizabeth contributed these beautiful macro photos: 
+
+> _I found this yesterday whilst splitting wood in O'Connell. Wood is from Queensland. I thought it might be a moth larvae, like a bogong moth or giant wood moth but after seeking advice through some entomology groups it seems it is a longhorn beetle larvae. Most likely a native Australian eucalyptus longhorn beetle. It's fascinating what you find when you take time and look._
+
+![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_1.jpg){group="longhorn_beetle_larvae"}
+
+![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_2.jpg){group="longhorn_beetle_larvae"}
+
+![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_3.jpg){group="longhorn_beetle_larvae"}
+
+![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_4.jpg){group="longhorn_beetle_larvae"}
+
+![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_5.jpg){group="longhorn_beetle_larvae"}
+
