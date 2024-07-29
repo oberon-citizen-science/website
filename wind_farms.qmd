@@ -27,7 +27,7 @@ The interactive map below shows the exploration area granted to the developers b
 
 Better maps and more details will appear here in the future.
 
-```{r, echo=FALSE, include=FALSE}
+```{r, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
 library(jsonlite)
 library(tidyverse)
 library(sf)
@@ -63,12 +63,11 @@ oberon_boundary_buffered <- oberon_boundary |>
 
 # oberon_bd_areas <- st_filter(biodiversity_areas, oberon_boundary_buffered)
 
-# protected_riparian <- sf::st_read("_wip/VulnerableLandsProtectedRiparian")
+protected_riparian <- sf::st_read("assets/VulnerableLandsProtectedRiparian")
 
-# oberon_boundary_buffered_gda94 <- st_transform(oberon_boundary_buffered,
-#                                                  crs=st_crs(protected_riparian))
+oberon_boundary_buffered_gda94 <- st_transform(oberon_boundary_buffered,                                                  crs=st_crs(protected_riparian))
 
-# oberon_protected_riparian <- st_filter(protected_riparian, oberon_boundary_buffered_gda94)
+oberon_protected_riparian <- st_filter(protected_riparian, oberon_boundary_buffered_gda94)
 
 ```
 
@@ -77,6 +76,7 @@ oberon_boundary_buffered <- oberon_boundary |>
 ```{r}
 #| echo: false
 #| message: false
+#| warning: false
 
 library(tidyverse)
 library(leaflet)
@@ -111,12 +111,12 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="orange",
               group = "Oberon LGA") %>%
-#  addPolygons(data=oberon_protected_riparian,
-#              stroke=TRUE, 
-#              weight=4, 
-#              fillOpacity=0.1, 
-#              color="brown",
-#              group = "Protected riparian areas") %>%
+ addPolygons(data=oberon_protected_riparian,
+             stroke=TRUE, 
+             weight=4, 
+             fillOpacity=0.1, 
+             color="brown",
+             group = "Protected riparian areas") %>%
     addGeoJSON(taralga_line, 
              weight=3, 
              color="blue", 
@@ -131,8 +131,8 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c("The Pines exploration area",
                                      "Existing 500 kVA transmission line",
                                       "Towns & Villages",
-                                      "Oberon LGA"),
-#                                      "Protected riparian areas",
+                                      "Oberon LGA",
+                                      "Protected riparian areas"),
 #                                     unique(oberon_frogs$common_name)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%

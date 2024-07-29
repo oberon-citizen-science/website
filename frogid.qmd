@@ -74,7 +74,7 @@ oberon_frogs <- st_filter(frogid_captures_sf, oberon_boundary_buffered)
 
 # oberon_bd_areas <- st_filter(biodiversity_areas, oberon_boundary_buffered)
 
-protected_riparian <- sf::st_read("_wip/VulnerableLandsProtectedRiparian")
+protected_riparian <- sf::st_read("assets/VulnerableLandsProtectedRiparian")
 
 oberon_boundary_buffered_gda94 <- st_transform(oberon_boundary_buffered,                                             crs=st_crs(protected_riparian))
 
