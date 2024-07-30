@@ -21,19 +21,41 @@ Darren Miner writes about this photo:
 
 ![Lava blocks on beach at Devonport](gallery/darren_miner_tasmania_rocks.jpg)
 
-## Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth
+---
 
-Kyla Elizabeth contributed these beautiful macro photos: 
+## Australian eucalyptus longhorn beetle larvae -- Kyla Ries
+
+Kyla Ries contributed these beautiful macro photos: 
 
 > _I found this yesterday whilst splitting wood in O'Connell. Wood is from Queensland. I thought it might be a moth larvae, like a bogong moth or giant wood moth but after seeking advice through some entomology groups it seems it is a longhorn beetle larvae. Most likely a native Australian eucalyptus longhorn beetle. It's fascinating what you find when you take time and look._
 
-![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_1.jpg){group="longhorn_beetle_larvae"}
+![Australian eucalyptus longhorn beetle larvae -- Kyla Ries](gallery/kyla_elizabeth_longhorn_beetle_larvae_1.jpg){group="longhorn_beetle_larvae"}
 
-![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_2.jpg){group="longhorn_beetle_larvae"}
+![Australian eucalyptus longhorn beetle larvae -- Kyla Ries](gallery/kyla_elizabeth_longhorn_beetle_larvae_2.jpg){group="longhorn_beetle_larvae"}
 
-![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_3.jpg){group="longhorn_beetle_larvae"}
+![Australian eucalyptus longhorn beetle larvae -- Kyla Ries](gallery/kyla_elizabeth_longhorn_beetle_larvae_3.jpg){group="longhorn_beetle_larvae"}
 
-![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_4.jpg){group="longhorn_beetle_larvae"}
+![Australian eucalyptus longhorn beetle larvae -- Kyla Ries](gallery/kyla_elizabeth_longhorn_beetle_larvae_4.jpg){group="longhorn_beetle_larvae"}
 
-![Australian eucalyptus longhorn beetle larvae -- Kyla Elizabeth](gallery/kyla_elizabeth_longhorn_beetle_larvae_5.jpg){group="longhorn_beetle_larvae"}
+![Australian eucalyptus longhorn beetle larvae -- Kyla Ries](gallery/kyla_elizabeth_longhorn_beetle_larvae_5.jpg){group="longhorn_beetle_larvae"}
+
+---
+
+## Rakali (Australian native water rat) caught on camera in Stone Creek, O'Connell -- Kyla Ries
+
+::: {.callout-note title="ABC News article on the elusive rakali"}
+
+A recent article published by ABC News on the rakali, and a call for citizen scientists to log sightings of it, is available [here](https://www.abc.net.au/news/2024-07-02/rakali-water-rat-researcher-urges-citizen-science-help/104043350). This is something which OCSN should promote and get involved in!
+:::
+
+::: {.aside}
+![A cute rakali](assets/rakali.jpeg)
+:::
+
+{{< video gallery/rakali1.mov >}}
+
+In this second video, watch towards the end for a flash of the rakali's white tail on the left of the video.
+
+{{< video gallery/rakali2.mov >}}
+
 
