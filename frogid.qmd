@@ -104,7 +104,7 @@ Here is a video showing current data from the FrogID database on identifications
 
 {{< video assets/Oberon_FrogID_map_demo.mp4 >}}
 
-## Current FrogID records in Oberon SLA
+## Current FrogID records in Oberon SLA (excluding endangered species)
 
 ```{r, echo=FALSE, include=FALSE}
 library(jsonlite)
@@ -215,6 +215,8 @@ leaflet(height="800px", width="1200px") %>%
                                      unique(oberon_frogs$common_name)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
+  hideGroup(c("Protected riparian areas", 
+            unique(oberon_frogs$common_name))) %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
