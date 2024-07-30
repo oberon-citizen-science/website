@@ -385,7 +385,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#other-resources" id="toc-other-resources" class="nav-link active" data-scroll-target="#other-resources">Other resources</a></li>
+  <li><a href="#audiomoth" id="toc-audiomoth" class="nav-link active" data-scroll-target="#audiomoth">AudioMoth</a></li>
+  <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources">Other resources</a></li>
   </ul>
 </nav>
     </div>
@@ -426,7 +427,6 @@ Current status of this initiative
 </div>
 </div>
 <p>Inspired by the capabilities of the <a href="posts/2024-07-21-PUC-review/">Birdweather PUC</a> and <a href="birdnet.html">BirdNET-pi bird call monitoring stations</a>, which are small computing devices which use machine learning (a limited form of artificial intelligence) to automatically detect and classify bird calls from audio they automatically record from attached microphones, OCSN plans to investigate the more general utility of eco-acoustics for ecological and biodiversity surveys in the Oberon region.</p>
-<p>One of the problems with the Birdweather PUC and BirdNet-pi devices is that they require quite a lot of power to run (relatively speaking, in fact they use only a few watts, about as much as a small LED light bulb, which is very leittle, but quite a lot if it has to be supplied by batteries for any length of time). This makes them more suited to deployment near building which can supply 5 volt power to them continuously from a small mains-powered power supply unit (or via power-over-ethernet if they are connected via a network cable). The relatively high power requirement is due to the fact that the devices are doing <em>edge computing</em>, that is they are continuously evaluating (running) the machine learning models they use, and this requires quite a lot of computing power and hence electrical power.</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
@@ -435,13 +435,18 @@ Current status of this initiative
 <figcaption>The AudioMoth low-power digital recording device, with battery holder for three AA cells for scale</figcaption>
 </figure>
 </div>
+</div></div><p>One of the problems with the Birdweather PUC and BirdNet-pi devices is that they require quite a lot of power to run (relatively speaking, in fact they use only a few watts, about as much as a small LED light bulb, which is very leittle, but quite a lot if it has to be supplied by batteries for any length of time). This makes them more suited to deployment near building which can supply 5 volt power to them continuously from a small mains-powered power supply unit (or via power-over-ethernet if they are connected via a network cable). The relatively high power requirement is due to the fact that the devices are doing <em>edge computing</em>, that is they are continuously evaluating (running) the machine learning models they use, and this requires quite a lot of computing power and hence electrical power.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/audiomoth_case.png" class="img-fluid figure-img"></p>
 <figcaption>The weatherproof case for the AudioMoth device, which can be strapped to a tree branch or similar.</figcaption>
 </figure>
 </div>
-</div></div><p>For longer-term deployment in more remote locations, such as in forests and conservation areas, a different strategy is required. for this reason, OCSN plans to evaluate the <a href="https://www.openacousticdevices.info">AudioMoth</a>, a low-power device developed at Cambridge University in the UK, designed to be battery-powered and to allow digital audio recordings of the environment to be captured continuously for one or more weeks at a time. Weatherproof cases for these devices are also available.</p>
+</div></div><section id="audiomoth" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="audiomoth">AudioMoth</h3>
+<p>For longer-term deployment in more remote locations, such as in forests and conservation areas, a different strategy is required. For this reason, OCSN plans to evaluate the <a href="https://www.openacousticdevices.info">AudioMoth</a>, a low-power device developed at Cambridge University in the UK, designed to be battery-powered and to allow digital audio recordings of the environment to be captured continuously for one or more weeks at a time. Weatherproof cases for these devices are also available.</p>
 <p>The strategy for using them would be to position them at key locations to be monitored, leave them there for one or two weeks, then collect them and download the recorded sound files for off-line processing on laptop or desktop computers, or using cloud computing. The audio files can even be made freely available on the internet to allow others to assist in the computerised processing of them to extract information about bird, frog and other animal calls from them. After collection, the batteries would be recharged and the device repositioned at the next target location.</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
@@ -457,7 +462,8 @@ Current status of this initiative
 <figcaption>The totally watertight case for the HydroMoth device</figcaption>
 </figure>
 </div>
-</div></div><section id="other-resources" class="level2">
+</div></div></section>
+<section id="other-resources" class="level2">
 <h2 class="anchored" data-anchor-id="other-resources">Other resources</h2>
 <ul>
 <li><a href="https://platypus.asn.au">The Australian Platypus Conservancy</a>, with examples of platypus calls on their web site</li>
