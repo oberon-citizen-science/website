@@ -17,15 +17,12 @@ This web site should be readable and navigable on a smart phone, but it is best 
 
 OCSN is a newly formed collective of people living in and around the Oberon local government area (LGA) in the Central Tablelands of NSW who are interested in science and in participating in scientific investigation of interesting and/or important aspects of our environment. By _science_  we mean **STEM** (**S**cience, **T**echnology, **E**ngineering and **M**athematics) activities in general. These include biology and ecology, and the impacts of human activity on those domains, as well as earth science, astronomy and any other safe and non-harmful scientific investigations members may wish to pursue. Projects involving technology and engineering are also in-scope for OCSN, particularly projects involving development of sensor and other methods to study the world around us. Creating peer-reviewed summaries of current scientific findings is also in scope, to help provide reliable and unbiased sources of information about STEM matters which are important to the local community. A list of current and potential activities and projects can be found in the list on the left. This list may expand or contract depending on the interests of OCSN participants.
 
-::: {.aside}
-The founding members of Oberon Citizen Science Network are Alan Sheehan and Tim Churches, both of whom are Oberon LGA residents with a common interest in all (or at least many) matters relating to **STEM** (science, technology, engineering and mathematics),
-:::
-
 Participants in OCSN do not need to be trained scientists, engineers, technologists or mathematicians -- just having an interest in science (or more broadly, STEM) and an allegiance to the [scientific method](https://en.wikipedia.org/wiki/Scientific_method) (which is embodied in the [OCSN Mission Statement](ocsn_mission_statement.html) and [OCSN Articles of Association](ocsn_articles_of_association.html) for the organisation) is enough. All projects and activities undertaken or promoted by OCSN will include trained scientists and engineers, acting in a voluntary capacity or, in some cases, in academic roles affiliated with universities and research institutes. The idea is to promote and transmit an appreciation of STEM subjects and the scientific method to both OCSN participants and the wider community. 
 
 ::: {.aside}
-![A visualisation of one variant of the scientific method.^[Efbrazil, CC BY-SA 4.0, via Wikimedia Commons]](assets/The_Scientific_Method.png)
+The founding members of Oberon Citizen Science Network are Alan Sheehan and Tim Churches, both of whom are Oberon LGA residents with a common interest in all (or at least many) matters relating to **STEM** (science, technology, engineering and mathematics).
 :::
+
 
 ::: {.callout-note title="Strictly Non-political" appearance="simple"}
 Oberon Citizen Science Network (OCSN) is a **strictly non-political** organisation that does not and will not have any allegiances with or accept any support from political parties or organisations associated with political parties, nor any lobby group seeking to influence the political process or political decisions, at any level of government. 
@@ -33,6 +30,10 @@ Oberon Citizen Science Network (OCSN) is a **strictly non-political** organisati
 Individual members and participants of OCSN may hold such political allegiances or be members of lobby groups, as is their right as individuals, but they must not represent such views or allegiances as those of OCSN. Please see the [OCSN Mission Statement](ocsn_mission_statement.html) and the [OCSN Articles of Association](ocsn_articles_of_association.html) for more details.
 
 OCSN may accept funding for its activities from government, corporations or individuals, but all such funding will be declared and only be accepted if it does not come with conditions which limit what OCSN may say or publish about the science and other STEM activities it undertakes -- that is, we will not accept any funding that comes with conditions of censorship.
+:::
+
+::: {.aside}
+![A visualisation of one variant of the scientific method.^[Efbrazil, CC BY-SA 4.0, via Wikimedia Commons]](assets/The_Scientific_Method.png)
 :::
 
 With that out of the way, please do read on using the link below or the links at the left to learn more about OCSN and its aims and potential activities.
