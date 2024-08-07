@@ -224,13 +224,15 @@ Apart from funding from government grant schemes and philanthropic donors, OCSN 
 
 ::: {.callout-note title="Geospatial visualisation Work-in-progress" collapse=true}
 
-Below is a brief animated version of 3D geospatial modelling of the southern part of Oberon LGA. The map is created from the 5 meter by 5 metre LiDAR digital elevation grid of NSW, aggregated to a 10m by 10m grid. Overlaid on that are the exploration area for the proposed Pines wind farm, shown in red shading, the existing 500 kVA transmission line to Taralga in blue (ignore that it cuts off to the south, that will be fixed), and the white lines are Abercrombie, Shooters Hill and Edith Roads (also truncated to the south). The red lollipos to the south are representations of the 6MW wind turbines for the proposed Paling Yards wind farm, to scale (240m rotor tip height, 180m rotor diameter). We are working on a better icon for the turbines! A great deal more can be done regarding geospatial visualisation using available data sources, and not just regarding proposed wind farms, of course.
+Below are two brief animations of 3D geospatial modelling of the southern part of Oberon LGA. The map is created from the 5 metre by 5 metre LiDAR digital elevation grid of NSW, aggregated to a 10m by 10m grid. Overlaid on that are the exploration area for the proposed Pines wind farm, shown in red shading, the existing 500 kVA transmission line to Taralga in blue (ignore that it cuts off to the south, that will be fixed), and the white lines are Abercrombie, Shooters Hill and Edith Roads (also truncated to the south). The red lollipos to the south are representations of the 6MW wind turbines for the proposed Paling Yards wind farm, to scale (240m rotor tip height, 160m rotor diameter). We are working on a better icon for the turbines! A great deal more can be done regarding geospatial visualisation using available data sources, and not just regarding proposed wind farms, of course.
 
 If you are interested in assisting with this work, or learning how to do it, please get in touch using the email link in the menu above and at left. We only use free, open-source software for this work so anyone with a reasonable laptop computer can participate and replicate it.
 
-You might want to view this in full screen mode -- if so, click the square with a circle in it at the bottom right of the video window.
+You might want to view these in full screen mode -- if so, click the square with a circle in it at the bottom right of the video window.
 
 {{< video assets/turbine_test7.mp4 >}}
+
+{{< video assets/turbine_test10.mp4 >}}
 
 :::
 
