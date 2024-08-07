@@ -25,7 +25,7 @@ A large wind farm development is proposed in the Gurnang and/or Vulcan state for
 
 The interactive map below shows the exploration area granted to the developers by Forestry Corporation NSW for possible location of the proposed wind farm in (largely) state forest areas. The exploration area is shaded in red, and the existing 500 kVA transmission line to Taralga to which the wind farm must connect shown as a blue line.
 
-Better maps and more details will appear here in the future.
+Better maps and more details will appear here in the future (see also below for work-in-progress on more sosphicated geospatial visualistions).
 
 ```{r, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
 library(jsonlite)
@@ -222,4 +222,19 @@ Apart from funding from government grant schemes and philanthropic donors, OCSN 
 * Stream and water body water quality monitoring. Because they include some of the highest altitudes in the NSW Central Tablelands, the proposed wind farm areas encompass the headwaters of several creeks and waterways which form or flow into some of the high country rivers whicvh run through Oberon LGA. These headwaters are themselves likely to be ecologically significant, but they also affect the ecology of downstream rivers such as the Duckmaloi, which is known to be one of the very few high country refuges for our nationally-dwindling platypus population. Thus, OCSN will seek to implement water quality monitoring in key waterways likely to be affected by wind farm development, given that the proposed wind farms represent large-scale construction projects involving significant road building and widening, deep foundation excavation and other earthworks which may impact the local riparian environments in ways which timber logging does not. This monitoring may involve periodic water sample collection and analysis, or could involve automated continuous remote monitoring of metrics such as water turbidity.
 * Provide an open, freely-accessible _zone of visual influence_ analysis facility for the proposed wind farms. the zone of visual influence, sometimes called a _inverse_ [_viewshed_](https://en.wikipedia.org/wiki/Viewshed), is the geographic area from which a development or other structure is theoretically visible, at various sizes. Stromlo Energy, one of the developers of the proposed Pines Wind Farm, has indicated that it plans to provide such a facility to the community through individual consultations. That is fine, but the ability to assess visual impact independent of the wind farm developers is also important, and it is also a potentially interesting and educational community project involving geography, geometry and information technology.
 
+::: {.callout-note title="Geospatial visualisation Work-in-progress" collapse=true}
+
+Below is a brief animated version of 3D geospatial modelling of the southern part of Oberon LGA. The map is created from the 5 meter by 5 metre LiDAR digital elevation grid of NSW, aggregated to a 10m by 10m grid. Overlaid on that are the exploration area for the proposed Pines wind farm, shown in red shading, the existing 500 kVA transmission line to Taralga in blue (ignore that it cuts off to the south, that will be fixed), and the white lines are Abercrombie, Shooters Hill and Edith Roads (also truncated to the south). The red lollipos to the south are representations of the 6MW wind turbines for the proposed Paling Yards wind farm, to scale (240m rotor tip height, 180m rotor diameter). We are working on a better icon for the turbines! A great deal more can be done regarding geospatial visualisation using available data sources, and not just regarding proposed wind farms, of course.
+
+If you are interested in assisting with this work, or learning how to do it, please get in touch using the email link in the menu above and at left. We only use free, open-source software for this work so anyone with a reasonable laptop computer can participate and replicate it.
+
+You might want to view this in full screen mode -- if so, click the square with a circle in it at the bottom right of the video window.
+
+{{< video assets/turbine_test7.mp4 >}}
+
+:::
+
 We welcome other ideas! Please [register your expression of interest](register_interest.html) if you would like to be involved in any of these potential projects.
+
+
+Here is an animated example of 
