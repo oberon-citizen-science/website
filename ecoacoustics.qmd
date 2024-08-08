@@ -31,6 +31,16 @@ The strategy for using them would be to position them at key locations to be mon
 ![The totally watertight case for the HydroMoth device](assets/hydromoth_case.png)
 :::
 
+### Titley Scientific
+
+Titley Scientific is an Australian company based in Brisbane which designs and manufactures a range of ecoacoustic monitoring devices, including automated bat detectors and high-end audio recorders capable of recording both audible calls from birds and frog, but also ultrasounic sound emitted by bats. The devices are not cheap, but they are very well-regarded by ecologists and are fully supported locally, complete with easy-to-use software to enable screening of recordings. They also have a loan program for citizen science groups! OCSN plans to acquire at least one of their devices as soon as possible to assess their utility. For more information, see the [Titley Scientific web site](https://www.titley-scientific.com).
+
+::: {.aside}
+
+![A Titley Scientific Scout recorder attached to a tree, capable of simultaneously recording both audible and ultrasonic sound for weeks at a time, for later analysis.](assets/titley-ranger-recorder.jpg)
+
+:::
+
 ## Other resources
 
 * [The Australian Platypus Conservancy](https://platypus.asn.au), with examples of platypus calls on their web site
