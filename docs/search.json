@@ -689,5 +689,26 @@
       "Potential Sensor Networks",
       "Eco-acoustics"
     ]
+  },
+  {
+    "objectID": "demo_viewsheds.html#interactive-viewshed-map",
+    "href": "demo_viewsheds.html#interactive-viewshed-map",
+    "title": "Demo viewsheds",
+    "section": "Interactive viewshed map",
+    "text": "Interactive viewshed map"
+  },
+  {
+    "objectID": "demo_viewsheds.html",
+    "href": "demo_viewsheds.html",
+    "title": "Demo viewsheds",
+    "section": "",
+    "text": "|---------|---------|---------|---------|\n========================================="
+  },
+  {
+    "objectID": "demo_viewsheds.html#raw-viewshed-and-elevation-raster",
+    "href": "demo_viewsheds.html#raw-viewshed-and-elevation-raster",
+    "title": "Demo viewsheds",
+    "section": "",
+    "text": "|---------|---------|---------|---------|\n========================================="
   }
 ]

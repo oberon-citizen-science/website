@@ -1,0 +1,201 @@
+---
+title: "Demo viewsheds"
+---
+
+## Raw viewshed and elevation raster
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(rayshader)
+library(terra)
+library(terrainr)
+library(rayshader)
+library(raster)
+library(osmdata)
+library(sf)
+library(dplyr)
+library(ggplot2)
+
+#Load in DSM
+rastlist <- list.files(path = "~/Downloads/NSW Government - Spatial Services/DEM/5 Metre", pattern='.tif$', all.files= T, full.names= T)
+terrainr::merge_rasters(
+ rastlist,
+  output_raster = "oberon_dem.tif",
+ overwrite=TRUE)
+
+# localtif = raster::raster("oberon_dem.tif")
+localtif = terra::rast("oberon_dem.tif")
+localtif10x10 <- terra::aggregate(localtif, fact=2, fun=max)
+
+# Load points
+demo_turbine <- tibble::tribble(~lat, ~long,
+-33.97067825010877, 149.8342775566977)
+
+demo_turbine_sf <- sf::st_as_sf(x = demo_turbine,                         
+           coords = c("long", "lat"),
+           crs = CRS("+init=epsg:4326"))
+
+demo_turbine_sf <- sf::st_transform(demo_turbine_sf, crs = terra::crs(localtif10x10))
+
+# Compute viewsheds
+output <- viewscape::compute_viewshed(dsm = localtif10x10, 
+                                      viewpoints = demo_turbine_sf, 
+                                      offset_viewpoint = 240, 
+                                      r=40000,
+                                      parallel = TRUE, 
+                                      workers = 4)
+
+output_r <- viewscape::visualize_viewshed(output, outputtype = 'raster')
+terra::plot(localtif, axes=FALSE, box=FALSE, legend = FALSE)
+terra::plot(output_r, add=TRUE, col = "red", axes=FALSE, box=FALSE, legend = FALSE, alpha=0.4)
+terra::plot(demo_turbine_sf, add = TRUE, col = "blue", axes=FALSE, box=FALSE, legend = FALSE)
+
+```
+
+## Interactive viewshed map
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(leaflet)
+
+
+taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
+                  paste(collapse = "\n")
+
+pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+# frog_pal <- colorFactor("RdYlBu", domain=unique(oberon_frogs$common_name))
+
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=pines_expl_area, 
+              stroke=TRUE, 
+              weight=1, 
+              fillOpacity=0.2, 
+              color="red",
+              group = "The Pines exploration area") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+# addPolygons(data=oberon_protected_riparian,
+#             stroke=TRUE, 
+#             weight=4, 
+#             fillOpacity=0.1, 
+#             color="brown",
+#             group = "Protected riparian areas") %>%
+    addGeoJSON(taralga_line, 
+             weight=3, 
+             color="blue", 
+             fillOpacity=0,
+             group = "Existing 500 kVA transmission line") %>%
+  addRasterImage(output_r, 
+                 opacity=0.6, 
+#                 colors = colorNumeric("Blues", domain=1),
+                  group = "Demo turbine viewshed",
+                  maxBytes = 4 * 4096 * 4096) %>%
+  addMarkers(lng=149.8342775566977,
+             lat=-33.97067825010877, 
+             label = "Demo 240m turbine",
+              group = "Demo turbine viewshed",
+              labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
+#  addCircleMarkers(data=oberon_frogs,
+#                    group=oberon_frogs$common_name,
+#                    color=frog_pal(oberon_frogs$common_name),
+#                    weight=1,
+#                    popup=oberon_frogs$common_name) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c("The Pines exploration area",
+                                     "Existing 500 kVA transmission line",
+                                      "Towns & Villages",
+                                      "Oberon LGA",
+                                      "Demo turbine viewshed"),
+#                                      "Protected riparian areas"),
+#                                     unique(oberon_frogs$common_name)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE)) %>%
+  addMarkers(lng=149.74160413611594,
+             lat=-33.845989194998666,
+             label = "Black Springs",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.91754276836787,
+             lat=-33.78815383191878,
+             label = "Edith",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85713985509926,
+             lat=-33.70394907824247,
+             label = "Oberon township",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5288146180066,
+             lat=-33.94774521659694,
+             label = "Burraga",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5935282648902,
+             lat=-33.82130920624268,
+             label = "Mt David",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85336006836064,
+             lat=-33.91140078300324,
+             label = "Shooters Hill",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.89359188575838,
+             lat=-33.66433983475142,
+             label = "Hazelgrove",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.73074435257803,
+             lat=-33.54222049863011,
+             label = "O'Connell",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) 
+
+
+                    
+```
+
+:::
