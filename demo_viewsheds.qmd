@@ -9,6 +9,7 @@ title: "Demo viewsheds"
 #| message: false
 #| warning: false
 
+
 library(rayshader)
 library(terra)
 library(terrainr)
@@ -28,29 +29,31 @@ terrainr::merge_rasters(
 
 # localtif = raster::raster("oberon_dem.tif")
 localtif = terra::rast("oberon_dem.tif")
-localtif10x10 <- terra::aggregate(localtif, fact=2, fun=max)
+# localtif10x10 <- terra::aggregate(localtif, fact=2, fun=max)
 
 # Load points
 demo_turbine <- tibble::tribble(~lat, ~long,
--33.97067825010877, 149.8342775566977)
-
+-33.896692083362126, 149.84751667995374)
+          
 demo_turbine_sf <- sf::st_as_sf(x = demo_turbine,                         
            coords = c("long", "lat"),
            crs = CRS("+init=epsg:4326"))
 
-demo_turbine_sf <- sf::st_transform(demo_turbine_sf, crs = terra::crs(localtif10x10))
+demo_turbine_sf <- sf::st_transform(demo_turbine_sf, crs = terra::crs(localtif))
 
 # Compute viewsheds
-output <- viewscape::compute_viewshed(dsm = localtif10x10, 
+vshed <- viewscape::compute_viewshed(dsm = localtif, 
                                       viewpoints = demo_turbine_sf, 
                                       offset_viewpoint = 240, 
-                                      r=40000,
+                                      r=30000,
                                       parallel = TRUE, 
                                       workers = 4)
 
-output_r <- viewscape::visualize_viewshed(output, outputtype = 'raster')
+vshed_raster <- viewscape::visualize_viewshed(vshed, outputtype = 'raster')
+
+# vshed <- terra::viewshed(localtif, c(761869.7, 6237474), target = 240)
 terra::plot(localtif, axes=FALSE, box=FALSE, legend = FALSE)
-terra::plot(output_r, add=TRUE, col = "red", axes=FALSE, box=FALSE, legend = FALSE, alpha=0.4)
+terra::plot(vshed_raster, add=TRUE, col = "red", axes=FALSE, box=FALSE, legend = FALSE, alpha=0.4)
 terra::plot(demo_turbine_sf, add = TRUE, col = "blue", axes=FALSE, box=FALSE, legend = FALSE)
 
 ```
@@ -76,14 +79,15 @@ pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
 oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
                       filter(abb_name == "Oberon")
 
-# frog_pal <- colorFactor("RdYlBu", domain=unique(oberon_frogs$common_name))
-
+pal <- colorNumeric(c("#FF4433"), 1,
+  na.color = "transparent")
 
 leaflet(height="800px", width="1200px") %>% 
   setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
   addTiles(group = "OpenStreetMap") %>%
   addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
-  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+#  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
   addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
   addPolygons(data=pines_expl_area, 
               stroke=TRUE, 
@@ -97,32 +101,21 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="orange",
               group = "Oberon LGA") %>%
-# addPolygons(data=oberon_protected_riparian,
-#             stroke=TRUE, 
-#             weight=4, 
-#             fillOpacity=0.1, 
-#             color="brown",
-#             group = "Protected riparian areas") %>%
     addGeoJSON(taralga_line, 
              weight=3, 
              color="blue", 
              fillOpacity=0,
              group = "Existing 500 kVA transmission line") %>%
-  addRasterImage(output_r, 
-                 opacity=0.6, 
-#                 colors = colorNumeric("Blues", domain=1),
+  addRasterImage(vshed_raster, 
+                 opacity=0.4, 
+                 colors = pal,
                   group = "Demo turbine viewshed",
-                  maxBytes = 4 * 4096 * 4096) %>%
-  addMarkers(lng=149.8342775566977,
-             lat=-33.97067825010877, 
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addMarkers(lng=149.84751667995374,
+             lat=-33.896692083362126, 
              label = "Demo 240m turbine",
               group = "Demo turbine viewshed",
               labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
-#  addCircleMarkers(data=oberon_frogs,
-#                    group=oberon_frogs$common_name,
-#                    color=frog_pal(oberon_frogs$common_name),
-#                    weight=1,
-#                    popup=oberon_frogs$common_name) %>%
   addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
                    overlayGroups = c("The Pines exploration area",
                                      "Existing 500 kVA transmission line",
