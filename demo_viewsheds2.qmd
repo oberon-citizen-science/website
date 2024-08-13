@@ -1,0 +1,234 @@
+---
+title: "Demo viewsheds"
+---
+
+## Raw viewshed and elevation raster
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+
+library(rayshader)
+library(terra)
+library(terrainr)
+library(rayshader)
+library(raster)
+library(osmdata)
+library(sf)
+library(dplyr)
+library(ggplot2)
+
+# #Load in DSM
+# rastlist_5m <- list.files(path = "~/NSW_Government_Spatial_Services/DEM/5 Metre", pattern='.tif$', all.files= T, full.names= T)
+# terrainr::merge_rasters(
+#  rastlist_5m,
+#   output_raster = "oberon_and_environs_dem_5m.tif",
+#  overwrite=TRUE)
+# 
+# rastlist_2m <- list.files(path = "~/NSW_Government_Spatial_Services/DEM/2 Metre", pattern='.tif$', all.files= T, full.names= T)
+# terrainr::merge_rasters(
+#  rastlist_2m,
+#   output_raster = "oberon_and_environs_dem_2m.tif",
+#  overwrite=TRUE)
+# 
+# localtif_5m <- terra::rast("oberon_and_environs_dem_5m.tif")
+# localtif_5m_10x10 <- terra::aggregate(localtif_5m, fact=2, fun=max)
+# 
+# localtif_2m <- terra::rast("oberon_and_environs_dem_2m.tif")
+# localtif_2m_10x10 <- terra::aggregate(localtif_2m, fact=5, fun=max)
+
+# NSW Elevation Data Service
+# https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=437c0697e6524d8ebf10ad0d915bc219
+
+burra_rast <- terra::rast("~/NSW_Government_Spatial_Services/Burragorang-DEM-AHD_56_5m/Burragorang-DEM-AHD_56_5m.asc")
+katoomba_rast <- terra::rast("~/NSW_Government_Spatial_Services/Katoomba-DEM-AHD_56_5m/Katoomba-DEM-AHD_56_5m.asc")
+oberon_rast <- terra::rast("~/NSW_Government_Spatial_Services/Oberon-DEM-AHD_55_5m/Oberon-DEM-AHD_55_5m.asc")
+taralga_rast <- terra::rast("~/NSW_Government_Spatial_Services/Taralga-DEM-AHD_55_5m/Taralga-DEM-AHD_55_5m.asc")
+
+terra::writeRaster(burra_rast, "burra_dem.tif", overwrite=TRUE)
+terra::writeRaster(katoomba_rast, "katoomba_dem.tif", overwrite=TRUE)
+terra::writeRaster(oberon_rast, "oberon_dem.tif", overwrite=TRUE)
+terra::writeRaster(taralga_rast, "taralga_dem.tif", overwrite=TRUE)
+
+terrainr::merge_rasters(
+  c("burra_dem.tif", "katoomba_dem.tif",
+    "oberon_dem.tif", "taralga_dem.tif"),
+   output_raster = "oberon_and_environs_dem_5m.tif",
+  overwrite=TRUE)
+
+localtif <- terra::rast("oberon_and_environs_dem_5m.tif")  
+
+
+# Load points
+demo_turbine <- tibble::tribble(~lat, ~long,
+# -33.896692083362126, 149.84751667995374)
+# Shooters Hill Fire Tower
+-33.89826268724162, 149.84980994416398)
+
+demo_turbine_sf <- sf::st_as_sf(x = demo_turbine,                         
+           coords = c("long", "lat"),
+           crs = CRS("+init=epsg:4326"))
+
+demo_turbine_sf <- sf::st_transform(demo_turbine_sf, crs = terra::crs(localtif))
+
+# Compute viewsheds
+vshed <- viewscape::compute_viewshed(dsm = localtif, 
+                                      viewpoints = demo_turbine_sf, 
+                                      offset_viewpoint = 48, 
+                                      r=40000,
+                                      parallel = TRUE, 
+                                      workers = 4)
+
+vshed_raster <- viewscape::visualize_viewshed(vshed, outputtype = 'raster')
+
+# vshed_polygons <- viewscape::visualize_viewshed(vshed, outputtype = 'polygon')
+
+# vshed <- terra::viewshed(localtif, c(761869.7, 6237474), target = 240)
+terra::plot(localtif, axes=FALSE, box=FALSE, legend = FALSE)
+terra::plot(vshed_raster, add=TRUE, col = "red", axes=FALSE, box=FALSE, legend = FALSE, alpha=0.4)
+terra::plot(demo_turbine_sf, add = TRUE, col = "blue", axes=FALSE, box=FALSE, legend = FALSE)
+
+```
+
+## Interactive viewshed map for Shooters Hill Fire Tower
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(leaflet)
+
+
+taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
+                  paste(collapse = "\n")
+
+pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+pal <- colorNumeric(c("#FF4433"), 1,
+  na.color = "transparent")
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+#  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=pines_expl_area, 
+              stroke=TRUE, 
+              weight=1, 
+              fillOpacity=0.2, 
+              color="red",
+              group = "The Pines exploration area") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+    addGeoJSON(taralga_line, 
+             weight=3, 
+             color="blue", 
+             fillOpacity=0,
+             group = "Existing 500 kVA transmission line") %>%
+  addRasterImage(vshed_raster, 
+                 opacity=0.4, 
+                 colors = pal,
+                  group = "Shooters Hill Fire Tower viewshed",
+                  maxBytes = 4 * 8330 * 8801) %>%
+#  addPolygons(data=vshed_polygons, 
+#              stroke=TRUE, 
+#              weight=1, 
+#              fillOpacity=0.4, 
+#              color="red",
+#              group = "Demo turbine viewshed") %>%
+  addMarkers(lng=149.84751667995374,
+             lat=-33.896692083362126, 
+             label = "Shooters Hill Fire Tower 48m",
+              group = "Shooters Hill Fire Tower viewshed",
+              labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c("The Pines exploration area",
+                                     "Existing 500 kVA transmission line",
+                                      "Towns & Villages",
+                                      "Oberon LGA",
+                                      "Shooters Hill Fire Tower viewshed"),
+#                                      "Protected riparian areas"),
+#                                     unique(oberon_frogs$common_name)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE)) %>%
+  addMarkers(lng=149.74160413611594,
+             lat=-33.845989194998666,
+             label = "Black Springs",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.91754276836787,
+             lat=-33.78815383191878,
+             label = "Edith",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85713985509926,
+             lat=-33.70394907824247,
+             label = "Oberon township",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5288146180066,
+             lat=-33.94774521659694,
+             label = "Burraga",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5935282648902,
+             lat=-33.82130920624268,
+             label = "Mt David",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85336006836064,
+             lat=-33.91140078300324,
+             label = "Shooters Hill",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.89359188575838,
+             lat=-33.66433983475142,
+             label = "Hazelgrove",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.73074435257803,
+             lat=-33.54222049863011,
+             label = "O'Connell",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) 
+
+
+                    
+```
+
+:::
