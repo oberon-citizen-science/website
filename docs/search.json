@@ -731,5 +731,26 @@
     "title": "Demo viewsheds",
     "section": "Interactive viewshed map for Shooters Hill Fire Tower",
     "text": "Interactive viewshed map for Shooters Hill Fire Tower\n\n\n\n\n|---------|---------|---------|---------|\n========================================="
+  },
+  {
+    "objectID": "demo_viewsheds3.html",
+    "href": "demo_viewsheds3.html",
+    "title": "Demo viewsheds",
+    "section": "",
+    "text": "|---------|---------|---------|---------|\n========================================="
+  },
+  {
+    "objectID": "demo_viewsheds3.html#raw-viewshed-and-elevation-raster",
+    "href": "demo_viewsheds3.html#raw-viewshed-and-elevation-raster",
+    "title": "Demo viewsheds",
+    "section": "",
+    "text": "|---------|---------|---------|---------|\n========================================="
+  },
+  {
+    "objectID": "demo_viewsheds3.html#interactive-viewshed-map-for-shooters-hill-fire-tower",
+    "href": "demo_viewsheds3.html#interactive-viewshed-map-for-shooters-hill-fire-tower",
+    "title": "Demo viewsheds",
+    "section": "Interactive viewshed map for Shooters Hill Fire Tower",
+    "text": "Interactive viewshed map for Shooters Hill Fire Tower\nBased on 90m x 90m aggregated elevation map."
   }
 ]
