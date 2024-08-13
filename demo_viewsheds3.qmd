@@ -77,7 +77,8 @@ demo_turbine_sf <- sf::st_transform(demo_turbine_sf, crs = terra::crs(localtif))
 # Compute viewsheds
 vshed <- viewscape::compute_viewshed(dsm = localtif_90x90, 
                                       viewpoints = demo_turbine_sf, 
-                                      offset_viewpoint = 48, 
+                                      offset_viewpoint = 48,
+                                      offset_height = 1.8,
                                       r=40000,
                                       parallel = TRUE, 
                                       workers = 4)
