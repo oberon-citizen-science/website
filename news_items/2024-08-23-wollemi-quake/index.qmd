@@ -1,0 +1,33 @@
+---
+title: "Magnitude 5.0 earthquake in Wollemi National Park detected by Oberon Citizen Science seismology network"
+lightbox: true
+---
+
+Oberon Citizen Science Network (OCSN) co-founder, Alan Sheehan, has used the three [Raspberry Shake & Boom](../../shake_and_boom.html) seismic and infrasound detectors operated by OCSN members, as well as others in the Shakenet network, to produce these analyses of the magnitude 5.0 earthquake near Denman in NSW at about midday, Friday 23rd August 2024.
+
+::: {.callout-note}
+Click on each image to see a full-size version of it.
+:::
+
+![](456398924_122169332084226224_2627525676651821940_n.jpg)
+
+![](456410713_122169332288226224_4732011665416881550_n.jpg)
+
+![](456433235_122169332066226224_8794829437678118394_n.jpg)
+
+![](456480690_122169332120226224_231780894764324631_n.jpg)
+
+![](456481559_122169331934226224_4418176153833635413_n.jpg)
+
+![](456482005_122169332018226224_5306524521793983098_n.jpg)
+
+![](456483394_122169332144226224_8142485083511900714_n.jpg)
+
+![](456511686_122169331988226224_7562969140907656815_n.jpg)
+
+![](456570732_122169331832226224_4063342887219989995_n.jpg)
+
+![](456570822_122169331880226224_1282195938166395156_n.jpg)
+
+![](456572297_122169332180226224_4179857893095398506_n.jpg)
+

@@ -230,54 +230,6 @@
     ]
   },
   {
-    "objectID": "shake_and_boom.html",
-    "href": "shake_and_boom.html",
-    "title": "Shake & Boom",
-    "section": "",
-    "text": "Current status of this initiative\n\n\n\nTwo founding members of OCSN, Alan Sheehan and Tim Churches, both have Raspberry Shake & Boom seismic and infrasound monitoring devices (with identifiers R21C0 and R5968 respectively) deployed at their properties, about 10-15km south-east of Oberon township and each about 6km apart. The seismic and infrasound data continuously recorded and uploaded by these devices is freely and openly available at the URLs below, but can also be accessed via an API (application programming interface) to allow detailed anayles of the data collected at several, or many stations. Some examples of such analyses undertaken by Alan Sheehan are shown below. OCSN hopes to establish a network of such devices located at various points in Oberon LGA, and to further develop analysis program code to undertake various types of analysis and validation of the data collected, including infrasound monitoring and analysis.\n\nRaspberry Shake & Boom station R21C0\n\nhelicorder (seismic) data\ninfrasound data\n\nRaspberry Shake & Boom station R5968\n\nhelicorder (seismic) data\ninfrasound data",
-    "crumbs": [
-      "News",
-      "Potential Sensor Networks",
-      "Seismic and infrasound monitoring"
-    ]
-  },
-  {
-    "objectID": "shake_and_boom.html#overview",
-    "href": "shake_and_boom.html#overview",
-    "title": "Shake & Boom",
-    "section": "Overview",
-    "text": "Overview\nAlthough Australia is a geographically stable continent, that does not mean that we do not experience frequent earthquakes. Using devices developed over several years by the international Raspberry Shake (see the Raspberry Shake web site for details), based on the tiny but very powerful Raspberry Pi single baord computer which is about the size of a deck of playing cards, it is now feasible for citizens scientists to host their own seismic monitoring stations and contribute the data they collect to a worldwide community of people interested in such data. More recently, the ability to also monitor and record infrasound (very low frequency sound waves, mostly below the frequencies which humans can hear) has been added to these devices, allowing the deep rumbles caused by earthquakes to be detected, as well as other sources of infrasound, incuding aircraft, wind blowing through forests, wind turbines and sonic booms from meteorites entering the earth’s atmosphere. Please see the page on meteorite tracking for more information on this.",
-    "crumbs": [
-      "News",
-      "Potential Sensor Networks",
-      "Seismic and infrasound monitoring"
-    ]
-  },
-  {
-    "objectID": "shake_and_boom.html#raspberry-shake-and-boom-capabilities",
-    "href": "shake_and_boom.html#raspberry-shake-and-boom-capabilities",
-    "title": "Shake & Boom",
-    "section": "Raspberry Shake and Boom capabilities",
-    "text": "Raspberry Shake and Boom capabilities\n\nDetecting distant earthquakes\nYou don’t need special skills to use a Raspberry Shake and Boom (RS&B for short) – the example below is from the very nice ShakeNet phone app provided by the Raspberry Shake community. It lists earthquakes happening world-wide so you can see if your RS&B station detected them or not. As you can see, an RS&B station in Oberon LGA can readily detect earthquakes thousands of kilometres away.\n\n\n\nRecording of a recent earthquake near Tonga in the Pacific Ocean, as recorded by the Raspberry Shake & Boom monitoring station operated by Alan Sheehan just south of Oberon township\n\n\n\n\nDetecting local earthquakes\nOf course, the devices can also detect , less intense local earthquakes, as shown below.\n\n\n\nRecording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake & Boom device\n\n\n\n\nMeteorite and space debris sonic booms\nMeteorites and space debris enter the Earth’s atmospshere at supersonic speeds, creating sonic booms from the resulting shock wave. On the morning of August 9, 2022 at 7:05am the SpaceX Crew 1 Dragon Trunk re-entered the atmosphere over Western NSW, the Snowy Mountains and eastern Victoria. This is the infrasound signal of that event captured on a Raspberry Shake and Boom operated by Alan Sheehan just outside Oberon, some 370kms away from the point of closest approach.\n\n\n\nSpaceX trunk re-entry infrasound signal 2022\n\n\n\n\nDIY data analysis\nWith a little program code, using the Python programming language, you can fully explore the capabilities of your Raspberry Shake and Boom. Don’t worry - we are happy to share code and help you to learn how to do it. Shown below is a custom analysis of an earthquake in Honshu, Japan, programmed by Alan Sheehan.\n\n\n\nCustom analysis of Honshu earthquake programmed by Alan Sheehan\n\n\n\n\nInfrasound\nBelow is the infrasound signal of a passing helicopter, showing the Doppler shift in frequencies as it first approaches then receeds from the monitoring Raspeberry Shake and Boom device. You don’t need any coding skill for this type of report either - its available from the Raspberry Shake Data View web app and you can join and use any or all the Raspberry Shakes in the world for free (you don’t even have to own one!), via the ShakeNet web site.\n\n\n\nHelicopter infrasound\n\n\n\n\nWind turbine infrasound\n\n\nIt should be born in mind that merely detecting infrasound generated by wind turbines does not necessarily imply that that infrasound has impacts on human (and/or non-human) health, or even that humans and other animals can detect it. Nonetheless, we beleive that it is important to develop capabilities to monitor such artifical sources of infrasound, as well as natural sources such as wind blowing through trees and sound generated by fast flowing water in river rapids, and to collect baseline data before any proposed wind turbines are constructed, as well as after they become operational. OCSN also intends to undertake a meta-review of articles and reports which review and summarise the scientific evidence around the effect of infrasound on human health and the broader ecology.\nThe infrasound microphone in the Raspberry Shake and Boom device should be able to detect infrasound generated by wind turbines. Not much work has been done yet to fully investigate and validate these capabilities, and further investigation of this will be one of the initial projects to be undertaken by OCSN. However, if the infrasound data from a Raspberry Shake and Boom deployed at Koroit, which is near Warrnambool in Victoria and close to several large wind farms, is processed using a Fast Fourier Transform (FFT), some interesting features become evident in the resulting spectrograms. We suspect the spikes in the FFT spectrums shown below are tonal frequencies from laminar boundary layer, blunt trailing edges and/or flow over holes, slits and intrusions in nearby wind towers. It shows the potential capability of the RSnB to continuously monitor infrasound generated by wind turbines at a range of distances, although this very preliminary work still needs to be carefully validated.",
-    "crumbs": [
-      "News",
-      "Potential Sensor Networks",
-      "Seismic and infrasound monitoring"
-    ]
-  },
-  {
-    "objectID": "shake_and_boom.html#hosting-a-raspberry-shake-boom",
-    "href": "shake_and_boom.html#hosting-a-raspberry-shake-boom",
-    "title": "Shake & Boom",
-    "section": "Hosting a Raspberry Shake & Boom",
-    "text": "Hosting a Raspberry Shake & Boom\nIf you are interested in hosting your own Raspberry Shake & Boom, please register you interest in joining OCSN via the web form available via the expressions of interst page, and note that you are interested in hosting a Shake & Boom. At this stage all Shake and Boom devices need to be self-funded, although we will be seeking funding to subsidise or fully cover the costs involved.\n\n\n\nA Raspberry Shake and Boom device\nRecording of a recent earthquake near Tonga in the Pacific Ocean, as recorded by the Raspberry Shake & Boom monitoring station operated by Alan Sheehan just south of Oberon township\nRecording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake & Boom device\nSpaceX trunk re-entry infrasound signal 2022\nCustom analysis of Honshu earthquake programmed by Alan Sheehan\nHelicopter infrasound",
-    "crumbs": [
-      "News",
-      "Potential Sensor Networks",
-      "Seismic and infrasound monitoring"
-    ]
-  },
-  {
     "objectID": "frogid.html",
     "href": "frogid.html",
     "title": "FrogID",
@@ -336,6 +288,61 @@
       "Potential Activities",
       "FrogID"
     ]
+  },
+  {
+    "objectID": "shake_and_boom.html",
+    "href": "shake_and_boom.html",
+    "title": "Shake & Boom",
+    "section": "",
+    "text": "Current status of this initiative\n\n\n\nTwo founding members of OCSN, Alan Sheehan and Tim Churches, both have Raspberry Shake & Boom seismic and infrasound monitoring devices (with identifiers R21C0 and R5968 respectively) deployed at their properties, about 10-15km south-east of Oberon township and each about 6km apart. The seismic and infrasound data continuously recorded and uploaded by these devices is freely and openly available at the URLs below, but can also be accessed via an API (application programming interface) to allow detailed anayles of the data collected at several, or many stations. Some examples of such analyses undertaken by Alan Sheehan are shown below. OCSN hopes to establish a network of such devices located at various points in Oberon LGA, and to further develop analysis program code to undertake various types of analysis and validation of the data collected, including infrasound monitoring and analysis.\n\nRaspberry Shake & Boom station R21C0\n\nhelicorder (seismic) data\ninfrasound data\n\nRaspberry Shake & Boom station R5968\n\nhelicorder (seismic) data\ninfrasound data",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks",
+      "Seismic and infrasound monitoring"
+    ]
+  },
+  {
+    "objectID": "shake_and_boom.html#overview",
+    "href": "shake_and_boom.html#overview",
+    "title": "Shake & Boom",
+    "section": "Overview",
+    "text": "Overview\nAlthough Australia is a geographically stable continent, that does not mean that we do not experience frequent earthquakes. Using devices developed over several years by the international Raspberry Shake (see the Raspberry Shake web site for details), based on the tiny but very powerful Raspberry Pi single baord computer which is about the size of a deck of playing cards, it is now feasible for citizens scientists to host their own seismic monitoring stations and contribute the data they collect to a worldwide community of people interested in such data. More recently, the ability to also monitor and record infrasound (very low frequency sound waves, mostly below the frequencies which humans can hear) has been added to these devices, allowing the deep rumbles caused by earthquakes to be detected, as well as other sources of infrasound, incuding aircraft, wind blowing through forests, wind turbines and sonic booms from meteorites entering the earth’s atmosphere. Please see the page on meteorite tracking for more information on this.",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks",
+      "Seismic and infrasound monitoring"
+    ]
+  },
+  {
+    "objectID": "shake_and_boom.html#raspberry-shake-and-boom-capabilities",
+    "href": "shake_and_boom.html#raspberry-shake-and-boom-capabilities",
+    "title": "Shake & Boom",
+    "section": "Raspberry Shake and Boom capabilities",
+    "text": "Raspberry Shake and Boom capabilities\n\nDetecting distant earthquakes\nYou don’t need special skills to use a Raspberry Shake and Boom (RS&B for short) – the example below is from the very nice ShakeNet phone app provided by the Raspberry Shake community. It lists earthquakes happening world-wide so you can see if your RS&B station detected them or not. As you can see, an RS&B station in Oberon LGA can readily detect earthquakes thousands of kilometres away.\n\n\n\nRecording of a recent earthquake near Tonga in the Pacific Ocean, as recorded by the Raspberry Shake & Boom monitoring station operated by Alan Sheehan just south of Oberon township\n\n\n\n\nDetecting local earthquakes\nOf course, the devices can also detect , less intense local earthquakes, as shown below.\n\n\n\nRecording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake & Boom device\n\n\n\n\nMeteorite and space debris sonic booms\nMeteorites and space debris enter the Earth’s atmospshere at supersonic speeds, creating sonic booms from the resulting shock wave. On the morning of August 9, 2022 at 7:05am the SpaceX Crew 1 Dragon Trunk re-entered the atmosphere over Western NSW, the Snowy Mountains and eastern Victoria. This is the infrasound signal of that event captured on a Raspberry Shake and Boom operated by Alan Sheehan just outside Oberon, some 370kms away from the point of closest approach.\n\n\n\nSpaceX trunk re-entry infrasound signal 2022\n\n\n\n\nDIY data analysis\nWith a little program code, using the Python programming language, you can fully explore the capabilities of your Raspberry Shake and Boom. Don’t worry - we are happy to share code and help you to learn how to do it. Shown below is a custom analysis of an earthquake in Honshu, Japan, programmed by Alan Sheehan.\n\n\n\nCustom analysis of Honshu earthquake programmed by Alan Sheehan\n\n\n\n\nInfrasound\nBelow is the infrasound signal of a passing helicopter, showing the Doppler shift in frequencies as it first approaches then receeds from the monitoring Raspeberry Shake and Boom device. You don’t need any coding skill for this type of report either - its available from the Raspberry Shake Data View web app and you can join and use any or all the Raspberry Shakes in the world for free (you don’t even have to own one!), via the ShakeNet web site.\n\n\n\nHelicopter infrasound\n\n\n\n\nWind turbine infrasound\n\n\nIt should be born in mind that merely detecting infrasound generated by wind turbines does not necessarily imply that that infrasound has impacts on human (and/or non-human) health, or even that humans and other animals can detect it. Nonetheless, we beleive that it is important to develop capabilities to monitor such artifical sources of infrasound, as well as natural sources such as wind blowing through trees and sound generated by fast flowing water in river rapids, and to collect baseline data before any proposed wind turbines are constructed, as well as after they become operational. OCSN also intends to undertake a meta-review of articles and reports which review and summarise the scientific evidence around the effect of infrasound on human health and the broader ecology.\nThe infrasound microphone in the Raspberry Shake and Boom device should be able to detect infrasound generated by wind turbines. Not much work has been done yet to fully investigate and validate these capabilities, and further investigation of this will be one of the initial projects to be undertaken by OCSN. However, if the infrasound data from a Raspberry Shake and Boom deployed at Koroit, which is near Warrnambool in Victoria and close to several large wind farms, is processed using a Fast Fourier Transform (FFT), some interesting features become evident in the resulting spectrograms. We suspect the spikes in the FFT spectrums shown below are tonal frequencies from laminar boundary layer, blunt trailing edges and/or flow over holes, slits and intrusions in nearby wind towers. It shows the potential capability of the RSnB to continuously monitor infrasound generated by wind turbines at a range of distances, although this very preliminary work still needs to be carefully validated.",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks",
+      "Seismic and infrasound monitoring"
+    ]
+  },
+  {
+    "objectID": "shake_and_boom.html#hosting-a-raspberry-shake-boom",
+    "href": "shake_and_boom.html#hosting-a-raspberry-shake-boom",
+    "title": "Shake & Boom",
+    "section": "Hosting a Raspberry Shake & Boom",
+    "text": "Hosting a Raspberry Shake & Boom\nIf you are interested in hosting your own Raspberry Shake & Boom, please register you interest in joining OCSN via the web form available via the expressions of interst page, and note that you are interested in hosting a Shake & Boom. At this stage all Shake and Boom devices need to be self-funded, although we will be seeking funding to subsidise or fully cover the costs involved.\n\n\n\nA Raspberry Shake and Boom device\nRecording of a recent earthquake near Tonga in the Pacific Ocean, as recorded by the Raspberry Shake & Boom monitoring station operated by Alan Sheehan just south of Oberon township\nRecording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake & Boom device\nSpaceX trunk re-entry infrasound signal 2022\nCustom analysis of Honshu earthquake programmed by Alan Sheehan\nHelicopter infrasound",
+    "crumbs": [
+      "News",
+      "Potential Sensor Networks",
+      "Seismic and infrasound monitoring"
+    ]
+  },
+  {
+    "objectID": "news_items/2024-08-23-wollemi-quake/index.html",
+    "href": "news_items/2024-08-23-wollemi-quake/index.html",
+    "title": "Magnitude 5.0 earthquake in Wollemi National Park detected by Oberon Citizen Science seismology network",
+    "section": "",
+    "text": "Oberon Citizen Science Network (OCSN) co-founder, Alan Sheehan, has used the three Raspberry Shake & Boom seismic and infrasound detectors operated by OCSN members, as well as others in the Shakenet network, to produce these analyses of the magnitude 5.0 earthquake near Denman in NSW at about midday, Friday 23rd August 2024.\n\n\n\n\n\n\nNote\n\n\n\nClick on each image to see a full-size version of it."
   },
   {
     "objectID": "posts/2024-07-21-PUC-review/index.html",
@@ -405,7 +412,7 @@
     "href": "news.html",
     "title": "News Desk",
     "section": "",
-    "text": "There is no news yet."
+    "text": "Magnitude 5.0 earthquake in Wollemi National Park detected by Oberon Citizen Science seismology network\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "astronomy.html",
@@ -689,68 +696,5 @@
       "Potential Sensor Networks",
       "Eco-acoustics"
     ]
-  },
-  {
-    "objectID": "demo_viewsheds.html#interactive-viewshed-map",
-    "href": "demo_viewsheds.html#interactive-viewshed-map",
-    "title": "Demo viewsheds",
-    "section": "Interactive viewshed map",
-    "text": "Interactive viewshed map"
-  },
-  {
-    "objectID": "demo_viewsheds.html",
-    "href": "demo_viewsheds.html",
-    "title": "Demo viewsheds",
-    "section": "",
-    "text": "|---------|---------|---------|---------|\n========================================="
-  },
-  {
-    "objectID": "demo_viewsheds.html#raw-viewshed-and-elevation-raster",
-    "href": "demo_viewsheds.html#raw-viewshed-and-elevation-raster",
-    "title": "Demo viewsheds",
-    "section": "",
-    "text": "|---------|---------|---------|---------|\n========================================="
-  },
-  {
-    "objectID": "demo_viewsheds2.html",
-    "href": "demo_viewsheds2.html",
-    "title": "Demo viewsheds",
-    "section": "",
-    "text": "|---------|---------|---------|---------|\n========================================="
-  },
-  {
-    "objectID": "demo_viewsheds2.html#raw-viewshed-and-elevation-raster",
-    "href": "demo_viewsheds2.html#raw-viewshed-and-elevation-raster",
-    "title": "Demo viewsheds",
-    "section": "",
-    "text": "|---------|---------|---------|---------|\n========================================="
-  },
-  {
-    "objectID": "demo_viewsheds2.html#interactive-viewshed-map-for-shooters-hill-fire-tower",
-    "href": "demo_viewsheds2.html#interactive-viewshed-map-for-shooters-hill-fire-tower",
-    "title": "Demo viewsheds",
-    "section": "Interactive viewshed map for Shooters Hill Fire Tower",
-    "text": "Interactive viewshed map for Shooters Hill Fire Tower\n\n\n\n\n|---------|---------|---------|---------|\n========================================="
-  },
-  {
-    "objectID": "demo_viewsheds3.html",
-    "href": "demo_viewsheds3.html",
-    "title": "Demo viewsheds",
-    "section": "",
-    "text": "|---------|---------|---------|---------|\n========================================="
-  },
-  {
-    "objectID": "demo_viewsheds3.html#raw-viewshed-and-elevation-raster",
-    "href": "demo_viewsheds3.html#raw-viewshed-and-elevation-raster",
-    "title": "Demo viewsheds",
-    "section": "",
-    "text": "|---------|---------|---------|---------|\n========================================="
-  },
-  {
-    "objectID": "demo_viewsheds3.html#interactive-viewshed-map-for-shooters-hill-fire-tower",
-    "href": "demo_viewsheds3.html#interactive-viewshed-map-for-shooters-hill-fire-tower",
-    "title": "Demo viewsheds",
-    "section": "Interactive viewshed map for Shooters Hill Fire Tower",
-    "text": "Interactive viewshed map for Shooters Hill Fire Tower\nBased on 90m x 90m aggregated elevation map."
   }
 ]

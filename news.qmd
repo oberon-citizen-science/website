@@ -1,9 +1,14 @@
 ---
 title: "News Desk"
+listing:
+  contents: news_items
+  sort: "date desc"
+  type: default
+  categories: true
 ---
 
 :::{.aside}
 ![](assets/news_desk_ox.png)
 :::
 
-There is no news yet.
+
