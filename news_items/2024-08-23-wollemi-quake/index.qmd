@@ -4,8 +4,6 @@ date: 2024-08-23
 lightbox: true
 ---
 
-Oberon Citizen Science Network (OCSN) co-founder, Alan Sheehan, has used the three [Raspberry Shake & Boom](../../shake_and_boom.html) seismic and infrasound detectors operated by OCSN members, as well as others in the Shakenet network, to produce these analyses of the magnitude 5.0 earthquake near Denman in NSW at about midday, 
-
 Oberon Citizen Science Network (OCSN) detected today's M5.0 earthquake at Denman on their [Raspberry Shake](../../shake_and_boom.html) seismographs.
 
 OCSN currently has two Raspberry Shake and Boom seismographs (for detecting vertical ground movement and infrasound) and one Raspberrry Shake 3D seismograph for seismic measurements in all three dimensions.
