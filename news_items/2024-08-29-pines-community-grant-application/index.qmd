@@ -1,0 +1,75 @@
+---
+title: "Draft OSCN application for Pines community funding round 1, August 2024"
+---
+
+1. Name of the initiative: 
+: Surveying wildlife prevalence in Oberon LGA using eco-acoustics and time-lapse photography
+
+2. Provide a short overview of your initiative: 
+: The Oberon local government area, in the NSW Central Tablelands, contains many increasingly rare sub-alpine environments at elevations between 1000 and 1350 metres, including the headwaters and upper reaches of several river systems which are host to endangered and threatened species, as well as habitat for a range of cold-tolerant flora and fauna. Remarkably little data is collected in a systematic or ongoing fashion to monitor the prevalence of fauna in the region. There is surprisingly little published scientific research, specific to the region, on key species, and much of what is available is decades old. Similarly fauna records for the region in databases such as the NSW BioNet Atlas are sparse and many are not recent. The recently-formed Oberon Citizen Science Network (OCSN) seeks to address these knowledge gaps, in partnership with academic researchers and other ecological and conservation organisations, by developing a series of science-based, systematic fauna survey projects to be carried out by its members, most all of whom live in the region. We plan to use modern, technological means to efficiently conduct these surveys, in particular eco-acoustic methods and automated visual monitoring using time-lapse cameras. These devices will be deployed to, and retrieved from, survey sites by OCSN members, and the data so collected analysed by teams of OCSN members using both automated and semi-manual methods. All data and results will be made publicly available, with outreach to local schools to involve students in projects to use or analyse the data. Co-authorship of formal scientific papers by OCSN and its academic partners may also be possible.
+
+3. Total sponsorship funding for the application:
+: $2500
+
+4. Timing of the initiative:
+: 1 October 2024 to 30 June 2026
+
+5. Organisation name:
+: Oberon Citizen Science Network (OCSN)
+
+6. ABN/ACN
+: TBA
+
+7. Length of time the organisation has been operating:
+: Four months
+
+8. Short overview of your organisation:
+: Oberon Citizen Science Network (OCSN) is a strictly non-political volunteer organisation for people interested in Science, Technology, Engineering and Maths (STEM) subjects, projects and promotion in the community. An application for incorporation of OCSN as a not-for-profit association has been submitted to Service NSW  and approval is expected in September 2024. Further organisational details may be found on the OCSN web site.
+
+9. Which category best describes your organisation:
+: Community organisation, not-for-profit
+
+10. Contact name:
+11. Address:
+12. Phone number:
+13. Email:
+
+14. Location of the funding initiative / Distance from The Pines Wind Farm proposal site:
+: 0 to 50 kms
+
+15. Which category best describes your initiative:
+: Education and Training, Environment
+
+16. Describe how the initiative will benefit the local community:
+: For the members of OCSN participating in this initiative, it will build knowledge and appreciation of local fauna and increase awareness of the challenges faced by specific species in the face of ecological changes. It will also expose participants to modern, technology-based ecological survey methods, including fields workshops in sensor operation and deployment, and training sessions in data analysis and data dissemination methods using free, open-source software. A significant number of OCSN members live in the southern part of Oberon LGA, adjacent to the Pines exploration areas, and have close ties to their local communities. 
+: 
+: Beyond participation by OCSN members, through increasing and maintaining current knowledge of fauna in the Oberon LGA, this initiative will:
+:  a. increase community knowledge and pride in our sub-alpine local habitat and the fauna which are part of it;
+:  b. provide current and ongoing data on fauna prevalence in various habitats for use in school projects, and as the basis for further scientific investigation and analyses;
+:  c. provide an example and motivation to school students to promote interest in STEM subjects and careers. Through the use of modern technological means for data collection, this initiative will appeal not only to students with an interest in biology or ecology, but also students (and community members) interested in embedded microprocessor devices and related technologies, engineering, statistical analysis and information technologies.
+:   
+: All data collected by the initiative will be made freely available via the [OCSN web site](https://oberon-citizen.science) and local schools will be encouraged to develop learning projects or individual student projects (eg for the _Investigating Science_ HSC school subject). Several OCSN members are teachers at local schools in Oberon LGA.
+  
+17. Describe how the initiative will benefit the broader community beyond the organisation/program being funded:
+: This initiative seeks to promote interest in STEM in the wider community by adding to the extent and currency of knowledge and data on fauna and habitat in the Oberon region, and actively disseminating and publicising the results of fauna surveys via social media (including community groups on Facebook, as well as YouTube and TikTok channels) and community meetings, including a Science Week 2025 event at the Malachi Gilmore Hall in Oberon for which NSW and Commonwealth government science week community event funding will be sought. The intent is to engender in the wider community both greater awareness of and pride in the local natural environment, as well as promoting Oberon LGA as a centre of excellence in citizen science and STEM educational engagement.
+: 
+: The initial focus of this initiative will be on surveying the prevalence of the following endangered, threatened and near-threatened species, both because there has been so little research on them done locally, and because there are already research and/or conservation efforts for them, just not active in teh Oberon region:
+:  a. koala: eco-acoustic monitoring for male koala mating roars, starting in and around the known remnant population of koalas in the LGA outside of national park areas, and then extending to other likely habitats, in consultation with the National Koala Monitoring Program ([https://www.nkmp.org.au](https://www.nkmp.org.au)) -- see also information at [https://www.nkmp.org.au/docs/NKMP%20Methodologies%20–%20audio.pdf](https://www.nkmp.org.au/docs/NKMP%20Methodologies%20–%20audio.pdf) on their audio monitoring methodology which we will adopt. 
+:  b. platypus: direct observation surveys at likely locations, as well as systematic deployment of time-lapse cameras which have recently been shown to be an excellent method for platypus detection over longer periods (one to two weeks at a time, see the scientific paper at [https://www.publish.csiro.au/am/pdf/AM23045](https://www.publish.csiro.au/am/pdf/AM23045)). The initial focus will be on the Duckmaloi River, once famous for its abundant platypus population, in particular the upper reaches of the Duckmaloi and the headwater riparian systems which feed into it, and parts of the Fish River and tributaries further north in Oberon SLA. These surveys will be designed and undertaken based on advice from the Australian Platypus Conservancy ([https://platypus.asn.au](https://platypus.asn.au)) and the UNSW Platypus Conservation Initiative ([https://www.unsw.edu.au/research/platypus-conservation-initiative](https://www.unsw.edu.au/research/platypus-conservation-initiative)). All data collected will be contributed to the Australian Platypus Conservancy and through the platy-project web site at [https://platy-project.acf.org.au](https://platy-project.acf.org.au) (which in turn contributes data to the NSW BioNet Atlas). Video of a recent platypus sighting in the upper reaches of the Duckmaloi River by an OCSN member can be found at [https://oberon-citizen.science/ocsn_gallery.html#platypus-in-the-upper-duckmaloi-river-tim-churches](https://oberon-citizen.science/ocsn_gallery.html#platypus-in-the-upper-duckmaloi-river-tim-churches)
+:  c. rakali (native water rat): rakali will also be surveyed using the same methods and equipment as the platypus surveys outlined above, initially as part of the platypus surveys given their habitats are very similar. We will engage with the Australian Platypus Conservancy project, which also monitors rakali, see [https://platypus.asn.au/rakali-master/](https://platypus.asn.au/rakali-master/) 
+:  d. Booroolong frog: this frog species which lives exclusively in high country riparian systems is classed as critically endangered. There are known populations of this frog in Oberon LGA in the Sewells Creek riparian system near Essington and in the Abercrombie River system. In 2012 the NSW government published a national recovery plan for the species which listed several other known habitats for this frog in the Oberon region, including the upper reaches of the Fish River and the Duckmaloi Rivers. The plan called for regular monitoring of the populations in those areas, but it appears this was never done. OCSN plans to remedy this but undertaking systematic eco-acoustic surveys of the areas in the southern part of Oberon LGA identified in the recovery plan, using the equipment and methods decribed in section 16 above. The surveys will be planned in conjunction with herpetologists at the GrogID project located at the Australian Museum and UNSW, with particular regard to protection of possible Booroolong frog habitats from inadvertent introduction of the chytrid fungus pathogen through appropriate footwear hygiene and minimal impact monitoring using eco-acoustic devices rather than potentially distruptive direct observation methods.
+: e. other frog species: the surveys outlined in d) above will also be able to detect and estimate the prevalence of many other local frog species, some of which are threatened or known to be in decline, others still thriving. However this will require development and testing of automated methods for frog call recognition. Several research groups around Australia are developing such methods, including the Arthur Rylah Institute in Victoria (see [https://www.youtube.com/watch?v=DBR2yQR2ilw](https://www.youtube.com/watch?v=DBR2yQR2ilw) ).
+: f. bat species: although microbat species in the Oberon region are not thought to be endangered, there is little awareness of them or their prevalance apart from when they roost in dwellings. This is largely due to their nocturnal habits and their predominently ultrasonic echo-location calls. This iniative also seeks to develop and demonstrate the ability to detect microbat presence in forest environments through capture of their ultrasonic calls. For this initiative, this will be done with the same AudioMoth recording devices used for other aspects of this project -- these devices are capable of a 384kHz sample rate and thus can capture the typical range of ultrasonic calls emitted by Australian microbats. The data will be analysed using the bat call recognition software developed and published by the Australian company Titley Scientific, a world leader in eco-acoustics. Several OCSN members are currently attending a series of training seminars in bat call detection provided by Titley. At a later date some Titley hardware deives may also be acquired but not as part of this funding application.
+: g. bird species: several OCSN members have experience with deployment of Birdweather or BirdNET-pi bird monitoring deevices at their homes or properties. This system, deeveloped by Cornell University in the US, uses an advanced machine learning algorithm trained on the calls of thousands of bird species worldwide (including nearly a thousand Australian species) to automatically identify bird species from their calls as captured by the devices. The algorithm has been shown in the scientific literature to be extremely accurate, which is confirmed by the anecdotal experience so far of OCSN members. Part of this initiative is to subsidise the installation od several more Birdweather or BirdNET-pi devices at the homes of OCSN members, in bthe townships as well as rural locations. All Birdweather and BirdNEt-pi devices contribute data to the Birdweather network, and the data is then freely available for others to use. In addition, OCSN will separately collate, analyse and publish data from these monitoring devices in a way that makes it easy for the Oberon community to view, and for school students to access for projects.
+:
+: One limitation of the Birdweather and BirdNet-pi devices is that they carry out evaluation of the convolutional neural network model they use for call identification on the device, and this means they require several watts of power. Although this is negligible in teh context of a household, it means they are not suitable for remote deployment. However, the AudioMoth devices already mentioned can be used to record ambient sound in remote locations, including bird calls, and these sound recording can be processed off-line by the BirdNet algorithm to provide automated call identification. Several OCSN members have the requisite expertise in python programming and the use of the TensorFlow neural network framework required for such processing.
+
+____
+
+Indicative budget line items:
+
+AudioMoth device with SD cards and waterproof case: AU$300
+Titley Scientific AnaBat software license: AU$550
+Brinno TLC2020 time lapse camera with waterproof case and storage card: AU$850
+
+
