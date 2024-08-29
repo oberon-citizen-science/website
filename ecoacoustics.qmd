@@ -43,6 +43,12 @@ Titley Scientific is an Australian company based in Brisbane which designs and m
 
 :::
 
+#### Titley Scientific micro-workshops on recording ultrasonic bat calls
+
+Titley are putting on a series of three 30 minute seminars between August and October 2024 on recording ultrasound. A recording of the first one appears below (it ends abruptly because they reached the limit of their free seminar hosting on Zoom).
+
+{{< video https://youtu.be/fWdgb1IEK4Y >}}
+
 ## Other resources
 
 * [The Australian Platypus Conservancy](https://platypus.asn.au), with examples of platypus calls on their web site
@@ -51,4 +57,5 @@ Titley Scientific is an Australian company based in Brisbane which designs and m
 * [Eco Logical Australia](https://www.ecoaus.com.au), a private consulting firm which [uses eco-acoustics](https://www.ecoaus.com.au/services/ecoacoustics)
 * The [Australian Acoustic Observatory](https://acousticobservatory.org/tag/ecoacoustics/)
 * The [Australasian Chapter of Ecoacoustics (ACEs)](https://ausecoacoustics.org),  a branch of the [International Society of Ecoacoustics (ISE)](https://sites.google.com/site/ecoacousticssociety/)
+
 

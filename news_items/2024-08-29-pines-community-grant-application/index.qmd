@@ -1,5 +1,5 @@
 ---
-title: "Draft OSCN application for Pines community funding round 1, August 2024"
+title: "Draft OCSN application for Pines community funding round 1, August 2024"
 ---
 
 This is a copy of the application OCSN intends to submit to the August 2024 round of the [Pines Wind Farm project community sponsorship program](https://www.thepineswindfarm.com.au/sponsorship). Comments are welcome via email or the OCSN group on Facebook. Please note that the application is due to be submitted by 5pm 30 August 2024. 
@@ -79,9 +79,9 @@ The application guidelines can be found [here](https://cdn.prod.website-files.co
 :
 : The indicative budget for the initiative described here is as follows:
 :
-: * AudioMoth device with SD cards and waterproof case: 3 devices at AU$300 each = AU$900
+: * AudioMoth device with SD cards, rechargable lithium batteries and waterproof case: 3 devices at AU$300 each = AU$900
 : * Titley Scientific AnaBat software license: AU$550
-: * Brinno TLC2020 time lapse camera with waterproof case and storage card: 2 devices at AU$850 each = AU$1700
+: * Brinno TLC2020 time lapse camera with waterproof case, rechargable lithium batteries and storage card: 2 devices at AU$850 each = AU$1700
 : * BirdNET-pi or Birdweather monitoring stations: subsidy for 4 additional stations (balance to be met by host, total cost of each station is AU$400-AU$500) at AU$200 per station = AU$800
 : **Total funding sought**: AU$3950
 
