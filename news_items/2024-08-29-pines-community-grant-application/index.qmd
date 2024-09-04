@@ -4,9 +4,6 @@ title: "OCSN application for Pines community funding round 1, August 2024"
 
 This is a copy of the application OCSN submitted to the August 2024 round of the [Pines Wind Farm project community sponsorship program](https://www.thepineswindfarm.com.au/sponsorship). 
 
-::: {.aside}
-![](../../assets/timelapse_oxen.png)
-:::
 
 :::{.callout-warning}
 The application was prepared after carefully reviewing the guidelines and elegibility criteria as instructed on the [Pines Wind Farm project community sponsorship program](https://www.thepineswindfarm.com.au/sponsorship) web page. The document containing the elegibility criteria and guidelines can be found [here](https://cdn.prod.website-files.com/662841b87151f2ad85731c32/66a895fa1eea65f532cf7baa_20240718_ThePines_Community_Sponsorship_Guidelines_and_application.pdf?utm_source=thepineswindfarm.com.au&utm_medium=referral).
