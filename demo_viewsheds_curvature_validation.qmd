@@ -1,0 +1,162 @@
+---
+title: "Demo viewsheds"
+---
+
+```{r, include=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(leaflet)
+library(terra)
+library(terrainr)
+library(raster)
+library(osmdata)
+library(sf)
+
+# NSW Elevation Data Service
+# https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=437c0697e6524d8ebf10ad0d915bc219
+
+wrightville_rast <- terra::rast("~/NSW_Government_Spatial_Services/Wrightville-DEM-AHD_55_5m/Wrightville-DEM-AHD_55_5m.asc")
+sussex_rast <- terra::rast("~/NSW_Government_Spatial_Services/Sussex-DEM-AHD_55_5m/Sussex-DEM-AHD_55_5m.asc")
+cobar_rast <- terra::rast("~/NSW_Government_Spatial_Services/Cobar-DEM-AHD_55_5m/Cobar-DEM-AHD_55_5m.asc")
+canbelego_rast <- terra::rast("~/NSW_Government_Spatial_Services/Canbelego-DEM-AHD_55_5m/Canbelego-DEM-AHD_55_5m.asc")
+
+
+terra::writeRaster(wrightville_rast, "_wip/wrightville_dem.tif", overwrite=TRUE)
+terra::writeRaster(sussex_rast, "_wip/sussex_dem.tif", overwrite=TRUE)
+terra::writeRaster(cobar_rast, "_wip/cobar_dem.tif", overwrite=TRUE)
+terra::writeRaster(canbelego_rast, "_wip/canbelego_dem.tif", overwrite=TRUE)
+
+terrainr::merge_rasters(
+  c("_wip/wrightville_dem.tif", "_wip/sussex_dem.tif",
+    "_wip/cobar_dem.tif", "_wip/_dem.tif"),
+   output_raster = "_wip/cobar_and_environs_dem_5m.tif",
+  overwrite=TRUE)
+
+localtif <- terra::rast("_wip/cobar_and_environs_dem_5m.tif")  
+
+# Load points
+demo_turbine <- tibble::tribble(~lat, ~long,
+# -33.896692083362126, 149.84751667995374)
+# Shooters Hill Fire Tower
+# -33.89826268724162, 149.84980994416398)
+# Cobar
+-31.487967, 145.807918)
+
+demo_turbine_sf <- sf::st_as_sf(x = demo_turbine,                         
+           coords = c("long", "lat"),
+           crs = CRS("+init=epsg:4326"))
+
+demo_turbine_sf <- sf::st_transform(demo_turbine_sf, crs = terra::crs(localtif))
+
+# Compute viewsheds
+vshed <- viewscape::compute_viewshed(dsm = localtif, 
+                                      viewpoints = demo_turbine_sf, 
+                                      offset_viewpoint = 10, 
+                                      offset_height = 1.8,
+                                      r=40000,
+                                      parallel = TRUE, 
+                                      workers = 4)
+
+viewscape_raster <- viewscape::visualize_viewshed(vshed, outputtype = 'raster')
+
+#vshed_terra_no_correction <- viewshed(x=localtif,
+#                        loc=c(st_coordinates(demo_turbine_sf)), 
+#                        observer=48,
+#                        target=1.8,
+#                        curvcoef=1.0,
+#                        output="yes/no",
+#                        filename="_wip/terra_vshed_validate_no_correction.tif",
+#                        overwrite=TRUE)
+#
+#viewscape_raster <- terra::rast("_wip/terra_vshed_validate_no_correction.tif")
+#
+#viewscape_raster <- terra::ifel(viewscape_raster <= 0, NA, viewscape_raster)
+
+
+vshed_terra <- viewshed(x=localtif,
+                        loc=c(st_coordinates(demo_turbine_sf)), 
+                        observer=10,
+                        target=1.8,
+                        curvcoef=0.85714,
+                        output="yes/no",
+                        filename="_wip/terra_vshed_validate1.tif",
+                        overwrite=TRUE)
+
+terra_raster <- terra::rast("_wip/terra_vshed_validate1.tif")
+
+terra_raster <- terra::ifel(terra_raster <= 0, NA, terra_raster)
+
+viewscape_pal <- colorNumeric(c("red"), 1,
+  na.color = "transparent")
+
+terra_pal <- colorNumeric(c("cyan"), 1,
+  na.color = "transparent")
+
+
+```
+
+## Interactive viewshed map for validation viewshed in Cobar NSW
+
+Comparing `viewscape::compute_viewshed()` which does not implement Earth curvature or atmospheric refraction compensation, and `terra::viewshed()` which does.
+
+Mythical 48m high tower viewpoint.
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 145.81, lat = -31.49, zoom = 11) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+#  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addRasterImage(viewscape_raster, 
+                 opacity=0.4, 
+                 colors = viewscape_pal,
+                  group = "Putative 10m tower viewshed (no curvature)",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster, 
+                 opacity=0.4, 
+                 colors = terra_pal,
+                  group = "Putative 10m tower viewshed (curvature)",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addMarkers(lng=145.807918,
+             lat=-31.487967,  
+             label = "Putative 10m tower",
+              group = "Putative 10m tower",
+              labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c( "Putative 10m tower viewshed (no curvature)",
+                                      "Putative 10m tower viewshed (curvature)"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+
+                    
+```
+
+:::
+
+## Consider this article
+
+https://www.sciencedirect.com/science/article/pii/S016920462200072X

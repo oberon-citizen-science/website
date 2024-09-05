@@ -745,5 +745,26 @@
     "title": "Demo viewsheds",
     "section": "Consider this article",
     "text": "Consider this article\nhttps://www.sciencedirect.com/science/article/pii/S016920462200072X"
+  },
+  {
+    "objectID": "demo_viewsheds_curvature_validation.html",
+    "href": "demo_viewsheds_curvature_validation.html",
+    "title": "Demo viewsheds",
+    "section": "",
+    "text": "Comparing viewscape::compute_viewshed() which does not implement Earth curvature or atmospheric refraction compensation, and terra::viewshed() which does.\nMythical 48m high tower viewpoint.\n\n\n\n\n|---------|---------|---------|---------|\n=========================================\n                                          \n\n|---------|---------|---------|---------|\n========================================="
+  },
+  {
+    "objectID": "demo_viewsheds_curvature_validation.html#interactive-viewshed-map-for-validation-viewshed-in-cobar-nsw",
+    "href": "demo_viewsheds_curvature_validation.html#interactive-viewshed-map-for-validation-viewshed-in-cobar-nsw",
+    "title": "Demo viewsheds",
+    "section": "",
+    "text": "Comparing viewscape::compute_viewshed() which does not implement Earth curvature or atmospheric refraction compensation, and terra::viewshed() which does.\nMythical 48m high tower viewpoint.\n\n\n\n\n|---------|---------|---------|---------|\n=========================================\n                                          \n\n|---------|---------|---------|---------|\n========================================="
+  },
+  {
+    "objectID": "demo_viewsheds_curvature_validation.html#consider-this-article",
+    "href": "demo_viewsheds_curvature_validation.html#consider-this-article",
+    "title": "Demo viewsheds",
+    "section": "Consider this article",
+    "text": "Consider this article\nhttps://www.sciencedirect.com/science/article/pii/S016920462200072X"
   }
 ]
