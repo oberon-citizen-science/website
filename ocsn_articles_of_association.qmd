@@ -2,6 +2,16 @@
 title: "OCSN Articles of Association"
 ---
 
-:::{.callout-info}
-Oberon Citizen Science Network is currently in start-up phase and is still seeking expressions of interest from potential members. However it is our intention, once we establish the level of interest, to seek to incorporate as a formal not-for-profit organisation. The exact form of that organisation and incorporation is yet to be determined.
+:::{.callout-note}
+Oberon Citizen Science Network has applied for incorporation as a not-for-profit association in early September 2024. Approval of this application is expected soon. The objectives of the association and its constitution as submitted with the application appear below.
 :::
+
+## Constitution
+
+```{=html}
+<object data="assets/OCSN_Constitution_v1.pdf" type="application/pdf" width="95%" height="70%" style="min-height:100vh;">
+    <p>It appears you don't have a PDF plugin for this browser.
+    No biggie... you can <a href="assets/OCSN_Constitution_v1.pdf">click here to
+    download the PDF file.</a></p>
+</object>
+```
