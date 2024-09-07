@@ -1,8 +1,8 @@
 ---
-title: "Demo viewsheds"
+title: "Illustrating the effect of Earth curvature and atmospheric refration correction in viewshed calculations"
 ---
 
-```{r, include=FALSE}
+```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
@@ -16,6 +16,8 @@ library(raster)
 library(osmdata)
 library(sf)
 
+terraOptions(progress=0)
+
 # NSW Elevation Data Service
 # https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=437c0697e6524d8ebf10ad0d915bc219
 
@@ -23,16 +25,62 @@ wrightville_rast <- terra::rast("~/NSW_Government_Spatial_Services/Wrightville-D
 sussex_rast <- terra::rast("~/NSW_Government_Spatial_Services/Sussex-DEM-AHD_55_5m/Sussex-DEM-AHD_55_5m.asc")
 cobar_rast <- terra::rast("~/NSW_Government_Spatial_Services/Cobar-DEM-AHD_55_5m/Cobar-DEM-AHD_55_5m.asc")
 canbelego_rast <- terra::rast("~/NSW_Government_Spatial_Services/Canbelego-DEM-AHD_55_5m/Canbelego-DEM-AHD_55_5m.asc")
-
+louth_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Louth-DEM-AHD_55_5m/Louth-DEM-AHD_55_5m.asc")
+booroondarra_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Booroondarra-DEM-AHD_55_5m/Booroondarra-DEM-AHD_55_5m.asc")
+themeadows_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/TheMeadows-DEM-AHD_55_5m/TheMeadows-DEM-AHD_55_5m.asc")
+keewong_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Keewong-DEM-AHD_55_5m/Keewong-DEM-AHD_55_5m.asc")
+lachlandowns_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/LachlanDowns-DEM-AHD_55_5m/LachlanDowns-DEM-AHD_55_5m.asc")
+nymagee_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Nymagee-DEM-AHD_55_5m/Nymagee-DEM-AHD_55_5m.asc")
+bobadah_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Bobadah-DEM-AHD_55_5m/Bobadah-DEM-AHD_55_5m.asc")
+hermidale_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Hermidale-DEM-AHD_55_5m/Hermidale-DEM-AHD_55_5m.asc")
+glenariff_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Glenariff-DEM-AHD_55_5m/Glenariff-DEM-AHD_55_5m.asc")
+coolabah_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Coolabah-DEM-AHD_55_5m/Coolabah-DEM-AHD_55_5m.asc")
+byrock_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Byrock-DEM-AHD_55_5m/Byrock-DEM-AHD_55_5m.asc")
+gunderbooka_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Gunderbooka-DEM-AHD_55_5m/Gunderbooka-DEM-AHD_55_5m.asc")
 
 terra::writeRaster(wrightville_rast, "_wip/wrightville_dem.tif", overwrite=TRUE)
 terra::writeRaster(sussex_rast, "_wip/sussex_dem.tif", overwrite=TRUE)
 terra::writeRaster(cobar_rast, "_wip/cobar_dem.tif", overwrite=TRUE)
 terra::writeRaster(canbelego_rast, "_wip/canbelego_dem.tif", overwrite=TRUE)
+terra::writeRaster(louth_rast, "_wip/louth_dem.tif", overwrite=TRUE)
+terra::writeRaster(booroondarra_rast, "_wip/booroondarra_dem.tif", overwrite=TRUE)
+terra::writeRaster(themeadows_rast, "_wip/themeadows_dem.tif", overwrite=TRUE)
+terra::writeRaster(keewong_rast, "_wip/keewong_dem.tif", overwrite=TRUE)
+terra::writeRaster(lachlandowns_rast, "_wip/lachlandowns_dem.tif", overwrite=TRUE)
+terra::writeRaster(nymagee_rast, "_wip/nymagee_dem.tif", overwrite=TRUE)
+terra::writeRaster(bobadah_rast, "_wip/bobadah_dem.tif", overwrite=TRUE)
+terra::writeRaster(hermidale_rast, "_wip/hermidale_dem.tif", overwrite=TRUE)
+terra::writeRaster(glenariff_rast, "_wip/glenariff_dem.tif", overwrite=TRUE)
+terra::writeRaster(coolabah_rast, "_wip/coolabah_dem.tif", overwrite=TRUE)
+terra::writeRaster(byrock_rast, "_wip/byrock_dem.tif", overwrite=TRUE)
+terra::writeRaster(gunderbooka_rast, "_wip/gunderbooka_dem.tif", overwrite=TRUE)
+
+rm(wrightville_rast)
+rm(sussex_rast)
+rm(cobar_rast)
+rm(canbelego_rast)
+rm(louth_rast)
+rm(booroondarra_rast)
+rm(themeadows_rast)
+rm(keewong_rast)
+rm(lachlandowns_rast)
+rm(nymagee_rast)
+rm(bobadah_rast)
+rm(hermidale_rast)
+rm(glenariff_rast)
+rm(coolabah_rast)
+rm(byrock_rast)
+rm(gunderbooka_rast)
 
 terrainr::merge_rasters(
   c("_wip/wrightville_dem.tif", "_wip/sussex_dem.tif",
-    "_wip/cobar_dem.tif", "_wip/_dem.tif"),
+    "_wip/cobar_dem.tif", "_wip/canbelego_dem.tif",
+    "_wip/louth_dem.tif", "_wip/booroondarra_dem.tif",
+    "_wip/themeadows_dem.tif", "_wip/keewong_dem.tif",
+    "_wip/lachlandowns_dem.tif", "_wip/nymagee_dem.tif",
+    "_wip/bobadah_dem.tif", "_wip/hermidale_dem.tif",
+    "_wip/glenariff_dem.tif", "_wip/coolabah_dem.tif",
+    "_wip/byrock_dem.tif", "_wip/gunderbooka_dem.tif"),
    output_raster = "_wip/cobar_and_environs_dem_5m.tif",
   overwrite=TRUE)
 
@@ -40,9 +88,6 @@ localtif <- terra::rast("_wip/cobar_and_environs_dem_5m.tif")
 
 # Load points
 demo_turbine <- tibble::tribble(~lat, ~long,
-# -33.896692083362126, 149.84751667995374)
-# Shooters Hill Fire Tower
-# -33.89826268724162, 149.84980994416398)
 # Cobar
 -31.487967, 145.807918)
 
@@ -52,30 +97,21 @@ demo_turbine_sf <- sf::st_as_sf(x = demo_turbine,
 
 demo_turbine_sf <- sf::st_transform(demo_turbine_sf, crs = terra::crs(localtif))
 
-# Compute viewsheds
-vshed <- viewscape::compute_viewshed(dsm = localtif, 
-                                      viewpoints = demo_turbine_sf, 
-                                      offset_viewpoint = 10, 
-                                      offset_height = 1.8,
-                                      r=40000,
-                                      parallel = TRUE, 
-                                      workers = 4)
+vshed_terra_no_correction <- viewshed(x=localtif,
+                        loc=c(st_coordinates(demo_turbine_sf)), 
+                        observer=10,
+                        target=1.8,
+                        curvcoef=0,
+                        output="yes/no",
+                        filename="_wip/terra_vshed_validate_no_correction.tif",
+                        overwrite=TRUE)
 
-viewscape_raster <- viewscape::visualize_viewshed(vshed, outputtype = 'raster')
+terra_raster_no_correction <- terra::rast("_wip/terra_vshed_validate_no_correction.tif")
 
-#vshed_terra_no_correction <- viewshed(x=localtif,
-#                        loc=c(st_coordinates(demo_turbine_sf)), 
-#                        observer=48,
-#                        target=1.8,
-#                        curvcoef=1.0,
-#                        output="yes/no",
-#                        filename="_wip/terra_vshed_validate_no_correction.tif",
-#                        overwrite=TRUE)
-#
-#viewscape_raster <- terra::rast("_wip/terra_vshed_validate_no_correction.tif")
-#
-#viewscape_raster <- terra::ifel(viewscape_raster <= 0, NA, viewscape_raster)
+terra_raster_no_correction <- terra::ifel(terra_raster_no_correction <= 0, NA, terra_raster_no_correction)
 
+terra_raster_no_correction_10m <- terra::aggregate(terra_raster_no_correction, fact=2, fun=max)
+rm(terra_raster_no_correction)
 
 vshed_terra <- viewshed(x=localtif,
                         loc=c(st_coordinates(demo_turbine_sf)), 
@@ -83,27 +119,33 @@ vshed_terra <- viewshed(x=localtif,
                         target=1.8,
                         curvcoef=0.85714,
                         output="yes/no",
-                        filename="_wip/terra_vshed_validate1.tif",
+                        filename="_wip/terra_vshed_correction_validate.tif",
                         overwrite=TRUE)
 
-terra_raster <- terra::rast("_wip/terra_vshed_validate1.tif")
+terra_raster <- terra::rast("_wip/terra_vshed_correction_validate.tif")
 
 terra_raster <- terra::ifel(terra_raster <= 0, NA, terra_raster)
 
-viewscape_pal <- colorNumeric(c("red"), 1,
+terra_raster_10m <- terra::aggregate(terra_raster, fact=2, fun=max)
+
+rm(terra_raster)
+rm(localtif)
+
+terra_no_correction_pal <- colorNumeric(c("red"), 1,
   na.color = "transparent")
 
 terra_pal <- colorNumeric(c("cyan"), 1,
   na.color = "transparent")
 
-
 ```
 
-## Interactive viewshed map for validation viewshed in Cobar NSW
+By toggling on and off the two viewshed layerss on the map below, you can compare  the results of using the `terra::viewshed()` with Earth curvature and atmospheric refraction correction disabled, and `terra::viewshed()` with correction enabled using the default co-efficient of 0.85714.
 
-Comparing `viewscape::compute_viewshed()` which does not implement Earth curvature or atmospheric refraction compensation, and `terra::viewshed()` which does.
+The calculated viewsheds are for a mythical 10m high tower viewpoint near the centre of Cobar in western NSW, where the terrain is quite flat.
 
-Mythical 48m high tower viewpoint.
+It is easy to see that without the correction, the calculated viewshed is much larger because the curvature of the Earth is ignored (although refraction by the atmossphere counteracts the effects of curvature, but only partially).
+
+This is the first step in developing documented, reproducible, open-source capabilities for visual impact assessment of large structures such as wind turbines. The intention is to implement many of the metrics and enhancements to simple viewsheds described in [this paper](https://www.sciencedirect.com/science/article/pii/S016920462200072X).
 
 :::{.column-page}
 
@@ -113,19 +155,18 @@ Mythical 48m high tower viewpoint.
 #| warning: false
 
 leaflet(height="800px", width="1200px") %>% 
-  setView(lng = 145.81, lat = -31.49, zoom = 11) %>%
+  setView(lng = 145.81, lat = -31.49, zoom = 8.5) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
   addTiles(group = "OpenStreetMap") %>%
   addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
-#  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
-  addProviderTiles("OpenTopoMap", group="Topography") %>%
-  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
-  addRasterImage(viewscape_raster, 
+  addRasterImage(terra_raster_no_correction_10m, 
                  opacity=0.4, 
-                 colors = viewscape_pal,
+                 colors = terra_no_correction_pal,
                   group = "Putative 10m tower viewshed (no curvature)",
                   maxBytes = 4 * 8330 * 8801) %>%
-  addRasterImage(terra_raster, 
-                 opacity=0.4, 
+  addRasterImage(terra_raster_10m, 
+                 opacity=0.6, 
                  colors = terra_pal,
                   group = "Putative 10m tower viewshed (curvature)",
                   maxBytes = 4 * 8330 * 8801) %>%
@@ -134,7 +175,7 @@ leaflet(height="800px", width="1200px") %>%
              label = "Putative 10m tower",
               group = "Putative 10m tower",
               labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
-  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+  addLayersControl(baseGroups = c("Shaded relief", "Topography", "OpenStreetMap", "Imagery"),
                    overlayGroups = c( "Putative 10m tower viewshed (no curvature)",
                                       "Putative 10m tower viewshed (curvature)"),
                    options = layersControlOptions(collapsed = FALSE)
@@ -157,6 +198,3 @@ leaflet(height="800px", width="1200px") %>%
 
 :::
 
-## Consider this article
-
-https://www.sciencedirect.com/science/article/pii/S016920462200072X

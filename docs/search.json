@@ -749,16 +749,16 @@
   {
     "objectID": "demo_viewsheds_curvature_validation.html",
     "href": "demo_viewsheds_curvature_validation.html",
-    "title": "Demo viewsheds",
+    "title": "Illustrating the effect of Earth curvature and atmospheric refration correction in viewshed calculations",
     "section": "",
-    "text": "Comparing viewscape::compute_viewshed() which does not implement Earth curvature or atmospheric refraction compensation, and terra::viewshed() which does.\nMythical 48m high tower viewpoint.\n\n\n\n\n|---------|---------|---------|---------|\n=========================================\n                                          \n\n|---------|---------|---------|---------|\n========================================="
+    "text": "By toggling on and off the two viewshed layerss on the map below, you can compare the results of using the terra::viewshed() with Earth curvature and atmospheric refraction correction disabled, and terra::viewshed() with correction enabled using the default co-efficient of 0.85714.\nThe calculated viewsheds are for a mythical 10m high tower viewpoint near the centre of Cobar in western NSW, where the terrain is quite flat.\nIt is easy to see that without the correction, the calculated viewshed is much larger because the curvature of the Earth is ignored (although refraction by the atmossphere counteracts the effects of curvature, but only partially).\nThis is the first step in developing documented, reproducible, open-source capabilities for visual impact assessment of large structures such as wind turbines. The intention is to implement many of the metrics and enhancements to simple viewsheds described in this paper."
   },
   {
     "objectID": "demo_viewsheds_curvature_validation.html#interactive-viewshed-map-for-validation-viewshed-in-cobar-nsw",
     "href": "demo_viewsheds_curvature_validation.html#interactive-viewshed-map-for-validation-viewshed-in-cobar-nsw",
-    "title": "Demo viewsheds",
+    "title": "Validating Earth curvature and atmospheric refration correction in viewsheds",
     "section": "",
-    "text": "Comparing viewscape::compute_viewshed() which does not implement Earth curvature or atmospheric refraction compensation, and terra::viewshed() which does.\nMythical 48m high tower viewpoint.\n\n\n\n\n|---------|---------|---------|---------|\n=========================================\n                                          \n\n|---------|---------|---------|---------|\n========================================="
+    "text": "Comparing terra::viewshed() with Earth curvature and atmospheric refraction correction disabled, and terra::viewshed() with correction enabled using the default co-efficient of 0.85714.\nMythical 10m high tower viewpoint.\nThe intention is to implement many of the metrics and enhancements described in this paper.\n\n\n\n\n|---------|---------|---------|---------|\n=========================================\n                                          \n\n|---------|---------|---------|---------|\n========================================="
   },
   {
     "objectID": "demo_viewsheds_curvature_validation.html#consider-this-article",
@@ -792,5 +792,19 @@
     "title": "OCSN Photo Gallery",
     "section": "Antechinus at entrance to a wombat burrow in 2021, Chatham Valley – Tim Churches",
     "text": "Antechinus at entrance to a wombat burrow in 2021, Chatham Valley – Tim Churches\nNote the round, bi-lobed ears, the forward-facing eyes and the hopping motion. Not a rat or a mouse. The white thing is a wombat mange treatment flap – it pours cydectin insecticide on the back of the wombat as it passes underneath, at least in theory. We found they worked maybe 10% of the time, but that was enough to cure our wombat population of mange over the course of about 6 months of weekly or bi-weekly treatments.\n\n\n\n\nLava blocks on beach at Devonport\nAustralian eucalyptus longhorn beetle larvae – Kyla Ries\nAustralian eucalyptus longhorn beetle larvae – Kyla Ries\nAustralian eucalyptus longhorn beetle larvae – Kyla Ries\nAustralian eucalyptus longhorn beetle larvae – Kyla Ries\nAustralian eucalyptus longhorn beetle larvae – Kyla Ries\nA cute rakali"
+  },
+  {
+    "objectID": "platypus_and_rakali.html",
+    "href": "platypus_and_rakali.html",
+    "title": "Surveying platypus and rakali prevalence in the Oberon region",
+    "section": "",
+    "text": "Brinno time lapse cameras – these cameras are often used on construction sites, but they are also ideal for capturing timelapse videos in natural environments. Recent research found that human reviewers could screen an hour’s worth of photographs of ponds and river segments taken every 3 second in just one minute with very good accuracy in identifying potential platypus movements. Candidate movements are then examined in detail, frame by frame to verify sightings. The task of reviewing such timelapse footage can be distributed to several OCSN members or other volunteers, after suitable training, to make larger scale surveys feasible.\n\n\nPlatypus: direct observation surveys at likely locations, as well as systematic deployment along waterway courses of time-lapse cameras, which have recently been shown to be an excellent method for platypus detection over longer periods (one to two weeks at a time, as detailed in this recent scientific paper). The initial focus will be on the Duckmaloi River, once famous for its abundant platypus population, in particular the upper reaches of the Duckmaloi and the headwater riparian systems which feed into it, as well as parts of the Fish River and tributaries further north in Oberon SLA. These surveys will be designed and undertaken based on advice from the Australian Platypus Conservancy) and the UNSW Platypus Conservation Initiative. All data collected will be contributed to the Australian Platypus Conservancy and through the platy-project web site, both of which in turn contribute data to the NSW BioNet Atlas. Video of a recent platypus sighting in the upper reaches of the Duckmaloi River by an OCSN member can be found here.\n\n\n\n\nRakali (native water rat): rakali will also be surveyed using the same methods and equipment as the platypus surveys outlined above, initially as part of the platypus surveys given that their habitats are very similar. We will engage with the Australian Platypus Conservancy rakali project for advice."
+  },
+  {
+    "objectID": "demo_viewsheds_curvature_validation.html#interactive-viewshed-map-which-illustrates-the-effect-of-curvature-and-refraction-corrections-in-cobar-nsw",
+    "href": "demo_viewsheds_curvature_validation.html#interactive-viewshed-map-which-illustrates-the-effect-of-curvature-and-refraction-corrections-in-cobar-nsw",
+    "title": "Illustrating the effect of Earth curvature and atmospheric refration correction in viewshed calculations",
+    "section": "",
+    "text": "By toggling on and off the two viewshed layerss on the map below, you can compare the results of using the terra::viewshed() with Earth curvature and atmospheric refraction correction disabled, and terra::viewshed() with correction enabled using the default co-efficient of 0.85714.\nThe calculated viewsheds are for a mythical 10m high tower viewpoint near the centre of Cobar in western NSW, where the terrain is quite flat.\nIt is easy to see that without the correction, the calculated viewshed is much larger because the curvature of the Earth is ignored (although refraction by the atmossphere counteracts the effects of curvature, but only partially).\nThis is the first step in developing documented, reproducible, open-source capabilities for visual impact assessment of large structures such as wind turbines. The intention is to implement many of the metrics and enhancements to simple viewsheds described in this paper."
   }
 ]
