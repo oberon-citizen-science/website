@@ -114,7 +114,7 @@ terra_raster_no_correction <- terra::rast("_wip/terra_vshed_validate_no_correcti
 
 terra_raster_no_correction <- terra::ifel(terra_raster_no_correction <= 0, NA, terra_raster_no_correction)
 
-terra_raster_no_correction_10m <- terra::aggregate(terra_raster_no_correction, fact=2, fun=max)
+terra_raster_no_correction_20m <- terra::aggregate(terra_raster_no_correction, fact=4, fun=max)
 rm(terra_raster_no_correction)
 
 vshed_terra <- viewshed(x=localtif,
@@ -130,7 +130,7 @@ terra_raster <- terra::rast("_wip/terra_vshed_correction_validate.tif")
 
 terra_raster <- terra::ifel(terra_raster <= 0, NA, terra_raster)
 
-terra_raster_10m <- terra::aggregate(terra_raster, fact=2, fun=max)
+terra_raster_20m <- terra::aggregate(terra_raster, fact=4, fun=max)
 
 rm(terra_raster)
 rm(localtif)
@@ -140,6 +140,18 @@ terra_no_correction_pal <- colorNumeric(c("red"), 1,
 
 terra_pal <- colorNumeric(c("cyan"), 1,
   na.color = "transparent")
+
+cobar_tower <- vect(cbind(st_coordinates(demo_turbine_sf)), crs=crs(terra_raster_20m))
+tower_dist <- distance(terra_raster_20m, cobar_tower)
+
+terra_raster_20m_dist <- terra_raster_20m * tower_dist
+
+dist_pal <- colorNumeric(palette = "Reds", domain = minmax(terra_raster_20m_dist), reverse = TRUE)
+
+binned_dist_pal <- colorBin(palette = "Reds", 
+                            domain = minmax(terra_raster_20m_dist),
+                            bins = c(800, 3200, 8100, 16100, 32200, 64400),
+                            reverse = TRUE)
 
 ```
 
@@ -164,12 +176,12 @@ leaflet(height="800px", width="1200px") %>%
   addProviderTiles("OpenTopoMap", group="Topography") %>%
   addTiles(group = "OpenStreetMap") %>%
   addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
-  addRasterImage(terra_raster_no_correction_10m, 
+  addRasterImage(terra_raster_no_correction_20m, 
                  opacity=0.4, 
                  colors = terra_no_correction_pal,
                   group = "Putative 10m tower viewshed (no curvature)",
                   maxBytes = 4 * 8330 * 8801) %>%
-  addRasterImage(terra_raster_10m, 
+  addRasterImage(terra_raster_20m, 
                  opacity=0.6, 
                  colors = terra_pal,
                   group = "Putative 10m tower viewshed (curvature)",
@@ -209,19 +221,10 @@ This is the same viewshed as above (with curvature and refraction corrections), 
 
 :::{.column-page}
 
-```{r}
+```{r, eval=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
-
-cobar_tower <- vect(cbind(st_coordinates(demo_turbine_sf)), crs=crs(terra_raster_10m))
-# cobar_tower <- project(cobar_tower, terra_raster_10m)
-tower_dist <- distance(terra_raster_10m, cobar_tower)
-
-terra_raster_10m_dist <- terra_raster_10m * tower_dist
-
-dist_pal <- colorNumeric(palette = "Reds", domain = minmax(terra_raster_10m_dist), reverse = TRUE)
-
 
 leaflet(height="800px", width="1200px") %>% 
   setView(lng = 145.81, lat = -31.49, zoom = 10) %>%
@@ -229,7 +232,7 @@ leaflet(height="800px", width="1200px") %>%
   addProviderTiles("OpenTopoMap", group="Topography") %>%
   addTiles(group = "OpenStreetMap") %>%
   addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
-  addRasterImage(terra_raster_10m_dist, 
+  addRasterImage(terra_raster_20m_dist, 
                  opacity=0.6, 
                   colors = dist_pal,
                   group = "Putative 10m tower viewshed (curvature)",
@@ -274,14 +277,14 @@ This is the same viewshed as above (with curvature and refraction corrections), 
 
 :::{.column-page}
 
-```{r}
+```{r, eval=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
 
 binned_dist_pal <- colorBin(palette = "Reds", 
-                            domain = minmax(terra_raster_10m_dist),
-                            bins = c(800, 3200, 8100, 16100, 32200),
+                            domain = minmax(terra_raster_20m_dist),
+                            bins = c(800, 3200, 8100, 16100, 32200, 64400),
                             reverse = TRUE)
 
 leaflet(height="800px", width="1200px") %>% 
@@ -290,7 +293,7 @@ leaflet(height="800px", width="1200px") %>%
   addProviderTiles("OpenTopoMap", group="Topography") %>%
   addTiles(group = "OpenStreetMap") %>%
   addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
-  addRasterImage(terra_raster_10m_dist, 
+  addRasterImage(terra_raster_20m_dist, 
                  opacity=0.6, 
                   colors = binned_dist_pal,
                   group = "Putative 10m tower viewshed (curvature)",
@@ -329,3 +332,107 @@ leaflet(height="800px", width="1200px") %>%
 
 :::
 
+### Zones as separate layers
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+binned_dist_pal <- colorBin(palette = "Reds", 
+                            domain = minmax(terra_raster_20m_dist),
+                            bins = c(800, 3200, 8100, 16100, 32200, 64400),
+                            reverse = TRUE)
+
+terra_raster_0_800 <- terra::ifel(terra_raster_20m_dist < 800, 
+                                  terra_raster_20m_dist,
+                                  NA)
+
+terra_raster_800_3200 <- terra::ifel(terra_raster_20m_dist >= 800 & terra_raster_20m_dist < 3200,
+                                     terra_raster_20m_dist,
+                                     NA)
+
+terra_raster_3200_8100 <- terra::ifel(terra_raster_20m_dist >= 3200 & terra_raster_20m_dist < 8100,
+                                      terra_raster_20m_dist,
+                                      NA)
+
+terra_raster_8100_16100 <- terra::ifel(terra_raster_20m_dist >= 8100 & terra_raster_20m_dist < 16100,
+                                       terra_raster_20m_dist,
+                                       NA)
+
+terra_raster_16100_32200 <- terra::ifel(terra_raster_20m_dist >= 16100 & terra_raster_20m_dist < 32200,
+                                       terra_raster_20m_dist,
+                                       NA)
+
+terra_raster_32200_64400 <- terra::ifel(terra_raster_20m_dist >= 32200 & terra_raster_20m_dist < 64400,
+                                       terra_raster_20m_dist,
+                                       NA)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 145.81, lat = -31.49, zoom = 10) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(terra_raster_0_800, 
+                 opacity=0.6, 
+                 colors = "Purple", # binned_dist_pal,
+                 group = "0 to 800 m",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_800_3200, 
+                 opacity=0.6, 
+                 colors = "Red", # binned_dist_pal,
+                 group = "800 m to 3.2 km",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_3200_8100, 
+                 opacity=0.6, 
+                 colors = "Pink", # binned_dist_pal,
+                 group = "3.2 to 8.1 km",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_8100_16100, 
+                 opacity=0.6, 
+                 colors = "Orange", # binned_dist_pal,
+                 group = "8.1 to 16.1 km",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_16100_32200, 
+                 opacity=0.6, 
+                 colors = "Yellow", # binned_dist_pal,
+                 group = "16.1 to 32.2 km",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_32200_64400, 
+                 opacity=0.6, 
+                 colors = "White", # binned_dist_pal,
+                 group = "32.2 to 64.4 km",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addMarkers(lng=145.807918,
+             lat=-31.487967,  
+             label = "Putative 10m tower",
+              group = "Putative 10m tower",
+              labelOptions = labelOptions(noHide = FALSE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c("Shaded relief", "Topography", "OpenStreetMap", "Imagery"),
+                   overlayGroups = c("0 to 800 m",
+                                     "800 m to 3.2 km",
+                                     "3.2 to 8.1 km",
+                                     "8.1 to 16.1 km",
+                                     "16.1 to 32.2 km",
+                                     "32.2 to 64.4 km"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+
+```
+
+:::
