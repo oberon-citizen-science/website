@@ -1,0 +1,293 @@
+---
+title: "Visual Impact Assessment capability development - phase 2"
+---
+
+
+## Calculating compound viewsheds
+
+```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(leaflet)
+library(RColorBrewer)
+library(terra)
+library(terrainr)
+library(raster)
+library(osmdata)
+library(sf)
+
+terraOptions(progress=0)
+
+if (!file.exists("_wip/cobar_and_environs_dem_5m.tif")) {
+
+  # NSW Elevation Data Service
+  # https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=437c0697e6524d8ebf10ad0d915bc219
+  
+  wrightville_rast <- terra::rast("~/NSW_Government_Spatial_Services/Wrightville-DEM-AHD_55_5m/Wrightville-DEM-AHD_55_5m.asc")
+  sussex_rast <- terra::rast("~/NSW_Government_Spatial_Services/Sussex-DEM-AHD_55_5m/Sussex-DEM-AHD_55_5m.asc")
+  cobar_rast <- terra::rast("~/NSW_Government_Spatial_Services/Cobar-DEM-AHD_55_5m/Cobar-DEM-AHD_55_5m.asc")
+  canbelego_rast <- terra::rast("~/NSW_Government_Spatial_Services/Canbelego-DEM-AHD_55_5m/Canbelego-DEM-AHD_55_5m.asc")
+  louth_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Louth-DEM-AHD_55_5m/Louth-DEM-AHD_55_5m.asc")
+  booroondarra_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Booroondarra-DEM-AHD_55_5m/Booroondarra-DEM-AHD_55_5m.asc")
+  themeadows_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/TheMeadows-DEM-AHD_55_5m/TheMeadows-DEM-AHD_55_5m.asc")
+  keewong_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Keewong-DEM-AHD_55_5m/Keewong-DEM-AHD_55_5m.asc")
+  lachlandowns_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/LachlanDowns-DEM-AHD_55_5m/LachlanDowns-DEM-AHD_55_5m.asc")
+  nymagee_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Nymagee-DEM-AHD_55_5m/Nymagee-DEM-AHD_55_5m.asc")
+  bobadah_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Bobadah-DEM-AHD_55_5m/Bobadah-DEM-AHD_55_5m.asc")
+  hermidale_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Hermidale-DEM-AHD_55_5m/Hermidale-DEM-AHD_55_5m.asc")
+  glenariff_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Glenariff-DEM-AHD_55_5m/Glenariff-DEM-AHD_55_5m.asc")
+  coolabah_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Coolabah-DEM-AHD_55_5m/Coolabah-DEM-AHD_55_5m.asc")
+  byrock_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Byrock-DEM-AHD_55_5m/Byrock-DEM-AHD_55_5m.asc")
+  gunderbooka_rast <- terra::rast(  "~/NSW_Government_Spatial_Services/Gunderbooka-DEM-AHD_55_5m/Gunderbooka-DEM-AHD_55_5m.asc")
+  
+  terra::writeRaster(wrightville_rast, "_wip/wrightville_dem.tif", overwrite=TRUE)
+  terra::writeRaster(sussex_rast, "_wip/sussex_dem.tif", overwrite=TRUE)
+  terra::writeRaster(cobar_rast, "_wip/cobar_dem.tif", overwrite=TRUE)
+  terra::writeRaster(canbelego_rast, "_wip/canbelego_dem.tif", overwrite=TRUE)
+  terra::writeRaster(louth_rast, "_wip/louth_dem.tif", overwrite=TRUE)
+  terra::writeRaster(booroondarra_rast, "_wip/booroondarra_dem.tif", overwrite=TRUE)
+  terra::writeRaster(themeadows_rast, "_wip/themeadows_dem.tif", overwrite=TRUE)
+  terra::writeRaster(keewong_rast, "_wip/keewong_dem.tif", overwrite=TRUE)
+  terra::writeRaster(lachlandowns_rast, "_wip/lachlandowns_dem.tif", overwrite=TRUE)
+  terra::writeRaster(nymagee_rast, "_wip/nymagee_dem.tif", overwrite=TRUE)
+  terra::writeRaster(bobadah_rast, "_wip/bobadah_dem.tif", overwrite=TRUE)
+  terra::writeRaster(hermidale_rast, "_wip/hermidale_dem.tif", overwrite=TRUE)
+  terra::writeRaster(glenariff_rast, "_wip/glenariff_dem.tif", overwrite=TRUE)
+  terra::writeRaster(coolabah_rast, "_wip/coolabah_dem.tif", overwrite=TRUE)
+  terra::writeRaster(byrock_rast, "_wip/byrock_dem.tif", overwrite=TRUE)
+  terra::writeRaster(gunderbooka_rast, "_wip/gunderbooka_dem.tif", overwrite=TRUE)
+  
+  rm(wrightville_rast)
+  rm(sussex_rast)
+  rm(cobar_rast)
+  rm(canbelego_rast)
+  rm(louth_rast)
+  rm(booroondarra_rast)
+  rm(themeadows_rast)
+  rm(keewong_rast)
+  rm(lachlandowns_rast)
+  rm(nymagee_rast)
+  rm(bobadah_rast)
+  rm(hermidale_rast)
+  rm(glenariff_rast)
+  rm(coolabah_rast)
+  rm(byrock_rast)
+  rm(gunderbooka_rast)
+  
+  terrainr::merge_rasters(
+    c("_wip/wrightville_dem.tif", "_wip/sussex_dem.tif",
+      "_wip/cobar_dem.tif", "_wip/canbelego_dem.tif",
+      "_wip/louth_dem.tif", "_wip/booroondarra_dem.tif",
+      "_wip/themeadows_dem.tif", "_wip/keewong_dem.tif",
+      "_wip/lachlandowns_dem.tif", "_wip/nymagee_dem.tif",
+      "_wip/bobadah_dem.tif", "_wip/hermidale_dem.tif",
+      "_wip/glenariff_dem.tif", "_wip/coolabah_dem.tif",
+      "_wip/byrock_dem.tif", "_wip/gunderbooka_dem.tif"),
+     output_raster = "_wip/cobar_and_environs_dem_5m.tif",
+    overwrite=TRUE)
+}
+
+localtif <- terra::rast("_wip/cobar_and_environs_dem_5m.tif")  
+
+# Load points
+demo_turbines <- tibble::tribble(~lat, ~long, ~tower_name,
+# Three points around Cobar
+-31.399919684799144, 145.62397588345067, "Tower 1",
+-31.300579706686563, 145.98038972748125, "Tower 2",
+-31.70965567538801, 145.83653582661577, "Tower 3",
+)
+
+demo_turbines_sf <- sf::st_as_sf(x = demo_turbines,                         
+           coords = c("long", "lat"),
+           crs = CRS("+init=epsg:4326"))
+
+demo_turbines_sf <- sf::st_transform(demo_turbines_sf, crs = terra::crs(localtif))
+
+if (!file.exists("_wip/vshed_raster_1.tif")) {
+  vshed_raster_1 <- viewshed(x=localtif,
+                          loc=c(st_coordinates(demo_turbines_sf[1,])), 
+                          observer=200,
+                          target=1.8,
+                          curvcoef=0.85714,
+                          output="yes/no",
+                          filename="_wip/vshed_raster_1.tif",
+                          overwrite=TRUE)
+}
+  
+vshed_raster_1 <- terra::rast("_wip/vshed_raster_1.tif")
+
+vshed_raster_1 <- terra::ifel(vshed_raster_1 <= 0, NA, vshed_raster_1)
+
+vshed_raster_1_10m <- terra::aggregate(vshed_raster_1, fact=2, fun=max)
+
+if (!file.exists("_wip/vshed_raster_2.tif")) {
+  vshed_raster_2 <- viewshed(x=localtif,
+                          loc=c(st_coordinates(demo_turbines_sf[2,])), 
+                          observer=200,
+                          target=1.8,
+                          curvcoef=0.85714,
+                          output="yes/no",
+                          filename="_wip/vshed_raster_2.tif",
+                          overwrite=TRUE)
+}
+
+vshed_raster_2 <- terra::rast("_wip/vshed_raster_2.tif")
+
+vshed_raster_2 <- terra::ifel(vshed_raster_2 <= 0, NA, vshed_raster_2)
+
+vshed_raster_2_10m <- terra::aggregate(vshed_raster_2, fact=2, fun=max)
+
+if (!file.exists("_wip/vshed_raster_3.tif")) {
+  vshed_raster_3 <- viewshed(x=localtif,
+                          loc=c(st_coordinates(demo_turbines_sf[3,])), 
+                          observer=200,
+                          target=1.8,
+                          curvcoef=0.85714,
+                          output="yes/no",
+                          filename="_wip/vshed_raster_3.tif",
+                          overwrite=TRUE)
+}
+
+vshed_raster_3 <- terra::rast("_wip/vshed_raster_3.tif")
+
+vshed_raster_3 <- terra::ifel(vshed_raster_3 <= 0, NA, vshed_raster_3)
+
+vshed_raster_3_10m <- terra::aggregate(vshed_raster_3, fact=2, fun=max)
+
+rm(localtif)
+
+vshed_raster_1_pal <- colorNumeric(c("red"), 1,
+  na.color = "transparent")
+
+vshed_raster_2_pal <- colorNumeric(c("cyan"), 1,
+  na.color = "transparent")
+
+vshed_raster_3_pal <- colorNumeric(c("darkgreen"), 1,
+  na.color = "transparent")
+
+number_visible_pal <- colorFactor(
+  palette = c("yellow", "orange", "red"),
+  levels = 1:3,
+  na.color = "transparent")
+```
+
+The map below shows the viewsheds (with Earth curvature and atmospheric refraction corrections) for three hypothetical towers each 200 metres tall at the indicated positions around the town of Cobar in western NSW, where the terrain is quite flat.
+
+This is the second step in developing documented, reproducible, open-source capabilities for visual impact assessment of large structures such as wind turbines. The intention is to implement many of the metrics and enhancements to simple viewsheds described in [this paper](https://www.sciencedirect.com/science/article/pii/S016920462200072X).
+
+:::{.column-page}
+
+```{r, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 145.81, lat = -31.49, zoom = 8.5) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(vshed_raster_1_10m, 
+                 opacity=0.3, 
+                 colors = vshed_raster_1_pal,
+                  group = "Viewshed for 200m tower 1",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(vshed_raster_2_10m, 
+                 opacity=0.3, 
+                 colors = vshed_raster_2_pal,
+                  group = "Viewshed for 200m tower 2",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(vshed_raster_3_10m, 
+                 opacity=0.3, 
+                 colors = vshed_raster_3_pal,
+                  group = "Viewshed for 200m tower 3",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addMarkers(data = demo_turbines,
+             label = ~tower_name,
+              group = "Hypothetical 200m towers",
+              labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c("Shaded relief", "Topography", "OpenStreetMap", "Imagery"),
+                   overlayGroups = c( "Hypothetical 200m towers",
+                                      "Viewshed for 200m tower 1",
+                                      "Viewshed for 200m tower 2",
+                                      "Viewshed for 200m tower 3"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+
+                    
+```
+
+:::
+
+## Displaying number of towers visible
+
+Here the map is shaded according to how many towers are visible from each point on the map, from zero (transparent shading) to three (since there are only three hypothetical towers).
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+# sum the number of towers visible for each cell in raster
+vshed_number_visible <- sum(vshed_raster_1_10m,
+                            vshed_raster_2_10m,
+                            vshed_raster_3_10m,
+                            na.rm = TRUE) %>%
+                        as.factor()
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 145.81, lat = -31.49, zoom = 8.5) %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addRasterImage(vshed_number_visible, 
+                 opacity=0.4, 
+                 colors = number_visible_pal,
+                  group = "Compound viewshed for all towers",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addLegend(
+    position = "bottomright",
+    pal = number_visible_pal,
+    labels = palette(),
+    values = 1:3,
+    title = "Number of towers visible") %>%  
+  addMarkers(data = demo_turbines,
+             label = ~tower_name,
+              group = "Hypothetical 200m towers",
+              labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c("Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c( "Hypothetical 200m towers",
+                                      "Compound viewshed for all towers"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en")
+```
+
+:::
+
