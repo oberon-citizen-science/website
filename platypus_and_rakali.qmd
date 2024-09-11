@@ -6,12 +6,16 @@ title: "Surveying platypus and rakali prevalence in the Oberon region"
 ![](assets/timelapse_oxen.png)
 :::
 
+::: {.callout-caution title="Work-in-progress"}
+This page is still under development.
+:::
 
 Brinno time lapse cameras -- these cameras are often used on construction sites, but they are also ideal for capturing timelapse videos in natural environments. Recent research found that human reviewers could screen an hour's worth of photographs of ponds and river segments taken every 3 second in just one minute with very good accuracy in identifying potential platypus movements. Candidate movements are then examined in detail, frame by frame to verify sightings. The task of reviewing such timelapse footage can be distributed to several OCSN members or other volunteers, after suitable training, to make larger scale surveys feasible.
 
 :  b. Platypus: direct observation surveys at likely locations, as well as systematic deployment along waterway courses of time-lapse cameras, which have recently been shown to be an excellent method for platypus detection over longer periods (one to two weeks at a time, as detailed in [this recent scientific paper](https://www.publish.csiro.au/am/pdf/AM23045)). The initial focus will be on the Duckmaloi River, once famous for its abundant platypus population, in particular the upper reaches of the Duckmaloi and the headwater riparian systems which feed into it, as well as parts of the Fish River and tributaries further north in Oberon SLA. These surveys will be designed and undertaken based on advice from the [Australian Platypus Conservancy](https://platypus.asn.au)) and the [UNSW Platypus Conservation Initiative](https://www.unsw.edu.au/research/platypus-conservation-initiative). All data collected will be contributed to the Australian Platypus Conservancy and through the [platy-project web site](https://platy-project.acf.org.au), both of which in turn contribute data to the NSW BioNet Atlas. Video of a recent platypus sighting in the upper reaches of the Duckmaloi River by an OCSN member can be found [here](https://oberon-citizen.science/ocsn_gallery.html#platypus-in-the-upper-duckmaloi-river-tim-churches).
 :  c. Rakali (native water rat): rakali will also be surveyed using the same methods and equipment as the platypus surveys outlined above, initially as part of the platypus surveys given that their habitats are very similar. We will engage with the Australian Platypus Conservancy [rakali project]((https://platypus.asn.au/rakali-master/)) for advice.
 
+See also 
 https://brinno.com/blogs/time-lapse-case-study-research/unlocking-the-mysteries-of-the-platypus-simon-roberts-research-with-brinno-time-lapse-cameras
 
 

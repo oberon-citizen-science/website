@@ -111,7 +111,6 @@ website:
             href: local_weather.qmd
           - text: "LoRaWAN and NB-IoT"
             href: nb_networks.qmd
-
 fig-cap-location: bottom
 reference-location: section
 footnotes-hover: true

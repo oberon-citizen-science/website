@@ -36,4 +36,20 @@ OCSN may accept funding for its activities from government, corporations or indi
 ![A visualisation of one variant of the scientific method.^[Efbrazil, CC BY-SA 4.0, via Wikimedia Commons]](assets/The_Scientific_Method.png)
 :::
 
-With that out of the way, please do read on using the link below or the links at the left to learn more about OCSN and its aims and potential activities.
+::::: {.callout-important title="Acknowledgement of Country" appearance="simple"}
+
+:::: {layout="[ 25, 75 ]"}
+
+::: {#first-column}
+![](assets/first_nations_flags.png)
+:::
+
+::: {#second-column}
+Oberon Citizen Science Network acknowledges the Traditional Owners of Country throughout Australia. The Oberon region is located on the territory of the Wiradjuri, Gundungurra and Dharug people who are the traditional custodians of the land on which we live, work and carry out our scientific enquiry. We pay our respects to Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples.
+:::
+
+::::
+
+:::::
+
+Please do read on using the link below or the links at the left to learn more about OCSN and its aims and potential activities.

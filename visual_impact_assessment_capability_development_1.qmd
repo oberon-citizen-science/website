@@ -2,6 +2,9 @@
 title: "Visual Impact Assessment capability development - phase 1"
 ---
 
+::: {.callout-warning}
+The viewshed maps on this page are very detailed and may take quite a while to display in many web browsers, and may not render at all on small devices such as smartphones or tablets. They are provided purely for development purposes, and final versions will be optimised for faster display.
+:::
 
 ## Illustrating the effect of Earth curvature and atmospheric refraction correction in viewshed calculations
 
@@ -217,11 +220,11 @@ leaflet(height="800px", width="1200px") %>%
 
 ## Viewshed shaded by distance from tower
 
-This is the same viewshed as above (with curvature and refraction corrections), but shaded by distance from the tower to de-emphasise distance viewpoints. This is a first step towards representing visual impact. 
+This is the same viewshed as above (with curvature and refraction corrections enabled), but shaded by distance from the tower to de-emphasise distance viewpoints. This is a first step towards representing visual impact. 
 
 :::{.column-page}
 
-```{r, eval=FALSE}
+```{r, eval=TRUE}
 #| echo: false
 #| message: false
 #| warning: false
@@ -241,7 +244,7 @@ leaflet(height="800px", width="1200px") %>%
     position = "bottomright",
     pal = dist_pal,
     labels = palette(), opacity = 0.6,
-    values = minmax(terra_raster_10m_dist),
+    values = minmax(terra_raster_20m_dist),
     title = "Distance from tower",
     labFormat = labelFormat(suffix = " km",
                             transform = function(x) x / 1000)) %>%  
@@ -277,7 +280,7 @@ This is the same viewshed as above (with curvature and refraction corrections), 
 
 :::{.column-page}
 
-```{r, eval=FALSE}
+```{r, eval=TRUE}
 #| echo: false
 #| message: false
 #| warning: false
@@ -302,7 +305,7 @@ leaflet(height="800px", width="1200px") %>%
     position = "bottomright",
     pal = binned_dist_pal,
     labels = palette(), opacity = 0.6,
-    values = minmax(terra_raster_10m_dist),
+    values = minmax(terra_raster_20m_dist),
     title = "Distance from tower",
     labFormat = labelFormat(suffix = " km",
                             transform = function(x) x / 1000)) %>%  
@@ -332,7 +335,9 @@ leaflet(height="800px", width="1200px") %>%
 
 :::
 
-### Zones as separate layers
+### Viewshed distance bands as separate layers
+
+This is essentially the same map as the one above, but each distance zone is represented as a separate layer which can be toggled on and off. This may not be particularly useful.
 
 :::{.column-page}
 
