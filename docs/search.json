@@ -78,7 +78,7 @@
     "href": "visual_impact_assessment_capability_development_2.html#calculating-compound-viewsheds",
     "title": "Visual Impact Assessment capability development - phase 2",
     "section": "Calculating compound viewsheds",
-    "text": "Calculating compound viewsheds\nThe map below shows the viewsheds (with Earth curvature and atmospheric refraction corrections) for three hypothetical towers each 200 metres tall at the indicated positions around the town of Cobar in western NSW, where the terrain is quite flat.\nThis is the second step in developing documented, reproducible, open-source capabilities for visual impact assessment of large structures such as wind turbines. The intention is to implement many of the metrics and enhancements to simple viewsheds described in this paper."
+    "text": "Calculating compound viewsheds\nThe map below shows the viewsheds (with Earth curvature and atmospheric refraction corrections) for three of the proposed Palings Yard wind turbines each 240 metres tall at the indicated positions.\nThis is the second step in developing documented, reproducible, open-source capabilities for visual impact assessment of large structures such as wind turbines. The intention is to implement many of the metrics and enhancements to simple viewsheds described in this paper."
   },
   {
     "objectID": "visual_impact_assessment_capability_development_2.html#displaying-number-of-towers-visible",
@@ -741,14 +741,14 @@
     "href": "visual_impact_assessment_capability_development_1.html#illustrating-the-effect-of-earth-curvature-and-atmospheric-refraction-correction-in-viewshed-calculations",
     "title": "Visual Impact Assessment capability development - phase 1",
     "section": "Illustrating the effect of Earth curvature and atmospheric refraction correction in viewshed calculations",
-    "text": "Illustrating the effect of Earth curvature and atmospheric refraction correction in viewshed calculations\nBy toggling on and off the two viewshed layers on the map below, you can compare the results of using the terra::viewshed() with Earth curvature and atmospheric refraction correction disabled, and terra::viewshed() with correction enabled using the default co-efficient of 0.85714.\nThe calculated viewsheds are for a mythical 10m high tower viewpoint near the centre of Cobar in western NSW, where the terrain is quite flat.\nIt is easy to see that without the correction, the calculated viewshed is much larger because the curvature of the Earth is ignored (although refraction by the atmosphere counteracts the effects of curvature, but only partially).\nThis is the first step in developing documented, reproducible, open-source capabilities for visual impact assessment of large structures such as wind turbines. The intention is to implement many of the metrics and enhancements to simple viewsheds described in this paper."
+    "text": "Illustrating the effect of Earth curvature and atmospheric refraction correction in viewshed calculations\nBy toggling on and off the two viewshed layers on the map below, you can compare the results of using the terra::viewshed() with Earth curvature and atmospheric refraction correction disabled, and terra::viewshed() with correction enabled using the default co-efficient of 0.85714.\nThe calculated viewsheds are for one of the proposed Palings Yard wind farm towers at 240m height.\nIt is easy to see that without the correction, the calculated viewshed is much larger because the curvature of the Earth is ignored (although refraction by the atmosphere counteracts the effects of curvature, but only partially).\nThis is the first step in developing documented, reproducible, open-source capabilities for visual impact assessment of large structures such as wind turbines. The intention is to implement many of the metrics and enhancements to simple viewsheds described in this paper."
   },
   {
     "objectID": "visual_impact_assessment_capability_development_1.html#viewshed-shaded-by-distance-from-tower",
     "href": "visual_impact_assessment_capability_development_1.html#viewshed-shaded-by-distance-from-tower",
     "title": "Visual Impact Assessment capability development - phase 1",
     "section": "Viewshed shaded by distance from tower",
-    "text": "Viewshed shaded by distance from tower\nThis is the same viewshed as above (with curvature and refraction corrections enabled), but shaded by distance from the tower to de-emphasise distance viewpoints. This is a first step towards representing visual impact.\n\n\n\n\n\n\n\n\n\nViewshed shaded by distance bands from tower\nThis is the same viewshed as above (with curvature and refraction corrections), but shaded by distance categorised into bands as suggested by James F. Palmer in the paper mentioned above.\n\n\n\n\n\n\n\n\n\n\nViewshed distance bands as separate layers\nThis is essentially the same map as the one above, but each distance zone is represented as a separate layer which can be toggled on and off. This may not be particularly useful."
+    "text": "Viewshed shaded by distance from tower\nThis is the same viewshed as above (with curvature and refraction corrections enabled), but shaded by distance from the tower to de-emphasise distant viewpoints. This is a first step towards representing visual impact.\n\n\n\n\n\n\n\n\n\nViewshed shaded by distance bands from tower\nThis is the same viewshed as above (with curvature and refraction corrections), but shaded by distance categorised into bands as suggested by James F. Palmer in the paper mentioned above.\n\n\n\n\n\n\n\n\n\n\nViewshed distance bands as separate layers\nThis is essentially the same map as the one above, but each distance zone is represented as a separate layer which can be toggled on and off. This may not be particularly useful."
   },
   {
     "objectID": "platypus_and_rakali.html",
@@ -792,5 +792,12 @@
       "Potential Sensor Networks",
       "Eco-acoustics"
     ]
+  },
+  {
+    "objectID": "visual_impact_assessment_capability_development_2.html#displaying-number-of-towers-visible-as-separate-layers",
+    "href": "visual_impact_assessment_capability_development_2.html#displaying-number-of-towers-visible-as-separate-layers",
+    "title": "Visual Impact Assessment capability development - phase 2",
+    "section": "Displaying number of towers visible as separate layers",
+    "text": "Displaying number of towers visible as separate layers\nHere is the same map but with separate layers for each number of visible turbines, to allow easier examination of the data."
   }
 ]
