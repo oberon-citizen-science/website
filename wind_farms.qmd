@@ -241,7 +241,8 @@ You might want to view these in full screen mode -- if so, click the square with
 
 {{< video assets/turbine_test10.mp4 >}}
 
-Some additional work-in-progress on calculating viewsheds and visual impact assessment metrics is available [here](visual_impact_assessment_capability_development_1.html) and [here](visual_impact_assessment_capability_development_2.html).
+Some additional work-in-progress on calculating viewsheds and visual impact assessment metrics is available [here](visual_impact_assessment_capability_development_1.html) and [here](visual_impact_assessment_capability_development_2.html) and [here](visual_impact_assessment_capability_development_3.html).
+
 :::
 
 We welcome other ideas! Please [register your expression of interest](register_interest.html) if you would like to be involved in any of these potential projects.
