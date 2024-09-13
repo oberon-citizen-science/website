@@ -827,5 +827,12 @@
     "title": "Visual Impact Assessment capability development - phase 3",
     "section": "Displaying number of towers visible as separate layers",
     "text": "Displaying number of towers visible as separate layers\nHere is the same map but with separate layers for each number of visible turbines, to allow easier examination of the data."
+  },
+  {
+    "objectID": "visual_impact_assessment_capability_development_3.html#next-steps",
+    "href": "visual_impact_assessment_capability_development_3.html#next-steps",
+    "title": "Visual Impact Assessment capability development - phase 3",
+    "section": "Next steps",
+    "text": "Next steps\nThe next step is to compute viewshed layers for each turbine for different degrees of exposure of each turbine – that is, whether only the tips of the upper blade arc can be seen, or the hub, or the entire blade arc. Plus a layer for the distance. Then these layers can be combined using various algorithms as described in this paper, to give a visual impact metric for each turbine at each pixel location in the map. Then those can be summed (or aggregated by a function, not necessarily a linear sum) to give an overall visual impact metric for each pixel, which can then be displayed as binned layers on a single map. That’s the full extent of what that paper mentioned above describes. That paper seems to be well-regarded and is a good starting point. And then finally drape that overall visual impact metric raster over a 3D rendered map with animated fly-arounds. Weighting of visual impact metrics by population density at each point is also possible to allow an approximate overall human population visual impact score to be created for a given configuration of wind turbines (and variations of that for specific locations or sets of locations). That would then allow the visual impact of different turbine layouts and numbers to be compared and optimised to reduce visual impact to a minimum (subject to other optimisation constraints)."
   }
 ]
