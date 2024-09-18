@@ -6,9 +6,9 @@ title: "Visual Impact Assessment capability development - phase 4"
 The viewshed maps on this page are very detailed and may take quite a while to display in many web browsers, and may not render at all on small devices such as smartphones or tablets. They are provided purely for development purposes, and final versions will be optimised for faster display.
 :::
 
-## Calculating compound viewsheds
+## Implementing the visual impact metrics decribed in the paper
 
-```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+```{r init, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
@@ -111,7 +111,7 @@ if (!file.exists("_wip/distance_extent.rds")) {
 # Now create the summed viewsheds for all 47 turbines in Palings Yard
 turbine_visible_exposure_heights <- c(170.5, 101.5, 32.5)
 exposure_scores <- c(10, 20, 30)
-precalculated_files <- all(file.exist(paste0("_wip/vshed_visual_exp_", 1:47, ".tif")))
+precalculated_files <- all(file.exists(paste0("_wip/vshed_visual_exp_", 1:47, ".tif")))
 if (!precalculated_files) {
   for (i in 1:nrow(palings_yard_turbines_untransformed_sf)) {
     current_turbine <- vect(cbind(st_coordinates(palings_yard_turbines_sf[i,])),
@@ -205,7 +205,7 @@ if (!precalculated_files) {
 } 
 ```
 
-```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+```{r vis_prom, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
@@ -253,7 +253,7 @@ if (!all(file.exists("_wip/wfarm_vis_prominence.tif", "_wip/wfarm_meaningful_vis
 }
 ```
 
-```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+```{r calc_metrics, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
@@ -270,7 +270,10 @@ writeRaster(wfarm_mean_visual_prominence,
 # multipliers for number of meaningfully visible turbines at each location in the raster
 
 wfarm_sqrt_adj_visual_prominence <- wfarm_mean_visual_prominence * sqrt(wfarm_meaningful_vis)
+wfarm_sqrt_adj_visual_prominence <- ifel(wfarm_sqrt_adj_visual_prominence ==0, NA, wfarm_sqrt_adj_visual_prominence)
+
 wfarm_log_adj_visual_prominence <- wfarm_mean_visual_prominence * log(wfarm_meaningful_vis)
+wfarm_log_adj_visual_prominence <- ifel(wfarm_log_adj_visual_prominence ==0, NA, wfarm_log_adj_visual_prominence)
 
 writeRaster(wfarm_sqrt_adj_visual_prominence, 
               "_wip/wfarm_sqrt_adj_visual_prominence.tif",
@@ -280,11 +283,23 @@ writeRaster(wfarm_log_adj_visual_prominence,
               overwrite=TRUE)
 ```
 
-```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+```{r features, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
 #| include: false
+
+sqrt_pal <- colorNumeric(
+  palette = "plasma",
+  domain = minmax(wfarm_sqrt_adj_visual_prominence)[,1],
+  na.color = "transparent",
+  reverse=TRUE)
+
+log_pal <- colorNumeric(
+  palette = "plasma",
+  domain = minmax(wfarm_log_adj_visual_prominence)[,1],
+  na.color = "transparent",
+  reverse=TRUE)
 
 # Other features
 taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
@@ -297,11 +312,11 @@ oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
 
 ```
 
-Here are the visual impact assessment metrics as described in the paper.
+#### Here are the visual impact assessment metrics as described in the paper, using the square root adjustment for the number of visible turbines.
 
 :::{.column-page}
 
-```{r, eval=FALSE}
+```{r leaflet_sqrt, eval=TRUE}
 #| echo: false
 #| message: false
 #| warning: false
@@ -316,30 +331,18 @@ leaflet(height="800px", width="1200px") %>%
   addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
   addRasterImage(wfarm_sqrt_adj_visual_prominence, 
                  opacity=0.5, 
-                 colors = vshed_raster_1_pal,
-                  group = "Viewshed for 240m turbine 1",
+                 colors = sqrt_pal,
+                  group = "Visual prominence of wind farm (square root adjustment)",
                   maxBytes = 4 * 8330 * 8801) %>%
-  addRasterImage(vshed_raster_2_10m, 
-                 opacity=0.5, 
-                 colors = vshed_raster_2_pal,
-                  group = "Viewshed for 240m turbine 2",
-                  maxBytes = 4 * 8330 * 8801) %>%
-  addRasterImage(vshed_raster_3_10m, 
-                 opacity=0.5, 
-                 colors = vshed_raster_3_pal,
-                  group = "Viewshed for 240m turbine 3",
-                  maxBytes = 4 * 8330 * 8801) %>%
-  addCircleMarkers(data = palings_yard_turbines_untransformed_df[c(2,20,45),],
-              group = "Three proposed 240m turbines",
+  addCircleMarkers(data = palings_yard_turbines_untransformed_df,
+              group = "Proposed Paling Yards wind farm",
               color = "cyan",
               radius = 5,
               stroke = FALSE,
               fillOpacity = 0.5) %>%  
   addLayersControl(baseGroups = c("Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
-                   overlayGroups = c( "Three proposed 240m turbines",
-                                      "Viewshed for 240m turbine 1",
-                                      "Viewshed for 240m turbine 2",
-                                      "Viewshed for 240m turbine 3"),
+                   overlayGroups = c( "Proposed Paling Yards wind farm",
+                                      "Visual prominence of wind farm (square root adjustment)"),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   addMeasure(
@@ -353,84 +356,47 @@ leaflet(height="800px", width="1200px") %>%
   options = scaleBarOptions(metric=TRUE, 
                             imperial=FALSE,
                             maxWidth=300,
-                            updateWhenIdle=TRUE))
-
+                            updateWhenIdle=TRUE)) %>%
+ addLegend("bottomright", pal = sqrt_pal, values = base::rev(minmax(wfarm_sqrt_adj_visual_prominence)[,1]),
+    title = "Visual prominence",
+    opacity = 0.5
+  )  
                     
 ```
 
 :::
 
-We can examine the distribution of the number of turbines visible from each pixel in the cumulative viewshed raster. Note that zero turbines are visible from the vast majority of pixels -- these have been excluded from the chart below.
-
-```{r, fig.asp=1.25}
-#| echo: false
-#| message: false
-#| warning: false
-
-vshed_number_visible_df <- as.data.frame(vshed_number_visible) %>%
-                              mutate(number_visible = factor(viewshed))
-
-vshed_number_visible_df  %>%
-  ggplot(aes(x=number_visible)) +
-    geom_bar(colour="orange", fill="orange") + 
-    coord_flip() +
-    labs(x="Number of turbines visible from each pixel in raster",
-         y="Number of pixels",
-         caption = "Note: Pixels from which no turbines are visible are excluded") +
-    theme_minimal()
-         
-```
-
-The map below shows the cumulative viewshed (with Earth curvature and atmospheric refraction corrections) for all 47 of the proposed Palings Yard wind turbines each 240 metres tall at the indicated positions, shaded by the number of turbines visible from each point on the map.
+#### Here are the visual impact assessment metrics as described in the paper, using the natural logarithm adjustment for the number of visible turbines.
 
 :::{.column-page}
 
-```{r}
+```{r leaflet_log, eval=TRUE}
 #| echo: false
 #| message: false
 #| warning: false
 
 leaflet(height="800px", width="1200px") %>% 
-  setView(lng = palings_yard_turbines_untransformed_df[20,1],
-          lat = palings_yard_turbines_untransformed_df[20,2],
+  setView(lng = palings_yard_turbines_untransformed_df[23,1],
+          lat = palings_yard_turbines_untransformed_df[23,2],
           zoom = 10) %>%
-  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
   addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
   addProviderTiles("OpenTopoMap", group="Topography") %>%
   addTiles(group = "OpenStreetMap") %>%
-  addRasterImage(vshed_number_visible, 
-                 opacity=0.6, 
-                 colors = number_visible_pal,
-                  group = "Cumulative viewshed for all turbines",
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(wfarm_log_adj_visual_prominence, 
+                 opacity=0.5, 
+                 colors = sqrt_pal,
+                  group = "Visual prominence of wind farm (natural log adjustment)",
                   maxBytes = 4 * 8330 * 8801) %>%
-  addLegend(
-    position = "bottomright",
-    pal = number_visible_pal,
-    values = 1:47,
-    labels = palette(),
-    title = "Number of turbines visible") %>%  
   addCircleMarkers(data = palings_yard_turbines_untransformed_df,
-              group = "Proposed Palings Yard turbines",
+              group = "Proposed Paling Yards wind farm",
               color = "cyan",
               radius = 5,
               stroke = FALSE,
               fillOpacity = 0.5) %>%  
-  addPolygons(data=oberon_boundary,
-              stroke=TRUE, 
-              weight=4, 
-              fillOpacity=0.1, 
-              color="orange",
-              group = "Oberon LGA") %>%
-    addGeoJSON(taralga_line, 
-             weight=3, 
-             color="blue", 
-             fillOpacity=0,
-             group = "500 kVA transmission line (partial)") %>%
   addLayersControl(baseGroups = c("Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
-                   overlayGroups = c( "Oberon LGA",
-                                      "500 kVA transmission line (partial)",
-                                      "Proposed Palings Yard turbines",
-                                      "Cumulative viewshed for all turbines"),
+                   overlayGroups = c( "Proposed Paling Yards wind farm",
+                                      "Visual prominence of wind farm (natural log adjustment)"),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   addMeasure(
@@ -439,66 +405,17 @@ leaflet(height="800px", width="1200px") %>%
             primaryAreaUnit = "hectares",
             activeColor = "#3D535D",
             completedColor = "#7D4479",
-            localization = "en")
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE)) %>%
+ addLegend("bottomright", pal = sqrt_pal, values = base::rev(minmax(wfarm_sqrt_adj_visual_prominence)[,1]),
+    title = "Visual prominence",
+    opacity = 0.5
+  )  
+                    
 ```
 
 :::
-
-
-:::{.column-page}
-
-```{r, eval=FALSE}
-#| echo: false
-#| message: false
-#| warning: false
-
-leaflet(height="800px", width="1200px") %>% 
-  setView(lng = palings_yard_turbines_untransformed_df[20,1],
-          lat = palings_yard_turbines_untransformed_df[20,2],
-          zoom = 10) %>%
-  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
-  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
-  addProviderTiles("OpenTopoMap", group="Topography") %>%
-  addTiles(group = "OpenStreetMap") %>%
-  addRasterImage(vshed_number_visible_1, 
-                 opacity=0.6, 
-                 colors = "orange",
-                 group = "One turbine visible (orange)",
-                 maxBytes = 4 * 8330 * 8801) %>%
-  addRasterImage(vshed_number_visible_2, 
-                 opacity=0.6, 
-                 colors = "red",
-                 group = "Two turbines visible (red)",
-                 maxBytes = 4 * 8330 * 8801) %>%
-  addRasterImage(vshed_number_visible_3, 
-                 opacity=0.6, 
-                 colors = "darkred",
-                 group = "Three turbines visible (dark red)",
-                 maxBytes = 4 * 8330 * 8801) %>%
-  addCircleMarkers(data = palings_yard_turbines_untransformed_df[c(2,20,45),],
-              group = "Three proposed 240m turbines",
-              color = "cyan",
-              radius = 5,
-              stroke = FALSE,
-              fillOpacity = 0.5) %>%  
-  addLayersControl(baseGroups = c( "Topography", "Shaded relief", "Imagery", "OpenStreetMap"),
-                   overlayGroups = c( "Three proposed 240m turbines",
-                                      "One turbine visible (orange)",
-                                      "Two turbines visible (red)",
-                                      "Three turbines visible (dark red)"),
-                   options = layersControlOptions(collapsed = FALSE)
-  ) %>%
-  addMeasure(
-            position = "bottomleft",
-            primaryLengthUnit = "kilometers",
-            primaryAreaUnit = "hectares",
-            activeColor = "#3D535D",
-            completedColor = "#7D4479",
-            localization = "en")
-```
-
-:::
-
-## Next steps
-
-The next step is to compute viewshed layers for each turbine  for different degrees of exposure of each turbine -- that is, whether only the tips of the upper blade arc can be seen, or the hub, or the entire blade arc. Plus a layer for the distance. Then these layers can be combined using various algorithms as described in [this paper](https://www.sciencedirect.com/science/article/pii/S016920462200072X), to give a visual impact metric for each turbine at each pixel location in the map. Then those can be summed (or aggregated by a function, not necessarily a linear sum) to give an overall visual impact metric for each pixel, which can then be displayed as binned layers on a single map. That's the full extent of what that paper mentioned above describes. That paper seems to be well-regarded and is a good starting point. And then finally drape that overall visual impact metric raster over a 3D rendered map with animated fly-arounds. Weighting of visual impact metrics by population density at each point is also possible to allow an approximate overall human population visual impact score to be created for a given configuration of wind turbines (and variations of that for specific locations or sets of locations). That would then allow the visual impact of different turbine layouts and numbers to be compared and optimised to reduce visual impact to a minimum (subject to other optimisation constraints).
