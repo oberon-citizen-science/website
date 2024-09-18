@@ -75,3 +75,12 @@ Almost certainly a [yellow-footed antechinus](https://en.wikipedia.org/wiki/Yell
 Note the round, bi-lobed ears, the forward-facing eyes and the hopping motion. Not a rat or a mouse. The white thing is a wombat mange treatment flap -- it pours cydectin insecticide on the back of the wombat as it passes underneath, at least in theory. We found they worked maybe 10% of the time, but that was enough to cure our wombat population of mange over the course of about 6 months of weekly or bi-weekly treatments.
 
 {{< video gallery/antechinus.mov >}}
+
+## Platypus caught on time lapse camera, upper Duckmaloi River, Chatham Valley -- Tim Churches
+
+Immediate success with my new Brinno TLC300 timelapse camera (a birthday present from my sons but available for OCSN use). On the very first deployment it captured a platypus in the first 10 minutes, but a bit far away. This video is from two days later. Air temperature was -4.5 degress C at 5:30-6:30am when it was captured. You can see its wake as it moves right to left (travelling down stream), then it cruises along the bank in the bottom left of the frame, then does something right underneath the camera, but (damn it) just out of frame, then it swims off down stream again. On a large screen you can see it resurfacing every 10 or 15 metres. At the end of the video are some magnified edits of it swimming along the bank just near the camera. The camera will be redeployed to another pond a few hundred metres down stream. Following that we'll start recording upstream.
+
+{{< video https://youtu.be/3NOToevHxxQ >}}
+
+
+
