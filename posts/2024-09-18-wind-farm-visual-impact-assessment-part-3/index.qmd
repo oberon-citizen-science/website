@@ -7,7 +7,7 @@ date: 2024-09-18
 categories: [wind farms] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/
-image: Wind_turbines_in_southern_California_2016.jpg
+image: compound_viewshed.png
 draft: false 
 lightbox: true
 ---
@@ -16,7 +16,11 @@ lightbox: true
 The viewshed maps on this page are very detailed and may take quite a while to display in many web browsers, and may not render at all on small devices such as smartphones or tablets. They are provided purely for development purposes, and final versions will be optimised for faster display.
 :::
 
-## Calculating compound viewsheds
+## Introduction
+
+In the [previous post in this series](../2024-09-17-wind-farm-visual-impact-assessment-part-2/index.html) we considered compound viewsheds formed from the individual, independent viewsheds of just three of the proposed Palings Yard wind turbines, for illustrative purposes. Now we will scale up those computations to all 47 of the proposed Palings Yard turbines. This has to be done iteratively because all 47 individual viewsheds cannot fit in main memory at once. 
+
+## Calculating compound viewsheds for larger numbers of wind turbine
 
 ```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 #| echo: false
@@ -180,9 +184,9 @@ oberon_boundary <- sf::read_sf(paste0(assets_prefix, "nsw-lga-boundaries.geojson
 
 In this step, we will calculate the cumulative viewshed for all of the 47 turbines proposed for the Palings Yard wind farm, assuming each one is 170.5m tall near the tip of the blade. 
 
-We can examine the distribution of the number of turbines visible from each pixel in the cumulative viewshed raster. Note that zero turbines are visible from the vast majority of pixels -- these have been excluded from the chart below.
+We can examine the distribution of the number of turbines visible from each pixel in the cumulative viewshed raster. Note that zero turbines are visible from the vast majority of pixels -- these have been excluded from the histogram shown below.
 
-```{r, fig.asp=1.25}
+```{r, fig.asp=0.8}
 #| echo: false
 #| message: false
 #| warning: false
@@ -193,7 +197,6 @@ vshed_number_visible_df <- as.data.frame(vshed_number_visible) %>%
 vshed_number_visible_df  %>%
   ggplot(aes(x=number_visible)) +
     geom_bar(colour="orange", fill="orange") + 
-    coord_flip() +
     labs(x="Number of turbines visible from each pixel in raster",
          y="Number of pixels",
          caption = "Note: Pixels from which no turbines are visible are excluded") +
@@ -201,7 +204,7 @@ vshed_number_visible_df  %>%
          
 ```
 
-The map below shows the cumulative viewshed (with Earth curvature and atmospheric refraction corrections) for all 47 of the proposed Palings Yard wind turbines each 170.5m tall near the tip of the uppermost blade, at the indicated positions, shaded by the number of turbines visible from each point on the map.
+The map below shows the cumulative viewshed (with Earth curvature and atmospheric refraction corrections) for all 47 of the proposed Palings Yard wind turbines, each 170.5m tall near the tip of the uppermost blade, at the indicated positions. The compound viewshed is shaded by the number of turbines visible from each point on the map.
 
 :::{.column-page}
 
@@ -263,6 +266,12 @@ leaflet(height="800px", width="1200px") %>%
 ```
 
 :::
+
+## Software
+
+The software used for this post is as described in the [first post](../2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html#software) in this series. 
+
+The source code for this blog post, which contains all the code used to create it, can be found on [Github](https://github.com/oberon-citizen-science/website/blob/main/posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/index.qmd).
 
 
 ## Next steps

@@ -7,18 +7,150 @@ date: 2024-09-19
 categories: [wind farms] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/
-image: Wind_turbines_in_southern_California_2016.jpg
+image: deconstructing_viewsheds.png
 draft: false 
+cap-location: margin
 lightbox: true
+references:
+- type: article-journal
+  id: PalmerJF2022
+  author:
+  - family: Palmer
+    given: James F.
+  issued:
+    date-parts:
+    - - 2022
+      - 9
+      - 15
+  title: 'Deconstructing viewshed analysis makes it possible to construct a useful visual impact map for wind projects'
+  title-short: Deconstructing viewshed analysis
+  container-title: Landscape and Urban Planning
+  volume: 225
+  issue: 104423
+  DOI: 10.1016/j.landurbplan.2022.104423
+  URL: https://www.sciencedirect.com/science/article/pii/S016920462200072X
+  language: en-US
 ---
 
 ::: {.callout-warning}
 The viewshed maps on this page are very detailed and may take quite a while to display in many web browsers, and may not render at all on small devices such as smartphones or tablets. They are provided purely for development purposes, and final versions will be optimised for faster display.
 :::
 
-## Implementing the visual impact metrics described in the paper by James F. Palmer
+## Introduction
 
-In this step we first compute viewshed layers for each turbinefor different degrees of exposure of each turbine -- that is, whether only the tips of the upper blade arc can be seen, or the hub, or the entire blade arc, plus a layer for the distance to each turbine. Then these layers can then be combined using various algorithms as described in [this paper](https://www.sciencedirect.com/science/article/pii/S016920462200072X), to give a visual impact metric for each turbine at each pixel location in the map. Then those can be summed (or aggregated by a function, not necessarily a linear sum) to give an overall visual impact metric for each pixel, which can then be displayed as binned layers on a single map. That's the full extent of what the paper mentioned above describes. That paper seems to be well-regarded and is a good starting point. In further steps we can drape that overall visual impact metric raster over a 3D rendered map with animated fly-arounds. Weighting of visual impact metrics by population density at each point is also possible to allow an approximate overall human population visual impact score to be created for a given configuration of wind turbines (and variations of that for specific locations or sets of locations). That would then allow the visual impact of different turbine layouts and numbers to be compared and optimised to reduce visual impact to a minimum (subject to other optimisation constraints).
+Having explored the concepts of viewsheds and the code needed to compute, manipulate and visualise them in the previous three posts, in this post we implement the visual impact assessent metrics described in @PalmerJF2022. Note that the parameters are as used by Palmer for the General Electric 5.3–158 wind turbine, which is approximately 180.5 metres tall at the uppermost blade tip. In fact, the turbines that may be used in the proposed windfarms south of Oberon are likely to be considerably larger than the GE 5.3–158 wind turbine. The EIS for the proposed Palings Yard wind farm mentions turbines up to 240 metres high, and initial information released by the proponents of the proposed Pines wind farm mentions turbines up to 300 metres high. The parameters described below to calculate visual impact would need to be adjusted to reflect larger turbine size.
+
+Note that although the exact details of the Palings Yard turbine sizes have not been decided (or that information was not included in the EIS), the number of proposed turbines and their proposed locations are known and that information has been used here.
+
+## Steps in implementing the Palmer visual impact assessment metrics
+
+### Distance zones
+
+An intuitively obvious factor which affects wind turbine visual impact is the distance of the observer from the turbine. We have seen in earlier blog posts in this series how distance can readily be calculated. Palmer suggests using a graded set of distance zones, as described in the table below, rather than a continuous distance metric, primarily for computaional reasons. The distances are specific for the GE 5.3–158 wind turbine and would need to be adjusted for larger or smaller turbines. Note that these distance zones were also used in the previous parts of this series of blog posts on visual impact assessment.
+
+
+| Distance Zone           |	Description         |
+|-------------------------|---------------------|
+| Immediate Foreground<br>(0 to 0.8 km) | The immediate foreground extends to 800 metres from the observer. Within this distance zone, a turbine is the dominant object in the view, when the turbine blades passes its tower an audible rhythmic whooshing sound is created. Observers may have the sensation that a turbine is “looming” over them. |
+| Foreground<br>(0.8 to 3.2 km) | The foreground is determined by the prominence of tree branches and trunks; the analogous parts of wind turbines are the blades and tower. The presence of individual turbines and the movement of the blades attracts and holds an observer’s attention. Turbine sounds may still be noticeable, though it will be substantially reduced as distance increases. In the foreground, some other features in the surrounding landscape may appear to have midground characteristics, even though the wind turbines clearly retain foreground characteristics |
+| Near-Midground<br>(3.2 to 8.1 km) | Viewed in the near-midground, multiple visible turbines are perceived as part of a single whole. For instance, the Gestalt principles of similarity and continuity lead us to understand that wind turbines placed along a ridgeline are part of the same wind farm. At night, synchronized red flashing aviation warning lights will also be perceived as a single unit. At this distance it is possible that individual turbines may still have a dominant visual presence; blade movement may still hold a strong visual attraction. |
+| Far-Midground<br>(8.1 to 16.1 km) | In the far-midground, individual turbines become subordinate to the perception of the wind energy development as a whole. The number of turbines, and the degree to which they extend across the view, determines the visual dominance. When the major portion of a turbine is visible, blade movement is still apparent, but is less able to hold the observer’s attention. In the far-midground, some other features in the surrounding landscape may appear to have background characteristics, even though the wind turbines clearly retain midground characteristics. |
+| Background<br>(16.1 to 32.2 km) | Individual turbines and blade movement becomes less obvious, though the presence of a wind energy project may still be visible as part of the overall landscape. This defines the outer extent of the study area. |
+
+: Description of distance zones for the GE 5.3–158 wind turbine, reproduced from Table 1 in  @PalmerJF2022 {tbl-colwidths="[25,75]"}
+
+To implement this, a raster layer for the distance from each of the 47 proposed Palings Yard turbines to each point in the surrounding landscape is calculated, and these distances are then categorised into the five distance zones described above, represented by intgers 1 (immediate) to 5 (background). 
+
+### Visual exposure
+
+The visual impact of a wind turbine on any point in the surrounding landscape depends on several factors, such as distance, and whether it can be seen at all -- the binary viewshed -- but also on how much of each turbine can be seen -- that is, the visual exposure of each  turbine when seen from each point in the surrounding landscape (with zero visual exposure being outside the viewshed for the turbine).
+
+@PalmerJF2022 provides the following table of visual exposure grades, together with the logic behind them. The grades of exposure are also illustrated here (click to enlarge the graphic).
+
+::: {.aside}
+![Visual exposure grades for wind turbines, from @PalmerJF2022](visual-exposure.jpg)
+:::
+
+| Target | Description |
+|--------|-------------|
+| Blade End |	The last 10 metres of the blade seems sufficient to be recognizable through the foreground and into the midground distance. If it is just this 10 metre segment, then as the blade rotates it will rise into view and disappear before another blade end appears. The visibility analysis includes the full blade up to 10 metres from the tip. This means that there is the possibility to see two blades moving, but not their connection at the hub. Experience and research indicate that the blade end is noticeable with a visual impact up to 8.0 km from the observer. |
+| Turbine Hub |	 This is the second most common target in a visibility analysis. At a minimum, the observer can see portions of the nacelle and at least two full blades connected at the hub. This minimum visibility may seem to be somewhat disconnected and “floating” to the observer, but it becomes more noticeable as a larger proportion of the rotor sweep becomes visible. Experience and research indicate that the turbine hub is noticeable with a visual impact up to 16.1 km from the observer. |
+| Rotor Sweep |	The rotating blades are the most distinctive part of a wind turbine; they are moving and the area they sweep is almost 2 hectares. It is proposed that a wind turbine is readily recognised if one can see all but the last 10 metres of the downward blade. The full turbine visibility includes this sweep down to the ground. Experience and research indicate that the rotor sweep is noticeable with a visual impact up to 32.2 km from the observer. |
+
+: Visual exposure targets for wind turbines, reproduced from Table 2 in @PalmerJF2022 {tbl-colwidths="[25,75]"}
+
+To calculate this, we compute three viewshed layers for each of the turbines in the wind farm which is to be assessed. Separate viewsheds for each of three different degrees of exposure for each turbine -- that is, whether only the tips of the upper blade arc can be seen, at a minimum height above the terrain of 170.5 metres, whether the hub (nacelle) of the wind turbine can be seen, at a minimum height above the terrain of 101.5 metres, or whether the entire blade arc can be seem, at a minimum height of 32.5 metres above the terrain.
+
+As noted above, these visual exposure heights are specific for the GE 5.3–158 wind turbine used by Palmer as an example, and would need to be adjusted for the actual turbine types in a specifc wind farm.  
+
+Thus, for the Palings Yard wind farm, comprising 47 turbines, we compute 3x47=141 separate viewsheds to take into account the degree of visual exposure for each turbine at each point in the landscape. 
+
+Each of these viewsheds contains a binary (0, 1) indicator of turbine visibility at blade end, hub or full rotor sweep heights, at each point in the landscape. This binary indicator to multiplied by factors of 10, 20 and 30 for the blade end, hub and full rotor sweep viewsheds respectively. 
+
+One difference from the worked example provided by Palmer is that we have not used land cover data in addition to elevation data here -- we assume a bare-earth model, as recommended in the NSW government guidelines for visual impact assessment. If land cover information is used in viewshed calculations, two elevation models must be used -- one for the bare-earth terrain elevation, and another which adds vegetation (and buildings) height to that terrain elevation, based on land cover data. The reason why a single elevation model which sums terrain elevation with land cover heights cannot be used is because otherwise the observer at each point in the landscape would effectively be observing the target wind turbines from, in the case of forested areas, the tops of the trees. This is unlikely. The viewshed calculation functions in the `terra` library for R used in these blog posts does not allow for the use of two such elevation models, with and without land cover heights, and it is not entirely clear that the ESRI software used by Palmer does either. Thus we have set any use of land cover data aside, at least for now. As mentioned previously, this make the viewsheds and any resulting visual impact assessments err on the side of conservatism -- that is, it provides  a **worst case** analysis, which is arguably good practice in any case. 
+
+### Calculating the adjusted visual prominence for an entire wind farm
+
+This is done in four steps as follows.
+
+#### Visual prominence
+
+The first step described by Palmer is to reclassify the distance zone and visual exposure data, for each turbine, into a visual prominence score, according to the table shown below. Palmer provides a detailed justification for this prominence score in his paper. This gives us 47 rasters, one for each turbine. These 47 rasters are then summed, giving a single raster with a total visual prominence score at each location in the raster -- that is, at each location in the landscape.
+
+
++----------------+---------------------+-------------------+
+| Distance Zone  | Distance Range (km) |   Visual Exposure |
+|                |                     +-----+-----+-------+
+|                |                     | End | Hub | Sweep |
++:===============+:===================:+====:+====:+======:+
+| Immediate      | 0.0 – 0.8           |   4 |   7 |    10 |
++----------------+---------------------+-----+-----+-------+
+| Foreground     | 0.8 – 3.2           |   2 |   4 |     6 |
++----------------+---------------------+-----+-----+-------+
+| Near-midground | 3.2 – 8.0           |   1 |   2 |     4 |
++----------------+---------------------+-----+-----+-------+
+| Far-midground  | 8.0 – 16.1          |   0 |   1 |     2 |
++----------------+---------------------+-----+-----+-------+
+| Background     | 16.1 – 32.2         |   0 |   0 |     1 |
++----------------+---------------------+-----+-----+-------+
+
+
+: The rating of individual turbine visual prominence based on distance zone and visual exposure, reproduced from Table 3 in @PalmerJF2022
+
+#### Meaningful visibility
+
+In the second step. the coded visual exposure values in the individual turbine rasters described above are also reclassified according to the following meaningful visibility table. These meaningful visibility viewshed are summed for each pixel in the rasters -- that is, for each point in the entire study area landscape -- to give a raster layer for the wind farm's cumulative meaninful visibity at each point in the study area. 
+
++----------------+---------------------+-------------------+
+| Distance Zone  | Distance Range (km) |   Visual Exposure |
+|                |                     +-----+-----+-------+
+|                |                     | End | Hub | Sweep |
++:===============+:===================:+====:+====:+======:+
+| Immediate      | 0.0 – 0.8           |   1 |   1 |     1 |
++----------------+---------------------+-----+-----+-------+
+| Foreground     | 0.8 – 3.2           |   1 |   1 |     1 |
++----------------+---------------------+-----+-----+-------+
+| Near-midground | 3.2 – 8.0           |   1 |   1 |     1 |
++----------------+---------------------+-----+-----+-------+
+| Far-midground  | 8.0 – 16.1          |   0 |   1 |     1 |
++----------------+---------------------+-----+-----+-------+
+| Background     | 16.1 – 32.2         |   0 |   0 |     1 |
++----------------+---------------------+-----+-----+-------+
+
+
+: Determining meaningful visibility based on distance zone and visual exposure, reproduced from Table 4 in  @PalmerJF2022
+
+#### Mean visual prominence
+
+In the third step the total visual prominence layer is divided by the meaningful visible turbines layer to give a mean visual prominence score per turbine at each pixel (point) in the study area.
+
+#### Adjusted mean visual prominence
+
+The the final, fourth step, the mean visual prominence of the wind farm at each point in the surrounding study area landscape is multiplied by an adjusted number of meaningfully visible turbines, to account for the decreasing incremental contribution of each additional turbine in a wind farm to the overall visual impact. Palmer justifies this adjustment as follows:
+
+> The sum of the individual turbines’ visual prominence is a measure of visual impact that accounts for the effects of exposure and distance, but weighs the contribution of all the turbines equally. However, it is generally recognized that the incremental contribution of each addition turbine decreases as the extent of the project [wind farm] increases. So far there is little research about the shape of this function and no research involving the large number of turbines (_n_) with a mixture of visual exposures and distance zones. This study investigates using the square root of _n_, the cube root of _n_, and the natural log of (_n_ + 1) to represent project exposure or the decreasing incremental contribution of turbines to the overall visual impact.
+
+This adjusted number of meaningfully visible turbines is multiplied by the mean visual prominence to give the final visual impact metric for the wind farm being evaluated, at each point in the surrounding landscape.
 
 ```{r init, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 #| echo: false
@@ -313,17 +445,23 @@ writeRaster(wfarm_mean_visual_prominence,
               paste0(wip_prefix, "wfarm_mean_visual_prominence.tif"),
               overwrite=TRUE)
   
-# calculate adjusted windfarm visual prominence using square root and natural log
+# calculate adjusted windfarm visual prominence using square root, cube root and natural log 
 # multipliers for number of meaningfully visible turbines at each location in the raster
 
 wfarm_sqrt_adj_visual_prominence <- wfarm_mean_visual_prominence * sqrt(wfarm_meaningful_vis)
 wfarm_sqrt_adj_visual_prominence <- ifel(wfarm_sqrt_adj_visual_prominence ==0, NA, wfarm_sqrt_adj_visual_prominence)
 
-wfarm_log_adj_visual_prominence <- wfarm_mean_visual_prominence * log(wfarm_meaningful_vis)
+wfarm_cbrt_adj_visual_prominence <- wfarm_mean_visual_prominence * wfarm_meaningful_vis^(1/3)
+wfarm_cbrt_adj_visual_prominence <- ifel(wfarm_cbrt_adj_visual_prominence ==0, NA, wfarm_cbrt_adj_visual_prominence)
+
+wfarm_log_adj_visual_prominence <- wfarm_mean_visual_prominence * log(wfarm_meaningful_vis + 1)
 wfarm_log_adj_visual_prominence <- ifel(wfarm_log_adj_visual_prominence ==0, NA, wfarm_log_adj_visual_prominence)
 
 writeRaster(wfarm_sqrt_adj_visual_prominence, 
               paste0(wip_prefix, "wfarm_sqrt_adj_visual_prominence.tif"),
+              overwrite=TRUE)
+writeRaster(wfarm_cbrt_adj_visual_prominence, 
+              paste0(wip_prefix, "wfarm_cbrt_adj_visual_prominence.tif"),
               overwrite=TRUE)
 writeRaster(wfarm_log_adj_visual_prominence, 
               paste0(wip_prefix, "wfarm_log_adj_visual_prominence.tif"),
@@ -339,6 +477,12 @@ writeRaster(wfarm_log_adj_visual_prominence,
 sqrt_pal <- colorNumeric(
   palette = "plasma",
   domain = minmax(wfarm_sqrt_adj_visual_prominence)[,1],
+  na.color = "transparent",
+  reverse=TRUE)
+
+cbrt_pal <- colorNumeric(
+  palette = "plasma",
+  domain = minmax(wfarm_cbrt_adj_visual_prominence)[,1],
   na.color = "transparent",
   reverse=TRUE)
 
@@ -359,7 +503,46 @@ oberon_boundary <- sf::read_sf(paste0(assets_prefix, "nsw-lga-boundaries.geojson
 
 ```
 
-#### Here are the visual impact assessment metrics as described in the paper, using the square root adjustment for the number of visible turbines.
+## Results
+
+### Comparison of square root, cube root and natural logarithm adjustments for number of meaningfully visible turbines.
+
+We can compare the distribution of visual impact calculated using the three adjustment functions. It can be seen that the cube root and natural log adjustments have similar distributions, but the square root adjustment results in greater weight in the upper tail of the distrubution -- that is, more pixels (points in the landscape) have higher visual impact values.
+
+Which adjustment function is best requires further investigation, but all can readily be provided as alternatives.
+
+```{r, fig.asp=0.8}
+#| echo: false
+#| message: false
+#| warning: false
+
+wfarm_visual_impact_df <- as.data.frame(wfarm_sqrt_adj_visual_prominence) %>%
+                              mutate(visual_impact = viewshed,
+                                     adjustment = "Square root") %>%
+                          bind_rows(as.data.frame(wfarm_cbrt_adj_visual_prominence) %>%
+                              mutate(visual_impact = viewshed,
+                                     adjustment = "Cube root")) %>%
+                          bind_rows(as.data.frame(wfarm_log_adj_visual_prominence) %>%
+                              mutate(visual_impact = viewshed,
+                                     adjustment = "Natural log"))
+
+wfarm_visual_impact_df  %>%
+  ggplot(aes(x=visual_impact, fill = adjustment)) +
+    geom_histogram(bins = 100) + 
+    facet_grid(rows=vars(adjustment)) +
+    labs(title= "Distribution of visual impact metric for Palings Yard wind farm",
+         subtitle = "Comparing three meaningful visibility adjustment functions",
+         x="Visual impact metric",
+         y="Number of pixels",
+         caption = "Note: Pixels from which no turbines are visible are excluded") +
+    guides(fill="none") +
+    theme_minimal()
+         
+```
+
+Because the cube root and natural log adjustments yield similar results (at least in terms of the ststatistical distrubution of values), we only show the maps for the square root and natural log adjustments here.
+
+### Visual impact assessment metric for the proposed Palings yard wind farm, using square root adjustment for the number of meaningfully visible turbines
 
 :::{.column-page}
 
@@ -413,7 +596,8 @@ leaflet(height="800px", width="1200px") %>%
 
 :::
 
-#### Here are the visual impact assessment metrics as described in the paper, using the natural logarithm adjustment for the number of visible turbines.
+
+### Visual impact assessment metric for the proposed Palings yard wind farm, using natural logarithm adjustment for the number of meaningfully visible turbines
 
 :::{.column-page}
 
@@ -458,11 +642,32 @@ leaflet(height="800px", width="1200px") %>%
                             imperial=FALSE,
                             maxWidth=300,
                             updateWhenIdle=TRUE)) %>%
- addLegend("bottomright", pal = sqrt_pal, values = base::rev(minmax(wfarm_sqrt_adj_visual_prominence)[,1]),
+ addLegend("bottomright", pal = log_pal, values = base::rev(minmax(wfarm_log_adj_visual_prominence)[,1]),
     title = "Visual prominence",
     opacity = 0.5
   )  
                     
 ```
 
+:::
+
+
+## Software
+
+The software used for this post is as described in the [first post](../2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html#software) in this series. 
+
+The source code for this blog post, which contains all the code used to create it, can be found on [Github](https://github.com/oberon-citizen-science/website/blob/main/posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/index.qmd).
+
+
+## Next steps
+
+In this post we have implemented the visual impact calculations decribed in @PalmerJF2022 for the proposed Palings Yard wind farm, south of Oberon. That paper seems to be well-regarded and is a good starting point for exploration of better metrics for assessing the visual impact of wind farms than those outlined in the official guidelines. 
+
+In future steps we can drape the overall visual impact metric raster over 3D rendered maps with animated fly-arounds to provide an alternative visualistion. Weighting of visual impact metrics by population density at each point would also possible to allow an approximate overall **human population-based visual impact score** to be created for a given configuration of wind turbines (and variations of that for specific locations or sets of locations). That would then allow the visual impact of different turbine layouts and numbers to be compared and optimised to reduce visual impact to a minimum (subject to other optimisation constraints). Of course, the visual impact of turbines in not limited only to where people live, and thus incorporation of information about other significant viewpoints in the landscape surround wind farms would need to be incorporated -- for example, although no-one (or very few people) live in National Parks, the visual impact of a wind farm on locations in that National Park is arguably greater, or more important, than the visual impact on farm or grazing land that is unoccupied by humans. Some thought needs to be given to this, for the purposes of optimising wind farm configuration with respect to visual impact.
+
+In a forthcoming blog post we will also compare the visual impact assessment performed here using the methodology described in @PalmerJF2022 with the visual impact asessment submitted as part of the 2023 Palings Yard wind farm EIS.
+
+## References
+
+::: {#refs}
 :::

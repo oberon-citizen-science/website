@@ -16,6 +16,12 @@ lightbox: true
 The viewshed maps on this page are very detailed and may take quite a while to display in many web browsers, and may not render at all on small devices such as smartphones or tablets. They are provided purely for development purposes, and final versions will be optimised for faster display.
 :::
 
+## Introduction
+
+In the [previous post in this series](../2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html) we gave a brief overview of visual impact assessment for man-made structures, introduced the concept of viewsheds and considered how they are calculated. This was illustrated for a single structure, one of the wind turbines proposed for the Palings yard wind far, south of Oberon.
+
+In this post we extend that to consider _compound viewsheds_ for multiple structures.
+
 ## Calculating compound viewsheds
 
 ```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
@@ -219,7 +225,7 @@ number_visible_pal <- colorFactor(
   na.color = "transparent")
 ```
 
-The map below shows the independent viewsheds (with Earth curvature and atmospheric refraction corrections) for three of the proposed Palings Yard wind turbines at a tip elevation of 170.5m at the indicated positions. By independent we mean that the viewshed for each turbine is separate and not combined with the others, although they obviously overlay each other by a large degree.
+The map below shows the independent, individual viewsheds (with Earth curvature and atmospheric refraction corrections) for three of the proposed Palings Yard wind turbines at a tip elevation of 170.5m at the indicated positions. By independent we mean that the viewshed for each turbine is separate and not combined with the others, although they obviously overlay each other by a large degree. The degree of overlap can be examined by toggling each independent viewshed on and off.
 
 :::{.column-page}
 
@@ -282,9 +288,11 @@ leaflet(height="800px", width="1200px") %>%
 
 :::
 
+The compound viewshed is formed by simply taking the union of each of the independent, individual viewsheds at each pixel. In other words, if 0 means no visible and 1 means visible, for each pixel in the raster map we check if any of the independent viewshed have a 1 and if so, we set the compound viewshed value for that pixel to be 1, otherwise it is set to 0. We won't bother illustrating the simple compound viewshed here, because there are more interesting versions of it which can be readily calculated. 
+
 ## Displaying number of turbines visible
 
-The next step is to calculate how many turbines are visible. Here the map is shaded according to how many towers are visible from each point on the map, from zero (transparent shading) to three (since there are only three hypothetical towers in this example, for the sake of simplicity). This is a compound viewshed -- that is, it is the union of each of the three independent viewshed for the three hypothetical turbines in this example.
+The next step is to calculate how many turbines are visible. Here the map is shaded according to how many wind turbines are visible from each point on the map, from zero (transparent shading) to three (since there are only three hypothetical turbiness in this example, for the sake of simplicity). This is a compound viewshed -- but rather than the union of each of the three independent viewsheds for the three hypothetical turbines in this example, it is the sum.
 
 :::{.column-page}
 
@@ -337,7 +345,7 @@ leaflet(height="800px", width="1200px") %>%
 
 ## Displaying number of turbines visible as separate layers
 
-Here is the same map but with separate layers for each number of visible turbines, to allow easier examination of the data.
+Here is the same map but with separate layers for each number of visible turbines, to allow easier examination of the data. Try toggling the layers on and off at different levels of zoom.
 
 :::{.column-page}
 
@@ -393,7 +401,12 @@ leaflet(height="800px", width="1200px") %>%
 
 :::
 
+## Software
+
+The software used for this post is as described in the [first post](../2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html#software) in this series. 
+
+The source code for this blog post, which contains all the code used to create it, can be found on [Github](https://github.com/oberon-citizen-science/website/blob/main/posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/index.qmd).
 
 ## Next steps
 
-In the [next in this series of blog posts](../2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html) we will extend the calculation done here to include all of the 47 wind turbines proposed for the palings Yard wind farm.
+In the [next in this series of blog posts](../2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html) we will extend the calculation done here to include all of the 47 wind turbines proposed for the Palings Yard wind farm.
