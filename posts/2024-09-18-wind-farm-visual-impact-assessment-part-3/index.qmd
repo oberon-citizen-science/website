@@ -1,6 +1,6 @@
 ---
 title: "Wind farm visual impact assessment -- part 3"
-description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts."
+description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. In this post we scale up computation of compound viewsheds to encompass entire wind farms."
 author:
   - name: Tim Churches
 date: 2024-09-18
@@ -10,6 +10,7 @@ citation:
 image: compound_viewshed.png
 draft: false 
 lightbox: true
+freeze: true
 ---
 
 ::: {.callout-warning}
@@ -186,6 +187,7 @@ In this step, we will calculate the cumulative viewshed for all of the 47 turbin
 
 We can examine the distribution of the number of turbines visible from each pixel in the cumulative viewshed raster. Note that zero turbines are visible from the vast majority of pixels -- these have been excluded from the histogram shown below.
 
+
 ```{r, fig.asp=0.8}
 #| echo: false
 #| message: false
@@ -197,12 +199,14 @@ vshed_number_visible_df <- as.data.frame(vshed_number_visible) %>%
 vshed_number_visible_df  %>%
   ggplot(aes(x=number_visible)) +
     geom_bar(colour="orange", fill="orange") + 
+    coord_flip() +
     labs(x="Number of turbines visible from each pixel in raster",
          y="Number of pixels",
          caption = "Note: Pixels from which no turbines are visible are excluded") +
     theme_minimal()
          
 ```
+
 
 The map below shows the cumulative viewshed (with Earth curvature and atmospheric refraction corrections) for all 47 of the proposed Palings Yard wind turbines, each 170.5m tall near the tip of the uppermost blade, at the indicated positions. The compound viewshed is shaded by the number of turbines visible from each point on the map.
 

@@ -1,6 +1,6 @@
 ---
 title: "Wind farm visual impact assessment -- part 2"
-description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts."
+description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. In this post we consider compound viewsheds."
 author:
   - name: Tim Churches
 date: 2024-09-17
@@ -10,6 +10,7 @@ citation:
 image: Wind_turbines_in_southern_California_2016.jpg
 draft: false 
 lightbox: true
+freeze: true
 ---
 
 ::: {.callout-warning}

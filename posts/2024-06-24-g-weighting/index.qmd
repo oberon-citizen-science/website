@@ -10,6 +10,7 @@ citation:
 image: g-weighting.png
 draft: false 
 lightbox: true
+freeze: false
 ---
 
 ::: aside

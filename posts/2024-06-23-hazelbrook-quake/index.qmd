@@ -10,6 +10,7 @@ citation:
 image: hazelbrook-preview.png
 draft: false 
 lightbox: true
+freeze: false
 ---
 
 An M1.3 earthquake under Hazelbrook was detected at 12:38am on Sunday 23rd June 2024 by Raspberry Shake & Boom seismic and infrasound monitoring stations operated by OCSN members, as well as two other Raspberry Shake stations operated by citizen scientists at Lithgow and Mudgee. The signals from these stations and the process of triangulation used to locate the source of the seismic signals are shown below.

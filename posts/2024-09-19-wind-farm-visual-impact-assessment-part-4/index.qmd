@@ -1,6 +1,6 @@
 ---
 title: "Wind farm visual impact assessment -- part 4"
-description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts."
+description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. In this post we compute the visual impact assessment metric proposed by James F. Palmer, using the proposed Palings Yard wind farm as an example."
 author:
   - name: Tim Churches
 date: 2024-09-19
@@ -9,6 +9,7 @@ citation:
   url: https://oberon-citizen.science/posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/
 image: deconstructing_viewsheds.png
 draft: false 
+freeze: true
 cap-location: margin
 lightbox: true
 references:

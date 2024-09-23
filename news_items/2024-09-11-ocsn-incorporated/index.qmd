@@ -1,6 +1,7 @@
 ---
 title: "Oberon Citizen Science Network registered as an incorporated association"
 date: 2024-09-11
+image: ../../assets/rubber-stamp-approved.jpg
 ---
 
 We are happy to announce that _Oberon Citizen Science Network_ has now been registered by NSW Fair Trading under the _Associations Incorporation Act 2009_ as an incorporated association. The official registered name is **OBERON CITIZEN SCIENCE NETWORK INCORPORATED** and the registration number is **INC2400977**.

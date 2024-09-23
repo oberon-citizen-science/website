@@ -1,6 +1,6 @@
 ---
 title: "Wind farm visual impact assessment -- part 1"
-description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts."
+description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. The concept of viewsheds is introduced in this post."
 author:
   - name: Tim Churches
 date: 2024-09-16
@@ -10,6 +10,7 @@ citation:
 image: line-of-sight.png
 draft: false 
 lightbox: true
+freeze: true
 references:
 - type: article-journal
   id: PalmerJF2022
@@ -29,7 +30,6 @@ references:
   DOI: 10.1016/j.landurbplan.2022.104423
   URL: https://www.sciencedirect.com/science/article/pii/S016920462200072X
   language: en-US
-
 ---
 
 ::: {.callout-warning}

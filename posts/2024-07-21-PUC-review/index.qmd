@@ -9,6 +9,7 @@ citation:
   url: https://oberon-citizen.science/posts/2024-07-21-PUC-review/
 draft: false 
 lightbox: true
+freeze: false
 ---
 
 # Birdweather PUC Review
