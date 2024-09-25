@@ -29,6 +29,12 @@ At this stage research is still on going as to the most appropriate Air Quality 
 
 [Particulate Matter](https://en.wikipedia.org/wiki/Particulates) (or Particulates) are significant for Oberon due to industry and the associated vehicle activity, and the pollens produced by the surrounding forests and pastures. Being a colder climate Oberon also has a lot of wood-fired heaters being used for a greater portion of the year, which also adds to the exposure to particulates in the air. Unsealed roads can also be a significant source of dust (particulates) affecting those living out of town especially. Bushfires are also of course major contributors to atmospheric particulates.
 
+::: {.aside}
+
+https://www2.purpleair.com/products/purpleair-flex
+
+:::
+
 The size of airborne particles, as well as their composition, determines their nuisance and health effects. Dust particles and fibres vary in size from coarse (non-inhalable), to fine (inhalable, sometimes call inspirable), to very fine (respirable).
 
 Coarse dust particles generally only reach as far as the inside of the nose, mouth or throat. Smaller or fine particles, however, can get much deeper into the sensitive regions of the respiratory tract and lungs. These smaller dust particles have a greater potential to cause serious harm to your health. Some types of extremely fine particles (see PM1.0 below) are able to cross the alveolar membranes in the lungs and directly enter the bloodstream, where they can cause general inflammation and increase clotting tendancies which are risk factors for myocardial infarctions (heart attacks) and strokes. 

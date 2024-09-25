@@ -1,0 +1,175 @@
+---
+title: "Surveying Platypus and Rakali populations in the Oberon region"
+lightbox: true
+---
+
+::: {.callout-note title="Current status of this initiative"}
+Discussion and planning stages only. Time lapse cameras are currently being tested before designing a systematic survey of key water courses in the Oberon LGA (at least the Duckmaloi and Fish Rivers and their tributaries, possibly other rivers). More information and project plans will appear here in due course.
+:::
+
+## Introduction
+
+To be added.
+
+::: {.aside}
+This [recent scientific paper](https://www.publish.csiro.au/am/pdf/AM23045) by Simon Roberts and Melody Serena describes the use of time-lapse cameras for detection of platypus (and presumably rakali). OCSN members have been trialling an older Brinno TLC100 camera and a current model Brinno TLC300 time-lapse cameras as described in the paper. Our findings will be described in a forthcoming blog post here on the web site. 
+
+![Brinno TLC300 camera ready for testing (click for larger version)](assets/brinno300-1.png)
+
+![Brinno TLC300 camera wrapped in camoflage purple stocking, overlooking the upper Duckmaloi River (click for larger version)](assets/brinno300-2.png)
+
+An [example of a time-lapse platypus sighting](ocsn_gallery.html#platypus-caught-on-time-lapse-camera-upper-duckmaloi-river-chatham-valley-tim-churches) as a result of this initial testing can be found in the gallery section of this web site.
+
+:::
+
+## NSW BioNet Atlas records of platypus and rakali sightings or trappings in Oberon LGA
+
+The data shown below were manually downloaded from the NSW government BioNet database on 24 September 2024. It is intended to convert these charts and maps to automatically update once a week with the latest data from BioNet once an API access key has been obtained.
+
+The chart below shows the trend in platypus and rakali records in BioNet. These trends may reflect frequency of observation and survey efforts as much as declines or fluctuations in the animal populations or extents. This is an issue which OCSN hopes to address over the next few years by mounting regular, systematic surveys of platypus and rakali activity in key water courses in Oberon LGA, using a combination of direct observation and time-lapse camera recordings.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(sf)
+library(clock)
+
+bionet_oberon <- read_tsv("assets/Atlas_records_20240924-170940/Atlas_records_dfy0dp51xksxkltuxbt4izzs20240924-170937.txt", skip=4)
+
+platypus_rakali_sf <- bionet_oberon %>% 
+                        filter(SpeciesCode %in% c("1001", "1415")) %>%
+                        select(CommonName, ScientificName,
+                               DateFirst,DateLast,
+                               Latitude_GDA94,Longitude_GDA94,Accuracy,
+                               NumberIndividuals, Description, SightingNotes) %>%
+                        mutate(DateFirst = clock::date_parse(DateFirst,
+                                                             format="%d/%m/%Y"),
+                               DateLast = clock::date_parse(DateLast,
+                                                            format="%d/%m/%Y"),
+                               Year = year(DateLast),
+                               Decade = paste0(as.character(signif(Year, 3)), "s"),
+                               CommonName = if_else(CommonName == "Water-rat", "Rakali", CommonName),
+                               CommonNameDecade = if_else(CommonName == "Platypus",
+                                                          paste0(CommonName, ", ", Decade),
+                                                          CommonName),
+                               PopupContent = paste(sep = "<br/>",
+                                                    CommonName,
+                                                    paste0(DateFirst, " to ", DateLast),
+                                                    paste0("No. of individuals: ", NumberIndividuals),
+                                                    paste0("Spatial accuracy (metres): ", Accuracy),
+                                                    paste0("Description: ", Description),
+                                                    paste0("Notes: ", SightingNotes))) %>%
+                        st_as_sf(coords = c("Longitude_GDA94", "Latitude_GDA94"),
+                                crs = "GDA94")
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+oberon_boundary_buffered <- oberon_boundary |>
+  st_buffer(dist=1000)
+
+protected_riparian <- sf::st_read("assets/VulnerableLandsProtectedRiparian")
+
+oberon_boundary_buffered_gda94 <- st_transform(oberon_boundary_buffered,                                             crs=st_crs(protected_riparian))
+
+oberon_protected_riparian <- st_filter(protected_riparian, oberon_boundary_buffered_gda94)
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+platypus_rakali_sf %>%
+  filter(year(DateLast) > 1930) %>%
+  ggplot(aes(x=year(DateLast), fill=CommonName)) +
+           geom_bar(position = position_dodge2(preserve = "single")) +
+  theme_minimal() +
+  theme(legend.title=element_blank()) +
+  labs(x="Year of observation",
+       y="Number of observations",
+       title="Platypus and rakali observations in Oberon LGA",
+       subtitle = "NSW BioNet Atlas data as at Sept 2024")
+
+```
+
+### Interactive map
+
+You can toggle layers for platypus observation records in each decade in the map below, as well as rakali records for the entire period since 1970. Zoom in to see individual sighting records where they overlap. If you click on each platypus or rakali icon on the map, additional details about the record will pop up.
+
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Platypus and rakali observations in Oberon LGA: NSW BioNet Atlas data as at Sept 2024"
+
+library(tidyverse)
+library(leaflet)
+
+frog_pal <- colorFactor("RdYlBu", domain=unique(platypus_rakali_sf$CommonName))
+
+platypusIcon <- makeIcon(
+  iconUrl = ifelse(platypus_rakali_sf$CommonNameDecade =="Rakali",
+    "assets/rakali.png",
+    "assets/platypus-3.png"),
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 12, iconAnchorY = 12,
+)
+
+platypus_rakali_sf_filtered <- platypus_rakali_sf %>%
+                                    filter(Year > 1930)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 10) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addPolygons(data=oberon_protected_riparian,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="brown",
+              group = "Protected riparian areas") %>%
+  addMarkers(data=platypus_rakali_sf_filtered,
+                    group=platypus_rakali_sf_filtered$CommonNameDecade,
+                    icon=platypusIcon,
+                    popup=platypus_rakali_sf_filtered$PopupContent) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c(
+                                      "Oberon LGA",
+                                      "Protected riparian areas",
+                                     unique(platypus_rakali_sf_filtered$CommonNameDecade)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup("Protected riparian areas") %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+:::
+
