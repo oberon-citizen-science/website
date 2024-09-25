@@ -1,0 +1,59 @@
+---
+title: "Air quality monitoring"
+lightbox: true
+---
+
+::: {.aside}
+![](assets/air-quality-monitoring.png)
+:::
+
+::: {.callout-note title="Current status of this initiative"}
+Discussion and planning stages only. Suitable monitoring devices are being researched and a DIY device is being prototyped. The aim is to provide Oberon with near real-time air quality monitoring data of adequate reliability and accuracy which anyone can access or view. More information and project plans will appear here in due course.
+:::
+
+## Introduction
+
+Air quality monitoring is another project where Oberon Citizen Science Network (OCSN) can have a role to provide quality data to the community.
+
+As a medium-sized centre, Oberon is unusual in that it has significant industry very close to town, as well as being surrounded by significant monoculture plantations of pinus radiata, and extensive pastures.
+
+While scientific grade air quality stations (for example, as deployed by the EPA at strategic locations) are expensive, Oberon Citizen Science Network believes a network of cheaper monitoring stations, either commercially available and/or DIY versions designed by OCSN members, could provide better coverage and information to the community by being able to account for changing weather conditions and wind directions better than than a single expensive station.
+
+At this stage research is still on going as to the most appropriate Air Quality Stations to use, but below is a discussion of the air quality measures and criteria OCSN believes are significant to the Oberon Community.
+
+### Air Quality Index (AQI)
+
+[AQI](https://en.wikipedia.org/wiki/Air_quality_index) is an umbrella measure. It’s a good summary measure when air quality is good, but when the AQI is not so good, it gives no clue as to why it is not so good. Sometimes it may be obvious why the AQI is not good but not always. 
+
+### Particulate Matter (PM)
+
+[Particulate Matter](https://en.wikipedia.org/wiki/Particulates) (or Particulates) are significant for Oberon due to industry and the associated vehicle activity, and the pollens produced by the surrounding forests and pastures. Being a colder climate Oberon also has a lot of wood-fired heaters being used for a greater portion of the year, which also adds to the exposure to particulates in the air. Unsealed roads can also be a significant source of dust (particulates) affecting those living out of town especially. Bushfires are also of course major contributors to atmospheric particulates.
+
+The size of airborne particles, as well as their composition, determines their nuisance and health effects. Dust particles and fibres vary in size from coarse (non-inhalable), to fine (inhalable, sometimes call inspirable), to very fine (respirable).
+
+Coarse dust particles generally only reach as far as the inside of the nose, mouth or throat. Smaller or fine particles, however, can get much deeper into the sensitive regions of the respiratory tract and lungs. These smaller dust particles have a greater potential to cause serious harm to your health. Some types of extremely fine particles (see PM1.0 below) are able to cross the alveolar membranes in the lungs and directly enter the bloodstream, where they can cause general inflammation and increase clotting tendancies which are risk factors for myocardial infarctions (heart attacks) and strokes. 
+
+#### PM10
+
+PM10 particulate matter is particles of 10 micrometres (µm) or less in diameter. It is of significance to Oberon as this size particle includes some types of pollens which can be produced in large quantities from the radiata pine plantations and surrounding pastures (other pollen types are 20 to 50 micrometres in size). Fly ash from the factories (if not adequately collected) and from domestic wood heaters is also in this size range as is a significant portion of sander dust (produced and burned at the factories).
+
+#### PM2.5
+
+PM2.5 particulates are considered one of the most harmful contaminants due to the ability for these particles to make their way deep into the lungs. Sources of PM2.5 particles include mould spores, house dust, bacteria, fly ash and incompletely combusted solid fuels like sander dust. Incomplete combustion of sander dust in the factories results in a brown plume emanating from the stacks. Bushfires are also  significant but intermittent sources of these particulates.
+
+#### PM1.0
+
+PM1.0 are particularly fine particles which are harnful due to their ability to penetrate the lung membranes and enter the blood stream. PM1.0 particles are currently not regulated to the same extent as PM2.5 but some air quality monitors have the capability to report on PM1.0 separately to PM2.5. Smoke from any source is significant in this particle size range.
+
+### Volatile Organic Compounds (VOCs)
+
+[VOCs](https://en.wikipedia.org/wiki/Volatile_organic_compound) are produced from incomplete combustion, evaporation of fuels and solvents, gas leaks, and also are produced by natural processes, being emitted by plants, animals and microorganisms.
+
+### Nitrogen Oxides (NO~x~)
+
+[NO~x~](https://en.wikipedia.org/wiki/NOx) is the collective name for nitrogen oxides commonly produced during high temperature combustion. At high temperatures atmospheric oxygen and nitrogen can combine to form these compounds, which can then react with VOCs to produce ozone (O~3~) or be emitted to contribute to acid rain.
+
+### Ozone (O~3~)
+
+[Ozone](https://en.wikipedia.org/wiki/Ozone) can be produced by reaction of VOCs with NO~x~ at high temperatures or can be catalysed by UV radiation in sunlight. Ozone is an irritant and causes inflammation and may create free radicals leading to harmful oxidation in the body.
+
