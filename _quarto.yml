@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+execute:
+  freeze: auto
 website:
   title: "Oberon Citizen Science Network"
   favicon: assets/favicon.ico
@@ -38,6 +40,8 @@ website:
         menu:
           - text: "FrogID"
             file: frogid.html
+          - text: "Platypus & rakali surveys"
+            file: platypus_rakali.html
           - text: "Astronomy"
             file: astronomy.html
           - text: "Wind farms"
@@ -93,6 +97,8 @@ website:
         contents:
           - text: "FrogID"
             href: frogid.qmd
+          - text: "Platypus & rakali surveys"
+            file: platypus_rakali.html
           - text: "Astronomy"
             href: astronomy.qmd
           - text: "Wind farms"

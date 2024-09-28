@@ -7,26 +7,40 @@ lightbox: true
 Discussion and planning stages only. Time lapse cameras are currently being tested before designing a systematic survey of key water courses in the Oberon LGA (at least the Duckmaloi and Fish Rivers and their tributaries, possibly other rivers). More information and project plans will appear here in due course.
 :::
 
-## Introduction
 
-To be added.
 
 ::: {.aside}
-This [recent scientific paper](https://www.publish.csiro.au/am/pdf/AM23045) by Simon Roberts and Melody Serena describes the use of time-lapse cameras for detection of platypus (and presumably rakali). OCSN members have been trialling an older Brinno TLC100 camera and a current model Brinno TLC300 time-lapse cameras as described in the paper. Our findings will be described in a forthcoming blog post here on the web site. 
 
-![Brinno TLC300 camera ready for testing (click for larger version)](assets/brinno300-1.png)
+A rakali (Australian native water rat, scientific name _Hydromys chrysogaster_) caught on a trail camera camera deployed in Stone Creek, O'Connell by Kyla Ries
 
-![Brinno TLC300 camera wrapped in camoflage purple stocking, overlooking the upper Duckmaloi River (click for larger version)](assets/brinno300-2.png)
+{{< video gallery/rakali1.mov >}}
 
-An [example of a time-lapse platypus sighting](ocsn_gallery.html#platypus-caught-on-time-lapse-camera-upper-duckmaloi-river-chatham-valley-tim-churches) as a result of this initial testing can be found in the gallery section of this web site.
+:::
 
+## Introduction
+
+Anecdotally, rivers in the Oberon region used to be famous for their abundant platypus populations -- in fact, there is a story, probably apocryphal, that [the name of the Duckmaloi River](https://www.abc.net.au/news/2017-12-07/curious-central-west-place-town-name-meanings-origins/9228070), which runs through Oberon LGA, came from the surprised exclamation of Irish settlers on first encountering a platypus: "Duck-mole-oy!" ("oy" being what you said if you wanted someone to agree with you). Certainly a lot of research last century into the extent and behavious of the platypus was conducted in river systems around Oberon by researchers associated with Taronga Zoo and various NSW universities -- copies of some scientific papers and reports on platypus in the Duckmaloi River, several by local resident Amanda MacLeod, can be accessed [here](assets/AM98287.pdf), [here](assets/AM98319.pdf) and [here](assets/AM98306.pdf).
+
+Much less is known about the extent in the Oberon region of the [_rakali_](https://en.wikipedia.org/wiki/Rakali), also also known as the _rabe_, the _"Australian Otter"_ or _native water-rat_, (scientific name _Hydromys chrysogaster_). This elusive creature lives in burrows on the banks of rivers, lakes and estuaries and feeds on aquatic insects, fish, crustaceans, mussels, snails, frogs, bird's eggs and small water birds -- and thus, it often shares similar habitats to the platypus, hence its inclusion here.
+
+::: {.callout-note title="ABC News article on the elusive rakali"}
+
+A recent article published by ABC News on the rakali, and a call for citizen scientists to log sightings of it, is available [here](https://www.abc.net.au/news/2024-07-02/rakali-water-rat-researcher-urges-citizen-science-help/104043350). This is something which OCSN members intend to get involved in!
 :::
 
 ## NSW BioNet Atlas records of platypus and rakali sightings or trappings in Oberon LGA
 
-The data shown below were manually downloaded from the NSW government BioNet database on 24 September 2024. It is intended to convert these charts and maps to automatically update once a week with the latest data from BioNet once an API access key has been obtained.
+BioNet is a database of flora and fauna information collected over many decades from multiple sources, operated by the NSW Department of Planning and Environment (DPE). The role of BioNet is described by the DPE thus:
 
-The chart below shows the trend in platypus and rakali records in BioNet. These trends may reflect frequency of observation and survey efforts as much as declines or fluctuations in the animal populations or extents. This is an issue which OCSN hopes to address over the next few years by mounting regular, systematic surveys of platypus and rakali activity in key water courses in Oberon LGA, using a combination of direct observation and time-lapse camera recordings.
+> BioNet aims to improve biodiversity outcomes by enabling the community and government to proactively manage and enhance biodiversity in New South Wales through comprehensive, credible and robust data and information.
+
+It is also important because threatened and endangered species records in BioNet must be used by assessors of proposed developments in order to avoid or minimise impacts on wildlife, and is also used as part of the [Biodiversity Assessment Method](https://www.environment.nsw.gov.au/-/media/OEH/Corporate-Site/Documents/Animals-and-plants/Biodiversity/biodiversity-assessment-method-2020-200438.pdf) (BAM), which is used as part of the **legislated** Biodiversity Offsets Scheme (currently under review due to [numerous flaws found by the Audit Office of NSW](https://www.audit.nsw.gov.au/our-work/reports/effectiveness-of-the-biodiversity-offsets-scheme)).
+
+::: {.callout-note}
+The data shown below were manually downloaded from the NSW government BioNet database on 24 September 2024. It is intended to convert these charts and maps to automatically update once a week with the latest data from BioNet once an API access key has been obtained.
+:::
+
+The chart below shows the trend in platypus and rakali records in BioNet. These trends may reflect frequency of observations and survey efforts as much as declines or fluctuations in the animal populations or extents. This is an issue which OCSN hopes to address over the next few years by mounting regular, systematic surveys of platypus and rakali activity in key water courses in Oberon LGA, using a combination of direct observation and time-lapse camera recordings (see below). Note that there are very few observations of rakali. This may be because they are rare, but also because they are elusive -- but see the video of a rakali captured by OCSN committee member Kyla Ries on this page.
 
 ```{r}
 #| echo: false
@@ -51,7 +65,10 @@ platypus_rakali_sf <- bionet_oberon %>%
                                DateLast = clock::date_parse(DateLast,
                                                             format="%d/%m/%Y"),
                                Year = year(DateLast),
-                               Decade = paste0(as.character(signif(Year, 3)), "s"),
+                               Decade = paste0(stringr::str_sub(as.character(Year), 1, 3),
+                                               "0-",
+                                                stringr::str_sub(as.character(Year), 1, 3),
+                                                "9"),
                                CommonName = if_else(CommonName == "Water-rat", "Rakali", CommonName),
                                CommonNameDecade = if_else(CommonName == "Platypus",
                                                           paste0(CommonName, ", ", Decade),
@@ -98,14 +115,9 @@ platypus_rakali_sf %>%
 
 ```
 
-### Interactive map
+As can be seen, the small number of records, particularly recent records, for platypus and rakali in BioNet is a bit disappointing, and distressing. However there is a more inclusive source of biodiversity data we can query.
 
-You can toggle layers for platypus observation records in each decade in the map below, as well as rakali records for the entire period since 1970. Zoom in to see individual sighting records where they overlap. If you click on each platypus or rakali icon on the map, additional details about the record will pop up.
-
-
-:::{.column-page}
-
-```{r}
+```{r Bionet-map, eval=FALSE}
 #| echo: false
 #| message: false
 #| warning: false
@@ -170,6 +182,298 @@ leaflet(height="800px", width="1200px") %>%
                             maxWidth=300,
                             updateWhenIdle=TRUE))
 ```
+
+
+## Australian Living Atlas (ALA) records of platypus and rakali observations or trappings in Oberon LGA
+
+The [Australian Living Atlas](https://www.ala.org.au) (ALA) is a fantastic resource, partially funded by the [Australian Research Data Commons](https://ardc.edu.au) (ARDC). ALA collates biodiversity data from many sources into a single database, which in turn is made available as part of the [Global Biodiversity Information Facility](https://www.gbif.org) (GBIF).
+
+In the table below, we can see the various sources and numbers of records for platypus and rakali sightings in Oberon LGA over time. Data which was downloaded from NSW BioNet Atlas is also shown in the table for comparison -- it should match the ALA data for the same source, but it doesn't. This needs to be investigated in due course, but for now, we will just present the ALA data here.
+
+```{r ala-table}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(galah)
+library(gt)
+
+galah_config(atlas = "ALA",
+             username = "tim.churches@gmail.com",
+             email = "tim.churches@gmail.com",
+             verbose=FALSE,
+             caching = TRUE)
+             
+ala_platypus_rakali_oberon <- galah_call() |>
+   identify(c("Ornithorhynchus anatinus", "Hydromys chrysogaster")) |>
+   filter(cl23 == "Oberon") |>
+   galah_select(duplicateStatus,
+                duplicateType,
+                eventRemarks,
+                fieldNotes,
+                identificationRemarks,
+                identificationVerificationStatus,
+                identifiedBy,
+                individualCount,
+                institutionName,
+                occurrenceDetails,
+                occurrenceRemarks,
+                provenance,
+                samplingEffort,
+                samplingProtocol,
+                spatiallyValid,
+                group = c("basic", "event", "media")) |>
+   collect()
+
+ala_platypus_rakali_oberon_images <- ala_platypus_rakali_oberon |>
+  select(recordID, images) |>
+  filter(!is.na(images)) |>
+  mutate(images = as.character(images)) |>
+  mutate(image_id = str_split(images, '"')) |>
+  tidyr::unnest() |>
+  filter(!image_id %in% c('c(', ', ', ')')) |>
+  select(recordID, image_id) 
+
+ala_platypus_rakali_oberon_media_info <- request_metadata() |>
+  filter(media == ala_platypus_rakali_oberon) |>
+  collect() |>
+  left_join(ala_platypus_rakali_oberon_images)
+
+ala_platypus_rakali_oberon_media_info <- ala_platypus_rakali_oberon_media_info %>% 
+     mutate(image_url = paste0('<a href="',
+                                image_url,
+                                '" target="_blank">',
+                                "Image</a>")) |>
+     group_by(recordID) %>% 
+     mutate(image_urls = paste0(image_url, collapse = ", ")) |>
+     select(recordID, image_urls)
+
+ala_platypus_rakali_oberon <- ala_platypus_rakali_oberon |>
+   left_join(ala_platypus_rakali_oberon_media_info) |>
+   mutate(dataResourceName = if_else(dataResourceName == "NSW BioNet Atlas",
+                                     "NSW BioNet Atlas (via ALA)",
+                                     dataResourceName),
+          Year = year(eventDate),
+          Decade = paste0(stringr::str_sub(as.character(Year), 1, 3),
+                          "0-",
+                          stringr::str_sub(as.character(Year), 1, 3),
+                          "9"),
+          commonName = case_when(scientificName == "Ornithorhynchus anatinus" ~ "Platypus",
+                                 scientificName == "Hydromys chrysogaster" ~ "Rakali",
+                                 .default = scientificName),
+          commonNameDecade = if_else(commonName == "Platypus",
+                                                          paste0(commonName, ", ", Decade),
+                                                          commonName),
+          PopupContent = paste0(commonName, "<br/>",
+                               eventDate, "<br/>",
+                               paste0("Source: ", dataResourceName), "<br/>",
+                               if_else(!is.na(individualCount),
+                                       paste0("No. of individuals: ",
+                                              individualCount,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(occurrenceRemarks) &
+                                         occurrenceRemarks != "occurrenceRemarks withheld",
+                                       paste0("Notes: ",
+                                              occurrenceRemarks,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(samplingProtocol),
+                                       paste0("Sampling protocol: ",
+                                              samplingProtocol,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(eventRemarks),
+                                       paste0("Remarks: ",
+                                              eventRemarks,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(institutionName),
+                                       paste0("Institution: ",
+                                              institutionName,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(identifiedBy),
+                                       paste0("Identified by: ",
+                                              identifiedBy,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(image_urls),
+                                       paste0("Images: ",
+                                              image_urls,
+                                              "<br/>"),
+                                              "")
+                               )
+          )
+  
+# add BioNet direct data
+platypus_rakali_bionet <- platypus_rakali_sf |>
+    mutate(eventDate = DateLast,
+           commonName = CommonName,
+           dataResourceName = "NSW BioNet Atlas (direct)",
+           Year = year(eventDate),
+           Decade = paste0(stringr::str_sub(as.character(Year), 1, 3),
+                          "0-",
+                          stringr::str_sub(as.character(Year), 1, 3),
+                          "9")) |> 
+    select(eventDate, commonName, dataResourceName, Year, Decade)
+
+ala_platypus_rakali_oberon |>
+  bind_rows(platypus_rakali_bionet) |>
+  filter(!is.na(eventDate), Year > 1930) |> 
+  select(-c(commonNameDecade, PopupContent)) |>
+  group_by(commonName, dataResourceName, Decade) |>
+  summarise(n=n(), .groups = "drop") |>
+  arrange(Decade, commonName, dataResourceName) |>
+  pivot_wider(names_from = Decade, values_from = n) |>
+  arrange(desc(commonName), stringr::str_to_lower(dataResourceName)) |>
+  gt(rowname_col = "dataResourceName") |>
+  cols_hide(commonName) |>
+  tab_row_group(
+    label = md("**Rakali**"),
+    rows = commonName == "Rakali",
+    id = "rakali") |>
+  tab_row_group(
+    label = md("**Platypus**"),
+    rows = commonName == "Platypus",
+    id = "platypus") |>
+  tab_spanner(
+    label = "Decade",
+    columns = ends_with("9")) |>
+  sub_missing(missing_text = "-") |>
+  tab_style(
+    style = list(
+      cell_fill(color = "lightgreen"),
+      cell_text(style = "italic")
+      ),
+    locations = cells_row_groups()) |>
+  summary_rows(
+    groups = everything(),
+    columns = contains("-"),
+    fns = list(id = "total", label = "All sources", fn = "sum")
+  ) |>
+  tab_footnote(
+    footnote = md("[ALA species sightings and OzAtlas](https://biocollect.ala.org.au/sightings/project/index/f813c99c-1a1d-4096-8eeb-cbc40e321101)"),
+    locations = cells_stub(rows = "ALA species sightings and OzAtlas")) |>
+  tab_footnote(
+    footnote = md("[cPlatypus](https://collections.ala.org.au/public/show/dr7973)"),
+    locations = cells_stub(rows = "cPlatypus")) |>
+  tab_footnote(
+    footnote = md("[NSW BioNet Atlas (via ALA)](https://collections.ala.org.au/public/showDataResource/dr368)"),
+    locations = cells_stub(rows = "NSW BioNet Atlas (via ALA)")) |>
+  tab_footnote(
+    footnote = md("[Australian Platypus Conservancy](https://platypus.asn.au)"),
+    locations = cells_stub(rows = "Australian Platypus Conservancy")) |>
+  tab_footnote(
+    footnote = md("[Encyclopedia of Life Images - Flickr Group](https://www.flickr.com/groups/encyclopedia_of_life/)"),
+    locations = cells_stub(rows = "Encyclopedia of Life Images - Flickr Group")) |>
+  tab_footnote(
+    footnote = md("[iNaturalist Australia](https://inaturalist.ala.org.au)"),
+    locations = cells_stub(rows = "iNaturalist Australia")) |>
+  tab_header(
+    title = md("Platypus and Rakali records for Oberon LGA"),
+    subtitle = md("in the Australian Living Atlas (ALA) database with comparable data direct from NSW BioNet Atlas also shown")
+  )  
+```
+
+### Interactive map
+
+In the map below, you can toggle layers on and off for platypus observation records in each decade, as well as for rakali records for the entire period since 1970. Zoom in to see individual sighting records where they overlap. If you click on each platypus or rakali icon on the map, additional details about the record in the BioNet database will pop up.
+
+:::{.column-page}
+
+```{r ALA-map, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Platypus and rakali observations in Oberon LGA recorded in the Australian Living Atlas (ALA) database"
+
+library(tidyverse)
+library(leaflet)
+
+ala_platypus_rakali_oberon_sf <- ala_platypus_rakali_oberon |>
+                      filter(!is.na(eventDate), Year > 1930) |> 
+                      arrange(commonName, desc(Year)) |>
+                      st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
+                                crs = "GDA94")
+
+platypusIcon <- makeIcon(
+  iconUrl = ifelse(ala_platypus_rakali_oberon_sf$commonName =="Rakali",
+    "assets/rakali.png",
+    "assets/platypus-3.png"),
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 12, iconAnchorY = 12,
+)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 10) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addPolygons(data=oberon_protected_riparian,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="brown",
+              group = "Protected riparian areas") %>%
+  addMarkers(data=ala_platypus_rakali_oberon_sf,
+                    group=ala_platypus_rakali_oberon_sf$commonNameDecade,
+                    icon=platypusIcon,
+                    popup=ala_platypus_rakali_oberon_sf$PopupContent) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c(
+                                      "Oberon LGA",
+                                      "Protected riparian areas",
+                                     unique(ala_platypus_rakali_oberon_sf$commonNameDecade)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup("Protected riparian areas") %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+:::
+
+## Surveying platypus and rakali poulations in Oberon LGA
+
+As can be seen above, government data on platypus and rakali populations in the Oberon LGA are rather sparse and patchy. OCSN can help improve this situation. 
+
+Several organisations are calling for citizen science participation in platypus (and rakali) observations and surveys. These include:
+
+  *  the [Australian Platypus Conservancy](https://platypus.asn.au), a long-standing NGO. Their web site contains a wealth of information on platyous biology and behaviour, survey and monitoring methods and extent information. It also include a section on **rakali**. Platypus sightings by citizen scientists are able to be reported thriugh their web site.
+  *  the [platy-project](https://www.acf.org.au/platy-project) a joint initiative of the Australian Conservation Foundation and the [Platypus Conservation Initiative](https://www.unsw.edu.au/research/platypus-conservation-initiative) at UNSW Sydney Centre for Ecosystem Science. The platy-project also has a [sighting reporting facity with excellent maps](https://www.acf.org.au/platy-project-signup-map).
+
+### Survey methods
+
+Excellent information about platypus observation and systematic surveys is available from the web sites mentioned above. OCSN encourages its members to undertake _ad hoc_, opportunistic direct observation surveys as time permits, but it also intends to undertake systematic surveys of key waterways in Oberon LGA using time-lapse cameras. It also intends to explore other technologies for platypus detection, including night-vision cameras using very low-level infred illumination, as well as the use of low level UV illumination. The latter is based on the recent discivery that [platypus pelts flouresce weakly in UV light](https://www.livescience.com/platypuses-glow-uv-light.html).
+
+All sightings will be contributed to the platy-project as well as uploaded into the NSW government BioNet Atlas database, as soon as OCSN recieves permission to do so.
+
+::: {.aside}
+This [recent scientific paper](https://www.publish.csiro.au/am/pdf/AM23045) by Simon Roberts and Melody Serena describes the use of time-lapse cameras for detection of platypus (and presumably rakali). OCSN members have been trialling an older Brinno TLC100 camera and a current model Brinno TLC300 time-lapse cameras as described in the paper. Our findings will be described in a forthcoming blog post here on the web site. 
+
+![Brinno TLC300 camera ready for testing (click for larger version)](assets/brinno300-1.png)
+
+![Brinno TLC300 camera wrapped in camoflage purple stocking, overlooking the upper Duckmaloi River (click for larger version)](assets/brinno300-2.png)
+
+An [example of a time-lapse platypus sighting](ocsn_gallery.html#platypus-caught-on-time-lapse-camera-upper-duckmaloi-river-chatham-valley-tim-churches) as a result of this initial testing can be found in the gallery section of this web site.
 
 :::
 
