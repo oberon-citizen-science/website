@@ -451,9 +451,19 @@ leaflet(height="800px", width="1200px") %>%
 
 :::
 
-## Surveying platypus and rakali poulations in Oberon LGA
+## Surveying platypus and rakali populations in Oberon LGA
 
 As can be seen above, government data on platypus and rakali populations in the Oberon LGA are rather sparse and patchy. OCSN can help improve this situation. 
+
+::: {.aside}
+This [recent scientific paper](https://www.publish.csiro.au/am/pdf/AM23045) by Simon Roberts and Melody Serena describes the use of time-lapse cameras for detection of platypus (and presumably rakali). OCSN members have been trialling an older Brinno TLC100 camera and a current model Brinno TLC300 time-lapse cameras as described in the paper. Our findings will be described in a forthcoming blog post here on the web site. 
+
+![Brinno TLC300 camera ready for testing (click for larger version)](assets/brinno300-1.png)
+
+![Brinno TLC300 camera wrapped in camoflage purple stocking, overlooking the upper Duckmaloi River (click for larger version)](assets/brinno300-2.png)
+
+An [example of a time-lapse platypus sighting](ocsn_gallery.html#platypus-caught-on-time-lapse-camera-upper-duckmaloi-river-chatham-valley-tim-churches) as a result of this initial testing can be found in the gallery section of this web site.
+:::
 
 Several organisations are calling for citizen science participation in platypus (and rakali) observations and surveys. These include:
 
@@ -466,14 +476,4 @@ Excellent information about platypus observation and systematic surveys is avail
 
 All sightings will be contributed to the platy-project as well as uploaded into the NSW government BioNet Atlas database, as soon as OCSN recieves permission to do so.
 
-::: {.aside}
-This [recent scientific paper](https://www.publish.csiro.au/am/pdf/AM23045) by Simon Roberts and Melody Serena describes the use of time-lapse cameras for detection of platypus (and presumably rakali). OCSN members have been trialling an older Brinno TLC100 camera and a current model Brinno TLC300 time-lapse cameras as described in the paper. Our findings will be described in a forthcoming blog post here on the web site. 
-
-![Brinno TLC300 camera ready for testing (click for larger version)](assets/brinno300-1.png)
-
-![Brinno TLC300 camera wrapped in camoflage purple stocking, overlooking the upper Duckmaloi River (click for larger version)](assets/brinno300-2.png)
-
-An [example of a time-lapse platypus sighting](ocsn_gallery.html#platypus-caught-on-time-lapse-camera-upper-duckmaloi-river-chatham-valley-tim-churches) as a result of this initial testing can be found in the gallery section of this web site.
-
-:::
 
