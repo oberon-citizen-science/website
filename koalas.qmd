@@ -1,0 +1,421 @@
+---
+title: "Surveying Koala populations in the Oberon region"
+lightbox: true
+---
+
+::: {.callout-note title="Current status of this initiative"}
+OCSN members are encouraged to document koala sightings and record these in the NSW BioNet Atlas and else, such as in the iNaturalist app. More systematic field surveys may be undertaken In addition, the feasibility of using eco-acoustic methods is being investigated (see below).
+:::
+
+## Introduction
+
+Koalas used to be plentiful throughout most of south-eastern Australia, but relentless habitat encroachment has now pushed then towards possible extinction in the wild in the foreseeable future, an almost unthinkable situation. Indeed, the entire koala population of Queensland, NSW and the ACT was officially listed as [**endangered** under national environmental law](https://www.dcceew.gov.au/environment/biodiversity/threatened/species/koalas/listing-under-national-environmental-law) in February 2022.
+
+There are many anecdotally reports of remnant koala populations in Oberon LGA, and not just in the National Parks areas. Indeed, there are a surprising number of documented koala sightings in the region, recorded in various biodiversity databases, as shown below, some of them recent. However, there appears to be little or no systematic effort to document remaining koala poplations in Oberon LGA, and this is a gap which Oberon Citizen Science Network can help to close. 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(sf)
+library(clock)
+
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+```
+
+
+
+## Australian Living Atlas (ALA) records of koala observations  in Oberon LGA
+
+The [Australian Living Atlas](https://www.ala.org.au) (ALA) is a fantastic resource, partially funded by the [Australian Research Data Commons](https://ardc.edu.au) (ARDC). ALA collates biodiversity data from many sources into a single database, which in turn is made available as part of the [Global Biodiversity Information Facility](https://www.gbif.org) (GBIF).
+
+In the table below, we can see the various sources and numbers of records for koala sightings in Oberon LGA over time for the various sources shown -- most of the data comes from the NSW BioNet Atlas
+
+::: {.callout-info title="Why the data in the NSW BioNet Atlas matters" collapse=true}
+
+The NSW BioNet Atlas is a database of flora and fauna information collected over many decades from multiple sources, operated by the NSW Department of Planning and Environment (DPE). The role of BioNet is described by the DPE thus:
+
+> BioNet aims to improve biodiversity outcomes by enabling the community and government to proactively manage and enhance biodiversity in New South Wales through comprehensive, credible and robust data and information.
+
+It is also important because threatened and endangered species records in BioNet must be used by assessors of proposed developments in order to avoid or minimise impacts on wildlife, and is also used as part of the [Biodiversity Assessment Method](https://www.environment.nsw.gov.au/-/media/OEH/Corporate-Site/Documents/Animals-and-plants/Biodiversity/biodiversity-assessment-method-2020-200438.pdf) (BAM), which is used as part of the **legislated** Biodiversity Offsets Scheme (currently under review due to [numerous flaws found by the Audit Office of NSW](https://www.audit.nsw.gov.au/our-work/reports/effectiveness-of-the-biodiversity-offsets-scheme)).
+
+:::
+
+
+```{r ala-table}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(sf)
+library(clock)
+library(galah)
+library(gt)
+
+galah_config(atlas = "ALA",
+             username = "tim.churches@gmail.com",
+             email = "tim.churches@gmail.com",
+             verbose=FALSE,
+             caching = TRUE)
+             
+ala_koala_oberon <- galah_call() |>
+   identify("Phascolarctos cinereus") |>
+   filter(cl23 == "Oberon") |>
+   galah_select(duplicateStatus,
+                duplicateType,
+                eventRemarks,
+                fieldNotes,
+                identificationRemarks,
+                identificationVerificationStatus,
+                identifiedBy,
+                individualCount,
+                institutionName,
+                occurrenceDetails,
+                occurrenceRemarks,
+                provenance,
+                samplingEffort,
+                samplingProtocol,
+                spatiallyValid,
+                group = c("basic", "event", "media")) |>
+   collect()
+
+ala_koala_oberon_images <- ala_koala_oberon |>
+  select(recordID, images) |>
+  filter(!is.na(images)) |>
+  mutate(images = as.character(images)) |>
+  mutate(image_id = str_split(images, '"')) |>
+  tidyr::unnest() |>
+  filter(!image_id %in% c('c(', ', ', ')')) |>
+  select(recordID, image_id) 
+
+ala_koala_oberon_media_info <- request_metadata() |>
+  filter(media == ala_koala_oberon) |>
+  collect() |>
+  left_join(ala_koala_oberon_images)
+
+ala_koala_oberon_media_info <- ala_koala_oberon_media_info %>% 
+     mutate(image_url = paste0('<a href="',
+                                image_url,
+                                '" target="_blank">',
+                                "Image</a>")) |>
+     group_by(recordID) %>% 
+     mutate(image_urls = paste0(image_url, collapse = ", ")) |>
+     select(recordID, image_urls)
+
+ala_koala_oberon <- ala_koala_oberon |>
+   left_join(ala_koala_oberon_media_info) |>
+   mutate(dataResourceName = if_else(dataResourceName == "NSW BioNet Atlas",
+                                     "NSW BioNet Atlas (via ALA)",
+                                     dataResourceName),
+          Year = year(eventDate),
+          Decade = paste0(stringr::str_sub(as.character(Year), 1, 3),
+                          "0-",
+                          stringr::str_sub(as.character(Year), 1, 3),
+                          "9"),
+          commonName = case_when(scientificName == "Phascolarctos cinereus" ~ "Koala",
+                                 .default = scientificName),
+          commonNameDecade = if_else(commonName == "Koala",
+                                                          paste0(commonName, ", ", Decade),
+                                                          commonName),
+          PopupContent = paste0(commonName, "<br/>",
+                               eventDate, "<br/>",
+                               paste0("Source: ", dataResourceName), "<br/>",
+                               if_else(!is.na(individualCount),
+                                       paste0("No. of individuals: ",
+                                              individualCount,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(occurrenceRemarks) &
+                                         occurrenceRemarks != "occurrenceRemarks withheld",
+                                       paste0("Notes: ",
+                                              occurrenceRemarks,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(samplingProtocol),
+                                       paste0("Sampling protocol: ",
+                                              samplingProtocol,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(eventRemarks),
+                                       paste0("Remarks: ",
+                                              eventRemarks,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(institutionName),
+                                       paste0("Institution: ",
+                                              institutionName,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(identifiedBy),
+                                       paste0("Identified by: ",
+                                              identifiedBy,
+                                              "<br/>"),
+                                              ""),
+                               if_else(!is.na(image_urls),
+                                       paste0("Images: ",
+                                              image_urls,
+                                              "<br/>"),
+                                              "")
+                               )
+          )
+  
+ala_koala_oberon |>
+  filter(!is.na(eventDate), Year > 1930) |> 
+  select(-c(commonNameDecade, PopupContent)) |>
+  group_by(commonName, dataResourceName, Decade) |>
+  summarise(n=n(), .groups = "drop") |>
+  arrange(Decade, commonName, dataResourceName) |>
+  pivot_wider(names_from = Decade, values_from = n) |>
+  arrange(desc(commonName), stringr::str_to_lower(dataResourceName)) |>
+  gt(rowname_col = "dataResourceName") |>
+  cols_hide(commonName) |>
+  tab_spanner(
+    label = "Decade",
+    columns = ends_with("9")) |>
+  sub_missing(missing_text = "-") |>
+#  summary_rows(
+#    columns = contains("-"),
+#    fns = list(id = "total", label = "All sources", fn = "sum")
+#  ) |>
+  tab_footnote(
+    footnote = md("[ALA species sightings and OzAtlas](https://biocollect.ala.org.au/sightings/project/index/f813c99c-1a1d-4096-8eeb-cbc40e321101)"),
+    locations = cells_stub(rows = "ALA species sightings and OzAtlas")) |>
+#  tab_footnote(
+#    footnote = md("[cPlatypus](https://collections.ala.org.au/public/show/dr7973)"),
+#    locations = cells_stub(rows = "cPlatypus")) |>
+  tab_footnote(
+    footnote = md("[NSW BioNet Atlas (via ALA)](https://collections.ala.org.au/public/showDataResource/dr368)"),
+    locations = cells_stub(rows = "NSW BioNet Atlas (via ALA)")) |>
+#  tab_footnote(
+#    footnote = md("[Australian Platypus Conservancy](https://platypus.asn.au)"),
+#    locations = cells_stub(rows = "Australian Platypus Conservancy")) |>
+#  tab_footnote(
+#    footnote = md("[Encyclopedia of Life Images - Flickr Group](https://www.flickr.com/groups/encyclopedia_of_life/)"),
+#    locations = cells_stub(rows = "Encyclopedia of Life Images - Flickr Group")) |>
+  tab_footnote(
+    footnote = md("[iNaturalist Australia](https://inaturalist.ala.org.au)"),
+    locations = cells_stub(rows = "iNaturalist Australia")) |>
+  tab_header(
+    title = md("Koala records for Oberon LGA"),
+    subtitle = md("in the Australian Living Atlas (ALA) database")
+  )  
+```
+
+
+
+## Interactive map
+
+In the map below, you can toggle layers on and off for koala observation records in each decade. Zoom in to see individual sighting records where they overlap. If you click on each koala icon on the map, additional details about the record in the ALA and BioNet databases will pop up. Some records have images associated with them documenting the observation.
+
+::: {.callout-note}
+The NSW BioNet data shown in the map below were manually downloaded from the NSW government BioNet database on 24 September 2024. It is intended to convert these charts and maps to automatically update once a week with the latest data from BioNet once an API access key has been obtained.
+:::
+
+It is hoped that maps such as these can help inform _ad hoc_ efforts to find and observe the remaining koalas in Oberon LGA, as well as planned systematic field surveys and the deployment of novel survey methods using eco-acoustics (see below) by OCSN members.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(sf)
+library(clock)
+
+bionet_oberon <- read_tsv("assets/Atlas_records_20240924-170940/Atlas_records_dfy0dp51xksxkltuxbt4izzs20240924-170937.txt", skip=4)
+
+bionet_koala_oberon_sf <- bionet_oberon %>% 
+                        filter(SpeciesCode == "1162") %>%
+                        select(CommonName, ScientificName,
+                               DateFirst,DateLast,
+                               Latitude_GDA94,Longitude_GDA94,Accuracy,
+                               NumberIndividuals, Description, SightingNotes) %>%
+                        mutate(DateFirst = clock::date_parse(DateFirst,
+                                                             format="%d/%m/%Y"),
+                               DateLast = clock::date_parse(DateLast,
+                                                            format="%d/%m/%Y"),
+                               eventDate = DateLast,
+                               Year = year(DateLast),
+                               Decade = paste0(stringr::str_sub(as.character(Year), 1, 3),
+                                               "0-",
+                                                stringr::str_sub(as.character(Year), 1, 3),
+                                                "9"),
+                               commonName = CommonName,
+                               commonNameDecade = paste0(commonName, ", ", Decade),
+                               dataResourceName = "NSW BioNet Atlas",
+                               PopupContent = paste(sep = "<br/>",
+                                                    commonName,
+                                                    paste0(DateFirst, " to ", DateLast),
+                                                    "Source: NSW BioNet Atlas",
+                                                    paste0("No. of individuals: ", NumberIndividuals),
+                                                    paste0("Spatial accuracy (metres): ", Accuracy),
+                                                    paste0("Description: ", Description),
+                                                    paste0("Notes: ", SightingNotes))) %>%
+                        st_as_sf(coords = c("Longitude_GDA94", "Latitude_GDA94"),
+                                crs = "GDA94") |>
+  select(eventDate, commonName, dataResourceName, 
+         Year, Decade, commonNameDecade, PopupContent)
+
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+# combine direct BioNet data with ALA data in ALA data format
+
+ala_koala_oberon_sf <- ala_koala_oberon |>
+                      filter(!is.na(eventDate), Year > 1930) |> 
+                      arrange(commonName, desc(Year)) |>
+                      st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
+                                crs = "GDA94")
+
+koala_oberon_sf <- ala_koala_oberon_sf |>
+                      filter(dataResourceName != "NSW BioNet Atlas (via ALA)") |>
+            bind_rows(bionet_koala_oberon_sf) 
+  
+```
+
+```{r Bionet-map, eval=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Koala observations in Oberon LGA: NSW BioNet Atlas data as at Sept 2024"
+
+library(tidyverse)
+library(leaflet)
+
+koalaIcon <- makeIcon(
+  iconUrl = "assets/koalas.png",
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 12, iconAnchorY = 12,
+)
+
+bionet_koala_oberon_sf_filtered <- bionet_koala_oberon_sf %>%
+                                    filter(Year > 1930)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 10) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addMarkers(data=bionet_koala_oberon_sf_filtered,
+                    group=bionet_koala_oberon_sf_filtered$commonNameDecade,
+                    icon=koalaIcon,
+                    popup=bionet_koala_oberon_sf_filtered$PopupContent) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c(
+                                      "Oberon LGA",
+                                     unique(bionet_koala_oberon_sf_filtered$commonNameDecade)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+
+:::{.column-page}
+
+```{r ALA-map, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Koala observations in Oberon LGA recorded in the NSW BioNet Atlas and the Australian Living Atlas (ALA) databases"
+
+library(tidyverse)
+library(leaflet)
+
+
+koalaIcon <- makeIcon(
+  iconUrl = "assets/koalas.png",
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 12, iconAnchorY = 12,
+)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 10) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addMarkers(data=koala_oberon_sf,
+                    group=koala_oberon_sf$commonNameDecade,
+                    icon=koalaIcon,
+                    popup=koala_oberon_sf$PopupContent) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c(
+                                      "Oberon LGA",
+                                     unique(koala_oberon_sf$commonNameDecade)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+:::
+
+## Surveying koala populations in Oberon LGA
+
+The NSW Government Environment and Heritage web site has some [useful information on koala surveys](https://www.koala.nsw.gov.au/research-and-publications/your-research/citizen-science/get-involved/survey-koalas), including the [**I Spy Koala** app](https://www2.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/programs-legislation-and-framework/nsw-koala-strategy/how-to-get-involved/privacy-policy) for smartphones.
+
+::: {.callout-info title="More about the I Spy Koala app" collapsed=true}
+The **I Spy Koala** app was developed in 2019 by the NSW Department of Climate Change, Energy, the Environment and Water for the collection of koala observation and survey data.
+The app was part of a pilot designed to improve the flow of koala observation data to NSW planning and decisions tools. All data submitted via the app is made available by the department through BioNet, New South Wales's corporate biodiversity data repository. From there, data is accessible to researchers, land managers, planners, consultants, government and the public via BioNet webpages and associated data services. Once your _I Spy Koala_ data is submitted it will be available in BioNet within approximately 2 weeks. 
+
+The app has facilities for systematic censuses of koalas in specific areas -- OCSN may make use of this.
+:::
+
+### Novel eco-acoustic survey methods
+
+Recently ecologists have begun to use eco-acoustic methods for koala surveys. More information about these methods can be found on the [OCSN eco-acoustics page](ecoacosutics.html). Koalas can be quite vocal animals, particularly male koalas during mating season wen they emit distinctive, low-pitched roars. These roars can be captured using weatherproof, battery powered digital recorders such as the [AudioMoth device](https://oberon-citizen.science/ecoacoustics.html#audiomoth). OCSN has several such devices at its disposal for deployment around Oberon LGA. 
+
+One problem with this approach is that many hours of audio recordings then need to be listened to in order to locate any koala roars or other vocalisations, if, in fact, they are present. This is a tedious and potentiall error-prone process -- it is easy to miss a roar if attention wanes. 
+
+::: {.aside}
+
+{{< video https://www.youtube.com/watch?v=sqPYjjJyyXE >}}
+
+:::
+
+Several groups of researchers are working on or have developed automated methods for detecting koala roars in digital audio files, such as [this project](https://www.westernsydney.edu.au/icns/research_projects/current_projects/automated_acoustic_koala_detection_system) at Western Sydney University. Unfortunately none of these projects have made the resulting software or computer code available for use by other researchers. OCSN members are continuing to investigate the availability of computerised methods for screening audio recordings made in potential koala habitats. 
+
+In the meantime, digital audio recordings made using AudioMoth devices deployed by OCSN in the Oberon LGA will need to be screened by humans listening to the recordings. Fortunately the recordings can easily be divided up and distributed to several individuals to make the task a bit less tedious. Audio screening can also be done via earphones while engaged in other tasks!
