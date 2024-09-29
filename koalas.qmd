@@ -278,7 +278,10 @@ ala_koala_oberon_sf <- ala_koala_oberon |>
 
 koala_oberon_sf <- ala_koala_oberon_sf |>
                       filter(dataResourceName != "NSW BioNet Atlas (via ALA)") |>
-            bind_rows(bionet_koala_oberon_sf) 
+                      bind_rows(bionet_koala_oberon_sf) |>
+                      filter(!is.na(eventDate), Year > 1930) |> 
+                      arrange(commonName, desc(Year))
+  
   
 ```
 
