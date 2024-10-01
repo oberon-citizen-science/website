@@ -24,6 +24,10 @@ Oberon Citizen Science Network received the following communication from the Pin
 
 :::
 
+::: {.aside}
+![](../../assets/ocsn_404.png)
+:::
+
 This is a copy of the application OCSN submitted to the August 2024 round of the [Pines Wind Farm project community sponsorship program](https://www.thepineswindfarm.com.au/sponsorship). 
 
 
