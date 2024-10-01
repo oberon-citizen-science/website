@@ -356,7 +356,7 @@ ala_platypus_rakali_oberon |>
     footnote = md("[ALA species sightings and OzAtlas](https://biocollect.ala.org.au/sightings/project/index/f813c99c-1a1d-4096-8eeb-cbc40e321101)"),
     locations = cells_stub(rows = "ALA species sightings and OzAtlas")) |>
   tab_footnote(
-    footnote = md("[cPlatypus](https://collections.ala.org.au/public/show/dr7973)"),
+    footnote = md("[cPlatypus](https://collections.ala.org.au/public/show/dr7973) - see also [platy-project](https://platy-project.acf.org.au)"),
     locations = cells_stub(rows = "cPlatypus")) |>
   tab_footnote(
     footnote = md("[NSW BioNet Atlas (via ALA)](https://collections.ala.org.au/public/showDataResource/dr368)"),
@@ -376,9 +376,9 @@ ala_platypus_rakali_oberon |>
   )  
 ```
 
-### Interactive map
+### Interactive maps
 
-In the map below, you can toggle layers on and off for platypus observation records in each decade, as well as for rakali records for the entire period since 1970. Zoom in to see individual sighting records where they overlap. If you click on each platypus or rakali icon on the map, additional details about the record in the ALA database will pop up. Merging of NSW BioNet records that are not (yet) in the ALA database is planned, as soon as BioNet approves OCSN access to the API they provide for automated data extraction (we are using such automated data extraction for the ALA data shown here).
+In the maps below, you can toggle layers on and off for platypus observation records in each decade, as well as for rakali records for the entire period since 1970. Zoom in to see individual sighting records where they overlap. If you click on each platypus or rakali icon on the map, additional details about the record in the ALA database will pop up. Merging of NSW BioNet records that are not (yet) in the ALA database is planned, as soon as BioNet approves OCSN access to the API they provide for automated data extraction (we are using such automated data extraction for the ALA data shown here).
 
 ::: {.callout-warning title="Variable geographic precision!"}
 Please note that the geographic position of the icons in the map below may not be precise. Some records provide precise position information, in which case the locations are accurately shown, but many provide imprecise information so as to protect the exact locations from unwanted attention or interference. If you click on an icon, the pop-up information will show the positional accuracy information (in metres) where it is available for that record. Often it is very approximate eg within 10 km! Unfortunately not all data sources which contribute to the ALA database seem to report positional accuracy. Anyway, please be aware of this important limitation of the data, which in many cases is an intentional limitation to protect vulnerable and endangered species or populations. 
@@ -386,11 +386,14 @@ Please note that the geographic position of the icons in the map below may not b
 
 :::{.column-page}
 
+::: {.panel-tabset}
+## All ALA sources
+
 ```{r ALA-map, eval=TRUE}
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap: "Platypus and rakali observations in Oberon LGA recorded in the Australian Living Atlas (ALA) database"
+#| fig-cap: "All Platypus and rakali observations in Oberon LGA recorded in the Australian Living Atlas (ALA) database"
 
 library(tidyverse)
 library(leaflet)
@@ -453,6 +456,359 @@ leaflet(height="800px", width="1200px") %>%
                             updateWhenIdle=TRUE))
 ```
 
+## platy-project
+
+```{r platy-project-map, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "platy-project platypus observations in Oberon LGA found in the Australian Living Atlas (ALA) database"
+
+library(tidyverse)
+library(leaflet)
+
+cPlatypus_platypus_rakali_oberon_sf <- ala_platypus_rakali_oberon |>
+                      filter(dataResourceName == "cPlatypus") |> 
+                      filter(!is.na(eventDate), Year > 1930) |> 
+                      arrange(commonName, desc(Year)) |>
+                      st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
+                                crs = "GDA94")
+
+platypusIcon <- makeIcon(
+  iconUrl = ifelse(cPlatypus_platypus_rakali_oberon_sf$commonName =="Rakali",
+    "assets/rakali.png",
+    "assets/platypus-3.png"),
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 12, iconAnchorY = 12,
+)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 10) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addPolygons(data=oberon_protected_riparian,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="brown",
+              group = "Protected riparian areas") %>%
+  addMarkers(data=cPlatypus_platypus_rakali_oberon_sf,
+                    group=cPlatypus_platypus_rakali_oberon_sf$commonNameDecade,
+                    icon=platypusIcon,
+                    popup=cPlatypus_platypus_rakali_oberon_sf$PopupContent) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c(
+                                      "Oberon LGA",
+                                      "Protected riparian areas",
+                                     unique(cPlatypus_platypus_rakali_oberon_sf$commonNameDecade)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup("Protected riparian areas") %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+## iNaturalist Australia
+
+```{r iNaturalist-map, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "iNaturalist platypus and rakali observations in Oberon LGA found in the Australian Living Atlas (ALA) database"
+
+library(tidyverse)
+library(leaflet)
+
+iNaturalist_platypus_rakali_oberon_sf <- ala_platypus_rakali_oberon |>
+                      filter(dataResourceName == "iNaturalist Australia") |> 
+                      filter(!is.na(eventDate), Year > 1930) |> 
+                      arrange(commonName, desc(Year)) |>
+                      st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
+                                crs = "GDA94")
+
+platypusIcon <- makeIcon(
+  iconUrl = ifelse(iNaturalist_platypus_rakali_oberon_sf$commonName =="Rakali",
+    "assets/rakali.png",
+    "assets/platypus-3.png"),
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 12, iconAnchorY = 12,
+)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 10) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addPolygons(data=oberon_protected_riparian,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="brown",
+              group = "Protected riparian areas") %>%
+  addMarkers(data=iNaturalist_platypus_rakali_oberon_sf,
+                    group=iNaturalist_platypus_rakali_oberon_sf$commonNameDecade,
+                    icon=platypusIcon,
+                    popup=iNaturalist_platypus_rakali_oberon_sf$PopupContent) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c(
+                                      "Oberon LGA",
+                                      "Protected riparian areas",
+                                     unique(iNaturalist_platypus_rakali_oberon_sf$commonNameDecade)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup("Protected riparian areas") %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+## Australian Platypus Conservancy
+
+```{r APC-map, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Australian Platypus Conservancy platypus and rakali observations in Oberon LGA found in the Australian Living Atlas (ALA) database"
+
+library(tidyverse)
+library(leaflet)
+
+APC_platypus_rakali_oberon_sf <- ala_platypus_rakali_oberon |>
+                      filter(dataResourceName == "Australian Platypus Conservancy") |> 
+                      filter(!is.na(eventDate), Year > 1930) |> 
+                      arrange(commonName, desc(Year)) |>
+                      st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
+                                crs = "GDA94")
+
+platypusIcon <- makeIcon(
+  iconUrl = ifelse(APC_platypus_rakali_oberon_sf$commonName =="Rakali",
+    "assets/rakali.png",
+    "assets/platypus-3.png"),
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 12, iconAnchorY = 12,
+)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 10) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addPolygons(data=oberon_protected_riparian,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="brown",
+              group = "Protected riparian areas") %>%
+  addMarkers(data=APC_platypus_rakali_oberon_sf,
+                    group=APC_platypus_rakali_oberon_sf$commonNameDecade,
+                    icon=platypusIcon,
+                    popup=APC_platypus_rakali_oberon_sf$PopupContent) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c(
+                                      "Oberon LGA",
+                                      "Protected riparian areas",
+                                     unique(APC_platypus_rakali_oberon_sf$commonNameDecade)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup("Protected riparian areas") %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+
+## NSW BioNet Atlas (via ALA)
+
+```{r BioNet-map, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "NSW BioNet Atlas platypus and rakali observations in Oberon LGA found in the Australian Living Atlas (ALA) database"
+
+library(tidyverse)
+library(leaflet)
+
+BioNet_platypus_rakali_oberon_sf <- ala_platypus_rakali_oberon |>
+                      filter(dataResourceName == "NSW BioNet Atlas (via ALA)") |> 
+                      filter(!is.na(eventDate), Year > 1930) |> 
+                      arrange(commonName, desc(Year)) |>
+                      st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
+                                crs = "GDA94")
+
+platypusIcon <- makeIcon(
+  iconUrl = ifelse(BioNet_platypus_rakali_oberon_sf$commonName =="Rakali",
+    "assets/rakali.png",
+    "assets/platypus-3.png"),
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 12, iconAnchorY = 12,
+)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 10) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addPolygons(data=oberon_protected_riparian,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="brown",
+              group = "Protected riparian areas") %>%
+  addMarkers(data=BioNet_platypus_rakali_oberon_sf,
+                    group=BioNet_platypus_rakali_oberon_sf$commonNameDecade,
+                    icon=platypusIcon,
+                    popup=BioNet_platypus_rakali_oberon_sf$PopupContent) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c(
+                                      "Oberon LGA",
+                                      "Protected riparian areas",
+                                     unique(BioNet_platypus_rakali_oberon_sf$commonNameDecade)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup("Protected riparian areas") %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+## ALA species sightings and OzAtlas
+
+```{r ALA_OzAtlas-map, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "ALA species sightings and OzAtlas platypus and rakali observations in Oberon LGA found in the Australian Living Atlas (ALA) database"
+
+library(tidyverse)
+library(leaflet)
+
+ALA_OzAtlas_platypus_rakali_oberon_sf <- ala_platypus_rakali_oberon |>
+                      filter(dataResourceName == "ALA species sightings and OzAtlas") |> 
+                      filter(!is.na(eventDate), Year > 1930) |> 
+                      arrange(commonName, desc(Year)) |>
+                      st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
+                                crs = "GDA94")
+
+platypusIcon <- makeIcon(
+  iconUrl = ifelse(ALA_OzAtlas_platypus_rakali_oberon_sf$commonName =="Rakali",
+    "assets/rakali.png",
+    "assets/platypus-3.png"),
+  iconWidth = 32, iconHeight = 32,
+  iconAnchorX = 12, iconAnchorY = 12,
+)
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 10) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+  addPolygons(data=oberon_protected_riparian,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="brown",
+              group = "Protected riparian areas") %>%
+  addMarkers(data=ALA_OzAtlas_platypus_rakali_oberon_sf,
+                    group=ALA_OzAtlas_platypus_rakali_oberon_sf$commonNameDecade,
+                    icon=platypusIcon,
+                    popup=ALA_OzAtlas_platypus_rakali_oberon_sf$PopupContent) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c(
+                                      "Oberon LGA",
+                                      "Protected riparian areas",
+                                     unique(ALA_OzAtlas_platypus_rakali_oberon_sf$commonNameDecade)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  hideGroup("Protected riparian areas") %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+:::
+
 :::
 
 ::: {.callout-note title="platy-project sends data promptly to ALA" collapse=true}
@@ -484,11 +840,13 @@ An [example of a time-lapse platypus sighting](ocsn_gallery.html#platypus-caught
 Several organisations are calling for citizen science participation in platypus (and rakali) observations and surveys. These include:
 
   *  the [Australian Platypus Conservancy](https://platypus.asn.au), a long-standing NGO. Their web site contains a wealth of information on platyous biology and behaviour, survey and monitoring methods and extent information. It also include a section on **rakali**. Platypus sightings by citizen scientists are able to be reported thriugh their web site.
-  *  the [platy-project](https://www.acf.org.au/platy-project) a joint initiative of the Australian Conservation Foundation and the [Platypus Conservation Initiative](https://www.unsw.edu.au/research/platypus-conservation-initiative) at UNSW Sydney Centre for Ecosystem Science. The platy-project also has a [sighting reporting facity with excellent maps](https://www.acf.org.au/platy-project-signup-map).
+  *  the [platy-project](https://www.acf.org.au/platy-project) a joint initiative of the Australian Conservation Foundation and the [Platypus Conservation Initiative](https://www.unsw.edu.au/research/platypus-conservation-initiative) at UNSW Sydney Centre for Ecosystem Science. The platy-project also has a [sighting reporting facility with excellent maps](https://www.acf.org.au/platy-project-signup-map).
 
 ### Survey methods
 
-Excellent information about platypus observation and systematic surveys is available from the web sites mentioned above. OCSN encourages its members to undertake _ad hoc_, opportunistic direct observation surveys as time permits, but it also intends to undertake systematic surveys of key waterways in Oberon LGA using time-lapse cameras. OCSN also intends to explore other technologies for platypus detection, including night-vision cameras using very low-level infrared (IR) illumination, as well as the use of low level ultraviolet (UV) illumination. The latter is based on the recent discovery that [platypus pelts flouresce weakly in UV light](https://www.livescience.com/platypuses-glow-uv-light.html).
+Excellent information about platypus observation and systematic surveys is available from the web sites mentioned above. In particular see the [platy-project toolkit](https://www.acf.org.au/platy-project-toolkit) and the Australian Platypus Conservancy pages on [platypus surveys and monitoring](https://platypus.asn.au/platypus-survey-monitoring/) and [hints on spotting platypus and rakali in the wild](https://platypus.asn.au/spotting-hints/).
+
+OCSN encourages its members to undertake _ad hoc_, opportunistic direct observation surveys as time permits, but it also intends to undertake systematic surveys of key waterways in Oberon LGA using time-lapse cameras. OCSN also intends to explore other technologies for platypus detection, including night-vision cameras using very low-level infrared (IR) illumination, as well as the use of low level ultraviolet (UV) illumination. The latter is based on the recent discovery that [platypus pelts flouresce weakly in UV light](https://www.livescience.com/platypuses-glow-uv-light.html).
 
 ::: {.callout-note title="DigiVol"}
 It may be possible for Oberon Citizen Science Network to use the [**DigiVol**](https://volunteer.ala.org.au) crowd-sourcing platform operated by the Australian Museum to distribute the task of watching trail camera and time-lapse video to volunteers. DigiVol is an online platform which hosts "expeditions", which are projects for which volunteers can register to under small tasks, such as watching a segment of video recorded by a wildlife or trail camera and noting if any target species appears in the footage. Each participant can undertake as few or as many of these small, discrete tasks as they wish, and as time permits, over the course of the project (expedition). OCSN will contact DigiVol to enquiry about whether they can host time-lapse camerascreening tasks for us. As well, OCSN members are encouraged to sign up as a DigiVol participant, join an expedition and undertake some tasks!
