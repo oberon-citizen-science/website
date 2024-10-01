@@ -1,8 +1,28 @@
 ---
 title: "OCSN application for Pines community funding round 1, August 2024"
 date: 2024-08-29
-image: ../../assets/grant-application.jpg
+date-modified: 2024-10-01
+image: ../../assets/Application-Rejected.jpg
 ---
+
+::: {.callout-important}
+## OCSN application unsuccessful
+
+Oberon Citizen Science Network received the following communication from the Pines Wind farm developers on Tuesday 1st October 2024 regarding the application for community funding as detailed below:
+
+> Hi Alan,
+> 
+> Thank you for taking the time to submit a sponsorship application.
+> 
+> The sponsorship committee has finalised its selection and unfortunately your application was not selected from the many that were submitted.
+> 
+> If you have any questions, please let us know and one of the selection committee team can be in touch.
+> 
+> Kind regards,
+> 
+> The Pines Wind Farm Team
+
+:::
 
 This is a copy of the application OCSN submitted to the August 2024 round of the [Pines Wind Farm project community sponsorship program](https://www.thepineswindfarm.com.au/sponsorship). 
 
