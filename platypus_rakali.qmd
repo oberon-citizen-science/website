@@ -191,6 +191,10 @@ The [Australian Living Atlas](https://www.ala.org.au) (ALA) is a fantastic resou
 
 In the table below, we can see the various sources and numbers of records for platypus and rakali sightings in Oberon LGA over time. Data which was downloaded from NSW BioNet Atlas is also shown in the table for comparison -- it should match the ALA data for the same source, but it doesn't. This needs to be investigated in due course -- there seems to be a delay in BioNet data being added to the ALA database -- but for now, we will just present the ALA data here.
 
+::: {.callout-note}
+Duplicate records in the ALA database have been filtered out of the data presented in the tables and maps below -- only the record marked as _REPRESENTATIVE_, where records appear to be duplicated, is included. Similarly only those records flagged as spatiallyValid==TRUE are included. See also the warning below regarding spatial precision, which is different from spatial validity.
+:::
+
 ```{r ala-table}
 #| echo: false
 #| message: false
@@ -208,6 +212,8 @@ galah_config(atlas = "ALA",
 ala_platypus_rakali_oberon <- galah_call() |>
    identify(c("Ornithorhynchus anatinus", "Hydromys chrysogaster")) |>
    filter(cl23 == "Oberon") |>
+   filter(is.na(duplicateStatus) | duplicateStatus == "REPRESENTATIVE") |>
+   filter(spatiallyValid == TRUE) |>
    galah_select(duplicateStatus,
                 duplicateType,
                 eventRemarks,
@@ -380,6 +386,7 @@ ala_platypus_rakali_oberon |>
 ### Interactive maps
 
 In the maps below, you can toggle layers on and off for platypus observation records in each decade, as well as for rakali records for the entire period since 1970. Zoom in to see individual sighting records where they overlap. If you click on each platypus or rakali icon on the map, additional details about the record in the ALA database will pop up. Merging of NSW BioNet records that are not (yet) in the ALA database is planned, as soon as BioNet approves OCSN access to the API they provide for automated data extraction (we are using such automated data extraction for the ALA data shown here).
+
 
 ::: {.callout-warning title="Variable geographic precision!"}
 Please note that the geographic position of the icons in the map below may not be precise. Some records provide precise position information, in which case the locations are accurately shown, but many provide imprecise information so as to protect the exact locations from unwanted attention or interference. If you click on an icon, the pop-up information will show the positional accuracy information (in metres) where it is available for that record. Often it is very approximate eg within 10 km! Unfortunately not all data sources which contribute to the ALA database seem to report positional accuracy. Anyway, please be aware of this important limitation of the data, which in many cases is an intentional limitation to protect vulnerable and endangered species or populations. 
@@ -854,6 +861,10 @@ It may be possible for Oberon Citizen Science Network to use the [**DigiVol**](h
 :::
 
 All sightings will be contributed to the platy-project as well as uploaded into the NSW government BioNet Atlas database, as soon as OCSN receives an account with permission to do so (an application has been submitted).
+
+### BioCollect
+
+The utility of the [BioCollect app](https://www.ala.org.au/biocollect/) provided by the Atlas of Living Australia (ALA) is being assessed for use in systematic platypus and rakali surveys by OCSN, in particular whether the  [_ecoscience_ project type](https://www.ala.org.au/biocollect-for-ecosciences/) rather than the  [_citizen science_ project type](https://www.ala.org.au/biocollect-for-citizen-science/) should be used by OCSN (note that the link on the BioCollect for ecosciences page incorrectly links to the citizen science version of the BioCollect user manual).
 
 ## NSW Waterwatch
 

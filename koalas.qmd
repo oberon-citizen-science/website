@@ -47,6 +47,10 @@ It is also important because threatened and endangered species records in BioNet
 
 :::
 
+::: {.callout-note}
+Duplicate records in the ALA database have been filtered out of the data presented in the tables and maps below -- only the record marked as _REPRESENTATIVE_, where records appear to be duplicated, is included. Similarly only those records flagged as spatiallyValid==TRUE are included. See also the warning below regarding spatial precision, which is different from spatial validity.
+:::
+
 
 ```{r ala-table}
 #| echo: false
@@ -68,6 +72,8 @@ galah_config(atlas = "ALA",
 ala_koala_oberon <- galah_call() |>
    identify("Phascolarctos cinereus") |>
    filter(cl23 == "Oberon") |>
+   filter(is.na(duplicateStatus) | duplicateStatus == "REPRESENTATIVE") |>
+   filter(spatiallyValid == TRUE) |>
    galah_select(duplicateStatus,
                 duplicateType,
                 eventRemarks,
