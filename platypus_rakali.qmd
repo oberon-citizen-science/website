@@ -1,6 +1,7 @@
 ---
 title: "Surveying Platypus and Rakali populations in the Oberon region"
 lightbox: true
+freeze: auto
 ---
 
 ::: {.callout-note title="Current status of this initiative"}
@@ -854,4 +855,8 @@ It may be possible for Oberon Citizen Science Network to use the [**DigiVol**](h
 
 All sightings will be contributed to the platy-project as well as uploaded into the NSW government BioNet Atlas database, as soon as OCSN receives an account with permission to do so (an application has been submitted).
 
+## NSW Waterwatch
 
+[Waterwatch NSW](https://www.nswwaterwatch.org.au) is a program supported by the NSW government to encourage local community engagement with waterway health. Quality quality is known to be especially important to platypus health, and thus OCSN intends to participate in the Watchwatch program and monitor water quality at sites where platypus have been observed in Oberon LGA. More details will appear here in due course.
+
+All [Waterwatch NSW data](https://biocollect.ala.org.au/nswwaterwatch) is made available through the Atlas of Living Australia database. A preliminary look at those data suggests that there is little or no data for waterways in Oberon LGA -- a situation which OCSN must attempt to remedy.
