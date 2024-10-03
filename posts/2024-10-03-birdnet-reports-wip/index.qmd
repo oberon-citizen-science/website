@@ -1,0 +1,50 @@
+---
+title: "Reports from the Oberon Citizen Science Network bird call monitoring network"
+description: "A short report on ongoing work into developing custom, automated reports for the growing network of BirdNET-pi and Birdweather PUC bird call detection devices deployed in Oberon LGA by OCSN members."
+author:
+  - name: Alan Sheehan
+date: 2024-10-03
+categories: [Birds, Technology, Review] # self-defined categories
+citation: 
+  url: https://oberon-citizen.science/posts/2024-10-03-birdnet-reports-wip/
+draft: false 
+lightbox: true
+freeze: false
+---
+
+Oberon Citizen Science Network has a growing network of bird call monitors to detect what birds are around. The beauty of these detectors is they work all the time, day and night, and you don’t have to be able to see the bird. While it doesn’t replace actually seeing a bird as a detection method, it certainly complements it, and rare bird detections can encourage active birdwatching to detect those rare species. Because these monitors collect data continuously, they also permit time-series analysis to examine the effect of daily and short-term weather, the seasons, and even climate change on the prevalence of bird calls detected for each species. Background information on these monitoring devices, which use advanced machine learning (AI) algorithms, can be found [here](../../birdnet.html), and a review of the commercial variant of these devices can be found [here](../2024-07-21-PUC-review/index.html).
+
+::: {.aside}
+![The BirdNET-Pi logo](https://user-images.githubusercontent.com/60325264/140656397-bf76bad4-f110-467c-897d-992ff0f96476.png)
+:::
+
+Initially the network started with a DIY BirdNET-Pi monitoring station in Chatham Valley, then extended to a Birdweather PUC in Butterfactory Lane and now includes another BirdNET-Pi on the Reef Road. Further stations are planned to be installed soon, so the network is growing.
+
+The reports below summarise the detections at each station by day and by time of day. From these reports we can see when birds enter, leave or move around the area, through migration or nomadic feeding, and we can also see what time of day they are vocal, which highlights especially nocturnal feeders like owls which are often hard to find and spot.
+
+The data from each station is continuously fed to the BirdNET database at Cornell University where it can be used by anyone to study the behaviour and prevalence of birds. It is also available through the [Birdweather](https://app.birdweather.com) website. You can even listen to recordings of each bird call detected at each site through the Birdweather web site map!
+
+The custom reports shown here are produced by exporting the data from Birdweather for each of our stations,and then using some python code to produce these reports. As you can see from the combined stations reports (OCSN Oberon LGA 2409) we are rapidly approaching the limits of the current report format, so some further research and development of the reports will be required as we expand the network.
+
+::: {.callout-note title="A note for nerds" collapse=true}
+The Oberon Citizen Science Network web site is hosted for free by [GitHub](https://github.com) using the fantastic [GitHub pages](https://pages.github.com) facility. Recently, Oberon Citizen Science Network applied for not-for-profit philanthropic account status from GitHub, which it has just been awarded. This will allow us to build automated data reporting facilities for data sources such at the OCSN BirdNET-pi/Birdweather network of monitoring stsations, and the [OCSN network of Raspberry Shake & Boom seismic and infrasound monitoring stations](../../shake_and_boom.html), using the [GitHub Actions](https://github.com/features/actions) facility which is now available to us with our upgraded account status. More information on these developments will appear on this web site in due course. 
+:::
+
+### Click or tap on each chart to see a larger version of it
+
+![Chatham Valley Sept 2024 by date](birdnet_sept_2024_by_date_chatham_valley.png)
+
+![Chatham Valley Sept 2024 by time of day](birdnet_sept_2024_by_time_chatham_valley.png)
+
+![Butterfactory Lane Sept 2024 by date](birdnet_sept_2024_by_date_butterfactory_lane.png)
+
+![Butterfactory Lane Sept 2024 by time of day](birdnet_sept_2024_by_time_butterfactory_lane.png)
+
+![Reef Road Sept 2024 by date](birdnet_sept_2024_by_date_reef_road.png)
+
+![Reef Road Sept 2024 by time of day](birdnet_sept_2024_by_time_reef_road.png)
+
+![All Oberon Citizen Science Network stations combined Sept 2024 by date](birdnet_sept_2024_by_date_all_oberon_citizen_science_network.png)
+
+![All Oberon Citizen Science Network stations combined Sept 2024 by time of day](birdnet_sept_2024_by_time_all_oberon_citizen_science_network.png)
+
