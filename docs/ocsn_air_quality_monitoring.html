@@ -29,6 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./nb_networks.html" rel="next">
+<link href="./local_weather.html" rel="prev">
 <link href="./assets/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -177,6 +179,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Local weather monitoring</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./ocsn_air_quality_monitoring.html">
+ <span class="dropdown-text">Air quality monitoring</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./nb_networks.html">
  <span class="dropdown-text">LoRaWAN and NB-IoT</span></a>
   </li>  
@@ -231,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Air quality monitoring</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shake_and_boom.html">Sensor Networks</a></li><li class="breadcrumb-item"><a href="./ocsn_air_quality_monitoring.html">Air quality monitoring</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -390,6 +396,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ocsn_air_quality_monitoring.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Air quality monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./nb_networks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LoRaWAN and NB-IoT</span></a>
   </div>
@@ -406,21 +418,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#air-quality-indicators" id="toc-air-quality-indicators" class="nav-link" data-scroll-target="#air-quality-indicators">Air quality indicators</a>
   <ul class="collapse">
   <li><a href="#air-quality-index-aqi" id="toc-air-quality-index-aqi" class="nav-link" data-scroll-target="#air-quality-index-aqi">Air Quality Index (AQI)</a></li>
   <li><a href="#particulate-matter-pm" id="toc-particulate-matter-pm" class="nav-link" data-scroll-target="#particulate-matter-pm">Particulate Matter (PM)</a></li>
   <li><a href="#volatile-organic-compounds-vocs" id="toc-volatile-organic-compounds-vocs" class="nav-link" data-scroll-target="#volatile-organic-compounds-vocs">Volatile Organic Compounds (VOCs)</a></li>
   <li><a href="#nitrogen-oxides-nox" id="toc-nitrogen-oxides-nox" class="nav-link" data-scroll-target="#nitrogen-oxides-nox">Nitrogen Oxides (NO<sub>x</sub>)</a></li>
   <li><a href="#ozone-o3" id="toc-ozone-o3" class="nav-link" data-scroll-target="#ozone-o3">Ozone (O<sub>3</sub>)</a></li>
+  <li><a href="#carbon-monoxide-co-and-carbon-dioxide-co2" id="toc-carbon-monoxide-co-and-carbon-dioxide-co2" class="nav-link" data-scroll-target="#carbon-monoxide-co-and-carbon-dioxide-co2">Carbon monoxide (CO) and carbon dioxide (CO<sub>2</sub>)</a></li>
   </ul></li>
+  <li><a href="#indoor-air-quality" id="toc-indoor-air-quality" class="nav-link" data-scroll-target="#indoor-air-quality">Indoor air quality</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shake_and_boom.html">Sensor Networks</a></li><li class="breadcrumb-item"><a href="./ocsn_air_quality_monitoring.html">Air quality monitoring</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Air quality monitoring</h1>
 </div>
@@ -452,15 +467,18 @@ Current status of this initiative
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Discussion and planning stages only. Suitable monitoring devices are being researched and a DIY device is being prototyped. The aim is to provide Oberon with near real-time air quality monitoring data of adequate reliability and accuracy which anyone can access or view. More information and project plans will appear here in due course.</p>
+<p>Discussion and planning stages only. Suitable sensor devices are being researched and several configurations of DIY devices are being prototyped. The aim is to provide Oberon with near real-time air quality monitoring data of adequate reliability and accuracy which anyone can access or view. More information and project plans will appear here in due course.</p>
 </div>
 </div>
-<section id="introduction" class="level2 page-columns page-full">
+<section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Air quality monitoring is another project where Oberon Citizen Science Network (OCSN) can have a role to provide quality data to the community.</p>
-<p>As a medium-sized centre, Oberon is unusual in that it has significant industry very close to town, as well as being surrounded by significant monoculture plantations of pinus radiata, and extensive pastures.</p>
-<p>While scientific grade air quality stations (for example, as deployed by the EPA at strategic locations) are expensive, Oberon Citizen Science Network believes a network of cheaper monitoring stations, either commercially available and/or DIY versions designed by OCSN members, could provide better coverage and information to the community by being able to account for changing weather conditions and wind directions better than than a single expensive station.</p>
-<p>At this stage research is still on going as to the most appropriate Air Quality Stations to use, but below is a discussion of the air quality measures and criteria OCSN believes are significant to the Oberon Community.</p>
+<p>As a medium-sized population centre, the Oberon township (as opposed to the wider Oberon local government area) is unusual in that it has significant industry very close to town, as well as being surrounded by significant monoculture plantations of <em>pinus radiata</em> pine trees, and extensive pastures.</p>
+<p>While scientific grade air quality stations (for example, as deployed by the NSW government <a href="https://www.epa.nsw.gov.au/your-environment/air">Environmental Protection Authority</a> (EPA) at strategic locations) are quite expensive (upwards of AU$50k), Oberon Citizen Science Network believes a network of cheaper monitoring stations, either commercially available devices and/or DIY versions designed by OCSN members, could provide better coverage and information to the community by being able to account differing air quality in different locations around the town, due to changing weather conditions and wind directions, better than than a single expensive station.</p>
+<p>At this stage research is still on going as to the most appropriate air quality monitoring devices to use, but the discussion below covers the various air quality measures and criteria OCSN believes are significant to the Oberon Community.</p>
+</section>
+<section id="air-quality-indicators" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="air-quality-indicators">Air quality indicators</h2>
 <section id="air-quality-index-aqi" class="level3">
 <h3 class="anchored" data-anchor-id="air-quality-index-aqi">Air Quality Index (AQI)</h3>
 <p><a href="https://en.wikipedia.org/wiki/Air_quality_index">AQI</a> is an umbrella measure. It’s a good summary measure when air quality is good, but when the AQI is not so good, it gives no clue as to why it is not so good. Sometimes it may be obvious why the AQI is not good but not always.</p>
@@ -470,7 +488,19 @@ Current status of this initiative
 <p><a href="https://en.wikipedia.org/wiki/Particulates">Particulate Matter</a> (or Particulates) are significant for Oberon due to industry and the associated vehicle activity, and the pollens produced by the surrounding forests and pastures. Being a colder climate Oberon also has a lot of wood-fired heaters being used for a greater portion of the year, which also adds to the exposure to particulates in the air. Unsealed roads can also be a significant source of dust (particulates) affecting those living out of town especially. Bushfires are also of course major contributors to atmospheric particulates.</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>https://www2.purpleair.com/products/purpleair-flex</p>
+<p><a href="https://www2.purpleair.com">PurpleAir</a> is one manufacturer of low-cost air quality monitoring devices.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/PurpleAir_Flex_1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="PurpleAir Flex monitoring device, seen from below showing the dual particulate sensor modules, and the accompanying smartphone app (click or tap for larger version)"><img src="assets/PurpleAir_Flex_1.jpg" class="img-fluid figure-img" alt="PurpleAir Flex monitoring device, seen from below showing the dual particulate sensor modules, and the accompanying smartphone app (click or tap for larger version)"></a></p>
+<figcaption>PurpleAir Flex monitoring device, seen from below showing the dual particulate sensor modules, and the accompanying smartphone app (click or tap for larger version)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/PurpleAir_Flex_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="PurpleAir Flex monitoring device, seen from the side in its typical mounting position"><img src="assets/PurpleAir_Flex_2.png" class="img-fluid figure-img" alt="PurpleAir Flex monitoring device, seen from the side in its typical mounting position"></a></p>
+<figcaption>PurpleAir Flex monitoring device, seen from the side in its typical mounting position</figcaption>
+</figure>
+</div>
 </div></div><p>The size of airborne particles, as well as their composition, determines their nuisance and health effects. Dust particles and fibres vary in size from coarse (non-inhalable), to fine (inhalable, sometimes call inspirable), to very fine (respirable).</p>
 <p>Coarse dust particles generally only reach as far as the inside of the nose, mouth or throat. Smaller or fine particles, however, can get much deeper into the sensitive regions of the respiratory tract and lungs. These smaller dust particles have a greater potential to cause serious harm to your health. Some types of extremely fine particles (see PM1.0 below) are able to cross the alveolar membranes in the lungs and directly enter the bloodstream, where they can cause general inflammation and increase clotting tendancies which are risk factors for myocardial infarctions (heart attacks) and strokes.</p>
 <section id="pm10" class="level4">
@@ -497,9 +527,19 @@ Current status of this initiative
 <section id="ozone-o3" class="level3">
 <h3 class="anchored" data-anchor-id="ozone-o3">Ozone (O<sub>3</sub>)</h3>
 <p><a href="https://en.wikipedia.org/wiki/Ozone">Ozone</a> can be produced by reaction of VOCs with NO<sub>x</sub> at high temperatures or can be catalysed by UV radiation in sunlight. Ozone is an irritant and causes inflammation and may create free radicals leading to harmful oxidation in the body.</p>
-
-
 </section>
+<section id="carbon-monoxide-co-and-carbon-dioxide-co2" class="level3">
+<h3 class="anchored" data-anchor-id="carbon-monoxide-co-and-carbon-dioxide-co2">Carbon monoxide (CO) and carbon dioxide (CO<sub>2</sub>)</h3>
+<p>Carbon dioxide is a byproduct of burning carbon-containing compounds, such as wood or wood waste. The largest wood processing plant in Oberon operates a co-generation facility in which wood waste is burnt to generate electricity (along with a very large array of solar panels on the factory’s roofs). CO<sub>2</sub> which results from this combustion is emitted via stacks some distance above the round, allowing the CO<sub>2</sub>, which is heavier than air, to disperse. However, in some conditions, particularly in still air, the emitted CO<sub>2</sub> may sink to ground level before it has dispersed, and thus the concentration may rise in the vicinity of the source. It is very unlikely to reach dangerous levels, but changes in CO<sub>2</sub> levels in outdoor air may be interesting to monitor.</p>
+<p>Carbon monoxide (CO) is produced by partial combustion of carbon-containing materials in the presence of insufficient oxygen. Usually only low levels should be emitted, but CO is very toxic, and thus monitoring for even small rises is not unreasonable.</p>
+</section>
+</section>
+<section id="indoor-air-quality" class="level2">
+<h2 class="anchored" data-anchor-id="indoor-air-quality">Indoor air quality</h2>
+<p>Indoor air quality is also very important, and there are several sources of air pollutants which may be present in indoor environments. These include unflued gas heaters and gas stoves, which may emit CO<sub>2</sub>, CO and nitrogen oxides, wood heaters which may emit CO<sub>2</sub>, CO and particulates, and furniture and fittings made of particle board or other manufactured woods, which may emit low levels of volatile organic compounds (VOCs) used in the manufacture. And of course, humans (and other animals) emit gases, particularly CO<sub>2</sub>, which can build up in poorly ventilated buildings with many people inside (eg classrooms).</p>
+<p>Monitoring indoor air quality is also on the OCSN agenda, to complement monitoring of outdoor air quality.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1074,8 +1114,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./local_weather.html" class="pagination-link" aria-label="Local weather monitoring">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Local weather monitoring</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./nb_networks.html" class="pagination-link" aria-label="LoRaWAN and NB-IoT">
+        <span class="nav-page-text">LoRaWAN and NB-IoT</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

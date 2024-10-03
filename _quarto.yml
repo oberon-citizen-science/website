@@ -60,6 +60,8 @@ website:
             href: ecoacoustics.qmd
           - text: "Local weather monitoring"
             href: local_weather.qmd
+          - text: "Air quality monitoring"
+            href: ocsn_air_quality_monitoring.qmd
           - text: "LoRaWAN and NB-IoT"
             href: nb_networks.qmd
       - text: "News"
@@ -119,6 +121,8 @@ website:
             file: ecoacoustics.qmd
           - text: "Local weather monitoring"
             href: local_weather.qmd
+          - text: "Air quality monitoring"
+            href: ocsn_air_quality_monitoring.qmd
           - text: "LoRaWAN and NB-IoT"
             href: nb_networks.qmd
 fig-cap-location: bottom
