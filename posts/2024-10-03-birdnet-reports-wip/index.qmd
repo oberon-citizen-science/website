@@ -5,6 +5,7 @@ author:
   - name: Alan Sheehan
 date: 2024-10-03
 categories: [Birds, Technology, Review] # self-defined categories
+image: birdnet_sept_2024_by_date_all_oberon_citizen_science_network.png
 citation: 
   url: https://oberon-citizen.science/posts/2024-10-03-birdnet-reports-wip/
 draft: false 
