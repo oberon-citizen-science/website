@@ -4,14 +4,29 @@ lightbox: true
 ---
 
 ::: {.callout-note title="Current status of this initiative"}
-OCSN members are encouraged to document koala sightings and record these in the NSW BioNet Atlas and else, such as in the iNaturalist app. More systematic field surveys may be undertaken In addition, the feasibility of using eco-acoustic methods is being investigated (see below).
+OCSN members and members of the public are strongly encouraged to document koala sightings and record these in the in the [**I Spy Koala** app](https://www2.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/programs-legislation-and-framework/nsw-koala-strategy/how-to-get-involved/privacy-policy) for smartphones, which sends the data to the NSW government BioNet Atlas (see note below for more dteails), as well as the  [iNaturalist](https://inaturalist.ala.org.au) app. More systematic field surveys by OCSN may be organised in due course. In addition, the feasibility of using eco-acoustic methods is being investigated (see below).
 :::
 
 ## Introduction
 
-Koalas used to be plentiful throughout most of south-eastern Australia, but relentless habitat encroachment has now pushed then towards possible extinction in the wild in the foreseeable future, an almost unthinkable situation. Indeed, the entire koala population of Queensland, NSW and the ACT was officially listed as [**endangered** under national environmental law](https://www.dcceew.gov.au/environment/biodiversity/threatened/species/koalas/listing-under-national-environmental-law) in February 2022.
+Koalas used to be plentiful throughout most of south-eastern Australia, but relentless habitat encroachment has now pushed them towards possible extinction in the wild in the foreseeable future, an almost unthinkable situation. Indeed, the entire koala population of Queensland, NSW and the ACT was officially listed as [**endangered** under national environmental law](https://www.dcceew.gov.au/environment/biodiversity/threatened/species/koalas/listing-under-national-environmental-law) in February 2022.
 
-There are many anecdotally reports of remnant koala populations in Oberon LGA, and not just in the National Parks areas. Indeed, there are a surprising number of documented koala sightings in the region, recorded in various biodiversity databases, as shown below, some of them recent. However, there appears to be little or no systematic effort to document remaining koala poplations in Oberon LGA, and this is a gap which Oberon Citizen Science Network can help to close. 
+There are anecdotally reports of remnant koala populations in Oberon LGA, and not just in the National Parks areas. Indeed, there are a surprising number of documented koala sightings in the region, recorded in various biodiversity databases, as shown below, some of them recent. However, there appears to be little or no systematic effort to document remaining koala populations in Oberon LGA, and this is a gap which Oberon Citizen Science Network can help to close. 
+
+::: {.callout-note title="Historical evidence of plentiful koalas around Oberon (click or tap to open)" collapse=true}
+Historical evidence of how plentiful koalas once were around Oberon is provided by this excerpt from an interview with Mick O'Connell on page 44 of the book _Living Treasures of Oberon_ by Mick Joffe (cover and title page also shown below, click or tap on the images for a larger version). Many thanks to OCSN member Maree Arrow for providing this wonderful historical note.
+
+![Excerpt from an interview with Mick O'Connell](assets/koalas_in_tarana.png)
+
+::: {layout-ncol=2}
+![Cover](assets/living_treasures_of_oberon_title_page.png)
+
+![Title page](assets/living_treasures_of_oberon_cover.png)
+
+_Living Treasures of Oberon_ by Mick Joffe
+:::
+
+:::
 
 ```{r}
 #| echo: false
@@ -412,7 +427,8 @@ The NSW Government Environment and Heritage web site has some [useful informatio
 
 ::: {.callout-info title="More about the I Spy Koala app" collapsed=true}
 The **I Spy Koala** app was developed in 2019 by the NSW Department of Climate Change, Energy, the Environment and Water for the collection of koala observation and survey data.
-The app was part of a pilot designed to improve the flow of koala observation data to NSW planning and decisions tools. All data submitted via the app is made available by the department through BioNet, New South Wales's corporate biodiversity data repository. From there, data is accessible to researchers, land managers, planners, consultants, government and the public via BioNet webpages and associated data services. Once your _I Spy Koala_ data is submitted it will be available in BioNet within approximately 2 weeks. 
+
+The app was part of a pilot designed to improve the flow of koala observation data to NSW planning and decisions tools. All data submitted via the app is made available by the department through the BioNet Atlas, New South Wales's corporate biodiversity data repository. From there, data is accessible to researchers, land managers, planners, consultants, government and the public via BioNet webpages and associated data services. Once your _I Spy Koala_ data is submitted it will be available in BioNet within approximately 2 weeks. 
 
 The app has facilities for systematic censuses of koalas in specific areas -- OCSN may make use of this.
 :::
