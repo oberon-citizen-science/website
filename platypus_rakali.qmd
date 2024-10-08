@@ -29,6 +29,10 @@ Much less is known about the extent in the Oberon region of the [_rakali_](https
 A recent article published by ABC News on the rakali, and a call for citizen scientists to log sightings of it, is available [here](https://www.abc.net.au/news/2024-07-02/rakali-water-rat-researcher-urges-citizen-science-help/104043350). This is something which OCSN members intend to get involved in!
 :::
 
+::: {.aside}
+There are several time-lapse camera videos showing the results of platypus and rakali surveillance in the upper Duckmaloi River on our [Gallery page](ocsn_gallery.html).
+:::
+
 ## NSW BioNet Atlas records of platypus and rakali sightings or trappings in Oberon LGA
 
 BioNet is a database of flora and fauna information collected over many decades from multiple sources, operated by the NSW Department of Planning and Environment (DPE). The role of BioNet is described by the DPE thus:
