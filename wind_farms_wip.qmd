@@ -92,8 +92,10 @@ taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
 
 pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
 
-pines_turbines_test <- sf::read_sf("assets/Pine_Wind_Farm_test.geojson") %>%
-                          filter(st_geometry_type(.) == "POINT")
+# pines_turbines_test <- sf::read_sf("assets/Pine_Wind_Farm_test.geojson") %>%
+#                           filter(st_geometry_type(.) == "POINT")
+
+pines_turbines_test <- sf::read_sf("assets/Pines_Windfarm_Tower_Locations.kml")
 
 oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
                       filter(abb_name == "Oberon")
