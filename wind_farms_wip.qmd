@@ -1,0 +1,245 @@
+---
+title: "Wind Farms and Renewable Energy"
+lightbox: true
+---
+
+:::{.aside}
+![](assets/wind_turbines_oxen.png)
+:::
+
+One of the aims of OCSN is to engage with STEM issues of relevance to the Oberon LGA community. Perhaps the most contentious and potentially divisive issues to be faced in the immediate future are the proposals to build substantial wind farms in or adjacent to the large pine forests in the southern part of Oberon LGA. Details of these proposed projects are provided below. It is the intention of OCSN to contribute to the debate around these projects and to help inform decision-making processes (such as by responding to calls for comments on project Environmental Impact Statements (EIS)), through projects designed to collect and analyse scientific data of relevance. Some of these potential OCSN initiatives and projects are discussed below.
+
+:::{.callout-info}
+OCSN does not take a position on whether any of the wind farms proposed for the southern part of Oberon LGA should proceed. As a science-based organisation, OCSN accepts the fact of anthropogenic climate change and the urgent need to de-carbonise economies worldwide. However, this does not mean it has a position on the proposed Paling Yards and Pines winds farms. It does have a strong position, however, on the need for sound scientific evidence and engineering information to inform decisions about these proposed developments, which represent major industrial-scale construction projects of huge structures in what are entirely rural high country settings. As [noted on the FrogID page](frogid.html#frogs-and-wind-farms), there were significant deficiencies in data used and considered the Biodiversity Development Assessment Report for the proposed Paling Yards Wind Farm, which was part of the EIS submission. OCSN intends to ensure that such deficiencies are remedied for the proposed Pines Wind Farm (and are surfaced and discussed in any further consideration of the Paling Yards proposal). 
+:::
+
+## The proposed Paling Yards Wind Farm
+
+Details of this proposed development as provided by the developer can be found [here](https://palingyardswindfarm.globalpower-generation.com.au) and the EIS submission for the development [here](https://www.planningportal.nsw.gov.au/major-projects/projects/paling-yards-wind-farm-0?fbclid=IwAR0aDB66Br7tRrvetMilpt3Zvfwezxa-k3S4qgR3vYXmsHmIyfHeiechs0Q). 
+
+More detailed consideration of the scientific data gaps relating to this proposal will appear here on the OCSN web site in due course. Although the very brief call for public comment in the Paling Yards EIS has closed, it is expected that the development will be subject to a further enquiry and OCSN hopes to make submissions to that process, at least with regard to the adequacy of the science and engineering considerations reflected in the current EIS.
+
+::: {.aside}
+
+Further evidence of the inadequacy of the EIS for the Paling Yards wind farm proposal can be seen in the response to the Biodiversity Development Assessment Report (BDAR) in the EIS prepared by the Biodiversity, Conservation and Science Directorate of the NSW Department of Planning and Environment. The response is available [here](https://majorprojects.planningportal.nsw.gov.au/prweb/PRRestService/mp/01/getContent?AttachRef=SSD-29064077%2120231201T033722.081%20GMT) and is scathing.
+:::
+
+## The proposed Pines Wind Farm
+
+A large wind farm development is proposed in the Gurnang and/or Vulcan state forests, which are largely (but not exclusively) pine plantations managed by the Forestry Corporation of NSW. This development has been enabled by recent changes to the relevant NSW legislation pertaining to Forestry Corporation management of state forests, permitting up to 7% of state forest land areas to be used for renewable energy projects. The developers of the proposed Pines Wind Farm are [TAG Energy](https://tag-en.com)  and [Stromlo Energy](https://www.stromlo.com).
+
+The interactive map below shows the exploration area granted to the developers by Forestry Corporation NSW for possible location of the proposed wind farm in (largely) state forest areas. The exploration area is shaded in red, and the existing 500 kVA transmission line to Taralga to which the wind farm must connect shown as a blue line.
+
+Better maps and more details will appear here in the future (see also below for work-in-progress on more sosphicated geospatial visualistions).
+
+```{r, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE}
+library(jsonlite)
+library(tidyverse)
+library(sf)
+
+# biodiversity_areas <- sf::st_read("_wip/TSR_Conservation.gdb", layer = "LLS_TSR_Conservation2019")
+
+# conservation_calculations <- sf::st_read("_wip/TSR_Conservation.gdb", layer = "TSR_ConservationCalculationsWithRegions")
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+# frogid_captures <- fromJSON("assets/captures.json.gz.json") |>
+#   unnest_longer(validated_frog_ids,
+#                 values_to="frog_id",
+#                 indices_to="capture_index")
+
+# frogs <- fromJSON("assets/frogs.json.gz.json") |>
+#   rename(frog_id = id)
+
+# frogid_captures <- frogid_captures |>
+#   left_join(frogs) %>%
+#   mutate(lng = lng + runif(length(lng), min=-0.025, max=0.025),
+#          lat = lat + runif(length(lat), min=-0.025, max=0.025))
+
+# frogid_captures_sf <- st_as_sf(frogid_captures,
+#                                coords = c("lng", "lat"),
+#                                crs=st_crs(oberon_boundary))
+
+oberon_boundary_buffered <- oberon_boundary |>
+  st_buffer(dist=1000)
+
+# oberon_frogs <- st_filter(frogid_captures_sf, oberon_boundary_buffered)
+
+# oberon_bd_areas <- st_filter(biodiversity_areas, oberon_boundary_buffered)
+
+protected_riparian <- sf::st_read("assets/VulnerableLandsProtectedRiparian")
+
+oberon_boundary_buffered_gda94 <- st_transform(oberon_boundary_buffered,                                                  crs=st_crs(protected_riparian))
+
+oberon_protected_riparian <- st_filter(protected_riparian, oberon_boundary_buffered_gda94)
+
+```
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(leaflet)
+
+
+taralga_line <- readLines("assets/taralga_500kVA_line_v2.geojson") %>%
+                  paste(collapse = "\n")
+
+pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
+
+pines_turbines_test <- sf::read_sf("assets/Pine_Wind_Farm_test.geojson") %>%
+                          filter(st_geometry_type(.) == "POINT")
+
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+                      filter(abb_name == "Oberon")
+
+# frog_pal <- colorFactor("RdYlBu", domain=unique(oberon_frogs$common_name))
+
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = 149.72, lat = -33.89, zoom = 11) %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldTopoMap", group="Topography") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addPolygons(data=pines_expl_area, 
+              stroke=TRUE, 
+              weight=1, 
+              fillOpacity=0.2, 
+              color="red",
+              group = "The Pines exploration area") %>%
+  addPolygons(data=oberon_boundary,
+              stroke=TRUE, 
+              weight=4, 
+              fillOpacity=0.1, 
+              color="orange",
+              group = "Oberon LGA") %>%
+ addPolygons(data=oberon_protected_riparian,
+             stroke=TRUE, 
+             weight=4, 
+             fillOpacity=0.1, 
+             color="brown",
+             group = "Protected riparian areas") %>%
+    addGeoJSON(taralga_line, 
+             weight=3, 
+             color="blue", 
+             fillOpacity=0,
+             group = "Existing 500 kVA transmission line") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines turbines",
+                   color="darkred",
+                   radius = 2,
+                   stroke = FALSE,
+                   fillOpacity = 0.5,
+                   weight=1) %>%
+  addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
+                   overlayGroups = c("The Pines exploration area",
+                                     "Proposed Pines turbines",
+                                     "Existing 500 kVA transmission line",
+                                      "Towns & Villages",
+                                      "Oberon LGA",
+                                      "Protected riparian areas"),
+#                                     unique(oberon_frogs$common_name)),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE)) %>%
+  addMarkers(lng=149.74160413611594,
+             lat=-33.845989194998666,
+             label = "Black Springs",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.91754276836787,
+             lat=-33.78815383191878,
+             label = "Edith",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85713985509926,
+             lat=-33.70394907824247,
+             label = "Oberon township",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5288146180066,
+             lat=-33.94774521659694,
+             label = "Burraga",
+              group = "Towns & Villages",
+              labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.5935282648902,
+             lat=-33.82130920624268,
+             label = "Mt David",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.85336006836064,
+             lat=-33.91140078300324,
+             label = "Shooters Hill",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.89359188575838,
+             lat=-33.66433983475142,
+             label = "Hazelgrove",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) %>%
+  addMarkers(lng=149.73074435257803,
+             lat=-33.54222049863011,
+             label = "O'Connell",
+              group = "Towns & Villages",
+             labelOptions = labelOptions(noHide = TRUE,
+             textsize = "10px")) 
+
+
+                    
+```
+
+:::
+
+## OCSN plans which may help inform wind farm decision making processes
+
+Following is a list of potential activities in which OCSN may engage to help inform debate and decision making around wind farm developments. Not all these activities may proceed, it depends on the support for their undertaking by potential OCSN members, and in some cases, on the success of OCSN in obtaining government, philanthropic or other funding to support these initiatives. Collaboration with scientists with particular areas of expertise in universities and research institutes will also be required, and OCSN will approach suitable research groups regarding such collaboration in due course.
+
+::: {.callout-info}
+Apart from funding from government grant schemes and philanthropic donors, OCSN intends to seek financial contributions from the wind farm developers themselves, to support projects such as deployment of a network of [Raspberry Shake & Boom](shake_and_boom.html) seismic and infrasound monitoring stations in and around the proposed wind farm development areas. We believe that such funding would represent a show of good will and openness on the part of the proposed wind farm developers. However, funding will not be accepted if there are conditions on publication of the results of OCSN investigations, and if all data collected cannot be made openly and publicly available. As a principle, all OCSN funding sources will be clearly listed on this web site -- OCSN is committed to openness and transparency.
+:::
+
+* Review of the adequacy of scientific data and engineering considerations in the Paling Yards EIS submission, in anticipation of an opportunity for further public input into the decision making processes around this proposed development.
+* Assemble a set of informational resources around the science and engineering aspects of wind farm construction and operation.
+* Investigate the audible noise characteristics of wind turbines and, if feasible, develop mathematical modelling capability to estimate noise levels at specific locations.
+* Develop a background noise monitoring program to survey or continuously monitor noise levels in and around the proposed wind farm areas.
+* Further investigation of the capabilities of [Raspberry Shake & Boom](shake_and_boom.html) devices to detect and monitor infrasound generated by wind turbines and other sources. This may involve establishing some positive control monitoring sites near existing wind turbines of the same (or smaller) scale as those proposed for Oberon LGA. The possibility of testing monitoring capability for infrasound generated by the two small, first-generation wind turbines which are visible from Jenolan Caves Road at Hampton will be investigated, if a suitable host site can be found. See also [this blog post](posts/2024-06-24-g-weighting/) for a description of work-in-progress on infrasound monitoring.
+* Roll out of an expanded [Raspberry Shake & Boom](shake_and_boom.html) (RS&B) device network across Oberon LGA, but with particular emphasis on the areas in and adjacent to the proposed wind farm developments, to monitor baseline and (if the proposals proceed) operational infrasound. The RS&B devices are sensitive enough to detect blasting, rock excavation and even heavy truck movements nearby, which may also be useful during construction phases.
+* Detailed mapping and photographic documentation of the remnant native forest areas in the Pines Wind farm exploration area (see map above). Although the Gurnang and Vulcan state forests are predominantly pine plantations, they nevertheless still contain or are bordered by native high country forest cover, particularly along waterways. This native vegetation areas are likely to provide both refuge and transit corridors for native flora and fauna, and thus need to be carefully assessed and be given due consideration when assessing wind farm development proposals. This mapping work may be able to be done as a desktop exercise using high-resolution aerial photograph databases, but on-the-ground validation by OCSN working parties is likely to be needed too.
+* Undertaking systematic frog population surveys along waterways and water bodies in and around the proposed wind farm areas, in collaboration with the [FrogID](frogid.html) research team led by Dr Jodi Rowley at the Australian Museum in Sydney. The feasibility of developing automated monitoring devices for key target species will also be examined.
+* Establish a [BirdNET](birdnet.html) monitoring network in Oberon LGA, with particular emphasis in and around the proposed wind farm development areas.
+  * BirdNET appears to be a good solution for monitoring populations of many types of birds, but it is not suitable for monitoring birds-of-prey, which are potentially vulnerable to being affected by wind turbines, since they may occupy the same air space as the spinning turbine blades. Thus, OCSN will seek to evaluate the potential for automated birds-of-prey monitoring as described in this intriguing [scientific paper](https://www.sciencedirect.com/science/article/pii/S0006320717319407) (and/or similar ideas).
+* Stream and water body water quality monitoring. Because they include some of the highest altitudes in the NSW Central Tablelands, the proposed wind farm areas encompass the headwaters of several creeks and waterways which form or flow into some of the high country rivers whicvh run through Oberon LGA. These headwaters are themselves likely to be ecologically significant, but they also affect the ecology of downstream rivers such as the Duckmaloi, which is known to be one of the very few high country refuges for our nationally-dwindling platypus population. Thus, OCSN will seek to implement water quality monitoring in key waterways likely to be affected by wind farm development, given that the proposed wind farms represent large-scale construction projects involving significant road building and widening, deep foundation excavation and other earthworks which may impact the local riparian environments in ways which timber logging does not. This monitoring may involve periodic water sample collection and analysis, or could involve automated continuous remote monitoring of metrics such as water turbidity.
+* Provide an open, freely-accessible _zone of visual influence_ and _visual impact_ analysis facility for the proposed wind farms. The zone of visual influence, sometimes called a _reverse_ or _inverse_ [_viewshed_](https://en.wikipedia.org/wiki/Viewshed), is the geographic area from which a development or other structure is theoretically visible, at various sizes. Stromlo Energy, one of the developers of the proposed Pines Wind Farm, has indicated that it plans to provide such a facility to the community through individual consultations. That is fine, but the ability to assess visual impact independent of the wind farm developers is also important, and it is also a potentially interesting and educational community project involving geography, geometry and information technology.
+
+::: {.callout-note title="Wind farm visual impact assessment capability work-in-progress" collapse=false}
+
+Oberon Citizen Science Network is working on developing state-of-the-art capabilities for assessing the visual impact of proposed wind farms. The first four in a series of blog posts documenting these development efforts are available in the [Blog posts](blog.html) section of this web site. 
+
+:::
+
+We welcome other ideas! Please [register your expression of interest](register_interest.html) if you would like to be involved in any of these potential projects.
+
