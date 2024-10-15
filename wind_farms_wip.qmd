@@ -95,7 +95,7 @@ pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v15.geojson")
 # pines_turbines_test <- sf::read_sf("assets/Pine_Wind_Farm_test.geojson") %>%
 #                           filter(st_geometry_type(.) == "POINT")
 
-pines_turbines_test <- sf::read_sf("assets/Pines_Windfarm_Tower_Locations.kml")
+pines_turbines_test <- sf::read_sf("assets/Pines_Windfarm_Tower_Locations_Oct_2024.kml")
 
 oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
                       filter(abb_name == "Oberon")
@@ -134,10 +134,10 @@ leaflet(height="800px", width="1200px") %>%
              group = "Existing 500 kVA transmission line") %>%
   addCircleMarkers(data=pines_turbines_test,
                    group="Proposed Pines turbines",
-                   color="darkred",
-                   radius = 2,
+                   color="cyan",
+                   radius = 3,
                    stroke = FALSE,
-                   fillOpacity = 0.5,
+                   fillOpacity = 0.7,
                    weight=1) %>%
   addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
                    overlayGroups = c("The Pines exploration area",
