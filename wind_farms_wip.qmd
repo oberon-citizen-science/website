@@ -396,11 +396,23 @@ vshed_terra <- viewshed(x=localtif,
                         filename=paste0(wip_prefix, "terra_vshed_correction_validate.tif"),
                         overwrite=TRUE)
 
+vshed_tip_terra <- viewshed(x=localtif,
+                        loc=c(st_coordinates(pines_turbines_sf[125,])), 
+                        observer=290,
+                        target=1.8,
+                        curvcoef=0.85714,
+                        output="yes/no",
+                        filename=paste0(wip_prefix, "terra_vshed_tip_correction_validate.tif"),
+                        overwrite=TRUE)
+
 terra_raster <- terra::rast(paste0(wip_prefix, "terra_vshed_correction_validate.tif"))
+terra_tip_raster <- terra::rast(paste0(wip_prefix, "terra_vshed_tip_correction_validate.tif"))
 
 terra_raster <- terra::ifel(terra_raster <= 0, NA, terra_raster)
-
 terra_raster_20m <- terra::aggregate(terra_raster, fact=4, fun=max)
+
+terra_tip_raster <- terra::ifel(terra_tip_raster <= 0, NA, terra_tip_raster)
+terra_tip_raster_20m <- terra::aggregate(terra_tip_raster, fact=4, fun=max)
 
 rm(terra_raster)
 rm(localtif)
@@ -409,6 +421,9 @@ terra_no_correction_pal <- colorNumeric(c("red"), 1,
   na.color = "transparent")
 
 terra_pal <- colorNumeric(c("cyan"), 1,
+  na.color = "transparent")
+
+terra_tip_pal <- colorNumeric(c("pink"), 1,
   na.color = "transparent")
 
 pines_tower <- vect(cbind(st_coordinates(pines_turbines_sf[125,])), crs=crs(terra_raster_20m))
@@ -447,9 +462,14 @@ leaflet(height="800px", width="1200px") %>%
   addTiles(group = "OpenStreetMap") %>%
   addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
   addRasterImage(terra_raster_20m, 
-                 opacity=0.6, 
+                 opacity=0.5, 
                  colors = terra_pal,
                   group = "218m turbine nacelle viewshed",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_tip_raster_20m, 
+                 opacity=0.6, 
+                 colors = terra_tip_pal,
+                  group = "290m turbine blade tip viewshed",
                   maxBytes = 4 * 8330 * 8801) %>%
   addPolygons(data=pines_expl_area, 
               stroke=TRUE, 
@@ -465,7 +485,8 @@ leaflet(height="800px", width="1200px") %>%
   addLayersControl(baseGroups = c( "Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
                    overlayGroups = c( "Proposed turbine V77",
                                       "The Pines exploration area",
-                                      "218m turbine nacelle viewshed"),
+                                      "218m turbine nacelle viewshed",
+                                      "290m turbine blade tip viewshed"),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   addMeasure(
