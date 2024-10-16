@@ -245,3 +245,242 @@ Oberon Citizen Science Network is working on developing state-of-the-art capabil
 
 We welcome other ideas! Please [register your expression of interest](register_interest.html) if you would like to be involved in any of these potential projects.
 
+## Checking viewshed for proposed Pines turbine no. 77
+
+```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(rayshader)
+library(terrainr)
+library(raster)
+library(osmdata)
+library(leaflet)
+library(RColorBrewer)
+library(terra)
+library(terrainr)
+library(raster)
+library(osmdata)
+library(sf)
+
+terraOptions(progress=0)
+
+# paths to data files
+wip_prefix <- "_wip/"
+assets_prefix <- "assets/"
+downloaded_data_prefix <- "~/NSW_Government_Spatial_Services/"
+
+# Data source is the 5m resolution DEM (digital elevation maps) from the NSW Elevation Data Service
+# for Oberon and the neighbouring regions as named below.
+# https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=437c0697e6524d8ebf10ad0d915bc219
+
+wallerawang_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                  "Wallerawang-DEM-AHD_56_5m/Wallerawang-DEM-AHD_56_5m.asc"))
+orange_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                  "Orange-DEM-AHD_55_5m/Orange-DEM-AHD_55_5m.asc"))
+bathurst_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Bathurst-DEM-AHD_55_5m/Bathurst-DEM-AHD_55_5m.asc"))
+blayney_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                   "Blayney-DEM-AHD_55_5m/Blayney-DEM-AHD_55_5m.asc"))
+oberon_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                  "Oberon-DEM-AHD_55_5m/Oberon-DEM-AHD_55_5m.asc"))
+crookwell_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                     "Crookwell-DEM-AHD_55_5m/Crookwell-DEM-AHD_55_5m.asc"))
+katoomba_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Katoomba-DEM-AHD_56_5m/Katoomba-DEM-AHD_56_5m.asc"))
+taralga_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                   "Taralga-DEM-AHD_55_5m/Taralga-DEM-AHD_55_5m.asc"))
+burragorang_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                 "Burragorang-DEM-AHD_56_5m/Burragorang-DEM-AHD_56_5m.asc"))
+
+
+terra::writeRaster(wallerawang_rast, 
+                   paste0(wip_prefix, "wallerawang_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(orange_rast, 
+                   paste0(wip_prefix, "orange_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(bathurst_rast, 
+                   paste0(wip_prefix, "bathurst_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(blayney_rast, 
+                   paste0(wip_prefix, "blayney_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(oberon_rast, 
+                   paste0(wip_prefix, "oberon_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(crookwell_rast, 
+                   paste0(wip_prefix, "crookwell_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(katoomba_rast, 
+                   paste0(wip_prefix, "katoomba_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(taralga_rast, 
+                   paste0(wip_prefix, "taralga_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(burragorang_rast, 
+                   paste0(wip_prefix, "burragorang_dem.tif"), 
+                   overwrite=TRUE)
+
+rm(wallerawang_rast)
+rm(orange_rast)
+rm(bathurst_rast)
+rm(blayney_rast)
+rm(oberon_rast)
+rm(crookwell_rast)
+rm(katoomba_rast)
+rm(taralga_rast)
+rm(burragorang_rast)
+
+terrainr::merge_rasters(
+  c(paste0(wip_prefix, "wallerawang_dem.tif"),
+    paste0(wip_prefix, "orange_dem.tif"),
+    paste0(wip_prefix, "bathurst_dem.tif"),
+    paste0(wip_prefix, "blayney_dem.tif"),
+    paste0(wip_prefix, "oberon_dem.tif"),
+    paste0(wip_prefix, "crookwell_dem.tif"),
+    paste0(wip_prefix, "katoomba_dem.tif"),
+    paste0(wip_prefix, "taralga_dem.tif"),
+    paste0(wip_prefix, "burragorang_dem.tif")),
+   output_raster = paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"),
+  overwrite=TRUE)
+
+localtif <- terra::rast(paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"))  
+```
+
+```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+
+# Load turbine points
+palings_yard_turbines_untransformed_sf <- sf::read_sf(paste0(assets_prefix,
+                                                            "paling_yards_turbines.geojson"))
+palings_yard_turbines_sf <- st_transform(palings_yard_turbines_untransformed_sf, crs=crs(localtif))
+palings_yard_turbines_df <- as.data.frame(st_coordinates(palings_yard_turbines_sf))
+palings_yard_turbines_untransformed_df <- as.data.frame(st_coordinates(palings_yard_turbines_untransformed_sf))
+
+pines_turbines_untransformed_sf <- pines_turbines_test
+
+pines_turbines_sf <- st_transform(pines_turbines_untransformed_sf, crs=crs(localtif))
+pines_turbines_df <- as.data.frame(st_coordinates(pines_turbines_sf))
+pines_turbines_untransformed_df <- as.data.frame(st_coordinates(pines_turbines_untransformed_sf))
+
+vshed_terra_no_correction <- viewshed(x=localtif,
+                        loc=c(st_coordinates(pines_turbines_sf[125,])), 
+                        observer=218,
+                        target=1.8,
+                        curvcoef=0,
+                        output="yes/no",
+                        filename=paste0(wip_prefix, "terra_vshed_validate_no_correction.tif"),
+                        overwrite=TRUE)
+
+terra_raster_no_correction <- terra::rast(paste0(wip_prefix, "terra_vshed_validate_no_correction.tif"))
+
+terra_raster_no_correction <- terra::ifel(terra_raster_no_correction <= 0, NA, terra_raster_no_correction)
+
+terra_raster_no_correction_20m <- terra::aggregate(terra_raster_no_correction, fact=4, fun=max)
+rm(terra_raster_no_correction)
+
+vshed_terra <- viewshed(x=localtif,
+                        loc=c(st_coordinates(pines_turbines_sf[125,])), 
+                        observer=218,
+                        target=1.8,
+                        curvcoef=0.85714,
+                        output="yes/no",
+                        filename=paste0(wip_prefix, "terra_vshed_correction_validate.tif"),
+                        overwrite=TRUE)
+
+terra_raster <- terra::rast(paste0(wip_prefix, "terra_vshed_correction_validate.tif"))
+
+terra_raster <- terra::ifel(terra_raster <= 0, NA, terra_raster)
+
+terra_raster_20m <- terra::aggregate(terra_raster, fact=4, fun=max)
+
+rm(terra_raster)
+rm(localtif)
+
+terra_no_correction_pal <- colorNumeric(c("red"), 1,
+  na.color = "transparent")
+
+terra_pal <- colorNumeric(c("cyan"), 1,
+  na.color = "transparent")
+
+pines_tower <- vect(cbind(st_coordinates(pines_turbines_sf[125,])), crs=crs(terra_raster_20m))
+tower_dist <- distance(terra_raster_20m, pines_tower)
+
+terra_raster_20m_dist <- terra_raster_20m * tower_dist
+
+dist_pal <- colorNumeric(palette = "Reds", 
+                         domain = minmax(terra_raster_20m_dist), 
+                         reverse = TRUE,
+                         na.color = "transparent")
+
+binned_dist_pal <- colorBin(palette = "Reds", 
+                            domain = minmax(terra_raster_20m_dist),
+                            bins = c(800, 3200, 8100, 16100, 32200, 64400),
+                            reverse = TRUE,
+                            na.color = "transparent")
+
+```
+
+### Binary viewshed for proposed Pines turbine V77
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[125,1],
+          lat = pines_turbines_untransformed_df[125,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(terra_raster_20m, 
+                 opacity=0.6, 
+                 colors = terra_pal,
+                  group = "218m turbine nacelle viewshed",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addPolygons(data=pines_expl_area, 
+              stroke=TRUE, 
+              weight=1, 
+              fillOpacity=0.2, 
+              color="red",
+              group = "The Pines exploration area") %>%  
+  addMarkers(lng=pines_turbines_untransformed_df[125,1],
+             lat=pines_turbines_untransformed_df[125,2],  
+             label = "Proposed turbine V77",
+              group = "Proposed turbine V77",
+              labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c( "Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c( "Proposed turbine V77",
+                                      "The Pines exploration area",
+                                      "218m turbine nacelle viewshed"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+:::
+
