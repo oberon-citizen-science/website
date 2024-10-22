@@ -1,0 +1,159 @@
+---
+title: "Visualising the proposed Pines Wind Farm using Google Earth Pro"
+---
+
+## Introduction
+
+In October 2024, the developers of the Pines Wind Farm released a proposed layout of wind turbines. Background information on the proposed Pines Wind Farm as well as the proposed Palings Yard Wind Farm, both in the southern part of the Oberon local government area, and various aspects of these proposals which Oberon Citizen Science Network (OCSN) considers warrant further scientific and engineering investigation, can be found on the [wind farms page](wind_farms.html) on this web site..
+
+On this page OCSN provides instructions on how to use the free Google Earth Pro software to visualise the proposed Pines Wind Farm turbines, using a set of models which OCSN has prepared. Technical details are provided below for those who are interested. This is part of a series of initiatives by OCSN to provide the Oberon community with impartial, science-based, well-documented information to help inform the community enquiry into and debate about these development proposals and their potential impact on the local region.
+
+::: {.callout-note}
+The instructions on this page are based on notes prepared by [Dean Apostol](mailto:dean.apostol@gmail.com) and Emeritus Professor [James Palmer](mailto:palmer.jf@gmail.com), Scenic Expert for Tri-Cities C.A.R.E.S.,	SUNY College of Environmental Science & Forestry in the US. OCSN has been working closely with Professor Palmer on implementing and refining the improved wind farm visual impact assessments metrics which he has developed and published in the peer-reviewed scientific literature. Please see the relevant [series of blog posts](blog.html) on this web site which discusses these visual impact assessment metrics and the steps involved in calculating them, using the details for the proposed Palings Yard Wind Farm as an example. An updated set of these visual impact metrics is currently being prepared for the proposed Pines Wind Farm, and will appear on this web site in the near future.
+:::
+	
+## Motivation
+
+When a wind farm is first proposed, the almost universal reaction by people living in the affected community is “_What will it look like from my home?_”. Usually the formal Environmental Impact Statements (EIS) and other documentation required for government assessments of wind farm development proposals include a visual impact assessment, which typically includes photorealistic simulations of the proposed wind farm from a few viewpoints selected by the developer’s consultants. However, these viewpoints are  are unlikely to include views from many, or often any, private homes or properties. In addition, such visual impact assessments are usually only available when the EIS is released for public comment, which only just before the proposal is assessed by government. 
+
+In the case of the proposed Pines Wind Farm, the developers are offering to visit the residences and properties of interested community members to allow them to visualise the proposed Pines wind farm using augmented reality (AR) software on a tablet computer -- presumably this combines simulations of the wind turbines with a photo of the view from specific viewpoints at the community member's home or property (at the time of writing, this is unverified, but we will update this description of the Pines AR visualiation facility when more details are known). 
+
+Although such personalised use of AR software is commendable, the capacity of the Pines developer team to visit the homes or properties of every interested community member is obviously finite, and at this stage, technical details and documentation of the  accuracy and validity of such AR visualisations has not been made available by the Pines developers. For this reason, OCSN has prepared the visualisations provided here. These may be less sophisticated than the AR visualisations offered by the Pines developers, but they are accessible to anyone with access to a laptop or desktop computer, using entirely free software, and the methodology used in their preparation is open, fully documented and able to be reproduced by anyone who wishes to.
+
+## Getting started
+
+The goal of these instructions is to get you up and running using Google Earth Pro (GEP) software to visualise the proposed Pines Wind Farm from various viewpoints of your choice, including your home or property. One big reason to use Google Earth Pro is that the software is totally free and will run on any Microsoft Windows, Apple Mac or linux computer. After completing the steps described below, you may want to explore the view from other locations, as well as other features of Google Earth Pro.
+
+### Step 1: Download and install Google Earth Pro (GEP)
+
+Skip this step if you already have GEP installed. Please note that Google Earth is also available just via a web browser, without having to install any software, but the browser-only version cannot show the wind turbine models we have provided, so you must install GEP. To this this, open a web browser on your Windows or Mac computer and go to: [https://www.google.com/earth/about/versions/#earth-pro](https://www.google.com/earth/about/versions/#earth-pro).
+
+Select the “_Download Earth Pro on desktop_” box and then follow the instructions. This process should be straightforward -- it is just like installing any other software. It will be installed where software is normally installed on your computer. There is no cost, fee or subscription needed to download, install and use Google Earth Pro software -- it is entirely free.
+
+Once it is installed, you can open it by double clicking on the GEP icon. GEP is a fun program, allowing you to look a places all around the world, and even visit the moon and other planets.
+
+### Step 2: Download the Pines Wind Farm KMZ model file prepared by OCSN
+
+The 3D model of the Pines Wind Farm wind turbines prepared by OCSN is called `Pines_Wind_Farm_Model_Oct_2024.kmz`. Click on [this link](assets/Pines_Wind_Farm_Model_Oct_2024.kmz) to download it.
+
+Save it in a location that is easy for you to find on your computer -- perhaps create a folder for the Pines Wind Farm Model on your desktop or in Documents and put it there. Or just leave it in the Downloads folder on your computer, which is probably where it was saved to when you clinked on the link above.
+
+### Step 3: Open the `Pines_Wind_Farm_Model_Oct_2024.kmz` file in Google Earth Pro
+
+Double click on the `Pines_Wind_Farm_Model_Oct_2024.kmz` file and it will open in GEP.  Alternatively, from inside GEP you can select _File_ then _Open_ from the menu, and then select the `Pines_Wind_Farm_Model_Oct_2024.kmz` file from the folder where it is stored.
+
+::: {.callout-tip}
+If this is the first time you have used Google Earth Pro, there will be a floating window over the aerial map with tips about navigating Google Earth. It is worthwhile spending a few minutes learning how to navigate GEP by read the tips that are provided and clicking on the blue phrase, “_Learn more about how to navigate Google Earth_”. You can sign in if you have a Google account (e.g., you use GMail), but it is not necessary. When you are ready to move on, close the floating window by clicking the _Close_ button (you may wish to uncheck the _Show Tips at Start-up_ checkbox first). You can get the _Start-up Tips_ and other instructions from the _Help_ menu at any time. A more complete, though somewhat dated [Google Earth User Guide](http://earth.google.com/intl/ar/userguide/v4/index.htm) is also available. In addition you can always search on Google for help with any questions you may have -- there are lots of training videos on YouTube and other user advice available on how to make the most of GEP.
+
+There are also reference notes at the end of these instructions that help you to  identify GEP’s primary tools and controls. You may need to refer to those notes for more information on some of the GEP terms used here.
+:::
+
+In the _Places_ panel in upper left side of the GEP window you should see a folder named _Pines Wind Farm Model - Oct 2024_ that contains a list of suggested _Viewpoints_ to get you started, as well as 8 different sets of 3D wind turbine models, which are explained in more detail below. But first, select (highlight) the _Pines Wind Farm Model - Oct 2024_ entry in the _Places_ pane,  choose _File_ then _Save_ in the menu and then select _Save to My Places_. You can also right-click on _Pines Wind Farm Model - Oct 2024_ in the _Places_ pane and select _Save to My Places_ -- that does the same thing. Now when you start GEP next time, the _Pines Wind Farm Model - Oct 2024_ item  will already be installed. Do not click on the KMZ file again or it will be loaded twice. To remove _Pines Wind Farm Model - Oct 2024_ from GEP, right-click on it and select _Delete_. 
+
+Click on the greater than symbol (>) to the left of _Pines Wind Farm Model - Oct 2024_ to see its contents: 
+
+*	_Viewpoints_ contains some suggested viewpoints to assess the visual impact of the proposed wind farm project. Double-clicking on any of them will take you to an aerial view above that viewpoint. Of course you can choose any viewpoint you wish -- these are just some suggestions to get you started.
+*	below _Viewpoints_ you will see a list of eight different sets of models. By default, the first one, called _Reference 8MW turbine - wind W_ should have the display box to its left already ticked. If you click on the greater than symbol to the left of that, the folder will open to reveal the individual tower models. Note the labelling/numbering of the towers is not related to any official project naming system, rather they are arbitrary labels assigned by OCSN for the purposes of building the model.
+
+Now you are ready to explore how the proposed Pines wind turbines might appear from any location in the Oberon region (and beyond).
+
+::: {.callout-caution title="About the eight sets of 3D models" collapse=true}
+As of mid-October 2024, the Pines developers have released only limited information about the proposed layout and details of the wind farm. What we know is gleened from this [press release](assets/Pines_Press_Release_Draft_Turbine_Layout_10_Oct_2024.pdf) and from [this map](https://api.mapbox.com/styles/v1/klaraahlin/cm29d1yj300k401pi0i6ncf4p.html?access_token=pk.eyJ1Ijoia2xhcmFhaGxpbiIsImEiOiJOOUlGSVI0In0.68r4s52l711tWGnj0kwUsA&#11/-33.967/149.6921/0/13) on the Pines Wind Farm web site (static archived screenshot available [here](assets/Pines_layout_10_Oct_2024.png)). From these we know the proposed locations of the "approximately 250" turbines (242 actual locations are shown on the map) and that the entire wind farm will have a nominal generating capacity of 2 gigawatts (2 GW or 2,000 MW). That means that the nominal or "nameplate" capacity of each turbine will be around 8 megawatts (8 MW) (2000 MW &divide; 250 = 8 MW). [Elsewhere on the Pines web site](https://www.thepineswindfarm.com.au/about-the-project) it states that the turbines will be up to 300 metres tall. All currently available 8 MW terrestrial wind turbines are well under 300 m tall at the uppermost tip of the blade arc. Therefore we have chosen to include two types of 3D model. 
+
+The first uses the dimensions for a reference 8 MW wind turbine published in [this scientific paper](https://iopscience.iop.org/article/10.1088/1742-6596/753/9/092013/pdf) -- the specific dimensions are a tower height of 110 m, a tower base diameter of 7.7 m, and a tower top diameter of 5 m, nacelle diminsions of 20 m x 7.5 m x 7.5 m, a rotor diameter of 164 m, a blade root length of 2.5 m and diameter 2 m, a blade chord at the root of 5.4 m with a 50% taper to the tip, and a blade twist of 30 degrees over its length. This turbine is thus 192 m high at the blade tip at the top of its arc. 
+
+The second 3D model uses the same dimensions for the turbine nacelle and blades but makes the tower 212.5 m tall, to give an overall height of 300 m to the blade tip at the top of its arc. The tower diameter at the base was increased using engineering principles to account for the additional stresses experienced by such a tall tower. OCSN acknowledges that such a turbine is very unlikely to be used, but it has been included to illustrate the impact on visibility of turbines at the maximum height allowed for the proposed Pines Wind Farm under its planning permit. It is more likely that the developers would use larger but fewer turbines if a 2 GW total capacity is retained. Currently available 12 or 14 MW turbines are between 260 m and 280 m high. However, we do not know and cannot guess where the developers might chose to locate a smaller number of larger turbines, so we have stuck to showing 242 turbines, either 192 m high or 300 m high, at this stage. These models can and will be updated if and when the Pines developers release further information about the proposed turbine types and dimensions.
+
+For each of these two 3D turbine models, we have provided four different sets of turbines models. Wind turbines use a yaw motor to rotate them to face the wind, and thus they may differ in appearance from any given location depending on the wind direction. To model this, we have given each of the 242 turbines a random orientation but generally facing a prevailing wind direction: West (W), South-west (SW), North-west (NW) or East (E). 
+
+To see the effect of the different turbine heights, and/or different prevailing wind directions, you can select which of the sets of model is visible in the _Places_ pane on the left. Generally you should only look at one of the eight provided model sets at one time, but you can look at several or all of them if you wish (but that will be in no way realistic, of course).
+:::
+
+
+### Step 4: View from your home or property
+
+We will start by seeing if the proposed wind turbines will be visible from your home. In the _Search_ panel of the side Bar in the top left of the GEP window, type your home address and click Search. This will create a _Placemark_ on the map and bring you to an aerial view of the address at an elevation a bit over 1000 m above the ground. Next we need to get down to a ground-level view.
+
+Take the mouse cursor to the upper right side of the window and click-and-hold on the orange _Pegman_ symbol. If the street in front or near your house turns blue, drag and drop Pegman’s feet to where you want the viewpoint to be. Viola! You are in Street View and you are looking at actual photographs taken by a Google StreetView vehicle at some stage. At the bottom of the window is the date of the photograph, its latitude and longitude and elevation (ignore “eye alt”). The eye-level of all Street View photos is approximately 3 m, which is a bit higher than normal eye-level. Of course, no Pines Wind Farm turbines are visible in these actual Street View photographs, since they do not exist, they are only proposed at this stage.
+
+::: {.aside}
+There are alternate ways to get to _Ground View_ mode. You could simply click near the Placemark; keep clicking but not too fast, until you are at Ground View. Or you could hold the cursor/crosshairs over the location you want for a viewpoint and use the mouse scroll-wheel to get down to ground-level.
+:::
+
+To see the 3D models of the wind turbines, you need to change to _Terrain View_ by clicking on the building icon at the top of the _Navigation Tools_ which is at the upper-right of the GEP window when you are in _Street View_ mode. Use the circular _Look Around_ tool’s left or right arrows to pan around the view while staying in place. (Do not use the up and down arrows or the _Move Around_ tool yet.) Do you see any turbines? If you do, pan until the largest turbine is in the centre of the screen where it will then be in the proper scale (provided you have not used the _Zoom_ tool to enlarge it). 
+
+If you do not see turbines, finish reading the instructions for this step and then go to the next step.
+
+Note that if _Street View_ photographs are not available for your address or property, the steps above will still work -- you can still drag the little orange _Pegman_ to your desired viewpoint -- but it will immediately enter _Terrain View_ mode (in which the turbine models are displayed if they are visible from that viewpoint location).
+
+Expand the window to full screen size. Notice that the view stays the same -- it is just larger. The view always defaults to approximately a 90 &deg; angle of view in both _Terrain View_ and _Street View_. The appropriate viewing distance for this view is half of its width -- that is, you should position your eyes half the screen width away from the screen, which is really close. If your eyes are that distance from the screen, the turbines will be appropriately scaled as you would se them if they actually existed. Do not use the _Zoom Tool_ because it changes the angle of view and then the appropriate viewing distance will be unknown. (If you do move the zoom slider, you can reset to default zoom for correct visual assessment by exiting the ground-level view using the _Exit ground-level view_ button at the upper right of the GEP window, and then returning the ground-level view again).
+
+If _Street View_ photographs are available at your chosen viewpoint, you can move the mouse cursor to the upper right corner of the screen and switch back to _Street View_ by clicking on the blueish _Pegman_ icon. Check that the horizon in _Street View_ matches the horizon in _Terrain View_ by switching back and forth. As you switch back and forth, note whether the vegetation and buildings in _Street View_ would screen any turbines visible in _Terrain View_.
+
+While not perfect, this gives you a good sense of whether the turbines will be visible from this particular viewpoint. If _Street View_ is not available at a viewpoint location, then it is not possible to assess whether nearby trees or buildings will screen off sight of the turbines. If any trees are in the distance, this deficiency will make little difference, because the wind turbines tower over all tress, but it does make a difference if there are nearby trees between your viewpoint and the turbines. One way of checking this is to take some static snapshots in GEP (details below), transfer them to your smartphone of a tablet computer, and take them outside to the actual viewpoint to see if nearby trees or buildings obscure the turbines.
+
+### Step 5: Moving around to see turbines
+
+The next question is how extensive are views of the turbine in your neighbourhood. Use the _Look Around_ tool to face a direction you want to move -- or click-and-hold and swipe sideways to rotate the view. Move forward in _Street View_ or _Terrain View_ by clicking on the forward or backward arrows, or to move forward faster, double-click on a location further down the road. Be patient -- using mouse clicks to navigate can be finnicky. If double-clicking does not work, use the mouse scroll-wheel.
+
+In _Terrain View_ you can move off the road (but there likely will not be corresponding _Street View_ photos off the road). Rotate the view to the direction you want to go (the _Look Around_ tool will show where north is relative to the direction you are facing). Then move straight forward using the scroll-wheel, or double-click on a location you want to move toward.
+
+If you stay on a road for which _Street View_ photos are available, switching back and forth between the _Terrain View_ and _Street View_ gives you some idea of how often the turbines will be screened or not by nearby trees and buildings.
+
+### Step 6: View settings to improve the visual contrast
+
+Sometimes it may be difficult to see the turbines with GEP’s default settings, which do not include the variable effects of sun lighting. GEP can simulate sunlight for a specific time of day (and the night sky after sunset). When the turbines are front lit they will appear lighter, when they are backlit they will be darker. In the Tool Bar at the top of the GEP window click on the _Show Sunlight_ icon of the rising sun. It brings up a slider that controls the sun’s angle for the time of day. 
+
+Another adjustment changes the sky to be lighter and more vibrant. In Windows, open the GEP Options in the Tools menu (on an Apple Mac, open Preferences in the Google Earth Pro menu) and check Photorealistic Atmosphere Rendering in the 3D View tab.
+
+### Step 7: Examine different turbine heights and wind directions
+
+As noted in the _About the eight sets of 3D models_ call-out box above, we have provided eights sets of 3D turbine models -- two different turbine heights for each of four prevailing wind directions. To see the effect of the different turbine heights, and/or different prevailing wind directions, you can select which of the sets of model is visible in the _Places_ pane on the left. Generally you should only look at one of the eight provided model sets at one time, but you can look at several or all of them if you wish (but that will be in no way realistic, of course).
+
+### Step 8: Saving a viewpoint
+
+If you have found a view that you want to save so you can come back to it, you can do that in _Terrain View_. First use the _Look Around_ tool to put the most prominent turbine in the centre of the image and the horizon in the middle of the image. Then click on the _Add Placemark_ tool (it looks like a yellow pushpin) in the Tool Bar. This brings up a window: type in the viewpoint name, and make sure that the Altitude is set to _Clamped to Ground_. Then click OK. It should be saved under _My Places_ in the _Places_ panel, though it may be somewhere else in the _Places_ panel.
+
+Now you can always get back to that view. Click the _Exit ground-level view_ button in the upper right corner of the window (if it is not visible, just move around the view a bit). The Placemark will become visible from an elevated view. Either double-click on the Placemark in _My Places_, or double-click at the base of the Placemark to retrieve the view.
+
+You can also save a view as a static .jpg file which you can email, share on social media and so on. In the _File_ menu, select _Save_, then _Save Image_. Select _Map Options_ to control the information displayed with the view. Click in the _Untitled Map_ box to title the image. In the upper left corner is the Legend, and you can turn features that may be in the view on or off. Adjust the image resolution -- the higher the better, though it means a larger file. Then click _Save Image_.
+
+### Step 9: Visit the provided viewpoints
+
+You may also wish to explore the views of the proposed wind farm from the viewpoints provided. Visiting the **Prison Farm** is worthwhile -- it is right amongst and quite close to several of the proposed turbines. 
+
+## Google Earth Pro reference notes
+
+### Introduction
+
+These notes are intended to help you locate the basic tools needed to get around in Google Earth Pro. They were created on an Apple Mac, so the images may be slightly different on a Microsoft Windows computer. 
+
+### Home Screen
+
+When you open the `Pines_Wind_Farm_Model_Oct_2024.kmz` file, you will see a screen something like that shown below:
+
+![Home view in Google Earth Pro](assets/gep_home_view.png)
+ 
+The Side Bar includes three panels which are collapsed or expanded by clicking on the triangle  or caret mark: 
+
+* **Search**. Locate your home or any place in the world.
+* **Places**. This is where Placemarks are kept. 
+* **Layers**. This panel contains various map features, such as roads, terrain, boundaries and names.
+
+The **Tool Bar** at the tope of the GEP window includes many useful tools, such as a Ruler for measurements, Sun to adjust the direction of sunlight, or creating features such as a Placemark, Polygon or Path. Placing the mouse cursor over a tool reveals its purpose.
+
+The **Status Bar** atthge bottom left of the display provides the date of the image, the Latitude/Longitude coordinates, and the ground and viewer elevation.
+
+### Navigation tools for Earth or Map View modes
+
+* **Look Around**. This is the circular control at the upper right of the GEP window. It moves the map or view around the viewer. Clicking the left and right arrows rotates the view; the up and down arrows change the tilt of the view. Click and hold on the N to move it around to set the direction of north. 
+* **Move Around**. This is the circular control immediately below the **Look Around** control. It moves the viewer around in the map.
+* **Pegman**. Dragging Pegman on to the map changes the screen to Street View (and/or Terrain View). Click and drag Pegman onto the map and the screen changes to Terrain View (make sure that Terrain is checked in the Layers panel). When Pegman is placed on a blue road, the screen changes to Street View. 
+* **Zoom**. This is the vertical slider control below Pegman. Moves the view closer or further away.
+
+### Navigation tools for Ground or Street View modes
+
+*	**Ground View**. This is the small box in the upper-right corner with a little Pegman icon and a little building icon. It allows you to select Pegman’s Street View (if available) or Terrain View, and the button to its right labelled _Exit ground-level view_ exits back to Earth View.
+* **Look Around**. This moves the map or view around the viewer. Clicking the left and right arrows rotates the view; the up and down arrows change the tilt of the view. Click and hold on the N to move it around to set the direction of north. 
+* **Move Around**. This moves the viewer around in the map.
+* **Zoom**. Moves the view closer or further away.
