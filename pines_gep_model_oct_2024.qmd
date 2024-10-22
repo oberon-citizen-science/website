@@ -1,6 +1,13 @@
 ---
 title: "Visualising the proposed Pines Wind Farm using Google Earth Pro"
+lightbox: true
 ---
+
+::: {.callout-important title="Disclaimer"}
+The three dimensional (3D) wind turbine models provided on this page and the associated instructional material for their use are provided by Oberon Citizen Science Network Ltd (OCSN) as a community service. As such, they have been created on a best-effort basis  with very limited resources and, at this stage, with only the very incomplete information provided by the Pines Wind farm developers on the characteristics of the wind turbines they propose to install. Please bear this in mind. Although we have taken care to ensure that the information used to create these models is as accurate as possible, we do not warrant that they are free from errors, either in the underlying data or in our efforts to use it, and thus you use these 3D models at your own risk. All of the sources and methods used are documented and all computer program code and data files are available for inspection and re-use.
+
+OCSN will undertake to update and improve these models as more and better information about the proposed wind farms becomes available.
+:::
 
 ## Introduction
 
@@ -58,26 +65,45 @@ Click on the greater than symbol (>) to the left of _Pines Wind Farm Model - Oct
 Now you are ready to explore how the proposed Pines wind turbines might appear from any location in the Oberon region (and beyond).
 
 ::: {.callout-caution title="About the eight sets of 3D models" collapse=true}
-As of mid-October 2024, the Pines developers have released only limited information about the proposed layout and details of the wind farm. What we know is gleened from this [press release](assets/Pines_Press_Release_Draft_Turbine_Layout_10_Oct_2024.pdf) and from [this map](https://api.mapbox.com/styles/v1/klaraahlin/cm29d1yj300k401pi0i6ncf4p.html?access_token=pk.eyJ1Ijoia2xhcmFhaGxpbiIsImEiOiJOOUlGSVI0In0.68r4s52l711tWGnj0kwUsA&#11/-33.967/149.6921/0/13) on the Pines Wind Farm web site (static archived screenshot available [here](assets/Pines_layout_10_Oct_2024.png)). From these we know the proposed locations of the "approximately 250" turbines (242 actual locations are shown on the map) and that the entire wind farm will have a nominal generating capacity of 2 gigawatts (2 GW or 2,000 MW). That means that the nominal or "nameplate" capacity of each turbine will be around 8 megawatts (8 MW) (2000 MW &divide; 250 = 8 MW). [Elsewhere on the Pines web site](https://www.thepineswindfarm.com.au/about-the-project) it states that the turbines will be up to 300 metres tall. All currently available 8 MW terrestrial wind turbines are well under 300 m tall at the uppermost tip of the blade arc. Therefore we have chosen to include two types of 3D model. 
+As of mid-October 2024, the Pines developers have released only limited information about the proposed layout and details of the wind farm. What we know is gleened from this [press release](assets/Pines_Press_Release_Draft_Turbine_Layout_10_Oct_2024.pdf) and from [this map](https://api.mapbox.com/styles/v1/klaraahlin/cm29d1yj300k401pi0i6ncf4p.html?access_token=pk.eyJ1Ijoia2xhcmFhaGxpbiIsImEiOiJOOUlGSVI0In0.68r4s52l711tWGnj0kwUsA&#11/-33.967/149.6921/0/13) on the Pines Wind Farm web site (static archived screenshot available [here](assets/Pines_layout_10_Oct_2024.png)). From these we know:
 
-The first uses the dimensions for a reference 8 MW wind turbine published in [this scientific paper](https://iopscience.iop.org/article/10.1088/1742-6596/753/9/092013/pdf) -- the specific dimensions are a tower height of 110 m, a tower base diameter of 7.7 m, and a tower top diameter of 5 m, nacelle diminsions of 20 m x 7.5 m x 7.5 m, a rotor diameter of 164 m, a blade root length of 2.5 m and diameter 2 m, a blade chord at the root of 5.4 m with a 50% taper to the tip, and a blade twist of 30 degrees over its length. This turbine is thus 192 m high at the blade tip at the top of its arc. 
+* the proposed locations of the "approximately 250" turbines (242 actual locations are shown on the map);
+* that the entire wind farm will have a nominal generating capacity of 2 gigawatts (2 GW or 2,000 MW);
+  * that means that the nominal or "nameplate" capacity of each turbine will be around 8 megawatts (8 MW) (2000 MW &divide; 250 = 8 MW);
+* as stated [lsewhere on the Pines web site](https://www.thepineswindfarm.com.au/about-the-project) the turbines may be up to 300 metres tall. 
+  
+All currently available 8 MW terrestrial wind turbines are well under 300 m tall at the uppermost tip of the blade arc, even when site-specific towers are used. Thus there is no single set of turbine dimensions which satisfies all the currently-known criteria (as listed above). We have therefore we have chosen to include two types of 3D model. 
 
-The second 3D model uses the same dimensions for the turbine nacelle and blades but makes the tower 212.5 m tall, to give an overall height of 300 m to the blade tip at the top of its arc. The tower diameter at the base was increased using engineering principles to account for the additional stresses experienced by such a tall tower. OCSN acknowledges that such a turbine is very unlikely to be used, but it has been included to illustrate the impact on visibility of turbines at the maximum height allowed for the proposed Pines Wind Farm under its planning permit. It is more likely that the developers would use larger but fewer turbines if a 2 GW total capacity is retained. Currently available 12 or 14 MW turbines are between 260 m and 280 m high. However, we do not know and cannot guess where the developers might chose to locate a smaller number of larger turbines, so we have stuck to showing 242 turbines, either 192 m high or 300 m high, at this stage. These models can and will be updated if and when the Pines developers release further information about the proposed turbine types and dimensions.
+The first uses the dimensions for a reference 8 MW wind turbine published in [this scientific paper](https://iopscience.iop.org/article/10.1088/1742-6596/753/9/092013/pdf) -- the specific dimensions are:
 
-For each of these two 3D turbine models, we have provided four different sets of turbines models. Wind turbines use a yaw motor to rotate them to face the wind, and thus they may differ in appearance from any given location depending on the wind direction. To model this, we have given each of the 242 turbines a random orientation but generally facing a prevailing wind direction: West (W), South-west (SW), North-west (NW) or East (E). 
+* tower height: 110 m
+* tower base diameter: 7.7 m
+* tower top diameter: 5 m
+* nacelle dimensions: 20 m x 7.5 m x 7.5 m
+* rotor diameter: 164 m
+* blade root length: 2.5 m
+* blade root diameter: 2 m
+* blade chord at the root: 5.4 m
+* blade taper to the tip: 50%
+* blade twist over its length: 30&deg;
+
+Thus this turbine is 192 m high at the blade tip at the top of its arc. 
+
+The second 3D model uses the same dimensions for the turbine nacelle and blades but makes the tower 212.5 m tall, to give an overall height of 300 m to the blade tip at the top of its arc. The tower diameter at the base was increased using engineering principles to account for the additional stresses experienced by such a tall tower. OCSN acknowledges that such a turbine is very unlikely to be used, but it has been included to illustrate the impact on visibility of turbines which are at the maximum height allowed for the proposed Pines Wind Farm under its planning permit. It is more likely that the developers would use larger but fewer turbines if a 2 GW total wind farm capacity is retained. Currently available 12 or 14 MW turbines are between 260 m and 280 m high. However, we do not know and cannot guess where the developers might chose to locate a smaller number of larger turbines, so we have stuck to showing 242 turbines, either 192 m high or 300 m high, in the locations provided bt the Pines developers on their web site, at this stage. These models can and will be updated if and when the Pines developers release further information about the proposed turbine types and dimensions.
+
+For each of these two 3D turbine models, we have provided four different sets of turbines models. Horizontal-axis wind turbines use a yaw motor to rotate them to face the wind, and thus they may differ in appearance when viewed from any given location depending on the wind direction. To model this, we have given each of the 242 turbines a normally-distributed random orientation with a mean heading of a prevailing wind direction: West (W), South-west (SW), North-west (NW) or East (E). 
 
 To see the effect of the different turbine heights, and/or different prevailing wind directions, you can select which of the sets of model is visible in the _Places_ pane on the left. Generally you should only look at one of the eight provided model sets at one time, but you can look at several or all of them if you wish (but that will be in no way realistic, of course).
 :::
-
 
 ### Step 4: View from your home or property
 
 We will start by seeing if the proposed wind turbines will be visible from your home. In the _Search_ panel of the side Bar in the top left of the GEP window, type your home address and click Search. This will create a _Placemark_ on the map and bring you to an aerial view of the address at an elevation a bit over 1000 m above the ground. Next we need to get down to a ground-level view.
 
-Take the mouse cursor to the upper right side of the window and click-and-hold on the orange _Pegman_ symbol. If the street in front or near your house turns blue, drag and drop Pegman’s feet to where you want the viewpoint to be. Viola! You are in Street View and you are looking at actual photographs taken by a Google StreetView vehicle at some stage. At the bottom of the window is the date of the photograph, its latitude and longitude and elevation (ignore “eye alt”). The eye-level of all Street View photos is approximately 3 m, which is a bit higher than normal eye-level. Of course, no Pines Wind Farm turbines are visible in these actual Street View photographs, since they do not exist, they are only proposed at this stage.
+Take the mouse cursor to the upper right side of the window and click-and-hold on the orange _Pegman_ symbol. If the street in front or near your house turns blue, drag and drop Pegman’s feet to where you want the viewpoint to be. Viola! You are in _Street View_ and you are looking at actual photographs taken by a Google StreetView vehicle at some stage. At the bottom of the window is the date of the photograph, its latitude and longitude and elevation (ignore “eye alt”). The eye-level of all _Street View_ photos is approximately 3 m, which is a bit higher than normal eye-level. Of course, no Pines Wind Farm turbines are visible in these actual _Street View_ photographs, since they do not exist, they are only proposed at this stage.
 
 ::: {.aside}
-There are alternate ways to get to _Ground View_ mode. You could simply click near the Placemark; keep clicking but not too fast, until you are at Ground View. Or you could hold the cursor/crosshairs over the location you want for a viewpoint and use the mouse scroll-wheel to get down to ground-level.
+There are alternate ways to get to _Ground View_ mode. You could simply click near the _Placemark_; keep clicking but not too fast, until you are at Ground View. Or you could hold the cursor/crosshairs over the location you want for a viewpoint and use the mouse scroll-wheel to get down to ground-level.
 :::
 
 To see the 3D models of the wind turbines, you need to change to _Terrain View_ by clicking on the building icon at the top of the _Navigation Tools_ which is at the upper-right of the GEP window when you are in _Street View_ mode. Use the circular _Look Around_ tool’s left or right arrows to pan around the view while staying in place. (Do not use the up and down arrows or the _Move Around_ tool yet.) Do you see any turbines? If you do, pan until the largest turbine is in the centre of the screen where it will then be in the proper scale (provided you have not used the _Zoom_ tool to enlarge it). 
@@ -114,7 +140,7 @@ As noted in the _About the eight sets of 3D models_ call-out box above, we have 
 
 If you have found a view that you want to save so you can come back to it, you can do that in _Terrain View_. First use the _Look Around_ tool to put the most prominent turbine in the centre of the image and the horizon in the middle of the image. Then click on the _Add Placemark_ tool (it looks like a yellow pushpin) in the Tool Bar. This brings up a window: type in the viewpoint name, and make sure that the Altitude is set to _Clamped to Ground_. Then click OK. It should be saved under _My Places_ in the _Places_ panel, though it may be somewhere else in the _Places_ panel.
 
-Now you can always get back to that view. Click the _Exit ground-level view_ button in the upper right corner of the window (if it is not visible, just move around the view a bit). The Placemark will become visible from an elevated view. Either double-click on the Placemark in _My Places_, or double-click at the base of the Placemark to retrieve the view.
+Now you can always get back to that view. Click the _Exit ground-level view_ button in the upper right corner of the window (if it is not visible, just move around the view a bit). The _Placemark_ will become visible from an elevated view. Either double-click on the _Placemark_ in _My Places_, or double-click at the base of the _Placemark_ to retrieve the view.
 
 You can also save a view as a static .jpg file which you can email, share on social media and so on. In the _File_ menu, select _Save_, then _Save Image_. Select _Map Options_ to control the information displayed with the view. Click in the _Untitled Map_ box to title the image. In the upper left corner is the Legend, and you can turn features that may be in the view on or off. Adjust the image resolution -- the higher the better, though it means a larger file. Then click _Save Image_.
 
@@ -132,28 +158,153 @@ These notes are intended to help you locate the basic tools needed to get around
 
 When you open the `Pines_Wind_Farm_Model_Oct_2024.kmz` file, you will see a screen something like that shown below:
 
-![Home view in Google Earth Pro](assets/gep_home_view.png)
+![Home view in Google Earth Pro with the Pines Wind farm Oct 2024 3D model file loaded](assets/gep_home_view.png)
  
 The Side Bar includes three panels which are collapsed or expanded by clicking on the triangle  or caret mark: 
 
 * **Search**. Locate your home or any place in the world.
-* **Places**. This is where Placemarks are kept. 
+* **Places**. This is where _Placemarks_ are kept. 
 * **Layers**. This panel contains various map features, such as roads, terrain, boundaries and names.
 
-The **Tool Bar** at the tope of the GEP window includes many useful tools, such as a Ruler for measurements, Sun to adjust the direction of sunlight, or creating features such as a Placemark, Polygon or Path. Placing the mouse cursor over a tool reveals its purpose.
+The **Tool Bar** at the top of the GEP window includes many useful tools, such as a Ruler for measurements, Sun to adjust the direction of sunlight, or creating features such as a _Placemark_, _Polygon_ or _Path_. Placing the mouse cursor over a tool reveals its purpose.
+
+![Google Earth Pro Tool Bar](assets/gep_toolbar.png)
 
 The **Status Bar** atthge bottom left of the display provides the date of the image, the Latitude/Longitude coordinates, and the ground and viewer elevation.
 
 ### Navigation tools for Earth or Map View modes
 
+::: {.aside}
+![Google Earth Pro navigation tools in Earth or Map View modes](assets/gep_nav_controls.png)
+:::
+
 * **Look Around**. This is the circular control at the upper right of the GEP window. It moves the map or view around the viewer. Clicking the left and right arrows rotates the view; the up and down arrows change the tilt of the view. Click and hold on the N to move it around to set the direction of north. 
 * **Move Around**. This is the circular control immediately below the **Look Around** control. It moves the viewer around in the map.
-* **Pegman**. Dragging Pegman on to the map changes the screen to Street View (and/or Terrain View). Click and drag Pegman onto the map and the screen changes to Terrain View (make sure that Terrain is checked in the Layers panel). When Pegman is placed on a blue road, the screen changes to Street View. 
-* **Zoom**. This is the vertical slider control below Pegman. Moves the view closer or further away.
+* **Pegman**. Dragging _Pegman_ on to the map changes the screen to _Street View_ (and/or _Terrain View_). Click and drag _Pegman_ onto the map and the screen changes to _Terrain View_ (make sure that Terrain is checked in the _Layers_ panel). When _Pegman_ is placed on a blue road, the screen changes to Street View. 
+* **Zoom**. This is the vertical slider control below _Pegman_. Moves the view closer or further away.
 
-### Navigation tools for Ground or Street View modes
+### Navigation tools for _Terrain View_ or _Street View_ modes
 
-*	**Ground View**. This is the small box in the upper-right corner with a little Pegman icon and a little building icon. It allows you to select Pegman’s Street View (if available) or Terrain View, and the button to its right labelled _Exit ground-level view_ exits back to Earth View.
+::: {.aside}
+![Google Earth Pro navigation tools in _Street View_ or _Terrain View_ modes](assets/gep_nav_tools_street_view.png)
+:::
+
+*	**Ground View**. This is the small box in the upper-right corner with a little _Pegman_ icon and a little building icon. It allows you to select _Pegman_’s _Street View_ (if available) or Terrain View, and the button to its right labelled _Exit Street View_ or _Exit ground-level view_ exits back to _Earth View_ or _Map View_.
 * **Look Around**. This moves the map or view around the viewer. Clicking the left and right arrows rotates the view; the up and down arrows change the tilt of the view. Click and hold on the N to move it around to set the direction of north. 
 * **Move Around**. This moves the viewer around in the map.
-* **Zoom**. Moves the view closer or further away.
+* **Zoom**. The vertical slider moves the view closer or further away.
+
+## Technical details
+
+The proposed locations of the Pines Wind Farm wind turbines were digitised manually using the information provied in the map on the Pines Wind farm web site home page (links given above). As such, there may be minor errors in the assigned positions for each of the proposed turbines, but these errors are unlikely to be greater than 10 or 20 metres. OCSN did contact the Pines Wind farm developers to request a digital file of the proposed turbine coordinates but did not receive the benefit of a reply. Our version of the proposed turbine coordinates are available in [this KML (Keyhole Markup Language) file](assets/Pines_Windfarm_Tower_Locations_Oct_2024.kml). 
+
+We then extracted transformed coordinate data from this KML file using the following `R` code:
+
+```{r, eval=FALSE, echo=TRUE}
+library(tidyverse)
+library(sf)
+
+sf::read_sf("assets/Pines_Windfarm_Tower_Locations_Oct_2024.kml") |>
+  mutate(lon = sf::st_coordinates(geometry)[,1],
+         lat = sf::st_coordinates(geometry)[,2]) |>
+  write_csv("assets/pines_turbines_oct_2024_lat_long.csv")
+```
+
+The resulting CSV file of coordinates is avilable [here](assets/assets/pines_turbines_oct_2024_lat_long.csv).
+
+We then used the Python package `collada_wt` available at [this GitHub repository](https://github.com/charlie9578/wind-turbine-kml) (the package is also installable via `pip`) to create 3D Collada format wind turbine models for use in Google Earth Pro. The `simplekml` package for Python (installable using `pip`) was used to add the 3D models at each of the 242 proposed turbine locations to a KML file. As described in the _About the eight sets of 3D models_ call-out box above, eight sets of models were created. A normally-distributed random variable was used to set the heading for each tower. The Python code used is shown below:
+
+```{python, eval=FALSE, echo=TRUE}
+import collada_wt
+import simplekml
+import csv
+import random
+
+random.seed(a=12345)
+
+# mu and sigma for heading distribution of turbines
+heading_mu=0.0
+heading_sigma=0.05
+
+# heading offsets for prevailing wind
+wind_headings = {'W': 360, 'E': 180, 'SW': 315, 'NW': 45}
+
+turbine_models = {'8MW_reference_turbine': '8MW reference model', \
+                  '8MW_300m_turbine': '8MW 300m comparison model'} 
+                  
+# create turbine models
+
+# base model
+# using dimensions for reference 8MW turbine from this paper:
+# https://iopscience.iop.org/article/10.1088/1742-6596/753/9/092013/pdf
+
+collada_wt_8mw_ref = collada_wt.create_turbine(tower_height=110,
+                   tower_bot_diameter = 7.7,
+                   tower_top_diameter = 5,
+                   nacelle_height = 7.5,
+                   nacelle_length = 20,
+                   nacelle_overhang = 7.5,
+                   rotor_diameter = 164,
+                   blade_root_length = 2.5,
+                   blade_root_diameter = 2,
+                   blade_chord=5.4,
+                   blade_tip_size = 0.5,
+                   blade_twist=30,                   
+                  )
+
+collada_wt_8mw_ref.write(turbine_8mw_reference_model + '.dae')
+
+# 300m model
+# using dimensions for reference 8MW turbine from this paper:
+# https://iopscience.iop.org/article/10.1088/1742-6596/753/9/092013/pdf
+# but with much higher (and unlikely) tower
+
+collada_wt_8mw_300m = collada_wt.create_turbine(tower_height=212.5,
+                   tower_bot_diameter = 14.9,
+                   tower_top_diameter = 5,
+                   nacelle_height = 7.5,
+                   nacelle_length = 20,
+                   nacelle_overhang = 7.5,
+                   rotor_diameter = 164,
+                   blade_root_length = 2.5,
+                   blade_root_diameter = 2,
+                   blade_chord=5.4,
+                   blade_tip_size = 0.5,
+                   blade_twist=30,                   
+                  )
+
+collada_wt_8mw_300m.write(turbine_8mw_300m_model + '.dae')
+
+for wind_heading_key in wind_headings.keys():
+    for turbine_model_key in turbine_models.keys():        
+
+        # create kml for Google Earth
+        kml = simplekml.Kml()
+
+        # read the proposed Pines turbine locations
+        with open('pines_turbines_oct_2024_lat_long.csv', newline='') as csvfile:
+            turbine_coords_reader = csv.DictReader(csvfile)
+            # iterate through the rows
+            for row in turbine_coords_reader:
+                model = kml.newmodel(name = row['Name'])
+                desc = 'Pines Wind Farm Oct 2024 proposed turbine ' + row['Name'] + \
+                       ' - ' + turbine_models[turbine_model_key] + ' - wind ' + \
+                       wind_heading_key
+                model.description = desc                                    
+                model.link.href = turbine_model_key + '.dae'
+                model.altitudemode = 'clampToGround'
+                model.location.latitude = float(row['lat']) 
+                model.location.longitude = float(row['lon'])
+                turbine_random_heading = \
+                    (wind_headings[wind_heading_key] + \
+                     (360.0 * random.gauss(mu=heading_mu, sigma=heading_sigma))) % 360.0
+                model.orientation.heading=turbine_random_heading
+                model.scale.x = 1
+                model.scale.y = 1
+                model.scale.z = 1
+
+        kml.save('pines_windfarm_oct2024_' + turbine_model_key + \
+                 '_wind_' + wind_heading_key + '.kml')
+```
+
+The resulting KML file was imported into Google Earth Pro, the suggested viewpoints were added and the set of repources was saved as the KMZ file and described in the instructions on this page.
