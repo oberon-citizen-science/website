@@ -11,7 +11,7 @@ OCSN will undertake to update and improve these models as more and better inform
 
 ## Introduction
 
-In October 2024, the developers of the Pines Wind Farm released a proposed layout of wind turbines. Background information on the proposed Pines Wind Farm as well as the proposed Palings Yard Wind Farm, both in the southern part of the Oberon local government area, and various aspects of these proposals which Oberon Citizen Science Network (OCSN) considers warrant further scientific and engineering investigation, can be found on the [wind farms page](wind_farms.html) on this web site..
+In October 2024, the developers of the Pines Wind Farm released a proposed layout of wind turbines. Background information on the proposed Pines Wind Farm as well as the proposed Palings Yard Wind Farm, both in the southern part of the Oberon local government area, and various aspects of these proposals which Oberon Citizen Science Network (OCSN) considers warrant further scientific and engineering investigation, can be found on the [wind farms page](wind_farms.html) on this web site.
 
 On this page OCSN provides instructions on how to use the free Google Earth Pro software to visualise the proposed Pines Wind Farm turbines, using a set of models which OCSN has prepared. Technical details are provided below for those who are interested. This is part of a series of initiatives by OCSN to provide the Oberon community with impartial, science-based, well-documented information to help inform the community enquiry into and debate about these development proposals and their potential impact on the local region.
 
@@ -28,6 +28,10 @@ In the case of the proposed Pines Wind Farm, the developers are offering to visi
 Although such personalised use of AR software is commendable, the capacity of the Pines developer team to visit the homes or properties of every interested community member is obviously finite, and at this stage, technical details and documentation of the  accuracy and validity of such AR visualisations has not been made available by the Pines developers. For this reason, OCSN has prepared the visualisations provided here. These may be less sophisticated than the AR visualisations offered by the Pines developers, but they are accessible to anyone with access to a laptop or desktop computer, using entirely free software, and the methodology used in their preparation is open, fully documented and able to be reproduced by anyone who wishes to.
 
 ## Getting started
+
+::: {.callout-note title="There's also a video..."}
+There is also a screencast video demonstrating the steps described on this page, please see below.
+:::
 
 The goal of these instructions is to get you up and running using Google Earth Pro (GEP) software to visualise the proposed Pines Wind Farm from various viewpoints of your choice, including your home or property. One big reason to use Google Earth Pro is that the software is totally free and will run on any Microsoft Windows, Apple Mac or linux computer. After completing the steps described below, you may want to explore the view from other locations, as well as other features of Google Earth Pro.
 
@@ -121,7 +125,7 @@ One solution to having to view the screen at a distance of half its width, in or
 
 If _Street View_ photographs are available at your chosen viewpoint, you can move the mouse cursor to the upper right corner of the screen and switch back to _Street View_ by clicking on the blueish _Pegman_ icon. Check that the horizon in _Street View_ matches the horizon in _Terrain View_ by switching back and forth. As you switch back and forth, note whether the vegetation and buildings in _Street View_ would screen any turbines visible in _Terrain View_.
 
-While not perfect, this gives you a good sense of whether the turbines will be visible from this particular viewpoint. If _Street View_ is not available at a viewpoint location, then it is not possible to assess whether nearby trees or buildings will screen off sight of the turbines. If any trees are in the distance, this deficiency will make little difference, because the wind turbines tower over all tress, but it does make a difference if there are nearby trees between your viewpoint and the turbines. One way of checking this is to take some static snapshots in GEP (details below), transfer them to your smartphone of a tablet computer, and take them outside to the actual viewpoint to see if nearby trees or buildings obscure the turbines.
+While not perfect, this gives you a good sense of whether the turbines will be visible from this particular viewpoint. If _Street View_ is not available at a viewpoint location, then it is not possible to assess whether nearby trees or buildings will screen off sight of the turbines. If any trees are in the distance, this deficiency will make little difference, because the wind turbines tower over all trees, but it does make a difference if there are nearby trees between your viewpoint and the turbines. One way of checking this is to take some static snapshots in GEP (details below), transfer them to your smartphone of a tablet computer, and take them outside to the actual viewpoint to see if nearby trees or buildings obscure the turbines.
 
 ### Step 5: Moving around to see turbines
 
@@ -152,6 +156,16 @@ You can also save a view as a static .jpg file which you can email, share on soc
 ### Step 9: Visit the provided viewpoints
 
 You may also wish to explore the views of the proposed wind farm from the viewpoints provided. Visiting the **Prison Farm** is worthwhile -- it is right amongst and quite close to several of the proposed turbines. 
+
+## Video
+
+Here is a slightly rambling and somewhat too long video demonstrating most of the the steps above. It is best viewed in full-screen or cinematic mode at the highest resolution possible (is is available in a range of resolutions up to 4K - use the gear wheel tool at the bottom-right of the YouTube app to choose a higher resolution).
+
+:::{.column-page}
+
+{{< video https://youtu.be/gbDbiErzwTA >}}
+
+:::
 
 ## Google Earth Pro reference notes
 
