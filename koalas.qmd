@@ -425,12 +425,34 @@ leaflet(height="800px", width="1200px") %>%
 
 The NSW Government Environment and Heritage web site has some [useful information on koala surveys](https://www.koala.nsw.gov.au/research-and-publications/your-research/citizen-science/get-involved/survey-koalas), including the [**I Spy Koala** app](https://www2.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/programs-legislation-and-framework/nsw-koala-strategy/how-to-get-involved/privacy-policy) for smartphones.
 
-::: {.callout-info title="More about the I Spy Koala app" collapsed=true}
+::: {.callout-note title="More about the I Spy Koala app" collapse=true}
 The **I Spy Koala** app was developed in 2019 by the NSW Department of Climate Change, Energy, the Environment and Water for the collection of koala observation and survey data.
 
 The app was part of a pilot designed to improve the flow of koala observation data to NSW planning and decisions tools. All data submitted via the app is made available by the department through the BioNet Atlas, New South Wales's corporate biodiversity data repository. From there, data is accessible to researchers, land managers, planners, consultants, government and the public via BioNet webpages and associated data services. Once your _I Spy Koala_ data is submitted it will be available in BioNet within approximately 2 weeks. 
 
 The app has facilities for systematic censuses of koalas in specific areas -- OCSN may make use of this.
+:::
+
+::: {.aside}
+![Dr Kellie Leigh, CEO of [Science for Wildlife](https://www.scienceforwildlife.org), and Groot, her amazing koala scat detection dog](assets/dr_kellie_leigh.png)
+:::
+
+::: {.callout-note title="Dr Kellie Leigh, Science for Wildlife" collapse=true}
+
+The following notes have been provided by OCSN committee member Richard Harrowell who attended a talk By Dr Kellie Leigh organised by [Greening Bathurst](https://greendrinks.org/Bathurst) on 24th October 2024.
+
+> I have just come back from a talk by Dr Kellie Leigh, CEO of [Science for Wildlife](https://www.scienceforwildlife.org), based in Mount Victoria, accompanied by her dog Groot. Not too long ago, scientists didn't think that koalas lived permanently in the Blue Mountains areas, and any koalas they saw were just passing through. This is because of the sandy soil, and the lack of the right kind of eucalypt trees. Since Kellie started her work, they have discovered that koalas are thriving in the area, and they eat the leaves of a far greater variety of eucalypt trees than scientists previously thought. Compared to other koala populations in NSW, the Blue Mountain koalas have the best genetic diversity, the least occurrence of chlamydia, and appear to be increasing in numbers. Science for Wildlife is very interested in sightings of koalas in the Greater Blue Mountains World Heritage area, all the way west to Oberon and Mudgee, as well as in the Hawkesbury and Western Sydney areas -- particularly sightings on private land. They request that any such sightings be [reported on their web site](https://www.scienceforwildlife.org/how-to-help/koala-sighting) (as well as in other reporting apps such as _I Spy Koala_ described above).
+
+> The koala communities go from the Kanangra area up to the Wollemi area. They are currently extending their search up towards Mudgee following some sightings.
+
+> The World Heritage area around Blue Mountains extending west to Oberon is over a million hectares, and it is impossible for a small group of scientists to do any kind of comprehensive audit or survey of koala populations in the area. Koala's in trees in the bush are really hard to see. Kellie relies almost exclusively on Citizen Scientists to make the initial observations to locate a colony. They have so far identified five separate colonies and four of them have been found to have no chlamydia at all. They can tell this by analysing the droppings. Apart from habitat loss, the biggest threat to koalas is dogs that are out at night when the koalas are moving between trees. During the big bushfires of 2019/2020, Kellie's organisation _Science For Wildlife_ actively removed a large number of the identified colony koalas before the fire passed through in order to save them, re-introducing them after the fire had passed and regrowth had started. They determined that there are no safe areas for koalas during a high-intensity fire. 
+
+> Koalas manage to digest the toxic eucalypt leaves with the help of their gut bacteria, passed to them from their mother. If you move a koala to a different habitat with different trees, it can be really hard for them to adapt as they may not have the right gut bacteria for the new trees.
+
+> _Science for Wildlife_ is very interested in finding trees that seem to be important to the Greater Blue Mountains World Heritage Area koalas. The way you work it out is by looking for a lot of koala droppings around the tree. These trees may not be the kind of tree you expect a koala to like. These droppings can be olive green or brown if they are older and have a not unpleasant musky eucalyptus smell. If you break them open, the droppings are olive green inside. By contrast, possum droppings just stink.
+
+> The droppings are not always easy to see which is why Kellie has trained her dog, Grout, to find the droppings.
+
 :::
 
 ### Novel eco-acoustic survey methods

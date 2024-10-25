@@ -46,7 +46,7 @@ website:
             href: koalas.qmd
           - text: "Astronomy"
             href: astronomy.qmd
-          - text: "Wind farms"
+          - text: "Citizen science and wind farms"
             href: wind_farms.qmd
       - text: "Sensor Networks"
         menu:
@@ -107,8 +107,12 @@ website:
             href: koalas.qmd
           - text: "Astronomy"
             href: astronomy.qmd
-          - text: "Wind farms"
-            href: wind_farms.qmd
+          - section: "Wind farms"
+            contents:
+            - text: "Citizen science and wind farms"
+              href: wind_farms.qmd
+            - text: "Visualising the proposed Pines Wind Farm"
+              href: pines_gep_model_oct_2024.qmd
       - section: "Sensor Networks"
         contents:
           - text: "Seismic and infrasound monitoring"
