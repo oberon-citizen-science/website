@@ -49,6 +49,12 @@ The 3D model of the Pines Wind Farm wind turbines prepared by OCSN is called `Pi
 
 Save it in a location that is easy for you to find on your computer -- perhaps create a folder for the Pines Wind Farm Model on your desktop or in Documents and put it there. Or just leave it in the Downloads folder on your computer, which is probably where it was saved to when you clinked on the link above.
 
+::: {.callout-warning title="Licensing of the 3D model KMZ file prepared by OCSN" collapse=true}
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://oberon-citizen.science/pines_gep_model_oct_2024.html">3D models for use in Google Earth Pro software of 242 wind turbines at the locations proposed on 10 October 2024 by the developers of the Pines Wind Farm in the Oberon local government area, NSW, Australia.</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://oberon-citizen.science">Oberon Citizen Science Network Incorporated</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p>
+
+:::
+
 ### Step 3: Open the `Pines_Wind_Farm_Model_Oct_2024.kmz` file in Google Earth Pro
 
 Double click on the `Pines_Wind_Farm_Model_Oct_2024.kmz` file and it will open in GEP.  Alternatively, from inside GEP you can select _File_ then _Open_ from the menu, and then select the `Pines_Wind_Farm_Model_Oct_2024.kmz` file from the folder where it is stored.
@@ -219,6 +225,12 @@ The **Status Bar** atthge bottom left of the display provides the date of the im
 ## Technical details
 
 The proposed locations of the Pines Wind Farm wind turbines were digitised manually using the information provied in the map on the Pines Wind farm web site home page (links given above). As such, there may be minor errors in the assigned positions for each of the proposed turbines, but these errors are unlikely to be greater than 10 or 20 metres. OCSN did contact the Pines Wind farm developers to request a digital file of the proposed turbine coordinates but did not receive the benefit of a reply. Our version of the proposed turbine coordinates are available in [this KML (Keyhole Markup Language) file](assets/Pines_Windfarm_Tower_Locations_Oct_2024.kml). 
+
+::: {.callout-warning title="Licensing of the R and python code below" collapse=true}
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://oberon-citizen.science/pines_gep_model_oct_2024.html">R and python computer code used to prepare 3D models for use in Google Earth Pro software of 242 wind turbines at the locations proposed on 10 October 2024 by the developers of the Pines Wind Farm in the Oberon local government area, NSW, Australia.</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://oberon-citizen.science">Oberon Citizen Science Network Incorporated</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+
+:::
 
 We then extracted transformed coordinate data from this KML file using the following `R` code:
 
