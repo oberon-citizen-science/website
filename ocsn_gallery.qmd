@@ -110,11 +110,29 @@ Immediate success with my new Brinno TLC300 timelapse camera (a birthday present
 
 Further to the platypus detections in the video above, the same Brinno TLC300 camera was redeployed about 150 metres upstream, with a view down stream to where the original set of time lapse images were captured. The camera was set to run every evening from 4pm until after dark, one frame every second. It was left there for an entire week. The video here shows all the platypus and rakali sightings in the course of that week of twilight filming. Notably, the platypus, or possible multiple platypuses, are always heading upstream at twilight, whereas in the previous video, they or it appeared to be heading downstream at dawn. A better camera, with better low-light or night-vision performance and the ability to capture over multiple schedules each day is needed -- various DIY solutions are being trialled. The camera will be redeployed to yet another pond a few hundred metres up stream.
 
-This video is best view in full screen mode at HD resolution.
+This video is best viewed in full screen mode at HD resolution.
 
 {{< video https://youtu.be/2tXW9X4hG5k >}}
 
 ---
 
+## Platypuses in the upper Duckmaloi River in flood -- Tim Churches
 
+Another time-lapse video, using the same Brinno TLC300 camera at 1 frame per second, redeployed a further 50 metres upstream, with a view down stream to where the two sets of time lapse videos above were captured. On the first day of surveillance, the river is at its normal level, but on the second day it is in partial flood, and platypuses can be observed zooming downstream as well as struggling upstream against the strong current.
+
+This video is best viewed in full screen mode at HD resolution.
+
+{{< video https://youtu.be/tMnXWHYKXFo >}}
+
+---
+
+## Platypus and rakali party, upper Duckmaloi River -- Tim Churches
+
+Yet another time-lapse video, the last for a month or so, using the same Brinno TLC300 camera at 1 frame per second, this time deployed about 50 metres downstream from the first video above, and about 150-200m from the later videos above. This section is heavily infested with willow trees, alas. The video includes all the platypus and rakali sightings forom a whole week of surveillance between 5:30pm and 8pm AEDT each day - so from before dusk to complete darkness. Most of teh action happens just before night falls, after 7:30 pm (sunset was at about 7pm), which is right at the limit of the modest low-light capabilities of the Brinno camera. The highlight of this video are two platypuses which are are seen interacting with each other, and a rakali is seen exiting and returning to its burrow in the river bank.
+
+This video is best viewed in full screen mode at HD resolution.
+
+{{< video https://youtu.be/MTmyrXV8yHo >}}
+
+---
 
