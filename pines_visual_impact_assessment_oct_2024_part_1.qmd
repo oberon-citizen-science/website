@@ -1,0 +1,615 @@
+---
+title: "Pines Wind Farm visual impact assessment -- part 1"
+description: "An application of better methods for assessing the visual impact of wind farms using details of the proposed Pines Wind Farm released by it developers on 10 October 2024."
+author:
+  - name: Tim Churches
+date: 2024-11-06
+categories: [wind farms] # self-defined categories
+citation: 
+  url: https://oberon-citizen.science/posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/
+image: line-of-sight.png
+draft: false 
+lightbox: true
+freeze: true
+references:
+- type: article-journal
+  id: PalmerJF2022
+  author:
+  - family: Palmer
+    given: James F.
+  issued:
+    date-parts:
+    - - 2022
+      - 9
+      - 15
+  title: 'Deconstructing viewshed analysis makes it possible to construct a useful visual impact map for wind projects'
+  title-short: Deconstructing viewshed analysis
+  container-title: Landscape and Urban Planning
+  volume: 225
+  issue: 104423
+  DOI: 10.1016/j.landurbplan.2022.104423
+  URL: https://www.sciencedirect.com/science/article/pii/S016920462200072X
+  language: en-US
+---
+
+::: {.callout-warning}
+The viewshed maps on this page are very detailed and may take quite a while to display in many web browsers, and may not render at all on small devices such as smartphones or tablets. They are provided purely for development purposes, and final versions will be optimised for faster display.
+:::
+
+## Introduction
+
+The ability to assess the visual impact of proposed wind farm developments is important for several reasons:
+
+* current wind turbines are very large structures which are potentially visible over large distances;
+* they are moving industrial structures in, typically, otherwise rural settings devoid of other large man-made structures;
+* the movement of wind turbines tends to attract the eye, further increasing their prominence in the landscape;
+* if measures of visual impact can be calculated for different proposed configurations of wind turbines (location, number and size of each turbine), then better planning decisions can be made to minimise their visual impact, and/or their visual impact can be appropriately assessed with respect to other potential benefits and disbenefits;
+* wind farms tend to be controversial developments, which can create considerable conflict in local communities and which may be subject to lobbying and public opinion campaigns, both for and against -- these campaigns may not use principled or reliable information which has been created using documented, verifiable and reproducible scientific processes -- and this there is a valid rôle for independent bodies such as OCSN to develop visual impact assessment capabilities; and
+* the visual impact assessment procedures set out in government guidelines and typically carried out by consultants hired to undertake such assessments on behalf of wind farm developers do not necessarily reflect recent research into better methods of undertaking such assessments.
+
+The aim of this series of blog posts is to document the initial steps by OCSN members in developing visual impact assessment capabilities which address these issues in order to provide state-of-the-art, reproducible information for the local community and other stakeholders. 
+
+::: {.aside}
+A typical visual impact assessment fact sheet to inform the local community, this one for the NSW Liverpool Ranges wind farm (click image to open the document):
+
+[![Liverpool Range Wind Farm Visual Impact Assessment Factsheet](tilt_factsheet_cover.png)](21074_TILT_LRWF_FS08-VisualImpact-FA02.pdf)
+:::
+
+## Visual impact assessments
+
+Typically developers of wind farms proposals commission specialist agencies to provide such visual impact assessments on their behalf, both to inform the local community and other stakeholders, and for inclusion in the EIS (environmental impact statement) and associated documentation required by planning processes. These visual impact assessments are typically use methodologies described in relevant government guidlines, such as the 2016 NSW Department of Planning and Environment [Wind Energy: Visual Assessment Bulletin](https://www.planning.nsw.gov.au/sites/default/files/2023-03/wind-energy-visual-assessment-bulletin.pdf).
+
+Visual impact assessment is a complex, multi-disciplinary subject, involving geometry, physics, earth sciences, psychology and psychometrics, and social factors. These series of blog posts are not intended to be a comprehensive introduction or treatment of the subject -- rather, they merely document the development of some visual impact assessment capabilities by members of Oberon Citizen Science Network, which can be used to provide information about the potential visual impact of proposed wind farms in the Oberon region.
+
+::: {.callout-note}
+The examples provided in this series of blog posts use the locations of 242 wind turbines in the proposed [Pines wind farm](wind_farms.html#the-proposed-paling-yards-wind-farm). However, the size of each turbine has been modelled on the turbine type used in a scientific paper by James F. Palmer @PalmerJF2022 published in the peer-reviewed journal _Landscape and Urban Planning_. We will be referring to that paper repeatedly in these blog posts. However, the actual parameters for specific wind farm proposals can easily be substituted and the calculations re-run with minimal effort, and we will do that in due course when exact parameters for the proposed Palings Yard wind farm turbines are known. The number and georgraphic locations of the proposed turbines used here do, however, accurately reflect the information in the [2023 Palings Yard wind farm EIS submission](https://www.planningportal.nsw.gov.au/major-projects/projects/paling-yards-wind-farm-0?fbclid=IwAR0aDB66Br7tRrvetMilpt3Zvfwezxa-k3S4qgR3vYXmsHmIyfHeiechs0Q) and provided on the [Palings Yard wind farm web site](https://palingyardswindfarm.globalpower-generation.com.au). 
+
+In due course recent developments in visual impact assessment methods described in other peer-reviewed scientific papers will also be implemented to add to OCSN's capacity in this respect.
+:::
+
+## Viewsheds
+
+The most basic type of visual impact assessment is the calculation of the _viewshed_ of a structure. The viewshed comprises all the points in the surrounding landscape which can be seem from the top of (or any point on) a structure such as a building, tower or a wind turbine. If the the structure is a tower used for transmitting radio waves, or an obseravtion tower (such as a fire observation tower), then what can be seen from the tower by direct line-of-sight is of obvious interest. 
+
+However, we are usually not very interested in what can be seen from, say, the nacelle (hub) of a wind turbine, let alone from the tips of its blades. But we are interested in which points in the landscape the blade tips, or the nacelle, or indeed the entire span of the wind turbine blades, can be seen. This is called the _inverse viewshed_ or _reverse viewshed_. In fact, the viewshed and its inverse are symmetrical -- if a point in the landscape can be seen from a the top of a tower, then the top of that tower can also be seen from that point in the landscape.
+
+### Calculating the viewshed
+
+Viewshed calculations rely on a [digital elevation model](https://en.wikipedia.org/wiki/Digital_elevation_model) (DEMs). These are maps of the elevation of the Earth's surface, usually created from satellite [LiDAR](https://en.wikipedia.org/wiki/Lidar) (light detection and ranging) sensor data or related techniques. The elevation (that is, height above sea level) data they contain is typically accurate to around +/- 1m or less, and they are available for various spatial resolutions from 1 metre by 1 metre patches (pixels) up. For all the calculations here, we are using the 5 metre by 5 meter resolution DEMs provided by the NSW government, freely available from the [NSW Spatial Information web portal](https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=437c0697e6524d8ebf10ad0d915bc219). DEM files for Oberon and the eight regions surrounding it were downloaded and used for these blog posts. These DEMS were then stitched together to form a larger DEM, comprising the DEMS for the following regions: Wallerawang, Orange, Bathurst, Blayney, Oberon, Crookwell, Katoomba, Taralga, Burragorang.
+
+The resulting DEM, viewed as a two-dimensional plot, looks like this:
+
+```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(rayshader)
+library(terrainr)
+library(raster)
+library(osmdata)
+library(leaflet)
+library(RColorBrewer)
+library(terra)
+library(terrainr)
+library(raster)
+library(osmdata)
+library(sf)
+
+terraOptions(progress=0)
+
+# paths to data files
+wip_prefix <- "_wip/"
+assets_prefix <- "assets/"
+downloaded_data_prefix <- "~/NSW_Government_Spatial_Services/"
+
+# Data source is the 5m resolution DEM (digital elevation maps) from the NSW Elevation Data Service
+# for Oberon and the neighbouring regions as named below.
+# https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=437c0697e6524d8ebf10ad0d915bc219
+
+wallerawang_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                  "Wallerawang-DEM-AHD_56_5m/Wallerawang-DEM-AHD_56_5m.asc"))
+orange_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                  "Orange-DEM-AHD_55_5m/Orange-DEM-AHD_55_5m.asc"))
+bathurst_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Bathurst-DEM-AHD_55_5m/Bathurst-DEM-AHD_55_5m.asc"))
+blayney_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                   "Blayney-DEM-AHD_55_5m/Blayney-DEM-AHD_55_5m.asc"))
+oberon_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                  "Oberon-DEM-AHD_55_5m/Oberon-DEM-AHD_55_5m.asc"))
+crookwell_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                     "Crookwell-DEM-AHD_55_5m/Crookwell-DEM-AHD_55_5m.asc"))
+katoomba_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Katoomba-DEM-AHD_56_5m/Katoomba-DEM-AHD_56_5m.asc"))
+taralga_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                   "Taralga-DEM-AHD_55_5m/Taralga-DEM-AHD_55_5m.asc"))
+burragorang_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                 "Burragorang-DEM-AHD_56_5m/Burragorang-DEM-AHD_56_5m.asc"))
+
+
+terra::writeRaster(wallerawang_rast, 
+                   paste0(wip_prefix, "wallerawang_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(orange_rast, 
+                   paste0(wip_prefix, "orange_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(bathurst_rast, 
+                   paste0(wip_prefix, "bathurst_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(blayney_rast, 
+                   paste0(wip_prefix, "blayney_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(oberon_rast, 
+                   paste0(wip_prefix, "oberon_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(crookwell_rast, 
+                   paste0(wip_prefix, "crookwell_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(katoomba_rast, 
+                   paste0(wip_prefix, "katoomba_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(taralga_rast, 
+                   paste0(wip_prefix, "taralga_dem.tif"), 
+                   overwrite=TRUE)
+terra::writeRaster(burragorang_rast, 
+                   paste0(wip_prefix, "burragorang_dem.tif"), 
+                   overwrite=TRUE)
+
+rm(wallerawang_rast)
+rm(orange_rast)
+rm(bathurst_rast)
+rm(blayney_rast)
+rm(oberon_rast)
+rm(crookwell_rast)
+rm(katoomba_rast)
+rm(taralga_rast)
+rm(burragorang_rast)
+
+terrainr::merge_rasters(
+  c(paste0(wip_prefix, "wallerawang_dem.tif"),
+    paste0(wip_prefix, "orange_dem.tif"),
+    paste0(wip_prefix, "bathurst_dem.tif"),
+    paste0(wip_prefix, "blayney_dem.tif"),
+    paste0(wip_prefix, "oberon_dem.tif"),
+    paste0(wip_prefix, "crookwell_dem.tif"),
+    paste0(wip_prefix, "katoomba_dem.tif"),
+    paste0(wip_prefix, "taralga_dem.tif"),
+    paste0(wip_prefix, "burragorang_dem.tif")),
+   output_raster = paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"),
+  overwrite=TRUE)
+
+localtif <- terra::rast(paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"))  
+```
+
+```{r, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: true
+
+plot(localtif)
+```
+
+Unless you are familiar with the geography, such 2D elevation maps can be difficult to interpret. Plotting them in 3D makes them more accessible -- below is part of the Oberon-and-environs DEM visualised in three dimensions, with the proposed Palings Yard wind farm turbines shown as icons. Better icons are needed, but these icons are in the correct positions and are to-scale -- that is, they accurately reflect the size of likely wind turbines in the landscape (in this case they are scaled to represent wind turbines which are 240 metres all at the top of the blade span).
+
+In these animations the blue line represents the existing 500kVA transmission line (not fully shown), the whites lines are Abercrombie, Shooters Hill and Edith Rds, and the red shaded area is the exploration area for the proposed [Pines wind farm](wind_farms.html#the-proposed-pines-wind-farm).
+
+::: {.callout-note}
+Creating these 3D animated maps will be the subject of a later blog post.
+:::
+
+{{< video ../../assets/turbine_test7.mp4 >}}
+
+{{< video ../../assets/turbine_test10.mp4 >}}
+
+### Line-of-sight calculations
+
+Using these DEMs, a viewshed from any point on the map can be calculated by determining whether the intervening terrain will obstruct the line-of-sight from a view point to any other point on the map. The height of the view point can be specified and added to the terrain elevation at its location. Similarly, the points being viewed in the landscape can be set at a height above the terrain elevation at each point. Since we are interested in _reverse viewsheds_, we set the view point elevation at the relevant height of the structure of interest, such as a wind turbine, and the observation elevation at 1.5m above the terrain elevation, since that is an average eye level.
+
+![A simple illustration of line-of-sight viewshed determination](line-of-sight.png)
+
+
+Of course, this is a simplified model because it only uses bare-earth elevations -- that is, the heights of vegetation or intervening buildings are not included in the calculations. As such, the viewsheds calculated are _worst-case_, and trees etc may reduce the extent of actual viewsheds. However, NSW government guidelines state that bare-earth elevations should be used in visual impact assessments, precisely because they are worst-case. In fact, adding in land cover elevation information dramatically complicates the computations required, for reasons we won't cover here. As it is, the viewshed computations potentially involve billions of calculations. Fortunately, efficient algorithms have been developed to make such computations feasible even on laptop computers, although they can still take many hours to complete.
+
+### The Earth is not flat...
+
+Reality is more complicated than what is described above. Apart from trees and other ground cover, two other factors need to be taken into account when calculating viewsheds: the curvature of the Earth, and refraction of light by the atmosphere. The Earth curvature issue is intuitively obvious -- if we look towards the horizon, the surface of the Earth falls away and thus the horizon is a finite distance away -- in fact, on a clear day you **cannot** see forever! Another issue is that due to the Earth's curvature, as we look towards the horizon (that is, approximately at a tangent to the Earth's surface), our gaze transects increasingly higher altitudes, with thinner and thinner air. This reduction in air density creates a refraction lens effect which partially counteracts the effect of the curvature of the Earth on a viewshed, as shown in the diagram below.
+
+![Earth curvature and atmospheric refraction effects on line-of-sight viewsheds](CurveCalcRefraction2.png) Source: [Walter Bislins Advanced Earth Curvature Calculator](http://walter.bislins.ch/bloge/index.asp?page=Advanced+Earth+Curvature+Calculator)
+
+The viewshed calculation software we have used takes both of these factors into account using a simple but quite adequate correction mechanism. So let's look at a viewshed with and without such correction.
+
+## Illustrating the effect of Earth curvature and atmospheric refraction correction in viewshed calculations
+
+```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+
+# Load turbine points
+palings_yard_turbines_untransformed_sf <- sf::read_sf(paste0(assets_prefix,
+                                                            "paling_yards_turbines.geojson"))
+palings_yard_turbines_sf <- st_transform(palings_yard_turbines_untransformed_sf, crs=crs(localtif))
+palings_yard_turbines_df <- as.data.frame(st_coordinates(palings_yard_turbines_sf))
+palings_yard_turbines_untransformed_df <- as.data.frame(st_coordinates(palings_yard_turbines_untransformed_sf))
+
+pines_turbines_untransformed_sf <- sf::read_sf(paste0(assets_prefix,"Pines_Windfarm_Tower_Locations_Oct_2024.kml"))
+pines_turbines_sf <- st_transform(pines_turbines_untransformed_sf, crs=crs(localtif))
+pines_turbines_df <- as.data.frame(st_coordinates(pines_turbines_sf))
+pines_turbines_untransformed_df <- as.data.frame(st_coordinates(pines_turbines_untransformed_sf))
+
+vshed_terra_no_correction <- viewshed(x=localtif,
+                        loc=c(st_coordinates(pines_turbines_sf[20,])[1,1:2]), 
+                        observer=260,
+                        target=1.5,
+                        curvcoef=0,
+                        output="yes/no",
+                        filename=paste0(wip_prefix, "terra_vshed_validate_no_correction.tif"),
+                        overwrite=TRUE)
+
+terra_raster_no_correction <- terra::rast(paste0(wip_prefix, "terra_vshed_validate_no_correction.tif"))
+
+terra_raster_no_correction <- terra::ifel(terra_raster_no_correction <= 0, NA, terra_raster_no_correction)
+
+terra_raster_no_correction_20m <- terra::aggregate(terra_raster_no_correction, fact=4, fun=max)
+rm(terra_raster_no_correction)
+
+vshed_terra <- viewshed(x=localtif,
+                        loc=c(st_coordinates(pines_turbines_sf[20,])[1,1:2]), 
+                        observer=260,
+                        target=1.5,
+                        curvcoef=0.85714,
+                        output="yes/no",
+                        filename=paste0(wip_prefix, "terra_vshed_correction_validate.tif"),
+                        overwrite=TRUE)
+
+terra_raster <- terra::rast(paste0(wip_prefix, "terra_vshed_correction_validate.tif"))
+
+terra_raster <- terra::ifel(terra_raster <= 0, NA, terra_raster)
+
+terra_raster_20m <- terra::aggregate(terra_raster, fact=4, fun=max)
+
+rm(terra_raster)
+rm(localtif)
+
+terra_no_correction_pal <- colorNumeric(c("red"), 1,
+  na.color = "transparent")
+
+terra_pal <- colorNumeric(c("cyan"), 1,
+  na.color = "transparent")
+
+pines_tower <- vect(rbind(st_coordinates(pines_turbines_sf[20,])[1,1:2]), crs=crs(terra_raster_20m))
+tower_dist <- distance(terra_raster_20m, pines_tower)
+
+terra_raster_20m_dist <- terra_raster_20m * tower_dist
+
+dist_pal <- colorNumeric(palette = "Reds", 
+                         domain = minmax(terra_raster_20m_dist), 
+                         reverse = TRUE,
+                         na.color = "transparent")
+
+binned_dist_pal <- colorBin(palette = "Reds", 
+                            domain = minmax(terra_raster_20m_dist),
+                            bins = c(800, 3200, 8100, 16100, 32200, 64400),
+                            reverse = TRUE,
+                            na.color = "transparent")
+
+```
+
+The map below shows the calculated viewshed for just one of the wind turbines proposed for the Pines wind farm, south of Oberon. The viewshed is for a blade tip at 260m elevation, as used in the aforementioned paper by Palmer.
+
+By toggling on and off the two viewshed layers on the map, you can compare the results with the Earth curvature and atmospheric refraction correction disabled, and with it enabled using the widely-accepted compensation co-efficient of 0.85714.
+
+It is easy to see that without the correction, the calculated viewshed is quite a bit larger because the curvature of the Earth is ignored (noting that refraction by the atmosphere counteracts the effects of curvature, but only partially).
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[20,1],
+          lat = pines_turbines_untransformed_df[20,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(terra_raster_no_correction_20m, 
+                 opacity=0.4, 
+                 colors = terra_no_correction_pal,
+                  group = "260m turbine blade tip viewshed (no curvature)",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_20m, 
+                 opacity=0.6, 
+                 colors = terra_pal,
+                  group = "260m turbine blade tip viewshed (curvature)",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addMarkers(lng=pines_turbines_untransformed_df[20,1],
+             lat=pines_turbines_untransformed_df[20,2],  
+             label = "One of the proposed Pines wind farm turbines",
+              group = "Proposed turbine",
+              labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c( "Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c( "Proposed turbine",
+                                      "260m turbine blade tip viewshed (no curvature)",
+                                      "260m turbine blade tip viewshed (curvature)"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+```
+
+:::
+
+
+## Viewshed shaded by distance from turbine
+
+Although a simple binary (all-or-nothing) viewshed is useful, it fails to take into account distance. Obviously, the further away you are from an object, the smaller it appears. Also, atmospheric conditions such as haze from smoke or dust (or even pollen) can reduce visibility of objects at larger distances (and fog will reduce visibility at even short distances). However, atmospheric conditions are variable and we don't take them into account in our calculations -- again, we assume a _worst case_ of perfectly clear air. But the effect of distance **can** be taken into account.
+
+Below is a map of the viewshed as above (with curvature and refraction corrections enabled), but shaded by distance from the proposed wind turbine, to de-emphasise distant viewpoints. This is a first, small step towards a better representation of visual impact. 
+
+:::{.column-page}
+
+```{r, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[20,1],
+          lat = pines_turbines_untransformed_df[20,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(terra_raster_20m_dist, 
+                 opacity=0.6, 
+                  colors = dist_pal,
+                  group = "260m turbine blade tip viewshed (curvature)",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addLegend(
+    position = "bottomright",
+    pal = dist_pal,
+    labels = palette(), opacity = 0.6,
+    values = minmax(terra_raster_20m_dist),
+    title = "Distance from turbine",
+    labFormat = labelFormat(suffix = " km",
+                            transform = function(x) x / 1000)) %>%  
+  addMarkers(lng=pines_turbines_untransformed_df[20,1],
+             lat=pines_turbines_untransformed_df[20,2],
+             label = "One of the proposed Pines wind farm turbines",
+              group = "Proposed turbine",
+              labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c("Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c( "Proposed turbine", 
+                                      "260m turbine blade tip viewshed (curvature)"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+
+```
+
+:::
+
+### Viewshed shaded by distance bands from turbine
+
+The continuous distance shading shown above is pretty, but it may be more useful to categorise distance into bands. This is typically done in visual impact assessments. 
+
+Below is the same viewshed as above (with curvature and refraction corrections), but this time shaded by distance categorised into bands as suggested by James F. Palmer in [the paper mentioned above](https://www.sciencedirect.com/science/article/pii/S016920462200072X) -- however for illustrative purposes  we have extended the bands to 64.4 km (the bands suggested by Palmer stop at 32.2km, which is probably reasonable).
+
+:::{.column-page}
+
+```{r, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+
+binned_dist_pal <- colorBin(palette = "Reds", 
+                            domain = minmax(terra_raster_20m_dist),
+                            bins = c(800, 3200, 8100, 16100, 32200, 64400),
+                            reverse = TRUE,
+                            na.color = "transparent")
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[20,1],
+          lat = pines_turbines_untransformed_df[20,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(terra_raster_20m_dist, 
+                 opacity=0.6, 
+                  colors = binned_dist_pal,
+                  group = "260m turbine blade tip viewshed (curvature)",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addLegend(
+    position = "bottomright",
+    pal = binned_dist_pal,
+    labels = palette(), opacity = 0.6,
+    values = minmax(terra_raster_20m_dist),
+    title = "Distance from tower",
+    labFormat = labelFormat(suffix = " km",
+                            transform = function(x) x / 1000)) %>%  
+  addMarkers(lng=pines_turbines_untransformed_df[20,1],
+             lat=pines_turbines_untransformed_df[20,2],  
+             label = "One of the proposed Pines wind farm turbines",
+              group = "Proposed turbine",
+              labelOptions = labelOptions(noHide = TRUE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c( "Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c( "Proposed turbine", 
+                                      "260m turbine blade tip viewshed (curvature)"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+
+```
+
+:::
+
+### Viewshed distance bands as separate layers
+
+Finally, we can create a variation on the map above in which each distance zone is represented as a separate layer which can be toggled on and off. This may not be particularly useful but was done to work out whether it was possible with the software we are using (see below).
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+binned_dist_pal <- colorBin(palette = "Reds", 
+                            domain = minmax(terra_raster_20m_dist),
+                            bins = c(800, 3200, 8100, 16100, 32200, 64400),
+                            reverse = TRUE,
+                            na.color = "transparent")
+
+terra_raster_0_800 <- terra::ifel(terra_raster_20m_dist < 800, 
+                                  terra_raster_20m_dist,
+                                  NA) %>% trim()
+
+terra_raster_800_3200 <- terra::ifel(terra_raster_20m_dist >= 800 & terra_raster_20m_dist < 3200,
+                                     terra_raster_20m_dist,
+                                     NA) %>% trim()
+
+terra_raster_3200_8100 <- terra::ifel(terra_raster_20m_dist >= 3200 & terra_raster_20m_dist < 8100,
+                                      terra_raster_20m_dist,
+                                      NA) %>% trim()
+
+terra_raster_8100_16100 <- terra::ifel(terra_raster_20m_dist >= 8100 & terra_raster_20m_dist < 16100,
+                                       terra_raster_20m_dist,
+                                       NA) %>% trim()
+
+terra_raster_16100_32200 <- terra::ifel(terra_raster_20m_dist >= 16100 & terra_raster_20m_dist < 32200,
+                                       terra_raster_20m_dist,
+                                       NA) %>% trim()
+
+terra_raster_32200_64400 <- terra::ifel(terra_raster_20m_dist >= 32200 & terra_raster_20m_dist < 64400,
+                                       terra_raster_20m_dist,
+                                       NA) %>% trim()
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[20,1],
+          lat = pines_turbines_untransformed_df[20,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(terra_raster_0_800, 
+                 opacity=0.6, 
+                 colors = "Purple", # binned_dist_pal,
+                 group = "0 to 800 m viewshed",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_800_3200, 
+                 opacity=0.6, 
+                 colors = "Red", # binned_dist_pal,
+                 group = "800 m to 3.2 km viewshed",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_3200_8100, 
+                 opacity=0.6, 
+                 colors = "Orange", # binned_dist_pal,
+                 group = "3.2 to 8.1 km viewshed",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_8100_16100, 
+                 opacity=0.6, 
+                 colors = "Pink", # binned_dist_pal,
+                 group = "8.1 to 16.1 km viewshed",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_16100_32200, 
+                 opacity=0.6, 
+                 colors = "Yellow", # binned_dist_pal,
+                 group = "16.1 to 32.2 km viewshed",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(terra_raster_32200_64400, 
+                 opacity=0.6, 
+                 colors = "White", # binned_dist_pal,
+                 group = "32.2 to 64.4 km viewshed",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addMarkers(lng=pines_turbines_untransformed_df[20,1],
+             lat=pines_turbines_untransformed_df[20,2], 
+             label = "One of the proposed Pines wind farm turbines",
+              group = "Proposed turbine",
+              labelOptions = labelOptions(noHide = FALSE, textsize = "10px")) %>%  
+  addLayersControl(baseGroups = c("Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c("Proposed turbine",
+                                     "0 to 800 m viewshed",
+                                     "800 m to 3.2 km viewshed",
+                                     "3.2 to 8.1 km viewshed",
+                                     "8.1 to 16.1 km viewshed",
+                                     "16.1 to 32.2 km viewshed",
+                                     "32.2 to 64.4 km viewshed"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+
+```
+
+:::
+
+## Software
+
+All computation for these blog posts was carried out using the free, open-source [R system for statistical computing](https://www.r-project.org). In particular, the [`terra`](https://rspatial.org/pkg/) package, which embeds high-performance C++ code from the popular GDAL library for geospatial raster processing in R was used, together with the [`sf`](https://r-spatial.github.io/sf/) and [`leaflet`](https://rstudio.github.io/leaflet/index.html) packages for other GIS functions and interactive map rendering, respectively.
+
+The source code for this blog post, which contains all the code used to create it, can be found on [Github](https://github.com/oberon-citizen-science/website/blob/main/posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/index.qmd).
+
+## Next steps
+
+In the [next in this series of blog posts](../2024-09-17-wind-farm-visual-impact-assessment-part-2/index.html) we will look at the calculation of compound viewsheds -- that is, the viewshed for a collection of wind turbines, not just a single one.
+
+## References
+
+::: {#refs}
+:::
+

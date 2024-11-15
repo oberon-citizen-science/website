@@ -1,0 +1,422 @@
+---
+title: "Wind farm visual impact assessment -- part 2"
+description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. In this post we consider compound viewsheds."
+author:
+  - name: Tim Churches
+date: 2024-09-17
+categories: [wind farms] # self-defined categories
+citation: 
+  url: https://oberon-citizen.science/posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/
+image: Wind_turbines_in_southern_California_2016.jpg
+draft: false 
+lightbox: true
+freeze: true
+---
+
+::: {.callout-warning}
+The viewshed maps on this page are very detailed and may take quite a while to display in many web browsers, and may not render at all on small devices such as smartphones or tablets. They are provided purely for development purposes, and final versions will be optimised for faster display.
+:::
+
+## Introduction
+
+In the [previous post in this series](../2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html) we gave a brief overview of visual impact assessment for man-made structures, introduced the concept of viewsheds and considered how they are calculated. This was illustrated for a single structure, one of the wind turbines proposed for the Palings yard wind far, south of Oberon.
+
+In this post we extend that to consider _compound viewsheds_ for multiple structures.
+
+## Calculating compound viewsheds
+
+```{r, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(leaflet)
+library(RColorBrewer)
+library(terra)
+library(terrainr)
+library(raster)
+library(osmdata)
+library(sf)
+
+terraOptions(progress=0)
+
+# paths to data files
+wip_prefix <- "_wip/"
+assets_prefix <- "assets/"
+downloaded_data_prefix <- "~/NSW_Government_Spatial_Services/"
+
+if (!file.exists(paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"))) {
+
+  # NSW Elevation Data Service
+  # https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=437c0697e6524d8ebf10ad0d915bc219
+  
+  wallerawang_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Wallerawang-DEM-AHD_56_5m/Wallerawang-DEM-AHD_56_5m.asc"))
+  orange_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Orange-DEM-AHD_55_5m/Orange-DEM-AHD_55_5m.asc"))
+  bathurst_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                      "Bathurst-DEM-AHD_55_5m/Bathurst-DEM-AHD_55_5m.asc"))
+  blayney_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                     "Blayney-DEM-AHD_55_5m/Blayney-DEM-AHD_55_5m.asc"))
+  oberon_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Oberon-DEM-AHD_55_5m/Oberon-DEM-AHD_55_5m.asc"))
+  crookwell_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                       "Crookwell-DEM-AHD_55_5m/Crookwell-DEM-AHD_55_5m.asc"))
+  katoomba_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                      "Katoomba-DEM-AHD_56_5m/Katoomba-DEM-AHD_56_5m.asc"))
+  taralga_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                     "Taralga-DEM-AHD_55_5m/Taralga-DEM-AHD_55_5m.asc"))
+  burragorang_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                   "Burragorang-DEM-AHD_56_5m/Burragorang-DEM-AHD_56_5m.asc"))
+  
+  terra::writeRaster(wallerawang_rast, 
+                     paste0(wip_prefix, "wallerawang_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(orange_rast, 
+                     paste0(wip_prefix, "orange_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(bathurst_rast, 
+                     paste0(wip_prefix, "bathurst_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(blayney_rast, 
+                     paste0(wip_prefix, "blayney_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(oberon_rast, 
+                     paste0(wip_prefix, "oberon_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(crookwell_rast, 
+                     paste0(wip_prefix, "crookwell_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(katoomba_rast, 
+                     paste0(wip_prefix, "katoomba_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(taralga_rast, 
+                     paste0(wip_prefix, "taralga_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(burragorang_rast, 
+                     paste0(wip_prefix, "burragorang_dem.tif"), 
+                     overwrite=TRUE)
+  
+  rm(wallerawang_rast)
+  rm(orange_rast)
+  rm(bathurst_rast)
+  rm(blayney_rast)
+  rm(oberon_rast)
+  rm(crookwell_rast)
+  rm(katoomba_rast)
+  rm(taralga_rast)
+  rm(burragorang_rast)
+  
+  terrainr::merge_rasters(
+    c(paste0(wip_prefix, "wallerawang_dem.tif"),
+      paste0(wip_prefix, "orange_dem.tif"),
+      paste0(wip_prefix, "bathurst_dem.tif"),
+      paste0(wip_prefix, "blayney_dem.tif"),
+      paste0(wip_prefix, "oberon_dem.tif"),
+      paste0(wip_prefix, "crookwell_dem.tif"),
+      paste0(wip_prefix, "katoomba_dem.tif"),
+      paste0(wip_prefix, "taralga_dem.tif"),
+      paste0(wip_prefix, "burragorang_dem.tif")),
+     output_raster = paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"),
+    overwrite=TRUE)
+} 
+
+localtif <- terra::rast(paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"))  
+
+
+# Load turbine points
+palings_yard_turbines_untransformed_sf <- sf::read_sf(paste0(assets_prefix,
+                                                            "paling_yards_turbines.geojson"))
+palings_yard_turbines_sf <- st_transform(palings_yard_turbines_untransformed_sf, crs=crs(localtif))
+palings_yard_turbines_df <- as.data.frame(st_coordinates(palings_yard_turbines_sf))
+
+palings_yard_turbines_untransformed_df <- as.data.frame(st_coordinates(palings_yard_turbines_untransformed_sf)) %>%
+  rename(long=X, lat = Y)
+
+pines_turbines_untransformed_sf <- sf::read_sf(paste0(assets_prefix,"Pines_Windfarm_Tower_Locations_Oct_2024.kml"))
+pines_turbines_sf <- st_transform(pines_turbines_untransformed_sf, crs=crs(localtif))
+pines_turbines_df <- as.data.frame(st_coordinates(pines_turbines_sf))
+pines_turbines_untransformed_df <- as.data.frame(st_coordinates(pines_turbines_untransformed_sf))
+
+if (!file.exists(paste0(wip_prefix, "pines_vshed_raster_1.tif"))) {
+  vshed_raster_1 <- viewshed(x=localtif,
+                          loc=c(st_coordinates(pines_turbines_sf[20,])[1,1:2]), 
+                          observer=260,
+                          target=1.5,
+                          curvcoef=0.85714,
+                          output="yes/no",
+                          filename=paste0(wip_prefix, "pines_vshed_raster_1.tif"),
+                          overwrite=TRUE)
+  
+}
+  
+vshed_raster_1 <- terra::rast(paste0(wip_prefix, "pines_vshed_raster_1.tif"))
+
+vshed_raster_1_10m <- terra::aggregate(vshed_raster_1, fact=2, fun=max)
+
+vshed_raster_1_10m <- terra::ifel(vshed_raster_1_10m <= 0, NA, vshed_raster_1_10m)
+
+if (!file.exists(paste0(wip_prefix, "pines_vshed_raster_2.tif"))) {
+  vshed_raster_2 <- viewshed(x=localtif,
+                          loc=c(st_coordinates(pines_turbines_sf[124,])[1,1:2]), 
+                          observer=260,
+                          target=1.5,
+                          curvcoef=0.85714,
+                          output="yes/no",
+                          filename=paste0(wip_prefix, "pines_vshed_raster_2.tif"),
+                          overwrite=TRUE)
+}
+
+vshed_raster_2 <- terra::rast(paste0(wip_prefix, "pines_vshed_raster_2.tif"))
+
+vshed_raster_2_10m <- terra::aggregate(vshed_raster_2, fact=2, fun=max)
+
+vshed_raster_2_10m <- terra::ifel(vshed_raster_2_10m <= 0, NA, vshed_raster_2_10m)
+
+if (!file.exists(paste0(wip_prefix, "pines_vshed_raster_3.tif"))) {
+  vshed_raster_3 <- viewshed(x=localtif,
+                          loc=c(st_coordinates(pines_turbines_sf[215,])[1,1:2]), 
+                          observer=260,
+                          target=1.5,
+                          curvcoef=0.85714,
+                          output="yes/no",
+                          filename=paste0(wip_prefix, "pines_vshed_raster_3.tif"),
+                          overwrite=TRUE)
+}
+
+vshed_raster_3 <- terra::rast(paste0(wip_prefix, "pines_vshed_raster_3.tif"))
+
+vshed_raster_3_10m <- terra::aggregate(vshed_raster_3, fact=2, fun=max)
+
+vshed_raster_3_10m <- terra::ifel(vshed_raster_3_10m <= 0, NA, vshed_raster_3_10m)
+
+# sum the number of towers visible for each cell in raster
+vshed_number_visible <- sum(vshed_raster_1_10m,
+                            vshed_raster_2_10m,
+                            vshed_raster_3_10m,
+                            na.rm = TRUE) %>%
+                        as.factor()
+
+vshed_raster_1_10m <- vshed_raster_1_10m %>% trim()
+vshed_raster_2_10m <- vshed_raster_2_10m %>% trim()
+vshed_raster_3_10m <- vshed_raster_3_10m %>% trim()
+
+rm(localtif)
+
+vshed_number_visible_1 <- terra::ifel(vshed_number_visible == 1, 
+                                      vshed_number_visible,
+                                      NA) %>% trim()
+
+vshed_number_visible_2 <- terra::ifel(vshed_number_visible == 2, 
+                                      vshed_number_visible,
+                                      NA) %>% trim()
+
+vshed_number_visible_3 <- terra::ifel(vshed_number_visible == 3, 
+                                      vshed_number_visible,
+                                      NA) %>% trim()
+
+vshed_raster_1_pal <- colorNumeric(c("red"), 1,
+  na.color = "transparent")
+
+vshed_raster_2_pal <- colorNumeric(c("cyan"), 1,
+  na.color = "transparent")
+
+vshed_raster_3_pal <- colorNumeric(c("orange"), 1,
+  na.color = "transparent")
+
+number_visible_pal <- colorFactor(
+  palette = c("yellow", "orange", "red"),
+  levels = 1:3,
+  na.color = "transparent")
+```
+
+The map below shows the independent, individual viewsheds (with Earth curvature and atmospheric refraction corrections) for three of the proposed Palings Yard wind turbines at a tip elevation of 170.5m at the indicated positions. By independent we mean that the viewshed for each turbine is separate and not combined with the others, although they obviously overlay each other by a large degree. The degree of overlap can be examined by toggling each independent viewshed on and off.
+
+:::{.column-page}
+
+```{r, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[20,1],
+          lat = pines_turbines_untransformed_df[20,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(vshed_raster_1_10m, 
+                 opacity=0.5, 
+                 colors = vshed_raster_1_pal,
+                  group = "Viewshed for 260m turbine 1",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(vshed_raster_2_10m, 
+                 opacity=0.5, 
+                 colors = vshed_raster_2_pal,
+                  group = "Viewshed for 260m turbine 2",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(vshed_raster_3_10m, 
+                 opacity=0.5, 
+                 colors = vshed_raster_3_pal,
+                  group = "Viewshed for 260m turbine 3",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addCircleMarkers(lng = pines_turbines_untransformed_df[c(20,124,215),1],
+                   lat = pines_turbines_untransformed_df[c(20,124,215),2],
+              group = "Three proposed 260m turbines",
+              color = "lightgreen",
+              radius = 8,
+              stroke = FALSE,
+              fillOpacity = 0.5) %>%  
+  addLayersControl(baseGroups = c("Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c( "Three proposed 260m turbines",
+                                      "Viewshed for 260m turbine 1",
+                                      "Viewshed for 260m turbine 2",
+                                      "Viewshed for 260m turbine 3"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE))
+
+                    
+```
+
+:::
+
+The compound viewshed is formed by simply taking the union of each of the independent, individual viewsheds at each pixel. In other words, if 0 means no visible and 1 means visible, for each pixel in the raster map we check if any of the independent viewshed have a 1 and if so, we set the compound viewshed value for that pixel to be 1, otherwise it is set to 0. We won't bother illustrating the simple compound viewshed here, because there are more interesting versions of it which can be readily calculated. 
+
+## Displaying number of turbines visible
+
+The next step is to calculate how many turbines are visible. Here the map is shaded according to how many wind turbines are visible from each point on the map, from zero (transparent shading) to three (since there are only three hypothetical turbiness in this example, for the sake of simplicity). This is a compound viewshed -- but rather than the union of each of the three independent viewsheds for the three hypothetical turbines in this example, it is the sum.
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[20,1],
+          lat = pines_turbines_untransformed_df[20,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addRasterImage(vshed_number_visible, 
+                 opacity=0.6, 
+                 colors = number_visible_pal,
+                  group = "Compound viewshed for all three turbines",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addLegend(
+    position = "bottomright",
+    pal = number_visible_pal,
+    labels = palette(),
+    values = 1:3,
+    title = "Number of towers visible") %>%  
+  addCircleMarkers(lng = pines_turbines_untransformed_df[c(20,124,215),1],
+                   lat = pines_turbines_untransformed_df[c(20,124,215),2],
+              group = "Three proposed 260m turbines",
+              color = "lightgreen",
+              radius = 8,
+              stroke = FALSE,
+              fillOpacity = 0.5) %>%  
+  addLayersControl(baseGroups = c("Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c( "Three proposed 260m turbines",
+                                      "Compound viewshed for all three turbines"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en")
+```
+
+:::
+
+
+## Displaying number of turbines visible as separate layers
+
+Here is the same map but with separate layers for each number of visible turbines, to allow easier examination of the data. Try toggling the layers on and off at different levels of zoom.
+
+:::{.column-page}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[20,1],
+          lat = pines_turbines_untransformed_df[20,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addRasterImage(vshed_number_visible_1, 
+                 opacity=0.6, 
+                 colors = "orange",
+                 group = "One turbine visible (orange)",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(vshed_number_visible_2, 
+                 opacity=0.6, 
+                 colors = "red",
+                 group = "Two turbines visible (red)",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addRasterImage(vshed_number_visible_3, 
+                 opacity=0.6, 
+                 colors = "darkred",
+                 group = "Three turbines visible (dark red)",
+                 maxBytes = 4 * 8330 * 8801) %>%
+  addCircleMarkers(lng = pines_turbines_untransformed_df[c(20,124,215),1],
+                   lat = pines_turbines_untransformed_df[c(20,124,215),2],
+              group = "Three proposed 260m turbines",
+              color = "lightgreen",
+              radius = 8,
+              stroke = FALSE,
+              fillOpacity = 0.5) %>%  
+  addLayersControl(baseGroups = c( "Topography", "Shaded relief", "Imagery", "OpenStreetMap"),
+                   overlayGroups = c( "Three proposed 260m turbines",
+                                      "One turbine visible (orange)",
+                                      "Two turbines visible (red)",
+                                      "Three turbines visible (dark red)"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en")
+```
+
+:::
+
+## Software
+
+The software used for this post is as described in the [first post](../2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html#software) in this series. 
+
+The source code for this blog post, which contains all the code used to create it, can be found on [Github](https://github.com/oberon-citizen-science/website/blob/main/posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/index.qmd).
+
+## Next steps
+
+In the [next in this series of blog posts](../2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html) we will extend the calculation done here to include all of the 47 wind turbines proposed for the Palings Yard wind farm.

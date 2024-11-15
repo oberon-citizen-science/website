@@ -1,0 +1,675 @@
+---
+title: "Proposed Pines Wind Farm visual impact assessment -- part 4"
+description: "Implementation of a better method for assessing the visual impact of proposed wind farms, in several parts. In this post we compute the visual impact assessment metric proposed by Emeritus Professor James F. Palmer, using the proposed Pines Wind Farm as an example."
+date: 2024-11-08
+categories: [wind farms] # self-defined categories
+citation: 
+  url: https://oberon-citizen.science/pines_visual_impact_assessment_oct_2024_part_4.html
+image: deconstructing_viewsheds.png
+draft: false 
+freeze: true
+cap-location: margin
+lightbox: true
+references:
+- type: article-journal
+  id: PalmerJF2022
+  author:
+  - family: Palmer
+    given: James F.
+  issued:
+    date-parts:
+    - - 2022
+      - 9
+      - 15
+  title: 'Deconstructing viewshed analysis makes it possible to construct a useful visual impact map for wind projects'
+  title-short: Deconstructing viewshed analysis
+  container-title: Landscape and Urban Planning
+  volume: 225
+  issue: 104423
+  DOI: 10.1016/j.landurbplan.2022.104423
+  URL: https://www.sciencedirect.com/science/article/pii/S016920462200072X
+  language: en-US
+---
+
+::: {.callout-warning}
+The viewshed maps on this page are very detailed and may take quite a while to display in many web browsers, and may not render at all on small devices such as smartphones or tablets. They are a work-in-progress, and later versions will be optimised for faster display.
+:::
+
+## Introduction
+
+Having explored the concepts of viewsheds and the steps needed to compute, manipulate and visualise them in the previous three posts, in this post we implement the visual impact assessent metrics described in @PalmerJF2022. It should be noted that some of the parameters are as used by Palmer in his paper, which were for the General Electric 5.3–158 wind turbine, which is approximately 180.5 metres tall at the uppermost blade tip. In fact, the turbines that may be used in the proposed Pine Wind Farm south of Oberon are likely to be considerably larger than the GE 5.3–158 wind turbine. The EIS for the proposed Palings Yard wind farm mentions turbines up to 240 metres high, and initial information released by the proponents of the proposed Pines wind farm mentions turbines up to 300 metres high. The parameters described below to calculate visual impact would need to be adjusted to reflect larger turbine size.
+
+::: {.callout-caution title="About the eight sets of 3D models" collapse=true}
+As of mid-October 2024, the Pines developers have released only limited information about the proposed layout and details of the wind farm. What we know is gleened from this [press release](assets/Pines_Press_Release_Draft_Turbine_Layout_10_Oct_2024.pdf) and from [this map](https://api.mapbox.com/styles/v1/klaraahlin/cm29d1yj300k401pi0i6ncf4p.html?access_token=pk.eyJ1Ijoia2xhcmFhaGxpbiIsImEiOiJOOUlGSVI0In0.68r4s52l711tWGnj0kwUsA&#11/-33.967/149.6921/0/13) on the Pines Wind Farm web site (static archived screenshot available [here](assets/Pines_layout_10_Oct_2024.png)). From these we know:
+
+* the proposed locations of the "approximately 250" turbines (242 actual locations are shown on the map);
+* that the entire wind farm will have a nominal generating capacity of 2 gigawatts (2 GW or 2,000 MW);
+  * that means that the nominal or "nameplate" capacity of each turbine will be around 8 megawatts (8 MW) (2000 MW &divide; 250 = 8 MW);
+* as stated [lsewhere on the Pines web site](https://www.thepineswindfarm.com.au/about-the-project) the turbines may be up to 300 metres tall. 
+  
+All currently available 8 MW terrestrial wind turbines are well under 300 m tall at the uppermost tip of the blade arc, even when site-specific towers are used. Thus there is no single set of turbine dimensions which satisfies all the currently-known criteria (as listed above). We have therefore we have chosen to include two types of 3D model. 
+
+The first uses the dimensions for a reference 8 MW wind turbine published in [this scientific paper](https://iopscience.iop.org/article/10.1088/1742-6596/753/9/092013/pdf) -- the specific dimensions are:
+
+* tower height: 110 m
+* tower base diameter: 7.7 m
+* tower top diameter: 5 m
+* nacelle dimensions: 20 m x 7.5 m x 7.5 m
+* rotor diameter: 164 m
+* blade root length: 2.5 m
+* blade root diameter: 2 m
+* blade chord at the root: 5.4 m
+* blade taper to the tip: 50%
+* blade twist over its length: 30&deg;
+
+Thus this turbine is 192 m high at the blade tip at the top of its arc. 
+
+The second 3D model uses the same dimensions for the turbine nacelle and blades but makes the tower 212.5 m tall, to give an overall height of 300 m to the blade tip at the top of its arc. The tower diameter at the base was increased using engineering principles to account for the additional stresses experienced by such a tall tower. OCSN acknowledges that such a turbine is very unlikely to be used, but it has been included to illustrate the impact on visibility of turbines which are at the maximum height allowed for the proposed Pines Wind Farm under its planning permit. It is more likely that the developers would use larger but fewer turbines if a 2 GW total wind farm capacity is retained. Currently available 12 or 14 MW turbines are between 260 m and 280 m high. However, we do not know and cannot guess where the developers might chose to locate a smaller number of larger turbines, so we have stuck to showing 242 turbines, either 192 m high or 300 m high, in the locations provided bt the Pines developers on their web site, at this stage. These models can and will be updated if and when the Pines developers release further information about the proposed turbine types and dimensions.
+
+Note that although the exact details of the Palings Yard turbine sizes have not been decided (or that information was not included in the EIS), the number of proposed turbines and their proposed locations are known and that information has been used here.
+
+## Steps in implementing the Palmer visual impact assessment metrics
+
+### Distance zones
+
+An intuitively obvious factor which affects wind turbine visual impact is the distance of the observer from the turbine. We have seen in earlier blog posts in this series how distance can readily be calculated. Palmer suggests using a graded set of distance zones, as described in the table below, rather than a continuous distance metric, primarily for computaional reasons. The distances are specific for the GE 5.3–158 wind turbine and would need to be adjusted for larger or smaller turbines. Note that these distance zones were also used in the previous parts of this series of blog posts on visual impact assessment.
+
+
+| Distance Zone           |	Description         |
+|-------------------------|---------------------|
+| Immediate Foreground<br>(0 to 0.8 km) | The immediate foreground extends to 800 metres from the observer. Within this distance zone, a turbine is the dominant object in the view, when the turbine blades passes its tower an audible rhythmic whooshing sound is created. Observers may have the sensation that a turbine is “looming” over them. |
+| Foreground<br>(0.8 to 3.2 km) | The foreground is determined by the prominence of tree branches and trunks; the analogous parts of wind turbines are the blades and tower. The presence of individual turbines and the movement of the blades attracts and holds an observer’s attention. Turbine sounds may still be noticeable, though it will be substantially reduced as distance increases. In the foreground, some other features in the surrounding landscape may appear to have midground characteristics, even though the wind turbines clearly retain foreground characteristics |
+| Near-Midground<br>(3.2 to 8.1 km) | Viewed in the near-midground, multiple visible turbines are perceived as part of a single whole. For instance, the Gestalt principles of similarity and continuity lead us to understand that wind turbines placed along a ridgeline are part of the same wind farm. At night, synchronized red flashing aviation warning lights will also be perceived as a single unit. At this distance it is possible that individual turbines may still have a dominant visual presence; blade movement may still hold a strong visual attraction. |
+| Far-Midground<br>(8.1 to 16.1 km) | In the far-midground, individual turbines become subordinate to the perception of the wind energy development as a whole. The number of turbines, and the degree to which they extend across the view, determines the visual dominance. When the major portion of a turbine is visible, blade movement is still apparent, but is less able to hold the observer’s attention. In the far-midground, some other features in the surrounding landscape may appear to have background characteristics, even though the wind turbines clearly retain midground characteristics. |
+| Background<br>(16.1 to 32.2 km) | Individual turbines and blade movement becomes less obvious, though the presence of a wind energy project may still be visible as part of the overall landscape. This defines the outer extent of the study area. |
+
+: Description of distance zones for the GE 5.3–158 wind turbine, reproduced from Table 1 in  @PalmerJF2022 {tbl-colwidths="[25,75]"}
+
+To implement this, a raster layer for the distance from each of the 47 proposed Palings Yard turbines to each point in the surrounding landscape is calculated, and these distances are then categorised into the five distance zones described above, represented by intgers 1 (immediate) to 5 (background). 
+
+### Visual exposure
+
+The visual impact of a wind turbine on any point in the surrounding landscape depends on several factors, such as distance, and whether it can be seen at all -- the binary viewshed -- but also on how much of each turbine can be seen -- that is, the visual exposure of each  turbine when seen from each point in the surrounding landscape (with zero visual exposure being outside the viewshed for the turbine).
+
+@PalmerJF2022 provides the following table of visual exposure grades, together with the logic behind them. The grades of exposure are also illustrated here (click to enlarge the graphic).
+
+::: {.aside}
+![Visual exposure grades for wind turbines, from @PalmerJF2022](visual-exposure.jpg)
+:::
+
+| Target | Description |
+|--------|-------------|
+| Blade End |	The last 10 metres of the blade seems sufficient to be recognizable through the foreground and into the midground distance. If it is just this 10 metre segment, then as the blade rotates it will rise into view and disappear before another blade end appears. The visibility analysis includes the full blade up to 10 metres from the tip. This means that there is the possibility to see two blades moving, but not their connection at the hub. Experience and research indicate that the blade end is noticeable with a visual impact up to 8.0 km from the observer. |
+| Turbine Hub |	 This is the second most common target in a visibility analysis. At a minimum, the observer can see portions of the nacelle and at least two full blades connected at the hub. This minimum visibility may seem to be somewhat disconnected and “floating” to the observer, but it becomes more noticeable as a larger proportion of the rotor sweep becomes visible. Experience and research indicate that the turbine hub is noticeable with a visual impact up to 16.1 km from the observer. |
+| Rotor Sweep |	The rotating blades are the most distinctive part of a wind turbine; they are moving and the area they sweep is almost 2 hectares. It is proposed that a wind turbine is readily recognised if one can see all but the last 10 metres of the downward blade. The full turbine visibility includes this sweep down to the ground. Experience and research indicate that the rotor sweep is noticeable with a visual impact up to 32.2 km from the observer. |
+
+: Visual exposure targets for wind turbines, reproduced from Table 2 in @PalmerJF2022 {tbl-colwidths="[25,75]"}
+
+To calculate this, we compute three viewshed layers for each of the turbines in the wind farm which is to be assessed. Separate viewsheds for each of three different degrees of exposure for each turbine -- that is, whether only the tips of the upper blade arc can be seen, at a minimum height above the terrain of 170.5 metres, whether the hub (nacelle) of the wind turbine can be seen, at a minimum height above the terrain of 101.5 metres, or whether the entire blade arc can be seem, at a minimum height of 32.5 metres above the terrain.
+
+As noted above, these visual exposure heights are specific for the GE 5.3–158 wind turbine used by Palmer as an example, and would need to be adjusted for the actual turbine types in a specifc wind farm.  
+
+Thus, for the Palings Yard wind farm, comprising 47 turbines, we compute 3x47=141 separate viewsheds to take into account the degree of visual exposure for each turbine at each point in the landscape. 
+
+Each of these viewsheds contains a binary (0, 1) indicator of turbine visibility at blade end, hub or full rotor sweep heights, at each point in the landscape. This binary indicator to multiplied by factors of 10, 20 and 30 for the blade end, hub and full rotor sweep viewsheds respectively. 
+
+One difference from the worked example provided by Palmer is that we have not used land cover data in addition to elevation data here -- we assume a bare-earth model, as recommended in the NSW government guidelines for visual impact assessment. If land cover information is used in viewshed calculations, two elevation models must be used -- one for the bare-earth terrain elevation, and another which adds vegetation (and buildings) height to that terrain elevation, based on land cover data. The reason why a single elevation model which sums terrain elevation with land cover heights cannot be used is because otherwise the observer at each point in the landscape would effectively be observing the target wind turbines from, in the case of forested areas, the tops of the trees. This is unlikely. The viewshed calculation functions in the `terra` library for R used in these blog posts does not allow for the use of two such elevation models, with and without land cover heights, and it is not entirely clear that the ESRI software used by Palmer does either. Thus we have set any use of land cover data aside, at least for now. As mentioned previously, this make the viewsheds and any resulting visual impact assessments err on the side of conservatism -- that is, it provides  a **worst case** analysis, which is arguably good practice in any case. 
+
+### Calculating the adjusted visual prominence for an entire wind farm
+
+This is done in four steps as follows.
+
+#### Visual prominence
+
+The first step described by Palmer is to reclassify the distance zone and visual exposure data, for each turbine, into a visual prominence score, according to the table shown below. Palmer provides a detailed justification for this prominence score in his paper. This gives us 47 rasters, one for each turbine. These 47 rasters are then summed, giving a single raster with a total visual prominence score at each location in the raster -- that is, at each location in the landscape.
+
+
++----------------+---------------------+-------------------+
+| Distance Zone  | Distance Range (km) |   Visual Exposure |
+|                |                     +-----+-----+-------+
+|                |                     | End | Hub | Sweep |
++:===============+:===================:+====:+====:+======:+
+| Immediate      | 0.0 – 0.8           |   4 |   7 |    10 |
++----------------+---------------------+-----+-----+-------+
+| Foreground     | 0.8 – 3.2           |   2 |   4 |     6 |
++----------------+---------------------+-----+-----+-------+
+| Near-midground | 3.2 – 8.0           |   1 |   2 |     4 |
++----------------+---------------------+-----+-----+-------+
+| Far-midground  | 8.0 – 16.1          |   0 |   1 |     2 |
++----------------+---------------------+-----+-----+-------+
+| Background     | 16.1 – 32.2         |   0 |   0 |     1 |
++----------------+---------------------+-----+-----+-------+
+
+
+: The rating of individual turbine visual prominence based on distance zone and visual exposure, reproduced from Table 3 in @PalmerJF2022
+
+#### Meaningful visibility
+
+In the second step. the coded visual exposure values in the individual turbine rasters described above are also reclassified according to the following meaningful visibility table. These meaningful visibility viewshed are summed for each pixel in the rasters -- that is, for each point in the entire study area landscape -- to give a raster layer for the wind farm's cumulative meaninful visibity at each point in the study area. 
+
++----------------+---------------------+-------------------+
+| Distance Zone  | Distance Range (km) |   Visual Exposure |
+|                |                     +-----+-----+-------+
+|                |                     | End | Hub | Sweep |
++:===============+:===================:+====:+====:+======:+
+| Immediate      | 0.0 – 0.8           |   1 |   1 |     1 |
++----------------+---------------------+-----+-----+-------+
+| Foreground     | 0.8 – 3.2           |   1 |   1 |     1 |
++----------------+---------------------+-----+-----+-------+
+| Near-midground | 3.2 – 8.0           |   1 |   1 |     1 |
++----------------+---------------------+-----+-----+-------+
+| Far-midground  | 8.0 – 16.1          |   0 |   1 |     1 |
++----------------+---------------------+-----+-----+-------+
+| Background     | 16.1 – 32.2         |   0 |   0 |     1 |
++----------------+---------------------+-----+-----+-------+
+
+
+: Determining meaningful visibility based on distance zone and visual exposure, reproduced from Table 4 in  @PalmerJF2022
+
+#### Mean visual prominence
+
+In the third step the total visual prominence layer is divided by the meaningful visible turbines layer to give a mean visual prominence score per turbine at each pixel (point) in the study area.
+
+#### Adjusted mean visual prominence
+
+The the final, fourth step, the mean visual prominence of the wind farm at each point in the surrounding study area landscape is multiplied by an adjusted number of meaningfully visible turbines, to account for the decreasing incremental contribution of each additional turbine in a wind farm to the overall visual impact. Palmer justifies this adjustment as follows:
+
+> The sum of the individual turbines’ visual prominence is a measure of visual impact that accounts for the effects of exposure and distance, but weighs the contribution of all the turbines equally. However, it is generally recognized that the incremental contribution of each addition turbine decreases as the extent of the project [wind farm] increases. So far there is little research about the shape of this function and no research involving the large number of turbines (_n_) with a mixture of visual exposures and distance zones. This study investigates using the square root of _n_, the cube root of _n_, and the natural log of (_n_ + 1) to represent project exposure or the decreasing incremental contribution of turbines to the overall visual impact.
+
+This adjusted number of meaningfully visible turbines is multiplied by the mean visual prominence to give the final visual impact metric for the wind farm being evaluated, at each point in the surrounding landscape.
+
+```{r init, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(tidyverse)
+library(leaflet)
+library(RColorBrewer)
+library(terra)
+library(terrainr)
+library(raster)
+library(osmdata)
+library(sf)
+library(callr)
+
+terraOptions(progress=0, tempdir="/Volumes/TimChurchesSamsungT5_1TB/Pines/")
+
+# paths to data files
+# 
+wip_prefix <- "_wip/pines/"
+assets_prefix <- "assets/"
+downloaded_data_prefix <- "~/NSW_Government_Spatial_Services/"
+
+if (!file.exists(paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"))) {
+
+  # NSW Elevation Data Service
+  # https://portal.spatial.nsw.gov.au/portal/apps/webappviewer/index.html?id=437c0697e6524d8ebf10ad0d915bc219
+  
+  wallerawang_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Wallerawang-DEM-AHD_56_5m/Wallerawang-DEM-AHD_56_5m.asc"))
+  orange_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Orange-DEM-AHD_55_5m/Orange-DEM-AHD_55_5m.asc"))
+  bathurst_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                      "Bathurst-DEM-AHD_55_5m/Bathurst-DEM-AHD_55_5m.asc"))
+  blayney_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                     "Blayney-DEM-AHD_55_5m/Blayney-DEM-AHD_55_5m.asc"))
+  oberon_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                    "Oberon-DEM-AHD_55_5m/Oberon-DEM-AHD_55_5m.asc"))
+  crookwell_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                       "Crookwell-DEM-AHD_55_5m/Crookwell-DEM-AHD_55_5m.asc"))
+  katoomba_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                      "Katoomba-DEM-AHD_56_5m/Katoomba-DEM-AHD_56_5m.asc"))
+  taralga_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                     "Taralga-DEM-AHD_55_5m/Taralga-DEM-AHD_55_5m.asc"))
+  burragorang_rast <- terra::rast(paste0(downloaded_data_prefix,
+                                   "Burragorang-DEM-AHD_56_5m/Burragorang-DEM-AHD_56_5m.asc"))
+  
+  terra::writeRaster(wallerawang_rast, 
+                     paste0(wip_prefix, "wallerawang_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(orange_rast, 
+                     paste0(wip_prefix, "orange_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(bathurst_rast, 
+                     paste0(wip_prefix, "bathurst_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(blayney_rast, 
+                     paste0(wip_prefix, "blayney_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(oberon_rast, 
+                     paste0(wip_prefix, "oberon_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(crookwell_rast, 
+                     paste0(wip_prefix, "crookwell_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(katoomba_rast, 
+                     paste0(wip_prefix, "katoomba_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(taralga_rast, 
+                     paste0(wip_prefix, "taralga_dem.tif"), 
+                     overwrite=TRUE)
+  terra::writeRaster(burragorang_rast, 
+                     paste0(wip_prefix, "burragorang_dem.tif"), 
+                     overwrite=TRUE)
+  
+  rm(wallerawang_rast)
+  rm(orange_rast)
+  rm(bathurst_rast)
+  rm(blayney_rast)
+  rm(oberon_rast)
+  rm(crookwell_rast)
+  rm(katoomba_rast)
+  rm(taralga_rast)
+  rm(burragorang_rast)
+  
+  terrainr::merge_rasters(
+    c(paste0(wip_prefix, "wallerawang_dem.tif"),
+      paste0(wip_prefix, "orange_dem.tif"),
+      paste0(wip_prefix, "bathurst_dem.tif"),
+      paste0(wip_prefix, "blayney_dem.tif"),
+      paste0(wip_prefix, "oberon_dem.tif"),
+      paste0(wip_prefix, "crookwell_dem.tif"),
+      paste0(wip_prefix, "katoomba_dem.tif"),
+      paste0(wip_prefix, "taralga_dem.tif"),
+      paste0(wip_prefix, "burragorang_dem.tif")),
+     output_raster = paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"),
+    overwrite=TRUE)
+} 
+
+localtif <- terra::rast(paste0(wip_prefix, "oberon_and_environs_dem_5m.tif"))  
+
+
+# Load turbine points
+palings_yard_turbines_untransformed_sf <- sf::read_sf(paste0(assets_prefix,
+                                                            "paling_yards_turbines.geojson"))
+palings_yard_turbines_sf <- st_transform(palings_yard_turbines_untransformed_sf, crs=crs(localtif))
+palings_yard_turbines_df <- as.data.frame(st_coordinates(palings_yard_turbines_sf))
+
+palings_yard_turbines_untransformed_df <- as.data.frame(st_coordinates(palings_yard_turbines_untransformed_sf)) %>%
+  rename(long=X, lat = Y)
+
+pines_turbines_untransformed_sf <- sf::read_sf(paste0(assets_prefix,"Pines_Windfarm_Tower_Locations_Oct_2024.kml"))
+pines_turbines_sf <- st_transform(pines_turbines_untransformed_sf, crs=crs(localtif))
+pines_turbines_df <- as.data.frame(st_coordinates(pines_turbines_sf))
+pines_turbines_untransformed_df <- as.data.frame(st_coordinates(pines_turbines_untransformed_sf))
+
+n_turbines <- nrow(pines_turbines_untransformed_sf)
+
+# now take union of the batches
+extent_batches <- c("pines_distance_extent_1_79.rds",
+                    "pines_distance_extent_80_159.rds",
+                    "pines_distance_extent_160_242.rds")
+
+batched_extent_files <- all(file.exists(paste0(wip_prefix, extent_batches)))
+
+if(!batched_extent_files) {
+    # spawn background processes to calculate extents in batches of 40 turbine
+    # then get union of all of those.
+    
+    ext_1_79 <- callr::r_bg(function(x) source(x), args = list("pines_extents_1_79.R"))
+    ext_80_159 <- callr::r_bg(function(x) source(x), args = list("pines_extents_80_159.R"))
+    ext_160_242 <- callr::r_bg(function(x) source(x), args = list("pines_extents_160_242.R"))
+    
+    # poll for completion
+    repeat {
+      Sys.sleep(120)
+      if( !ext_1_79$is_alive() && 
+          !ext_80_159$is_alive() && 
+          !ext_160_242$is_alive()) {
+            Sys.sleep(30)
+            print(rep("-",20))
+            print("All 242 extents calculated!")
+            break
+          } else {
+            print(ext_1_79$is_alive()) 
+            print(ext_80_159$is_alive()) 
+            print(ext_160_242$is_alive())
+            print(rep("-",20))
+          }
+    }
+}
+                    
+if (!file.exists(paste0(wip_prefix, "pines_distance_extent.rds"))) {
+  # first get the extents of 32,201m buffers around each turbine and get union of them all
+  i <- 1
+  for (k in 1:length(extent_batches)) {
+    batch_distance_extent <- ext(readRDS(paste0(wip_prefix, extent_batches[k])))
+    if (i == 1) {
+      distance_extent <- batch_distance_extent
+    } else {
+      distance_extent <- terra::union(distance_extent, batch_distance_extent)
+    }
+    gc(verbose=TRUE, full=TRUE)
+    print(paste("i=", i))
+    print(distance_extent)
+    i <- i + 1
+  }
+  saveRDS(as.vector(distance_extent), paste0(wip_prefix, "pines_distance_extent.rds"))
+} else {
+  distance_extent <- ext(readRDS(paste0(wip_prefix, "pines_distance_extent.rds")))
+}
+
+# Now create the summed viewsheds for all 242 turbines in Pines wind farm
+turbine_visible_exposure_heights <- c(290, 200, 110)
+exposure_scores <- c(10, 20, 30)
+precalculated_files <- all(file.exists(paste0(wip_prefix, "pines_vshed_visual_exp_", 1:n_turbines, ".tif")))
+if (!precalculated_files) {
+
+  # spawn background processes to calculate extents in batches of 40 turbine
+  # then get union of all of those.
+  
+  vs_1_39 <- callr::r_bg(function(x) source(x), args=list("pines_viewsheds_1_39.R"))
+  vs_40_79 <- callr::r_bg(function(x) source(x), args=list("pines_viewsheds_40_79.R"))
+  vs_80_119 <- callr::r_bg(function(x) source(x), args=list("pines_viewsheds_80_119.R"))
+  vs_120_159 <- callr::r_bg(function(x) source(x), args=list("pines_viewsheds_120_159.R"))
+  vs_160_199 <- callr::r_bg(function(x) source(x), args=list("pines_viewsheds_160_199.R"))
+  vs_200_242 <- callr::r_bg(function(x) source(x), args=list("pines_viewsheds_200_242.R"))
+  
+  # poll for completion
+  repeat {
+    Sys.sleep(30)
+    if( !vs_1_39$is_alive() && 
+        !vs_40_79$is_alive() &&
+        !vs_80_119$is_alive() &&
+        !vs_120_159$is_alive() &&
+        !vs_160_199$is_alive() &&
+        !vs_200_242$is_alive()) {
+          Sys.sleep(30)
+          print("All 242*3 viewsheds calculated!")
+          break
+        }
+  }
+} 
+```
+
+```{r vis_prom, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+# sum the visual prominence scores for each turbine
+# also reclassify each turbine visual prominence to meaningful visibility
+# table 4 in paper and sum those too
+
+# load each turbine's visual prominence raster and sum into an
+# overall wind farm visual prominence raster.
+# also convert to the meaningful visibility binary matrix shown
+#  in table 4 and sum that for the entire windfarm
+
+if (!all(file.exists(paste0(wip_prefix, "pines_wfarm_vis_prominence.tif"), paste0(wip_prefix, "pines_wfarm_meaningful_vis.tif")))) {
+
+  for (i in 1:n_turbines) {
+    if (i == 1) {
+      wfarm_vis_prominence <- rast(paste0(wip_prefix, "pines_vshed_visual_exp_", i, ".tif"))
+      wfarm_meaningful_vis <- ifel(wfarm_vis_prominence == 0, 0, 1)
+    } else {
+      turbine_vis_prominence <- rast(paste0(wip_prefix, "pines_vshed_visual_exp_", i, ".tif"))
+      wfarm_vis_prominence <- sum(wfarm_vis_prominence, 
+                                  turbine_vis_prominence,
+                                  na.rm = TRUE)
+      wfarm_meaningful_vis <- sum(wfarm_meaningful_vis,
+                                  ifel(wfarm_vis_prominence == 0, 0, 1),
+                                  na.rm = TRUE)
+      rm(turbine_vis_prominence)
+      gc(verbose=TRUE, full=TRUE)
+    }
+    print(i)
+  }
+
+  writeRaster(wfarm_vis_prominence, 
+              paste0(wip_prefix, "pines_wfarm_vis_prominence.tif"),
+              overwrite=TRUE)
+
+  writeRaster(wfarm_meaningful_vis, 
+              paste0(wip_prefix, "pines_wfarm_meaningful_vis.tif"),
+              overwrite=TRUE)
+} else {
+  wfarm_vis_prominence <- rast(paste0(wip_prefix, "pines_wfarm_vis_prominence.tif"))
+  wfarm_meaningful_vis <- rast(paste0(wip_prefix, "pines_wfarm_meaningful_vis.tif"))
+}
+```
+
+```{r calc_metrics, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+# calculate mean visual promnence
+# summed visual prominence divided by summed meaningful visibility
+wfarm_mean_visual_prominence <- wfarm_vis_prominence / wfarm_meaningful_vis
+
+writeRaster(wfarm_mean_visual_prominence, 
+              paste0(wip_prefix, "pines_wfarm_mean_visual_prominence.tif"),
+              overwrite=TRUE)
+  
+# calculate adjusted windfarm visual prominence using square root, cube root and natural log 
+# multipliers for number of meaningfully visible turbines at each location in the raster
+
+wfarm_sqrt_adj_visual_prominence <- wfarm_mean_visual_prominence * sqrt(wfarm_meaningful_vis)
+wfarm_sqrt_adj_visual_prominence <- ifel(wfarm_sqrt_adj_visual_prominence ==0, NA, wfarm_sqrt_adj_visual_prominence)
+
+wfarm_cbrt_adj_visual_prominence <- wfarm_mean_visual_prominence * wfarm_meaningful_vis^(1/3)
+wfarm_cbrt_adj_visual_prominence <- ifel(wfarm_cbrt_adj_visual_prominence ==0, NA, wfarm_cbrt_adj_visual_prominence)
+
+wfarm_log_adj_visual_prominence <- wfarm_mean_visual_prominence * log(wfarm_meaningful_vis + 1)
+wfarm_log_adj_visual_prominence <- ifel(wfarm_log_adj_visual_prominence ==0, NA, wfarm_log_adj_visual_prominence)
+
+writeRaster(wfarm_sqrt_adj_visual_prominence, 
+              paste0(wip_prefix, "pines_wfarm_sqrt_adj_visual_prominence.tif"),
+              overwrite=TRUE)
+writeRaster(wfarm_cbrt_adj_visual_prominence, 
+              paste0(wip_prefix, "pines_wfarm_cbrt_adj_visual_prominence.tif"),
+              overwrite=TRUE)
+writeRaster(wfarm_log_adj_visual_prominence, 
+              paste0(wip_prefix, "pines_wfarm_log_adj_visual_prominence.tif"),
+              overwrite=TRUE)
+```
+
+```{r features, include=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+#| echo: false
+#| message: false
+#| warning: false
+#| include: false
+
+sqrt_pal <- colorNumeric(
+  palette = "plasma",
+  domain = minmax(wfarm_sqrt_adj_visual_prominence)[,1],
+  na.color = "transparent",
+  reverse=TRUE)
+
+cbrt_pal <- colorNumeric(
+  palette = "plasma",
+  domain = minmax(wfarm_cbrt_adj_visual_prominence)[,1],
+  na.color = "transparent",
+  reverse=TRUE)
+
+log_pal <- colorNumeric(
+  palette = "plasma",
+  domain = minmax(wfarm_log_adj_visual_prominence)[,1],
+  na.color = "transparent",
+  reverse=TRUE)
+
+# Other features
+taralga_line <- readLines(paste0(assets_prefix, "taralga_500kVA_line_v2.geojson")) %>%
+                  paste(collapse = "\n")
+
+pines_expl_area <- sf::read_sf(paste0(assets_prefix, "pines_exploration_area_v16.geojson"))
+
+oberon_boundary <- sf::read_sf(paste0(assets_prefix, "nsw-lga-boundaries.geojson")) %>%
+                      filter(abb_name == "Oberon")
+
+```
+
+## Results
+
+### Comparison of square root, cube root and natural logarithm adjustments for number of meaningfully visible turbines.
+
+We can compare the distribution of visual impact calculated using the three adjustment functions. It can be seen that the cube root and natural log adjustments have similar distributions, but the square root adjustment results in greater weight in the upper tail of the distrubution -- that is, more pixels (points in the landscape) have higher visual impact values.
+
+Which adjustment function is best requires further investigation, but all can readily be provided as alternatives.
+
+```{r, fig.asp=0.8}
+#| echo: false
+#| message: false
+#| warning: false
+
+wfarm_visual_impact_df <- as.data.frame(wfarm_sqrt_adj_visual_prominence) %>%
+                              mutate(visual_impact = viewshed,
+                                     adjustment = "Square root") %>%
+                          bind_rows(as.data.frame(wfarm_cbrt_adj_visual_prominence) %>%
+                              mutate(visual_impact = viewshed,
+                                     adjustment = "Cube root")) %>%
+                          bind_rows(as.data.frame(wfarm_log_adj_visual_prominence) %>%
+                              mutate(visual_impact = viewshed,
+                                     adjustment = "Natural log"))
+
+wfarm_visual_impact_df  %>%
+  ggplot(aes(x=visual_impact, fill = adjustment)) +
+    geom_histogram(bins = 100) + 
+    facet_grid(rows=vars(adjustment)) +
+    labs(title= "Distribution of visual impact metric for Pines wind farm",
+         subtitle = "Comparing three meaningful visibility adjustment functions",
+         x="Visual impact metric",
+         y="Number of pixels",
+         caption = "Note: Pixels from which no turbines are visible are excluded") +
+    guides(fill="none") +
+    theme_minimal()
+         
+```
+
+Because the cube root and natural log adjustments yield similar results (at least in terms of the ststatistical distrubution of values), we only show the maps for the square root and natural log adjustments here.
+
+### Visual impact assessment metric for the proposed Pines wind farm, using square root adjustment for the number of meaningfully visible turbines
+
+:::{.column-page}
+
+```{r leaflet_sqrt, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[23,1],
+          lat = pines_turbines_untransformed_df[23,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(wfarm_sqrt_adj_visual_prominence, 
+                 opacity=0.5, 
+                 colors = sqrt_pal,
+                  group = "Visual prominence of wind farm (square root adjustment)",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addCircleMarkers(lng = pines_turbines_untransformed_df[,1],
+                   lat = pines_turbines_untransformed_df[,2],
+              group = "Proposed Pines wind farm",
+              color = "cyan",
+              radius = 5,
+              stroke = FALSE,
+              fillOpacity = 0.5) %>%  
+  addLayersControl(baseGroups = c("Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c( "Proposed Pines wind farm",
+                                      "Visual prominence of wind farm (square root adjustment)"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE)) %>%
+ addLegend("bottomright", pal = sqrt_pal, values = base::rev(minmax(wfarm_sqrt_adj_visual_prominence)[,1]),
+    title = "Visual prominence",
+    opacity = 0.5
+  )  
+                    
+```
+
+:::
+
+
+### Visual impact assessment metric for the proposed Palings yard wind farm, using natural logarithm adjustment for the number of meaningfully visible turbines
+
+:::{.column-page}
+
+```{r leaflet_log, eval=TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+
+leaflet(height="800px", width="1200px") %>% 
+  setView(lng = pines_turbines_untransformed_df[23,1],
+          lat = pines_turbines_untransformed_df[23,2],
+          zoom = 10) %>%
+  addProviderTiles("Esri.WorldShadedRelief", group="Shaded relief") %>%
+  addProviderTiles("OpenTopoMap", group="Topography") %>%
+  addTiles(group = "OpenStreetMap") %>%
+  addProviderTiles("Esri.WorldImagery", group="Imagery") %>%
+  addRasterImage(wfarm_log_adj_visual_prominence, 
+                 opacity=0.5, 
+                 colors = sqrt_pal,
+                  group = "Visual prominence of wind farm (natural log adjustment)",
+                  maxBytes = 4 * 8330 * 8801) %>%
+  addCircleMarkers(lng = pines_turbines_untransformed_df[,1],
+                   lat = pines_turbines_untransformed_df[,2],
+              group = "Proposed Pines wind farm",
+              color = "cyan",
+              radius = 5,
+              stroke = FALSE,
+              fillOpacity = 0.5) %>%  
+  addLayersControl(baseGroups = c("Imagery", "Shaded relief", "Topography", "OpenStreetMap"),
+                   overlayGroups = c( "Proposed Pines wind farm",
+                                      "Visual prominence of wind farm (natural log adjustment)"),
+                   options = layersControlOptions(collapsed = FALSE)
+  ) %>%
+  addMeasure(
+            position = "bottomleft",
+            primaryLengthUnit = "kilometers",
+            primaryAreaUnit = "hectares",
+            activeColor = "#3D535D",
+            completedColor = "#7D4479",
+            localization = "en") %>%
+  addScaleBar(position = "bottomright",
+  options = scaleBarOptions(metric=TRUE, 
+                            imperial=FALSE,
+                            maxWidth=300,
+                            updateWhenIdle=TRUE)) %>%
+ addLegend("bottomright", pal = log_pal, values = base::rev(minmax(wfarm_log_adj_visual_prominence)[,1]),
+    title = "Visual prominence",
+    opacity = 0.5
+  )  
+                    
+```
+
+:::
+
+
+## Software
+
+The software used for this post is as described in the [first post](../2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html#software) in this series. 
+
+The source code for this blog post, which contains all the code used to create it, can be found on [Github](https://github.com/oberon-citizen-science/website/blob/main/posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/index.qmd).
+
+
+## Next steps
+
+In this post we have implemented the visual impact calculations decribed in @PalmerJF2022 for the proposed Palings Yard wind farm, south of Oberon. That paper seems to be well-regarded and is a good starting point for exploration of better metrics for assessing the visual impact of wind farms than those outlined in the official guidelines. 
+
+In future steps we can drape the overall visual impact metric raster over 3D rendered maps with animated fly-arounds to provide an alternative visualistion. Weighting of visual impact metrics by population density at each point would also possible to allow an approximate overall **human population-based visual impact score** to be created for a given configuration of wind turbines (and variations of that for specific locations or sets of locations). That would then allow the visual impact of different turbine layouts and numbers to be compared and optimised to reduce visual impact to a minimum (subject to other optimisation constraints). Of course, the visual impact of turbines in not limited only to where people live, and thus incorporation of information about other significant viewpoints in the landscape surround wind farms would need to be incorporated -- for example, although no-one (or very few people) live in National Parks, the visual impact of a wind farm on locations in that National Park is arguably greater, or more important, than the visual impact on farm or grazing land that is unoccupied by humans. Some thought needs to be given to this, for the purposes of optimising wind farm configuration with respect to visual impact.
+
+In a forthcoming blog post we will also compare the visual impact assessment performed here using the methodology described in @PalmerJF2022 with the visual impact asessment submitted as part of the 2023 Palings Yard wind farm EIS.
+
+## References
+
+::: {#refs}
+:::
