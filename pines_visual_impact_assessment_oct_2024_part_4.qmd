@@ -6,8 +6,9 @@ categories: [wind farms] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/pines_visual_impact_assessment_oct_2024_part_4.html
 image: deconstructing_viewsheds.png
-draft: false 
+draft: true
 freeze: true
+eval: false
 cap-location: margin
 lightbox: true
 references:
@@ -546,7 +547,7 @@ Because the cube root and natural log adjustments yield similar results (at leas
 
 :::{.column-page}
 
-```{r leaflet_sqrt, eval=TRUE}
+```{r leaflet_sqrt}
 #| echo: false
 #| message: false
 #| warning: false
@@ -602,7 +603,7 @@ leaflet(height="800px", width="1200px") %>%
 
 :::{.column-page}
 
-```{r leaflet_log, eval=TRUE}
+```{r leaflet_log}
 #| echo: false
 #| message: false
 #| warning: false

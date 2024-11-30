@@ -8,9 +8,10 @@ categories: [wind farms] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/
 image: line-of-sight.png
-draft: false 
+draft: true 
 lightbox: true
 freeze: true
+eval: false
 references:
 - type: article-journal
   id: PalmerJF2022
