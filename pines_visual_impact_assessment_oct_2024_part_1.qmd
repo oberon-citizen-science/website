@@ -3,15 +3,15 @@ title: "Pines Wind Farm visual impact assessment -- part 1"
 description: "An application of better methods for assessing the visual impact of wind farms using details of the proposed Pines Wind Farm released by it developers on 10 October 2024."
 author:
   - name: Tim Churches
-date: 2024-11-06
+date: 2024-12-16
 categories: [wind farms] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/
 image: line-of-sight.png
-draft: true 
+draft: false 
 lightbox: true
-freeze: true
-eval: false
+freeze: false
+eval: true
 references:
 - type: article-journal
   id: PalmerJF2022

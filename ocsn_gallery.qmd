@@ -228,3 +228,23 @@ Click on an image to see it full-screen -- you can then flick quickly between im
 
 ![_Odontomyia hunteri_ 5 of 5](gallery/Odontomyia_hunteri_5.jpg){group="odontomyia_hunteri"}
 
+
+## Testing the Oberon Citizen Science Network Platycam Mark 1 custom time-lapse camera, upper Duckmaloi River -- Tim Churches
+
+::: {.aside}
+
+![OCSN Platycam Mark 1 prototype mounted in a tree](assets/platycam_mark1_0.png)
+
+![OCSN Platycam Mark 1 prototype mounted in a tree (detail)](assets/platycam_mark1_1.png)
+
+![Checking the view captured by OCSN Platycam Mark 1 prototype via an iPad connected to it via Platycam's own local wi-fi hotspot](assets/platycam_mark1_2.png)
+:::
+
+This is an early test of the custom DIY time-lapse camera designed by Oberon Citizen Science Network members to provide better capabilities for studying platypus and rakali activity in low-light and nocturnal conditions than those provided by commercial time-lapse cameras. Here it is operating at 3 frames per second in total darkness, but it can operate at up to 5 frames per second, with a fast shutter speed to prevent blurring of fast-moving platypuses. Commercial time lapse cameras like the Brinno TLC300 are limited to 1 frame per second which is not quite fast enough. Illumination is provided by low-level (6W) 850nm infrared LED lighting (even lower-power infrared lighting is being developed for Platycam Mark 2). Location is the upper Duckmaloi River, about 15 km south of Oberon township, NSW Central Tablelands, elevation 1150m.
+
+This video is best viewed in full screen mode at HD resolution.
+
+{{< video https://youtu.be/1Ivy-YvfO4E >}}
+
+---
+

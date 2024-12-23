@@ -8,10 +8,10 @@ categories: [wind farms] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/
 image: Wind_turbines_in_southern_California_2016.jpg
-draft: true 
+draft: false 
 lightbox: true
-freeze: true
-eval: false
+freeze: false
+eval: true
 ---
 
 ::: {.callout-warning}

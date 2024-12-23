@@ -8,10 +8,10 @@ categories: [wind farms] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/
 image: compound_viewshed.png
-draft: true 
+draft: false 
 lightbox: true
-freeze: true
-eval: false
+freeze: false
+eval: true
 ---
 
 ::: {.callout-warning}
