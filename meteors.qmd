@@ -7,9 +7,14 @@ title: "Meteor detection and tracking"
 :::
 
 ::: {.callout-note title="Current status of this initiative"}
-Two Raspberry Shake and Boom devices capable of detecting the sonic booms made by meteors and space debris have already been deployed just south-east of Oberon township by OCSN founding members. We hope to add several more such monitoring stations to the OCSN network in due course. A prototype all-sky camera is also being built, which will monitor the night sky continuously to record possible meteor trails. Once tested, we hope to deplot several more of these at various locations around Oberon LGA. The data and images they capture will all be publicly available.
+Two Raspberry Shake and Boom devices capable of detecting the sonic booms made by meteors and space debris have already been deployed just south-east of Oberon township by OCSN founding members. We hope to add several more such monitoring stations to the OCSN network in due course. 
+
+A prototype all-sky camera has been built and commissioned in Chatham valley by OCSN members. It is still being tested and configured, but you can access the images it captures [here](https://all-sky.oberon-citizen.science/indi-allsky/). At this stage, we cannot guarantee that the all-sky camera will be operational all of the time, but that is the eventual aim. 
 :::
 
+::: {.aside}
 ![A commercial all-sky camera by All-Sky Optics in the UK. We are testing our own DIY versions of this type of device.](assets/allsky_optics_camera.jpeg)
+:::
 
-More information about this initiative will appear here in due course.
+
+

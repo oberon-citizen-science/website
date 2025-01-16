@@ -267,3 +267,13 @@ This video is best viewed in full screen mode at HD resolution.
 {{< video https://youtu.be/VbXFbjw-rBk >}}
 
 ---
+
+## More field trials of the Oberon Citizens Science Network Platycam Mark 1 DIY time-lapse camera -- Tim Churches
+
+A short video showing results of a recent field trial of the Oberon Citizen Science Network Platycam Mark 1 time-lapse camera after some software tweaks to reduce motion blur.
+
+This video is best viewed in full screen mode at HD resolution.
+
+{{< video https://youtu.be/L0rklF1xhQ8 >}}
+
+---

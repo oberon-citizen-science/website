@@ -1263,7 +1263,7 @@
     "href": "meteors.html",
     "title": "Meteor detection and tracking",
     "section": "",
-    "text": "Detecting meteors\n\n\n\n\n\n\n\n\nCurrent status of this initiative\n\n\n\nTwo Raspberry Shake and Boom devices capable of detecting the sonic booms made by meteors and space debris have already been deployed just south-east of Oberon township by OCSN founding members. We hope to add several more such monitoring stations to the OCSN network in due course. A prototype all-sky camera is also being built, which will monitor the night sky continuously to record possible meteor trails. Once tested, we hope to deplot several more of these at various locations around Oberon LGA. The data and images they capture will all be publicly available.\n\n\n\n\n\nA commercial all-sky camera by All-Sky Optics in the UK. We are testing our own DIY versions of this type of device.\n\n\nMore information about this initiative will appear here in due course.",
+    "text": "Detecting meteors\n\n\n\n\n\n\n\n\nCurrent status of this initiative\n\n\n\nTwo Raspberry Shake and Boom devices capable of detecting the sonic booms made by meteors and space debris have already been deployed just south-east of Oberon township by OCSN founding members. We hope to add several more such monitoring stations to the OCSN network in due course.\nA prototype all-sky camera has been built and commissioned in Chatham valley by OCSN members. It is still being tested and configured, but you can access the images it captures here. At this stage, we cannot guarantee that the all-sky camera will be operational all of the time, but that is the eventual aim.\n\n\n\n\n\n\n\n\n\n\nA commercial all-sky camera by All-Sky Optics in the UK. We are testing our own DIY versions of this type of device.",
     "crumbs": [
       "News",
       "Sensor Networks",
@@ -1510,5 +1510,12 @@
     "title": "OCSN Photo Gallery",
     "section": "Platypus time-lapse video surveillance in an isolated dam, Chatham Valley, near Oberon NSW – Tim Churches",
     "text": "Platypus time-lapse video surveillance in an isolated dam, Chatham Valley, near Oberon NSW – Tim Churches\nThis time-lapse video was recorded at an isolated dam on a private property in Chatham Valley, about 15 km south of Oberon township, NSW. The dam is 200-300m from the nearest permanent tributary of the upper Duckmaloi River, at an elevation of about 1250m ASL. The video clearly shows a population of at least two platypuses in the dam, probably three, and possibly four. Further behavioural monitoring videos of this platypus population are planned. Oberon Citizen Science Network thanks the property owner for inviting us to record these images.\nThis video is best viewed in full screen mode at HD resolution."
+  },
+  {
+    "objectID": "ocsn_gallery.html#more-field-trials-of-the-oberon-citizens-science-network-platycam-mark-1-diy-time-lapse-camera-tim-churches",
+    "href": "ocsn_gallery.html#more-field-trials-of-the-oberon-citizens-science-network-platycam-mark-1-diy-time-lapse-camera-tim-churches",
+    "title": "OCSN Photo Gallery",
+    "section": "More field trials of the Oberon Citizens Science Network Platycam Mark 1 DIY time-lapse camera – Tim Churches",
+    "text": "More field trials of the Oberon Citizens Science Network Platycam Mark 1 DIY time-lapse camera – Tim Churches\nA short video showing results of a recent field trial of the Oberon Citizen Science Network Platycam Mark 1 time-lapse camera after some software tweaks to reduce motion blur.\nThis video is best viewed in full screen mode at HD resolution."
   }
 ]
