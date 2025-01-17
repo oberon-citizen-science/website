@@ -10,7 +10,7 @@ citation:
 image: compound_viewshed.png
 draft: false 
 lightbox: true
-freeze: false
+freeze: true
 eval: true
 ---
 

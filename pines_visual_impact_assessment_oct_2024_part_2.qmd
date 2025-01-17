@@ -10,7 +10,7 @@ citation:
 image: Wind_turbines_in_southern_California_2016.jpg
 draft: false 
 lightbox: true
-freeze: false
+freeze: true
 eval: true
 ---
 

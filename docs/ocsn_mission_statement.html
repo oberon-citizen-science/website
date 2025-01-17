@@ -197,11 +197,15 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog posts</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link active" href="https://all-sky.oberon-citizen.science/indi-allsky/" aria-current="page"> 
+<span class="menu-text">All-sky camera</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./ocsn_gallery.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./register_interest.html" aria-current="page"> 
+    <a class="nav-link" href="./register_interest.html"> 
 <span class="menu-text">Register your interest</span></a>
   </li>  
 </ul>
@@ -391,6 +395,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./meteors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Meteor detection and tracking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://all-sky.oberon-citizen.science/indi-allsky/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All-sky camera (beta)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1121,7 +1131,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
