@@ -1517,5 +1517,12 @@
       "Sensor Networks",
       "Eco-acoustics"
     ]
+  },
+  {
+    "objectID": "ocsn_gallery.html#first-field-trial-of-the-oberon-citizen-science-network-platycam-mark-2-camera-tim-churches",
+    "href": "ocsn_gallery.html#first-field-trial-of-the-oberon-citizen-science-network-platycam-mark-2-camera-tim-churches",
+    "title": "OCSN Photo Gallery",
+    "section": "First field trial of the Oberon Citizen Science Network Platycam Mark 2 camera – Tim Churches",
+    "text": "First field trial of the Oberon Citizen Science Network Platycam Mark 2 camera – Tim Churches\nThis 30 minute video documents the very first results obtained from the OCSN Platycam Mark 2 camera. This is an improvement on the Mark 1 prototype. The Mark 2 camera features a high-resolution Sony IMX585 Starvis2 sensor with even better low-light capability than the IMX327 sensor used in teh Mark 1. This camera sensor and matching lens was supplied by specialist vision system developer Soho Enterprise, based in Japan, and it uses an M22 mount f1.0 aperture lens that collects a lot of light. Storage is upgraded to a 2TB NVME SSD attached to a Raspberry Pi 4B single-board computer, all powered by an external 12.6V 30AH lithium iron phospate battery, which also powers a 6W 850nm wavelength near infrared (IR) light for ilumination at night. This IR light source is completely invisible to human eyes, and probably most animals – it is very dim, but is just bright enough (at invisible near IR wavelengths) enough for the Sony IMX585 sensor, even at fast shutter speeds to prevent motion-blur in the captured images. This configuration also permits continuous capture of HD quality video at 24 frames per second, thus this is no longer a time-lapse camera but rather a full-motion camera. Even higher frame rates may be possible. There are a few issues with this first test which need to be resolved, including the white balance, flickering due to the automatic exposure system and difficulty in focussing the lens accurately in the field, given its short depth-of-field due to its wide aperture. All these probelms should be able to be resolved with software changes and the use of a focussing target chart on a pole when deploying the camera in the field. testing using a more powerful Raspberry Pi 5 computer will also be undertaken. Thus, more and hopefully even better results to come!\nThis video is best viewed in full screen mode at HD resolution."
   }
 ]
