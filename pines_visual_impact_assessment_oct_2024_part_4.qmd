@@ -6,9 +6,9 @@ categories: [wind farms] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/pines_visual_impact_assessment_oct_2024_part_4.html
 image: deconstructing_viewsheds.png
-draft: false
-freeze: false
-eval: true
+draft: true
+freeze: true
+eval: false
 cap-location: margin
 lightbox: true
 references:

@@ -42,7 +42,7 @@ BioNet is a database of flora and fauna information collected over many decades 
 It is also important because threatened and endangered species records in BioNet must be used by assessors of proposed developments in order to avoid or minimise impacts on wildlife, and is also used as part of the [Biodiversity Assessment Method](https://www.environment.nsw.gov.au/-/media/OEH/Corporate-Site/Documents/Animals-and-plants/Biodiversity/biodiversity-assessment-method-2020-200438.pdf) (BAM), which is used as part of the **legislated** Biodiversity Offsets Scheme (currently under review due to [numerous flaws found by the Audit Office of NSW](https://www.audit.nsw.gov.au/our-work/reports/effectiveness-of-the-biodiversity-offsets-scheme)).
 
 ::: {.callout-note}
-The data shown below were manually downloaded from the NSW government BioNet database on 24 September 2024. It is intended to convert these charts and maps to automatically update once a week with the latest data from BioNet once an API access key has been obtained.
+The data shown below were manually downloaded from the NSW government BioNet database on 18 February 2025. It is intended to convert these charts and maps to automatically update once a week with the latest data from BioNet once an API access key has been obtained.
 :::
 
 The chart below shows the trend in platypus and rakali records in BioNet. These trends may reflect frequency of observations and survey efforts as much as declines or fluctuations in the animal populations or extents. This is an issue which OCSN hopes to address over the next few years by mounting regular, systematic surveys of platypus and rakali activity in key water courses in Oberon LGA, using a combination of direct observation and time-lapse camera recordings (see below). Note that there are very few observations of rakali. This may be because they are rare, but also because they are elusive -- but see the video of a rakali captured by OCSN committee member Kyla Ries on this page.
@@ -57,7 +57,10 @@ library(tidyverse)
 library(sf)
 library(clock)
 
-bionet_oberon <- read_tsv("assets/Atlas_records_20240924-170940/Atlas_records_dfy0dp51xksxkltuxbt4izzs20240924-170937.txt", skip=4)
+# download data for all fauna in Oberon SLA from https://atlas.bionet.nsw.gov.au/UI_Modules/ATLAS_/AtlasSearch.aspx
+# bionet_oberon <- read_tsv("assets/Atlas_records_20240924-170940/Atlas_records_dfy0dp51xksxkltuxbt4izzs20240924-170937.txt", skip=4)
+
+bionet_oberon <- read_tsv("assets/Atlas_records_20250218-140347/Atlas_records_eoiugh2zo1aekxlxom5wzh2w20250218-140340.txt", skip=4)
 
 platypus_rakali_sf <- bionet_oberon %>% 
                         filter(SpeciesCode %in% c("1001", "1415")) %>%
@@ -116,7 +119,7 @@ platypus_rakali_sf %>%
   labs(x="Year of observation",
        y="Number of observations",
        title="Platypus and rakali observations in Oberon LGA",
-       subtitle = "NSW BioNet Atlas data as at Sept 2024")
+       subtitle = "NSW BioNet Atlas data as at Feb 2025")
 
 ```
 
@@ -126,7 +129,7 @@ As can be seen, the small number of records, particularly recent records, for pl
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap: "Platypus and rakali observations in Oberon LGA: NSW BioNet Atlas data as at Sept 2024"
+#| fig-cap: "Platypus and rakali observations in Oberon LGA: NSW BioNet Atlas data as at Feb 2025"
 
 library(tidyverse)
 library(leaflet)

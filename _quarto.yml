@@ -69,7 +69,7 @@ website:
       - text: "Blog posts"
         href: blog.qmd
       - text: "All-sky camera"
-        href: https://all-sky.oberon-citizen.science/indi-allsky/
+        href: https://www.ocsn-allsky.net/indi-allsky/
       - text: "Gallery"
         href: ocsn_gallery.qmd
       - text: "Register your interest"
@@ -122,7 +122,7 @@ website:
           - text: "Meteor detection and tracking"
             href: meteors.qmd
           - text: "All-sky camera (beta)"
-            href: https://all-sky.oberon-citizen.science/indi-allsky/
+            href: https://www.ocsn-allsky.net/indi-allsky/
           - text: "Bird call detection and counting"
             href: birdnet.qmd
           - text: "Eco-acoustics"
