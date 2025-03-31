@@ -62,4 +62,8 @@ Titley are putting on a series of three 30 minute seminars between August and Oc
 * The [Australian Acoustic Observatory](https://acousticobservatory.org/tag/ecoacoustics/)
 * The [Australasian Chapter of Ecoacoustics (ACEs)](https://ausecoacoustics.org),  a branch of the [International Society of Ecoacoustics (ISE)](https://sites.google.com/site/ecoacousticssociety/)
 
+## Bat call analyses
+
+These Audiomoth Spectrograms are from a Large Forest Bat Vespadelus darlingtoni.
+
 
