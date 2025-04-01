@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -483,7 +483,7 @@ ul.task-list li input[type="checkbox"] {
         
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
@@ -491,6 +491,12 @@ ul.task-list li input[type="checkbox"] {
 
 <p>A large magnitude 6.7 (M6.7) Earthquake occurred off the southern coast of New Zealand on 25th March, 2025 at 01:43:12 UTC (2:43pm local time).</p>
 <p>While processing phase arrivals on Oberon Citizen Science Network station R21C0, a large signal was noticed that dwarfed the expected signal. The SKiKP phase arrival was undetectable due to this large seismic signal or noise. It lacked low frequencies, so initial thoughts were it was local noise and probably not a seismic signal of any interest, though I’d never seen a signal like this before - noise or otherwise.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="M6.7Quake_Off_West_Coast_of_South_Island_New_ Zealand_20250325 _014312_UTC_R21C0_SKiKP.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure 1: First detection of the Oceanic Infrasound Stimulated Seismic Wave."><img src="M6.7Quake_Off_West_Coast_of_South_Island_New_ Zealand_20250325 _014312_UTC_R21C0_SKiKP.png" class="img-fluid figure-img" alt="Figure 1: First detection of the Oceanic Infrasound Stimulated Seismic Wave."></a></p>
+<figcaption>Figure 1: First detection of the Oceanic Infrasound Stimulated Seismic Wave.</figcaption>
+</figure>
+</div>
 <p>That changed when I checked Oberon Citizen Science Network station R5968, which is 6 kms away, and found the same signal/noise. This is not just local to one station, and thus unlikely to be just noise. How far does it go?</p>
 <p>So a search was done of Raspberry Shake Stations in Lithgow, Mudgee, Gulgong and Coonabarabran… The signal was on all of them! It seemed to be slightly later as the stations went north, but that was difficult to be sure since the signal has no sudden changes in amplitude to give accurate timing.</p>
 <p>The arrival time was too late for either <em>Love</em> or <em>Raleigh</em> surface waves, so the HDF channels of the Raspberry Shake and Booms were checked to see if it was an infrasound signal moving the ground and generating a seismic signal. We had detected this type of interaction in the past when analysing very close blasts from Oberon Quarries. However there was no corresponding infrasound signal.</p>
@@ -505,77 +511,49 @@ ul.task-list li input[type="checkbox"] {
 <p>A minor adjustment to the hypothesis suggested itself. The initial point of interaction is probably the continental shelf, and it’s likely that interaction continues from there until the coast.</p>
 <p>In a similar way, the point of interaction corresponding to the peak signal strength was calculated. Is this on the coast?</p>
 <p>Plotted on the map this point of second interaction is inland some way, but that is assuming that the point is constrained to the direct line between the quake and station, which it isn’t. The point of interaction corresponding with peak signal amplitude probably coincides with the coast between Wollongong and Botany Bay.</p>
-<p>Forgot to mention… the peak amplitude of EHE channel of R4FA0 is about twice that of the EHN channel. This is consistent with the peak point of interaction being on the coast between Wollongong and Botany Bay. If EHN and EHE were equal, the wave would be approaching from 135° or closer to the direct path.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="South_NZ_earthquake_to_Oberon_map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure 2: Map of the calculation results."><img src="South_NZ_earthquake_to_Oberon_map.png" class="img-fluid figure-img" alt="Figure 2: Map of the calculation results."></a></p>
+<figcaption>Figure 2: Map of the calculation results.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="South_NZ_earthquake_to_Oberon_map2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 3: Close up map of stations, coastline and calculated interaction points."><img src="South_NZ_earthquake_to_Oberon_map2.png" class="img-fluid figure-img" alt="Figure 3: Close up map of stations, coastline and calculated interaction points."></a></p>
+<figcaption>Figure 3: Close up map of stations, coastline and calculated interaction points.</figcaption>
+</figure>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Click or tap on these margin figures to see a larger version.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="R4FA0.EHE-1742868043000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure 4: Peak amplitude on R4FA0 EHE channel of >4e-6 m/s - nearly twice the peak amplitude of the EHZ and EHN channels. This suggests the wave approached R4FA0 from ESE direction rather than SE, and that the source of the seismic wave is close. This supports the hypothesis that peak signal path was via the coast between Wollongong and Botany Bay."><img src="R4FA0.EHE-1742868043000.png" class="img-fluid figure-img" alt="Figure 4: Peak amplitude on R4FA0 EHE channel of >4e-6 m/s - nearly twice the peak amplitude of the EHZ and EHN channels. This suggests the wave approached R4FA0 from ESE direction rather than SE, and that the source of the seismic wave is close. This supports the hypothesis that peak signal path was via the coast between Wollongong and Botany Bay."></a></p>
+<figcaption>Figure 4: Peak amplitude on R4FA0 EHE channel of &gt;4e-6 m/s - nearly twice the peak amplitude of the EHZ and EHN channels. This suggests the wave approached R4FA0 from ESE direction rather than SE, and that the source of the seismic wave is close. This supports the hypothesis that peak signal path was via the coast between Wollongong and Botany Bay.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="R4FA0.EHN-1742868049000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure 5: R4FA0 EHN channle signal for comparison with Figure 4 above"><img src="R4FA0.EHN-1742868049000.png" class="img-fluid figure-img" alt="Figure 5: R4FA0 EHN channle signal for comparison with Figure 4 above"></a></p>
+<figcaption>Figure 5: R4FA0 EHN channle signal for comparison with Figure 4 above</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="R4FA0.EHZ-1742868038000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure 6: R4Fa0 EHZ channel signal for comparison with Figure 4 above"><img src="R4FA0.EHZ-1742868038000.png" class="img-fluid figure-img" alt="Figure 6: R4Fa0 EHZ channel signal for comparison with Figure 4 above"></a></p>
+<figcaption>Figure 6: R4Fa0 EHZ channel signal for comparison with Figure 4 above</figcaption>
+</figure>
+</div>
+</div></div><p>One more observation: the peak amplitude of EHE channel of R4FA0 is about twice that of the EHN channel. This is consistent with the peak point of interaction being on the coast between Wollongong and Botany Bay. If EHN and EHE were equal, the wave would be approaching from 135° or closer to the direct path.</p>
 <p>This section of coast is close to the correct distances from both station and quake, and is roughly perpendicular to the approaching infrasound waves - perfect for generating a strong seismic signal.</p>
 <p>The tail end of the signal is likely to be waves that have taken a less direct route between quake and station, so the paths may be significantly longer (but unknown in length) so the average speed of these waves appears less than the speed of sound in water. If the true length of these paths was known, their average speeds would be above the speed of sound in water.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="M6.7Quake_Off_West_Coast_of_South_Island_New_ Zealand_20250325 _014312_UTC_R21C0_SKiKP.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Fig 1"><img src="M6.7Quake_Off_West_Coast_of_South_Island_New_ Zealand_20250325 _014312_UTC_R21C0_SKiKP.png" class="img-fluid figure-img" alt="Fig 1"></a></p>
-<figcaption>Fig 1</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="R4FA0.EHE-1742868043000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Fig 2"><img src="R4FA0.EHE-1742868043000.png" class="img-fluid figure-img" alt="Fig 2"></a></p>
-<figcaption>Fig 2</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="R4FA0.EHN-1742868049000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Fig 3"><img src="R4FA0.EHN-1742868049000.png" class="img-fluid figure-img" alt="Fig 3"></a></p>
-<figcaption>Fig 3</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="R4FA0.EHZ-1742868038000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Fig 4"><img src="R4FA0.EHZ-1742868038000.png" class="img-fluid figure-img" alt="Fig 4"></a></p>
-<figcaption>Fig 4</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="R21C0.EHZ-1742868038000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Fig 5"><img src="R21C0.EHZ-1742868038000.png" class="img-fluid figure-img" alt="Fig 5"></a></p>
-<figcaption>Fig 5</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="R1564.EHZ-1742868060000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Fig 6"><img src="R1564.EHZ-1742868060000.png" class="img-fluid figure-img" alt="Fig 6"></a></p>
-<figcaption>Fig 6</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="R5968.EHZ-1742868038000.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Fig 7"><img src="R5968.EHZ-1742868038000.png" class="img-fluid figure-img" alt="Fig 7"></a></p>
-<figcaption>Fig 7</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="South_NZ_earthquake_to_Oberon_map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Fig 8"><img src="South_NZ_earthquake_to_Oberon_map.png" class="img-fluid figure-img" alt="Fig 8"></a></p>
-<figcaption>Fig 8</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="South_NZ_earthquake_to_Oberon_map2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Fig 9"><img src="South_NZ_earthquake_to_Oberon_map2.png" class="img-fluid figure-img" alt="Fig 9"></a></p>
-<figcaption>Fig 9</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="Spreadsheet_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Fig 10"><img src="Spreadsheet_1.png" class="img-fluid figure-img" alt="Fig 10"></a></p>
-<figcaption>Fig 10</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="Spreadsheet_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Fig 11"><img src="Spreadsheet_2.png" class="img-fluid figure-img" alt="Fig 11"></a></p>
-<figcaption>Fig 11</figcaption>
-</figure>
-</div>
+<section id="calculation-details" class="level4">
+<h4 class="anchored" data-anchor-id="calculation-details">Calculation details</h4>
+<p><a href="Spreadsheet_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="Spreadsheet_1.png" class="img-fluid"></a></p>
+<p><a href="Spreadsheet_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="Spreadsheet_2.png" class="img-fluid"></a></p>
 
 
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sheehan2025,
   author = {Sheehan, Alan},
@@ -1160,7 +1138,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

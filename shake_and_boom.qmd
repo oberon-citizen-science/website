@@ -4,7 +4,7 @@ lightbox: true
 ---
 
 ::: {.callout-note title="Current status of this initiative"}
-Two founding members of OCSN, Alan Sheehan and Tim Churches, both have [Raspberry Shake & Boom](https://shop.raspberryshake.org/product/turnkey-iot-atmospheric-infrasound-monitor-rsboom/?attribute_pa_variation=indoor&attribute_pa_license=private-use-125-discount) seismic and infrasound monitoring devices (with identifiers R21C0 and R5968 respectively) deployed at their properties, about 10-15km south-east of Oberon township and each about 6km apart. The seismic and infrasound data continuously recorded and uploaded by these devices is freely and openly available at the URLs below, but can also be accessed via an API (application programming interface) to allow detailed anayles of the data collected at several, or many stations. Some examples of such analyses undertaken by Alan Sheehan are shown below. OCSN aims to establish a wider network of such devices located at various points in Oberon LGA, and to further develop analysis program code to undertake various types of analysis and validation of the data collected, including infrasound monitoring and analysis.
+Two founding members of OCSN, Alan Sheehan and Tim Churches, both have [Raspberry Shake & Boom](https://shop.raspberryshake.org/product/turnkey-iot-atmospheric-infrasound-monitor-rsboom/?attribute_pa_variation=indoor&attribute_pa_license=private-use-125-discount) seismic and infrasound monitoring devices (with identifiers R21C0 and R5968 respectively) deployed at their properties, about 10-15km south-east of Oberon township and each about 6km apart. The seismic and infrasound data continuously recorded and uploaded by these devices is freely and openly available at the URLs below, but can also be accessed via an API (application programming interface) to allow detailed analyses of the data collected at several, or many stations. Some examples of such analyses undertaken by Alan Sheehan are shown below. OCSN aims to establish a wider network of such devices located at various points in Oberon LGA, and to further develop analysis program code to undertake various types of analysis and validation of the data collected, including infrasound monitoring and analysis.
 
 * Raspberry Shake & Boom station R21C0
   - [helicorder (seismic) data](https://dataview.raspberryshake.org/#/AM/R21C0/00/EHZ)
@@ -12,6 +12,18 @@ Two founding members of OCSN, Alan Sheehan and Tim Churches, both have [Raspberr
 * Raspberry Shake & Boom station R5968
   - [helicorder (seismic) data](https://dataview.raspberryshake.org/#/AM/R5968/00/EHZ)
   - [infrasound data](https://dataview.raspberryshake.org/#/AM/R5968/00/HDF)
+:::
+
+::: {.callout-tip title="More OCSN seismic and infrasound analyses"}
+
+Analyses of seismic and infrasound data collected by the OCSN Raspberry Shake & Boom monitoring stations are published regularly on the [OCSN Raspberry Shakes & Booms page on Facebook](https://www.facebook.com/profile.php?id=61556786746312).
+
+Please also see the [OCSN Blog posts page](blog.html) for occasional longer articles on our seismic and infrasound data, including these posts:
+
+* [2025-03-30 Oceanic Infrasound-stimulated seismic wave](posts/2025-03-30-oceanic-infrasound/)
+* [2024-06-24 G-weighting infrasound data](posts/2024-06-24-g-weighting/)
+* [2024-06-23 Minor earthquake in Hazelbrook](posts/2024-06-23-hazelbrook-quake/)
+
 :::
 
 ::: {.aside}

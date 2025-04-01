@@ -17,6 +17,8 @@ A large magnitude 6.7 (M6.7) Earthquake occurred off the southern coast of New Z
 
 While processing phase arrivals on Oberon Citizen Science Network station R21C0, a large signal was noticed that dwarfed the expected signal. The SKiKP phase arrival was undetectable due to this large seismic signal or noise. It lacked low frequencies, so initial thoughts were it was local noise and probably not a seismic signal of any interest, though I'd never seen a signal like this before - noise or otherwise.
 
+![Figure 1: First detection of the Oceanic Infrasound Stimulated Seismic Wave.](M6.7Quake_Off_West_Coast_of_South_Island_New_ Zealand_20250325 _014312_UTC_R21C0_SKiKP.png)
+
 That changed when I checked Oberon Citizen Science Network station R5968, which is 6 kms away, and found the same signal/noise. This is not just local to one station, and thus unlikely to be just noise. How far does it go?
 
 So a search was done of Raspberry Shake Stations in Lithgow, Mudgee, Gulgong and Coonabarabran... The signal was on all of them! It seemed to be slightly later as the stations went north, but that was difficult to be sure since the signal has no sudden changes in amplitude to give accurate timing.
@@ -45,7 +47,22 @@ In a similar way, the point of interaction corresponding to the peak signal stre
 
 Plotted on the map this point of second interaction is inland some way, but that is assuming that the point is constrained to the direct line between the quake and station, which it isn't. The point of interaction corresponding with peak signal amplitude probably coincides with the coast between Wollongong and Botany Bay.
 
-Forgot to mention... the peak amplitude of EHE channel of R4FA0 is about
+![Figure 2: Map of the calculation results.](South_NZ_earthquake_to_Oberon_map.png)
+
+![Figure 3: Close up map of stations, coastline and calculated interaction points.](South_NZ_earthquake_to_Oberon_map2.png)
+
+::: {.aside}
+Click or tap on these margin figures to see a larger version.
+
+![Figure 4: Peak amplitude on R4FA0 EHE channel of >4e-6 m/s - nearly twice the peak amplitude of the EHZ and EHN channels. This suggests the wave approached R4FA0 from ESE direction rather than SE, and that the source of the seismic wave is close. This supports the hypothesis that peak signal path was via the coast between Wollongong and Botany Bay.](R4FA0.EHE-1742868043000.png)
+
+![Figure 5: R4FA0 EHN channle signal for comparison with Figure 4 above](R4FA0.EHN-1742868049000.png)
+
+![Figure 6: R4Fa0 EHZ channel signal for comparison with Figure 4 above](R4FA0.EHZ-1742868038000.png)
+
+:::
+
+One more observation: the peak amplitude of EHE channel of R4FA0 is about
 twice that of the EHN channel. This is consistent with the peak point of
 interaction being on the coast between Wollongong and Botany Bay. If EHN
 and EHE were equal, the wave would be approaching from 135° or closer to
@@ -55,24 +72,8 @@ This section of coast is close to the correct distances from both station and qu
 
 The tail end of the signal is likely to be waves that have taken a less direct route between quake and station, so the paths may be significantly longer (but unknown in length) so the average speed of these waves appears less than the speed of sound in water. If the true length of these paths was known, their average speeds would be above the speed of sound in water.
 
-![Fig 1](M6.7Quake_Off_West_Coast_of_South_Island_New_ Zealand_20250325 _014312_UTC_R21C0_SKiKP.png)
+#### Calculation details
 
-![Fig 2](R4FA0.EHE-1742868043000.png)
+![](Spreadsheet_1.png)
 
-![Fig 3](R4FA0.EHN-1742868049000.png)
-
-![Fig 4](R4FA0.EHZ-1742868038000.png)
-
-![Fig 5](R21C0.EHZ-1742868038000.png)
-
-![Fig 6](R1564.EHZ-1742868060000.png)
-
-![Fig 7](R5968.EHZ-1742868038000.png)
-
-![Fig 8](South_NZ_earthquake_to_Oberon_map.png)
-
-![Fig 9](South_NZ_earthquake_to_Oberon_map2.png)
-
-![Fig 10](Spreadsheet_1.png)
-
-![Fig 11](Spreadsheet_2.png)
+![](Spreadsheet_2.png)
