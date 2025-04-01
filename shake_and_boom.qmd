@@ -16,7 +16,7 @@ Two founding members of OCSN, Alan Sheehan and Tim Churches, both have [Raspberr
 
 ::: {.callout-tip title="More OCSN seismic and infrasound analyses"}
 
-Analyses of seismic and infrasound data collected by the OCSN Raspberry Shake & Boom monitoring stations are published regularly on the [OCSN Raspberry Shakes & Booms page on Facebook](https://www.facebook.com/profile.php?id=61556786746312).
+Apart from the examples shown below, analyses of seismic and infrasound data collected by the OCSN Raspberry Shake & Boom monitoring stations are published regularly on the [OCSN Raspberry Shakes & Booms page on Facebook](https://www.facebook.com/profile.php?id=61556786746312).
 
 Please also see the [OCSN Blog posts page](blog.html) for occasional longer articles on our seismic and infrasound data, including these posts:
 
