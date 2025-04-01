@@ -4,7 +4,7 @@ lightbox: true
 ---
 
 ::: {.callout-note title="Current status of this initiative"}
-OCSN members and members of the public are strongly encouraged to document koala sightings and record these in the in the [**I Spy Koala** app](https://www2.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/programs-legislation-and-framework/nsw-koala-strategy/how-to-get-involved/privacy-policy) for smartphones, which sends the data to the NSW government BioNet Atlas (see note below for more dteails), as well as the  [iNaturalist](https://inaturalist.ala.org.au) app. More systematic field surveys by OCSN may be organised in due course. In addition, the feasibility of using eco-acoustic methods is being investigated (see below).
+OCSN members and members of the public are strongly encouraged to document koala sightings and record these in the in the [**I Spy Koala** app](https://www2.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/programs-legislation-and-framework/nsw-koala-strategy/how-to-get-involved/privacy-policy) for smartphones, which sends the data to the NSW government BioNet Atlas (see note below for more details), as well as the  [iNaturalist](https://inaturalist.ala.org.au) app. More systematic field surveys by OCSN may be organised in due course. In addition, the feasibility of using eco-acoustic methods is being investigated (see below).
 :::
 
 ## Introduction
