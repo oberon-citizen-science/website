@@ -25,6 +25,8 @@ At this stage investigation is still on-going as to the most appropriate air qua
 
 But just to prove that we are serious about developing such a network of community-owned -and-operated air quality monitors, here is a video of a messy corner of a messy desk of an OCSN member, showing an early prototype, before it is packaged in a weatherproof housing. The idea is that a number of such stations would continuously send data up into "the cloud" (referred to in the video as "Amazon", meaning Amazon Web Services (AWS), one of the major cloud providers -- as a community-based not-for-profit organisation OCSN receives a 90% discount on their services, making them very cheap). A web-based dashboard showing current and historical air quality data for Oberon would then be made available, leveraging these continuously uploaded data. 
 
+You may need to turn audio on to hear the explanation of what is being demonstrated.
+
 {{< video assets/aq_sensor_progress.mov >}}
 
 
