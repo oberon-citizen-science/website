@@ -43,6 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -445,7 +447,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#prototyping" id="toc-prototyping" class="nav-link" data-scroll-target="#prototyping">Prototyping</a></li>
+  </ul></li>
   <li><a href="#air-quality-indicators" id="toc-air-quality-indicators" class="nav-link" data-scroll-target="#air-quality-indicators">Air quality indicators</a>
   <ul class="collapse">
   <li><a href="#air-quality-index-aqi" id="toc-air-quality-index-aqi" class="nav-link" data-scroll-target="#air-quality-index-aqi">Air Quality Index (AQI)</a></li>
@@ -494,7 +499,7 @@ Current status of this initiative
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Discussion and planning stages only. Suitable sensor devices are being researched and several configurations of DIY devices are being prototyped. The aim is to provide Oberon with near real-time air quality monitoring data of adequate reliability and accuracy which anyone can access or view. More information and project plans will appear here in due course.</p>
+<p>OCSN members are currently testing several types of air quality sensors for use in a DIY air quality monitoring station design. These devices will be substantially better than most of the affordable commercially-available air quality sensors stations, but at a lower cost. The aim is to provide first Oberon township, and then othet townships and the wider Oberon region, with near real-time air quality monitoring data of adequate reliability and accuracy which anyone can access or view. More information and project plans will appear here in due course.</p>
 </div>
 </div>
 <section id="introduction" class="level2">
@@ -502,7 +507,12 @@ Current status of this initiative
 <p>Air quality monitoring is another project where Oberon Citizen Science Network (OCSN) can have a role to provide quality data to the community.</p>
 <p>As a medium-sized population centre, the Oberon township (as opposed to the wider Oberon local government area) is unusual in that it has significant industry very close to town, as well as being surrounded by significant monoculture plantations of <em>pinus radiata</em> pine trees, and extensive pastures.</p>
 <p>While scientific grade air quality stations (for example, as deployed by the NSW government <a href="https://www.epa.nsw.gov.au/your-environment/air">Environmental Protection Authority</a> (EPA) at strategic locations) are quite expensive (upwards of AU$50k), Oberon Citizen Science Network believes a network of cheaper monitoring stations, either commercially available devices and/or DIY versions designed by OCSN members, could provide better coverage and information to the community by being able to account differing air quality in different locations around the town, due to changing weather conditions and wind directions, better than than a single expensive station.</p>
-<p>At this stage research is still on going as to the most appropriate air quality monitoring devices to use, but the discussion below covers the various air quality measures and criteria OCSN believes are significant to the Oberon Community.</p>
+<section id="prototyping" class="level3">
+<h3 class="anchored" data-anchor-id="prototyping">Prototyping</h3>
+<p>At this stage investigation is still on-going as to the most appropriate air quality monitoring devices to use in a network of air quality monitoring stations for Oberon local government area. The discussion below covers the various air quality measures and criteria which OCSN believes are significant to the Oberon Community.</p>
+<p>But just to prove that we are serious about developing such a network of community-owned -and-operated air quality monitors, here is a video of a messy corner of a messy desk of an OCSN member, showing an early prototype, before it is packaged in a weatherproof housing. The idea is that a number of such stations would continuously send data up into “the cloud” (referred to in the video as “Amazon”, meaning Amazon Web Services (AWS), one of the major cloud providers – as a community-based not-for-profit organisation OCSN receives a 90% discount on their services, making them very cheap). A web-based dashboard showing current and historical air quality data for Oberon would then be made available, leveraging these continuously uploaded data.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="assets/aq_sensor_progress.mov"></video></div>
+</section>
 </section>
 <section id="air-quality-indicators" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="air-quality-indicators">Air quality indicators</h2>
@@ -1154,7 +1164,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false});
+<script>videojs(video_shortcode_videojs_video1);</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
