@@ -4,7 +4,7 @@ lightbox: true
 ---
 
 ::: {.callout-note title="Current status of this initiative"}
-Two founding members of OCSN, Alan Sheehan and Tim Churches, both have [Raspberry Shake & Boom](https://shop.raspberryshake.org/product/turnkey-iot-atmospheric-infrasound-monitor-rsboom/?attribute_pa_variation=indoor&attribute_pa_license=private-use-125-discount) seismic and infrasound monitoring devices (with identifiers R21C0 and R5968 respectively) deployed at their properties, about 10-15km south-east of Oberon township and each about 6km apart. The seismic and infrasound data continuously recorded and uploaded by these devices is freely and openly available at the URLs below, but can also be accessed via an API (application programming interface) to allow detailed anayles of the data collected at several, or many stations. Some examples of such analyses undertaken by Alan Sheehan are shown below. OCSN hopes to establish a network of such devices located at various points in Oberon LGA, and to further develop analysis program code to undertake various types of analysis and validation of the data collected, including infrasound monitoring and analysis.
+Two founding members of OCSN, Alan Sheehan and Tim Churches, both have [Raspberry Shake & Boom](https://shop.raspberryshake.org/product/turnkey-iot-atmospheric-infrasound-monitor-rsboom/?attribute_pa_variation=indoor&attribute_pa_license=private-use-125-discount) seismic and infrasound monitoring devices (with identifiers R21C0 and R5968 respectively) deployed at their properties, about 10-15km south-east of Oberon township and each about 6km apart. The seismic and infrasound data continuously recorded and uploaded by these devices is freely and openly available at the URLs below, but can also be accessed via an API (application programming interface) to allow detailed analyses of the data collected at several, or many stations. Some examples of such analyses undertaken by Alan Sheehan are shown below. OCSN aims to establish a wider network of such devices located at various points in Oberon LGA, and to further develop analysis program code to undertake various types of analysis and validation of the data collected, including infrasound monitoring and analysis.
 
 * Raspberry Shake & Boom station R21C0
   - [helicorder (seismic) data](https://dataview.raspberryshake.org/#/AM/R21C0/00/EHZ)
@@ -14,13 +14,25 @@ Two founding members of OCSN, Alan Sheehan and Tim Churches, both have [Raspberr
   - [infrasound data](https://dataview.raspberryshake.org/#/AM/R5968/00/HDF)
 :::
 
+::: {.callout-tip title="More OCSN seismic and infrasound analyses"}
+
+Apart from the examples shown below, analyses of seismic and infrasound data collected by the OCSN Raspberry Shake & Boom monitoring stations are published regularly on the [OCSN Raspberry Shakes & Booms page on Facebook](https://www.facebook.com/profile.php?id=61556786746312).
+
+Please also see the [OCSN Blog posts page](blog.html) for occasional longer articles on our seismic and infrasound data, including these posts:
+
+* [2025-03-30 Oceanic Infrasound-stimulated seismic wave](posts/2025-03-30-oceanic-infrasound/)
+* [2024-06-24 G-weighting infrasound data](posts/2024-06-24-g-weighting/)
+* [2024-06-23 Minor earthquake in Hazelbrook](posts/2024-06-23-hazelbrook-quake/)
+
+:::
+
 ::: {.aside}
 ![A Raspberry Shake and Boom device](assets/RSNB_1.png)
 :::
 
 ## Overview
 
-Although Australia is a geographically stable continent, that does not mean that we do not experience frequent earthquakes. Using devices developed over several years by the international Raspberry Shake (see the [Raspberry Shake web site](https://raspberryshake.org) for details), based on the tiny but very powerful Raspberry Pi single baord computer which is about the size of a deck of playing cards, it is now feasible for citizens scientists to host their own seismic monitoring stations and contribute the data they collect to a worldwide community of people interested in such data. More recently, the ability to also monitor and record infrasound (very low frequency sound waves, mostly below the frequencies which humans can hear) has been added to these devices, allowing the deep rumbles caused by earthquakes to be detected, as well as other sources of infrasound, incuding aircraft, wind blowing through forests, wind turbines and sonic booms from meteorites entering the earth's atmosphere. Please see the [page on meteorite tracking](meteors.html) for more information on this. 
+Although Australia is a geographically stable continent, that does not mean that we do not experience frequent earthquakes. Using devices developed over several years by the international Raspberry Shake (see the [Raspberry Shake web site](https://raspberryshake.org) for details), based on the tiny but very powerful Raspberry Pi single board computer which is about the size of a deck of playing cards, it is now feasible for citizen scientists to host their own seismic monitoring stations and contribute the data they collect to a worldwide community of people interested in such data. More recently, the ability to also monitor and record infrasound (very low frequency sound waves, mostly below the frequencies which humans can hear) has been added to these devices, allowing the deep rumbles caused by earthquakes to be detected, as well as other sources of infrasound, incuding aircraft, wind blowing through forests, wind turbines and sonic booms from meteorites entering the earth's atmosphere. Please see the [page on meteorite tracking](meteors.html) for more information on this. 
 
 ## Raspberry Shake and Boom capabilities
 
@@ -32,9 +44,117 @@ You don't need special skills to use a Raspberry Shake and Boom (RS&B for short)
 
 ### Detecting local earthquakes
 
-Of course, the devices can also detect , less intense local earthquakes, as shown below.
+Of course, the devices can also detect less intense local earthquakes, as shown below.
 
 ![Recording of the earthquake south of Leura on 8 March 2024, as captured near Oberon by Alan Sheehan using a Raspberry Shake & Boom device](assets/GIK_JWva4AAf-q7.jpeg)
+
+### More is better!
+
+A dense (close) network of Raspberry Shakes and Booms allows detection of very small local earthquakes not detected by more distant seismographs. In the example shown below, the earthquake is detected and verified by the existing two-node OCSN seismic network, but can't be located properly due to inadequate triangulation of stations/sites. This the earthquake could be under Black Springs (south-west of Oberon township) or in the Jenolan area (south-east of Oberon). Analysis of the particle motion plots on the RS3D station R4FA0 suggests that Black Springs is more likely, but more stations in the Oberon region with slightly greater geographic spread are required to be definitive.
+
+![Low magnitude earthquake below Black Springs or Jenolan Caves, south of Oberon (one or two possible locations)](assets/M0.0Quake_Black_Springs_1.png)
+
+![Data details for Black Springs/Jenolan earthquake](assets/M0.0Quake_Black_Springs_2.png)
+
+![Alternative possible location near Jenolan Caves - additional stations would allow exact location to be determined](assets/M0.0Quake_Jenolan.png)
+
+### Combined seismic and infrasound analysis
+
+A dense (close) network of Raspberry Shake and Booms allows for some unique science opportunities, such as analysis of the interaction between seismic and infrasound signals. The example below, captured by the OCSN two-node network, shows the seismic and infrasound signals from a nearby quarry blast, and shows how the slower infrasound waves move the ground when they arrive to produce a seismic signal.
+
+![Combined seismic and infrasound analysis of a blast at Oberon Quarries](assets/OCSN_M-0.6Quake_Oberon_Quarries.png)
+
+### Another combined seismic and infrasound analysis
+
+The example below again clearly shows the interaction between the arriving
+infrasound wave and the Earth's crust (and hence the seismic signal), but
+there's another effect revealed here.
+
+Look closely at the infrasound trace for station R21C0. The infrasound
+signal begins to increase BEFORE the primary infrasound wave from the quarry blast arrives!
+This increase is due to the approaching seismic wave producing its own
+rumbling infrasound.
+
+The effect is more pronounced for station R5968. Notice the increased
+amplitude signal at about 15 to 20s after the quarry blast. This is the
+approaching seismic wave producing its own infrasound, but then look at
+the seismic trace for R5968 at that time - the infrasound is still
+strong enough to produce its own seismic signal!
+
+These sorts of observations may occasionally be glimpsed on solitary
+seismic stations, but are unexplainable. A dense network of Raspberry
+Shake and Booms, however, provides all the tools needed to observe,
+verify and understand what's going on. This presents a unique opportunity for real
+science to be undertaken by citizens and school students!
+
+![Seismic and infrasound interactions from a quarry blast in Oberon](assets/OCSN-M0.0Quake_Oberon_Quarries.png)
+
+### Mine blasts
+
+Mine blasts are not reported by the official earthquake monitoring
+organisations. Obviously they detect them, but are quickly weeded out of
+the reporting process. Very occasionally legitimate earthquakes can be
+dismissed as mine blasts and not reported - at least not initially.
+
+Detection of mine blasts started out as a curiosity and challenge for OCSN members -- to
+learn how to do it. There are typically 6 to 12 mine blasts in the
+Hunter and Ulan coal mining areas each weekday. Occasionally on a
+Saturday, but generally the weekends are blast free. Blasts also occur
+more locally at Oberon Quarries, the Hytec Quarry near the Cox's River,
+Cadia Gold Mine, etc.
+
+This example shows a routine blast at Hunter Valley Operations Warkworth
+Mine (best fit location). The blast is equivalent to a M2.2 (+/- 1.56)
+earthquake. The energy of the blast is about 130 MJ or equivalent to
+31kg of TNT (=/- 71%). If you look at the Fast Fourier Transform (FFT)
+Spectrum plot for station R5968 you will see a strong peak at 18Hz. This
+is the signal from a detonation interval of 0.55s between individual
+waves of charges being detonated.
+
+The skills and techniques used in detecting and locating mine blasts
+help in locating small local earthquakes, and very occasionally an
+earthquake that has been dismissed as a mine blast.
+
+![Warkworth mine blast - signal details](assets/M2.2Quake_Hunter_Valley_Operations_Coal_Mine _1.png)
+
+![Warkworth mine blast - localisation](assets/M2.2Quake_Hunter_Valley_Operations_Coal_Mine_2.png)
+
+### Thunderbolts and lightning (very, very frightening me...)
+
+Raspberry Shake and Boom stations can be used to investigate lightning.
+Lightning produces a lot of infrasound (thunder) as a result of the
+sharp expansion of air heated to plasma instantly by the lightning bolt.
+
+The volunteer organisation Blitzortung.org operates a global network of
+lightning detectors and produce real time maps of lightning strikes
+which most people are quite familiar with in many weather apps these
+days. Their own map site, https://www.lightningmaps.org/, provides
+accurate timing for lightning strikes.
+
+With the accurate timing of the strike and a Raspberry Shake and Boom, a
+number of things can be determined about the lightning strike. Note that
+lightning is never a straight line - it zig zags through the atmosphere
+finding the path of least resistance.
+
+With accurate strike timing the distance of the closest approach of the
+lightning bolt can be calculated from the infrasound arrival time at the
+Raspberry Shake and Boom. Once the distance is known, the infrasound
+power at the source (lightning) can be calculated (it is really an
+estimate, because it has to be assumed to be a straight line). A more
+powerful infrasound power source indicates a more powerful lightning strike.
+
+In the map below, the red line links two points of the one strike as
+captured on the OCSN Raspberry Shake and Booms. Each point if the average
+location for that strike from a group of lightning detectors. The
+lightning strike is actually between and around these two points. The
+Raspberry Shake and Booms can be used to calculate how close the strike
+got to their locations.
+
+![Lightning infrasound analysis for OCSN station R5968](assets/LightningR5968_HDF_20250115_085009_UTC.png)
+
+![Lightning infrasound analysis for OCSN station R21C0](assets/LightningR21C0_HDF_20250115_085009_UTC.png)
+
+![Lightning strike localisation using infrasound ](assets/Lightning_250115_085019UTC_Map.png)
 
 ### Meteorite and space debris sonic booms
 
@@ -48,7 +168,7 @@ With a little program code, using the Python programming language, you can fully
 
 ![Custom analysis of Honshu earthquake programmed by Alan Sheehan](assets/honshu_earthquake.png)
 
-### Infrasound
+### More on infrasound
 
 Below is the infrasound signal of a passing helicopter, showing the [Doppler shift](https://en.wikipedia.org/wiki/Doppler_effect) in frequencies as it first approaches then receeds from the monitoring Raspeberry Shake and Boom device. You don't need any coding skill for this type of report either - its available from the Raspberry Shake Data View web app and you can join and use any or all the Raspberry Shakes in the world for free (you don't even have to own one!), via the [ShakeNet web site](https://shakenet.raspberryshake.org/).
 

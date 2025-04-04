@@ -194,11 +194,15 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog posts</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link active" href="https://www.ocsn-allsky.net/indi-allsky/" aria-current="page"> 
+<span class="menu-text">All-sky camera</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./ocsn_gallery.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./register_interest.html" aria-current="page"> 
+    <a class="nav-link" href="./register_interest.html"> 
 <span class="menu-text">Register your interest</span></a>
   </li>  
 </ul>
@@ -392,6 +396,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="https://www.ocsn-allsky.net/indi-allsky/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All-sky camera (beta)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./birdnet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bird call detection and counting</span></a>
   </div>
@@ -433,7 +443,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#audiomoth" id="toc-audiomoth" class="nav-link active" data-scroll-target="#audiomoth">AudioMoth</a></li>
+  <li><a href="#bird-call-analyses" id="toc-bird-call-analyses" class="nav-link" data-scroll-target="#bird-call-analyses">Bird call analyses</a></li>
+  <li><a href="#bat-call-analyses" id="toc-bat-call-analyses" class="nav-link" data-scroll-target="#bat-call-analyses">Bat call analyses</a>
+  <ul class="collapse">
+  <li><a href="#vespadelus-darlingtoni" id="toc-vespadelus-darlingtoni" class="nav-link" data-scroll-target="#vespadelus-darlingtoni"><em>Vespadelus darlingtoni</em></a></li>
+  <li><a href="#austronomus-australis" id="toc-austronomus-australis" class="nav-link" data-scroll-target="#austronomus-australis"><em>Austronomus australis</em></a></li>
   <li><a href="#titley-scientific" id="toc-titley-scientific" class="nav-link" data-scroll-target="#titley-scientific">Titley Scientific</a></li>
+  </ul></li>
   <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources">Other resources</a></li>
   </ul>
 </nav>
@@ -471,7 +487,7 @@ Current status of this initiative
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This page is currently a place holder for some more concrete plans to establish an automated or semi-automated eco-acoustic monitoring network in key parts of Oberon SLA. More details to follow in due course.</p>
+<p>Apart from a growing <a href="birdnet.html">network of BirdNET-pi/Birdweather PUC automated bird call detection stations</a>, OCSN currently has two AudioMoth devices (see below) at its disposal and has been developing methods to analyse audio recordings made with these devices. Details of this work are provided below, but it includes a planned survey of bird calls starting in Spring 2025. OCSN hopes to increase the number of AudioMoth devices it has available, and to add audio recording capabilities to the specialised low-light cameras it is developing for <a href="platypus_rakali.html">platypus and rakali surveys</a> in the headwaters of key rivers in the Oberon region.</p>
 </div>
 </div>
 <p>Inspired by the capabilities of the <a href="posts/2024-07-21-PUC-review/">Birdweather PUC</a> and <a href="birdnet.html">BirdNET-pi bird call monitoring stations</a>, which are small computing devices which use machine learning (a limited form of artificial intelligence) to automatically detect and classify bird calls from audio they automatically record from attached microphones, OCSN plans to investigate the more general utility of eco-acoustics for ecological and biodiversity surveys in the Oberon region.</p>
@@ -494,7 +510,7 @@ Current status of this initiative
 </div>
 </div></div><section id="audiomoth" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="audiomoth">AudioMoth</h3>
-<p>For longer-term deployment in more remote locations, such as in forests and conservation areas, a different strategy is required. For this reason, OCSN plans to evaluate the <a href="https://www.openacousticdevices.info">AudioMoth</a>, a low-power device developed at Cambridge University in the UK, designed to be battery-powered and to allow digital audio recordings of the environment to be captured continuously for one or more weeks at a time. Weatherproof cases for these devices are also available.</p>
+<p>For longer-term deployment in more remote locations, such as in forests and conservation areas, a different strategy is required. For this reason, OCSN has been evaluating the <a href="https://www.openacousticdevices.info">AudioMoth</a>, a low-power device developed at Cambridge University in the UK, designed to be battery-powered and to allow digital audio recordings of the environment to be captured continuously for one or more weeks at a time. Weatherproof cases for these devices are available so they can be safely deployed in all weathers.</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
@@ -503,7 +519,7 @@ Current status of this initiative
 <figcaption>There is even a version for underwater recording – possibly to capture the sounds made by platypuses?</figcaption>
 </figure>
 </div>
-</div></div><p>The strategy for using them would be to position them at key locations to be monitored, leave them there for one or two weeks, then collect them and download the recorded sound files for off-line processing on laptop or desktop computers, or using cloud computing. The audio files can even be made freely available on the internet to allow others to assist in the computerised processing of them to extract information about bird, frog and other animal calls from them. After collection, the batteries would be recharged and the device repositioned at the next target location.</p>
+</div></div><p>The basic strategy for using the AudioMoth devices is to position them at key locations to be monitored, leave them there for one or two weeks, then collect them and download the recorded sound files for off-line processing on laptop or desktop computers, or using cloud computing (note that OCSN has qualified as a not-for-profit organisation for an ongoing 90% discount on the cost of cloud computing services provided by Amazon Web Services). The audio files can even be made freely available on the internet to allow others to assist in the computerised processing of them to extract information about bird, frog and other animal calls from them. After collection, the batteries are recharged and the device repositioned at the next target location.</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
@@ -513,9 +529,49 @@ Current status of this initiative
 </figure>
 </div>
 </div></div></section>
+<section id="bird-call-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="bird-call-analyses">Bird call analyses</h2>
+<p>OCSN members have successfully demonstrated the ability to use the same machine-learning (AI) model used in the BirdNET-pi devices to undertake <em>post hoc</em> analysis of audio files collected using the AudioMoth devices. OCSN is currently preparing software code to further streamline these analyses and enable the results to be directly contributed in electronic form to key biodiversity databases, specifically the Atlas of Living Australia and the NSW government BioNet Atlas. Together with the OCSN network of fixed position BirdNET-pi and BirdWeather stations, this will allow comprehensive data on the range and abundance of bird species across the Oberon region to be collected and made available to researchers, school students and government authorities.</p>
+</section>
+<section id="bat-call-analyses" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="bat-call-analyses">Bat call analyses</h2>
+<p>The AudioMoth devices can also be configured to record at the ultrasonic frequencies which microbats use for echolocation. These calls are generally inaudible to the human ear, but, like bird calls, tend to be quite characteristic for each bat species. OCSN member Alan Sheehan has made substantial progress in applying some of the DSP (digital signal processing) methods he uses to analyse seismic data from the <a href="shake_and_boom.html">OCSN Raspberry Shake &amp; Boom network</a> to ultrasonic recordings made with our AudioMoth devices. Details of the methods, which involve using the <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">fast Fourier transform (FFT)</a> to derive a <a href="https://en.wikipedia.org/wiki/Spectrogram">spectrogram</a>, will appear as blog posts in due course, but some preliminary results are shown below.</p>
+<section id="vespadelus-darlingtoni" class="level3">
+<h3 class="anchored" data-anchor-id="vespadelus-darlingtoni"><em>Vespadelus darlingtoni</em></h3>
+<p>These Audiomoth spectrograms are from calls by a <a href="https://www.inaturalist.org/taxa/75224">Large Forest Bat (<em>Vespadelus darlingtoni</em>)</a>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/Vespadelus_darlingtoni_20250218_104904_0-8.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot of spectrogram of calls by <em>Vespadelus darlingtoni</em> captured on an OCSN AudioMoth device (1 of 2)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/Vespadelus_darlingtoni_0250218_104904_3.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot of spectrogram of calls by <em>Vespadelus darlingtoni</em> captured on an OCSN AudioMoth device (2 of 2)</figcaption>
+</figure>
+</div>
+</section>
+<section id="austronomus-australis" class="level3">
+<h3 class="anchored" data-anchor-id="austronomus-australis"><em>Austronomus australis</em></h3>
+<p>These Audiomoth spectrograms are of calls from a <a href="https://www.inaturalist.org/taxa/765537-Austronomus-australis">White-striped Free-tailed Bat (<em>Austronomus australis</em>)</a>.</p>
+<p>Note that the pulses are flat, and the characteristic frequency is only 15.9 kHz - so just in the audible range for (younger) humans. There are no other known bat species with this characteristic frequency and pulse shape so confidence in the identification is high.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/Austronomus_australis_20250218_093252_0-15.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot of spectrogram of calls by <em>Austronomus australis</em> captured on an OCSN AudioMoth device (1 of 2)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/Austronomus_australis_20250218_093252_6.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot of spectrogram of calls by <em>Austronomus australis</em> captured on an OCSN AudioMoth device (2 of 2)</figcaption>
+</figure>
+</div>
+</section>
 <section id="titley-scientific" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="titley-scientific">Titley Scientific</h3>
-<p>Titley Scientific is an Australian company based in Brisbane which designs and manufactures a range of ecoacoustic monitoring devices, including automated bat detectors and high-end audio recorders capable of recording both audible calls from birds and frog, but also ultrasounic sound emitted by bats. The devices are not cheap, but they are very well-regarded by ecologists and are fully supported locally, complete with easy-to-use software to enable screening of recordings. They also have a loan program for citizen science groups! OCSN plans to acquire at least one of their devices as soon as possible to assess their utility. For more information, see the <a href="https://www.titley-scientific.com">Titley Scientific web site</a>.</p>
+<p>Titley Scientific is an Australian company based in Brisbane which designs and manufactures a range of ecoacoustic monitoring devices, including automated bat detectors and high-end audio recorders capable of recording both audible calls from birds and frog, but also ultrasounic sound emitted by bats. The devices are not cheap, but they are very well-regarded by ecologists and are fully supported locally, complete with easy-to-use software to enable screening of recordings. They also have a loan program for citizen science groups! OCSN plans to borrow one of their devices as soon as possible to assess their utility. For more information, see the <a href="https://www.titley-scientific.com">Titley Scientific web site</a>.</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div class="quarto-figure quarto-figure-center">
@@ -542,6 +598,7 @@ Titley Scientific micro-workshops on recording ultrasonic bat calls
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="other-resources" class="level2">
 <h2 class="anchored" data-anchor-id="other-resources">Other resources</h2>

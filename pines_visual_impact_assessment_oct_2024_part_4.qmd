@@ -541,7 +541,7 @@ wfarm_visual_impact_df  %>%
          
 ```
 
-Because the cube root and natural log adjustments yield similar results (at least in terms of the ststatistical distrubution of values), we only show the maps for the square root and natural log adjustments here.
+Because the cube root and natural log adjustments yield similar results (at least in terms of the statistical distribution of values), we only show the maps for the square root and natural log adjustments here.
 
 ### Visual impact assessment metric for the proposed Pines wind farm, using square root adjustment for the number of meaningfully visible turbines
 

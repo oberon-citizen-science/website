@@ -5,7 +5,7 @@ freeze: auto
 ---
 
 ::: {.callout-note title="Current status of this initiative"}
-Discussion and planning stages only. Time lapse cameras are currently being tested before designing a systematic survey of key water courses in the Oberon LGA (at least the Duckmaloi and Fish Rivers and their tributaries, possibly other rivers). More information and project plans will appear here in due course.
+Surveys of platypus, rakali and other native fauna living in and along the upper reaches and headwaters of key river systems in Oberon local government area are now being undertaken by members of Oberon Citizen Science Network, using specialised cameras designed and constructed by us specifically for this purpose. Funding applications will be submitted in April 2025 which, if successful, will allow us to significantly increase the scope and pace of these surveys. The results are progressively being formally submitted to relevant biodiversity databases, in particular the [Atlas of Living Australia](https://www.ala.org.au), operated by [CSIRO](https://www.csiro.au), and the NSW government [BioNet Atlas](https://www.environment.nsw.gov.au/topics/animals-and-plants/biodiversity/nsw-bionet). However, highlights of the results can also be viewed as a series of edited videos, continuously updated via [this YouTube playlist](https://www.youtube.com/playlist?list=PL3mN4JSQUTQsrIUcR_C0i4FF2NWZU9SaP). A detailed rationale for this survey program can also be found on the [Wind Farms and Citizen Science](wind_farms.html) page.
 :::
 
 
@@ -20,7 +20,7 @@ A rakali (Australian native water rat, scientific name _Hydromys chrysogaster_) 
 
 ## Introduction
 
-Anecdotally, rivers in the Oberon region used to be famous for their abundant platypus populations -- in fact, there is a story, probably apocryphal, that [the name of the Duckmaloi River](https://www.abc.net.au/news/2017-12-07/curious-central-west-place-town-name-meanings-origins/9228070), which runs through Oberon LGA, came from the surprised exclamation of Irish settlers on first encountering a platypus: "Duck-mole-oy!" ("oy" being what you said if you wanted someone to agree with you). Certainly a lot of research last century into the extent and behavious of the platypus was conducted in river systems around Oberon by researchers associated with Taronga Zoo and various NSW universities -- copies of some scientific papers and reports on platypus in the Duckmaloi River, several by local resident Amanda MacLeod, can be accessed [here](assets/AM98287.pdf), [here](assets/AM98319.pdf) and [here](assets/AM98306.pdf).
+Anecdotally, rivers in the Oberon region used to be famous for their abundant platypus populations -- in fact, there is a story, probably apocryphal, that [the name of the Duckmaloi River](https://www.abc.net.au/news/2017-12-07/curious-central-west-place-town-name-meanings-origins/9228070), which runs through Oberon LGA, came from the surprised exclamation of Irish settlers on first encountering a platypus: "Duck-mole-oy!" ("oy" being what you said if you wanted someone to agree with you). Certainly a lot of research last century into the extent and behaviours of the platypus was conducted in river systems around Oberon by researchers associated with Taronga Zoo and various NSW universities -- copies of some scientific papers and reports on platypus in the Duckmaloi River, several by local resident Amanda MacLeod, can be accessed [here](assets/AM98287.pdf), [here](assets/AM98319.pdf) and [here](assets/AM98306.pdf).
 
 Much less is known about the extent in the Oberon region of the [_rakali_](https://en.wikipedia.org/wiki/Rakali), also also known as the _rabe_, the _"Australian Otter"_ or _native water-rat_, (scientific name _Hydromys chrysogaster_). This elusive creature lives in burrows on the banks of rivers, lakes and estuaries and feeds on aquatic insects, fish, crustaceans, mussels, snails, frogs, bird's eggs and small water birds -- and thus, it often shares similar habitats to the platypus, hence its inclusion here.
 
@@ -42,7 +42,7 @@ BioNet is a database of flora and fauna information collected over many decades 
 It is also important because threatened and endangered species records in BioNet must be used by assessors of proposed developments in order to avoid or minimise impacts on wildlife, and is also used as part of the [Biodiversity Assessment Method](https://www.environment.nsw.gov.au/-/media/OEH/Corporate-Site/Documents/Animals-and-plants/Biodiversity/biodiversity-assessment-method-2020-200438.pdf) (BAM), which is used as part of the **legislated** Biodiversity Offsets Scheme (currently under review due to [numerous flaws found by the Audit Office of NSW](https://www.audit.nsw.gov.au/our-work/reports/effectiveness-of-the-biodiversity-offsets-scheme)).
 
 ::: {.callout-note}
-The data shown below were manually downloaded from the NSW government BioNet database on 24 September 2024. It is intended to convert these charts and maps to automatically update once a week with the latest data from BioNet once an API access key has been obtained.
+The data shown below were manually downloaded from the NSW government BioNet database on 18 February 2025. It is intended to convert these charts and maps to automatically update once a week with the latest data from BioNet once an API access key has been obtained.
 :::
 
 The chart below shows the trend in platypus and rakali records in BioNet. These trends may reflect frequency of observations and survey efforts as much as declines or fluctuations in the animal populations or extents. This is an issue which OCSN hopes to address over the next few years by mounting regular, systematic surveys of platypus and rakali activity in key water courses in Oberon LGA, using a combination of direct observation and time-lapse camera recordings (see below). Note that there are very few observations of rakali. This may be because they are rare, but also because they are elusive -- but see the video of a rakali captured by OCSN committee member Kyla Ries on this page.
@@ -57,7 +57,10 @@ library(tidyverse)
 library(sf)
 library(clock)
 
-bionet_oberon <- read_tsv("assets/Atlas_records_20240924-170940/Atlas_records_dfy0dp51xksxkltuxbt4izzs20240924-170937.txt", skip=4)
+# download data for all fauna in Oberon SLA from https://atlas.bionet.nsw.gov.au/UI_Modules/ATLAS_/AtlasSearch.aspx
+# bionet_oberon <- read_tsv("assets/Atlas_records_20240924-170940/Atlas_records_dfy0dp51xksxkltuxbt4izzs20240924-170937.txt", skip=4)
+
+bionet_oberon <- read_tsv("assets/Atlas_records_20250218-140347/Atlas_records_eoiugh2zo1aekxlxom5wzh2w20250218-140340.txt", skip=4)
 
 platypus_rakali_sf <- bionet_oberon %>% 
                         filter(SpeciesCode %in% c("1001", "1415")) %>%
@@ -116,7 +119,7 @@ platypus_rakali_sf %>%
   labs(x="Year of observation",
        y="Number of observations",
        title="Platypus and rakali observations in Oberon LGA",
-       subtitle = "NSW BioNet Atlas data as at Sept 2024")
+       subtitle = "NSW BioNet Atlas data as at Feb 2025")
 
 ```
 
@@ -126,7 +129,7 @@ As can be seen, the small number of records, particularly recent records, for pl
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap: "Platypus and rakali observations in Oberon LGA: NSW BioNet Atlas data as at Sept 2024"
+#| fig-cap: "Platypus and rakali observations in Oberon LGA: NSW BioNet Atlas data as at Feb 2025"
 
 library(tidyverse)
 library(leaflet)
@@ -858,13 +861,17 @@ Several organisations are calling for citizen science participation in platypus 
 
 Excellent information about platypus observation and systematic surveys is available from the web sites mentioned above. In particular see the [platy-project toolkit](https://www.acf.org.au/platy-project-toolkit) and the Australian Platypus Conservancy pages on [platypus surveys and monitoring](https://platypus.asn.au/platypus-survey-monitoring/) and [hints on spotting platypus and rakali in the wild](https://platypus.asn.au/spotting-hints/).
 
-OCSN encourages its members to undertake _ad hoc_, opportunistic direct observation surveys as time permits, but it also intends to undertake systematic surveys of key waterways in Oberon LGA using time-lapse cameras. OCSN also intends to explore other technologies for platypus detection, including night-vision cameras using very low-level infrared (IR) illumination, as well as the use of low level ultraviolet (UV) illumination. The latter is based on the recent discovery that [platypus pelts flouresce weakly in UV light](https://www.livescience.com/platypuses-glow-uv-light.html).
+
+OCSN encourages its members to undertake _ad hoc_, opportunistic direct observation surveys as time permits, but it also intends to undertake systematic surveys of key waterways in Oberon LGA using special purpose DIY night-vision cameras designed and constructed by OCSN members, using very low-level infrared (IR) illumination.
 
 ::: {.callout-note title="DigiVol"}
 It may be possible for Oberon Citizen Science Network to use the [**DigiVol**](https://volunteer.ala.org.au) crowd-sourcing platform operated by the Australian Museum to distribute the task of watching trail camera and time-lapse video to volunteers. DigiVol is an online platform which hosts "expeditions", which are projects for which volunteers can register to under small tasks, such as watching a segment of video recorded by a wildlife or trail camera and noting if any target species appears in the footage. Each participant can undertake as few or as many of these small, discrete tasks as they wish, and as time permits, over the course of the project (expedition). OCSN will contact DigiVol to enquiry about whether they can host time-lapse camerascreening tasks for us. As well, OCSN members are encouraged to sign up as a DigiVol participant, join an expedition and undertake some tasks!
 :::
 
 All sightings will be contributed to the platy-project as well as uploaded into the NSW government BioNet Atlas database, as soon as OCSN receives an account with permission to do so (an application has been submitted).
+
+<iframe src="https://www.google.com/maps/d/embed?mid=1019zw05gnHn_un8sCkZWYjZoMiU-pDU&ehbc=2E312F" width="640" height="480"></iframe>
+
 
 ### BioCollect
 
