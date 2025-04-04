@@ -4,7 +4,7 @@ lightbox: true
 ---
 
 ::: {.callout-note title="Current status of this initiative"}
-Two BirdNET monitoring stations have been deployed by founding OCSN members. We hope to deploy many more if there is interest, hopefully with financial support from various sources to offset the modest costs involved.
+From our initial two BirdNET monitoring stations, the OCSN Birdcall Network has now expanded to 6 stations with more potentially on the way. We hope to deploy many more if there is interest, particularly further from town. At the moment all the stations are within 15 kms of Oberon, so there's a lot of the LGA not currently monitored. So far all stations have been self funded by OCSN members but hopefully with financial support from various sources to offset the modest costs involved, future stations may be able to be at least partially subsidised.
 :::
 
 ## BirdNET
@@ -53,6 +53,48 @@ Following this evaluation, a larger scale roll-out of a BirdNET sensor network i
 
 {{< video assets/oberon_birdnet_map.mp4 >}}
 
+The current OCSN LGA BirdNET Network consists of the following stations:
+
+* Station 1: BirdNET Pi at Chatham Valley
+* Station 2: Birdweather PUC at Butterfactory Lane
+* Station 3: BirdNET Pi at Reef Road
+* Station 4: BirdNET Pi at Lowes Mount
+* Station 5: Birdweather PUC at Edith
+* Station 6: Birdweather PUC at Baileys Lane
+
+There are also two stations outside of Oberon which provide OCSN with comparison data, one in Canberra and one in Lilli Pilli, on the southern edge of Sydney right next to the Royal National Park. 
+
+### Birdweather Links
+
+Birdweather provides access to bird call data from all Birdweather PUCs and BirdNET Pis at this online app:
+
+[Birdweather App](https://app.birdweather.com/)
+
+Birdweather PUCs also have weather, air quality and motion sensors. Below are the links for access to the sensor data from the OCSN Birdweather PUCs:
+
+[PUC-4632 Oberon Citizen Science Network station 2 at Butterfactory Lane](https://app.birdweather.com/stations/4632/sensors)
+
+[PUC-9269 Oberon Citizen Science Network station 5 at Edith](https://app.birdweather.com/stations/9269/sensors)
+
+[PUC-9336 Oberon Citizen Science Network station 6 at Baileys Lane](https://app.birdweather.com/stations/9336/sensors)
+
+
+The sensors available on these pages are:
+
+![Local Birdweather PUC Sensors](assets/PUC sensors.png)
+
+### Developing Reports of Birdcalls from the Network
+
+Work is progressing on developing reports to summarise information from the OCSN BirdNET Network in meaningful ways.
+
+Currently these reports are run manually each month, but plans are in pace to eventually automate them as part of the website. Due to the large quantities of data included in the reports, they are presented in a combined pivot table heat map style.
+
+![Sample Day Call report](assets/OCSN Oberon LGA 2411DayPivot.png)
+The Day Call Report summarises the number of calls per day for each species over a month. Each station has its own report as well as a combined overall report for the whole network. This potentially allows behaviours such as arrival and departure of migrating species to be detected, as well as tracking movements of nomadic feeders within the LGA. It may also give clues to when birds are breeding and nesting.
+
+![Sample Hour Call Report](assets/OCSN Oberon LGA 2411HourPivot.png)
+The Hour Call Report summarises the time of day when the calls are detected, again for each species over a month. Each station has its own report as well as a combined overall report for the network. Most notably, this report highlights birds that are active nocturnally because they call while other species are sleeping. Changes in hourly calls may also be associated with breeding and nesting and other behaviours.
+
 
 ## QUT Ecoacoustics and Ecosounds.org
 
@@ -63,4 +105,5 @@ There is also an Australian project undertaken by the Ecoacoustics research grou
 As mentioned on the [FrogID page](frogid.html#frogs-and-wind-farms), some large wind farm developments are proposed for Oberon LGA. One concern or consideration when evaluating such proposals is the effect which the wind farm construction and then the wind turbines themselves may have only the local environment and ecology. In order to assess such impacts, it is vital to record reliable, scientifically valid data on the prevalence of various bird species in areas around proposed wind farm sites. Ideally baseline data should be collected, before any construction starts, then comparable data during the construction phase and then during operation of these facilities, on an ongoing basis.
 
 It appears that detailed bird species prevalence data has not been collected for the proposed wind farm site at Paling Yards, with the EIS relying on existing and very sparse ecology databases. This is a deficiency and data gap which OCSN members, in conjunction with university-based academic partners such as the QUT Ecoacoustics group, can potentially address. This is particularly important for the proper assessment of the potential environmental impact of the [proposed Pines Wind Farm](wind_farms.html#the-proposed-pines-wind-farm).
+
 

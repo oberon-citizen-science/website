@@ -451,6 +451,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#birdnet-pi-local-web-site" id="toc-birdnet-pi-local-web-site" class="nav-link" data-scroll-target="#birdnet-pi-local-web-site">BirdNET-pi local web site</a></li>
   <li><a href="#developing-an-oberon-lga-birdnet-network" id="toc-developing-an-oberon-lga-birdnet-network" class="nav-link" data-scroll-target="#developing-an-oberon-lga-birdnet-network">Developing an Oberon LGA BirdNet network</a></li>
+  <li><a href="#birdweather-links" id="toc-birdweather-links" class="nav-link" data-scroll-target="#birdweather-links">Birdweather Links</a></li>
+  <li><a href="#developing-reports-of-birdcalls-from-the-network" id="toc-developing-reports-of-birdcalls-from-the-network" class="nav-link" data-scroll-target="#developing-reports-of-birdcalls-from-the-network">Developing Reports of Birdcalls from the Network</a></li>
   </ul></li>
   <li><a href="#qut-ecoacoustics-and-ecosounds.org" id="toc-qut-ecoacoustics-and-ecosounds.org" class="nav-link" data-scroll-target="#qut-ecoacoustics-and-ecosounds.org">QUT Ecoacoustics and Ecosounds.org</a></li>
   <li><a href="#bird-populations-and-wind-farms" id="toc-bird-populations-and-wind-farms" class="nav-link" data-scroll-target="#bird-populations-and-wind-farms">Bird populations and Wind Farms</a></li>
@@ -489,7 +491,7 @@ Current status of this initiative
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Two BirdNET monitoring stations have been deployed by founding OCSN members. We hope to deploy many more if there is interest, hopefully with financial support from various sources to offset the modest costs involved.</p>
+<p>From our initial two BirdNET monitoring stations, the OCSN Birdcall Network has now expanded to 6 stations with more potentially on the way. We hope to deploy many more if there is interest, particularly further from town. At the moment all the stations are within 15 kms of Oberon, so there’s a lot of the LGA not currently monitored. So far all stations have been self funded by OCSN members but hopefully with financial support from various sources to offset the modest costs involved, future stations may be able to be at least partially subsidised.</p>
 </div>
 </div>
 <section id="birdnet" class="level2 page-columns page-full">
@@ -556,6 +558,36 @@ Current status of this initiative
 <p>The first steps for an OCSN project would be to quickly evaluate these three options at a few listening sites provided by OCSN members.</p>
 <p>Following this evaluation, a larger scale roll-out of a BirdNET sensor network in the Oberon LGA on private members’ properties and on public or state land, subject to appropriate permission, is planned. At the moment, there are two BirdNET stations in or around Oberon – there are several more in the Blue Mountains, as shown in this screencast of the global BirdNET map:</p>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="assets/oberon_birdnet_map.mp4"></video></div>
+<p>The current OCSN LGA BirdNET Network consists of the following stations:</p>
+<p>Station 1: BirdNET Pi at Chatham Valley</p>
+<p>Station 2: Birdweather PUC at Butterfactory Lane</p>
+<p>Station 3: BirdNET Pi at Reef Road</p>
+<p>Station 4: BirdNET Pi at Lowes Mount</p>
+<p>Station 5: Birdweather PUC at Edith</p>
+<p>Station 6: Birdweather PUC at Baileys Lane</p>
+</section>
+<section id="birdweather-links" class="level3">
+<h3 class="anchored" data-anchor-id="birdweather-links">Birdweather Links</h3>
+<p>Birdweather provides access to bird call data from all Birdweather PUCs and BirdNET Pis at this online app:</p>
+<p><a href="https://app.birdweather.com/">Birdweather App</a></p>
+<p>Birdweather PUCs also have weather, air quality and motion sensors. Below are the links for access to the sensor data from the OCSN Birdweather PUCs:</p>
+<p><a href="https://app.birdweather.com/stations/4632/sensors">PUC-4632 Oberon Citizen Science Network station 2 at Butterfactory Lane</a></p>
+<p><a href="https://app.birdweather.com/stations/9269/sensors">PUC-9269 Oberon Citizen Science Network station 5 at Edith</a></p>
+<p><a href="https://app.birdweather.com/stations/9336/sensors">PUC-9336 Oberon Citizen Science Network station 6 at Baileys Lane</a></p>
+<p>The sensors available on these pages are:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/PUC sensors.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Local Birdweather PUC Sensors"><img src="assets/PUC sensors.png" class="img-fluid figure-img" alt="Local Birdweather PUC Sensors"></a></p>
+<figcaption>Local Birdweather PUC Sensors</figcaption>
+</figure>
+</div>
+</section>
+<section id="developing-reports-of-birdcalls-from-the-network" class="level3">
+<h3 class="anchored" data-anchor-id="developing-reports-of-birdcalls-from-the-network">Developing Reports of Birdcalls from the Network</h3>
+<p>Work is progressing on developing reports to summarise information from the OCSN BirdNET Network in meaningful ways.</p>
+<p>Currently these reports are run manually each month, but plans are in pace to eventually automate them as part of the website. Due to the large quantities of data included in the reports, they are presented in a combined pivot table heat map style.</p>
+<p><img src="assets/OCSN Oberon LGA 2411DayPivot.png" class="img-fluid" alt="Sample Day Call report"> The Day Call Report summarises the number of calls per day for each species over a month. Each station has its own report as well as a combined overall report for the whole network. This potentially allows behaviours such as arrival and departure of migrating species to be detected, as well as tracking movements of nomadic feeders within the LGA. It may also give clues to when birds are breeding and nesting.</p>
+<p><img src="assets/OCSN Oberon LGA 2411HourPivot.png" class="img-fluid" alt="Sample Hour Call Report"> The Hour Call Report summarises the time of day when the calls are detected, again for each species over a month. Each station has its own report as well as a combined overall report for the network. Most notably, this report highlights birds that are active nocturnally because they call while other species are sleeping. Changes in hourly calls may also be associated with breeding and nesting and other behaviours.</p>
 </section>
 </section>
 <section id="qut-ecoacoustics-and-ecosounds.org" class="level2">
@@ -1156,7 +1188,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav>
 </div> <!-- /content -->
 <script>videojs(video_shortcode_videojs_video1);</script>
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
