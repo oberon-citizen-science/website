@@ -491,7 +491,7 @@
     "href": "ocsn_gallery.html#first-field-trial-of-the-oberon-citizen-science-network-platycam-mark-2-camera-tim-churches",
     "title": "OCSN Photo Gallery",
     "section": "First field trial of the Oberon Citizen Science Network Platycam Mark 2 camera – Tim Churches",
-    "text": "First field trial of the Oberon Citizen Science Network Platycam Mark 2 camera – Tim Churches\nThis 30 minute video documents the very first results obtained from the OCSN Platycam Mark 2 camera. This is an improvement on the Mark 1 prototype. The Mark 2 camera features a high-resolution Sony IMX585 Starvis2 sensor with even better low-light capability than the IMX327 sensor used in teh Mark 1. This camera sensor and matching lens was supplied by specialist vision system developer Soho Enterprise, based in Japan, and it uses an M22 mount f1.0 aperture lens that collects a lot of light. Storage is upgraded to a 2TB NVME SSD attached to a Raspberry Pi 4B single-board computer, all powered by an external 12.6V 30AH lithium iron phospate battery, which also powers a 6W 850nm wavelength near infrared (IR) light for ilumination at night. This IR light source is completely invisible to human eyes, and probably most animals – it is very dim, but is just bright enough (at invisible near IR wavelengths) enough for the Sony IMX585 sensor, even at fast shutter speeds to prevent motion-blur in the captured images. This configuration also permits continuous capture of HD quality video at 24 frames per second, thus this is no longer a time-lapse camera but rather a full-motion camera. Even higher frame rates may be possible. There are a few issues with this first test which need to be resolved, including the white balance, flickering due to the automatic exposure system and difficulty in focussing the lens accurately in the field, given its short depth-of-field due to its wide aperture. All these probelms should be able to be resolved with software changes and the use of a focussing target chart on a pole when deploying the camera in the field. testing using a more powerful Raspberry Pi 5 computer will also be undertaken. Thus, more and hopefully even better results to come!\nThis video is best viewed in full screen mode at HD resolution."
+    "text": "First field trial of the Oberon Citizen Science Network Platycam Mark 2 camera – Tim Churches\nThis 30 minute video documents the very first results obtained from the OCSN Platycam Mark 2 camera. This is an improvement on the Mark 1 prototype. The Mark 2 camera features a high-resolution Sony IMX585 Starvis2 sensor with even better low-light capability than the IMX327 sensor used in teh Mark 1. This camera sensor and matching lens was supplied by specialist vision system developer Soho Enterprise, based in Japan, and it uses an M22 mount f1.0 aperture lens that collects a lot of light. Storage is upgraded to a 2TB NVME SSD attached to a Raspberry Pi 4B single-board computer, all powered by an external 12.8V 30AH lithium iron phospate battery, which also powers a 6W 850nm wavelength near infrared (IR) light for ilumination at night. This IR light source is completely invisible to human eyes, and probably most animals – it is very dim, but is just bright enough (at invisible near IR wavelengths) enough for the Sony IMX585 sensor, even at fast shutter speeds to prevent motion-blur in the captured images. This configuration also permits continuous capture of HD quality video at 24 frames per second, thus this is no longer a time-lapse camera but rather a full-motion camera. Even higher frame rates may be possible. There are a few issues with this first test which need to be resolved, including the white balance, flickering due to the automatic exposure system and difficulty in focussing the lens accurately in the field, given its short depth-of-field due to its wide aperture. All these probelms should be able to be resolved with software changes and the use of a focussing target chart on a pole when deploying the camera in the field. testing using a more powerful Raspberry Pi 5 computer will also be undertaken. Thus, more and hopefully even better results to come!\nThis video is best viewed in full screen mode at HD resolution."
   },
   {
     "objectID": "ocsn_gallery.html#more-field-trials-of-the-oberon-citizens-science-network-platycam-mark-1-diy-time-lapse-camera-tim-churches",
@@ -1506,5 +1506,47 @@
       "Sensor Networks",
       "Eco-acoustics"
     ]
+  },
+  {
+    "objectID": "ocsn_gallery.html#platypus-and-rakali-in-vulcan-state-forest-28-29-march-2025",
+    "href": "ocsn_gallery.html#platypus-and-rakali-in-vulcan-state-forest-28-29-march-2025",
+    "title": "OCSN Photo Gallery",
+    "section": "Platypus and rakali in Vulcan State Forest, 28-29 March 2025",
+    "text": "Platypus and rakali in Vulcan State Forest, 28-29 March 2025\nThis video shows more results from the platypus and rakali survey which Oberon Citizen Science Network is conducting in the upper reaches and headwaters of the rivers in the southern part of Oberon local government area during 2025."
+  },
+  {
+    "objectID": "ocsn_gallery.html#antechinus-rakali-and-galaxiids-living-in-vulcan-state-forest-15-march-2025",
+    "href": "ocsn_gallery.html#antechinus-rakali-and-galaxiids-living-in-vulcan-state-forest-15-march-2025",
+    "title": "OCSN Photo Gallery",
+    "section": "Antechinus, rakali and galaxiids living in Vulcan State Forest, 15 March 2025",
+    "text": "Antechinus, rakali and galaxiids living in Vulcan State Forest, 15 March 2025\nThis video documents rakali (Australian native water rat), galaxiids (increasingly rare Australian native freshwater fish) and antechinus (Australian native marsupial mouse) living in and along Yallabelli Creek, inside the Vulcan State Forest, about 15 km south of Oberon. The video was filmed further upstream than our previous video, about 1km inside the state forest. It illustrates that far from being “a sterile monoculture”, as plantation pine state forests are sometimes referred to, there are in fact abundant native fauna (and flora) present which need to be considered and protected from adverse impacts of industrial development. Developers currently propose to build one of the largest wind farms in Australia in this and adjacent state forests, in the headwaters of this creek and other key waterways, just a short distance from where these videos were filmed. Oberon Citizen Science Network is documenting biodiversity in and around these state forests in order to help ensure that the ecological impacts of such large developments are properly considered in the forthcoming planning and approval processes."
+  },
+  {
+    "objectID": "ocsn_gallery.html#platypus-rakali-galaxias-antechinus-living-in-the-vulcan-state-forest-7-march-2025",
+    "href": "ocsn_gallery.html#platypus-rakali-galaxias-antechinus-living-in-the-vulcan-state-forest-7-march-2025",
+    "title": "OCSN Photo Gallery",
+    "section": "Platypus, rakali, galaxias & antechinus living in the Vulcan State Forest, 7 March 2025",
+    "text": "Platypus, rakali, galaxias & antechinus living in the Vulcan State Forest, 7 March 2025\nThis video documents platypus, rakali (Australian native water rat), galaxias (increasingly rare Australian native freshwater fish) and antechinus (Australian native marsupial mouse) living in and along Yallabelli Creek, inside the Vulcan State Forest, about 15 km south of Oberon. Developers propose to build one of the largest wind farms in Australia in this and adjacent state forests, in the headwaters of this creek and other key waterways, just a kilometre or so from where these videos were filmed. Oberon Citizen Science Network is documenting biodiversity in and around these state forests in order to help ensure that the ecological impacts of such large developments are properly considered in the forthcoming planning and approval processes."
+  },
+  {
+    "objectID": "ocsn_gallery.html#platypuses-and-rakali-in-yallabelli-creek-at-the-edge-of-vulcan-state-forest-21-22-february-2025",
+    "href": "ocsn_gallery.html#platypuses-and-rakali-in-yallabelli-creek-at-the-edge-of-vulcan-state-forest-21-22-february-2025",
+    "title": "OCSN Photo Gallery",
+    "section": "Platypuses and rakali in Yallabelli Creek, at the edge of Vulcan State Forest, 21-22 February 2025",
+    "text": "Platypuses and rakali in Yallabelli Creek, at the edge of Vulcan State Forest, 21-22 February 2025\nSeveral videos from 21-22 February 2025 of rakali and platypuses in the Yallabelli Creek, just a few tens of metres away from the edge of Vulcan State Forest. The Yallabelli is a small but permanent tributary of the upper Duckmaloi River, about 15km south of Oberon in the NSW Central Tablelands. There videos were captured by DIY cameras designed and constructed by Oberon Citizen Science Network which use invisible near-infrared illumination and special camera sensors to film wildlife without disturbing it. We were rather surprised to find plentiful and vigorous evidence of rakali and platypus in such a small tributary, on two successive nights. We will be doing more filming on the Yallabelli and the upper reaches of other waterways in the region in the near future."
+  },
+  {
+    "objectID": "ocsn_gallery.html#pipe-surfing-platypuses-21-february-2025",
+    "href": "ocsn_gallery.html#pipe-surfing-platypuses-21-february-2025",
+    "title": "OCSN Photo Gallery",
+    "section": "Pipe-surfing platypuses! 21 February 2025",
+    "text": "Pipe-surfing platypuses! 21 February 2025\nThis video documents platypuses and rakali successfully negotiating an under-road causeway on the upper Duckmaloi River, about a kilometre or so downstream from where the river rises in the Vulcan State Forest. The video was captured using a specialised low-light camera being developed by Oberon Citizen Science Network for the purposes of monitoring platypus and rakali populations in the headwaters of key waterways in the region, without disturbing the animals. Very dim infrared lighting is used, so dim that the recorded scene appears completely dark to human and probably most animal eyes."
+  },
+  {
+    "objectID": "ocsn_gallery.html#looking-for-platypus-and-rakali-in-the-headwaters-of-the-duckmaloi-river.-1-2-february-2025.",
+    "href": "ocsn_gallery.html#looking-for-platypus-and-rakali-in-the-headwaters-of-the-duckmaloi-river.-1-2-february-2025.",
+    "title": "OCSN Photo Gallery",
+    "section": "Looking for platypus and rakali in the headwaters of the Duckmaloi River. 1-2 February, 2025.",
+    "text": "Looking for platypus and rakali in the headwaters of the Duckmaloi River. 1-2 February, 2025.\nIn this video we see the results of the third test of the specialised low-light camera being developed by Oberon Citizen Science Network to facilitate systematic surveys of platypus and rakali (Australian native water rat) in key waterways in the Oberon region."
   }
 ]
