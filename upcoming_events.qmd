@@ -1,0 +1,13 @@
+---
+title: "Upcoming Events"
+---
+
+:::{.aside}
+![](assets/upcoming_events_oxen.png)
+:::
+
+
+<iframe width="780" height="800" src="https://docs.google.com/document/d/e/2PACX-1vTx1v34JksaSsrfgQSoKy759WIuwAW9_IRW_4bF5pw06ugBb-uIh5OsNX1EXS_XHpaIPUcpoeK1DSN6/pub?embedded=true"></iframe>
+
+
+

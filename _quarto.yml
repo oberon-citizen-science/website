@@ -36,6 +36,8 @@ website:
             href: ocsn_code_of_conduct.qmd
           - text: "Privacy Policy"
             href: ocsn_privacy_policy.qmd
+      - text: "Upcoming Events"
+        href: upcoming_events.qmd
       - text: "Activities"
         menu:
           - text: "FrogID"
@@ -101,6 +103,8 @@ website:
             href: mailto:oberon.citizen.science@gmail.com
       - section: "Activities"
         contents:
+          - text: "Upcoming Events"
+            href: upcoming_events.qmd
           - text: "FrogID"
             href: frogid.qmd
           - text: "Platypus & rakali surveys"
