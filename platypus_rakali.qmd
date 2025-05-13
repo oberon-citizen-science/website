@@ -9,7 +9,7 @@ Surveys of platypus, rakali and other native fauna living in and along the upper
 
 The planned sites for platypus and rakali monitoring in 2025 and early 2026 are shown below (subject to revision and permission of landowners where relevant).
 
-<iframe src="https://www.google.com/maps/d/embed?mid=1019zw05gnHn_un8sCkZWYjZoMiU-pDU&ehbc=2E312F" width="600" height="480"></iframe>
+<iframe src="https://www.google.com/maps/d/embed?mid=1019zw05gnHn_un8sCkZWYjZoMiU-pDU&ehbc=2E312F" width="800" height="600"></iframe>
 
 :::
 
@@ -423,6 +423,11 @@ ala_platypus_rakali_oberon_sf <- ala_platypus_rakali_oberon |>
                       st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
                                 crs = "GDA94")
 
+pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v16.geojson")
+
+pines_turbines_test <- sf::read_sf("assets/Pines_Windfarm_Tower_Locations_Oct_2024.kml")
+
+
 platypusIcon <- makeIcon(
   iconUrl = ifelse(ala_platypus_rakali_oberon_sf$commonName =="Rakali",
     "assets/rakali.png",
@@ -449,6 +454,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=ala_platypus_rakali_oberon_sf,
                     group=ala_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -457,10 +469,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(ala_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                    unique(ala_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -519,6 +532,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=cPlatypus_platypus_rakali_oberon_sf,
                     group=cPlatypus_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -527,10 +547,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(cPlatypus_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                    unique(cPlatypus_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -589,6 +610,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=iNaturalist_platypus_rakali_oberon_sf,
                     group=iNaturalist_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -597,10 +625,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(iNaturalist_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                                    unique(iNaturalist_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -659,6 +688,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=APC_platypus_rakali_oberon_sf,
                     group=APC_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -667,10 +703,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(APC_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                                    unique(APC_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -730,6 +767,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=BioNet_platypus_rakali_oberon_sf,
                     group=BioNet_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -738,10 +782,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(BioNet_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                                    unique(BioNet_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -800,6 +845,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=ALA_OzAtlas_platypus_rakali_oberon_sf,
                     group=ALA_OzAtlas_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -808,10 +860,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(ALA_OzAtlas_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                                    unique(ALA_OzAtlas_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
