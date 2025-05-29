@@ -1,0 +1,242 @@
+---
+title: "2025 Oberon Council Section 356 grant application"
+date: 2025-05-26
+image: ../../assets/Application-Rejected.jpg
+---
+
+In April 2025 Oberon Citizen Science Network lodged an application with Oberon Council ofr Section 356 community organisation funding. The full text of that application is reproduced below. 
+
+Unfortunately Oberon Council chose not to fund our application at all -- of the 49 applications assessed by Council, 38 were awarded partial or complete funding. OCSN was among the 11 applications which received no funding whatsoever. We would of course have been delighted to have been awarded even a portion of the requested amount. 
+
+The reasons given (in the papers for the most recent council meeting) were:
+
+> Alignment to policy objectives unclear. Funding request heavily focused on hardware. Encouraged to apply in future years.
+
+
+The full text of our application as submitted appears below.
+
+____
+
+# Oberon Citizen Science Network Section 356 funding application as submitted, April 2025
+
+## Surveying platypus and rakali in the headwaters of key rivers in Oberon local government area
+
+### Description
+
+Oberon Citizen Science Network Incorporated (OCSN) is a not-for-profit organisation formed
+in mid-2024 by Oberon residents to promote both interest in and knowledge of science,
+technology, engineering and mathematics (STEM) in the local community, and active
+participation in local STEM-based projects and other scientific endeavours. OCSN is a strictly
+non-political organisation and is not aligned with or accepts support from any political party
+or lobby organisation. OCSN currently has 27 financial members at time of writing, holds
+regular bi-monthly meetings, open to non-members, often with guest speakers, at the
+Oberon Library & Community Centre, and has a growing presence in social media groups of
+relevance to Oberon LGA residents. The OCSN web site at [https://oberon-citizen.science](https://oberon-citizen.science)
+provides a wide range of information about OCSN projects. More information about current
+OCSN activities, and a detailed rationale for this funding proposal, are provided in the
+additional information section below.
+
+In mid 2024, OCSN members undertook an exploration of available biodiversity data for key
+native animal species in the Oberon region, and discovered a remarkable paucity of data
+over the last two decades for many species, including the only two native aquatic terrestrial
+mammals in Australia: the rakali (native water rat) and the platypus. Several rivers in the
+Oberon region used to be famous for their plentiful platypus populations, but little
+systematic research into them has occurred in the region over the last two decades, and
+their presence in the upper reaches and headwaters of rivers in the region has never been
+researched. There are reasons for this: both platypus and rakali are elusive and largely
+nocturnal; traditional monitoring methods involve trapping and tagging animals in special
+nets, which requires specialist training, research licenses and is very labour-intensive; and
+traditional wildlife cameras (“camera traps”) tend not to work because they rely on infrared
+detectors which are not triggered by small wet aquatic mammals.
+
+For these reasons, OCSN commenced development of special purpose cameras able to
+capture both time-lapse and full-motion video of platypus and rakali in waterways,
+throughout the night, using specialised low-light sensors and low-power invisible infrared
+illumination to avoid disturbing the animals. These cameras have been remarkably
+successful, and our camera design has evolved to the point that we can capture video of detect
+platypus, rakali and other nocturnal native fauna in and along both small tributaries and
+creeks as well as the upper reaches of the larger river systems in the southern part of
+Oberon LGA. The results of our rakali and platypus surveys so far can be seen in the
+numerous videos we have published on OCSN YouTube channel over the last 7 months –
+please see our frequently updated video playlist, which is in reverse chronological order, at:
+[https://www.youtube.com/playlist?list=PL3mN4JSQUTQsrIUcR_C0i4FF2NWZU9SaP](https://www.youtube.com/playlist?list=PL3mN4JSQUTQsrIUcR_C0i4FF2NWZU9SaP)
+
+Reviewers of this application are urged to spend a few minutes viewing some of the most
+recent results of our platypus and rakali video surveys at the YouTube playlist URL given
+above (also on our web site).
+
+In addition to nocturnal video recording in river systems, OCSN has been using two
+specialised wildlife audio recording devices, known as AudioMoths, to capture bird, frog and
+bat calls (the bat calls utilise the specialised ultrasonic recording capabilities of the devices)
+in the riparian areas where we have been undertaking the video surveys. These activities are
+documented on the OCSN web site at [https://oberon-citizen.science/ecoacoustics.html](https://oberon-citizen.science/ecoacoustics.html)
+
+Currently OCSN has just two of the special-purpose cameras operational, with a third
+camera about to be completed and in operation by Easter 2025, as well as two of the
+AudioMoth devices. This equipment has been funded entirely by private financial donations
+by OCSN members, as well as considerable in-kind contributions of volunteer time by OCSN
+members involved in the camera design and construction.
+
+OCSN now wishes to expand our capabilities carry out these video and acoustic surveys by
+building three more cameras, and acquiring three more AudioMoth sound recording
+devices. This will permit comprehensive surveys for platypus, rakali and various bat, bird
+and frog species (including, potentially, the endangered Booroolong frog) in the upper
+reaches of the southern Oberon rivers to be completed by March 2026, or earlier. Thus we
+are seeking Section 356 funding from Oberon Council to cover the materiel costs for three
+more Oberon Citizen Science Network PlatyPiCams (the name of our camera design) and the
+purchase of three more AudioMoth devices.
+
+A more detailed breakdown of the costs involved is given in the additional information
+section below. Labour for construction has been and will continue to be provided on an
+unpaid voluntary basis by OCSN members. The lead time for acquisition of the parts for the
+cameras and their construction is approximately six weeks, as is the delivery time for the
+AudioMoth devices from their overseas supplier. Thus, if this application for Section 356
+funding is successful, we anticipate the additional cameras and devices will be ready in time
+for use by the start of Spring 2025. The existing devices and cameras will continue to be
+used as well, and in the meantime. Training material and standard operating procedures for
+the deployment of the cameras and AudioMoth devices are currently being prepared.
+Please note that deployment is done during daylight hours, in pairs, using a safe operating
+procedure protocol, with the written consent of landowners where that is needed. More
+details of survey planning and operational procedures can be provided on request.
+
+Details of the proposed survey sites to be covered over the rest of 2025 and early 2026 can
+be found on the OCSN web site at: [https://oberon-citizen.science/platypus_rakali.html](https://oberon-citizen.science/platypus_rakali.html)
+
+Several OCSN members are trained ecologists, but we also have the support of and expert
+input from two academic researchers who specialise in platypus and rakali research,
+specifically Dr Melody Serena of the Australian Platypus Conservancy, and Dr Tahneal
+Hawke, a senior researcher at the UNSW Sydney School of Biological, Earth and
+Environmental Sciences. Letters of support from these researchers can be provided on
+request.
+
+### Target Audience
+
+The direct participants in this project are OCSN members, spanning a range of ages,
+although many are retired. However as outlined above and below, the potential
+beneficiaries include the entire Oberon regional community, through the improved
+biodiversity information that will result from the project, as well as local high school science
+students and their teachers who will be able to use the data obtained in projects and lesson
+material. Oberon Council may also benefit in the design of civil engineering projects from
+the biodiversity data collected, as outlined below.
+
+### Community Need
+
+As mentioned above, Oberon Citizen Science Network Incorporated (OCSN) is a not-for-
+profit organisation formed in mid-2024 by Oberon residents to promote both interest in and
+knowledge of science, technology, engineering and mathematics (STEM) in the local
+community, and active participation in local STEM-based projects and other scientific
+endeavours.
+
+One issue with important STEM aspects that is currently of great interest to the local
+community is the proposed wind farm developments in and around Oberon LGA. As a
+science-based organisation, OCSN acknowledges the fact of anthropogenic climate change
+and its impacts, and the need for a rapid global transition to clean energy. However it does
+not take a position in favour or against any particular renewable energy development
+proposal. It does, however, take a strong stand that all such developments in the Oberon
+region should be assessed, both by the relevant authorities and by the community, in the
+light of adequate scientific and other technical information. 
+
+Unfortunately, as was evident in the deficiencies identified by community members, Oberon Council and various NSW
+government authorities in the environmental impact and biodiversity assessments which
+were submitted by the developers of the proposed Palings Yard wind farm, there are often large
+and surprising gaps in the scientific data and knowledge bases which developers and
+assessing authorities rely on to inform their decisions. Although it is often viewed as the
+responsibility of developers to provide adequate scientific data for sound decision making,
+there are obviously commercial constraints and conflicts of interest which may mean that
+the provided data is less complete or comprehensive than it ought to be. OCSN believes that
+there is a valid role for community organisations to identify such gaps in the available
+scientific data and technical information, and to help fill those gaps (as well as to motivate
+government agencies and other organisations to do so).
+
+To this end, OCSN has been undertaking a range of activities to help address these
+knowledge gaps. These include: 
+
+* development of detailed view shed and state-of-the-art visual impact assessments for the proposed Palings yard and Pines wind farms, in conjunction with leading academic experts in the US (please see [https://oberon-
+citizen.science/wind_farms.html](https://oberon-
+citizen.science/wind_farms.html));
+* development and provision of an interactive facility using Google Earth which allows community members to assess potential visual impact of the proposed wind farms from any point in Oberon LGA (or elsewhere) without having to personally engage with the developers or rely on their visualisation tool;
+* establishing a proof-of-concept network of combined seismic and infrasound sensor stations and investigating their utility for monitoring infrasound (ultra-low frequency sound) generated by wind turbines for possible effects on human and animal amenity (direct health effects are unlikely, but annoyance or disturbance is quite possible). 
+* a detailed analysis of the hydrology of the Pines Wind Farm exploration area is also underway using publicly available
+datasets.
+
+As noted above, the subject of this funding application relates to potential ecological and
+biodiversity impacts of the proposed Pines Wind Farm on key waterways in Oberon LGA.
+The proposed sites for the 242 Pines wind turbines (as currently advised by the developers
+on their web site) are generally in areas with the highest elevations in Oberon LGA. Such
+siting is obviously beneficial for wind power production, but these areas are also the
+headwaters of key river systems in the LGA, specifically the sources for the Fish, Duckmaloi,
+Tuglow, Styx and Retreat rivers. Construction of 242 of the largest wind turbines in Australia
+necessarily involves a risk of environment impacts on the riparian areas which feed these
+river systems – indeed, some of the proposed turbine locations appear to be immediately
+adjacent to or even in gazetted protected riparian areas. Wind turbines of the size proposed
+contain approximately two tonnes of gearbox oil which needs to be changed in each turbine
+every 12 to 18 months for the 35 year operational life of the project, introducing potential
+oil spill risks in hydrologically sensitive highland areas, including the river systems
+immediately upstream of Oberon dam, which provides drinking water to both Oberon
+township and to a large part of the Blue Mountains. Detailed analysis of these issues is
+beyond the scope of this application, and are mentioned purely by way of background.
+
+### Expected Outcomes
+
+Funding of this propose will substantially expand and accelerate this important local
+biodiversity research which is being undertaken by local citizen scientists, with guidance
+from expert academic ecologists. Some of the benefits to the Oberon community include:
+
+* Increased knowledge and awareness of the amazing local biodiversity,by publicising the
+results of our platypus and rakali surveys through:
+    * our bi-monthly OCSN public meetings, as well as potential Science Week events in August 2025 for which OCSN will shortly be seeking separate NSW and Commonwealth government grant funding;
+    * social media, leveraging the YouTube videos which OCSN creates documenting and explaining the results of these surveys
+* Contribution of the collected survey data to academic and government biodiversity databases, specifically the Atlas of Living Australia and the NSW government BioNet databases. Apart from being freely available to researchers and school science students, council officers and interested members of the public, these database are extremely important in properly informing assessment and approval processes for development applications, include large scale developments such as wind farms.
+* Direct engagement of OCSN members in both the fieldwork deployment and retrieval of monitoring cameras and AudioMoth devices, as well as in the equally important desk work of reviewing and extracting target species occurence data from the video footage and audio recordings obtained.
+* Provision of data which may help inform the design of culverts and causeways constructed or commissioned by Oberon Council, in order to make them more platypus-friendly. Dr Melody Serena of the Australian Platypus Conservancy has indicated willingness to develop a formal scientific study of this issue in conjunction with OCSN and Oberon Council, using the camera technology which is the subject of this funding application. Oberon Council civil engineers may be particularly interested in one of our recent videos, titled “Pipe-surfing platypuses” available at [https://youtu.be/e2ecf1UIYyg](https://youtu.be/e2ecf1UIYyg)
+* OCSN intends to enter this platypus and rakali survey project in the Citizen Science category for the 2026 round of the highly prestigious Eureka Prizes awarded by the Australian Museum (see [https://australian.museum/get-involved/eureka-prizes](https://australian.museum/get-involved/eureka-prizes) ). We believe that this OCSN project stands a very good chance of being selected as a finalist, given the novelty of the methods used as well as the obvious public appeal. Even such short-listing as a finalist provides extensive favourable publicity, with consequent benefits to the self-esteem of the wider Oberon community.
+
+### Evaluation Plan
+
+Success of the overall Oberon Citizen Science Network platypus and rakali 2025/26 survey
+project will be measured by the degree to which at least one video and audio survey
+(comprising at least two nights video recording and two days and nights audio recording) at
+each of the planned survey sites identified on the survey planning map available at
+[https://oberon-citizen.science/platypus_rakali.html](https://oberon-citizen.science/platypus_rakali.html) have been undertaken. We confidently
+expect to survey at least 75% of the sites identified, and hope to survey almost all of them
+(some subject to landowner permission).
+
+The success of the aspects of this broader survey project for which this application seeks
+funding, specifically the acquisition of three additional AudioMoth devices and construction
+and commissioning of three additional OCSN PlatyPiCam nocturnal cameras, will be
+measured by: 
+
+* whether these devices and cameras are ready for field work deployment by the start of Spring 2025 at the latest;
+* whether at least six OCSN members have been trained in their use and in the safe deployment protocols being developed for the survey;
+* whether at least four additional OCSN members have been trained in the desktop tasks of reviewing video and audio files obtained to extract platypus, rakali and other species occurrence data, and uploading those data to the biodiversity databases mentioned above for validation by experts.
+
+### Project Funding Summary (in AUD not including GST)
+
+* Organisation/Group (own) cash contribution: $2150 to date
+* Organisation/Group (own) in-kind contribution: $3000 (estimated 100 person-hours) (volunteer labour costs to be calculated at $30/hr)
+* Request from Council for cash contribution: $4540
+* Request from Council for in-kind contribution: $0
+* Other contributions toward this project:
+    * Amazon Web Services not-for-profit service credits AU$900 pa (video and audio file data storage and distribution)
+    * GitHub not-for-profit web site and code hosting credits AU$846 pa
+
+### Materiel Costings
+
+* AudioMoth devices with waterproof cases @ US$140 each x 3 plus US$30 shipping = US$450 = AU$712
+* QUILIPSU waterproof enclosures for cameras @ AU$80 each x 3 = AU$240
+* Amazon Essentials waterproof cases for batteries @ AU$83 each x 3 = AU$250
+* Ecoworth 30Ah 12.8V LiFePo4 batteries @ AU$180 each x 3 = AU$540
+* Raspberry Pi 5B 4GB single board computers @ AU$110 each x 3 = AU$330
+* 128GB SD storage cards for Raspberry Pi computers @ AU$35 each x 3 = AU$105
+* 1TB M.2 NVMe storage cards for Raspberry Pi computers @ AU$95 each x 3 = AU$285
+* 52Pi adapter boards for M.2 storage and 12V power for Raspberry Pi 5 computers @ AU$63 each x 3 = AU$189
+* Soho Enterprises SE-585 Sony StarVis2 camera sensor boards @ US$150 each x 3 plus US$30 shipping from Japan = US$480 = AU$760
+* ZLKC 8mm F1.4 C-mount lens @ AU$195 each x 1 (two lens are already in hand financed by private donation), free shipping from China on AliExpress = AU$195
+* Power, temperature and constant-current LED controller boards for each camera @ AU$68 each x 3 = AU$204
+* Components for DIY 850nm infrared software-controlled lights, two per camera @ $77 each x 6 = AU462
+* 1.5 inch RAM mounts for camera enclosure to star picket posts @Au$56 each x 3 = AU$168
+* Miscellaneous construction materials (Araldite adhesive, silicone sealant, cabling etc) @ AU$100.
+
+Total requested: AU$4540
+
+
