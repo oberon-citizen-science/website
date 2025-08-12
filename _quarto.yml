@@ -74,7 +74,7 @@ website:
         href: https://www.ocsn-allsky.net/indi-allsky/
       - text: "Gallery"
         href: ocsn_gallery.qmd
-      - text: "Register your interest"
+      - text: "Become a member!"
         href: register_interest.qmd
   sidebar:
     style: "floating"
@@ -96,7 +96,7 @@ website:
             href: ocsn_code_of_conduct.qmd
           - text: "Privacy Policy"
             href: ocsn_privacy_policy.qmd
-          - text: "Register your interest"
+          - text: "Join us!"
             href: register_interest.qmd
           - icon: envelope-at
             text: Email
