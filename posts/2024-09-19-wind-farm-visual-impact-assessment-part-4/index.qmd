@@ -1,6 +1,6 @@
 ---
 title: "Wind farm visual impact assessment -- part 4"
-description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. In this post we compute the visual impact assessment metric proposed by James F. Palmer, using the proposed Palings Yard wind farm as an example."
+description: "An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. In this post we compute the visual impact assessment metric proposed by James F. Palmer, using the proposed Paling Yards wind farm as an example."
 author:
   - name: Tim Churches
 date: 2024-09-19
@@ -39,9 +39,9 @@ The viewshed maps on this page are very detailed and may take quite a while to d
 
 ## Introduction
 
-Having explored the concepts of viewsheds and the code needed to compute, manipulate and visualise them in the previous three posts, in this post we implement the visual impact assessent metrics described in @PalmerJF2022. Note that the parameters are as used by Palmer for the General Electric 5.3–158 wind turbine, which is approximately 180.5 metres tall at the uppermost blade tip. In fact, the turbines that may be used in the proposed windfarms south of Oberon are likely to be considerably larger than the GE 5.3–158 wind turbine. The EIS for the proposed Palings Yard wind farm mentions turbines up to 240 metres high, and initial information released by the proponents of the proposed Pines wind farm mentions turbines up to 300 metres high. The parameters described below to calculate visual impact would need to be adjusted to reflect larger turbine size.
+Having explored the concepts of viewsheds and the code needed to compute, manipulate and visualise them in the previous three posts, in this post we implement the visual impact assessent metrics described in @PalmerJF2022. Note that the parameters are as used by Palmer for the General Electric 5.3–158 wind turbine, which is approximately 180.5 metres tall at the uppermost blade tip. In fact, the turbines that may be used in the proposed windfarms south of Oberon are likely to be considerably larger than the GE 5.3–158 wind turbine. The EIS for the proposed Paling Yards wind farm mentions turbines up to 240 metres high, and initial information released by the proponents of the proposed Pines wind farm mentions turbines up to 300 metres high. The parameters described below to calculate visual impact would need to be adjusted to reflect larger turbine size.
 
-Note that although the exact details of the Palings Yard turbine sizes have not been decided (or that information was not included in the EIS), the number of proposed turbines and their proposed locations are known and that information has been used here.
+Note that although the exact details of the Paling Yards turbine sizes have not been decided (or that information was not included in the EIS), the number of proposed turbines and their proposed locations are known and that information has been used here.
 
 ## Steps in implementing the Palmer visual impact assessment metrics
 
@@ -84,7 +84,7 @@ To calculate this, we compute three viewshed layers for each of the turbines in 
 
 As noted above, these visual exposure heights are specific for the GE 5.3–158 wind turbine used by Palmer as an example, and would need to be adjusted for the actual turbine types in a specifc wind farm.  
 
-Thus, for the Palings Yard wind farm, comprising 47 turbines, we compute 3x47=141 separate viewsheds to take into account the degree of visual exposure for each turbine at each point in the landscape. 
+Thus, for the Paling Yards wind farm, comprising 47 turbines, we compute 3x47=141 separate viewsheds to take into account the degree of visual exposure for each turbine at each point in the landscape. 
 
 Each of these viewsheds contains a binary (0, 1) indicator of turbine visibility at blade end, hub or full rotor sweep heights, at each point in the landscape. This binary indicator to multiplied by factors of 10, 20 and 30 for the blade end, hub and full rotor sweep viewsheds respectively. 
 
@@ -543,7 +543,7 @@ wfarm_visual_impact_df  %>%
 
 Because the cube root and natural log adjustments yield similar results (at least in terms of the ststatistical distrubution of values), we only show the maps for the square root and natural log adjustments here.
 
-### Visual impact assessment metric for the proposed Palings yard wind farm, using square root adjustment for the number of meaningfully visible turbines
+### Visual impact assessment metric for the proposed Paling Yards wind farm, using square root adjustment for the number of meaningfully visible turbines
 
 :::{.column-page}
 
@@ -598,7 +598,7 @@ leaflet(height="800px", width="1200px") %>%
 :::
 
 
-### Visual impact assessment metric for the proposed Palings yard wind farm, using natural logarithm adjustment for the number of meaningfully visible turbines
+### Visual impact assessment metric for the proposed Paling Yards wind farm, using natural logarithm adjustment for the number of meaningfully visible turbines
 
 :::{.column-page}
 

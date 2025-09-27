@@ -128,6 +128,10 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./upcoming_events.html" aria-current="page"> 
+<span class="menu-text">Upcoming Events</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Activities</span>
@@ -199,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="https://www.ocsn-allsky.net/indi-allsky/" aria-current="page"> 
+    <a class="nav-link" href="https://www.ocsn-allsky.net/indi-allsky/"> 
 <span class="menu-text">All-sky camera</span></a>
   </li>  
   <li class="nav-item">
@@ -208,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./register_interest.html"> 
-<span class="menu-text">Register your interest</span></a>
+<span class="menu-text">Become a member!</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -308,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./register_interest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Register your interest</span></a>
+ <span class="menu-text">Join us!</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -329,6 +333,12 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./upcoming_events.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Upcoming Events</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./frogid.html" class="sidebar-item-text sidebar-link">
@@ -442,7 +452,11 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="XJ8LFZSR28M2L"> <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"> <img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div></div>
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
@@ -559,12 +573,16 @@ Current status of this initiative
 <p>Following this evaluation, a larger scale roll-out of a BirdNET sensor network in the Oberon LGA on private members’ properties and on public or state land, subject to appropriate permission, is planned. At the moment, there are two BirdNET stations in or around Oberon – there are several more in the Blue Mountains, as shown in this screencast of the global BirdNET map:</p>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="assets/oberon_birdnet_map.mp4"></video></div>
 <p>The current OCSN LGA BirdNET Network consists of the following stations:</p>
-<p>Station 1: BirdNET Pi at Chatham Valley</p>
-<p>Station 2: Birdweather PUC at Butterfactory Lane</p>
-<p>Station 3: BirdNET Pi at Reef Road</p>
-<p>Station 4: BirdNET Pi at Lowes Mount</p>
-<p>Station 5: Birdweather PUC at Edith</p>
-<p>Station 6: Birdweather PUC at Baileys Lane</p>
+
+<ul>
+<li>Station 1: BirdNET Pi at Chatham Valley</li>
+<li>Station 2: Birdweather PUC at Butterfactory Lane</li>
+<li>Station 3: BirdNET Pi at Reef Road</li>
+<li>Station 4: BirdNET Pi at Lowes Mount</li>
+<li>Station 5: Birdweather PUC at Edith</li>
+<li>Station 6: Birdweather PUC at Baileys Lane</li>
+</ul>
+<p>There are also two stations outside of Oberon which provide OCSN with comparison data, one in Canberra and one in Lilli Pilli, on the southern edge of Sydney right next to the Royal National Park.</p>
 </section>
 <section id="birdweather-links" class="level3">
 <h3 class="anchored" data-anchor-id="birdweather-links">Birdweather Links</h3>
@@ -1185,7 +1203,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </nav>
 </div> <!-- /content -->
 <script>videojs(video_shortcode_videojs_video1);</script>
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

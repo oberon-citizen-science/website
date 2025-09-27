@@ -36,6 +36,8 @@ website:
             href: ocsn_code_of_conduct.qmd
           - text: "Privacy Policy"
             href: ocsn_privacy_policy.qmd
+      - text: "Upcoming Events"
+        href: upcoming_events.qmd
       - text: "Activities"
         menu:
           - text: "FrogID"
@@ -72,7 +74,7 @@ website:
         href: https://www.ocsn-allsky.net/indi-allsky/
       - text: "Gallery"
         href: ocsn_gallery.qmd
-      - text: "Register your interest"
+      - text: "Become a member!"
         href: register_interest.qmd
   sidebar:
     style: "floating"
@@ -94,13 +96,15 @@ website:
             href: ocsn_code_of_conduct.qmd
           - text: "Privacy Policy"
             href: ocsn_privacy_policy.qmd
-          - text: "Register your interest"
+          - text: "Join us!"
             href: register_interest.qmd
           - icon: envelope-at
             text: Email
             href: mailto:oberon.citizen.science@gmail.com
       - section: "Activities"
         contents:
+          - text: "Upcoming Events"
+            href: upcoming_events.qmd
           - text: "FrogID"
             href: frogid.qmd
           - text: "Platypus & rakali surveys"
@@ -136,6 +140,12 @@ website:
 fig-cap-location: bottom
 reference-location: section
 footnotes-hover: true
+margin-header: |
+  <form action="https://www.paypal.com/donate" method="post" target="_top">
+  <input type="hidden" name="hosted_button_id" value="XJ8LFZSR28M2L" />
+  <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif" border   ="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+  <img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
+  </form>
 format:
   html:
     theme:

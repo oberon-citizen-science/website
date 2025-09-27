@@ -6,9 +6,17 @@ freeze: auto
 
 ::: {.callout-note title="Current status of this initiative"}
 Surveys of platypus, rakali and other native fauna living in and along the upper reaches and headwaters of key river systems in Oberon local government area are now being undertaken by members of Oberon Citizen Science Network, using specialised cameras designed and constructed by us specifically for this purpose. Funding applications will be submitted in April 2025 which, if successful, will allow us to significantly increase the scope and pace of these surveys. The results are progressively being formally submitted to relevant biodiversity databases, in particular the [Atlas of Living Australia](https://www.ala.org.au), operated by [CSIRO](https://www.csiro.au), and the NSW government [BioNet Atlas](https://www.environment.nsw.gov.au/topics/animals-and-plants/biodiversity/nsw-bionet). However, highlights of the results can also be viewed as a series of edited videos, continuously updated via [this YouTube playlist](https://www.youtube.com/playlist?list=PL3mN4JSQUTQsrIUcR_C0i4FF2NWZU9SaP). A detailed rationale for this survey program can also be found on the [Wind Farms and Citizen Science](wind_farms.html) page.
+
+The planned sites for platypus and rakali monitoring in 2025 and early 2026 are shown below (subject to revision and permission of landowners where relevant).
+
+<iframe src="https://www.google.com/maps/d/embed?mid=1019zw05gnHn_un8sCkZWYjZoMiU-pDU&ehbc=2E312F" width="800" height="600"></iframe>
+
 :::
 
 
+## Introduction
+
+Anecdotally, rivers in the Oberon region used to be famous for their abundant platypus populations -- in fact, there is a story, probably apocryphal, that [the name of the Duckmaloi River](https://www.abc.net.au/news/2017-12-07/curious-central-west-place-town-name-meanings-origins/9228070), which runs through Oberon LGA, came from the surprised exclamation of Irish settlers on first encountering a platypus: "Duck-mole-oy!" ("oy" being what you said if you wanted someone to agree with you). Certainly a lot of research last century into the extent and behaviours of the platypus was conducted in river systems around Oberon by researchers associated with Taronga Zoo and various NSW universities -- copies of some scientific papers and reports on platypus in the Duckmaloi River, several by local resident Amanda MacLeod, can be accessed [here](assets/AM98287.pdf), [here](assets/AM98319.pdf) and [here](assets/AM98306.pdf).
 
 ::: {.aside}
 
@@ -17,10 +25,6 @@ A rakali (Australian native water rat, scientific name _Hydromys chrysogaster_) 
 {{< video gallery/rakali1.mov >}}
 
 :::
-
-## Introduction
-
-Anecdotally, rivers in the Oberon region used to be famous for their abundant platypus populations -- in fact, there is a story, probably apocryphal, that [the name of the Duckmaloi River](https://www.abc.net.au/news/2017-12-07/curious-central-west-place-town-name-meanings-origins/9228070), which runs through Oberon LGA, came from the surprised exclamation of Irish settlers on first encountering a platypus: "Duck-mole-oy!" ("oy" being what you said if you wanted someone to agree with you). Certainly a lot of research last century into the extent and behaviours of the platypus was conducted in river systems around Oberon by researchers associated with Taronga Zoo and various NSW universities -- copies of some scientific papers and reports on platypus in the Duckmaloi River, several by local resident Amanda MacLeod, can be accessed [here](assets/AM98287.pdf), [here](assets/AM98319.pdf) and [here](assets/AM98306.pdf).
 
 Much less is known about the extent in the Oberon region of the [_rakali_](https://en.wikipedia.org/wiki/Rakali), also also known as the _rabe_, the _"Australian Otter"_ or _native water-rat_, (scientific name _Hydromys chrysogaster_). This elusive creature lives in burrows on the banks of rivers, lakes and estuaries and feeds on aquatic insects, fish, crustaceans, mussels, snails, frogs, bird's eggs and small water birds -- and thus, it often shares similar habitats to the platypus, hence its inclusion here.
 
@@ -419,6 +423,11 @@ ala_platypus_rakali_oberon_sf <- ala_platypus_rakali_oberon |>
                       st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
                                 crs = "GDA94")
 
+pines_expl_area <- sf::read_sf("assets/pines_exploration_area_v16.geojson")
+
+pines_turbines_test <- sf::read_sf("assets/Pines_Windfarm_Tower_Locations_Oct_2024.kml")
+
+
 platypusIcon <- makeIcon(
   iconUrl = ifelse(ala_platypus_rakali_oberon_sf$commonName =="Rakali",
     "assets/rakali.png",
@@ -445,6 +454,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=ala_platypus_rakali_oberon_sf,
                     group=ala_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -453,10 +469,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(ala_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                    unique(ala_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -515,6 +532,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=cPlatypus_platypus_rakali_oberon_sf,
                     group=cPlatypus_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -523,10 +547,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(cPlatypus_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                    unique(cPlatypus_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -585,6 +610,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=iNaturalist_platypus_rakali_oberon_sf,
                     group=iNaturalist_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -593,10 +625,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(iNaturalist_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                                    unique(iNaturalist_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -655,6 +688,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=APC_platypus_rakali_oberon_sf,
                     group=APC_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -663,10 +703,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(APC_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                                    unique(APC_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -726,6 +767,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=BioNet_platypus_rakali_oberon_sf,
                     group=BioNet_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -734,10 +782,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(BioNet_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                                    unique(BioNet_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -796,6 +845,13 @@ leaflet(height="800px", width="1200px") %>%
               fillOpacity=0.1, 
               color="brown",
               group = "Protected riparian areas") %>%
+  addCircleMarkers(data=pines_turbines_test,
+                   group="Proposed Pines wind farm turbines",
+                   color="cyan",
+                   radius = 3,
+                   stroke = FALSE,
+                   fillOpacity = 0.7,
+                   weight=1) %>%
   addMarkers(data=ALA_OzAtlas_platypus_rakali_oberon_sf,
                     group=ALA_OzAtlas_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
@@ -804,10 +860,11 @@ leaflet(height="800px", width="1200px") %>%
                    overlayGroups = c(
                                       "Oberon LGA",
                                       "Protected riparian areas",
-                                     unique(ALA_OzAtlas_platypus_rakali_oberon_sf$commonNameDecade)),
+                                      "Proposed Pines wind farm turbines",                                                    unique(ALA_OzAtlas_platypus_rakali_oberon_sf$commonNameDecade)),
                    options = layersControlOptions(collapsed = FALSE)
   ) %>%
   hideGroup("Protected riparian areas") %>%
+  hideGroup("Proposed Pines wind farm turbines") %>%
   addMeasure(
             position = "bottomleft",
             primaryLengthUnit = "kilometers",
@@ -868,9 +925,8 @@ OCSN encourages its members to undertake _ad hoc_, opportunistic direct observat
 It may be possible for Oberon Citizen Science Network to use the [**DigiVol**](https://volunteer.ala.org.au) crowd-sourcing platform operated by the Australian Museum to distribute the task of watching trail camera and time-lapse video to volunteers. DigiVol is an online platform which hosts "expeditions", which are projects for which volunteers can register to under small tasks, such as watching a segment of video recorded by a wildlife or trail camera and noting if any target species appears in the footage. Each participant can undertake as few or as many of these small, discrete tasks as they wish, and as time permits, over the course of the project (expedition). OCSN will contact DigiVol to enquiry about whether they can host time-lapse camerascreening tasks for us. As well, OCSN members are encouraged to sign up as a DigiVol participant, join an expedition and undertake some tasks!
 :::
 
-All sightings will be contributed to the platy-project as well as uploaded into the NSW government BioNet Atlas database, as soon as OCSN receives an account with permission to do so (an application has been submitted).
+All sightings will be contributed to the Atlas of Living Australia as well as uploaded into the NSW government BioNet Atlas database. OCSN now has a BioNet Atlas account with permission to submit uploads of observation records.
 
-<iframe src="https://www.google.com/maps/d/embed?mid=1019zw05gnHn_un8sCkZWYjZoMiU-pDU&ehbc=2E312F" width="640" height="480"></iframe>
 
 
 ### BioCollect
@@ -879,6 +935,6 @@ The utility of the [BioCollect app](https://www.ala.org.au/biocollect/) provided
 
 ## NSW Waterwatch
 
-[Waterwatch NSW](https://www.nswwaterwatch.org.au) is a program supported by the NSW government to encourage local community engagement with waterway health. Quality quality is known to be especially important to platypus health, and thus OCSN intends to participate in the Watchwatch program and monitor water quality at sites where platypus have been observed in Oberon LGA. More details will appear here in due course.
+[Waterwatch NSW](https://www.nswwaterwatch.org.au) is a program supported by the NSW government to encourage local community engagement with waterway health. Quality quality is known to be especially important to platypus health, and thus OCSN intends to participate in the Watchwatch program and monitor water quality at sites where platypus have been observed in Oberon LGA. More details will appear here in due (water) course.
 
 All [Waterwatch NSW data](https://biocollect.ala.org.au/nswwaterwatch) is made available through the Atlas of Living Australia database. A preliminary look at those data suggests that there is little or no data for waterways in Oberon LGA -- a situation which OCSN must attempt to remedy.

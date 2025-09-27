@@ -3,6 +3,18 @@ title: "Welcome to the Oberon Citizen Science Network (OCSN) website"
 lightbox: true
 ---
 
+::: {.aside}
+Please consider supporting Oberon Citizen Science Network by [applying for membership](register_interest.html), or making a financial donation to help fund our projects and programme of work, via the button below. 
+
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="XJ8LFZSR28M2L" />
+<input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
+</form>
+
+Please note that although we are a non-profit association, donations are not currently tax-deductible (we will be seeking tax-deductible gift recipient status in the near future).
+:::
+
 This is the website for the newly formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**). At this stage, we are seeking expressions of interest from potential members and contributors. Please read on for more information!
 
 :::{.callout-tip}
