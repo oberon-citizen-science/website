@@ -55,6 +55,7 @@ Following this evaluation, a larger scale roll-out of a BirdNET sensor network i
 
 The current OCSN LGA BirdNET Network consists of the following stations:
 
+
 * Station 1: BirdNET Pi at Chatham Valley
 * Station 2: Birdweather PUC at Butterfactory Lane
 * Station 3: BirdNET Pi at Reef Road
@@ -77,7 +78,6 @@ Birdweather PUCs also have weather, air quality and motion sensors. Below are th
 [PUC-9269 Oberon Citizen Science Network station 5 at Edith](https://app.birdweather.com/stations/9269/sensors)
 
 [PUC-9336 Oberon Citizen Science Network station 6 at Baileys Lane](https://app.birdweather.com/stations/9336/sensors)
-
 
 The sensors available on these pages are:
 
