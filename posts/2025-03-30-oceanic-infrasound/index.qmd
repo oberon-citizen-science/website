@@ -4,6 +4,7 @@ description: "An investigation of unusual seismic signals associated with the ma
 author:
   - name: Alan Sheehan
 date: 2025-03-30
+date-modified: 2025-09-26
 categories: [Infrasound, Seismic analysis, Data analysis] # self-defined categories
 image: South_NZ_earthquake_to_Oberon_map.png
 citation: 
