@@ -97,7 +97,7 @@ Click or tap on these margin figures to see a larger version.
 
 ![Figure 12: Sonic Boom Infrasound Data Summary](F-35A Sonic Boom Data Summary.png)
 
-The Boom Report is designed to calculate as much information from an infrasound signal as reasonably possible, but when it comes to calculating the Peak Source Infrasound Power and the Total Energy (infrasound) it assumes an omni-directional point source. Sonic Booms are not omni-directional, so the Peak Source Infrasound Power and the Total Energy (infrasound) figures may likely be inflated (they can also be diminished depending on the direction of flight of the aircraft). So not too much can bet drawn from these figures.
+The Boom Report is designed to calculate as much information from an infrasound signal as reasonably possible, but when it comes to calculating the Peak Source Infrasound Power and the Total Energy (infrasound) it assumes an omni-directional point source. Sonic Booms are not omni-directional, so the Peak Source Infrasound Power and the Total Energy (infrasound) figures may likely be inflated (they can also be diminished depending on the direction of flight of the aircraft). So not too much can be drawn from these figures.
 
 However, the expected source infrasound power for the sonic boom of an aircraft is expected to exceed the power the aircraft can produce. The reason for this involves the non-linearities of compressible flow - the aircraft is constantly using power to maintain pressure wave(s). When detected the pressure waves (sonic boom) release their energy in a very short period of time (high power) compared to the time the aircraft had to fly at supersonic speed to build that pressure wave.
 
@@ -115,18 +115,14 @@ Temperature and pressure gradients in the atmosphere also tend to bend the sound
 
 And, of course, surface features can reflect and/or absorb sound and infrasound waves affecting the direction and intensity.
 
-It is also noticeable that there is a general trend towards weakening signal strength as the day progressed. The final two detections were so weak, that it was necessary to reduce the bandpass filter width to excluse other infrasound noise to detect the signal. It is likely that this is the result of developing atmospheric conditions on the day: increasing thermals and updrafts over the land causing increasing sea breeze and pressure and temperature gradients developing to bend the signal away from the ground.
+It is also noticeable that there is a general trend towards weakening signal strength as the day progressed. The final two detections were so weak, that it was necessary to reduce the bandpass filter width to exclude other infrasound noise to detect the signal. It is likely that this is the result of developing atmospheric conditions on the day: increasing thermals and updrafts over the land causing increasing sea breeze and pressure and temperature gradients developing to bend the signal away from the ground.
 
 All of these factors make infrasound detection over long distances very variable, so sometimes a degree of luck is involved in simply making a detection!
 
 #### References and Links
 
-![NASA Facts: Sonic Booms, Dryden Flight Research Center](https://www.nasa.gov/wp-content/uploads/2021/09/120274main_fs-016-dfrc.pdf)
-
-![Sonic Boom, Wikipedia](https://en.wikipedia.org/wiki/Sonic_boom)
-
-![Taming the BOOM, NASA](https://www.nasa.gov/centers-and-facilities/armstrong/taming-the-boom/)
-
-![Lockheed Martin F-35 Lightning II, Wikipedia](https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II)
-
-![F-35A Lightning II, RAAF](https://www.airforce.gov.au/aircraft/f-35a-lightning-ii)
+* [NASA Facts: Sonic Booms, Dryden Flight Research Center](https://www.nasa.gov/wp-content/uploads/2021/09/120274main_fs-016-dfrc.pdf)
+* [Sonic Boom, Wikipedia](https://en.wikipedia.org/wiki/Sonic_boom)
+* [Taming the BOOM, NASA](https://www.nasa.gov/centers-and-facilities/armstrong/taming-the-boom/)
+* [Lockheed Martin F-35 Lightning II, Wikipedia](https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II)
+* [F-35A Lightning II, RAAF](https://www.airforce.gov.au/aircraft/f-35a-lightning-ii)
