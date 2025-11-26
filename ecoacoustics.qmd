@@ -59,6 +59,12 @@ Note that the pulses are flat, and the characteristic frequency is only 15.9 kHz
 
 ![Screenshot of spectrogram of calls by _Austronomus australis_ captured on an OCSN AudioMoth device (2 of 2)](assets/Austronomus_australis_20250218_093252_6.png)
 
+### List of bats in the Oberon region
+
+
+<iframe width="1000" height="800" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFn05WzHul-rSBbX5NsvujhZBAarb9U_9JX7Fr6_0cNI8xWfFdmQZyqYNIi5lrg73KD3rbeYoLQwSH/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=true"></iframe>
+
+
 ### Titley Scientific
 
 Titley Scientific is an Australian company based in Brisbane which designs and manufactures a range of ecoacoustic monitoring devices, including automated bat detectors and high-end audio recorders capable of recording both audible calls from birds and frog, but also ultrasounic sound emitted by bats. The devices are not cheap, but they are very well-regarded by ecologists and are fully supported locally, complete with easy-to-use software to enable screening of recordings. They also have a loan program for citizen science groups! OCSN plans to borrow one of their devices as soon as possible to assess their utility. For more information, see the [Titley Scientific web site](https://www.titley-scientific.com).
