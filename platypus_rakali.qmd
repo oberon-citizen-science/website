@@ -397,6 +397,75 @@ ala_platypus_rakali_oberon |>
   )  
 ```
 
+::: {.callout-note title="Additional table by year since 2020" collapse="true"}
+
+Note the dramatic increase in iNaturalist records in 2024 and 2025. This is almost entire the result of OCSN activities. We plan to add these records to NSW BioNet in the near future.
+
+```{r ala-table-recent}
+#| echo: false
+#| message: false
+#| warning: false
+
+ala_platypus_rakali_oberon |>
+  bind_rows(platypus_rakali_bionet) |>
+  filter(!is.na(eventDate), Year >= 2020) |> 
+  select(-c(commonNameDecade, PopupContent)) |>
+  group_by(commonName, dataResourceName, Year) |>
+  summarise(n=n(), .groups = "drop") |>
+  arrange(Year, commonName, dataResourceName) |>
+  pivot_wider(names_from = Year, values_from = n) |>
+  arrange(desc(commonName), stringr::str_to_lower(dataResourceName)) |>
+  gt(rowname_col = "dataResourceName") |>
+  cols_hide(commonName) |>
+  tab_row_group(
+    label = md("**Rakali**"),
+    rows = commonName == "Rakali",
+    id = "rakali") |>
+  tab_row_group(
+    label = md("**Platypus**"),
+    rows = commonName == "Platypus",
+    id = "platypus") |>
+  tab_spanner(
+    label = "Year",
+    columns = starts_with("20")) |>
+  sub_missing(missing_text = "-") |>
+  tab_style(
+    style = list(
+      cell_fill(color = "lightgreen"),
+      cell_text(style = "italic")
+      ),
+    locations = cells_row_groups()) |>
+  summary_rows(
+    groups = everything(),
+    columns = contains("20"),
+    fns = list(id = "total", label = "All sources", fn = "sum")
+  ) |>
+#   tab_footnote(
+#     footnote = md("[ALA species sightings and OzAtlas](https://biocollect.ala.org.au/sightings/project/index/f813c99c-1a1d-4096-8eeb-cbc40e321101)"),
+#     locations = cells_stub(rows = "ALA species sightings and OzAtlas")) |>
+  tab_footnote(
+    footnote = md("[cPlatypus](https://collections.ala.org.au/public/show/dr7973) - see also [platy-project](https://platy-project.acf.org.au)"),
+    locations = cells_stub(rows = "cPlatypus")) |>
+  tab_footnote(
+    footnote = md("[NSW BioNet Atlas (via ALA)](https://collections.ala.org.au/public/showDataResource/dr368)"),
+    locations = cells_stub(rows = "NSW BioNet Atlas (via ALA)")) |>
+  tab_footnote(
+    footnote = md("[Australian Platypus Conservancy](https://platypus.asn.au)"),
+    locations = cells_stub(rows = "Australian Platypus Conservancy")) |>
+#   tab_footnote(
+#     footnote = md("[Encyclopedia of Life Images - Flickr Group](https://www.flickr.com/groups/encyclopedia_of_life/)"),
+#     locations = cells_stub(rows = "Encyclopedia of Life Images - Flickr Group")) |>
+  tab_footnote(
+    footnote = md("[iNaturalist Australia](https://inaturalist.ala.org.au)"),
+    locations = cells_stub(rows = "iNaturalist Australia")) |>
+  tab_header(
+    title = md("Platypus and Rakali records for Oberon LGA - 2020 onwards"),
+    subtitle = md("in the Australian Living Atlas (ALA) database with comparable data direct from NSW BioNet Atlas also shown")
+  )  
+```
+
+:::
+
 ### Interactive maps
 
 In the maps below, you can toggle layers on and off for platypus observation records in each decade, as well as for rakali records for the entire period since 1970. Zoom in to see individual sighting records where they overlap. If you click on each platypus or rakali icon on the map, additional details about the record in the ALA database will pop up. Merging of NSW BioNet records that are not (yet) in the ALA database is planned, as soon as BioNet approves OCSN access to the API they provide for automated data extraction (we are using such automated data extraction for the ALA data shown here).
