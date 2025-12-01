@@ -64,7 +64,9 @@ library(clock)
 # download data for all fauna in Oberon SLA from https://atlas.bionet.nsw.gov.au/UI_Modules/ATLAS_/AtlasSearch.aspx
 # bionet_oberon <- read_tsv("assets/Atlas_records_20240924-170940/Atlas_records_dfy0dp51xksxkltuxbt4izzs20240924-170937.txt", skip=4)
 
-bionet_oberon <- read_tsv("assets/Atlas_records_20250218-140347/Atlas_records_eoiugh2zo1aekxlxom5wzh2w20250218-140340.txt", skip=4)
+# bionet_oberon <- read_tsv("assets/Atlas_records_20250218-140347/Atlas_records_eoiugh2zo1aekxlxom5wzh2w20250218-140340.txt", skip=4)
+
+bionet_oberon <- read_tsv("assets/Atlas_records_20251202-093101/Atlas_records_2ukuovc5aevm1kkp222rz3hy20251202-093058.txt", skip=4)
 
 platypus_rakali_sf <- bionet_oberon %>% 
                         filter(SpeciesCode %in% c("1001", "1415")) %>%
@@ -123,7 +125,7 @@ platypus_rakali_sf %>%
   labs(x="Year of observation",
        y="Number of observations",
        title="Platypus and rakali observations in Oberon LGA",
-       subtitle = "NSW BioNet Atlas data as at Feb 2025")
+       subtitle = "NSW BioNet Atlas data as at 2 Dec 2025")
 
 ```
 
@@ -254,6 +256,7 @@ ala_platypus_rakali_oberon_images <- ala_platypus_rakali_oberon |>
 
 ala_platypus_rakali_oberon_media_info <- request_metadata() |>
   filter(media == ala_platypus_rakali_oberon) |>
+  compute() |>
   collect() |>
   left_join(ala_platypus_rakali_oberon_images)
 

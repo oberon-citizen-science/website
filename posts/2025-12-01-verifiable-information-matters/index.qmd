@@ -1,0 +1,18 @@
+---
+title: "Verifiable information about renewable energy projects matters"
+description: "A case study into the need for independently verifiable information regarding renewable energy projects."
+author:
+  - name: Tim Churches
+date: 2025-12-01
+categories: [Renewable energy, Wind farms, Visual Impact assessment] # self-defined categories
+image: Sonic Boom 250923 003500UTC-1.png
+citation: 
+  url: https://oberon-citizen.science/posts/2025-12-01-verifiable-information-matters/
+draft: true 
+lightbox: true
+freeze: false
+---
+
+
+{{< video Pines_Wind_Farm_simulation_assertions.mov >}}
+
