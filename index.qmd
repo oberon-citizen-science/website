@@ -13,9 +13,20 @@ Please consider supporting Oberon Citizen Science Network by [applying for membe
 </form>
 
 Please note that although we are a non-profit association, donations are not currently tax-deductible (we will be seeking tax-deductible gift recipient status in the near future).
+
+---
+
 :::
 
-This is the website for the newly formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**). At this stage, we are seeking expressions of interest from potential members and contributors. Please read on for more information!
+This is the website for the recently formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**). Please read on for more information!
+
+::: {.aside}
+
+![Oberon Citizen Science Network (OCSN) is proud to be a Landcare affiliated group.](assets/Oberon Citizen Science Network Logo Pack/SVG/Oberon Citizen Science Network_Colour Stacked Positive.svg)
+
+---
+
+:::
 
 :::{.callout-tip}
 This web site should be readable and navigable on a smart phone, but it is best viewed on a tablet computer in landscape mode or a laptop or desktop computer. Some features such as interactive maps may be difficult to use on a phone.
@@ -25,6 +36,9 @@ This web site should be readable and navigable on a smart phone, but it is best 
 [Oberon](https://en.wikipedia.org/wiki/Oberon_Council) is located in the Central Tablelands of NSW, Australia, about 140km west of Sydney Harbour, and about 80km west of the Blue Mountains, but at a slightly higher elevation than the top of the Blue Mountains (most of Oberon LGA sits at between 1100 and 1300m elevation).
 
 ![Oberon LGA^[No machine-readable author provided. Roke~commonswiki assumed (based on copyright claims)., CC BY-SA 3.0, via Wikimedia Commons]](assets/Oberon_LGA_NSW.png){.lightbox}
+
+---
+
 :::
 
 OCSN is a newly formed collective of people living in and around the Oberon local government area (LGA) in the Central Tablelands of NSW who are interested in science and in participating in scientific investigation of interesting and/or important aspects of our environment. By _science_  we mean **STEM** (**S**cience, **T**echnology, **E**ngineering and **M**athematics) activities in general. These include biology and ecology, and the impacts of human activity on those domains, as well as earth science, astronomy and any other safe and non-harmful scientific investigations members may wish to pursue. Projects involving technology and engineering are also in-scope for OCSN, particularly projects involving development of sensor and other methods to study the world around us. Creating peer-reviewed summaries of current scientific findings is also in scope, to help provide reliable and unbiased sources of information about STEM matters which are important to the local community. A list of current and potential activities and projects can be found in the list on the left. This list may expand or contract depending on the interests of OCSN participants.
@@ -33,6 +47,9 @@ Participants in OCSN do not need to be trained scientists, engineers, technologi
 
 ::: {.aside}
 The founding members of Oberon Citizen Science Network are Alan Sheehan and Tim Churches, both of whom are Oberon LGA residents with a common interest in all (or at least many) matters relating to **STEM** (science, technology, engineering and mathematics).
+
+---
+
 :::
 
 
@@ -46,6 +63,9 @@ OCSN may accept funding for its activities from government, corporations or indi
 
 ::: {.aside}
 ![A visualisation of one variant of the scientific method.^[Efbrazil, CC BY-SA 4.0, via Wikimedia Commons]](assets/The_Scientific_Method.png)
+
+---
+
 :::
 
 ::::: {.callout-important title="Acknowledgement of Country" appearance="simple"}
@@ -64,4 +84,4 @@ Oberon Citizen Science Network acknowledges the Traditional Owners of Country th
 
 :::::
 
-Please do read on using the link below or the links at the left to learn more about OCSN and its aims and potential activities.
+Please read on using the link below or the links at the left to learn more about OCSN and its aims and potential activities.
