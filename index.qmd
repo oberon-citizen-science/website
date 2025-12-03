@@ -22,7 +22,7 @@ This is the website for the recently formed Oberon Citizen Science Network (OCSN
 
 ::: {.aside}
 
-![Oberon Citizen Science Network (OCSN) is proud to be a Landcare affiliated group.](assets/Oberon Citizen Science Network Logo Pack/SVG/Oberon Citizen Science Network_Colour Stacked Positive.svg)
+![Oberon Citizen Science Network (OCSN) is proud to be a [Landcare Australia](https://landcareaustralia.org.au) affiliated group.](assets/Oberon Citizen Science Network Logo Pack/SVG/Oberon Citizen Science Network_Colour Stacked Positive.svg)
 
 ---
 
