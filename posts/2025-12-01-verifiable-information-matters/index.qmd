@@ -1,5 +1,5 @@
 ---
-title: "Verifiable information about renewable energy projects matters"
+title: "Verifiable information about renewable energy projects actually matters"
 description: "A case study into the need for independently verifiable information regarding renewable energy projects."
 author:
   - name: Tim Churches
@@ -13,6 +13,7 @@ lightbox: true
 freeze: false
 ---
 
+In late November 2025, Stromlo Energy, one of the developers of the proposed Pines wind farm  
 
 {{< video Pines_Wind_Farm_simulation_assertions.mov >}}
 

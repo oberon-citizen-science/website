@@ -9,9 +9,9 @@ Oberon Citizen Science Network has been registered by NSW Fair Trading as an inc
 ## Constitution
 
 ```{=html}
-<object data="assets/OCSN_Constitution_v1.pdf" type="application/pdf" width="95%" height="70%" style="min-height:100vh;">
+<object data="assets/OCSN_Constitution_v2.pdf" type="application/pdf" width="95%" height="70%" style="min-height:100vh;">
     <p>It appears you don't have a PDF plugin for this browser.
-    No biggie... you can <a href="assets/OCSN_Constitution_v1.pdf">click here to
+    No biggie... you can <a href="assets/OCSN_Constitution_v2.pdf">click here to
     download the PDF file.</a></p>
 </object>
 ```
