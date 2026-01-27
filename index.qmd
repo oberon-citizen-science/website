@@ -18,8 +18,8 @@ Please note that although we are a non-profit association, donations are not cur
 
 :::
 
-::: {.callout-note}
-Oberon Citizen Science Network was awarded ****Environmental Champion of the Year** award by Oberon Council on Australia Day, 26 January 2026. More details [here](news_items/2026-01-26-australia-day-award/index.html).
+::: {.callout-important}
+Oberon Citizen Science Network was awarded **Environmental Champion of the Year** award by Oberon Council on Australia Day, 26 January 2026. More details [here](news_items/2026-01-26-australia-day-award/index.html).
 :::
 
 This is the website for the recently formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**). Please read on for more information!
