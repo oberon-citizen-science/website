@@ -131,6 +131,12 @@ platypus_rakali_sf %>%
 
 As can be seen, the small number of records, particularly recent records, for platypus and rakali in BioNet is a bit disappointing, and distressing. However there is a more inclusive source of biodiversity data we can query.
 
+::: {.callout-info}
+
+OCSN has begun to contribute biodiversity data to the NSW BioNet Atlas -- bat and bird call data so far, but the rakali and platypus records we have been contributing to iNaturalist, which then appear in ALA, will soon also be contributed to the NSW BioNet Atlas. Although this may seem like unnecessary redundancy in data contributions, we think it is important because biodiversity assessments for developments are often quite selective in what biodiversity data sources they use, and thus it is important for as much recent data to be present in all of them to ensure that important information is not overlooked in such assessments. For scientific research purposes, it is relatively easy to remove duplicate records, and thus redundancy of data in various atlases and other databases is not a problem.
+
+:::
+
 ```{r Bionet-map, eval=FALSE}
 #| echo: false
 #| message: false
@@ -285,6 +291,9 @@ ala_platypus_rakali_oberon <- ala_platypus_rakali_oberon |>
           commonNameDecade = if_else(commonName == "Platypus",
                                                           paste0(commonName, ", ", Decade),
                                                           commonName),
+          occurrenceRemarks = str_replace_all(occurrenceRemarks, 
+                                              "(https?://\\S+|www\\.\\S+)", 
+                                              "<a href='\\1'>\\1</a>"),
           PopupContent = paste0(commonName, "<br/>",
                                eventDate, "<br/>",
                                paste0("Source: ", dataResourceName), "<br/>",
