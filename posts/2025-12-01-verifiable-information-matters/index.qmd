@@ -1,5 +1,5 @@
 ---
-title: "Verifiable information about renewable energy projects actually matters"
+title: "We deserve verifiable information about renewable energy projects"
 description: "A case study into the need for independently verifiable information regarding renewable energy projects."
 author:
   - name: Tim Churches
@@ -8,12 +8,63 @@ categories: [Renewable energy, Wind farms, Visual Impact assessment] # self-defi
 image: Sonic Boom 250923 003500UTC-1.png
 citation: 
   url: https://oberon-citizen.science/posts/2025-12-01-verifiable-information-matters/
-draft: true 
+draft: true
 lightbox: true
 freeze: false
 ---
 
-In late November 2025, Stromlo Energy, one of the developers of the proposed Pines wind farm  
+## Introduction
+
+In late November 2025, Stromlo Energy, the lead developer of the proposed Pines wind farm, published an item on its Facebook social media channel with the following text (the video referred to is embedded below, and the source post on Facebook is available at [this link](https://www.facebook.com/share/v/1C1kXEwMj2/)):
+
+>Clear, accurate and verified visuals matter, they’re the only reliable way to understand what The Pines Wind Farm will look like.
+>
+The first image in this video is an unverified social media visual that does not reflect how the project would appear from parts of Oberon. The second is a verified simulation, prepared in accordance with the relevant guidelines and specifications, providing an accurate and reliable representation of the anticipated visual change.
+>
+These accurate simulations are created by accredited specialists and shared during community drop in sessions, one-on-one meetings and government briefings to help people understand how the project might look from different viewpoints. They are the only materials that should be relied upon when assessing potential visual change.
+>
+Our team and website can always be relied upon for accurate, honest information
+
+<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2284133548741023%2F&show_text=true&width=560&t=0" width="560" height="429" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+
+::: {.callout-tip title="Archive copy of the post if it has disappeared from Facebook" collapse="true"}
 
 {{< video Pines_Wind_Farm_simulation_assertions.mov >}}
 
+:::
+
+The Stromlo team also raised this same issue at the conclusion of their quarterly update presentation to Oberon Council on 9th December 2025.
+
+## Oberon Citizen Science Network (OCSN) position regarding renewable energy developments
+
+Before going further, it is worth re-iterating the OCSN position on renewable energy development projects in general and proposed wind farm developments in the Oberon region in particular. As stated on our [_Citizen Science and wind farms_](https://oberon-citizen.science/wind_farms.html) page:
+
+> OCSN does not take a position on whether any of the wind farms proposed for the southern part of Oberon LGA should proceed. As a science-based organisation, OCSN accepts the fact of anthropogenic climate change and the urgent need to de-carbonise economies worldwide. However, this does not mean it has a position on the proposed Paling Yards and Pines winds farms. It does have a strong position, however, on the need for sound scientific evidence and engineering information to inform decisions about these proposed developments, which represent major, industrial-scale construction projects erecting huge moving structures in what is entirely rural, high country setting. As noted on our [FrogID page](frogid.html#frogs-and-wind-farms), there were significant deficiencies in the data used and considered the Biodiversity Development Assessment Report for the proposed Paling Yards Wind Farm, which was part of its EIS submission. OCSN is undertaking research and data collection, in conjunction with relevant subject matter experts, to ensure that such deficiencies are avoided as far as possible for the proposed Pines Wind Farm (and are surfaced and thoroughly discussed in any further consideration of the Paling Yards proposal).
+
+## The need for verified, or better, verifiable, information
+
+The general point made by Stromlo Energy about the need for verified information regarding renewable energy projects is well made. However, "_verified_" is a rather loosely-defined concept, and we much prefer the term "_verifiable_", meaning that any information presented by any party about renewable energy projects should be independently verifiable by third parties who are free of any perceived and/or actual conflicts-of-interest. Thus, if assertions are made, they need to be backed up by references to reputable sources or original documents (which themselves need to be publicly available -- hiding details behind _commercial-in-confidence_ claims does not cut the mustard). If charts, tables or visualisations are published, there needs to be a clear description of the methods used to create them and access to the underlying data, in sufficient detail to allow independent verification of their accuracy. This may seem like a lot to ask, but it must be remembered that, for example, the Pines wind farm proposal is a $4 billion plus development that may be in place for a century or more (see side note). Thus we owe it to future generations to base decisions about it on the best possible, and correct, information.
+
+::: {.aside}
+At the meeting with Oberon Council on 9th December 2025, Stromlo Energy representatives confirmed to Council that the lease agreements with Forestry NSW (and presumably private land owners) which the proposed wind farm will rely upon are perpetual and that the facility would continue to operate for as long as it remained economically and financially viable, which may be far beyond the projected 35 year lifespan of the initial set of wind turbines. Thus, planning decisions and community and environmental acceptability considerations around this development must take into account a very long potential lifespan for the project, and decommmisioning and removal after 35 years should not be assumed.
+:::
+
+## The assertions contained in the Stromlo Energy Facebook post 
+
+So let's examine the Pines Facebook post as shown above. 
+
+First of all, it shows a visualisation of a wind farm which is labelled both "_Myth_" and "_Social Media Image_". The source of the image is not given, but a few minutes research suggests that the source is a Facebook post published on 31 October 2025 by the Oberon Against Wind Towers (OAWT) group (link to post [here](https://www.facebook.com/share/p/1BYjUKFJJZ/)). As their names suggests, OAWT is a local lobby group opposed to wind farms in the Oberon region. Note that OCSN has no links to or relationship with OAWT.
+
+First, we must note that the assertion by the Pines wind farm developers that social media posts are necessarily untrustworthy and, by implication, that they (the wind farm developers) are the only reliable source of information must be rejected. In fact, the Pines wind farm developers themselves are enthusiastic users of social media, as are OAWT and many other groups, including OCSN. Just because social media is used to convey information does not does not mean thatinformation is untrustworthy or inaccurate. What does matter, however, is whether information is **verifiable** -- meaning that is is based on reputable, publicly-available sources such as peer-reviewed scientific publications or published government reports, or that is derived from publicly-available data using well-described methods and techniques -- so that such derived information can inpendently be checked and replicated by others. 
+
+The Pines developers then go on to assert "_...the second is a verified simulation, prepared in accordance with the relevant guidelines and specifications, providing an accurate and reliable representation of the anticipated visual change._".
+
+OK, let's analyse these assertions.
+
+## Principles of visual impact assessment
+
+Visual impact assessment of developments such as wind farms is a complex subject, with some established principles and methods for visualising potential impact from particular viewpoints, as well as various methods for calculating metrics of visual impact from all possible viewpoints, and typically displaying them on a map. There is ongoing research and dvelopment into both of these approaches, with recent developments in _augmented reality_ (AR) visualisation facilities, in which digital simulations of structures (such as wind turbines) are overlaid in realistic scale, perspective and appearance on real photographs or even live views of the landscape from a particular point, such as a residential dwelling or a public area.
+
+Calculation of visual impact metrics for all possible viewpoints is beyond the scope of this blog post, but interested readers should see the series of four blog posts published by OCSN on the calculation of state-of-the-art visual impact metrics (displayed as maps) for the proposed Palings Yard wind farm - please see the links to these on our [blog posts page](../../blog.html). A further series of posts showing the results of similar calculations for the proposed Pines wind farm, and for all the proposed wind farms in and around the Oberon region, will be forthcoming in early 2026.
+
+The standard methodology for simulation of the visual appearance of a proposed wind farm development from a particular viewpoint is set out in a document published in December 2016 by the NSW Depatment of Planning and Environment titled "_Wind Energy: Visual Assessment Bulletin AB 01_", available [here](https://www.planning.nsw.gov.au/sites/default/files/2023-03/wind-energy-visual-assessment-bulletin.pdf).
