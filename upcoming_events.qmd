@@ -14,7 +14,7 @@ title: "Upcoming Events"
 ## Citizen Science Events 2026
 
 ::: {.callout-note}
-You may need to scroll left to see all the columns in the events table below.
+You may need to click or tap on te table below and then scroll down and/or left to see all the rows and columns in the events table below.
 :::
 
 <iframe width="1200" height="600" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSJm5s_f6HxCxXEd2gmsm7-9r0PL1retSFcb0jJu2ZW7xS5qwEW3kdtjgzoRpY68sere16dzpwP_Krf/pubhtml"></iframe>
