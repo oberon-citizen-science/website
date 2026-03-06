@@ -1,14 +1,28 @@
 ---
-title: "OCSN receives Oberon Council Australia Day 2026 award"
-date: 2026-01-26
-image: ../../assets/ocsn_aust_day_2026_award_certificate_medal.jpg
+title: "OCSN receives National Science Week 2026 funding from Inspiring Australia NSW"
+date: 2026-03-03
+image: ../../assets/National_Science_Week_2026_SW_Stacked_logo_2026.png
 draft: false
 ---
 
-Oberon Citizen Science Network (OCSN) is pleased to report that it was presented with the  **Environmental Champion of the Year** award by Oberon Council on Australia Day, 26 January 2026. We sincerely thank Oberon Council for this award, and Mayor McKibben for his kind and positive comments about our work at the awards ceremony. We also thank OCSN member Malcolm Graham for representing OCSN at the event and accepting the award, and for speaking briefly about our activities at the ceremony. We also thank the anonymous person who nominated OCSN for this award.
+::: {.aside}
+![National Science Week 2026 logo](../../assets/National_Science_Week_2026_SW_Stacked_logo_2026.png)
+:::
+
+We are pleased to announce that a grant proposal for a community event in Oberon during National Science Week 2026 which Oberon Citizen Science Network recently submitted to Inspiring Australia NSW was successful! As a result, there will be a free event at the Malachi Gilmore Memorial Hall in Oberon on Saturday 15 August, 2026, the first day of National Science Week 2026. 
+
+::: {.aside}
+![Malachi Gilmore Memorial Hall](../../assets/Oberon_Malachi_Gilmore_Hall_006.JPG)
+:::
+
+Full details of the program for the event will be publicised in due course, but broadly there will be a number of exhibits of local scientific endeavours open to the public in the Malachi Gilmore Hall from about 11am, followed by a series of talks by visiting scientific experts in a number of disciplines, as well as by OCSN members on our activities and research findings.
+
+The OCSN event as well as other National Science Week 2026 events which have been funded by Inspiring Australia NSW are listed [here](https://inspiringnsw.org.au/2026/03/02/announcing-the-2026-nsw-national-science-week-grant-recipients/).
+
+We sincerely thank Lucy and Johnny East, owners of the Malachi Gilmore Memorial Hall, for agreeing to host the event and for their collaboration on the grant proposal, and Debra Keane, Tourism and Economic Development Manager at Oberon Council, for her enthusiastic support for the proposal.
 
 ::: {layout-ncol=2}
-![Malcolm Graham accepting the award on behalf of OCSN](../../assets/ocsn_aust_day_2026_award.jpg)
+![NSW government logo](../../assets/nsw_govt_logo.svg)
 
-![Australia Day 2026 award certificate and medal](../../assets/ocsn_aust_day_2026_award_certificate_medal.jpg)
+![Inspiring Australia logo](../../assets/Inspiring_Australia_initiative_colour_stacked_large.gif)
 :::
