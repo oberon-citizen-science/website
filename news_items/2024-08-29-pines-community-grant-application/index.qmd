@@ -1,5 +1,5 @@
 ---
-title: "OCSN application for Pines community funding round 1, August 2024"
+title: "ARCHIVE: OCSN application for Pines community funding round 1, August 2024"
 date: 2024-08-29
 date-modified: 2024-10-01
 image: ../../assets/Application-Rejected.jpg
