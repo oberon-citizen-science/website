@@ -75,9 +75,17 @@ load("assets/red_list.RData")
 
 # bionet_oberon <- read_tsv("assets/Atlas_records_20251202-093101/Atlas_records_2ukuovc5aevm1kkp222rz3hy20251202-093058.txt", skip=4)
 
-bionet_oberon <- read_tsv("assets/Atlas_records_20260222-165304/Atlas_records_3uts2dxuehhxml2alptj0d3b20260222-165258.txt", skip=4) |>
+# bionet_oberon <- read_tsv("assets/Atlas_records_20260222-165304/Atlas_records_3uts2dxuehhxml2alptj0d3b20260222-165258.txt", skip=4) 
+
+bionet_oberon <- read_tsv("assets/Atlas_records_20260613-134825/Atlas_records_gsodezosieotdxr2qjvoceio20260613-134818.txt", skip=4) |>
   separate_wider_delim(ScientificName, delim = " ", names = c("genus_name", "species_name"),
                        too_many = "drop")
+
+bionet_greater_gliders_oberon <- bionet_oberon |>
+  filter(genus_name == "Petauroides", species_name == "volans") |>
+  separate_wider_delim(DateFirst, delim = " ", names = c("DateFirst_date", "DateFirst_time"), too_few = "align_start") |>
+  mutate(DateFirst_date = lubridate::dmy(DateFirst_date))
+
 
 # NSWStatus and CommStatus codes
 # Source for code definitions: https://hdp-au-prod-app-nsw-haveyoursay-files.s3.ap-southeast-2.amazonaws.com/7917/4666/6726/ziph33.pdf
@@ -96,7 +104,7 @@ bionet_oberon <- read_tsv("assets/Atlas_records_20260222-165304/Atlas_records_3u
 
 
 
-bionet_oberon_filtered_sf <- bionet_oberon %>% 
+bionet_oberon_filtered_sf <- bionet_oberon |> 
                         mutate(NSW_status = case_when(
                           NSWStatus == "E1" ~ "Endangered",
                           NSWStatus == "E1,P" ~ "Endangered, Protected",
@@ -150,6 +158,11 @@ bionet_oberon_filtered_sf <- bionet_oberon %>%
                           .default = "Nil")) |>                          
                         filter(Status != "Invalid, in quarantine") |>
                           # filter(red_list_code %in% c('CR', 'EN', 'NT', 'VU')) |>
+                        mutate(species_statuses = 
+                                 paste("Aust:", Comm_status_condensed,
+                                       "; NSW:", NSW_status_condensed,
+                                       "; IUCN:", red_list_category_condensed,
+                                       sep="")) |>
                         mutate(ScientificName = paste(genus_name, species_name)) |>
                         select(CommonName, ScientificName, KingdomName,
                                DateFirst,DateLast,
@@ -158,7 +171,8 @@ bionet_oberon_filtered_sf <- bionet_oberon %>%
                                LocationNotes, NSW_status, Comm_status,
                                red_list_code, red_list_category,
                                NSW_status_condensed, Comm_status_condensed,
-                               red_list_category_condensed) %>%
+                               red_list_category_condensed,
+                               species_statuses) |>
                         mutate(DateFirst = clock::date_parse(DateFirst,
                                                              format="%d/%m/%Y"),
                                DateLast = clock::date_parse(DateLast,
@@ -180,11 +194,11 @@ bionet_oberon_filtered_sf <- bionet_oberon %>%
                                                     paste0("Location notes: ",
                                                            LocationNotes),
                                                     paste0("Description: ", Description),
-                                                    paste0("Notes: ", SightingNotes))) %>%
+                                                    paste0("Notes: ", SightingNotes))) |>
                         st_as_sf(coords = c("Longitude_GDA94", "Latitude_GDA94"),
                                 crs = "GDA94")
 
-oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") %>%
+oberon_boundary <- sf::read_sf("assets/nsw-lga-boundaries.geojson") |>
                       filter(abb_name == "Oberon")
 
 oberon_boundary_buffered <- oberon_boundary |>
@@ -212,6 +226,86 @@ bionet_oberon_filtered_sf %>%
   labs(x="Year of observation",
        y="Number of observations",
        title="Observations by NSW conservation status (condensed) in Oberon LGA",
+       subtitle = "NSW BioNet Atlas data as at 22 Feb 2026")
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+bionet_oberon_filtered_sf %>%
+  filter(year(DateLast) > 1990, !Comm_status_condensed == "Nil") %>%
+  ggplot(aes(x=year(DateLast), fill=Comm_status_condensed)) +
+           geom_bar(position = position_dodge2(preserve = "single")) +
+  theme_minimal() +
+  theme(legend.title=element_blank()) +
+  labs(x="Year of observation",
+       y="Number of observations",
+       title="Observations by Commonwealth conservation status (condensed) in Oberon LGA",
+       subtitle = "NSW BioNet Atlas data as at 22 Feb 2026")
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+bionet_oberon_filtered_sf %>%
+  filter(year(DateLast) > 1990, !red_list_category_condensed %in% c("Least Concern", "Nil")) %>%
+  ggplot(aes(x=year(DateLast), fill=red_list_category_condensed)) +
+           geom_bar(position = position_dodge2(preserve = "single")) +
+  theme_minimal() +
+  theme(legend.title=element_blank()) +
+  labs(x="Year of observation",
+       y="Number of observations",
+       title="Observations by IUCN Red List status (condensed) in Oberon LGA",
+       subtitle = "NSW BioNet Atlas data as at 22 Feb 2026")
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+bionet_oberon_filtered_sf %>%
+  filter(year(DateLast) > 1990, !species_statuses %in% c(
+        "Aust:Nil; NSW:Nil; IUCN:Nil",
+        "Aust:Nil; NSW:Nil; IUCN:Least Concern", 
+        "Aust:Nil; NSW:Protected; IUCN:Least Concern",
+        "Aust:Nil; NSW:Protected; IUCN:Nil")) |>
+  ggplot(aes(x=year(DateLast), fill=species_statuses)) +
+           geom_bar(position = position_dodge2(preserve = "single")) +
+  theme_minimal() +
+  theme(legend.title=element_blank()) +
+  labs(x="Year of observation",
+       y="Number of observations",
+       title="Observations by combined species status (condensed) in Oberon LGA",
+       subtitle = "NSW BioNet Atlas data as at 22 Feb 2026")
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+bionet_oberon_filtered_sf %>%
+  filter(year(DateLast) > 1990, !species_statuses %in% c(
+        "Aust:Nil; NSW:Nil; IUCN:Nil",
+        "Aust:Nil; NSW:Nil; IUCN:Least Concern", 
+        "Aust:Nil; NSW:Protected; IUCN:Least Concern",
+        "Aust:Nil; NSW:Protected; IUCN:Nil")) |>
+  gt(rowname_col = "ScientificName", groupname_col = "species_statuses")
+  
+
+
+  labs(x="Year of observation",
+       y="Number of observations",
+       title="Observations by combined species status (condensed) in Oberon LGA",
        subtitle = "NSW BioNet Atlas data as at 22 Feb 2026")
 
 ```
@@ -343,7 +437,7 @@ ala_oberon_all <- galah_call() |>
                 identifiedBy,
                 individualCount,
                 institutionName,
-                occurrenceDetails,
+#                 occurrenceDetails,
                 occurrenceRemarks,
                 provenance,
                 samplingEffort,
@@ -363,9 +457,9 @@ ala_oberon_all_taxa <- galah::search_taxa(ala_oberon_all_scientific_names$scient
                           separate_wider_delim(
                           cols = species,
                           delim = " ",
-                          names = c("genus_name", "species_name")) 
+                          names = c("genus_name", "species_name"),
+                          too_few = "align_start") 
 
-ala_oberon_all <-
 ala_oberon_all_taxa_filtered <- ala_oberon_all_taxa |>
                                 left_join(red_list, by=join_by(genus_name, species_name)) |>
                                 filter(red_list_code %in% c('CR', 'EN', 'NT', 'VU')) 
@@ -388,7 +482,7 @@ ala_oberon <- galah_call() |>
                 identifiedBy,
                 individualCount,
                 institutionName,
-                occurrenceDetails,
+#                occurrenceDetails,
                 occurrenceRemarks,
                 provenance,
                 samplingEffort,
@@ -397,9 +491,9 @@ ala_oberon <- galah_call() |>
                 stateConservation,
                 countryConservation,
                 group = c("basic", "event", "media")) |>
-   collect()
+   collect() 
 
-ala_platypus_rakali_oberon_images <- ala_platypus_rakali_oberon |>
+ala_oberon_images <- ala_oberon |>
   select(recordID, images) |>
   filter(!is.na(images)) |>
   mutate(images = as.character(images)) |>
@@ -408,11 +502,11 @@ ala_platypus_rakali_oberon_images <- ala_platypus_rakali_oberon |>
   filter(!image_id %in% c('c(', ', ', ')')) |>
   select(recordID, image_id) 
 
-ala_platypus_rakali_oberon_media_info <- request_metadata() |>
-  filter(media == ala_platypus_rakali_oberon) |>
+ala_oberon_media_info <- request_metadata() |>
+  filter(media == ala_oberon) |>
   compute() |>
   collect() |>
-  left_join(ala_platypus_rakali_oberon_images)
+  left_join(ala_oberon_images)
 
 ala_platypus_rakali_oberon_media_info <- ala_platypus_rakali_oberon_media_info %>% 
      mutate(image_url = paste0('<a href="',

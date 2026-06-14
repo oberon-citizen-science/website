@@ -242,7 +242,7 @@ ala_platypus_rakali_oberon <- galah_call() |>
                 identifiedBy,
                 individualCount,
                 institutionName,
-                occurrenceDetails,
+                # occurrenceDetails,
                 occurrenceRemarks,
                 provenance,
                 samplingEffort,
@@ -545,7 +545,8 @@ leaflet(height="800px", width="1200px") %>%
   addMarkers(data=ala_platypus_rakali_oberon_sf,
                     group=ala_platypus_rakali_oberon_sf$commonNameDecade,
                     icon=platypusIcon,
-                    popup=ala_platypus_rakali_oberon_sf$PopupContent) %>%
+                    popup=ala_platypus_rakali_oberon_sf$PopupContent,
+                    clusterOptions = markerClusterOptions(singleMarkerMode=TRUE)) %>%
   addLayersControl(baseGroups = c("OpenStreetMap", "Imagery", "Topography", "Shaded relief"),
                    overlayGroups = c(
                                       "Oberon LGA",

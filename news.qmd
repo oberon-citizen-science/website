@@ -5,6 +5,8 @@ listing:
   sort: "date desc"
   type: default
   categories: true
+  exclude:
+    title: "OCSN application for Pines community funding round 1, August 2024"  
 ---
 
 :::{.aside}

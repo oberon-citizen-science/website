@@ -243,10 +243,6 @@ Following is a list of potential activities which OCSN may engage in to help inf
 Apart from funding from government grant schemes and philanthropic donors, OCSN intends to seek financial contributions from the wind farm developers themselves, to support projects such as systematic wildlife surveys in and around the proposed wind farm development areas using time-lapse cameras and [eco-acoustic technology](ecoacoustics.html). We believe that such funding would represent a show of good will and openness on the part of the proposed wind farm developers. However, funding will not be accepted if there are conditions on publication of the results of OCSN investigations, and if all data collected cannot be made openly and publicly available. As a principle, all OCSN funding sources will be clearly listed on this web site -- OCSN is committed to openness and transparency.
 :::
 
-::: {.aside}
-**Update**: An application submitted by OCSN to the August 2024 round of the Pines Wind Farm community funding program was unsuccessful -- full details of the application are available [here](news_items/2024-08-29-pines-community-grant-application/index.html).
-:::
-
 * Review of the adequacy of scientific data and engineering considerations in the Paling Yards EIS submission, in anticipation of an opportunity for further public input into the decision making processes around this proposed development.
 
 * Assemble a set of informational resources around the science and engineering aspects of wind farm construction and operation.
