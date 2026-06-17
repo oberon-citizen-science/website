@@ -1,6 +1,6 @@
 ---
 title: "Thermal video cameras for detection of platypus in smaller waterways"
-description: "This is a slightly longer version of a talk delivered at the 2026 Triennial Platypus Conference at Taranga Zoo, Sydney, on 11 June 2026."
+description: "This is a slightly longer version of a talk delivered at the 2026 Triennial Platypus Conference at Taronga Zoo, Sydney, on 11 June 2026."
 author:
   - name: Tim Churches
   - name: Alan Sheehan
