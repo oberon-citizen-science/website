@@ -46,6 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -503,11 +506,29 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Oberon Citizen Science Network acknowledges the Traditional Owners of Country throughout Australia. The Oberon region is located on the territory of the Wiradjuri, Gundungurra and Dharug peoples who are the traditional custodians of the land on which we live, work and carry out our scientific enquiry. We pay our respects to Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples.</p>
+</div>
+</div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Oberon Citizen Science Network acknowledges the Traditional Owners of Country throughout Australia. The Oberon region is located on the territory of the Wiradjuri, Gundungurra and Dharug people who are the traditional custodians of the land on which we live, work and carry out our scientific enquiry. We pay our respects to Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../assets/tim_churches_2026_platypus_conference_thermal.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Tim Churches deivering this talk at the 2026 Platypus Conference at Taronga Zoo (click to zoom image)"><img src="../../assets/tim_churches_2026_platypus_conference_thermal.jpeg" class="img-fluid figure-img" alt="Tim Churches deivering this talk at the 2026 Platypus Conference at Taronga Zoo (click to zoom image)"></a></p>
+<figcaption>Tim Churches deivering this talk at the 2026 Platypus Conference at Taronga Zoo (click to zoom image)</figcaption>
+</figure>
+</div>
 </div></div><p>This video is a slightly longer version of a talk delivered by Tim Churches on behalf of Oberon Citizen Science Network on Thursday, 11th June 2026 at the 2026 Triennial Platypus Conference held at Taronga Zoo, Sydney.</p>
-<p>The video is available at <a href="https://youtu.be/FePJwtK6mAI">https://youtu.be/FePJwtK6mAI</a></p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/FePJwtK6mAI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
 
@@ -1096,6 +1117,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
