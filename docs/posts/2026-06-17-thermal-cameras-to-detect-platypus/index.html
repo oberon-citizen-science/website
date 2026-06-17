@@ -6,8 +6,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Tim Churches">
+<meta name="author" content="Alan Sheehan">
+<meta name="author" content="Louisa Jorm">
+<meta name="dcterms.date" content="2026-06-17">
+<meta name="description" content="This is a slightly longer version of a talk delivered at the 2026 Triennial Platypus Conference at Taranga Zoo, Sydney, on 11 June 2026.">
 
-<title>OCSN Blog Posts – Oberon Citizen Science Network</title>
+<title>Thermal video cameras for detection of platypus in smaller waterways – Oberon Citizen Science Network</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +28,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,77 +73,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Oberon Citizen Science Network</span>
     </a>
   </div>
@@ -156,33 +101,33 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-about">    
         <li>
-    <a class="dropdown-item" href="./.">
+    <a class="dropdown-item" href="../../.">
  <span class="dropdown-text">Welcome to OCSN</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./what_is_citizen_science.html">
+    <a class="dropdown-item" href="../../what_is_citizen_science.html">
  <span class="dropdown-text">What is Citizen Science?</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_mission_statement.html">
+    <a class="dropdown-item" href="../../ocsn_mission_statement.html">
  <span class="dropdown-text">Mission Statement</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_articles_of_association.html">
+    <a class="dropdown-item" href="../../ocsn_articles_of_association.html">
  <span class="dropdown-text">Articles of Association</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_code_of_conduct.html">
+    <a class="dropdown-item" href="../../ocsn_code_of_conduct.html">
  <span class="dropdown-text">Code of Conduct</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_privacy_policy.html">
+    <a class="dropdown-item" href="../../ocsn_privacy_policy.html">
  <span class="dropdown-text">Privacy Policy</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./upcoming_events.html" aria-current="page"> 
+    <a class="nav-link active" href="../../upcoming_events.html" aria-current="page"> 
 <span class="menu-text">Upcoming Events</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -191,23 +136,23 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-activities">    
         <li>
-    <a class="dropdown-item" href="./frogid.html">
+    <a class="dropdown-item" href="../../frogid.html">
  <span class="dropdown-text">FrogID</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./platypus_rakali.html">
+    <a class="dropdown-item" href="../../platypus_rakali.html">
  <span class="dropdown-text">Platypus &amp; rakali surveys</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./koalas.html">
+    <a class="dropdown-item" href="../../koalas.html">
  <span class="dropdown-text">Koala surveys</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./astronomy.html">
+    <a class="dropdown-item" href="../../astronomy.html">
  <span class="dropdown-text">Astronomy</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./wind_farms.html">
+    <a class="dropdown-item" href="../../wind_farms.html">
  <span class="dropdown-text">Citizen science and wind farms</span></a>
   </li>  
     </ul>
@@ -218,41 +163,41 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-sensor-networks">    
         <li>
-    <a class="dropdown-item" href="./shake_and_boom.html">
+    <a class="dropdown-item" href="../../shake_and_boom.html">
  <span class="dropdown-text">Seismic and infrasound monitoring</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./meteors.html">
+    <a class="dropdown-item" href="../../meteors.html">
  <span class="dropdown-text">Meteor detection and tracking</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./birdnet.html">
+    <a class="dropdown-item" href="../../birdnet.html">
  <span class="dropdown-text">Bird call detection and counting</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ecoacoustics.html">
+    <a class="dropdown-item" href="../../ecoacoustics.html">
  <span class="dropdown-text">Eco-acoustics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./local_weather.html">
+    <a class="dropdown-item" href="../../local_weather.html">
  <span class="dropdown-text">Local weather monitoring</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./ocsn_air_quality_monitoring.html">
+    <a class="dropdown-item" href="../../ocsn_air_quality_monitoring.html">
  <span class="dropdown-text">Air quality monitoring</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./nb_networks.html">
+    <a class="dropdown-item" href="../../nb_networks.html">
  <span class="dropdown-text">LoRaWAN and NB-IoT</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./news.html"> 
+    <a class="nav-link" href="../../news.html"> 
 <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog posts</span></a>
   </li>  
   <li class="nav-item">
@@ -260,11 +205,11 @@ window.Quarto = {
 <span class="menu-text">All-sky camera</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ocsn_gallery.html"> 
+    <a class="nav-link" href="../../ocsn_gallery.html"> 
 <span class="menu-text">Gallery</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./register_interest.html"> 
+    <a class="nav-link" href="../../register_interest.html"> 
 <span class="menu-text">Become a member!</span></a>
   </li>  
 </ul>
@@ -300,19 +245,58 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">OCSN Blog Posts</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Thermal video cameras for detection of platypus in smaller waterways</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Thermal video cameras for detection of platypus in smaller waterways</h1>
+                  <div>
+        <div class="description">
+          This is a slightly longer version of a talk delivered at the 2026 Triennial Platypus Conference at Taranga Zoo, Sydney, on 11 June 2026.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">platypus</div>
+                <div class="quarto-category">thermal cameras</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Authors</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tim Churches </p>
+               <p>Alan Sheehan </p>
+               <p>Louisa Jorm </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 17, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./assets/ocsn_mascots.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../assets/ocsn_mascots.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
@@ -328,43 +312,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome to OCSN</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./what_is_citizen_science.html" class="sidebar-item-text sidebar-link">
+  <a href="../../what_is_citizen_science.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">What is Citizen Science?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ocsn_mission_statement.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ocsn_mission_statement.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mission Statement</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ocsn_articles_of_association.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ocsn_articles_of_association.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Articles of Association</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ocsn_code_of_conduct.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ocsn_code_of_conduct.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Code of Conduct</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ocsn_privacy_policy.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ocsn_privacy_policy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Privacy Policy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./register_interest.html" class="sidebar-item-text sidebar-link">
+  <a href="../../register_interest.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Join us!</span></a>
   </div>
 </li>
@@ -388,31 +372,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./upcoming_events.html" class="sidebar-item-text sidebar-link">
+  <a href="../../upcoming_events.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Upcoming Events</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./frogid.html" class="sidebar-item-text sidebar-link">
+  <a href="../../frogid.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FrogID</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./platypus_rakali.html" class="sidebar-item-text sidebar-link">
+  <a href="../../platypus_rakali.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Platypus &amp; rakali surveys</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./koalas.html" class="sidebar-item-text sidebar-link">
+  <a href="../../koalas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Koala surveys</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./astronomy.html" class="sidebar-item-text sidebar-link">
+  <a href="../../astronomy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Astronomy</span></a>
   </div>
 </li>
@@ -427,13 +411,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wind_farms.html" class="sidebar-item-text sidebar-link">
+  <a href="../../wind_farms.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Citizen science and wind farms</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pines_gep_model_oct_2024.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pines_gep_model_oct_2024.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualising the proposed Pines Wind Farm</span></a>
   </div>
 </li>
@@ -452,13 +436,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./shake_and_boom.html" class="sidebar-item-text sidebar-link">
+  <a href="../../shake_and_boom.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Seismic and infrasound monitoring</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./meteors.html" class="sidebar-item-text sidebar-link">
+  <a href="../../meteors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Meteor detection and tracking</span></a>
   </div>
 </li>
@@ -470,31 +454,31 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./birdnet.html" class="sidebar-item-text sidebar-link">
+  <a href="../../birdnet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bird call detection and counting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ecoacoustics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ecoacoustics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Eco-acoustics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./local_weather.html" class="sidebar-item-text sidebar-link">
+  <a href="../../local_weather.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Local weather monitoring</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ocsn_air_quality_monitoring.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ocsn_air_quality_monitoring.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Air quality monitoring</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nb_networks.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nb_networks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LoRaWAN and NB-IoT</span></a>
   </div>
 </li>
@@ -511,430 +495,35 @@ window.Quarto = {
 </form>
 </div></div>
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div><div class="category" data-category="Birds">Birds <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Data analysis">Data analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Infrasound">Infrasound <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Local earthquakes">Local earthquakes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Review">Review <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Seismic analysis">Seismic analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Technical Reports">Technical Reports <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Technology">Technology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="platypus">platypus <span class="quarto-category-count">(1)</span></div><div class="category" data-category="thermal cameras">thermal cameras <span class="quarto-category-count">(1)</span></div><div class="category" data-category="wind farms">wind farms <span class="quarto-category-count">(4)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">OCSN Blog Posts</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="platypus,thermal cameras" data-listing-date-sort="1781618400000" data-listing-file-modified-sort="1781666486570" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="109">
-<div class="thumbnail">
-<p><a href="./posts/2026-06-17-thermal-cameras-to-detect-platypus/index.html" class="no-external"></a></p><a href="./posts/2026-06-17-thermal-cameras-to-detect-platypus/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2026-06-17-thermal-cameras-to-detect-platypus/deconstructing_viewsheds.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2026-06-17-thermal-cameras-to-detect-platypus/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-06-17-thermal-cameras-to-detect-platypus/index.html" class="no-external">Thermal video cameras for detection of platypus in smaller waterways</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2026-06-17-thermal-cameras-to-detect-platypus/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('platypus'); return false;">
-platypus
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('thermal cameras'); return false;">
-thermal cameras
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2026-06-17-thermal-cameras-to-detect-platypus/index.html" class="no-external">This is a slightly longer version of a talk delivered at the 2026 Triennial Platypus Conference at Taranga Zoo, Sydney, on 11 June 2026.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-06-17-thermal-cameras-to-detect-platypus/index.html" class="no-external">
-<div class="listing-date">
-Jun 17, 2026
-</div>
-<div class="listing-author">
-Tim Churches, Alan Sheehan, Louisa Jorm
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Infrasound,Seismic analysis,Data analysis" data-listing-date-sort="1758895200000" data-listing-file-modified-sort="1759297208822" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1702">
-<div class="thumbnail">
-<p><a href="./posts/2025-09-27-Sonic-Boom-Detection/index.html" class="no-external"></a></p><a href="./posts/2025-09-27-Sonic-Boom-Detection/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2025-09-27-Sonic-Boom-Detection/Sonic Boom 250923 003500UTC-1.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2025-09-27-Sonic-Boom-Detection/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-09-27-Sonic-Boom-Detection/index.html" class="no-external">Infrasonic Detection of Sonic Booms</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2025-09-27-Sonic-Boom-Detection/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Infrasound'); return false;">
-Infrasound
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Seismic analysis'); return false;">
-Seismic analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data analysis'); return false;">
-Data analysis
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2025-09-27-Sonic-Boom-Detection/index.html" class="no-external">Identification of infrasonic sonic boom signatures received on 23/9/25.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-09-27-Sonic-Boom-Detection/index.html" class="no-external">
-<div class="listing-date">
-Sep 27, 2025
-</div>
-<div class="listing-author">
-Alan Sheehan
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Infrasound,Seismic analysis,Data analysis" data-listing-date-sort="1743253200000" data-listing-file-modified-sort="1759295085364" data-listing-date-modified-sort="1758808800000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1102">
-<div class="thumbnail">
-<p><a href="./posts/2025-03-30-oceanic-infrasound/index.html" class="no-external"></a></p><a href="./posts/2025-03-30-oceanic-infrasound/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2025-03-30-oceanic-infrasound/South_NZ_earthquake_to_Oberon_map.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2025-03-30-oceanic-infrasound/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-03-30-oceanic-infrasound/index.html" class="no-external">Oceanic Infrasound-stimulated seismic wave - T Wave</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2025-03-30-oceanic-infrasound/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Infrasound'); return false;">
-Infrasound
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Seismic analysis'); return false;">
-Seismic analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data analysis'); return false;">
-Data analysis
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2025-03-30-oceanic-infrasound/index.html" class="no-external">An investigation of unusual seismic signals associated with the magnitude 6.7 earthquake which occured off the southern coast of New Zealand on 25 March 2025.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-03-30-oceanic-infrasound/index.html" class="no-external">
-<div class="listing-date">
-Mar 30, 2025
-</div>
-<div class="listing-author">
-Alan Sheehan
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Birds,Data analysis" data-listing-date-sort="1727877600000" data-listing-file-modified-sort="1727955894797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="539">
-<div class="thumbnail">
-<p><a href="./posts/2024-10-03-birdnet-reports-wip/index.html" class="no-external"></a></p><a href="./posts/2024-10-03-birdnet-reports-wip/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-10-03-birdnet-reports-wip/birdnet_sept_2024_by_date_all_oberon_citizen_science_network.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-10-03-birdnet-reports-wip/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-10-03-birdnet-reports-wip/index.html" class="no-external">Reports from the Oberon Citizen Science Network bird call monitoring network</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-10-03-birdnet-reports-wip/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Birds'); return false;">
-Birds
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data analysis'); return false;">
-Data analysis
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-10-03-birdnet-reports-wip/index.html" class="no-external">A short report on ongoing work into developing custom, automated reports for the growing network of BirdNET-pi and Birdweather PUC bird call detection devices deployed in Oberon LGA by OCSN members.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-10-03-birdnet-reports-wip/index.html" class="no-external">
-<div class="listing-date">
-Oct 3, 2024
-</div>
-<div class="listing-author">
-Alan Sheehan
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="wind farms" data-listing-date-sort="1726668000000" data-listing-file-modified-sort="1759295073049" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="42" data-listing-word-count-sort="8332">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/index.html" class="no-external"></a></p><a href="./posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/deconstructing_viewsheds.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/index.html" class="no-external">Wind farm visual impact assessment – part 4</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('wind farms'); return false;">
-wind farms
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/index.html" class="no-external">An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. In this post we compute the visual impact assessment metric proposed by James F. Palmer, using the proposed Paling Yards wind farm as an example.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-19-wind-farm-visual-impact-assessment-part-4/index.html" class="no-external">
-<div class="listing-date">
-Sep 19, 2024
-</div>
-<div class="listing-author">
-Tim Churches
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="wind farms" data-listing-date-sort="1726581600000" data-listing-file-modified-sort="1727073327540" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2541">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html" class="no-external"></a></p><a href="./posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/compound_viewshed.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html" class="no-external">Wind farm visual impact assessment – part 3</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('wind farms'); return false;">
-wind farms
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html" class="no-external">An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. In this post we scale up computation of compound viewsheds to encompass entire wind farms.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-18-wind-farm-visual-impact-assessment-part-3/index.html" class="no-external">
-<div class="listing-date">
-Sep 18, 2024
-</div>
-<div class="listing-author">
-Tim Churches
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="wind farms" data-listing-date-sort="1726495200000" data-listing-file-modified-sort="1727074349372" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23" data-listing-word-count-sort="4464">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/index.html" class="no-external"></a></p><a href="./posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/Wind_turbines_in_southern_California_2016.jpg" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/index.html" class="no-external">Wind farm visual impact assessment – part 2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('wind farms'); return false;">
-wind farms
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/index.html" class="no-external">An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. In this post we consider compound viewsheds.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-17-wind-farm-visual-impact-assessment-part-2/index.html" class="no-external">
-<div class="listing-date">
-Sep 17, 2024
-</div>
-<div class="listing-author">
-Tim Churches
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="wind farms" data-listing-date-sort="1726408800000" data-listing-file-modified-sort="1727073261400" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="37" data-listing-word-count-sort="7269">
-<div class="thumbnail">
-<p><a href="./posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html" class="no-external"></a></p><a href="./posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/line-of-sight.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html" class="no-external">Wind farm visual impact assessment – part 1</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('wind farms'); return false;">
-wind farms
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html" class="no-external">An exploration of methods for assessing the visual impact of proposed wind farms, in several parts. The concept of viewsheds is introduced in this post.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-09-16-wind-farm-visual-impact-assessment-part-1/index.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2024
-</div>
-<div class="listing-author">
-Tim Churches
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="Birds,Technology,Review" data-listing-date-sort="1721484000000" data-listing-file-modified-sort="1727068612601" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="941">
-<div class="thumbnail">
-<p><a href="./posts/2024-07-21-PUC-review/index.html" class="no-external"></a></p><a href="./posts/2024-07-21-PUC-review/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2024-07-21-PUC-review/tim_churches_birdnet-pi_station.png" alt="Tim Churches’ BirdNET-pi station installed above his verandah in Chatham Valley"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2024-07-21-PUC-review/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-07-21-PUC-review/index.html" class="no-external">Birdweather PUC Review</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-07-21-PUC-review/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Birds'); return false;">
-Birds
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Technology'); return false;">
-Technology
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-07-21-PUC-review/index.html" class="no-external">If you are considering electronic monitoring and identification of birdcalls, this review may help you decide if a Birdweather PUC is the right choice for you or not.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-07-21-PUC-review/index.html" class="no-external">
-<div class="listing-date">
-Jul 21, 2024
-</div>
-<div class="listing-author">
-Alan Sheehan
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="Infrasound,Technical Reports" data-listing-date-sort="1719151200000" data-listing-file-modified-sort="1727068584374" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="872">
-<div class="thumbnail">
-<p><a href="./posts/2024-06-24-g-weighting/index.html" class="no-external"></a></p><a href="./posts/2024-06-24-g-weighting/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-06-24-g-weighting/g-weighting.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-06-24-g-weighting/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-06-24-g-weighting/index.html" class="no-external">G-weighting infrasound data</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-06-24-g-weighting/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Infrasound'); return false;">
-Infrasound
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Technical Reports'); return false;">
-Technical Reports
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-06-24-g-weighting/index.html" class="no-external">Infrasound data captured by devices such as the Raspberry Shake &amp; Boom needs to be G-weighted to properly reflect the sensitivity of the human ear (and body) to the low frequencies present (by definition) in infrasound. This is a technical article documenting some progress in doing this weighting.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-06-24-g-weighting/index.html" class="no-external">
-<div class="listing-date">
-Jun 24, 2024
-</div>
-<div class="listing-author">
-Alan Sheehan
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="Local earthquakes" data-listing-date-sort="1719064800000" data-listing-file-modified-sort="1727068559552" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="99">
-<div class="thumbnail">
-<p><a href="./posts/2024-06-23-hazelbrook-quake/index.html" class="no-external"></a></p><a href="./posts/2024-06-23-hazelbrook-quake/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/2024-06-23-hazelbrook-quake/hazelbrook-preview.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/2024-06-23-hazelbrook-quake/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-06-23-hazelbrook-quake/index.html" class="no-external">Minor earthquake in Hazelbrook</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-06-23-hazelbrook-quake/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Local earthquakes'); return false;">
-Local earthquakes
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/2024-06-23-hazelbrook-quake/index.html" class="no-external">An M1.6 earthquake near Hazelbrook in the Blue Mountains was detected by seismic sensors operated by OCSN members</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-06-23-hazelbrook-quake/index.html" class="no-external">
-<div class="listing-date">
-Jun 23, 2024
-</div>
-<div class="listing-author">
-Alan Sheehan
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Oberon Citizen Science Network acknowledges the Traditional Owners of Country throughout Australia. The Oberon region is located on the territory of the Wiradjuri, Gundungurra and Dharug people who are the traditional custodians of the land on which we live, work and carry out our scientific enquiry. We pay our respects to Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples.</p>
+</div></div><p>This video is a slightly longer version of a talk delivered by Tim Churches on behalf of Oberon Citizen Science Network on Thursday, 11th June 2026 at the 2026 Triennial Platypus Conference held at Taronga Zoo, Sydney.</p>
+<p>The video is available at <a href="https://youtu.be/FePJwtK6mAI">https://youtu.be/FePJwtK6mAI</a></p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{churches2026,
+  author = {Churches, Tim and Sheehan, Alan and Jorm, Louisa},
+  title = {Thermal Video Cameras for Detection of Platypus in Smaller
+    Waterways},
+  date = {2026-06-17},
+  url = {https://oberon-citizen.science/posts/2026-06-17-thermal-cameras-to-detect-platypus/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-churches2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Churches, Tim, Alan Sheehan, and Louisa Jorm. 2026. <span>“Thermal Video
+Cameras for Detection of Platypus in Smaller Waterways.”</span> June 17,
+2026. <a href="https://oberon-citizen.science/posts/2026-06-17-thermal-cameras-to-detect-platypus/">https://oberon-citizen.science/posts/2026-06-17-thermal-cameras-to-detect-platypus/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

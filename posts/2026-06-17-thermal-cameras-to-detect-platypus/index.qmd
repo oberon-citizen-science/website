@@ -1,0 +1,49 @@
+---
+title: "Thermal video cameras for detection of platypus in smaller waterways"
+description: "This is a slightly longer version of a talk delivered at the 2026 Triennial Platypus Conference at Taranga Zoo, Sydney, on 11 June 2026."
+author:
+  - name: Tim Churches
+  - name: Alan Sheehan
+  - name: Louisa Jorm
+date: 2026-06-17
+categories: [platypus, thermal cameras] # self-defined categories
+citation: 
+  url: https://oberon-citizen.science/posts/2026-06-17-thermal-cameras-to-detect-platypus/
+image: deconstructing_viewsheds.png
+draft: false 
+freeze: true
+cap-location: margin
+lightbox: true
+references:
+- type: article-journal
+  id: RobertsS2026
+  author:
+  - family: Roberts
+    given: Simon
+  - family: Serena
+    given: Melody
+  issued:
+    date-parts:
+    - - 2024
+      - 46
+      - 2
+  title: 'Use of consolidated time-lapse imagery to detect and monitor platypus (Ornithorhynchus anatinus) activity.'
+  title-short: Time-lapse imagery to detect platypus
+  container-title: Australian Mammology
+  volume: 46
+  issue: 2
+  DOI: 10.1071/AM23045
+  URL: https://connectsci.au/am/article/46/2/AM23045/81288/Use-of-consolidated-time-lapse-camera-imagery-to
+  language: en-AU
+---
+
+::: {.aside}
+Oberon Citizen Science Network acknowledges the Traditional Owners of Country throughout Australia. The Oberon region is located on the territory of the Wiradjuri, Gundungurra and Dharug people who are the traditional custodians of the land on which we live, work and carry out our scientific enquiry. We pay our respects to Elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples.
+:::
+
+This video is a slightly longer version of a talk delivered by Tim Churches on behalf of Oberon Citizen Science Network on Thursday, 11th June 2026 at the 2026 Triennial Platypus Conference held at Taronga Zoo, Sydney.
+
+The video is available at [https://youtu.be/FePJwtK6mAI](https://youtu.be/FePJwtK6mAI)
+
+
+
