@@ -9,7 +9,7 @@ date: 2026-06-17
 categories: [platypus, thermal cameras] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/posts/2026-06-17-thermal-cameras-to-detect-platypus/
-image: deconstructing_viewsheds.png
+image: tim_churches_2026_platypus_conference_infrared.jpeg
 draft: false 
 freeze: true
 cap-location: margin
