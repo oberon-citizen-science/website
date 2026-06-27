@@ -36,6 +36,8 @@ website:
             href: ocsn_code_of_conduct.qmd
           - text: "Privacy Policy"
             href: ocsn_privacy_policy.qmd
+      - text: "National Science Week 2026 Event"
+        href: national-science-week-2026-oberon.qmd
       - text: "Upcoming Events"
         href: upcoming_events.qmd
       - text: "Activities"
