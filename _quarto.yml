@@ -4,7 +4,7 @@ project:
 execute:
   freeze: auto
 website:
-  title: "Oberon Citizen Science Network"
+  title: "Oberon Citizen<br>Science Network"
   favicon: assets/favicon.ico
   page-navigation: true
   reader-mode: true
@@ -36,7 +36,7 @@ website:
             href: ocsn_code_of_conduct.qmd
           - text: "Privacy Policy"
             href: ocsn_privacy_policy.qmd
-      - text: "National Science Week 2026 Event in Oberon"
+      - text: "National Science Week 2026 in Oberon"
         href: national-science-week-2026-oberon.qmd
       - text: "Upcoming Events"
         href: upcoming_events.qmd
