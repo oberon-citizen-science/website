@@ -1,33 +1,55 @@
 ---
-title: "National Science Week 2026 event in Oberon"
+title: "Science in Oberon"
+subtitle: "More than you imagine"
 lightbox: true
 ---
 
-::: {.callout-note}
-This Inspiring Australia NSW initiative is supported by the Australian Government as part of National Science Week. We also gratefully acknowledge support from Oberon Council through its Section 356 community funding scheme.
+## Saturday, 15th August 2026 at the Malachi Gilmore Hall, Oberon, NSW
 
-![](assets/National_Science_Week_logo.png)
+To mark National Science Week 2026, Oberon Citizen Science Network is proud to present this free community event, **"Science in Oberon: More than you imagine"**, at the Malachi Gilmore Hall in Oberon on Saturday, 15th August 2026.
+
+::: {.callout-note}
+This Inspiring Australia NSW initiative is supported by the Australian Government as part of National Science Week. Oberon Citizen Science Network also gratefully acknowledges support from Oberon Council through its Section 356 community funding scheme.
+
+::: {layout="[[80, 20]]"}
+
+![](assets/National_Science_Week_logo.png){fig-align="center"}
+
+![](assets/Oberon_Council_logo.jpg){fig-align="center" width=150}
+:::
 
 :::
+
+::: {.aside}
+
+![Event flyer (click image for larger version)](assets/ScienceInOberon_National_Science_Week_2026_flyer.png)
+
+:::
+
+::: {.aside}
+
+![Free booking for the event via Humanitix (scan QR code or click [here](https://events.humanitix.com/science-in-oberon-more-than-you-imagine) to go to event booking page)](assets/event-page-qr-code-ScienceinOberon-Morethanyouimagine.png)
+
+:::
+
 
 ## 15th August 2026 event at the Malachi Gilmore Hall, Oberon
 
 | Time     | Item                                   | Presenter |                      
 |---------:|:----------------------------------------------------------|:------|
 | 10:00 am | Exhibition of science-related projects, demonstrations and posters | |	
-| 11:30 am | Award prizes for colouring in competition | |	
-| 12:00 pm | Lunch available | Soup and seating for event |
-| 12:30 pm | Welcome to event | Tim Churches, President, Oberon Citizen Science Network |
-| 12:35 pm | Acknowledgement of Country |	Aunty Ruby Dykes |
-| 12:40	pm | Opening of event | Representative of Oberon Council (TBC) |
-| 12:45	pm | Introduction to OCSN and its activities, goals and plans | Tim Churches |
-| 1:05	pm | Greater gliders and other arboreal marsupials: ecology and conservation | Dr Ana Gracanin, Research Fellow, ANU Fenner School of Environment & Society | 	
-| 1:35	pm | Effects of climate change on platypus populations in the Fish and Duckmaloi Rivers near Oberon | Jackson Wilburn Wilkes, PhD candidate, School of Biological, Environmental and Earth Sciences (BEES), University of NSW Sydney |
-| 2:00	pm | The effects of wind farms on Australian bird species - what we know and what we don't know | Malan Bothma, PhD candidate, School of Biological, Environmental and Earth Sciences (BEES), University of UNSW Sydney | 	
+| 11:30 am | Prizes awarded for school biodiversity colouring-in competition | |	
+| 12:00 pm | Soup and bread roll ($10 per person) available | |
+| 12:30	pm | Andrew McKibbin, Mayor of Oberon<br>_Official opening of event_ | |
+| 12:35 pm | Aunty Ruby Dykes<br>_Acknowledgement of Country & biobanking at Tricketts Arch Biodiversity Site Aboriginal Corporation_ | |	 
+| 12:45	pm | Tim Churches, OCSN Co-founder & President<br>_Introduction to OCSN and its activities, goals and plans_ | |
+| 1:05	pm | Dr Ana Gracanin, Research Fellow, Australian National University Fenner School of Environment & Society<br>_Greater gliders and other arboreal marsupials: ecology and conservation_ | | 	
+| 1:35	pm | Jackson Wilburn Wilkes, PhD candidate, School of Biological, Environmental and Earth Sciences (BEES), University of NSW<br>_Effects of climate change on platypus populations in the Fish and Duckmaloi Rivers near Oberon_ | |
+| 2:00	pm | Malan Bothma, PhD candidate, School of Biological, Environmental and Earth Sciences (BEES), University of UNSW<br>_The effects of wind farms on Australian bird species -- what we know and what we don't know_ |  | 	
 | 2:25	pm | An interactive scientific musical interlude | | 
-| 2:35	pm | Afternoon tea | Light refreshments (free) |
-| 2:50	pm | Eco-acoustics for biodiversity assessment | Alan Sheehan, OCSN	Co-founder |
-| 3:10	pm | Biodiversity and conservation issues in and round Jenolan Caves | Dr Anne Musser, Jenolan Caves Trust and NPWS |
-| 3:35	pm | Closing remarks | (Speakers to be determined) |
+| 2:35	pm | Afternoon tea<br>_Tea, coffee and light refreshments available (free)_ |  |
+| 2:50	pm | Alan Sheehan, OCSN	Co-founder & Public Officer<br>_Eco-acoustics for biodiversity assessment_ |  |
+| 3:10	pm | Dr Anne Musser, Jenolan Caves Trust and NPWS<br>_Biodiversity at Jenolan Karst Conservation Reserve, with a special look at platypus research_ |  |
+| 3:35	pm | Various speakers<br>_Closing remarks_ | |
 | 3:45 pm | End of event | |
 | 4:00 pm | Hall closes| |
