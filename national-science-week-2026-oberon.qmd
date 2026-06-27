@@ -6,10 +6,10 @@ lightbox: true
 
 ## Saturday, 15th August 2026 at the Malachi Gilmore Hall, Oberon, NSW
 
-To mark National Science Week 2026, Oberon Citizen Science Network is proud to present this free community event, **"Science in Oberon: More than you imagine"**, at the Malachi Gilmore Hall in Oberon on Saturday, 15th August 2026.
+To mark National Science Week 2026, Oberon Citizen Science Network is proud to present this free community event, **"Science in Oberon: More than you imagine"**, at the [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in Oberon on Saturday, 15th August 2026.
 
 ::: {.callout-note}
-This Inspiring Australia NSW initiative is supported by the Australian Government as part of National Science Week. Oberon Citizen Science Network also gratefully acknowledges support from Oberon Council through its Section 356 community funding scheme.
+This [Inspiring Australia NSW](https://inspiringnsw.org.au) initiative is supported by the Australian Government as part of [National Science Week](https://www.scienceweek.net.au). Oberon Citizen Science Network also gratefully acknowledges support for this event by [Oberon Council](https://www.oberon.nsw.gov.au/Home) through its Section 356 community funding scheme.
 
 ::: {layout="[[80, 20]]"}
 
