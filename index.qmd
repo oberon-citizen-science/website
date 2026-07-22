@@ -3,6 +3,7 @@ title: "Welcome to the Oberon Citizen Science Network (OCSN) website"
 lightbox: true
 ---
 
+
 ::: {.aside}
 Please consider supporting Oberon Citizen Science Network by [applying for membership](register_interest.html), or making a financial donation to help fund our projects and programme of work, via the button below. 
 
@@ -18,10 +19,24 @@ Please note that although we are a non-profit association, donations are not cur
 
 :::
 
-::: {.callout-important}
-Oberon Citizen Science Network was awarded the **Environmental Champion of the Year** award by Oberon Council on Australia Day, 26 January 2026. More details [here](news_items/2026-01-26-australia-day-award/index.html).
 
-Oberon Citizen Science Network has also been awarded funding by Inspiring Australia NSW and Oberon Council for a community event in Oberon on 15 August 2026, as part of National Science Week 2026! More details [here](national-science-week-2026-oberon.html).
+:::{.callout-important}
+
+To mark National Science Week 2026, Oberon Citizen Science Network is proud to present a  free community event, **"Science in Oberon: More than you imagine"**, at the [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in Oberon on **Saturday, 15th August 2026.**
+
+Full details are available [here](national-science-week-2026-oberon.html).
+
+Bookings for free tickets are available [here](https://events.humanitix.com/science-in-oberon-more-than-you-imagine). 
+
+::: {#fig-natsciweek layout-ncol=2}
+
+![Event flyer (click image for larger version)](assets/ScienceInOberon_National_Science_Week_2026_flyer_A3_final.png)
+
+![Free booking for the event via Humanitix (scan QR code or click [here](https://events.humanitix.com/science-in-oberon-more-than-you-imagine) to go to event booking page)](assets/event-page-qr-code-ScienceinOberon-Morethanyouimagine.png)
+
+:::
+
+
 :::
 
 This is the website for the recently formed Oberon Citizen Science Network (OCSN, pronounced **"oxen"**). Please read on for more information!
