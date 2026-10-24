@@ -1,5 +1,5 @@
 ---
-title: "n=1 Study of Radiation from a Nuclear Medicine diagnostic procedure"
+title: "n=1 study of radiation from a nuclear medicine diagnostic procedure"
 description: "The author recently had to undergo a nuclear medicine diagnostic imaging procedure, which provided a rare opportunity to observe radiation decay in a very personal way."
 author:
   - name: Alan Sheehan
@@ -7,7 +7,7 @@ date: 2026-10-24
 categories: [radiation] # self-defined categories
 citation: 
   url: https://oberon-citizen.science/posts/2026-10-24-radioactive-alan/
-image: tim_churches_2026_platypus_conference_infrared.jpeg
+image: radiacode110.png
 draft: false 
 freeze: true
 cap-location: margin
@@ -66,12 +66,5 @@ Figure 7, above, is a plot of the Dose Rate. It reflects the shape of the Count 
 
 Just to give a comparison of radiation hardness (energy), Technetium 99m gamma ray energy is 0.140 MeV, Cesium 137 (as commonly used in radiation gauges in the local factories)  gamma ray energy is 1.176 MeV, and Cobalt 60 (as used in the MDF furnace radiation gauge) decay energy is 2.822 MeV in two gamma rays and a beta particle.
 
-
-1.	https://en.wikipedia.org/wiki/Technetium-99m
-2.	https://radiacode.com/isotope/tc-99m?lang=en
-3.	https://radiacode.com/docs/en/100-series/alarms/how-alarms-work
-4.	https://radiacode.com/products/radiacode-110?lang=en
-5.	https://radiologykey.com/wp-content/uploads/2022/06/C1-FF4-2.gif
-6.	
 
 
