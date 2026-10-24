@@ -17,7 +17,7 @@ lightbox: true
 
 ::: {.aside}
 
-![Tim Churches deivering this talk at the 2026 Platypus Conference at Taronga Zoo (click to zoom image)](../../assets/tim_churches_2026_platypus_conference_thermal.jpeg)
+![Radiacode 110 device](radiacode110.png)
 :::
 
 As background, during my career as a professional mechanical engineer I have had some experience with industrial radiation gauges and sources, and so an interest in nuclear science that started during my teens has been trickle fed over time. A couple  of years ago, I purchased a [Radiacode 110 radiation detector](https://radiacode.com/products/radiacode-110?lang=en), motivated largely out of curiosity and my persisting interest in nuclear science. So, a procedure involving nuclear medicine can’t be ignored! It was an ideal opportunity to play with the Radiacode…
