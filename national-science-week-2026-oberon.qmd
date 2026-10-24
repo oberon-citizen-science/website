@@ -37,19 +37,27 @@ All aspects of the day were recorded in a series of videos, available via [this 
 
 ![](assets/Science_Week_15_Aug_2026/Malachi Hall outside.jpg)
 
+---
+
 ## Videos
 
 ### Pre-event field trip on 14 August 2026 to observe Southern greater gliders in Gurnang State Forest, about 30kms south or Oberon township, led by Dr Ana Gracanin, ANU Fenner School of Society and Environment
 
 Elevation about 1260 metre above sea level, air temperature 1 degree C, still conditions (it was snowing at this location just 4 days earlier).
 
+---
+
 #### Short version - 8 minutes
 
 {{< video https://www.youtube.com/watch?v=RRcL3gh7asY >}}
 
+---
+
 #### Long version - 54 minutes
 
 {{< video https://www.youtube.com/watch?v=v_ZZM_Go6XI >}}
+
+---
 
 ### Events at the Malachi Gilmore Hall, Oberon on 15 August, 2026
 
@@ -59,9 +67,13 @@ Including welcome to event by Clr Andrew McKibbin, Mayor of Oberon, and Acknowle
 
 {{< video https://www.youtube.com/watch?v=BuWJCVyy9tg >}}
 
+---
+
 #### Detailed explanations of the exhibits of science-related projects, demonstrations and posters, 10:00 am to 12:30 pm - 26 minutes
 
 {{< video https://www.youtube.com/watch?v=geXiLnMBBLo >}}
+
+---
 
 ### An afternoon of science and technology talks by local and invited speakers
 
@@ -69,24 +81,36 @@ Including welcome to event by Clr Andrew McKibbin, Mayor of Oberon, and Acknowle
 
 {{< video https://youtu.be/QptSyIJAnik >}}
 
+---
+
 #### Greater gliders and other arboreal marsupials: ecology and conservation, Dr Ana Gracanin, Australian National University Fenner School of Environment & Society - 37 minutes
 
 {{< video https://youtu.be/elw4NOclWlg >}}
+
+---
 
 #### Effects of climate change on platypus populations in the Fish and Duckmaloi Rivers near Oberon, Jackson Wilkes Wilburn, School of Biological, Environmental and Earth Sciences (BEES), University of NSW - 22 minutes
 
 {{< video https://youtu.be/NBJMG6AUJqI >}}
 
+---
+
 #### The effects of wind farms on Australian bird species -- what we know and what we don't know, Malan Bothma, School of Biological, Environmental and Earth Sciences (BEES), University of UNSW - 25 minutes
 
 {{< video https://youtu.be/1UFrk5EGeoU >}}
+
+---
 
 #### Eco-acoustics for biodiversity assessment, Alan Sheehan, OCSN	Co-founder & Public Officer - 18 minutes
 
 {{< video https://youtu.be/0pwU6eitg1E >}}
 
+---
+
 #### Biodiversity at Jenolan Karst Conservation Reserve, with a special look at platypus research, Dr Anne Musser, Jenolan Caves Trust and NPWS - 26 minutes
 
 {{< video https://youtu.be/KPEOZdft214 >}}
+
+---
 
 
