@@ -4,11 +4,13 @@ subtitle: "More than you imagine"
 lightbox: true
 ---
 
-## Saturday, 15th August 2026 at the Malachi Gilmore Hall, Oberon, NSW
-
-To mark National Science Week 2026, Oberon Citizen Science Network is proud to present this free community event, **"Science in Oberon: More than you imagine"**, at the [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in Oberon on Saturday, 15th August 2026.
+To mark National Science Week 2026, Oberon Citizen Science Network presented a free community event, **"Science in Oberon: More than you imagine"**, at the [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in Oberon on Saturday, 15th August 2026.
 
 ::: {.callout-note}
+An archived copy of the page used to advertise the 2026 National Science Week event **Science in Oberon: More than you imagine!** is available [here](national-science-week-2026-oberon-archived.html). The links in it may no longer be valid.
+:::
+
+::: {.callout-note title="Funding acknowledgements"}
 This [Inspiring Australia NSW](https://inspiringnsw.org.au) initiative is supported by the Australian Government as part of [National Science Week](https://www.scienceweek.net.au). Oberon Citizen Science Network also gratefully acknowledges support for this event by [Oberon Council](https://www.oberon.nsw.gov.au/Home) through its Section 356 community funding scheme.
 
 ::: {layout="[[80, 20]]"}
@@ -21,61 +23,70 @@ This [Inspiring Australia NSW](https://inspiringnsw.org.au) initiative is suppor
 :::
 
 ::: {.aside}
-
-![Event flyer (click image for larger version)](assets/ScienceInOberon_National_Science_Week_2026_flyer_A3_final.png)
-
-:::
-
-::: {.aside}
-
-![Free booking for the event via Humanitix (scan QR code or click [here](https://events.humanitix.com/science-in-oberon-more-than-you-imagine) to go to event booking page)](assets/event-page-qr-code-ScienceinOberon-Morethanyouimagine.png)
-
-:::
-
-::: {.aside}
-The National Science Week 2026 event in Oberon will be held at the wonderful _art deco_ [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in co-operation with its owners, Lucy and Johnny East. The Malachi Gilmore Hall is an architectural gem that looks like it has just landed from Outer Space, despite being built in 1932.
+The National Science Week 2026 event in Oberon was held on Saturday 15th August 2026 in the wonderful _art deco_ [Malachi Gilmore Hall](https://malachigilmorehall.com.au) in co-operation with its owners, Lucy and Johnny East. The Malachi Gilmore Hall is an architectural gem that looks like it has just landed from Outer Space, despite being built in 1937.
 ![The Malachi Gilmore Hall, Oberon](assets/malachi.jpg)
 :::
 
 
+Overall, the event was a great success, with over 90 people attending the morning session of science and technology-related exhibits, and over 60 people attending the afternoon program of talks given by local and visiting speakers.
+
+All aspects of the day were recorded in a series of videos, available via [this YouTube playlist](https://www.youtube.com/playlist?list=PLV47W5g3k9QA) or at the individual links below.
+
+
 ## 15th August 2026 event at the Malachi Gilmore Hall, Oberon
 
-| Start Time | Item                                   |                       
-|---------:|:----------------------------------------------------------|
-| 10:00 am | Exhibition of science-related projects, demonstrations and posters<br>_Please see list of exhibits below_ |	
-| 11:30 am | School biodiversity colouring-in competition |	
-| 12:00 pm | Soup and bread roll ($10 per person) available |
-| 12:30	pm | Clr Andrew McKibbin, Mayor of Oberon<br>_Official opening of event_ |
-| 12:35 pm | Aunty Ruby Dykes<br>_Acknowledgement of Country & biobanking at Tricketts Arch Biodiversity Site Aboriginal Corporation_ |	 
-| 12:45	pm | Tim Churches, OCSN Co-founder & President<br>_Introduction to OCSN and its activities, goals and plans_ |
-| 1:05	pm | Dr Ana Gracanin, Research Fellow, Australian National University Fenner School of Environment & Society<br>_Greater gliders and other arboreal marsupials: ecology and conservation_ | 	
-| 1:35	pm | Jackson Wilkes Wilburn, PhD candidate, School of Biological, Environmental and Earth Sciences (BEES), University of NSW<br>_Effects of climate change on platypus populations in the Fish and Duckmaloi Rivers near Oberon_ |
-| 2:00	pm | Malan Bothma, PhD candidate, School of Biological, Environmental and Earth Sciences (BEES), University of UNSW<br>_The effects of wind farms on Australian bird species -- what we know and what we don't know_ | 	
-| 2:25	pm | An interactive scientific musical interlude | 
-| 2:35	pm | Afternoon tea<br>_Tea, coffee and light refreshments available (free)_ |
-| 2:50	pm | Alan Sheehan, OCSN	Co-founder & Public Officer<br>_Eco-acoustics for biodiversity assessment_ |
-| 3:10	pm | Dr Anne Musser, Jenolan Caves Trust and NPWS<br>_Biodiversity at Jenolan Karst Conservation Reserve, with a special look at platypus research_ |
-| 3:35	pm | Various speakers<br>_Closing remarks_ |
-| 3:45 pm | End of event |
-| 4:00 pm | Hall closes|
+![](assets/Science_Week_15_Aug_2026/Malachi Hall outside.jpg)
 
-## List of Exhibits 
+## Videos
 
-The Malachi Gilmore Hall will be open to public on Saturday 15th August 2026 to view the exhibits from 10am to 12:30pm. A series of talks (please see program above) will commence at 12:30pm. Admission for both the exhibits and the talks is free.
+### Pre-event field trip on 14 August 2026 to observe Southern greater gliders in Gurnang State Forest, about 30kms south or Oberon township, led by Dr Ana Gracanin, ANU Fenner School of Society and Environment
 
-The planned exhibits include:
+Elevation about 1260 metre above sea level, air temperature 1 degree C, still conditions (it was snowing at this location just 4 days earlier).
 
-* a banner by by artist Karly Fowler showing life-size illustrations of many  Australian native bat species
-* School Colouring Competition
-* an interactive kinetic sound sculpture by Lucy East
-* OCSN seismic monitoring equipment and analyses of earthquakes both near and far detected by our monitors located near Oberon, including a live view display of OCSN seismic monitoring stations R21C0 and R5969, and a tablet computer demonstrating ShakeNet app that can used to view them and other seismic monitors around the world
-* infrared and thermal wildlife cameras designed and constructed by OCSN to detect platypus and rakali in the headwaters of rivers around Oberon, with a live view from a thermal camera, and excerpts of nocturnal videos captured by this equipment
-* a live demonstration of a _Chladni plate_, illustrating resonant frequencies in metal plates 
-* Birdweather demo showing OCSN stations and bird detections.
-* demonstration of Audiomoth mic driving the Audiomoth live app for eco-acoustic detection
-* various stereo and electronic microscopes allowing examination of butterfly and moth wings and other natural specimens of interest
-* light traps for nocturnal insects
-* a display of nature photography in the Oberon region by Warren Lloyd
-* displays and demonstration of various electronic test equipment (more details soon)
+#### Short version - 8 minutes
+
+{{< video https://www.youtube.com/watch?v=RRcL3gh7asY >}}
+
+#### Long version - 54 minutes
+
+{{< video https://www.youtube.com/watch?v=v_ZZM_Go6XI >}}
+
+### Events at the Malachi Gilmore Hall, Oberon on 15 August, 2026
+
+#### Overview video of set-up, morning exhibitions of science-related project and demonstrations, and afternoon talks by local and guest speakers - 16 minutes
+
+Including welcome to event by Clr Andrew McKibbin, Mayor of Oberon, and Acknowledgement of Country by Aunty Ruby Dykes, Trickett's Arch Biodiversity Site Aboriginal Corporation.
+
+{{< video https://www.youtube.com/watch?v=BuWJCVyy9tg >}}
+
+#### Detailed explanations of the exhibits of science-related projects, demonstrations and posters, 10:00 am to 12:30 pm - 26 minutes
+
+{{< video https://www.youtube.com/watch?v=geXiLnMBBLo >}}
+
+### An afternoon of science and technology talks by local and invited speakers
+
+#### Introduction to OCSN and its activities, goals and plans, Tim Churches, OCSN Co-founder & President - 19 minutes
+
+{{< video https://youtu.be/QptSyIJAnik >}}
+
+#### Greater gliders and other arboreal marsupials: ecology and conservation, Dr Ana Gracanin, Australian National University Fenner School of Environment & Society - 37 minutes
+
+{{< video https://youtu.be/elw4NOclWlg >}}
+
+#### Effects of climate change on platypus populations in the Fish and Duckmaloi Rivers near Oberon, Jackson Wilkes Wilburn, School of Biological, Environmental and Earth Sciences (BEES), University of NSW - 22 minutes
+
+{{< video https://youtu.be/NBJMG6AUJqI >}}
+
+#### The effects of wind farms on Australian bird species -- what we know and what we don't know, Malan Bothma, School of Biological, Environmental and Earth Sciences (BEES), University of UNSW - 25 minutes
+
+{{< video https://youtu.be/1UFrk5EGeoU >}}
+
+#### Eco-acoustics for biodiversity assessment, Alan Sheehan, OCSN	Co-founder & Public Officer - 18 minutes
+
+{{< video https://youtu.be/0pwU6eitg1E >}}
+
+#### Biodiversity at Jenolan Karst Conservation Reserve, with a special look at platypus research, Dr Anne Musser, Jenolan Caves Trust and NPWS - 26 minutes
+
+{{< video https://youtu.be/KPEOZdft214 >}}
 
 

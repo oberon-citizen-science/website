@@ -5,9 +5,9 @@ freeze: auto
 ---
 
 ::: {.callout-note title="Current status of this initiative"}
-Surveys of platypus, rakali and other native fauna living in and along the upper reaches and headwaters of key river systems in Oberon local government area are now being undertaken by members of Oberon Citizen Science Network, using specialised cameras designed and constructed by us specifically for this purpose. Funding applications will be submitted in April 2025 which, if successful, will allow us to significantly increase the scope and pace of these surveys. The results are progressively being formally submitted to relevant biodiversity databases, in particular the [Atlas of Living Australia](https://www.ala.org.au), operated by [CSIRO](https://www.csiro.au), and the NSW government [BioNet Atlas](https://www.environment.nsw.gov.au/topics/animals-and-plants/biodiversity/nsw-bionet). However, highlights of the results can also be viewed as a series of edited videos, continuously updated via [this YouTube playlist](https://www.youtube.com/playlist?list=PL3mN4JSQUTQsrIUcR_C0i4FF2NWZU9SaP). A detailed rationale for this survey program can also be found on the [Wind Farms and Citizen Science](wind_farms.html) page.
+Surveys of platypus, rakali and other native fauna living in and along the upper reaches and headwaters of key river systems in Oberon local government area are now being undertaken by members of Oberon Citizen Science Network, using specialised cameras designed and constructed by us specifically for this purpose. A recorded version of a talk on the development of these cameras by OCSN is available [here](https://www.youtube.com/watch?v=FePJwtK6mAI). Funding applications have been submitted in collaboration with noted platypus researchers at UNSW in late 2026 which, if successful, will allow us to significantly increase the scope and pace of these surveys, working with UNSW post-graduate research students. The result of our current program of survey work are nonetheless progressively being submitted to relevant biodiversity databases, in particular the [Atlas of Living Australia](https://www.ala.org.au), operated by [CSIRO](https://www.csiro.au), and the NSW government [BioNet Atlas](https://www.environment.nsw.gov.au/topics/animals-and-plants/biodiversity/nsw-bionet). However, highlights of the results can also be viewed as a series of edited videos, continuously updated via [this YouTube playlist](https://www.youtube.com/playlist?list=PL3mN4JSQUTQsrIUcR_C0i4FF2NWZU9SaP). A detailed rationale for this survey program can also be found on the [Wind Farms and Citizen Science](wind_farms.html) page.
 
-The planned sites for platypus and rakali monitoring in 2025 and early 2026 are shown below (subject to revision and permission of landowners where relevant).
+The planned sites for platypus and rakali monitoring in 2026 and early 2027 are shown below (subject to revision and permission of landowners where relevant).
 
 <iframe src="https://www.google.com/maps/d/embed?mid=1019zw05gnHn_un8sCkZWYjZoMiU-pDU&ehbc=2E312F" width="800" height="600"></iframe>
 
@@ -39,14 +39,14 @@ There are several time-lapse camera videos showing the results of platypus and r
 
 ## NSW BioNet Atlas records of platypus and rakali sightings or trappings in Oberon LGA
 
-BioNet is a database of flora and fauna information collected over many decades from multiple sources, operated by the NSW Department of Planning and Environment (DPE). The role of BioNet is described by the DPE thus:
+BioNet is a database of flora and fauna information collected over many decades from multiple sources, operated by the Department of Climate Change, Energy, the Environment and Water (DCCEEW). The role of BioNet is described by DCCEEW thus:
 
 > BioNet aims to improve biodiversity outcomes by enabling the community and government to proactively manage and enhance biodiversity in New South Wales through comprehensive, credible and robust data and information.
 
 It is also important because threatened and endangered species records in BioNet must be used by assessors of proposed developments in order to avoid or minimise impacts on wildlife, and is also used as part of the [Biodiversity Assessment Method](https://www.environment.nsw.gov.au/-/media/OEH/Corporate-Site/Documents/Animals-and-plants/Biodiversity/biodiversity-assessment-method-2020-200438.pdf) (BAM), which is used as part of the **legislated** Biodiversity Offsets Scheme (currently under review due to [numerous flaws found by the Audit Office of NSW](https://www.audit.nsw.gov.au/our-work/reports/effectiveness-of-the-biodiversity-offsets-scheme)).
 
 ::: {.callout-note}
-The data shown below were manually downloaded from the NSW government BioNet database on 18 February 2025. It is intended to convert these charts and maps to automatically update once a week with the latest data from BioNet once an API access key has been obtained.
+The data shown below were manually downloaded from the NSW government BioNet database on 22 October 2026. It is intended to convert these charts and maps so that they automatically update once a week with the latest data from BioNet when an updated API access mechanism is provided by BioNet in mid-2027.
 :::
 
 The chart below shows the trend in platypus and rakali records in BioNet. These trends may reflect frequency of observations and survey efforts as much as declines or fluctuations in the animal populations or extents. This is an issue which OCSN hopes to address over the next few years by mounting regular, systematic surveys of platypus and rakali activity in key water courses in Oberon LGA, using a combination of direct observation and time-lapse camera recordings (see below). Note that there are very few observations of rakali. This may be because they are rare, but also because they are elusive -- but see the video of a rakali captured by OCSN committee member Kyla Ries on this page.
@@ -66,7 +66,9 @@ library(clock)
 
 # bionet_oberon <- read_tsv("assets/Atlas_records_20250218-140347/Atlas_records_eoiugh2zo1aekxlxom5wzh2w20250218-140340.txt", skip=4)
 
-bionet_oberon <- read_tsv("assets/Atlas_records_20251202-093101/Atlas_records_2ukuovc5aevm1kkp222rz3hy20251202-093058.txt", skip=4)
+# bionet_oberon <- read_tsv("assets/Atlas_records_20251202-093101/Atlas_records_2ukuovc5aevm1kkp222rz3hy20251202-093058.txt", skip=4)
+
+bionet_oberon <- read_tsv("assets/Atlas_records_20261022-122431/Atlas_records_ncl34nganxmux0jlwmd0tedp20261022-122337.txt", skip=4)
 
 platypus_rakali_sf <- bionet_oberon %>% 
                         filter(SpeciesCode %in% c("1001", "1415")) %>%
@@ -125,15 +127,15 @@ platypus_rakali_sf %>%
   labs(x="Year of observation",
        y="Number of observations",
        title="Platypus and rakali observations in Oberon LGA",
-       subtitle = "NSW BioNet Atlas data as at 2 Dec 2025")
+       subtitle = "NSW BioNet Atlas data as at 22 Oct 2026")
 
 ```
 
-As can be seen, the small number of records, particularly recent records, for platypus and rakali in BioNet is a bit disappointing, and distressing. However there is a more inclusive source of biodiversity data we can query.
+As can be seen, the small number of records, particularly recent records, for platypus and rakali in BioNet is a bit disappointing, and distressing. Most of these records since 2024 have been contributed by OCSN. However there is a more inclusive source of biodiversity data we can query.
 
 ::: {.callout-info}
 
-OCSN has begun to contribute biodiversity data to the NSW BioNet Atlas -- bat and bird call data so far, but the rakali and platypus records we have been contributing to iNaturalist, which then appear in ALA, will soon also be contributed to the NSW BioNet Atlas. Although this may seem like unnecessary redundancy in data contributions, we think it is important because biodiversity assessments for developments are often quite selective in what biodiversity data sources they use, and thus it is important for as much recent data to be present in all of them to ensure that important information is not overlooked in such assessments. For scientific research purposes, it is relatively easy to remove duplicate records, and thus redundancy of data in various atlases and other databases is not a problem.
+OCSN has begun to contribute biodiversity data to the NSW BioNet Atlas -- bat and bird call data so far, and since October 2026 the rakali and platypus records we have been contributing to iNaturalist, which then appear in ALA, are now also being contributed to the NSW BioNet Atlas. Although this may seem like unnecessary redundancy in data contributions, we think it is important because biodiversity assessments for developments are often quite selective in what biodiversity data sources they use, and thus it is important for as much recent data to be present in all of the biodiversity databases to ensure that important information is not overlooked in such assessments. For scientific research purposes, it is relatively easy to remove duplicate records, and thus redundancy of data in various atlases and other databases is not a problem.
 
 :::
 
@@ -141,7 +143,7 @@ OCSN has begun to contribute biodiversity data to the NSW BioNet Atlas -- bat an
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap: "Platypus and rakali observations in Oberon LGA: NSW BioNet Atlas data as at Feb 2025"
+#| fig-cap: "Platypus and rakali observations in Oberon LGA: NSW BioNet Atlas data as at Oct 2026"
 
 library(tidyverse)
 library(leaflet)
@@ -408,7 +410,7 @@ ala_platypus_rakali_oberon |>
 
 ::: {.callout-note title="Additional table by year since 2020" collapse="true"}
 
-Note the dramatic increase in iNaturalist records in 2024 and 2025. This is almost entire the result of OCSN activities. We plan to add these records to NSW BioNet in the near future.
+Note the dramatic increase in iNaturalist records from 2024 onwards. This is almost entire the result of OCSN activities. We are now routinely add these records to the NSW BioNet Atlas.
 
 ```{r ala-table-recent}
 #| echo: false
@@ -481,7 +483,9 @@ In the maps below, you can toggle layers on and off for platypus observation rec
 
 
 ::: {.callout-warning title="Variable geographic precision!"}
-Please note that the geographic position of the icons in the map below may not be precise. Some records provide precise position information, in which case the locations are accurately shown, but many provide imprecise information so as to protect the exact locations from unwanted attention or interference. If you click on an icon, the pop-up information will show the positional accuracy information (in metres) where it is available for that record. Often it is very approximate eg within 10 km! Unfortunately not all data sources which contribute to the ALA database seem to report positional accuracy. Anyway, please be aware of this important limitation of the data, which in many cases is an intentional limitation to protect vulnerable and endangered species or populations. 
+Please note that the geographic position of the icons in the map below may not be precise. Some records provide precise position information, in which case the locations are accurately shown, but many provide imprecise information so as to protect the exact locations from unwanted attention or interference. If you click on an icon, the pop-up information will show the positional accuracy information (in metres) where it is available for that record. Often it is very approximate eg within 10 km!
+
+Unfortunately not all data sources which contribute to the ALA database seem to report positional accuracy. Anyway, please be aware of this important limitation of the data, which in many cases is an intentional limitation to protect vulnerable and endangered species or populations. 
 :::
 
 :::{.column-page}
@@ -1002,10 +1006,6 @@ Excellent information about platypus observation and systematic surveys is avail
 
 
 OCSN encourages its members to undertake _ad hoc_, opportunistic direct observation surveys as time permits, but it also intends to undertake systematic surveys of key waterways in Oberon LGA using special purpose DIY night-vision cameras designed and constructed by OCSN members, using very low-level infrared (IR) illumination.
-
-::: {.callout-note title="DigiVol"}
-It may be possible for Oberon Citizen Science Network to use the [**DigiVol**](https://volunteer.ala.org.au) crowd-sourcing platform operated by the Australian Museum to distribute the task of watching trail camera and time-lapse video to volunteers. DigiVol is an online platform which hosts "expeditions", which are projects for which volunteers can register to under small tasks, such as watching a segment of video recorded by a wildlife or trail camera and noting if any target species appears in the footage. Each participant can undertake as few or as many of these small, discrete tasks as they wish, and as time permits, over the course of the project (expedition). OCSN will contact DigiVol to enquiry about whether they can host time-lapse camerascreening tasks for us. As well, OCSN members are encouraged to sign up as a DigiVol participant, join an expedition and undertake some tasks!
-:::
 
 All sightings will be contributed to the Atlas of Living Australia as well as uploaded into the NSW government BioNet Atlas database. OCSN now has a BioNet Atlas account with permission to submit uploads of observation records.
 

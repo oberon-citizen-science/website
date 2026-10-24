@@ -1,0 +1,44 @@
+---
+title: "Southern greater glider elevation analysis and costal forest plan"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+# Install and load required libraries
+# install.packages(c("elevatr", "sf"))
+library(tidyverse)
+library(elevatr)
+library(sf)
+```
+
+```{r}
+# Load data
+nsw_gliders <- read_csv("~/Downloads/BioNet_Atlas_species_sightings_20260930_121402/BioNet_Atlas_species_sightings_20260930_121402.csv")
+
+# Convert to a spatial sf object using WGS84 projection (EPSG:4326)
+nsw_gliders_sf <- st_as_sf(nsw_gliders, coords = c("decimalLongitude", "decimalLatitude"), crs = 4283)
+
+```
+
+```{r}
+# Extract elevation data (returns an sf object with an 'elevation' column)
+nsw_gliders_elevation_data <- get_elev_point(nsw_gliders_sf, src = "aws")
+
+# View results
+# print(nsw_gliders_elevation_data)
+```
+
+```{r}
+nsw_gliders_elevation_data |>
+  arrange(desc(elevation)) -> nsw_gliders_elevation_data
+```
+
+```{r}
+nsw_gliders_elevation_data |>
+  mutate(pct_rank = percent_rank(elevation)) -> nsw_gliders_elevation_data
+```
+
